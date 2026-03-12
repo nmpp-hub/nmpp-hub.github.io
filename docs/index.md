@@ -20,7 +20,12 @@
 		<strong>GVEC</strong>
 		<span>Description of GVEC.</span>
 	</a>
+	<a class="nmpp-card" href="codes/geometricIntegrators/">
+		<strong>GeometricIntegrators.jl</strong>
+		<span>Description of GeometricIntegrators.jl.</span>
+	</a>
 </div>
+
 
 ## Publications
 
