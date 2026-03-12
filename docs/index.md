@@ -20,9 +20,29 @@
 		<strong>GVEC</strong>
 		<span>Description of GVEC.</span>
 	</a>
-	<a class="nmpp-card" href="codes/geometricIntegrators/">
+	<a class="nmpp-card" href="codes/geometricintegrators/">
 		<strong>GeometricIntegrators.jl</strong>
 		<span>Description of GeometricIntegrators.jl.</span>
+	</a>
+	<a class="nmpp-card" href="codes/hyperdeal/">
+		<strong>Hyper.deal</strong>
+		<span>Description of Hyper.deal.</span>
+	</a>
+	<a class="nmpp-card" href="codes/hermitegf/">
+		<strong>HermiteGF.jl</strong>
+		<span>Description of HermiteGF.jl.</span>
+	</a>
+	<a class="nmpp-card" href="codes/hopr/">
+		<strong>HOPR</strong>
+		<span>Description of HOPR.</span>
+	</a>
+	<a class="nmpp-card" href="codes/fluxo/">
+		<strong>FLUXO</strong>
+		<span>Description of FLUXO.</span>
+	</a>
+	<a class="nmpp-card" href="codes/bsl6d/">
+		<strong>BSL6D</strong>
+		<span>Description of BSL6D.</span>
 	</a>
 </div>
 
