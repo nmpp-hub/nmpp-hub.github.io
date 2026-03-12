@@ -1,0 +1,24 @@
+#pub-search {
+  width: 100%;
+  max-width: 48rem;
+  padding: 0.65rem 0.8rem;
+  margin: 0.75rem 0 1rem;
+  border: 1px solid #b5bcc7;
+  border-radius: 0.35rem;
+}
+
+#publications-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#publications-table th,
+#publications-table td {
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid #d9dee7;
+  vertical-align: top;
+}
+
+#publications-table th {
+  text-align: left;
+}
