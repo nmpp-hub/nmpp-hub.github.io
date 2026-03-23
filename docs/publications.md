@@ -94,6 +94,20 @@ Search and filter NMPP division publications.
     </tr>
     <tr>
       <td>2023</td>
+      <td>A Broken FEEC Framework for Electromagnetic Problems on Mapped Multipatch Domains</td>
+      <td>Yaman Güçlü, Said Hadjout, Martin Campos Pinto</td>
+      <td>Journal of Scientific Computing</td>
+      <td><a href="https://doi.org/10.1007/s10915-023-02351-x">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>High-Order Structure-Preserving Algorithms for Plasma Hybrid Models</td>
+      <td>Stefan Possanner, Florian Holderied, Yingzhe Li, Byung Kyu Na, Dominik Bell, Said Hadjout, Yaman Güçlü</td>
+      <td>Lecture Notes in Computer Science</td>
+      <td><a href="https://doi.org/10.1007/978-3-031-38299-4_28">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
       <td>Dependent state space Student‐t processes for imputation and data augmentation in plasma diagnostics</td>
       <td>Katharina Rath, David Rügamer, Bernd Bischl, Udo von Toussaint, Christopher G. Albert</td>
       <td>Contributions to Plasma Physics</td>
@@ -159,6 +173,20 @@ Search and filter NMPP division publications.
     </tr>
     <tr>
       <td>2020</td>
+      <td>Variational integrators for stochastic dissipative Hamiltonian systems</td>
+      <td>Michael Kraus, Tomasz M Tyranowski</td>
+      <td>IMA Journal of Numerical Analysis</td>
+      <td><a href="https://doi.org/10.1093/imanum/draa022">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>An entropy stable nodal discontinuous Galerkin method for the resistive MHD equations. Part I: Theory and numerical verification</td>
+      <td>Marvin Bohm, Andrew R. Winters, Gregor J. Gassner, Dominik Derigs, Florian Hindenlang, Joachim Saur</td>
+      <td>Journal of Computational Physics</td>
+      <td><a href="https://doi.org/10.1016/j.jcp.2018.06.027">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
       <td>Quasi-geometric integration of guiding-center orbits in piecewise linear toroidal fields</td>
       <td>M. Eder, C. G. Albert, L. M. P. Bauer, S. V. Kasilov, W. Kernbichler</td>
       <td>Physics of Plasmas</td>
@@ -215,6 +243,13 @@ Search and filter NMPP division publications.
     </tr>
     <tr>
       <td>2019</td>
+      <td>Solving hyperbolic-elliptic problems on singular mapped disk-like domains with the method of characteristics and spline finite elements</td>
+      <td>Edoardo Zoni, Yaman Güçlü</td>
+      <td>Journal of Computational Physics</td>
+      <td><a href="https://doi.org/10.1016/j.jcp.2019.108889">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2019</td>
       <td>Application of the extreme scaling computing pattern on multiscale fusion plasma modelling</td>
       <td>O. O. Luk, O. Hoenen, O. Perks, K. Brabazon, T. Piontek, P. Kopta, B. Bosak, A. Bottino, B. D. Scott, D. P. Coster</td>
       <td>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</td>
@@ -236,6 +271,13 @@ Search and filter NMPP division publications.
     </tr>
     <tr>
       <td>2018</td>
+      <td>Correction to: The BR1 Scheme is Stable for the Compressible Navier–Stokes Equations</td>
+      <td>Gregor J. Gassner, Andrew R. Winters, Florian J. Hindenlang, David A. Kopriva</td>
+      <td>Journal of Scientific Computing</td>
+      <td><a href="https://doi.org/10.1007/s10915-018-0758-y">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2018</td>
       <td>Finite element discretization of a Stokes-like model arising in plasma physics</td>
       <td>Juan Vicente Gutiérrez-Santacreu, Omar Maj, Marco Restelli</td>
       <td>Journal of Computational Physics</td>
@@ -247,6 +289,20 @@ Search and filter NMPP division publications.
       <td>Natalia Tronko, Cristel Chandre</td>
       <td>Journal of Plasma Physics</td>
       <td><a href="https://doi.org/10.1017/S0022377818000430">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Compatible Maxwell solvers with particles I: conforming and non-conforming 2D schemes with a strong Ampere law</td>
+      <td>Martin Campos Pinto, Eric Sonnendrücker</td>
+      <td>The SMAI Journal of computational mathematics</td>
+      <td><a href="https://doi.org/10.5802/smai-jcm.20">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Metriplectic integrators for the Landau collision operator</td>
+      <td>Michael Kraus, Eero Hirvijoki</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/1.4998610">DOI</a></td>
     </tr>
     <tr>
       <td>2017</td>
@@ -345,6 +401,48 @@ Search and filter NMPP division publications.
       <td>S. Mochalskyy, D. Wünderlich, B. Ruf, P. Franzen, U. Fantz, T. Minea</td>
       <td>Review of Scientific Instruments</td>
       <td><a href="https://doi.org/10.1063/1.4824746">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>Excitation of Geodesic Acoustic Modes by External Fields</td>
+      <td>K. Hallatschek, G. R. McKee</td>
+      <td>Physical Review Letters</td>
+      <td><a href="https://doi.org/10.1103/PhysRevLett.109.245001">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2012</td>
+      <td>The nonlinear dispersion relation of geodesic acoustic modes</td>
+      <td>Robert Hager, Klaus Hallatschek</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/1.4747725">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Bayesian inference in physics</td>
+      <td>Udo von Toussaint</td>
+      <td>Reviews of Modern Physics</td>
+      <td><a href="https://doi.org/10.1103/RevModPhys.83.943">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2007</td>
+      <td>Nonlinear three-dimensional flows in magnetized plasmas</td>
+      <td>K Hallatschek</td>
+      <td>Plasma Physics and Controlled Fusion</td>
+      <td><a href="https://doi.org/10.1088/0741-3335/49/12B/S13">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2004</td>
+      <td>Turbulent Saturation of Tokamak-Core Zonal Flows</td>
+      <td>K. Hallatschek</td>
+      <td>Physical Review Letters</td>
+      <td><a href="https://doi.org/10.1103/PhysRevLett.93.065001">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2001</td>
+      <td>Transport Control by Coherent Zonal Flows in the Core/Edge Transitional Regime</td>
+      <td>K. Hallatschek, D. Biskamp</td>
+      <td>Physical Review Letters</td>
+      <td><a href="https://doi.org/10.1103/PhysRevLett.86.1223">DOI</a></td>
     </tr>
   
   </tbody>
