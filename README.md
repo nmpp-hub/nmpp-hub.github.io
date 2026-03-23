@@ -1,11 +1,4 @@
-# NMPP Hub Docs Template
-
-Template for a documentation site built with MkDocs and Material for MkDocs.
-
-## Prerequisites
-
-- Python 3.10+
-- `pip`
+# NMPP Hub website
 
 ## Local setup
 
@@ -14,6 +7,14 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+## Add new publications
+
+Added publications to `dois.txt`, update `docs/publications.md` with
+
+```
+python populate_publications.py
 ```
 
 ## Run locally
