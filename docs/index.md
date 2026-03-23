@@ -5,7 +5,7 @@
 	</p>
 </section>
 
-## Codes
+## Main codes
 
 <div class="nmpp-grid">
 	<a class="nmpp-card" href="codes/gempicx/">
@@ -46,6 +46,7 @@
 	</a>
 </div>
 
+Check out [this page](https://nmpp-hub.github.io/codes/) for mode codes!
 
 ## Publications
 
@@ -60,18 +61,18 @@
 	</a>
 </div>
 
-## Links
-
-- [NMPP's official webpage](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
-
-### Working groups
+## Working groups
 
 The division comprises six working groups:
 
-- [Kinetic and Gyrokinetic Models](https://www.ipp.mpg.de/4104717/kgkm)
-- [Magnetohydrodynamics (MHD)](https://www.ipp.mpg.de/4119345/mhd)
-- [Geometric Numerical Integration and Reduced Complexity Modelling](https://www.ipp.mpg.de/3989973/daal)
-- [Probabilistic Data Analysis and Active Learning](https://www.ipp.mpg.de/3989973/daal)
-- [Zonal Flows in Turbulent Plasmas](https://www.ipp.mpg.de/4171847/zfsftp)
 - [Advanced Computing Hub (ACH)](https://www.ipp.mpg.de/3987588/ach)
 - [Finite Element Methods (FEM)](https://www.ipp.mpg.de/5150531/fem)
+- [Geometric Numerical Integration and Reduced Complexity Modelling (GNI)](https://www.ipp.mpg.de/4105128/gspm)
+- [Kinetic and Gyrokinetic Models (KGKM)](https://www.ipp.mpg.de/4104717/kgkm)
+- [Magnetohydrodynamics (MHD)](https://www.ipp.mpg.de/4119345/mhd)
+- [Probabilistic Data Analysis and Active Learning (DAAL)](https://www.ipp.mpg.de/3989973/daal)
+- [Zonal Flows in Turbulent Plasmas (ZFSFTP)](https://www.ipp.mpg.de/4171847/zfsftp)
+
+## Links
+
+- [NMPP's official webpage](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
