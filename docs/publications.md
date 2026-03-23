@@ -16,25 +16,336 @@ Search and filter NMPP division publications.
   </thead>
   <tbody>
     <tr>
+      <td>2026</td>
+      <td>Beam Tracing in Phase Space: Paraxial Description of High-Frequency Wave Beams in Turbulent Plasmas</td>
+      <td>Omar Maj, Hannes Weber, Emanuele Poli</td>
+      <td>EPJ Web of Conferences</td>
+      <td><a href="https://doi.org/10.1051/epjconf/202634601003">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2026</td>
+      <td>Local cubic spline interpolation for Vlasov-type equations on a multi-patch geometry.</td>
+      <td>Pauline Vidal, Emily Bourne, Virginie Grandgirard, Michel Mehrenberger, Eric Sonnendrücker</td>
+      <td>Journal of Scientific Computing</td>
+      <td><a href="https://doi.org/10.1007/s10915-025-03161-z">DOI</a></td>
+    </tr>
+    <tr>
       <td>2025</td>
-      <td>Structure-preserving particle methods for high-fidelity plasma simulations</td>
-      <td>A. Example, B. Example, C. Example</td>
+      <td>Automatic Partitioning for the Low-Rank Integration of Stochastic Boolean Reaction Networks</td>
+      <td>Lukas Einkemmer, Julian Mangott, Martina Prugger</td>
+      <td>Journal of Scientific Computing</td>
+      <td><a href="https://doi.org/10.1007/s10915-025-03078-7">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Computing MHD equilibria of stellarators with a flexible coordinate frame</td>
+      <td>Florian Hindenlang, Gabriel G Plunk, Omar Maj</td>
+      <td>Plasma Physics and Controlled Fusion</td>
+      <td><a href="https://doi.org/10.1088/1361-6587/adba11">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Construction of an invertible mapping to boundary conforming coordinates for arbitrarily shaped toroidal domains</td>
+      <td>Robert Babin, Florian Hindenlang, Omar Maj, Robert Köberl</td>
+      <td>Plasma Physics and Controlled Fusion</td>
+      <td><a href="https://doi.org/10.1088/1361-6587/adaee6">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Neural-Parareal: Self-improving acceleration of fusion MHD simulations using time-parallelisation and neural operators</td>
+      <td>S.J.P. Pamela, N. Carey, J. Brandstetter, R. Akers, L. Zanisi, J. Buchanan, V. Gopakumar, M. Hoelzl, G. Huijsmans, K. Pentland, T. James, G. Antonucci</td>
       <td>Computer Physics Communications</td>
-      <td><a href="https://doi.org/10.0000/example.2025.001">DOI</a></td>
+      <td><a href="https://doi.org/10.1016/j.cpc.2024.109391">DOI</a></td>
     </tr>
     <tr>
       <td>2024</td>
-      <td>Hybrid gyrokinetic-kinetic coupling strategies in magnetized plasmas</td>
-      <td>D. Example, E. Example</td>
-      <td>Journal of Computational Physics</td>
-      <td><a href="https://doi.org/10.0000/example.2024.002">DOI</a></td>
+      <td>Simulation of ion temperature gradient driven modes with 6D kinetic Vlasov code</td>
+      <td>M. Raeth, K. Hallatschek, K. Kormann</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/5.0197970">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>A Dual Grid Geometric Electromagnetic Particle in Cell Method</td>
+      <td>Katharina Kormann, Eric Sonnendrücker</td>
+      <td>SIAM Journal on Scientific Computing</td>
+      <td><a href="https://doi.org/10.1137/23M1618910">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>High-Frequency Nongyrokinetic Turbulence at Tokamak Edge Parameters</td>
+      <td>M. Raeth, K. Hallatschek</td>
+      <td>Physical Review Letters</td>
+      <td><a href="https://doi.org/10.1103/PhysRevLett.133.195101">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>A performance portable implementation of the semi-Lagrangian algorithm in six dimensions</td>
+      <td>Nils Schild, Mario Räth, Sebastian Eibl, Klaus Hallatschek, Katharina Kormann</td>
+      <td>Computer Physics Communications</td>
+      <td><a href="https://doi.org/10.1016/j.cpc.2023.108973">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2024</td>
+      <td>Surprisingly tight Courant–Friedrichs–Lewy condition in explicit high-order Arakawa schemes</td>
+      <td>Mario Raeth, Klaus Hallatschek</td>
+      <td>Physics of Fluids</td>
+      <td><a href="https://doi.org/10.1063/5.0223009">DOI</a></td>
     </tr>
     <tr>
       <td>2023</td>
-      <td>Benchmarking vectorized geometry kernels for large-scale transport studies</td>
-      <td>F. Example, G. Example, H. Example</td>
-      <td>Physics of Plasmas</td>
-      <td><a href="https://doi.org/10.0000/example.2023.003">DOI</a></td>
+      <td>Dependent state space Student‐t processes for imputation and data augmentation in plasma diagnostics</td>
+      <td>Katharina Rath, David Rügamer, Bernd Bischl, Udo von Toussaint, Christopher G. Albert</td>
+      <td>Contributions to Plasma Physics</td>
+      <td><a href="https://doi.org/10.1002/ctpp.202200175">DOI</a></td>
     </tr>
+    <tr>
+      <td>2023</td>
+      <td>Uncertainty quantification in <scp>three‐dimensional</scp> magnetohydrodynamic equilibrium reconstruction via surrogate‐assisted Bayesian inference</td>
+      <td>Robert Köberl, Udo von Toussaint, Hans‐Joachim Bungartz, Jonathan Schilling, Christopher G. Albert, W7‐X Team</td>
+      <td>Contributions to Plasma Physics</td>
+      <td><a href="https://doi.org/10.1002/ctpp.202200173">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2023</td>
+      <td>A <b>
+                     <i>δf</i>
+                  </b> PIC method with forward–backward Lagrangian reconstructions</td>
+      <td>M. Campos Pinto, M. Pelz, P.-H. Tournier</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/5.0129989">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Data augmentation for disruption prediction via robust surrogate models</td>
+      <td>Katharina Rath, David Rügamer, Bernd Bischl, Udo von Toussaint, Cristina Rea, Andrew Maris, Robert Granetz, Christopher G. Albert</td>
+      <td>Journal of Plasma Physics</td>
+      <td><a href="https://doi.org/10.1017/S0022377822000769">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>2D Fourier finite element formulation for magnetostatics in curvilinear coordinates with a symmetry direction</td>
+      <td>Christopher G. Albert, Patrick Lainer, Oszkár Bíró</td>
+      <td>Computer Physics Communications</td>
+      <td><a href="https://doi.org/10.1016/j.cpc.2022.108401">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>Variational Framework for Structure-Preserving Electromagnetic Particle-in-Cell Methods</td>
+      <td>Martin Campos Pinto, Katharina Kormann, Eric Sonnendrücker</td>
+      <td>Journal of Scientific Computing</td>
+      <td><a href="https://doi.org/10.1007/s10915-022-01781-3">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Symplectic Gaussian process regression of maps in Hamiltonian systems</td>
+      <td>Katharina Rath, Christopher G. Albert, Bernd Bischl, Udo von Toussaint</td>
+      <td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+      <td><a href="https://doi.org/10.1063/5.0048129">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Geometric Particle-in-Cell Simulations of the Vlasov--Maxwell System in Curvilinear Coordinates</td>
+      <td>Benedikt Perse, Katharina Kormann, Eric Sonnendrücker</td>
+      <td>SIAM Journal on Scientific Computing</td>
+      <td><a href="https://doi.org/10.1137/20M1311934">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>Energy-conserving time propagation for a structure-preserving particle-in-cell Vlasov–Maxwell solver</td>
+      <td>Katharina Kormann, Eric Sonnendrücker</td>
+      <td>Journal of Computational Physics</td>
+      <td><a href="https://doi.org/10.1016/j.jcp.2020.109890">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Quasi-geometric integration of guiding-center orbits in piecewise linear toroidal fields</td>
+      <td>M. Eder, C. G. Albert, L. M. P. Bauer, S. V. Kasilov, W. Kernbichler</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/5.0022117">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>On the classification and quantification of crystal defects after energetic bombardment by machine learned molecular dynamics simulations</td>
+      <td>F.J. Domínguez-Gutiérrez, J. Byggmästar, K. Nordlund, F. Djurabekova, U. von Toussaint</td>
+      <td>Nuclear Materials and Energy</td>
+      <td><a href="https://doi.org/10.1016/j.nme.2019.100724">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Free-boundary MRxMHD equilibrium calculations using the stepped-pressure equilibrium code</td>
+      <td>S R Hudson, J Loizu, C Zhu, Z S Qu, C Nührenberg, S Lazerson, C B Smiet, M J Hole</td>
+      <td>Plasma Physics and Controlled Fusion</td>
+      <td><a href="https://doi.org/10.1088/1361-6587/ab9a61">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Accelerated methods for direct computation of fusion alpha particle losses within, stellarator optimization</td>
+      <td>Christopher G. Albert, Sergei V. Kasilov, Winfried Kernbichler</td>
+      <td>Journal of Plasma Physics</td>
+      <td><a href="https://doi.org/10.1017/S0022377820000203">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Subcycling of particle orbits in variational, geometric electromagnetic particle-in-cell methods</td>
+      <td>Eero Hirvijoki, Katharina Kormann, Filippo Zonta</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/5.0006403">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>Symplectic integration with non-canonical quadrature for guiding-center orbits in magnetic confinement devices</td>
+      <td>Christopher G. Albert, Sergei V. Kasilov, Winfried Kernbichler</td>
+      <td>Journal of Computational Physics</td>
+      <td><a href="https://doi.org/10.1016/j.jcp.2019.109065">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>2D full-wave simulations of conventional reflectometry using 3D gyro-fluid plasma turbulence</td>
+      <td>J Vicente, T Ribeiro, F Da Silva, S Heuraux, G D Conway, B Scott, C Silva</td>
+      <td>Plasma Physics and Controlled Fusion</td>
+      <td><a href="https://doi.org/10.1088/1361-6587/ab5fa8">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2020</td>
+      <td>A locally field-aligned discontinuous Galerkin method for anisotropic wave equations</td>
+      <td>Benedict Dingfelder, Florian J. Hindenlang</td>
+      <td>Journal of Computational Physics</td>
+      <td><a href="https://doi.org/10.1016/j.jcp.2020.109273">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Application of the extreme scaling computing pattern on multiscale fusion plasma modelling</td>
+      <td>O. O. Luk, O. Hoenen, O. Perks, K. Brabazon, T. Piontek, P. Kopta, B. Bosak, A. Bottino, B. D. Scott, D. P. Coster</td>
+      <td>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</td>
+      <td><a href="https://doi.org/10.1098/rsta.2018.0152">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>Reduction of the statistical error in electromagnetic gyrokinetic particle-in-cell simulations</td>
+      <td>R. Hatzky, R. Kleiber, A. Könies, A. Mishchenko, M. Borchardt, A. Bottino, E. Sonnendrücker</td>
+      <td>Journal of Plasma Physics</td>
+      <td><a href="https://doi.org/10.1017/S0022377819000096">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2019</td>
+      <td>A massively parallel semi-Lagrangian solver for the six-dimensional Vlasov–Poisson equation</td>
+      <td>Katharina Kormann, Klaus Reuter, Markus Rampp</td>
+      <td>The International Journal of High Performance Computing Applications</td>
+      <td><a href="https://doi.org/10.1177/1094342019834644">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Finite element discretization of a Stokes-like model arising in plasma physics</td>
+      <td>Juan Vicente Gutiérrez-Santacreu, Omar Maj, Marco Restelli</td>
+      <td>Journal of Computational Physics</td>
+      <td><a href="https://doi.org/10.1016/j.jcp.2018.06.046">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2018</td>
+      <td>Second-order nonlinear gyrokinetic theory: from the particle to the gyrocentre</td>
+      <td>Natalia Tronko, Cristel Chandre</td>
+      <td>Journal of Plasma Physics</td>
+      <td><a href="https://doi.org/10.1017/S0022377818000430">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Comment on ‘Issues in the understanding of negative ion extraction for fusion’</td>
+      <td>S Mochalskyy, T Minea, A Revel, I Montellano, D Wünderlich, U Fantz</td>
+      <td>Plasma Sources Science and Technology</td>
+      <td><a href="https://doi.org/10.1088/1361-6595/aa68d0">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Verification of Gyrokinetic codes: Theoretical background and applications</td>
+      <td>Natalia Tronko, Alberto Bottino, Tobias Görler, Eric Sonnendrücker, Daniel Told, Laurent Villard</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/1.4982689">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>A PIC-MCC code RFdinity1d for simulation of discharge initiation by ICRF antenna</td>
+      <td>M. Tripský, T. Wauters, A. Lyssoivan, V. Bobkov, P.A. Schneider, I. Stepanov, D. Douai, D. Van Eester, J.-M. Noterdaeme, M. Van Schoor, ASDEX Upgrade Team, EUROfusion MST1 Team</td>
+      <td>Nuclear Fusion</td>
+      <td><a href="https://doi.org/10.1088/1741-4326/aa8446">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Sequential Batch Design for Gaussian Processes Employing Marginalization †</td>
+      <td>Roland Preuss, Udo Von Toussaint</td>
+      <td>Entropy</td>
+      <td><a href="https://doi.org/10.3390/e19020084">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Hierarchy of second order gyrokinetic Hamiltonian models for particle-in-cell codes</td>
+      <td>N Tronko, A Bottino, C Chandre, E Sonnendruecker</td>
+      <td>Plasma Physics and Controlled Fusion</td>
+      <td><a href="https://doi.org/10.1088/1361-6587/aa68af">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>GEMPIC: geometric electromagnetic particle-in-cell methods</td>
+      <td>Michael Kraus, Katharina Kormann, Philip J. Morrison, Eric Sonnendrücker</td>
+      <td>Journal of Plasma Physics</td>
+      <td><a href="https://doi.org/10.1017/S002237781700040X">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2017</td>
+      <td>Temporal parallelization of edge plasma simulations using the parareal algorithm and the SOLPS code</td>
+      <td>D. Samaddar, D.P. Coster, X. Bonnin, C. Bergmeister, E. Havlíc̆ková, L.A. Berry, W.R. Elwasif, D.B. Batchelor</td>
+      <td>Computer Physics Communications</td>
+      <td><a href="https://doi.org/10.1016/j.cpc.2017.07.012">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Second order gyrokinetic theory for particle-in-cell codes</td>
+      <td>Natalia Tronko, Alberto Bottino, Eric Sonnendrücker</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/1.4960039">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Intercode comparison of gyrokinetic global electromagnetic modes</td>
+      <td>T. Görler, N. Tronko, W. A. Hornsby, A. Bottino, R. Kleiber, C. Norscini, V. Grandgirard, F. Jenko, E. Sonnendrücker</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/1.4954915">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Inversion methods for fast-ion velocity-space tomography in fusion plasmas</td>
+      <td>A S Jacobsen, L Stagner, M Salewski, B Geiger, W W Heidbrink, S B Korsholm, F Leipold, S K Nielsen, J Rasmussen, M Stejner, H Thomsen, M Weiland, the ASDEX Upgrade team</td>
+      <td>Plasma Physics and Controlled Fusion</td>
+      <td><a href="https://doi.org/10.1088/0741-3335/58/4/045016">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>Electromagnetic thin-wall model for simulations of plasma wall-touching kink and vertical modes</td>
+      <td>Leonid E. Zakharov, Calin V. Atanasiu, Karl Lackner, Matthias Hoelzl, Erika Strumberger</td>
+      <td>Journal of Plasma Physics</td>
+      <td><a href="https://doi.org/10.1017/S0022377815001361">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2015</td>
+      <td>Lagrangian and Hamiltonian constraints for guiding-center Hamiltonian theories</td>
+      <td>Natalia Tronko, Alain J. Brizard</td>
+      <td>Physics of Plasmas</td>
+      <td><a href="https://doi.org/10.1063/1.4935925">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>On the meniscus formation and the negative hydrogen ion extraction from ITER neutral beam injection relevant ion source</td>
+      <td>S Mochalskyy, D Wünderlich, B Ruf, U Fantz, P Franzen, T Minea</td>
+      <td>Plasma Physics and Controlled Fusion</td>
+      <td><a href="https://doi.org/10.1088/0741-3335/56/10/105001">DOI</a></td>
+    </tr>
+    <tr>
+      <td>2013</td>
+      <td>3D numerical simulations of negative hydrogen ion extraction using realistic plasma parameters, geometry of the extraction aperture and full 3D magnetic field map</td>
+      <td>S. Mochalskyy, D. Wünderlich, B. Ruf, P. Franzen, U. Fantz, T. Minea</td>
+      <td>Review of Scientific Instruments</td>
+      <td><a href="https://doi.org/10.1063/1.4824746">DOI</a></td>
+    </tr>
+  
   </tbody>
 </table>
