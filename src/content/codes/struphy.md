@@ -1,3 +1,5 @@
-# STRUPHY
+---
+title: STRUPHY
+---
 
 STRUPHY landing page.

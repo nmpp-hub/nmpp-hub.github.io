@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const pageTitle = title ? `${title} — NMPP Division at IPP` : 'NMPP Division at IPP';
+
+const codes = await getCollection('codes');
+const codeList = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const path = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="/" class="nav-logo">Numerical Methods for Plasma Physics</a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="2" y1="5" x2="18" y2="5" />
+            <line x1="2" y1="10" x2="18" y2="10" />
+            <line x1="2" y1="15" x2="18" y2="15" />
+          </svg>
+        </button>
+
+        <ul class="nav-links" id="nav-links" role="list">
+          <li class={path === '/' ? 'nav-active' : ''}>
+            <a href="/">Home</a>
+          </li>
+          <li class={path.startsWith('/codes') ? 'nav-active' : ''}>
+            <a href="/codes/">Codes</a>
+            <ul class="nav-dropdown" role="list">
+              <li><a href="/codes/">Overview</a></li>
+              {codeList.map(code => (
+                <li>
+                  <a href={`/codes/${code.slug}/`}>{code.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li class={path.startsWith('/publications') ? 'nav-active' : ''}>
+            <a href="/publications/">Publications</a>
+          </li>
+          <li class={path.startsWith('/dissertations') ? 'nav-active' : ''}>
+            <a href="/dissertations/">Dissertations</a>
+          </li>
+          <li class={path.startsWith('/members') ? 'nav-active' : ''}>
+            <a href="/members/">Members</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>NMPP Division · Max Planck Institute for Plasma Physics</span>
+        <span>
+          <a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik" target="_blank" rel="noopener noreferrer">IPP webpage</a>
+          &middot;
+          <a href="https://github.com/nmpp-hub/nmpp-hub.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </span>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById('nav-toggle') as HTMLButtonElement | null;
+      const links = document.getElementById('nav-links') as HTMLElement | null;
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const open = links.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,3 +1,5 @@
-# HOPR
+---
+title: HOPR
+---
 
 Description of HOPR.

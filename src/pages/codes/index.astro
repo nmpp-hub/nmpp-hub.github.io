@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const codes = await getCollection('codes');
+const sorted = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<Base title="Codes">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1>Codes</h1>
+      <p>Software developed by the NMPP division at IPP.</p>
+    </div>
+    <div class="nmpp-grid">
+      {sorted.map(code => (
+        <a class="nmpp-card" href={`/codes/${code.slug}/`}>
+          <strong>{code.data.title}</strong>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

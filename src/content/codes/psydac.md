@@ -1,3 +1,5 @@
-# PSYDAC
+---
+title: PSYDAC
+---
 
 Description of PSYDAC.
