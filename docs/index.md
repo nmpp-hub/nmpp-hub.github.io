@@ -1,9 +1,44 @@
-<section class="nmpp-hero">
-	<h1>Numerical Methods in Plasma Physics</h1>
-	<p>
-		Established in 2012, the Division is developing new computational methods for fusion research.
-	</p>
-</section>
+<!-- Slideshow dependencies -->
+<link rel="stylesheet" href="assets/stylesheets/slideshow.css">
+<script src="assets/javascripts/slideshow.js"></script>
+
+<!-- Slideshow Banner -->
+<div class="nmpp-slideshow">
+	<button class="nmpp-arrow nmpp-arrow-left" aria-label="Previous slide">&#8592;</button>
+	<button class="nmpp-arrow nmpp-arrow-right" aria-label="Next slide">&#8594;</button>
+	<div class="nmpp-slide active">
+		<img src="assets/images/banner1.png" alt="Magnetohydrodynamics">
+		<div class="nmpp-slide-caption">
+			<div class="nmpp-slide-caption-content">
+				<strong>GVEC</strong><br>
+				blablabla stellarator equils.
+			</div>
+		</div>
+	</div>
+	<div class="nmpp-slide">
+		<img src="assets/images/banner2.jpg" alt="Simulation Visualization">
+		<div class="nmpp-slide-caption">
+			<div class="nmpp-slide-caption-content">
+				<strong>Hybrid simulations</strong><br>
+				wow particles.
+			</div>
+		</div>
+	</div>
+	<div class="nmpp-slide">
+		<img src="assets/images/banner3.png" alt="Numerical Methods">
+		<div class="nmpp-slide-caption">
+			<div class="nmpp-slide-caption-content">
+				<strong>Numerical Methods</strong><br>
+				Geometric Numerical Integration and Reduced Complexity Modelling.
+			</div>
+		</div>
+	</div>
+	<div class="nmpp-slideshow-controls">
+		<span class="nmpp-dot active"></span>
+		<span class="nmpp-dot"></span>
+		<span class="nmpp-dot"></span>
+	</div>
+</div>
 
 ## Main codes
 
