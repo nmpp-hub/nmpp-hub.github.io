@@ -12,13 +12,17 @@
 		<strong>GEMPICX</strong>
 		<span>Description of GEMPICX.</span>
 	</a>
+	<a class="nmpp-card" href="codes/gvec/">
+		<strong>GVEC</strong>
+		<span>Description of GVEC.</span>
+	</a>
 	<a class="nmpp-card" href="codes/struphy/">
 		<strong>STRUPHY</strong>
 		<span>Description of STRUPHY.</span>
 	</a>
-	<a class="nmpp-card" href="codes/gvec/">
-		<strong>GVEC</strong>
-		<span>Description of GVEC.</span>
+	<a class="nmpp-card" href="codes/psydac/">
+		<strong>PSYDAC</strong>
+		<span>Description of PSYDAC.</span>
 	</a>
 	<a class="nmpp-card" href="codes/geometricintegrators/">
 		<strong>GeometricIntegrators.jl</strong>
