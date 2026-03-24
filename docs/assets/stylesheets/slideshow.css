@@ -1,0 +1,104 @@
+/* Arrow navigation buttons */
+.nmpp-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(24,32,48,0.65);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.nmpp-arrow:hover {
+  background: rgba(24,32,48,0.92);
+}
+.nmpp-arrow-left {
+  left: 10px;
+}
+.nmpp-arrow-right {
+  right: 10px;
+}
+/* Simple slideshow styles for .nmpp-slideshow */
+.nmpp-slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(16, 40, 56, 0.2);
+}
+/* Each slide is a container div, not just an image */
+.nmpp-slide {
+  display: none;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  background: #222;
+  overflow: hidden;
+}
+.nmpp-slide.active {
+  display: block;
+}
+.nmpp-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 2 / 1;
+  display: block;
+}
+
+/* Translucent caption box on the left */
+.nmpp-slide-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 38%;
+  min-width: 180px;
+  max-width: 320px;
+  background: linear-gradient(90deg, rgba(24,32,48,0.78) 80%, rgba(24,32,48,0.0));
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2.2rem 1.2rem 1.2rem 1.2rem;
+  box-sizing: border-box;
+}
+.nmpp-slide-caption-content {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-shadow: 0 2px 8px #000a;
+}
+.nmpp-slide-caption-content strong {
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.nmpp-slideshow-controls {
+  position: absolute;
+  width: 100%;
+  bottom: 12px;
+  left: 0;
+  text-align: center;
+}
+.nmpp-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  background: #fff8;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff2;
+}
+.nmpp-dot.active {
+  background: #fff;
+  border-color: #fff;
+}
