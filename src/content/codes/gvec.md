@@ -1,3 +1,5 @@
-# GVEC
+---
+title: GVEC
+---
 
 GVEC landing page.

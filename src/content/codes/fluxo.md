@@ -1,3 +1,5 @@
-# FLUXO
+---
+title: FLUXO
+---
 
 Description of FLUXO.

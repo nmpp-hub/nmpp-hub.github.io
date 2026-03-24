@@ -2,3 +2,7 @@
 __pycache__/
 site/
 *.pyc
+
+node_modules/
+dist/
+.astro/

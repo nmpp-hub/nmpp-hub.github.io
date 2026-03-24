@@ -1,3 +1,5 @@
-# GEMPICX
+---
+title: GEMPICX
+---
 
 GEMPICX landing page.

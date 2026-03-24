@@ -3,38 +3,33 @@
 ## Local setup
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-## Add new publications
-
-Added publications to `dois.txt`, update `docs/publications.md` with
-
-```
-python populate_publications.py
+npm install
 ```
 
 ## Run locally
 
 ```bash
-mkdocs serve
+npm run dev
 ```
 
-Open `http://127.0.0.1:8000`.
+Open `http://localhost:4321`.
 
 ## Build static site
 
 ```bash
-mkdocs build
+npm run build
 ```
 
-The generated site is written to `site/`.
+The generated site is written to `dist/`.
 
 ## Customize the website
 
-1. Edit or replace the landing page at `docs/index.md`.
-2. Add code pages under `docs/codes/`; they are automatically included under the `Codes` menu.
-3. Add non-code pages under `docs/` and register them in `nav` inside `mkdocs.yml`.
+1. Edit the landing page at `src/pages/index.astro`.
+2. Add code pages under `src/content/codes/`; they are automatically included under the Codes menu and get their own page. Each file needs a `title` frontmatter field:
+   ```md
+   ---
+   title: MyCode
+   ---
+   Your content here.
+   ```
+3. Add non-code pages under `src/pages/` and add a nav link in `src/layouts/Base.astro`.
