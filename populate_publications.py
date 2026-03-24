@@ -56,13 +56,13 @@ def fetch_publication_metadata(doi: str) -> dict | None:
 
 
 def generate_table_row(pub: dict) -> str:
-    return f"""    <tr>
-      <td>{pub['year']}</td>
-      <td>{pub['title']}</td>
-      <td>{pub['authors']}</td>
-      <td>{pub['publisher']}</td>
-      <td><a href="https://doi.org/{pub['doi']}">DOI</a></td>
-    </tr>"""
+    return f"""        <tr>
+          <td>{pub['year']}</td>
+          <td>{pub['title']}</td>
+          <td>{pub['authors']}</td>
+          <td>{pub['publisher']}</td>
+          <td><a href="https://doi.org/{pub['doi']}">DOI</a></td>
+        </tr>"""
 
 
 def main(dois_file: Path, publications_file: Path):
@@ -101,8 +101,8 @@ def main(dois_file: Path, publications_file: Path):
 
     # Replace the tbody content
     new_content = re.sub(
-        r"(<tbody>)\n.*?(\n  </tbody>)",
-        f"\\1\n{rows}\n  \\2",
+        r"(<tbody>).*?(</tbody>)",
+        f"\\1\n{rows}\n      \\2",
         content,
         flags=re.DOTALL,
     )
@@ -114,4 +114,4 @@ def main(dois_file: Path, publications_file: Path):
 
 
 if __name__ == "__main__":
-    main(Path("dois.txt"), Path("docs/publications.md"))
+    main(Path("dois.txt"), Path("src/pages/publications.astro"))

@@ -22,6 +22,16 @@ npm run build
 
 The generated site is written to `dist/`.
 
+## Add new publications
+
+Add DOIs to `dois.txt` (one per line), then run:
+
+```bash
+python populate_publications.py
+```
+
+This fetches metadata from doi.org and overwrites the `<tbody>` in `src/pages/publications.astro`.
+
 ## Customize the website
 
 1. Edit the landing page at `src/pages/index.astro`.
