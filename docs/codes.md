@@ -6,12 +6,13 @@ The following codes are developed at NMPP, maybe we should distinguish between c
 
 ## Codes
 
-- [GEMPICX](/codes/gempicx/)
-- [STRUPHY](/codes/struphy/)
-- [GVEC](/codes/gvec/)
-- [GeometricIntegrators.jl](/codes/geometricintegrators/)
-- [Hyper.deal](/codes/hyperdeal/)
-- [HermiteGF.jl](/codes/hermitegf/)
-- [HOPR](/codes/hopr/)
-- [FLUXO](/codes/fluxo/)
-- [BSL6D](/codes/bsl6d/)
+- [BSL6D](codes/bsl6d.md)
+- [FLUXO](codes/fluxo.md)
+- [GEMPICX](codes/gempicx.md)
+- [GeometricIntegrators.jl](codes/geometricintegrators.md)
+- [GVEC](codes/gvec.md)
+- [HermiteGF.jl](codes/hermitegf.md)
+- [HOPR](codes/hopr.md)
+- [Hyper.deal](codes/hyperdeal.md)
+- [PSYDAC](codes/psydac.md)
+- [STRUPHY](codes/struphy.md)
