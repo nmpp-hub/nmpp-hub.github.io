@@ -12,10 +12,25 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const normalizedPath = entry.data.path?.endsWith('/')
+  ? entry.data.path
+  : `${entry.data.path}/`;
+
+const breadcrumb = {
+  // Expected path format: `/codes/<slug>/`
+  homeHref: '/codes/',
+  currentLabel: entry.data.title,
+};
 ---
 
 <Base title={entry.data.title}>
   <div class="page-wrapper">
+    <nav aria-label="Breadcrumb" style="margin-bottom: 0.75rem;">
+      <a href={breadcrumb.homeHref} style="text-decoration: underline;">Codes</a>
+      <span aria-hidden="true" style="margin: 0 0.5rem;">/</span>
+      <span>{breadcrumb.currentLabel}</span>
+    </nav>
     <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{entry.data.title}</h1>
     <div class="prose">
       <Content />
