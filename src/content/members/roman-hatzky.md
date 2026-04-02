@@ -37,7 +37,7 @@ title: Roman Hatzky
   <tr>
     <td>2019</td>
     <td>Reduction of the statistical error in electromagnetic gyrokinetic particle-in-cell simulations</td>
-    <td>R. Hatzky, R. Kleiber, A. Könies, A. Mishchenko, M. Borchardt, A. Bottino, E. Sonnendrücker</td>
+    <td><a href="/members/roman-hatzky/">R. Hatzky</a>, R. Kleiber, A. Könies, A. Mishchenko, M. Borchardt, A. Bottino, <a href="/members/eric-sonnendrucker/">E. Sonnendrücker</a></td>
     <td>Journal of Plasma Physics</td>
     <td><a href="https://doi.org/10.1017/S0022377819000096">DOI</a></td>
   </tr>

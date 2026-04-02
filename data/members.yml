@@ -6,7 +6,7 @@ members:
   group: Numerical Methods in Plasma Physics
   codes: [gempicx]
   alumni: false
-  aliases: []
+  aliases: ["E. Sonnendrücker"]
   picture: 'https://www.ipp.mpg.de/5422649/original-1763388322.webp'  # optional: set to a URL or /images/members/filename.jpg
 - name: Florian Hindenlang
   role: permanent staff

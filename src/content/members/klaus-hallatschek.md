@@ -51,42 +51,42 @@ title: Klaus Hallatschek
   <tr>
     <td>2024</td>
     <td>High-Frequency Nongyrokinetic Turbulence at Tokamak Edge Parameters</td>
-    <td>M. Raeth, K. Hallatschek</td>
+    <td>M. Raeth, <a href="/members/klaus-hallatschek/">K. Hallatschek</a></td>
     <td>Physical Review Letters</td>
     <td><a href="https://doi.org/10.1103/PhysRevLett.133.195101">DOI</a></td>
   </tr>
   <tr>
     <td>2024</td>
     <td>Simulation of ion temperature gradient driven modes with 6D kinetic Vlasov code</td>
-    <td>M. Raeth, K. Hallatschek, K. Kormann</td>
+    <td>M. Raeth, <a href="/members/klaus-hallatschek/">K. Hallatschek</a>, K. Kormann</td>
     <td>Physics of Plasmas</td>
     <td><a href="https://doi.org/10.1063/5.0197970">DOI</a></td>
   </tr>
   <tr>
     <td>2012</td>
     <td>Excitation of Geodesic Acoustic Modes by External Fields</td>
-    <td>K. Hallatschek, G. R. McKee</td>
+    <td><a href="/members/klaus-hallatschek/">K. Hallatschek</a>, G. R. McKee</td>
     <td>Physical Review Letters</td>
     <td><a href="https://doi.org/10.1103/PhysRevLett.109.245001">DOI</a></td>
   </tr>
   <tr>
     <td>2007</td>
     <td>Nonlinear three-dimensional flows in magnetized plasmas</td>
-    <td>K Hallatschek</td>
+    <td><a href="/members/klaus-hallatschek/">K Hallatschek</a></td>
     <td>Plasma Physics and Controlled Fusion</td>
     <td><a href="https://doi.org/10.1088/0741-3335/49/12B/S13">DOI</a></td>
   </tr>
   <tr>
     <td>2004</td>
     <td>Turbulent Saturation of Tokamak-Core Zonal Flows</td>
-    <td>K. Hallatschek</td>
+    <td><a href="/members/klaus-hallatschek/">K. Hallatschek</a></td>
     <td>Physical Review Letters</td>
     <td><a href="https://doi.org/10.1103/PhysRevLett.93.065001">DOI</a></td>
   </tr>
   <tr>
     <td>2001</td>
     <td>Transport Control by Coherent Zonal Flows in the Core/Edge Transitional Regime</td>
-    <td>K. Hallatschek, D. Biskamp</td>
+    <td><a href="/members/klaus-hallatschek/">K. Hallatschek</a>, D. Biskamp</td>
     <td>Physical Review Letters</td>
     <td><a href="https://doi.org/10.1103/PhysRevLett.86.1223">DOI</a></td>
   </tr>
