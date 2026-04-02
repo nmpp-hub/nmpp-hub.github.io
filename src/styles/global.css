@@ -616,9 +616,13 @@ h5 {
     background: #f8fafb;
     border-radius: 0.4rem;
     max-height: none !important;
-    display: block !important;
+    display: none !important;
     margin-top: 0.15rem;
     padding: 0.2rem 0 0.2rem 0.5rem;
+  }
+
+  .nav-links > li:focus-within .nav-dropdown {
+    display: block !important;
   }
 
   .nmpp-grid {
