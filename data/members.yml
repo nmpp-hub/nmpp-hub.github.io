@@ -1,10 +1,18 @@
 members:
+- name: Eric Sonnendrücker
+  role: professor
+  topic: Numerical methods for plasma physics
+  contact: i.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: false
+  aliases: []
 - name: A. Example
   role: permanent staff
   topic: Plasma simulation methods
   contact: a.example@example.org
   group: Numerical Methods in Plasma Physics
-  codes: []
+  codes: [gempicx]
   alumni: false
   aliases: []
 - name: B. Example
@@ -62,4 +70,12 @@ members:
   group: Numerical Methods in Plasma Physics
   codes: []
   alumni: true
+  aliases: []
+- name: J. Example
+  role: admin staff
+  topic: Group administration and coordination
+  contact: j.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: false
   aliases: []

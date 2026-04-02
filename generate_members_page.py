@@ -14,18 +14,22 @@ ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data" / "members.yml"
 OUTPUT_FILE = ROOT / "src" / "pages" / "members.astro"
 
-ROLE_ORDER = ["permanent staff", "postdoc", "phd", "msc"]
+ROLE_ORDER = ["professor", "permanent staff", "postdoc", "phd", "msc", "admin staff"]
 ROLE_TITLES = {
+    "professor": "Professor",
     "permanent staff": "Permanent Staff",
     "postdoc": "Postdocs",
     "phd": "PhD Students",
     "msc": "MSc Students",
+    "admin staff": "Administrative Staff",
 }
 ROLE_LABELS = {
+    "professor": "Professor",
     "permanent staff": "Permanent staff",
     "postdoc": "Postdoc",
     "phd": "PhD",
     "msc": "MSc",
+    "admin staff": "Admin staff",
 }
 
 
@@ -42,7 +46,7 @@ def validate_member(raw: dict, index: int) -> dict:
     if not name:
         raise ValueError(f"Member {index} is missing a name")
     if role not in ROLE_ORDER:
-        raise ValueError(f"Member {name} has invalid role {role!r}")
+        raise ValueError(f"Member {name} has invalid role {role!r}. Valid roles: {ROLE_ORDER}")
     if not topic:
         raise ValueError(f"Member {name} is missing a topic")
     if not group:
