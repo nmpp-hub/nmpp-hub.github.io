@@ -6,9 +6,10 @@ title: Kinetic and Gyrokinetic Models
 
 <p><strong>Dr. Stefan Possanner</strong></p>
 
-## Custom Content
+## Links
 
 <!-- CUSTOM:CONTENT:START -->
+- [Kinetic and Gyrokinetic Models (KGKM)](https://www.ipp.mpg.de/4104717/kgkm)
 <!-- CUSTOM:CONTENT:END -->
 
 ## Members

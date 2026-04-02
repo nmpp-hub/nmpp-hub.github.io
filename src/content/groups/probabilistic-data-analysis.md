@@ -6,9 +6,10 @@ title: Probabilistic Data Analysis and Active Learning
 
 <p><strong>Priv. Doz. Dr. Udo von Toussaint</strong></p>
 
-## Custom Content
+## Links
 
 <!-- CUSTOM:CONTENT:START -->
+- [Probabilistic Data Analysis and Active Learning (DAAL)](https://www.ipp.mpg.de/3989973/daal)
 <!-- CUSTOM:CONTENT:END -->
 
 ## Members

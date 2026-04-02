@@ -55,8 +55,9 @@ def load_groups() -> list[dict]:
             {
                 "name": str(entry.get("name", "")).strip(),
                 "leader": str(entry.get("leader", "")).strip(),
-                "phone": str(entry.get("phone", "")).strip(),
                 "slug": str(entry.get("slug", "")).strip(),
+                "abbr": str(entry.get("abbr", "")).strip(),
+                "ipp_url": str(entry.get("ipp_url", "")).strip(),
             }
         )
     return groups
@@ -266,11 +267,22 @@ def inject_between_markers(content: str, start_marker: str, end_marker: str, pay
     return content
 
 
+def build_custom_links_section(group: dict) -> str:
+    """Build the custom links section with IPP webpage link."""
+    abbr = group.get("abbr", "")
+    ipp_url = group.get("ipp_url", "")
+    if ipp_url:
+        link_text = f"{group['name']} ({abbr})" if abbr else group['name']
+        return f"- [{link_text}]({escape_text(ipp_url)})"
+    return ""
+
+
 def build_group_page_content(
     group: dict, members: list[dict], publications: list[dict], dissertations: list[dict], author_to_slug: dict[str, str] | None = None
 ) -> str:
     """Build the complete group page content with markers."""
     leader_section = build_leader_section(group)
+    custom_links = build_custom_links_section(group)
     members_section = build_members_list(members)
     pubs_section = build_publications_table(publications, author_to_slug)
     diss_section = build_dissertations_table(dissertations)
@@ -283,7 +295,7 @@ title: {escape_text(group['name'])}
 
 {leader_section}
 
-## Custom Content
+## Links
 
 {CUSTOM_START}
 {CUSTOM_END}
@@ -305,6 +317,7 @@ title: {escape_text(group['name'])}
 """
 
     # Inject content between markers
+    content = inject_between_markers(content, CUSTOM_START, CUSTOM_END, custom_links)
     content = inject_between_markers(content, MEMBERS_START, MEMBERS_END, members_section)
     content = inject_between_markers(content, PUBLICATIONS_START, PUBLICATIONS_END, pubs_section)
     content = inject_between_markers(content, DISSERTATIONS_START, DISSERTATIONS_END, diss_section)
