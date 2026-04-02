@@ -10,7 +10,7 @@ title: F. Example
 <div class="member-profile-photo-circle member-photo-placeholder"></div>
 </div>
 <div class="member-profile-text">
-<p><strong>Group:</strong> Numerical Methods in Plasma Physics</p>
+<p><strong>Group:</strong> None</p>
 <p><strong>Topic:</strong> Geometry kernels for transport</p>
 </div>
 </div>

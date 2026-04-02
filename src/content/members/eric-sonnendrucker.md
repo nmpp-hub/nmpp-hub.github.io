@@ -10,7 +10,7 @@ title: Eric Sonnendrücker
 <img src="https://www.ipp.mpg.de/5422649/original-1763388322.webp" alt="Eric Sonnendrücker" class="member-profile-photo-circle" />
 </div>
 <div class="member-profile-text">
-<p><strong>Group:</strong> Numerical Methods in Plasma Physics</p>
+<p><strong>Group:</strong> None</p>
 <p><strong>Topic:</strong> Numerical methods for plasma physics</p>
 <p><strong>Codes:</strong> <a href="/codes/gempicx/">gempicx</a></p>
 </div>

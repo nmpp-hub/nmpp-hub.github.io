@@ -51,6 +51,7 @@ def main() -> int:
         (scripts_dir / "generate_code_pages.py", "Generate Code Pages"),
         (scripts_dir / "generate_members_page.py", "Generate Members Page"),
         (scripts_dir / "generate_member_pages.py", "Generate Individual Member Pages"),
+        (scripts_dir / "generate_group_pages.py", "Generate Group Pages"),
     ]
 
     results = []

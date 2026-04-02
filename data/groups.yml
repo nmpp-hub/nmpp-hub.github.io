@@ -1,0 +1,42 @@
+groups:
+- name: Kinetic and Gyrokinetic Models
+  leader: Dr. Stefan Possanner
+  slug: kinetic-gyrokinetic-models
+  abbr: KGKM
+  ipp_url: https://www.ipp.mpg.de/4104717/kgkm
+
+- name: Magnetohydrodynamics
+  leader: Dr. Ing. Florian Hindenlang
+  slug: magnetohydrodynamics
+  abbr: MHD
+  ipp_url: https://www.ipp.mpg.de/4119345/mhd
+
+- name: Geometric Numerical Integration and Reduced Complexity Modelling
+  leader: Dr. Michael Kraus
+  slug: geometric-numerical-integration
+  abbr: GNI
+  ipp_url: https://www.ipp.mpg.de/4105128/gspm
+
+- name: Probabilistic Data Analysis and Active Learning
+  leader: Priv. Doz. Dr. Udo von Toussaint
+  slug: probabilistic-data-analysis
+  abbr: DAAL
+  ipp_url: https://www.ipp.mpg.de/3989973/daal
+
+- name: Zonal Flows in Turbulent Plasmas
+  leader: Priv. Doz. Dr. Klaus Hallatschek
+  slug: zonal-flows-turbulent
+  abbr: ZFSFTP
+  ipp_url: https://www.ipp.mpg.de/4171847/zfsftp
+
+- name: Advanced Computing Hub
+  leader: Dr. Roman Hatzky
+  slug: advanced-computing-hub
+  abbr: ACH
+  ipp_url: https://www.ipp.mpg.de/3987588/ach
+
+- name: Finite Element Methods
+  leader: Priv. Doz. Dr. Martin Campos Pinto
+  slug: finite-element-methods
+  abbr: FEM
+  ipp_url: https://www.ipp.mpg.de/5150531/fem

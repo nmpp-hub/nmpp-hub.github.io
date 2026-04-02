@@ -15,4 +15,11 @@ const members = defineCollection({
   }),
 });
 
-export const collections = { codes, members };
+const groups = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
+export const collections = { codes, members, groups };

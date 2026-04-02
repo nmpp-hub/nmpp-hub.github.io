@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const groups = await getCollection('groups');
+
+// Sort groups by title
+const sortedGroups = groups.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+---
+
+<Base title="Groups">
+  <div class="page-wrapper">
+    <div class="page-header">
+      <h1>Research Groups</h1>
+      <p>Research groups within the NMPP division at IPP.</p>
+    </div>
+    <div class="prose">
+      <div class="nmpp-grid">
+        {sortedGroups.map((group) => (
+          <a href={`/groups/${group.slug}/`} class="nmpp-card">
+            <strong>{group.data.title}</strong>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Base>

@@ -1,25 +1,24 @@
 ---
-title: Klaus Hallatschek
+title: Zonal Flows in Turbulent Plasmas
 ---
 
-## Profile
+## Group Leader
 
-<!-- AUTO:PROFILE:START -->
-<div class="member-profile-flex">
-<div class="member-profile-photo-wrapper">
-<div class="member-profile-photo-circle member-photo-placeholder"></div>
-</div>
-<div class="member-profile-text">
-<p><strong>Group:</strong> Zonal Flows in Turbulent Plasmas</p>
-<p><strong>Codes:</strong> <a href="/codes/bsl6d/">bsl6d</a></p>
-</div>
-</div>
-<!-- AUTO:PROFILE:END -->
+<p><strong>Priv. Doz. Dr. Klaus Hallatschek</strong></p>
 
-## About
+<!-- CUSTOM:CONTENT:START -->
+## Links
 
-<!-- CUSTOM:ABOUT:START -->
-<!-- CUSTOM:ABOUT:END -->
+- [Zonal Flows in Turbulent Plasmas (ZFSFTP)](https://www.ipp.mpg.de/4171847/zfsftp)
+<!-- CUSTOM:CONTENT:END -->
+
+## Members
+
+<!-- AUTO:MEMBERS:START -->
+<ul>
+  <li><a href="/members/klaus-hallatschek/">Klaus Hallatschek</a></li>
+</ul>
+<!-- AUTO:MEMBERS:END -->
 
 ## Publications
 
@@ -64,11 +63,25 @@ title: Klaus Hallatschek
     <td><a href="https://doi.org/10.1063/5.0197970">DOI</a></td>
   </tr>
   <tr>
+    <td>2024</td>
+    <td>Surprisingly tight Courant–Friedrichs–Lewy condition in explicit high-order Arakawa schemes</td>
+    <td>Mario Raeth, <a href="/members/klaus-hallatschek/">Klaus Hallatschek</a></td>
+    <td>Physics of Fluids</td>
+    <td><a href="https://doi.org/10.1063/5.0223009">DOI</a></td>
+  </tr>
+  <tr>
     <td>2012</td>
     <td>Excitation of Geodesic Acoustic Modes by External Fields</td>
     <td><a href="/members/klaus-hallatschek/">K. Hallatschek</a>, G. R. McKee</td>
     <td>Physical Review Letters</td>
     <td><a href="https://doi.org/10.1103/PhysRevLett.109.245001">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2012</td>
+    <td>The nonlinear dispersion relation of geodesic acoustic modes</td>
+    <td>Robert Hager, <a href="/members/klaus-hallatschek/">Klaus Hallatschek</a></td>
+    <td>Physics of Plasmas</td>
+    <td><a href="https://doi.org/10.1063/1.4747725">DOI</a></td>
   </tr>
   <tr>
     <td>2007</td>
@@ -98,5 +111,5 @@ title: Klaus Hallatschek
 ## Dissertations
 
 <!-- AUTO:DISSERTATIONS:START -->
-<p>No dissertations yet.</p>
+<p>No dissertations for this group yet.</p>
 <!-- AUTO:DISSERTATIONS:END -->

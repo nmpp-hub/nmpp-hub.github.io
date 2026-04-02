@@ -3,7 +3,7 @@ members:
   role: professor
   topic: Numerical methods for plasma physics
   contact: i.example@example.org
-  group: Numerical Methods in Plasma Physics
+  group: ~
   codes: [gempicx]
   alumni: false
   aliases: ["E. Sonnendrücker"]
@@ -21,7 +21,7 @@ members:
   role: permanent staff
   topic: ""
   contact: b.example@example.org
-  group: ""
+  group: Kinetic and Gyrokinetic Models
   codes: [struphy]
   alumni: false
   aliases: []
@@ -29,7 +29,7 @@ members:
   role: permanent staff
   topic: ""
   contact: b.example@example.org
-  group: ""
+  group: Geometric Numerical Integration and Reduced Complexity Modelling
   codes: [geometricintegrators, geometricmachinelearning]
   alumni: false
   aliases: []
@@ -37,7 +37,7 @@ members:
   role: permanent staff
   topic: ""
   contact: b.example@example.org
-  group: ""
+  group: Probabilistic Data Analysis and Active Learning
   codes: []
   alumni: false
   aliases: []
@@ -45,7 +45,7 @@ members:
   role: permanent staff
   topic: ""
   contact: b.example@example.org
-  group: ""
+  group: Zonal Flows in Turbulent Plasmas
   codes: [bsl6d]
   alumni: false
   aliases: []
@@ -53,7 +53,7 @@ members:
   role: permanent staff
   topic: ""
   contact: b.example@example.org
-  group: ""
+  group: Finite Element Methods
   codes: [psydac]
   alumni: false
   aliases: []
@@ -61,7 +61,7 @@ members:
   role: permanent staff
   topic: ""
   contact: b.example@example.org
-  group: ""
+  group: Advanced Computing Hub
   codes: []
   alumni: false
   aliases: []
@@ -69,7 +69,7 @@ members:
   role: postdoc
   topic: Gyrokinetic modeling
   contact: c.example@example.org
-  group: Numerical Methods in Plasma Physics
+  group: ~
   codes: []
   alumni: false
   aliases: []
@@ -77,7 +77,7 @@ members:
   role: postdoc
   topic: High-performance solvers
   contact: d.example@example.org
-  group: Numerical Methods in Plasma Physics
+  group: ~
   codes: []
   alumni: false
   aliases: []
@@ -85,7 +85,7 @@ members:
   role: phd
   topic: Kinetic turbulence simulation
   contact: e.example@example.org
-  group: Numerical Methods in Plasma Physics
+  group: ~
   codes: []
   alumni: false
   aliases: []
@@ -93,7 +93,7 @@ members:
   role: msc
   topic: Geometry kernels for transport
   contact: f.example@example.org
-  group: Numerical Methods in Plasma Physics
+  group: ~
   codes: []
   alumni: false
   aliases: []
@@ -101,7 +101,7 @@ members:
   role: phd
   topic: Completed PhD research
   contact: ''
-  group: Numerical Methods in Plasma Physics
+  group: ~
   codes: []
   alumni: true
   aliases: []
@@ -109,7 +109,7 @@ members:
   role: msc
   topic: Completed MSc research
   contact: ''
-  group: Numerical Methods in Plasma Physics
+  group: ~
   codes: []
   alumni: true
   aliases: []
@@ -117,7 +117,7 @@ members:
   role: admin staff
   topic: Group administration and coordination
   contact: j.example@example.org
-  group: Numerical Methods in Plasma Physics
+  group: ~
   codes: []
   alumni: false
   aliases: []

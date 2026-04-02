@@ -1,24 +1,24 @@
 ---
-title: Roman Hatzky
+title: Advanced Computing Hub
 ---
 
-## Profile
+## Group Leader
 
-<!-- AUTO:PROFILE:START -->
-<div class="member-profile-flex">
-<div class="member-profile-photo-wrapper">
-<div class="member-profile-photo-circle member-photo-placeholder"></div>
-</div>
-<div class="member-profile-text">
-<p><strong>Group:</strong> Advanced Computing Hub</p>
-</div>
-</div>
-<!-- AUTO:PROFILE:END -->
+<p><strong>Dr. Roman Hatzky</strong></p>
 
-## About
+<!-- CUSTOM:CONTENT:START -->
+## Links
 
-<!-- CUSTOM:ABOUT:START -->
-<!-- CUSTOM:ABOUT:END -->
+- [Advanced Computing Hub (ACH)](https://www.ipp.mpg.de/3987588/ach)
+<!-- CUSTOM:CONTENT:END -->
+
+## Members
+
+<!-- AUTO:MEMBERS:START -->
+<ul>
+  <li><a href="/members/roman-hatzky/">Roman Hatzky</a></li>
+</ul>
+<!-- AUTO:MEMBERS:END -->
 
 ## Publications
 
@@ -48,5 +48,5 @@ title: Roman Hatzky
 ## Dissertations
 
 <!-- AUTO:DISSERTATIONS:START -->
-<p>No dissertations yet.</p>
+<p>No dissertations for this group yet.</p>
 <!-- AUTO:DISSERTATIONS:END -->
