@@ -10,6 +10,7 @@ title: Martin Campos Pinto
 <div class="member-profile-photo-circle member-photo-placeholder"></div>
 </div>
 <div class="member-profile-text">
+<p><strong>Group:</strong> Finite Element Methods</p>
 <p><strong>Codes:</strong> <a href="/codes/psydac/">psydac</a></p>
 </div>
 </div>

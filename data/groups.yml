@@ -1,0 +1,28 @@
+groups:
+- name: Kinetic and Gyrokinetic Models
+  leader: Dr. Stefan Possanner
+  slug: kinetic-gyrokinetic-models
+
+- name: Magnetohydrodynamics
+  leader: Dr. Ing. Florian Hindenlang
+  slug: magnetohydrodynamics
+
+- name: Geometric Numerical Integration and Reduced Complexity Modelling
+  leader: Dr. Michael Kraus
+  slug: geometric-numerical-integration
+
+- name: Probabilistic Data Analysis and Active Learning
+  leader: Priv. Doz. Dr. Udo von Toussaint
+  slug: probabilistic-data-analysis
+
+- name: Zonal Flows in Turbulent Plasmas
+  leader: Priv. Doz. Dr. Klaus Hallatschek
+  slug: zonal-flows-turbulent
+
+- name: Advanced Computing Hub
+  leader: Dr. Roman Hatzky
+  slug: advanced-computing-hub
+
+- name: Finite Element Methods
+  leader: Priv. Doz. Dr. Martin Campos Pinto
+  slug: finite-element-methods

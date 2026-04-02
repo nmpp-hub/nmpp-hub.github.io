@@ -10,7 +10,7 @@ title: Udo von Toussaint
 <div class="member-profile-photo-circle member-photo-placeholder"></div>
 </div>
 <div class="member-profile-text">
-<p>No additional information available.</p>
+<p><strong>Group:</strong> Probabilistic Data Analysis and Active Learning</p>
 </div>
 </div>
 <!-- AUTO:PROFILE:END -->
