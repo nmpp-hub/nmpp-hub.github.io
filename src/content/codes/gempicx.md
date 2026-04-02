@@ -13,6 +13,7 @@ GEMPICX landing page.
 
 <!-- AUTO:MEMBERS:START -->
 <ul>
+  <li>Eric Sonnendrücker (Professor)</li>
   <li>A. Example (Permanent staff)</li>
 </ul>
 <!-- AUTO:MEMBERS:END -->

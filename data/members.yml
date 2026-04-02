@@ -4,9 +4,10 @@ members:
   topic: Numerical methods for plasma physics
   contact: i.example@example.org
   group: Numerical Methods in Plasma Physics
-  codes: []
+  codes: [gempicx]
   alumni: false
   aliases: []
+  picture: 'https://www.ipp.mpg.de/5422649/original-1763388322.webp'  # optional: set to a URL or /images/members/filename.jpg
 - name: A. Example
   role: permanent staff
   topic: Plasma simulation methods
@@ -15,6 +16,7 @@ members:
   codes: [gempicx]
   alumni: false
   aliases: []
+  picture: 'https://www.ipp.mpg.de/5446851/original-1727074133.webp'
 - name: B. Example
   role: permanent staff
   topic: Structure-preserving numerics
