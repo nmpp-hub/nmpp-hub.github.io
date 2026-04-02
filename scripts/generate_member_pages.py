@@ -295,6 +295,8 @@ def build_dissertations_list(dissertations: list[dict]) -> str:
 
 PROFILE_START = "<!-- AUTO:PROFILE:START -->"
 PROFILE_END = "<!-- AUTO:PROFILE:END -->"
+ABOUT_START = "<!-- CUSTOM:ABOUT:START -->"
+ABOUT_END = "<!-- CUSTOM:ABOUT:END -->"
 PUBLICATIONS_START = "<!-- AUTO:PUBLICATIONS:START -->"
 PUBLICATIONS_END = "<!-- AUTO:PUBLICATIONS:END -->"
 DISSERTATIONS_START = "<!-- AUTO:DISSERTATIONS:START -->"
@@ -327,6 +329,12 @@ title: {escape_text(member_name)}
 {PROFILE_START}
 {PROFILE_END}
 
+## About
+
+{ABOUT_START}
+Add custom content here (research interests, bio, etc.)
+{ABOUT_END}
+
 ## Publications
 
 {PUBLICATIONS_START}
@@ -355,6 +363,11 @@ title: {escape_text(member['name'])}
 
 {PROFILE_START}
 {PROFILE_END}
+
+## About
+
+{ABOUT_START}
+{ABOUT_END}
 
 ## Publications
 

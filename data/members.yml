@@ -57,6 +57,14 @@ members:
   codes: [psydac]
   alumni: false
   aliases: []
+- name: Roman Hatzky
+  role: permanent staff
+  topic: ""
+  contact: b.example@example.org
+  group: ""
+  codes: []
+  alumni: false
+  aliases: []
 - name: C. Example
   role: postdoc
   topic: Gyrokinetic modeling

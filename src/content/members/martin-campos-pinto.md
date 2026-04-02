@@ -15,6 +15,11 @@ title: Martin Campos Pinto
 </div>
 <!-- AUTO:PROFILE:END -->
 
+## About
+
+<!-- CUSTOM:ABOUT:START -->
+<!-- CUSTOM:ABOUT:END -->
+
 ## Publications
 
 <!-- AUTO:PUBLICATIONS:START -->

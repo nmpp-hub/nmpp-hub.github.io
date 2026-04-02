@@ -16,6 +16,11 @@ title: D. Example
 </div>
 <!-- AUTO:PROFILE:END -->
 
+## About
+
+<!-- CUSTOM:ABOUT:START -->
+<!-- CUSTOM:ABOUT:END -->
+
 ## Publications
 
 <!-- AUTO:PUBLICATIONS:START -->
