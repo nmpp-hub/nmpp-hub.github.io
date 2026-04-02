@@ -36,6 +36,13 @@ title: Stefan Possanner
   </thead>
   <tbody>
   <tr>
+    <td>2024</td>
+    <td>Canonical variables based numerical schemes for hybrid plasma models with kinetic ions and massless electrons</td>
+    <td>Yingzhe Li, Florian Holderied, <a href="/members/stefan-possanner/">Stefan Possanner</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
+    <td>Journal of Computational Physics</td>
+    <td><a href="https://doi.org/10.1016/j.jcp.2024.112916">DOI</a></td>
+  </tr>
+  <tr>
     <td>2023</td>
     <td>High-Order Structure-Preserving Algorithms for Plasma Hybrid Models</td>
     <td><a href="/members/stefan-possanner/">Stefan Possanner</a>, Florian Holderied, Yingzhe Li, Byung Kyu Na, Dominik Bell, Said Hadjout, <a href="/members/yaman-guclu/">Yaman Güçlü</a></td>

@@ -41,6 +41,7 @@ def generate_standard_aliases(name: str) -> list[str]:
     """Generate standard name variations for alias matching.
 
     For "John Smith-Jones", generates:
+    - john smith-jones (full name)
     - j. smith-jones
     - j smith-jones
     - smith-jones, j.
@@ -54,11 +55,11 @@ def generate_standard_aliases(name: str) -> list[str]:
     import unicodedata
 
     # Normalize unicode
-    name = unicodedata.normalize("NFD", name)
-    name = name.encode("ascii", "ignore").decode("ascii")
-    name = name.strip()
+    name_normalized = unicodedata.normalize("NFD", name)
+    name_normalized = name_normalized.encode("ascii", "ignore").decode("ascii")
+    name_normalized = name_normalized.strip()
 
-    parts = name.split()
+    parts = name_normalized.split()
     if len(parts) < 2:
         return []
 
@@ -70,6 +71,9 @@ def generate_standard_aliases(name: str) -> list[str]:
     last_name = last_part
 
     aliases = set()
+
+    # Always include the full normalized name
+    aliases.add(name_normalized.lower())
 
     # Generate variations for full first name with last name
     first_initial = first_name[0].lower()
@@ -179,6 +183,8 @@ def member_matches_dissertation(member: dict, dissertation: dict) -> bool:
 
 def member_matches_publication(member: dict, publication: dict) -> bool:
     """Check if a member's aliases match publication authors or codes."""
+    import unicodedata
+
     # Check if publication is linked to member's codes
     for code in member["codes"]:
         if code in publication.get("codes", []):
@@ -188,7 +194,12 @@ def member_matches_publication(member: dict, publication: dict) -> bool:
     if not member["aliases"]:
         return False
 
-    authors_lower = publication.get("authors", "").lower()
+    # Normalize author names (remove accents) for comparison
+    authors_raw = publication.get("authors", "")
+    authors_normalized = unicodedata.normalize("NFD", authors_raw)
+    authors_normalized = authors_normalized.encode("ascii", "ignore").decode("ascii")
+    authors_lower = authors_normalized.lower()
+
     for alias in member["aliases"]:
         if alias.lower() in authors_lower or authors_lower in alias.lower():
             return True
