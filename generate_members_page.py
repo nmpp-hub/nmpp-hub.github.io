@@ -36,6 +36,7 @@ def validate_member(raw: dict, index: int) -> dict:
     contact = str(raw.get("contact", "")).strip()
     group = str(raw.get("group", "")).strip()
     codes = ensure_list(raw.get("codes", []))
+    aliases = ensure_list(raw.get("aliases", []))
     alumni = bool(raw.get("alumni", False))
 
     if not name:
@@ -54,6 +55,7 @@ def validate_member(raw: dict, index: int) -> dict:
         "contact": contact,
         "group": group,
         "codes": codes,
+        "aliases": aliases,
         "alumni": alumni,
     }
 

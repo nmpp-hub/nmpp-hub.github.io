@@ -1,89 +1,179 @@
 publications:
-  - doi: 10.1017/S0022377821001082
-  - doi: 10.1088/1361-6587/aba858
-  - doi: 10.1063/5.0087104
-  - doi: 10.1088/1361-6587/adb64b
-  - doi: 10.1088/1741-4326/acdd12
-  - doi: 10.1016/j.jcp.2020.109694
-  - doi: 10.1007/s10915-023-02351-x
-  - doi: 10.1016/j.jcp.2019.108889
-  - doi: 10.5802/smai-jcm.20
-  - doi: 10.1063/1.4998610
-  - doi: 10.1093/imanum/draa022
-  - doi: 10.1007/978-3-031-38299-4_28
-  - doi: 10.1016/j.jcp.2018.06.027
-  - doi: 10.1007/s10915-018-0758-y
-  - doi: 10.1103/RevModPhys.83.943
-  - doi: 10.1103/PhysRevLett.86.1223
-  - doi: 10.1103/PhysRevLett.93.065001
-  - doi: 10.1088/0741-3335/49/12B/S13
-  - doi: 10.1103/PhysRevLett.109.245001
-  - doi: 10.1063/1.4747725
-  - doi: 10.1007/s10915-025-03078-7
-  - doi: 10.1051/epjconf/202634601003
-  - doi: 10.1007/s10915-025-03161-z
-  - doi: 10.1088/1361-6587/adba11
-  - doi: 10.1088/1361-6587/adaee6
-  - doi: 10.1016/j.cpc.2024.109391
-  - doi: 10.1063/5.0197970
-  - doi: 10.1137/23M1618910
-  - doi: 10.1103/PhysRevLett.133.195101
-  - doi: 10.1002/ctpp.202200175
-  - doi: 10.1016/j.cpc.2023.108973
-  - doi: 10.1063/5.0223009
-  - doi: 10.1002/ctpp.202200173
-  - doi: 10.1063/5.0129989
-  - doi: 10.1017/S0022377822000769
-  - doi: 10.1016/j.cpc.2022.108401
-  - doi: 10.1007/s10915-022-01781-3
-  - doi: 10.1063/5.0048129
-  - doi: 10.1088/0741-3335/56/10/105001
-  - doi: 10.1063/1.4824746
-  - doi: 10.1063/5.0022117
-  - doi: 10.1098/rsta.2018.0152
-  - doi: 10.1016/j.nme.2019.100724
-  - doi: 10.1088/1361-6587/ab9a61
-  - doi: 10.1017/S0022377820000203
-  - doi: 10.1137/20M1311934
-  - doi: 10.1063/5.0006403
-  - doi: 10.1016/j.jcp.2020.109890
-  - doi: 10.1016/j.jcp.2019.109065
-  - doi: 10.1088/1361-6587/ab5fa8
-  - doi: 10.1016/j.jcp.2020.109273
-  - doi: 10.1017/S0022377819000096
-  - doi: 10.1177/1094342019834644
-  - doi: 10.1016/j.jcp.2018.06.046
-  - doi: 10.1017/S0022377818000430
-  - doi: 10.1088/1361-6595/aa68d0
-  - doi: 10.1063/1.4982689
-  - doi: 10.1088/1741-4326/aa8446
-  - doi: 10.3390/e19020084
-  - doi: 10.1088/1361-6587/aa68af
-  - doi: 10.1017/S002237781700040X
-  - doi: 10.1016/j.cpc.2017.07.012
-  - doi: 10.1063/1.4960039
-  - doi: 10.1063/1.4954915
-  - doi: 10.1017/S0022377815001361
-  - doi: 10.1088/0741-3335/58/4/045016
-  - doi: 10.1063/1.4935925
-  - doi: 10.1016/j.jcp.2023.112493
-  - doi: 10.1002/fld.5041
-  - doi: 10.1098/rsta.2019.0175
-  - doi: 10.1016/j.jcp.2019.109088
-  - doi: 10.1063/1.5079495
-  - doi: 10.1016/j.jcp.2020.109394
-  - doi: 10.1088/1361-6587/ac985e
-  - doi: 10.1088/1741-4326/ac359f
-  - doi: 10.1016/j.jocs.2021.101402
-  - doi: 10.1016/j.cpc.2021.108041
-  - doi: 10.1063/1.5078451
-  - doi: 10.1063/1.4986447
-  - doi: 10.1002/ctpp.201700135
-  - doi: 10.1007/978-3-319-91143-4_6
-  - doi: 10.1016/j.cpc.2017.10.017
-  - doi: 10.1063/1.4942539
-  - doi: 10.1137/24m1659327
-  - doi: 10.1016/j.jcp.2025.114305
-  - doi: 10.1016/j.cnsns.2025.109384
-  - doi: 10.1016/j.jcp.2024.112916
-  - doi: 10.5802/smai-jcm.120
+- doi: 10.1017/S0022377821001082
+  title: Global electromagnetic turbulence simulations of W7-X-like plasmas with GENE-3D
+- doi: 10.1088/1361-6587/aba858
+  title: Global gyrokinetic simulations of ITG turbulence in the magnetic configuration space of the Wendelstein 7-X stellarator
+- doi: 10.1063/5.0087104
+  title: 'JOREK3D: An extension of the JOREK nonlinear MHD code to stellarators'
+- doi: 10.1088/1361-6587/adb64b
+  title: Back to the figure-8 stellarator
+- doi: 10.1088/1741-4326/acdd12
+  title: Helical mode localization and mode locking of ideal MHD instabilities in magnetically perturbed tokamak plasmas
+- doi: 10.1016/j.jcp.2020.109694
+  title: 'GENE-3D: A global gyrokinetic turbulence code for stellarators'
+- doi: 10.1007/s10915-023-02351-x
+  title: A Broken FEEC Framework for Electromagnetic Problems on Mapped Multipatch Domains
+- doi: 10.1016/j.jcp.2019.108889
+  title: Solving hyperbolic-elliptic problems on singular mapped disk-like domains with the method of characteristics and spline finite elements
+- doi: 10.5802/smai-jcm.20
+  title: 'Compatible Maxwell solvers with particles I: conforming and non-conforming 2D schemes with a strong Ampere law'
+- doi: 10.1063/1.4998610
+  title: Metriplectic integrators for the Landau collision operator
+- doi: 10.1093/imanum/draa022
+  title: Variational integrators for stochastic dissipative Hamiltonian systems
+- doi: 10.1007/978-3-031-38299-4_28
+  title: High-Order Structure-Preserving Algorithms for Plasma Hybrid Models
+- doi: 10.1016/j.jcp.2018.06.027
+  title: 'An entropy stable nodal discontinuous Galerkin method for the resistive MHD equations. Part I: Theory and numerical verification'
+- doi: 10.1007/s10915-018-0758-y
+  title: 'Correction to: The BR1 Scheme is Stable for the Compressible Navier–Stokes Equations'
+- doi: 10.1103/RevModPhys.83.943
+  title: Bayesian inference in physics
+- doi: 10.1103/PhysRevLett.86.1223
+  title: Transport Control by Coherent Zonal Flows in the Core/Edge Transitional Regime
+- doi: 10.1103/PhysRevLett.93.065001
+  title: Turbulent Saturation of Tokamak-Core Zonal Flows
+- doi: 10.1088/0741-3335/49/12B/S13
+  title: Nonlinear three-dimensional flows in magnetized plasmas
+- doi: 10.1103/PhysRevLett.109.245001
+  title: Excitation of Geodesic Acoustic Modes by External Fields
+- doi: 10.1063/1.4747725
+  title: The nonlinear dispersion relation of geodesic acoustic modes
+- doi: 10.1007/s10915-025-03078-7
+  title: Automatic Partitioning for the Low-Rank Integration of Stochastic Boolean Reaction Networks
+- doi: 10.1051/epjconf/202634601003
+  title: 'Beam Tracing in Phase Space: Paraxial Description of High-Frequency Wave Beams in Turbulent Plasmas'
+- doi: 10.1007/s10915-025-03161-z
+  title: Local cubic spline interpolation for Vlasov-type equations on a multi-patch geometry.
+- doi: 10.1088/1361-6587/adba11
+  title: Computing MHD equilibria of stellarators with a flexible coordinate frame
+- doi: 10.1088/1361-6587/adaee6
+  title: Construction of an invertible mapping to boundary conforming coordinates for arbitrarily shaped toroidal domains
+- doi: 10.1016/j.cpc.2024.109391
+  title: 'Neural-Parareal: Self-improving acceleration of fusion MHD simulations using time-parallelisation and neural operators'
+- doi: 10.1063/5.0197970
+  title: Simulation of ion temperature gradient driven modes with 6D kinetic Vlasov code
+- doi: 10.1137/23M1618910
+  title: A Dual Grid Geometric Electromagnetic Particle in Cell Method
+- doi: 10.1103/PhysRevLett.133.195101
+  title: High-Frequency Nongyrokinetic Turbulence at Tokamak Edge Parameters
+- doi: 10.1002/ctpp.202200175
+  title: Dependent state space Student‐t processes for imputation and data augmentation in plasma diagnostics
+- doi: 10.1016/j.cpc.2023.108973
+  title: A performance portable implementation of the semi-Lagrangian algorithm in six dimensions
+- doi: 10.1063/5.0223009
+  title: Surprisingly tight Courant–Friedrichs–Lewy condition in explicit high-order Arakawa schemes
+- doi: 10.1002/ctpp.202200173
+  title: Uncertainty quantification in <scp>three‐dimensional</scp> magnetohydrodynamic equilibrium reconstruction via surrogate‐assisted Bayesian inference
+- doi: 10.1063/5.0129989
+  title: "A <b>\n                     <i>δf</i>\n                  </b> PIC method with forward–backward Lagrangian reconstructions"
+- doi: 10.1017/S0022377822000769
+  title: Data augmentation for disruption prediction via robust surrogate models
+- doi: 10.1016/j.cpc.2022.108401
+  title: 2D Fourier finite element formulation for magnetostatics in curvilinear coordinates with a symmetry direction
+- doi: 10.1007/s10915-022-01781-3
+  title: Variational Framework for Structure-Preserving Electromagnetic Particle-in-Cell Methods
+- doi: 10.1063/5.0048129
+  title: Symplectic Gaussian process regression of maps in Hamiltonian systems
+- doi: 10.1088/0741-3335/56/10/105001
+  title: On the meniscus formation and the negative hydrogen ion extraction from ITER neutral beam injection relevant ion source
+- doi: 10.1063/1.4824746
+  title: 3D numerical simulations of negative hydrogen ion extraction using realistic plasma parameters, geometry of the extraction aperture and full 3D magnetic field map
+- doi: 10.1063/5.0022117
+  title: Quasi-geometric integration of guiding-center orbits in piecewise linear toroidal fields
+- doi: 10.1098/rsta.2018.0152
+  title: Application of the extreme scaling computing pattern on multiscale fusion plasma modelling
+- doi: 10.1016/j.nme.2019.100724
+  title: On the classification and quantification of crystal defects after energetic bombardment by machine learned molecular dynamics simulations
+- doi: 10.1088/1361-6587/ab9a61
+  title: Free-boundary MRxMHD equilibrium calculations using the stepped-pressure equilibrium code
+- doi: 10.1017/S0022377820000203
+  title: Accelerated methods for direct computation of fusion alpha particle losses within, stellarator optimization
+- doi: 10.1137/20M1311934
+  title: Geometric Particle-in-Cell Simulations of the Vlasov--Maxwell System in Curvilinear Coordinates
+- doi: 10.1063/5.0006403
+  title: Subcycling of particle orbits in variational, geometric electromagnetic particle-in-cell methods
+- doi: 10.1016/j.jcp.2020.109890
+  title: Energy-conserving time propagation for a structure-preserving particle-in-cell Vlasov–Maxwell solver
+- doi: 10.1016/j.jcp.2019.109065
+  title: Symplectic integration with non-canonical quadrature for guiding-center orbits in magnetic confinement devices
+- doi: 10.1088/1361-6587/ab5fa8
+  title: 2D full-wave simulations of conventional reflectometry using 3D gyro-fluid plasma turbulence
+- doi: 10.1016/j.jcp.2020.109273
+  title: A locally field-aligned discontinuous Galerkin method for anisotropic wave equations
+- doi: 10.1017/S0022377819000096
+  title: Reduction of the statistical error in electromagnetic gyrokinetic particle-in-cell simulations
+- doi: 10.1177/1094342019834644
+  title: A massively parallel semi-Lagrangian solver for the six-dimensional Vlasov–Poisson equation
+- doi: 10.1016/j.jcp.2018.06.046
+  title: Finite element discretization of a Stokes-like model arising in plasma physics
+- doi: 10.1017/S0022377818000430
+  title: 'Second-order nonlinear gyrokinetic theory: from the particle to the gyrocentre'
+- doi: 10.1088/1361-6595/aa68d0
+  title: Comment on ‘Issues in the understanding of negative ion extraction for fusion’
+- doi: 10.1063/1.4982689
+  title: 'Verification of Gyrokinetic codes: Theoretical background and applications'
+- doi: 10.1088/1741-4326/aa8446
+  title: A PIC-MCC code RFdinity1d for simulation of discharge initiation by ICRF antenna
+- doi: 10.3390/e19020084
+  title: Sequential Batch Design for Gaussian Processes Employing Marginalization †
+- doi: 10.1088/1361-6587/aa68af
+  title: Hierarchy of second order gyrokinetic Hamiltonian models for particle-in-cell codes
+- doi: 10.1017/S002237781700040X
+  title: 'GEMPIC: geometric electromagnetic particle-in-cell methods'
+  codes:
+  - gempicx
+- doi: 10.1016/j.cpc.2017.07.012
+  title: Temporal parallelization of edge plasma simulations using the parareal algorithm and the SOLPS code
+- doi: 10.1063/1.4960039
+  title: Second order gyrokinetic theory for particle-in-cell codes
+- doi: 10.1063/1.4954915
+  title: Intercode comparison of gyrokinetic global electromagnetic modes
+- doi: 10.1017/S0022377815001361
+  title: Electromagnetic thin-wall model for simulations of plasma wall-touching kink and vertical modes
+- doi: 10.1088/0741-3335/58/4/045016
+  title: Inversion methods for fast-ion velocity-space tomography in fusion plasmas
+- doi: 10.1063/1.4935925
+  title: Lagrangian and Hamiltonian constraints for guiding-center Hamiltonian theories
+- doi: 10.1016/j.jcp.2023.112493
+  title: A well-balanced and exactly divergence-free staggered semi-implicit hybrid finite volume / finite element scheme for the incompressible MHD equations
+- doi: 10.1002/fld.5041
+  title: A novel structure preserving semi‐implicit finite volume method for viscous and resistive magnetohydrodynamics
+- doi: 10.1098/rsta.2019.0175
+  title: A new continuum model for general relativistic viscous heat-conducting media
+- doi: 10.1016/j.jcp.2019.109088
+  title: On GLM curl cleaning for a first order reduction of the CCZ4 formulation of the Einstein field equations
+- doi: 10.1063/1.5079495
+  title: Molecular dynamics simulations for hydrogen adsorption in low energy collisions with carbon and boron-nitride nanotubes
+- doi: 10.1016/j.jcp.2020.109394
+  title: Sensitivity-driven adaptive sparse stochastic approximations in plasma microinstability analysis
+- doi: 10.1088/1361-6587/ac985e
+  title: Numerical modelling for beam duct heat loads calculations and application to the new 1 MW neutral beam injector in the COMPASS tokamak
+- doi: 10.1088/1741-4326/ac359f
+  title: Building a turbulence-transport workflow incorporating uncertainty quantification for predicting core profiles in a tokamak plasma
+- doi: 10.1016/j.jocs.2021.101402
+  title: Tutorial applications for Verification, Validation and Uncertainty Quantification using VECMA toolkit
+- doi: 10.1016/j.cpc.2021.108041
+  title: Moment-preserving and mesh-adaptive reweighting method for rare-event sampling in Monte-Carlo algorithms
+- doi: 10.1063/1.5078451
+  title: Magneto-hydrodynamical nonlinear simulations of magnetically confined plasmas using smooth particle hydrodynamics (SPH)
+- doi: 10.1063/1.4986447
+  title: Extension of the SIESTA MHD equilibrium code to free-plasma-boundary problems
+- doi: 10.1002/ctpp.201700135
+  title: Impact of a new general form of friction and thermal forces on SOLPS‐ITER modelling results
+- doi: 10.1007/978-3-319-91143-4_6
+  title: Probabilistic Inference of Surface Heat Flux Densities from Infrared Thermography
+- doi: 10.1016/j.cpc.2017.10.017
+  title: 'ALARIC: An algorithm for constructing arbitrarily complex initial density distributions with low particle noise for SPH/SPMHD applications'
+- doi: 10.1063/1.4942539
+  title: Linear multispecies gyrokinetic flux tube benchmarks in shaped tokamak plasmas
+- doi: 10.1137/24m1659327
+  title: Convergence of Splitting Methods on Rotating Grids for the Magnetized Vlasov Equation
+- doi: 10.1016/j.jcp.2025.114305
+  title: Time-splitting methods for the cold-plasma model using finite element exterior calculus
+- doi: 10.1016/j.cnsns.2025.109384
+  title: Energy-based, geometric, and compositional formulation of fluid and plasma models
+- doi: 10.1016/j.jcp.2024.112916
+  title: Canonical variables based numerical schemes for hybrid plasma models with kinetic ions and massless electrons
+- doi: 10.5802/smai-jcm.120
+  title: Bounded commuting projections for multipatch spaces with non-matching interfaces
