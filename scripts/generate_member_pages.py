@@ -37,6 +37,74 @@ MEMBERS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
 
 
+def generate_standard_aliases(name: str) -> list[str]:
+    """Generate standard name variations for alias matching.
+
+    For "John Smith-Jones", generates:
+    - j. smith-jones
+    - j smith-jones
+    - smith-jones, j.
+    - smith-jones, j
+    - j. smith
+    - j smith
+    - smith, j.
+    - smith, j
+    And similar variations for double last names.
+    """
+    import unicodedata
+
+    # Normalize unicode
+    name = unicodedata.normalize("NFD", name)
+    name = name.encode("ascii", "ignore").decode("ascii")
+    name = name.strip()
+
+    parts = name.split()
+    if len(parts) < 2:
+        return []
+
+    # Get first name(s) and last name(s)
+    first_parts = parts[:-1]  # Everything except last part
+    last_part = parts[-1]      # Last part
+
+    first_name = " ".join(first_parts)
+    last_name = last_part
+
+    aliases = set()
+
+    # Generate variations for full first name with last name
+    first_initial = first_name[0].lower()
+
+    # Variations: "F. Lastname", "F Lastname", "Lastname, F.", "Lastname, F"
+    aliases.add(f"{first_initial}. {last_name.lower()}")
+    aliases.add(f"{first_initial} {last_name.lower()}")
+    aliases.add(f"{last_name.lower()}, {first_initial}.")
+    aliases.add(f"{last_name.lower()}, {first_initial}")
+
+    # Also handle compound first names - use each initial
+    if "-" in first_name:
+        first_name_parts = first_name.split("-")
+        for part in first_name_parts:
+            if part:
+                part_initial = part[0].lower()
+                aliases.add(f"{part_initial}. {last_name.lower()}")
+                aliases.add(f"{part_initial} {last_name.lower()}")
+                aliases.add(f"{last_name.lower()}, {part_initial}.")
+                aliases.add(f"{last_name.lower()}, {part_initial}")
+
+    # Handle compound last names - split and create variations with first part
+    if "-" in last_name:
+        last_name_parts = last_name.split("-")
+        first_last_part = last_name_parts[0].lower()
+
+        # Variations with just first part of compound last name
+        aliases.add(f"{first_initial}. {first_last_part}")
+        aliases.add(f"{first_initial} {first_last_part}")
+        aliases.add(f"{first_last_part}, {first_initial}.")
+        aliases.add(f"{first_last_part}, {first_initial}")
+
+    return sorted(list(aliases))
+
+
 def load_publications_cache() -> list[dict]:
     """Load the publications metadata cache."""
     if not CACHE_FILE.exists():
@@ -54,6 +122,15 @@ def load_members() -> list[dict]:
         if not name:
             raise ValueError(f"Member {index} is missing a name")
 
+        # Get manually-specified aliases
+        manual_aliases = ensure_list(entry.get("aliases", []))
+
+        # Generate standard aliases from full name
+        auto_aliases = generate_standard_aliases(name)
+
+        # Combine: auto-generated + manually-specified
+        combined_aliases = list(set(auto_aliases + manual_aliases))
+
         member = {
             "name": name,
             "role": str(entry.get("role", "")).strip().lower(),
@@ -61,7 +138,7 @@ def load_members() -> list[dict]:
             "contact": str(entry.get("contact", "")).strip(),
             "group": str(entry.get("group", "")).strip(),
             "codes": ensure_list(entry.get("codes", [])),
-            "aliases": ensure_list(entry.get("aliases", [])),
+            "aliases": combined_aliases,
             "alumni": bool(entry.get("alumni", False)),
             "picture": str(entry.get("picture", "") or "").strip(),
             "description": str(entry.get("description", "")).strip(),
@@ -119,27 +196,44 @@ def member_matches_publication(member: dict, publication: dict) -> bool:
 
 
 def build_profile_section(member: dict) -> str:
-    """Build the profile section with picture, topic, and codes."""
-    lines = []
-
-    # Profile picture
+    """Build the profile section with picture on left (circular), info on right."""
+    # Profile picture (left side) - circular frame
     if member["picture"]:
-        lines.append(f'<img src="{escape_text(member["picture"])}" alt="{escape_text(member["name"])}" class="member-profile-picture" />')
+        photo = f'<img src="{escape_text(member["picture"])}" alt="{escape_text(member["name"])}" class="member-profile-photo-circle" />'
+    else:
+        photo = '<div class="member-profile-photo-circle member-photo-placeholder"></div>'
+
+    # Info section (right side)
+    info_lines = []
+
+    # Group
+    if member.get("group"):
+        info_lines.append(f"<p><strong>Group:</strong> {escape_text(member['group'])}</p>")
 
     # Topic
     if member["topic"]:
-        lines.append(f"<p><strong>Topic:</strong> {escape_text(member['topic'])}</p>")
+        info_lines.append(f"<p><strong>Topic:</strong> {escape_text(member['topic'])}</p>")
 
     # Description (if exists)
     if member["description"]:
-        lines.append(f"<p>{escape_text(member['description'])}</p>")
+        info_lines.append(f"<p>{escape_text(member['description'])}</p>")
 
     # Codes
     if member["codes"]:
         codes_html = render_code_links(member["codes"])
-        lines.append(f"<p><strong>Codes:</strong> {codes_html}</p>")
+        info_lines.append(f"<p><strong>Codes:</strong> {codes_html}</p>")
 
-    return "\n".join(lines)
+    info = "\n".join(info_lines) if info_lines else "<p>No additional information available.</p>"
+
+    # Return HTML with two-column layout: photo on left, info on right
+    return f"""<div class="member-profile-flex">
+<div class="member-profile-photo-wrapper">
+{photo}
+</div>
+<div class="member-profile-text">
+{info}
+</div>
+</div>"""
 
 
 def build_publications_table(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
@@ -291,6 +385,9 @@ def main() -> None:
 
     print(f"Loaded {len(all_members)} members, {len(all_publications)} publications, {len(all_dissertations)} dissertations")
 
+    # Build set of valid member slugs from YAML
+    valid_slugs = {slugify(member["name"]) for member in all_members}
+
     # Generate page for each member
     for member in all_members:
         slug = slugify(member["name"])
@@ -319,6 +416,23 @@ def main() -> None:
         print(f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)")
 
     print(f"\nGenerated {len(all_members)} member pages in {MEMBERS_OUTPUT_DIR}")
+
+    # Check for orphaned member page files (no corresponding YAML entry)
+    if MEMBERS_OUTPUT_DIR.exists():
+        existing_files = list(MEMBERS_OUTPUT_DIR.glob("*.md"))
+        orphaned = []
+        for file_path in existing_files:
+            slug = file_path.stem
+            if slug not in valid_slugs:
+                orphaned.append(file_path)
+
+        if orphaned:
+            print("\n⚠️  WARNING: Found member page files with no corresponding entry in members.yml:")
+            for file_path in sorted(orphaned):
+                print(f"  - {file_path.name}")
+            print(f"\nThese files should be removed or added to members.yml")
+        else:
+            print("\n✓ All member page files have corresponding entries in members.yml")
 
 
 if __name__ == "__main__":

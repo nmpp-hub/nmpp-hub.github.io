@@ -23,6 +23,7 @@ publications:
   title: Variational integrators for stochastic dissipative Hamiltonian systems
 - doi: 10.1007/978-3-031-38299-4_28
   title: High-Order Structure-Preserving Algorithms for Plasma Hybrid Models
+  codes: [struphy]
 - doi: 10.1016/j.jcp.2018.06.027
   title: 'An entropy stable nodal discontinuous Galerkin method for the resistive MHD equations. Part I: Theory and numerical verification'
 - doi: 10.1007/s10915-018-0758-y

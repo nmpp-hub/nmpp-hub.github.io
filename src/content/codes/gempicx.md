@@ -34,7 +34,7 @@ GEMPICX landing page.
   <tr>
     <td>2017</td>
     <td>GEMPIC: geometric electromagnetic particle-in-cell methods</td>
-    <td>Michael Kraus, Katharina Kormann, Philip J. Morrison, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
+    <td><a href="/members/michael-kraus/">Michael Kraus</a>, Katharina Kormann, Philip J. Morrison, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
     <td>Journal of Plasma Physics</td>
     <td><a href="https://doi.org/10.1017/S002237781700040X">DOI</a></td>
   </tr>

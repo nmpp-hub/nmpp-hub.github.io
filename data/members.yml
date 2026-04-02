@@ -15,18 +15,46 @@ members:
   group: Magnetohydrodynamics
   codes: [gvec]
   alumni: false
-  aliases:
-    - "F. Hindenlang"
-    - "F Hindenlang"
-    - "Florian H."
-    - "F. Hindenlang"
+  aliases: []
   picture: 'https://www.ipp.mpg.de/5446851/original-1727074133.webp'
-- name: B. Example
+- name: Stefan Possanner
   role: permanent staff
-  topic: Structure-preserving numerics
+  topic: ""
   contact: b.example@example.org
-  group: Numerical Methods in Plasma Physics
+  group: ""
+  codes: [struphy]
+  alumni: false
+  aliases: []
+- name: Michael Kraus
+  role: permanent staff
+  topic: ""
+  contact: b.example@example.org
+  group: ""
+  codes: [geometricintegrators, geometricmachinelearning]
+  alumni: false
+  aliases: []
+- name: Udo von Toussaint
+  role: permanent staff
+  topic: ""
+  contact: b.example@example.org
+  group: ""
   codes: []
+  alumni: false
+  aliases: []
+- name: Klaus Hallatschek
+  role: permanent staff
+  topic: ""
+  contact: b.example@example.org
+  group: ""
+  codes: [bsl6d]
+  alumni: false
+  aliases: []
+- name: Martin Campos Pinto
+  role: permanent staff
+  topic: ""
+  contact: b.example@example.org
+  group: ""
+  codes: [psydac]
   alumni: false
   aliases: []
 - name: C. Example

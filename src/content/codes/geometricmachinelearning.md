@@ -10,7 +10,9 @@ path: /codes/geometricmachinelearning/
 ## Members
 
 <!-- AUTO:MEMBERS:START -->
-<p>No members linked to this code yet.</p>
+<ul>
+  <li>Michael Kraus (Permanent staff)</li>
+</ul>
 <!-- AUTO:MEMBERS:END -->
 
 ## Publications

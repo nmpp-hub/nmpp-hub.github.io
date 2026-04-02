@@ -1,11 +1,18 @@
 ---
-title: B. Example
+title: Udo von Toussaint
 ---
 
 ## Profile
 
 <!-- AUTO:PROFILE:START -->
-<p><strong>Topic:</strong> Structure-preserving numerics</p>
+<div class="member-profile-flex">
+<div class="member-profile-photo-wrapper">
+<div class="member-profile-photo-circle member-photo-placeholder"></div>
+</div>
+<div class="member-profile-text">
+<p>No additional information available.</p>
+</div>
+</div>
 <!-- AUTO:PROFILE:END -->
 
 ## Publications

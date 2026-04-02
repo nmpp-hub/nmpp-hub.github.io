@@ -1,5 +1,5 @@
 ---
-title: E. Example
+title: Michael Kraus
 ---
 
 ## Profile
@@ -10,8 +10,7 @@ title: E. Example
 <div class="member-profile-photo-circle member-photo-placeholder"></div>
 </div>
 <div class="member-profile-text">
-<p><strong>Group:</strong> Numerical Methods in Plasma Physics</p>
-<p><strong>Topic:</strong> Kinetic turbulence simulation</p>
+<p><strong>Codes:</strong> <a href="/codes/geometricintegrators/">geometricintegrators</a>, <a href="/codes/geometricmachinelearning/">geometricmachinelearning</a></p>
 </div>
 </div>
 <!-- AUTO:PROFILE:END -->

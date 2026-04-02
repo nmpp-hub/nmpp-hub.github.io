@@ -12,7 +12,9 @@ Description of PSYDAC.
 ## Members
 
 <!-- AUTO:MEMBERS:START -->
-<p>No members linked to this code yet.</p>
+<ul>
+  <li>Martin Campos Pinto (Permanent staff)</li>
+</ul>
 <!-- AUTO:MEMBERS:END -->
 
 ## Publications

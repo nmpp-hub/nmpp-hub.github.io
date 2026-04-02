@@ -183,7 +183,9 @@
     "authors": "Stefan Possanner, Florian Holderied, Yingzhe Li, Byung Kyu Na, Dominik Bell, Said Hadjout, Yaman Güçlü",
     "venue": "Lecture Notes in Computer Science",
     "year": 2023,
-    "codes": []
+    "codes": [
+      "struphy"
+    ]
   },
   {
     "doi": "10.1002/ctpp.202200173",

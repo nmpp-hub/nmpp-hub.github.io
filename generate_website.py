@@ -49,7 +49,8 @@ def main() -> int:
         (scripts_dir / "populate_publications.py", "Populate Publications"),
         (scripts_dir / "generate_dissertations_page.py", "Generate Dissertations Page"),
         (scripts_dir / "generate_code_pages.py", "Generate Code Pages"),
-        (scripts_dir / "generate_member_pages.py", "Generate Member Pages"),
+        (scripts_dir / "generate_members_page.py", "Generate Members Page"),
+        (scripts_dir / "generate_member_pages.py", "Generate Individual Member Pages"),
     ]
 
     results = []
