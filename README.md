@@ -24,13 +24,39 @@ The generated site is written to `dist/`.
 
 ## Add new publications
 
-Add DOIs to `dois.txt` (one per line), then run:
+Install the Python dependency once:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Add or edit entries in `data/dois.yml`, then run:
 
 ```bash
 python populate_publications.py
 ```
 
-This fetches metadata from doi.org and overwrites the `<tbody>` in `src/pages/publications.astro`.
+Each publication entry supports optional `groups` and `codes` fields in addition to the DOI.
+
+## Update members
+
+Edit `data/members.yml`, then run:
+
+```bash
+python generate_members_page.py
+```
+
+This regenerates `src/pages/members.astro` from the YAML roster.
+
+## Update dissertations
+
+Edit `data/dissertations.yml`, then run:
+
+```bash
+python generate_dissertations_page.py
+```
+
+This regenerates `src/pages/dissertations.astro` from the YAML list.
 
 ## Customize the website
 
