@@ -84,6 +84,14 @@ members:
   codes: []
   alumni: false
   aliases: []
+- name: Francesco Fambri
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: "Magnetohydrodynamics"
+  codes: []
+  alumni: false
+  aliases: []
 - name: C. Example
   role: postdoc
   topic: Gyrokinetic modeling

@@ -60,7 +60,7 @@ title: Eric Sonnendrücker
   <tr>
     <td>2023</td>
     <td>A well-balanced and exactly divergence-free staggered semi-implicit hybrid finite volume / finite element scheme for the incompressible MHD equations</td>
-    <td>F. Fambri, E. Zampa, S. Busto, L. Río-Martín, <a href="/members/florian-hindenlang/">F. Hindenlang</a>, <a href="/members/eric-sonnendrucker/">E. Sonnendrücker</a>, M. Dumbser</td>
+    <td><a href="/members/francesco-fambri/">F. Fambri</a>, E. Zampa, S. Busto, L. Río-Martín, <a href="/members/florian-hindenlang/">F. Hindenlang</a>, <a href="/members/eric-sonnendrucker/">E. Sonnendrücker</a>, M. Dumbser</td>
     <td>Journal of Computational Physics</td>
     <td><a href="https://doi.org/10.1016/j.jcp.2023.112493">DOI</a></td>
   </tr>
