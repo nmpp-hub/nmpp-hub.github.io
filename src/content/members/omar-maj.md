@@ -1,0 +1,80 @@
+---
+title: Omar Maj
+---
+
+## Profile
+
+<!-- AUTO:PROFILE:START -->
+<div class="member-profile-flex">
+<div class="member-profile-photo-wrapper">
+<div class="member-profile-photo-circle member-photo-placeholder"></div>
+</div>
+<div class="member-profile-text">
+<p><strong>Topic:</strong> Magnetohydrodynamics</p>
+</div>
+</div>
+<!-- AUTO:PROFILE:END -->
+
+## About
+
+<!-- CUSTOM:ABOUT:START -->
+<!-- CUSTOM:ABOUT:END -->
+
+## Publications
+
+<!-- AUTO:PUBLICATIONS:START -->
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Authors</th>
+      <th>Venue</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>2026</td>
+    <td>Beam Tracing in Phase Space: Paraxial Description of High-Frequency Wave Beams in Turbulent Plasmas</td>
+    <td><a href="/members/omar-maj/">Omar Maj</a>, Hannes Weber, Emanuele Poli</td>
+    <td>EPJ Web of Conferences</td>
+    <td><a href="https://doi.org/10.1051/epjconf/202634601003">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2025</td>
+    <td>Computing MHD equilibria of stellarators with a flexible coordinate frame</td>
+    <td><a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Gabriel G Plunk, <a href="/members/omar-maj/">Omar Maj</a></td>
+    <td>Plasma Physics and Controlled Fusion</td>
+    <td><a href="https://doi.org/10.1088/1361-6587/adba11">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2025</td>
+    <td>Construction of an invertible mapping to boundary conforming coordinates for arbitrarily shaped toroidal domains</td>
+    <td>Robert Babin, <a href="/members/florian-hindenlang/">Florian Hindenlang</a>, <a href="/members/omar-maj/">Omar Maj</a>, Robert Köberl</td>
+    <td>Plasma Physics and Controlled Fusion</td>
+    <td><a href="https://doi.org/10.1088/1361-6587/adaee6">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2025</td>
+    <td>Time-splitting methods for the cold-plasma model using finite element exterior calculus</td>
+    <td>Elena Moral Sánchez, <a href="/members/martin-campos-pinto/">Martin Campos Pinto</a>, <a href="/members/yaman-guclu/">Yaman Güçlü</a>, <a href="/members/omar-maj/">Omar Maj</a></td>
+    <td>Journal of Computational Physics</td>
+    <td><a href="https://doi.org/10.1016/j.jcp.2025.114305">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2018</td>
+    <td>Finite element discretization of a Stokes-like model arising in plasma physics</td>
+    <td>Juan Vicente Gutiérrez-Santacreu, <a href="/members/omar-maj/">Omar Maj</a>, Marco Restelli</td>
+    <td>Journal of Computational Physics</td>
+    <td><a href="https://doi.org/10.1016/j.jcp.2018.06.046">DOI</a></td>
+  </tr>
+  </tbody>
+</table>
+<!-- AUTO:PUBLICATIONS:END -->
+
+## Dissertations
+
+<!-- AUTO:DISSERTATIONS:START -->
+<p>No dissertations yet.</p>
+<!-- AUTO:DISSERTATIONS:END -->
