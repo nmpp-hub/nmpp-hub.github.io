@@ -2,8 +2,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from site_generation import ensure_list, escape_text, load_yaml, render_code_links, write_text
-
+from site_generation import (
+    ensure_list,
+    escape_text,
+    load_yaml,
+    render_code_links,
+    write_text,
+)
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data" / "members.yml"
@@ -118,7 +123,11 @@ def render_role_section(title: str, members: list[dict]) -> str:
 def build_page(members: list[dict]) -> str:
     active_sections = []
     for role in ROLE_ORDER:
-        role_members = [member for member in members if member["role"] == role and not member["alumni"]]
+        role_members = [
+            member
+            for member in members
+            if member["role"] == role and not member["alumni"]
+        ]
         active_sections.append(render_role_section(ROLE_TITLES[role], role_members))
 
     alumni = [member for member in members if member["alumni"]]
@@ -168,7 +177,10 @@ def main() -> None:
     if not isinstance(raw_members, list):
         raise ValueError("members.yml must contain a top-level 'members' list")
 
-    members = [validate_member(raw_member, index + 1) for index, raw_member in enumerate(raw_members)]
+    members = [
+        validate_member(raw_member, index + 1)
+        for index, raw_member in enumerate(raw_members)
+    ]
     write_text(OUTPUT_FILE, build_page(members))
     print(f"Updated {OUTPUT_FILE}")
 

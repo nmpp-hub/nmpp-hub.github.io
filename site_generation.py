@@ -7,7 +7,6 @@ from typing import Any
 
 import yaml
 
-
 ROOT = Path(__file__).resolve().parent
 CODE_DIR = ROOT / "src" / "content" / "codes"
 KNOWN_CODES = {path.stem for path in CODE_DIR.glob("*.md")}
@@ -51,7 +50,9 @@ def render_code_links(codes: list[str]) -> str:
     for code in codes:
         label = escape_text(code)
         if code in KNOWN_CODES:
-            rendered.append(f'<a href="/codes/{html.escape(code, quote=True)}/">{label}</a>')
+            rendered.append(
+                f'<a href="/codes/{html.escape(code, quote=True)}/">{label}</a>'
+            )
         else:
             rendered.append(label)
 

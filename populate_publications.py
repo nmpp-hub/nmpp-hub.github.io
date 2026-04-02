@@ -4,8 +4,13 @@ import json
 import urllib.request
 from pathlib import Path
 
-from site_generation import ensure_list, escape_text, load_yaml, render_code_links, write_text
-
+from site_generation import (
+    ensure_list,
+    escape_text,
+    load_yaml,
+    render_code_links,
+    write_text,
+)
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data" / "dois.yml"
@@ -78,7 +83,9 @@ def load_publication_entries() -> list[dict]:
             groups = ensure_list(raw_entry.get("groups", []))
             codes = ensure_list(raw_entry.get("codes", []))
         else:
-            raise ValueError(f"Publication entry {index} has invalid type {type(raw_entry).__name__}")
+            raise ValueError(
+                f"Publication entry {index} has invalid type {type(raw_entry).__name__}"
+            )
 
         if not doi:
             raise ValueError(f"Publication entry {index} is missing a DOI")
@@ -195,4 +202,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

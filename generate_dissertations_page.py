@@ -2,8 +2,13 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from site_generation import ensure_list, escape_text, load_yaml, render_code_links, write_text
-
+from site_generation import (
+    ensure_list,
+    escape_text,
+    load_yaml,
+    render_code_links,
+    write_text,
+)
 
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data" / "dissertations.yml"
@@ -128,13 +133,17 @@ import Base from '../layouts/Base.astro';
 def main() -> None:
     raw_dissertations = load_yaml(DATA_FILE).get("dissertations", [])
     if not isinstance(raw_dissertations, list):
-        raise ValueError("dissertations.yml must contain a top-level 'dissertations' list")
+        raise ValueError(
+            "dissertations.yml must contain a top-level 'dissertations' list"
+        )
 
     dissertations = [
         validate_dissertation(raw_dissertation, index + 1)
         for index, raw_dissertation in enumerate(raw_dissertations)
     ]
-    dissertations.sort(key=lambda dissertation: (-dissertation["year"], dissertation["author"].lower()))
+    dissertations.sort(
+        key=lambda dissertation: (-dissertation["year"], dissertation["author"].lower())
+    )
 
     write_text(OUTPUT_FILE, build_page(dissertations))
     print(f"Updated {OUTPUT_FILE}")
