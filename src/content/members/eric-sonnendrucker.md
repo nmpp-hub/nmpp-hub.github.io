@@ -58,6 +58,13 @@ title: Eric Sonnendrücker
     <td><a href="https://doi.org/10.1017/S002237781700040X">DOI</a></td>
   </tr>
   <tr>
+    <td>2017</td>
+    <td>Hierarchy of second order gyrokinetic Hamiltonian models for particle-in-cell codes</td>
+    <td>N Tronko, A Bottino, C Chandre, <a href="/members/eric-sonnendrucker/">E Sonnendruecker</a></td>
+    <td>Plasma Physics and Controlled Fusion</td>
+    <td><a href="https://doi.org/10.1088/1361-6587/aa68af">DOI</a></td>
+  </tr>
+  <tr>
     <td>2016</td>
     <td>Intercode comparison of gyrokinetic global electromagnetic modes</td>
     <td>T. Görler, N. Tronko, W. A. Hornsby, A. Bottino, R. Kleiber, C. Norscini, V. Grandgirard, F. Jenko, <a href="/members/eric-sonnendrucker/">E. Sonnendrücker</a></td>

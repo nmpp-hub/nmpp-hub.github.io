@@ -6,7 +6,9 @@ members:
   group: ~
   codes: [gempicx]
   alumni: false
-  aliases: ["E. Sonnendrücker"]
+  aliases:
+    - "E. Sonnendrücker"
+    - "E Sonnendruecker"
   picture: 'https://www.ipp.mpg.de/5422649/original-1763388322.webp'  # optional: set to a URL or /images/members/filename.jpg
 - name: Florian Hindenlang
   role: permanent staff
@@ -56,7 +58,8 @@ members:
   group: Finite Element Methods
   codes: [psydac]
   alumni: false
-  aliases: []
+  aliases:
+    - M. Campos Pinto
 - name: Roman Hatzky
   role: permanent staff
   topic: ""

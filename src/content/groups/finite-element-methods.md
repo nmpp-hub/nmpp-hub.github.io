@@ -76,7 +76,7 @@ Research on this topic is carried out in collaboration with the [MHD](/groups/ma
   <tr>
     <td>2023</td>
     <td>A δf PIC method with forward–backward Lagrangian reconstructions</td>
-    <td>M. Campos Pinto, M. Pelz, P.-H. Tournier</td>
+    <td><a href="/members/martin-campos-pinto/">M. Campos Pinto</a>, M. Pelz, P.-H. Tournier</td>
     <td>Physics of Plasmas</td>
     <td><a href="https://doi.org/10.1063/5.0129989">DOI</a></td>
   </tr>
