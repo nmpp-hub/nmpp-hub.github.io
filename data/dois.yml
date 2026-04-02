@@ -47,6 +47,7 @@ publications:
   title: Local cubic spline interpolation for Vlasov-type equations on a multi-patch geometry.
 - doi: 10.1088/1361-6587/adba11
   title: Computing MHD equilibria of stellarators with a flexible coordinate frame
+  codes: ["gvec"]
 - doi: 10.1088/1361-6587/adaee6
   title: Construction of an invertible mapping to boundary conforming coordinates for arbitrarily shaped toroidal domains
 - doi: 10.1016/j.cpc.2024.109391

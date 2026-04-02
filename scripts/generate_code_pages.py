@@ -13,11 +13,15 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
+
+# Add parent directory to path to import site_generation
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 CODES_DIR = ROOT / "src" / "content" / "codes"
 CACHE_FILE = ROOT / "data" / ".publications_cache.json"
 DISSERTATIONS_FILE = ROOT / "data" / "dissertations.yml"

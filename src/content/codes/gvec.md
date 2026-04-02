@@ -20,7 +20,26 @@ GVEC landing page.
 ## Publications
 
 <!-- AUTO:PUBLICATIONS:START -->
-<p>No publications linked to this code yet.</p>
+<table>
+<thead>
+  <tr>
+    <th>Year</th>
+    <th>Title</th>
+    <th>Authors</th>
+    <th>Venue</th>
+    <th>Link</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>2025</td>
+    <td>Computing MHD equilibria of stellarators with a flexible coordinate frame</td>
+    <td><a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Gabriel G Plunk, Omar Maj</td>
+    <td>Plasma Physics and Controlled Fusion</td>
+    <td><a href="https://doi.org/10.1088/1361-6587/adba11">DOI</a></td>
+  </tr>
+</tbody>
+</table>
 <!-- AUTO:PUBLICATIONS:END -->
 
 ## Dissertations

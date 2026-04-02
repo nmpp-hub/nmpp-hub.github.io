@@ -24,5 +24,24 @@ Description of PSYDAC.
 ## Dissertations
 
 <!-- AUTO:DISSERTATIONS:START -->
-<p>No dissertations linked to this code yet.</p>
+<table>
+<thead>
+  <tr>
+    <th>Year</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Degree</th>
+    <th>Link</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>2025</td>
+    <td>Development and analysis of structure-preserving finite element methods on non-conforming meshes</td>
+    <td>Frederik Schnack</td>
+    <td>PhD</td>
+    <td><a href="https://mediatum.ub.tum.de/?id=1776749">Full text</a></td>
+  </tr>
+</tbody>
+</table>
 <!-- AUTO:DISSERTATIONS:END -->

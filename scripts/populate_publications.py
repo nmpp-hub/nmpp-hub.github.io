@@ -1,8 +1,12 @@
 from __future__ import annotations
 
 import json
+import sys
 import urllib.request
 from pathlib import Path
+
+# Add parent directory to path to import site_generation
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from site_generation import (
     build_author_to_slug_map,
@@ -14,7 +18,7 @@ from site_generation import (
     write_text,
 )
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "dois.yml"
 OUTPUT_FILE = ROOT / "src" / "pages" / "publications.astro"
 CACHE_FILE = ROOT / "data" / ".publications_cache.json"

@@ -53,7 +53,9 @@
     "authors": "Florian Hindenlang, Gabriel G Plunk, Omar Maj",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2025,
-    "codes": []
+    "codes": [
+      "gvec"
+    ]
   },
   {
     "doi": "10.1088/1361-6587/adaee6",

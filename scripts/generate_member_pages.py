@@ -18,27 +18,23 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
 
-from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_code_links, write_text
+# Add parent directory to path to import site_generation
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-ROOT = Path(__file__).resolve().parent
+from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_code_links, slugify, write_text
+
+ROOT = Path(__file__).resolve().parent.parent
 MEMBERS_FILE = ROOT / "data" / "members.yml"
 DISSERTATIONS_FILE = ROOT / "data" / "dissertations.yml"
 CACHE_FILE = ROOT / "data" / ".publications_cache.json"
 MEMBERS_OUTPUT_DIR = ROOT / "src" / "content" / "members"
+MEMBERS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
-
-
-def slugify(text: str) -> str:
-    """Convert text to URL-safe slug."""
-    slug = text.lower().strip()
-    slug = re.sub(r"[^\w\s-]", "", slug)
-    slug = re.sub(r"[\s_-]+", "-", slug)
-    slug = slug.strip("-")
-    return slug
 
 
 def load_publications_cache() -> list[dict]:
@@ -128,20 +124,20 @@ def build_profile_section(member: dict) -> str:
 
     # Profile picture
     if member["picture"]:
-        lines.append(f'      <img src="{escape_text(member["picture"])}" alt="{escape_text(member["name"])}" class="member-profile-picture" />')
+        lines.append(f'<img src="{escape_text(member["picture"])}" alt="{escape_text(member["name"])}" class="member-profile-picture" />')
 
     # Topic
     if member["topic"]:
-        lines.append(f"      <p><strong>Topic:</strong> {escape_text(member['topic'])}</p>")
+        lines.append(f"<p><strong>Topic:</strong> {escape_text(member['topic'])}</p>")
 
     # Description (if exists)
     if member["description"]:
-        lines.append(f"      <p>{escape_text(member['description'])}</p>")
+        lines.append(f"<p>{escape_text(member['description'])}</p>")
 
     # Codes
     if member["codes"]:
         codes_html = render_code_links(member["codes"])
-        lines.append(f"      <p><strong>Codes:</strong> {codes_html}</p>")
+        lines.append(f"<p><strong>Codes:</strong> {codes_html}</p>")
 
     return "\n".join(lines)
 
@@ -149,7 +145,7 @@ def build_profile_section(member: dict) -> str:
 def build_publications_table(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
     """Build HTML table for publications."""
     if not publications:
-        return "      <p>No publications yet.</p>"
+        return "<p>No publications yet.</p>"
 
     if author_to_slug is None:
         author_to_slug = build_author_to_slug_map()
@@ -159,90 +155,134 @@ def build_publications_table(publications: list[dict], author_to_slug: dict[str,
         rows.append(
             "\n".join(
                 [
-                    "        <tr>",
-                    f"          <td>{pub['year'] or ''}</td>",
-                    f"          <td>{escape_text(pub['title'])}</td>",
-                    f"          <td>{render_author_list(pub['authors'], author_to_slug)}</td>",
-                    f"          <td>{escape_text(pub['venue'])}</td>",
-                    f'          <td><a href="https://doi.org/{escape_text(pub["doi"])}">DOI</a></td>',
-                    "        </tr>",
+                    "  <tr>",
+                    f"    <td>{pub['year'] or ''}</td>",
+                    f"    <td>{escape_text(pub['title'])}</td>",
+                    f"    <td>{render_author_list(pub['authors'], author_to_slug)}</td>",
+                    f"    <td>{escape_text(pub['venue'])}</td>",
+                    f'    <td><a href="https://doi.org/{escape_text(pub["doi"])}">DOI</a></td>',
+                    "  </tr>",
                 ]
             )
         )
 
     body = "\n".join(rows)
-    return f"""      <table>
-        <thead>
-          <tr>
-            <th>Year</th>
-            <th>Title</th>
-            <th>Authors</th>
-            <th>Venue</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody>
+    return f"""<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Authors</th>
+      <th>Venue</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
 {body}
-        </tbody>
-      </table>"""
+  </tbody>
+</table>"""
 
 
 def build_dissertations_list(dissertations: list[dict]) -> str:
     """Build list of dissertations."""
     if not dissertations:
-        return "      <p>No dissertations yet.</p>"
+        return "<p>No dissertations yet.</p>"
 
     lines = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
         lines.append(
-            f"      <li>{escape_text(diss['title'])} ({degree}, {diss['year']}) - "
-            f'<a href="{escape_text(diss["link"])}">Full text</a></li>'
+            f"- {escape_text(diss['title'])} ({degree}, {diss['year']}) - "
+            f"[Full text]({escape_text(diss['link'])})"
         )
 
-    body = "\n".join(lines)
-    return f"""      <ul>
-{body}
-      </ul>"""
+    return "\n".join(lines)
 
 
-def build_member_page(member: dict, publications: list[dict], dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
-    """Build the complete member page."""
+PROFILE_START = "<!-- AUTO:PROFILE:START -->"
+PROFILE_END = "<!-- AUTO:PROFILE:END -->"
+PUBLICATIONS_START = "<!-- AUTO:PUBLICATIONS:START -->"
+PUBLICATIONS_END = "<!-- AUTO:PUBLICATIONS:END -->"
+DISSERTATIONS_START = "<!-- AUTO:DISSERTATIONS:START -->"
+DISSERTATIONS_END = "<!-- AUTO:DISSERTATIONS:END -->"
+
+
+def inject_between_markers(
+    content: str, start_marker: str, end_marker: str, payload: str
+) -> str:
+    """Replace content between markers, or add markers if not present."""
+    pattern = re.escape(start_marker) + r".*?" + re.escape(end_marker)
+    replacement = f"{start_marker}\n{payload}\n{end_marker}"
+    if start_marker in content:
+        return re.sub(pattern, replacement, content, flags=re.DOTALL)
+    return content
+
+
+def ensure_member_markers(content: str, member_name: str) -> str:
+    """Ensure all auto-generated section markers are present."""
+    if PROFILE_START in content and PUBLICATIONS_START in content and DISSERTATIONS_START in content:
+        return content
+
+    # Create template if markers are missing
+    block = f"""---
+title: {escape_text(member_name)}
+---
+
+## Profile
+
+{PROFILE_START}
+{PROFILE_END}
+
+## Publications
+
+{PUBLICATIONS_START}
+{PUBLICATIONS_END}
+
+## Dissertations
+
+{DISSERTATIONS_START}
+{DISSERTATIONS_END}
+"""
+    return content if content.strip() else block
+
+
+def build_member_page_content(member: dict, publications: list[dict], dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+    """Build the complete member page content with markers."""
     profile_section = build_profile_section(member)
     pubs_section = build_publications_table(publications, author_to_slug)
     diss_section = build_dissertations_list(dissertations)
 
-    return f"""---
-import Base from '../../layouts/Base.astro';
+    # Start with template
+    content = f"""---
+title: {escape_text(member['name'])}
 ---
 
-<Base title="{escape_text(member['name'])}">
-  <div class="page-wrapper">
-    <div class="page-header">
-      <h1>{escape_text(member['name'])}</h1>
-      <p>{escape_text(member['topic'] or member['group'])}</p>
-    </div>
+## Profile
 
-    <div class="prose">
-      <h2>Profile</h2>
-{profile_section}
+{PROFILE_START}
+{PROFILE_END}
 
-      <h2>Publications</h2>
-{pubs_section}
+## Publications
 
-      <h2>Dissertations</h2>
-{diss_section}
-    </div>
-  </div>
-</Base>
+{PUBLICATIONS_START}
+{PUBLICATIONS_END}
+
+## Dissertations
+
+{DISSERTATIONS_START}
+{DISSERTATIONS_END}
 """
+
+    # Inject content between markers
+    content = inject_between_markers(content, PROFILE_START, PROFILE_END, profile_section)
+    content = inject_between_markers(content, PUBLICATIONS_START, PUBLICATIONS_END, pubs_section)
+    content = inject_between_markers(content, DISSERTATIONS_START, DISSERTATIONS_END, diss_section)
+
+    return content
 
 
 def main() -> None:
     """Generate member pages."""
-    # Create output directory
-    MEMBERS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
     # Load data
     all_members = load_members()
     all_publications = load_publications_cache()
@@ -263,8 +303,17 @@ def main() -> None:
         member_diss.sort(key=lambda d: (-d["year"], d["author"].lower()))
 
         # Generate page
-        page_content = build_member_page(member, member_pubs, member_diss, author_to_slug)
-        output_file = MEMBERS_OUTPUT_DIR / f"{slug}.astro"
+        output_file = MEMBERS_OUTPUT_DIR / f"{slug}.md"
+
+        # Read existing file if it exists, otherwise create new one
+        if output_file.exists():
+            existing_content = output_file.read_text(encoding="utf-8")
+            content = ensure_member_markers(existing_content, member["name"])
+        else:
+            content = f"---\ntitle: {escape_text(member['name'])}\n---\n"
+
+        # Inject generated content between markers
+        page_content = build_member_page_content(member, member_pubs, member_diss, author_to_slug)
         write_text(output_file, page_content)
 
         print(f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)")
