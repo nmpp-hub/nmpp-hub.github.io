@@ -5,9 +5,11 @@ import urllib.request
 from pathlib import Path
 
 from site_generation import (
+    build_author_to_slug_map,
     ensure_list,
     escape_text,
     load_yaml,
+    render_author_list,
     render_code_links,
     write_text,
 )
@@ -105,7 +107,10 @@ def load_publication_entries() -> list[dict]:
     return entries
 
 
-def build_page(publications: list[dict]) -> str:
+def build_page(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+    if author_to_slug is None:
+        author_to_slug = build_author_to_slug_map()
+
     rows = []
     for publication in publications:
         rows.append(
@@ -114,7 +119,7 @@ def build_page(publications: list[dict]) -> str:
                     "        <tr>",
                     f"          <td>{publication['year']}</td>",
                     f"          <td>{escape_text(publication['title'])}</td>",
-                    f"          <td>{escape_text(publication['authors'])}</td>",
+                    f"          <td>{render_author_list(publication['authors'], author_to_slug)}</td>",
                     f"          <td>{escape_text(publication['venue'])}</td>",
                     f"          <td>{render_code_links(publication['codes'])}</td>",
                     f"          <td><a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a></td>",
@@ -178,20 +183,40 @@ import Base from '../layouts/Base.astro';
 """
 
 
+def load_cached_publications() -> dict[str, dict]:
+    """Load cached publication metadata indexed by DOI."""
+    if not CACHE_FILE.exists():
+        return {}
+    cache = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+    return {p["doi"]: p for p in cache}
+
+
 def main() -> None:
     entries = load_publication_entries()
     print(f"Found {len(entries)} unique DOI entries")
 
+    # Load existing cache
+    cached_pubs = load_cached_publications()
+    if cached_pubs:
+        print(f"Loaded {len(cached_pubs)} publications from cache")
+
     publications = []
     for index, entry in enumerate(entries, start=1):
         doi = entry["doi"]
-        print(f"[{index}/{len(entries)}] Fetching {doi}...", end=" ", flush=True)
-        publication = fetch_publication_metadata(doi)
-        if publication is None:
-            print("failed")
-            continue
+        print(f"[{index}/{len(entries)}] {doi}...", end=" ", flush=True)
 
-        # YAML-provided fields override fetched metadata
+        # Try to use cached version first
+        if doi in cached_pubs:
+            publication = cached_pubs[doi].copy()
+            print("cached", end=" ")
+        else:
+            publication = fetch_publication_metadata(doi)
+            if publication is None:
+                print("failed")
+                continue
+            print("fetched", end=" ")
+
+        # YAML-provided fields override fetched/cached metadata
         overrides = entry["overrides"]
         for key in ("title", "authors", "venue", "year"):
             if key in overrides:
@@ -208,7 +233,8 @@ def main() -> None:
         )
     )
 
-    write_text(OUTPUT_FILE, build_page(publications))
+    author_to_slug = build_author_to_slug_map()
+    write_text(OUTPUT_FILE, build_page(publications, author_to_slug))
     print(f"Updated {OUTPUT_FILE} with {len(publications)} publications")
 
     # Save metadata cache for use by generate_code_pages.py

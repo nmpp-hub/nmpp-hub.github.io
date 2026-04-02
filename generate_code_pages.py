@@ -15,7 +15,7 @@ import json
 import re
 from pathlib import Path
 
-from site_generation import ensure_list, escape_text, load_yaml
+from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list
 
 ROOT = Path(__file__).resolve().parent
 CODES_DIR = ROOT / "src" / "content" / "codes"
@@ -103,9 +103,12 @@ def build_members_list(members: list[dict]) -> str:
     return f"<ul>\n{body}\n</ul>"
 
 
-def build_publications_table(publications: list[dict]) -> str:
+def build_publications_table(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
     if not publications:
         return "<p>No publications linked to this code yet.</p>"
+
+    if author_to_slug is None:
+        author_to_slug = build_author_to_slug_map()
 
     rows = []
     for pub in publications:
@@ -115,7 +118,7 @@ def build_publications_table(publications: list[dict]) -> str:
                     "  <tr>",
                     f"    <td>{pub['year'] or ''}</td>",
                     f"    <td>{escape_text(pub['title'])}</td>",
-                    f"    <td>{escape_text(pub['authors'])}</td>",
+                    f"    <td>{render_author_list(pub['authors'], author_to_slug)}</td>",
                     f"    <td>{escape_text(pub['venue'])}</td>",
                     f'    <td><a href="https://doi.org/{escape_text(pub["doi"])}">DOI</a></td>',
                     "  </tr>",
@@ -243,6 +246,7 @@ def main() -> None:
     all_pubs = load_publications_cache()
     all_diss = load_dissertations()
     all_members = load_members()
+    author_to_slug = build_author_to_slug_map()
 
     code_files = sorted(CODES_DIR.glob("*.md"))
     if not code_files:
@@ -270,7 +274,7 @@ def main() -> None:
             content, MEM_START, MEM_END, build_members_list(members)
         )
         content = inject_between_markers(
-            content, PUB_START, PUB_END, build_publications_table(pubs)
+            content, PUB_START, PUB_END, build_publications_table(pubs, author_to_slug)
         )
         content = inject_between_markers(
             content, DISS_START, DISS_END, build_dissertations_table(diss)

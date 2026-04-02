@@ -12,7 +12,9 @@ GVEC landing page.
 ## Members
 
 <!-- AUTO:MEMBERS:START -->
-<p>No members linked to this code yet.</p>
+<ul>
+  <li>Florian Hindenlang (Permanent staff)</li>
+</ul>
 <!-- AUTO:MEMBERS:END -->
 
 ## Publications

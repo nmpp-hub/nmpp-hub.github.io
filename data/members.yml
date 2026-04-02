@@ -8,14 +8,18 @@ members:
   alumni: false
   aliases: []
   picture: 'https://www.ipp.mpg.de/5422649/original-1763388322.webp'  # optional: set to a URL or /images/members/filename.jpg
-- name: A. Example
+- name: Florian Hindenlang
   role: permanent staff
-  topic: Plasma simulation methods
+  topic: Magnetohydrodynamics
   contact: a.example@example.org
-  group: Numerical Methods in Plasma Physics
-  codes: [gempicx]
+  group: Magnetohydrodynamics
+  codes: [gvec]
   alumni: false
-  aliases: []
+  aliases:
+    - "F. Hindenlang"
+    - "F Hindenlang"
+    - "Florian H."
+    - "F. Hindenlang"
   picture: 'https://www.ipp.mpg.de/5446851/original-1727074133.webp'
 - name: B. Example
   role: permanent staff
