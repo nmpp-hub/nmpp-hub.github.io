@@ -11,7 +11,7 @@ groups:
   abbr: MHD
   ipp_url: https://www.ipp.mpg.de/4119345/mhd
 
-- name: Geometric Numerical Integration and Reduced Complexity Modelling
+- name: Geometric Numerical Integration
   leader: Dr. Michael Kraus
   slug: geometric-numerical-integration
   abbr: GNI

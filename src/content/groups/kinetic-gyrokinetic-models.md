@@ -4,7 +4,7 @@ title: Kinetic and Gyrokinetic Models
 
 ## Group Leader
 
-<p><strong>Dr. Stefan Possanner</strong></p>
+<p><strong><a href="/members/stefan-possanner/">Dr. Stefan Possanner</a></strong></p>
 
 <!-- CUSTOM:CONTENT:START -->
 ## Overview

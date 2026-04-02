@@ -153,9 +153,23 @@ def load_dissertations() -> list[dict]:
     return dissertations
 
 
-def build_leader_section(group: dict) -> str:
-    """Build the group leader section."""
-    return f"<p><strong>{escape_text(group['leader'])}</strong></p>"
+def build_leader_section(group: dict, members: list[dict]) -> str:
+    """Build the group leader section with link to member page."""
+    leader_name = group["leader"]
+
+    # Try to find matching member by extracting name from leader string
+    # (e.g., "Dr. Stefan Possanner" -> find "Stefan Possanner")
+    member_slug = None
+    for member in members:
+        # Check if member name appears in leader string (ignoring titles)
+        if member["name"].lower() in leader_name.lower():
+            member_slug = slugify(member["name"])
+            break
+
+    if member_slug:
+        return f'<p><strong><a href="/members/{member_slug}/">{escape_text(leader_name)}</a></strong></p>'
+    else:
+        return f"<p><strong>{escape_text(leader_name)}</strong></p>"
 
 
 def build_members_list(members: list[dict]) -> str:
@@ -267,24 +281,39 @@ def inject_between_markers(content: str, start_marker: str, end_marker: str, pay
     return content
 
 
+def extract_custom_content(content: str) -> str:
+    """Extract content between custom markers."""
+    import re
+    pattern = re.escape(CUSTOM_START) + r"(.*?)" + re.escape(CUSTOM_END)
+    match = re.search(pattern, content, re.DOTALL)
+    if match:
+        return match.group(1).strip()
+    return ""
+
+
 def build_group_page_content(
-    group: dict, members: list[dict], publications: list[dict], dissertations: list[dict], author_to_slug: dict[str, str] | None = None
+    group: dict, members: list[dict], publications: list[dict], dissertations: list[dict], existing_content: str = "", author_to_slug: dict[str, str] | None = None
 ) -> str:
-    """Build the complete group page content with markers."""
-    leader_section = build_leader_section(group)
+    """Build the complete group page content with markers, preserving custom content."""
+    leader_section = build_leader_section(group, members)
     members_section = build_members_list(members)
     pubs_section = build_publications_table(publications, author_to_slug)
     diss_section = build_dissertations_table(dissertations)
 
-    # Build custom content with Links section and IPP link
-    abbr = group.get("abbr", "")
-    ipp_url = group.get("ipp_url", "")
-    custom_content = ""
-    if ipp_url:
-        link_text = f"{group['name']} ({abbr})" if abbr else group['name']
-        custom_content = f"""## Links
+    # Preserve existing custom content, or create default with IPP link
+    if existing_content:
+        custom_content = extract_custom_content(existing_content)
+    else:
+        # Build default custom content with Links section and IPP link
+        abbr = group.get("abbr", "")
+        ipp_url = group.get("ipp_url", "")
+        if ipp_url:
+            link_text = f"{group['name']} ({abbr})" if abbr else group['name']
+            custom_content = f"""## Links
 
 - [{link_text}]({escape_text(ipp_url)})"""
+        else:
+            custom_content = ""
 
     content = f"""---
 title: {escape_text(group['name'])}
@@ -366,7 +395,13 @@ def main() -> None:
 
         # Generate page
         output_file = GROUPS_OUTPUT_DIR / f"{group['slug']}.md"
-        page_content = build_group_page_content(group, group_members, group_pubs, group_diss, author_to_slug)
+
+        # Read existing content to preserve custom section
+        existing_content = ""
+        if output_file.exists():
+            existing_content = output_file.read_text(encoding="utf-8")
+
+        page_content = build_group_page_content(group, group_members, group_pubs, group_diss, existing_content, author_to_slug)
         write_text(output_file, page_content)
 
         print(f"  {group['name']:50} → {group['slug']:30} ({len(group_members)} members, {len(group_pubs)} pubs, {len(group_diss)} diss)")

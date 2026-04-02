@@ -4,7 +4,7 @@ title: Advanced Computing Hub
 
 ## Group Leader
 
-<p><strong>Dr. Roman Hatzky</strong></p>
+<p><strong><a href="/members/roman-hatzky/">Dr. Roman Hatzky</a></strong></p>
 
 <!-- CUSTOM:CONTENT:START -->
 ## Overview
@@ -27,7 +27,6 @@ The ACH consists of a core team based at the Max-Planck-Institut für Plasmaphys
 
 ## Additional Links
 - [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
-
 <!-- CUSTOM:CONTENT:END -->
 
 ## Members

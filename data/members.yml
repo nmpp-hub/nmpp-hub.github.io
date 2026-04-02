@@ -29,7 +29,7 @@ members:
   role: permanent staff
   topic: ""
   contact: b.example@example.org
-  group: Geometric Numerical Integration and Reduced Complexity Modelling
+  group: Geometric Numerical Integration
   codes: [geometricintegrators, geometricmachinelearning]
   alumni: false
   aliases: []

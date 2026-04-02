@@ -1,10 +1,10 @@
 ---
-title: Geometric Numerical Integration and Reduced Complexity Modelling
+title: Geometric Numerical Integration
 ---
 
 ## Group Leader
 
-<p><strong>Dr. Michael Kraus</strong></p>
+<p><strong><a href="/members/michael-kraus/">Dr. Michael Kraus</a></strong></p>
 
 <!-- CUSTOM:CONTENT:START -->
 ## Overview

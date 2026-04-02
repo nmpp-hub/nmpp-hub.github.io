@@ -4,7 +4,7 @@ title: Zonal Flows in Turbulent Plasmas
 
 ## Group Leader
 
-<p><strong>Priv. Doz. Dr. Klaus Hallatschek</strong></p>
+<p><strong><a href="/members/klaus-hallatschek/">Priv. Doz. Dr. Klaus Hallatschek</a></strong></p>
 
 <!-- CUSTOM:CONTENT:START -->
 The group studies the zonal flows with massively parallel computer simulations of plasma and planetary turbulence, with the goal to make predictions of their long-term evolution and experimentally observed switching effects between different flow patterns.
