@@ -267,25 +267,24 @@ def inject_between_markers(content: str, start_marker: str, end_marker: str, pay
     return content
 
 
-def build_custom_links_section(group: dict) -> str:
-    """Build the custom links section with IPP webpage link."""
-    abbr = group.get("abbr", "")
-    ipp_url = group.get("ipp_url", "")
-    if ipp_url:
-        link_text = f"{group['name']} ({abbr})" if abbr else group['name']
-        return f"- [{link_text}]({escape_text(ipp_url)})"
-    return ""
-
-
 def build_group_page_content(
     group: dict, members: list[dict], publications: list[dict], dissertations: list[dict], author_to_slug: dict[str, str] | None = None
 ) -> str:
     """Build the complete group page content with markers."""
     leader_section = build_leader_section(group)
-    custom_links = build_custom_links_section(group)
     members_section = build_members_list(members)
     pubs_section = build_publications_table(publications, author_to_slug)
     diss_section = build_dissertations_table(dissertations)
+
+    # Build custom content with Links section and IPP link
+    abbr = group.get("abbr", "")
+    ipp_url = group.get("ipp_url", "")
+    custom_content = ""
+    if ipp_url:
+        link_text = f"{group['name']} ({abbr})" if abbr else group['name']
+        custom_content = f"""## Links
+
+- [{link_text}]({escape_text(ipp_url)})"""
 
     content = f"""---
 title: {escape_text(group['name'])}
@@ -295,9 +294,8 @@ title: {escape_text(group['name'])}
 
 {leader_section}
 
-## Links
-
 {CUSTOM_START}
+{custom_content}
 {CUSTOM_END}
 
 ## Members
@@ -317,7 +315,6 @@ title: {escape_text(group['name'])}
 """
 
     # Inject content between markers
-    content = inject_between_markers(content, CUSTOM_START, CUSTOM_END, custom_links)
     content = inject_between_markers(content, MEMBERS_START, MEMBERS_END, members_section)
     content = inject_between_markers(content, PUBLICATIONS_START, PUBLICATIONS_END, pubs_section)
     content = inject_between_markers(content, DISSERTATIONS_START, DISSERTATIONS_END, diss_section)

@@ -6,9 +6,9 @@ title: Geometric Numerical Integration and Reduced Complexity Modelling
 
 <p><strong>Dr. Michael Kraus</strong></p>
 
+<!-- CUSTOM:CONTENT:START -->
 ## Links
 
-<!-- CUSTOM:CONTENT:START -->
 - [Geometric Numerical Integration and Reduced Complexity Modelling (GNI)](https://www.ipp.mpg.de/4105128/gspm)
 <!-- CUSTOM:CONTENT:END -->
 

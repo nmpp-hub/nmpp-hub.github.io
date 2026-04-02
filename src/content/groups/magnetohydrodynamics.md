@@ -6,9 +6,9 @@ title: Magnetohydrodynamics
 
 <p><strong>Dr. Ing. Florian Hindenlang</strong></p>
 
+<!-- CUSTOM:CONTENT:START -->
 ## Links
 
-<!-- CUSTOM:CONTENT:START -->
 - [Magnetohydrodynamics (MHD)](https://www.ipp.mpg.de/4119345/mhd)
 <!-- CUSTOM:CONTENT:END -->
 
