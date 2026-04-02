@@ -10,7 +10,7 @@ title: Michael Kraus
 <div class="member-profile-photo-circle member-photo-placeholder"></div>
 </div>
 <div class="member-profile-text">
-<p><strong>Group:</strong> Geometric Numerical Integration and Reduced Complexity Modelling</p>
+<p><strong>Group:</strong> Geometric Numerical Integration</p>
 <p><strong>Codes:</strong> <a href="/codes/geometricintegrators/">geometricintegrators</a>, <a href="/codes/geometricmachinelearning/">geometricmachinelearning</a></p>
 </div>
 </div>
