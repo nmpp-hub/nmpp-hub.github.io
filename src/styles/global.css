@@ -690,3 +690,40 @@ h5 {
 .prose td.col-name {
   min-width: 180px;
 }
+
+/* ─── INDIVIDUAL MEMBER PROFILE ─── */
+
+.member-profile-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.member-profile-photo-wrapper {
+  flex-shrink: 0;
+}
+
+.member-profile-photo-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--nmpp-accent-mid);
+  display: block;
+  box-shadow: 0 8px 24px rgba(26, 127, 138, 0.15);
+}
+
+.member-profile-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.member-profile-text p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.member-profile-text strong {
+  color: var(--nmpp-accent);
+}

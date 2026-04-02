@@ -9,155 +9,140 @@ import Base from '../layouts/Base.astro';
       <p>NMPP division members at IPP.</p>
     </div>
     <div class="prose">
-      <h2>Professor</h2>
+      <h2>Professors</h2>
       <div class="member-cards">
-      <div class="member-card">
-        <img src="https://www.ipp.mpg.de/5422649/original-1763388322.webp" alt="Eric Sonnendrücker" class="member-photo-circle" />
-        <div class="member-card-name">Eric Sonnendrücker</div>
-        <div class="member-card-role">Professor</div>
-      </div>
+      <a href="/members/eric-sonnendrucker/" class="member-card-link">
+        <div class="member-card">
+          <img src="https://www.ipp.mpg.de/5422649/original-1763388322.webp" alt="Eric Sonnendrücker" class="member-photo-circle" />
+          <div class="member-card-name">Eric Sonnendrücker</div>
+          <div class="member-card-topic">Numerical methods for plasma physics</div>
+        </div>
+      </a>
       </div>
 
       <h2>Permanent Staff</h2>
-      <table>
-        <thead>
-          <tr>
-            <th class="col-name">Name</th>
-            <th>Topic</th>
-            <th>Contact</th>
-            <th>Codes</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td class="col-name"><img src="https://www.ipp.mpg.de/5446851/original-1727074133.webp" alt="A. Example" class="member-photo-thumb" />A. Example</td>
-          <td>Plasma simulation methods</td>
-          <td>a.example@example.org</td>
-          <td><a href="/codes/gempicx/">gempicx</a></td>
-        </tr>
-        <tr>
-          <td class="col-name">B. Example</td>
-          <td>Structure-preserving numerics</td>
-          <td>b.example@example.org</td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="member-cards">
+      <a href="/members/florian-hindenlang/" class="member-card-link">
+        <div class="member-card">
+          <img src="https://www.ipp.mpg.de/5446851/original-1727074133.webp" alt="Florian Hindenlang" class="member-photo-circle" />
+          <div class="member-card-name">Florian Hindenlang</div>
+          <div class="member-card-topic">Magnetohydrodynamics</div>
+        </div>
+      </a>
+      <a href="/members/stefan-possanner/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">Stefan Possanner</div>
+          <div class="member-card-topic"></div>
+        </div>
+      </a>
+      <a href="/members/michael-kraus/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">Michael Kraus</div>
+          <div class="member-card-topic"></div>
+        </div>
+      </a>
+      <a href="/members/udo-von-toussaint/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">Udo von Toussaint</div>
+          <div class="member-card-topic"></div>
+        </div>
+      </a>
+      <a href="/members/klaus-hallatschek/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">Klaus Hallatschek</div>
+          <div class="member-card-topic"></div>
+        </div>
+      </a>
+      <a href="/members/martin-campos-pinto/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">Martin Campos Pinto</div>
+          <div class="member-card-topic"></div>
+        </div>
+      </a>
+      <a href="/members/roman-hatzky/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">Roman Hatzky</div>
+          <div class="member-card-topic"></div>
+        </div>
+      </a>
+      </div>
 
       <h2>Postdocs</h2>
-      <table>
-        <thead>
-          <tr>
-            <th class="col-name">Name</th>
-            <th>Topic</th>
-            <th>Contact</th>
-            <th>Codes</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td class="col-name">C. Example</td>
-          <td>Gyrokinetic modeling</td>
-          <td>c.example@example.org</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td class="col-name">D. Example</td>
-          <td>High-performance solvers</td>
-          <td>d.example@example.org</td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="member-cards">
+      <a href="/members/c-example/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">C. Example</div>
+          <div class="member-card-topic">Gyrokinetic modeling</div>
+        </div>
+      </a>
+      <a href="/members/d-example/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">D. Example</div>
+          <div class="member-card-topic">High-performance solvers</div>
+        </div>
+      </a>
+      </div>
 
       <h2>PhD Students</h2>
-      <table>
-        <thead>
-          <tr>
-            <th class="col-name">Name</th>
-            <th>Topic</th>
-            <th>Contact</th>
-            <th>Codes</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td class="col-name">E. Example</td>
-          <td>Kinetic turbulence simulation</td>
-          <td>e.example@example.org</td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="member-cards">
+      <a href="/members/e-example/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">E. Example</div>
+          <div class="member-card-topic">Kinetic turbulence simulation</div>
+        </div>
+      </a>
+      </div>
 
       <h2>MSc Students</h2>
-      <table>
-        <thead>
-          <tr>
-            <th class="col-name">Name</th>
-            <th>Topic</th>
-            <th>Contact</th>
-            <th>Codes</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td class="col-name">F. Example</td>
-          <td>Geometry kernels for transport</td>
-          <td>f.example@example.org</td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="member-cards">
+      <a href="/members/f-example/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">F. Example</div>
+          <div class="member-card-topic">Geometry kernels for transport</div>
+        </div>
+      </a>
+      </div>
 
       <h2>Administrative Staff</h2>
-      <table>
-        <thead>
-          <tr>
-            <th class="col-name">Name</th>
-            <th>Topic</th>
-            <th>Contact</th>
-            <th>Codes</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td class="col-name">J. Example</td>
-          <td>Group administration and coordination</td>
-          <td>j.example@example.org</td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="member-cards">
+      <a href="/members/j-example/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">J. Example</div>
+          <div class="member-card-topic">Group administration and coordination</div>
+        </div>
+      </a>
+      </div>
 
       <h2>Alumni</h2>
-      <table>
-        <thead>
-          <tr>
-            <th class="col-name">Name</th>
-            <th>Role</th>
-            <th>Topic</th>
-            <th>Contact</th>
-            <th>Codes</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td class="col-name">G. Example</td>
-          <td>PhD</td>
-          <td>Completed PhD research</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td class="col-name">H. Example</td>
-          <td>MSc</td>
-          <td>Completed MSc research</td>
-          <td></td>
-          <td></td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="member-cards">
+      <a href="/members/g-example/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">G. Example</div>
+          <div class="member-card-role">PhD</div>
+          <div class="member-card-topic">Completed PhD research</div>
+        </div>
+      </a>
+      <a href="/members/h-example/" class="member-card-link">
+        <div class="member-card">
+          <div class="member-photo-circle member-photo-placeholder"></div>
+          <div class="member-card-name">H. Example</div>
+          <div class="member-card-role">MSc</div>
+          <div class="member-card-topic">Completed MSc research</div>
+        </div>
+      </a>
+      </div>
     </div>
   </div>
 </Base>

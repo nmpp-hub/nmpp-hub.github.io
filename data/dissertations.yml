@@ -5,7 +5,7 @@ dissertations:
     degree: phd
     institution: ""
     groups: []
-    codes: []
+    codes: [psydac]
     link: https://mediatum.ub.tum.de/?id=1776749
   - year: 2025
     title: Uncertainty quantification in three-dimensional plasma equilibrium reconstruction

@@ -1,16 +1,22 @@
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
+# Add parent directory to path to import site_generation
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from site_generation import (
+    build_author_to_slug_map,
     ensure_list,
     escape_text,
     load_yaml,
+    render_author_name,
     render_code_links,
     write_text,
 )
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "dissertations.yml"
 OUTPUT_FILE = ROOT / "src" / "pages" / "dissertations.astro"
 
@@ -57,7 +63,10 @@ def render_degree_and_institution(dissertation: dict) -> str:
     return escape_text(f"{degree} / {institution}" if institution else degree)
 
 
-def build_page(dissertations: list[dict]) -> str:
+def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+    if author_to_slug is None:
+        author_to_slug = build_author_to_slug_map()
+
     rows = []
     for dissertation in dissertations:
         rows.append(
@@ -66,7 +75,7 @@ def build_page(dissertations: list[dict]) -> str:
                     "        <tr>",
                     f"          <td>{dissertation['year']}</td>",
                     f"          <td>{escape_text(dissertation['title'])}</td>",
-                    f"          <td>{escape_text(dissertation['author'])}</td>",
+                    f"          <td>{render_author_name(dissertation['author'], author_to_slug)}</td>",
                     f"          <td>{render_degree_and_institution(dissertation)}</td>",
                     f"          <td>{render_code_links(dissertation['codes'])}</td>",
                     f"          <td><a href=\"{escape_text(dissertation['link'])}\">Full text</a></td>",
@@ -145,7 +154,8 @@ def main() -> None:
         key=lambda dissertation: (-dissertation["year"], dissertation["author"].lower())
     )
 
-    write_text(OUTPUT_FILE, build_page(dissertations))
+    author_to_slug = build_author_to_slug_map()
+    write_text(OUTPUT_FILE, build_page(dissertations, author_to_slug))
     print(f"Updated {OUTPUT_FILE}")
 
 
