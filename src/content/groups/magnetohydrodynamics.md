@@ -64,14 +64,14 @@ The simulation framework is depicted in Fig.2. As a preprocessing step, HOPR (hi
   <tr>
     <td>2025</td>
     <td>Computing MHD equilibria of stellarators with a flexible coordinate frame</td>
-    <td><a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Gabriel G Plunk, Omar Maj</td>
+    <td><a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Gabriel G Plunk, <a href="/members/omar-maj/">Omar Maj</a></td>
     <td>Plasma Physics and Controlled Fusion</td>
     <td><a href="https://doi.org/10.1088/1361-6587/adba11">DOI</a></td>
   </tr>
   <tr>
     <td>2025</td>
     <td>Construction of an invertible mapping to boundary conforming coordinates for arbitrarily shaped toroidal domains</td>
-    <td>Robert Babin, <a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Omar Maj, Robert Köberl</td>
+    <td>Robert Babin, <a href="/members/florian-hindenlang/">Florian Hindenlang</a>, <a href="/members/omar-maj/">Omar Maj</a>, Robert Köberl</td>
     <td>Plasma Physics and Controlled Fusion</td>
     <td><a href="https://doi.org/10.1088/1361-6587/adaee6">DOI</a></td>
   </tr>

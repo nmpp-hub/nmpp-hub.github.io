@@ -43,7 +43,7 @@ Add custom markdown content here (description, installation, features, etc.)
   <tr>
     <td>2023</td>
     <td>High-Order Structure-Preserving Algorithms for Plasma Hybrid Models</td>
-    <td><a href="/members/stefan-possanner/">Stefan Possanner</a>, Florian Holderied, Yingzhe Li, Byung Kyu Na, Dominik Bell, Said Hadjout, Yaman Güçlü</td>
+    <td><a href="/members/stefan-possanner/">Stefan Possanner</a>, Florian Holderied, Yingzhe Li, Byung Kyu Na, Dominik Bell, Said Hadjout, <a href="/members/yaman-guclu/">Yaman Güçlü</a></td>
     <td>Lecture Notes in Computer Science</td>
     <td><a href="https://doi.org/10.1007/978-3-031-38299-4_28">DOI</a></td>
   </tr>
