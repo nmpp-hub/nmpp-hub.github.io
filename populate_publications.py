@@ -4,7 +4,7 @@ import json
 import urllib.request
 from pathlib import Path
 
-from site_generation import ensure_list, escape_text, load_yaml, render_related, write_text
+from site_generation import ensure_list, escape_text, load_yaml, render_code_links, write_text
 
 
 ROOT = Path(__file__).resolve().parent
@@ -102,7 +102,7 @@ def build_page(publications: list[dict]) -> str:
                     f"          <td>{escape_text(publication['title'])}</td>",
                     f"          <td>{escape_text(publication['authors'])}</td>",
                     f"          <td>{escape_text(publication['venue'])}</td>",
-                    f"          <td>{render_related(publication['groups'], publication['codes'])}</td>",
+                    f"          <td>{render_code_links(publication['codes'])}</td>",
                     f"          <td><a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a></td>",
                     "        </tr>",
                 ]
@@ -130,7 +130,7 @@ import Base from '../layouts/Base.astro';
           <th>Title</th>
           <th>Authors</th>
           <th>Venue</th>
-          <th>Group / Codes</th>
+          <th>Codes</th>
           <th>Link</th>
         </tr>
       </thead>

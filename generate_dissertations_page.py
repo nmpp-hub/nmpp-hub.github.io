@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from site_generation import ensure_list, escape_text, load_yaml, render_related, write_text
+from site_generation import ensure_list, escape_text, load_yaml, render_code_links, write_text
 
 
 ROOT = Path(__file__).resolve().parent
@@ -63,7 +63,7 @@ def build_page(dissertations: list[dict]) -> str:
                     f"          <td>{escape_text(dissertation['title'])}</td>",
                     f"          <td>{escape_text(dissertation['author'])}</td>",
                     f"          <td>{render_degree_and_institution(dissertation)}</td>",
-                    f"          <td>{render_related(dissertation['groups'], dissertation['codes'])}</td>",
+                    f"          <td>{render_code_links(dissertation['codes'])}</td>",
                     f"          <td><a href=\"{escape_text(dissertation['link'])}\">Full text</a></td>",
                     "        </tr>",
                 ]
@@ -90,8 +90,8 @@ import Base from '../layouts/Base.astro';
           <th>Year</th>
           <th>Title</th>
           <th>Author</th>
-          <th>Degree / Institution</th>
-          <th>Group / Codes</th>
+          <th>Degree</th>
+          <th>Codes</th>
           <th>Link</th>
         </tr>
       </thead>
