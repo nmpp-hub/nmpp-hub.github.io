@@ -9,30 +9,36 @@ import Base from '../layouts/Base.astro';
       <p>NMPP division members at IPP.</p>
     </div>
     <div class="prose">
+      <h2>Professor</h2>
+      <div class="member-cards">
+      <div class="member-card">
+        <img src="https://www.ipp.mpg.de/5422649/original-1763388322.webp" alt="Eric Sonnendrücker" class="member-photo-circle" />
+        <div class="member-card-name">Eric Sonnendrücker</div>
+        <div class="member-card-role">Professor</div>
+      </div>
+      </div>
+
       <h2>Permanent Staff</h2>
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th class="col-name">Name</th>
             <th>Topic</th>
             <th>Contact</th>
-            <th>Group</th>
             <th>Codes</th>
           </tr>
         </thead>
         <tbody>
         <tr>
-          <td>A. Example</td>
+          <td class="col-name"><img src="https://www.ipp.mpg.de/5446851/original-1727074133.webp" alt="A. Example" class="member-photo-thumb" />A. Example</td>
           <td>Plasma simulation methods</td>
           <td>a.example@example.org</td>
-          <td>Numerical Methods in Plasma Physics</td>
-          <td></td>
+          <td><a href="/codes/gempicx/">gempicx</a></td>
         </tr>
         <tr>
-          <td>B. Example</td>
+          <td class="col-name">B. Example</td>
           <td>Structure-preserving numerics</td>
           <td>b.example@example.org</td>
-          <td>Numerical Methods in Plasma Physics</td>
           <td></td>
         </tr>
         </tbody>
@@ -42,26 +48,23 @@ import Base from '../layouts/Base.astro';
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th class="col-name">Name</th>
             <th>Topic</th>
             <th>Contact</th>
-            <th>Group</th>
             <th>Codes</th>
           </tr>
         </thead>
         <tbody>
         <tr>
-          <td>C. Example</td>
+          <td class="col-name">C. Example</td>
           <td>Gyrokinetic modeling</td>
           <td>c.example@example.org</td>
-          <td>Numerical Methods in Plasma Physics</td>
           <td></td>
         </tr>
         <tr>
-          <td>D. Example</td>
+          <td class="col-name">D. Example</td>
           <td>High-performance solvers</td>
           <td>d.example@example.org</td>
-          <td>Numerical Methods in Plasma Physics</td>
           <td></td>
         </tr>
         </tbody>
@@ -71,19 +74,17 @@ import Base from '../layouts/Base.astro';
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th class="col-name">Name</th>
             <th>Topic</th>
             <th>Contact</th>
-            <th>Group</th>
             <th>Codes</th>
           </tr>
         </thead>
         <tbody>
         <tr>
-          <td>E. Example</td>
+          <td class="col-name">E. Example</td>
           <td>Kinetic turbulence simulation</td>
           <td>e.example@example.org</td>
-          <td>Numerical Methods in Plasma Physics</td>
           <td></td>
         </tr>
         </tbody>
@@ -93,19 +94,37 @@ import Base from '../layouts/Base.astro';
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th class="col-name">Name</th>
             <th>Topic</th>
             <th>Contact</th>
-            <th>Group</th>
             <th>Codes</th>
           </tr>
         </thead>
         <tbody>
         <tr>
-          <td>F. Example</td>
+          <td class="col-name">F. Example</td>
           <td>Geometry kernels for transport</td>
           <td>f.example@example.org</td>
-          <td>Numerical Methods in Plasma Physics</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2>Administrative Staff</h2>
+      <table>
+        <thead>
+          <tr>
+            <th class="col-name">Name</th>
+            <th>Topic</th>
+            <th>Contact</th>
+            <th>Codes</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="col-name">J. Example</td>
+          <td>Group administration and coordination</td>
+          <td>j.example@example.org</td>
           <td></td>
         </tr>
         </tbody>
@@ -115,29 +134,26 @@ import Base from '../layouts/Base.astro';
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th class="col-name">Name</th>
             <th>Role</th>
             <th>Topic</th>
             <th>Contact</th>
-            <th>Group</th>
             <th>Codes</th>
           </tr>
         </thead>
         <tbody>
         <tr>
-          <td>G. Example</td>
+          <td class="col-name">G. Example</td>
           <td>PhD</td>
           <td>Completed PhD research</td>
           <td></td>
-          <td>Numerical Methods in Plasma Physics</td>
           <td></td>
         </tr>
         <tr>
-          <td>H. Example</td>
+          <td class="col-name">H. Example</td>
           <td>MSc</td>
           <td>Completed MSc research</td>
           <td></td>
-          <td>Numerical Methods in Plasma Physics</td>
           <td></td>
         </tr>
         </tbody>

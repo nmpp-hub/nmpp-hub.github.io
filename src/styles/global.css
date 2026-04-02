@@ -633,3 +633,60 @@ h5 {
     padding-top: 1.75rem;
   }
 }
+
+/* ─── MEMBER CARDS & PHOTOS ─── */
+
+.member-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.45rem;
+}
+
+.member-photo-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--nmpp-line);
+  display: block;
+}
+
+.member-photo-placeholder {
+  background: var(--nmpp-line);
+}
+
+.member-card-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--nmpp-ink);
+  margin-top: 0.25rem;
+}
+
+.member-card-role {
+  font-size: 0.85rem;
+  color: var(--nmpp-subtle);
+}
+
+.member-photo-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 0.6rem;
+  border: 1px solid var(--nmpp-line);
+}
+
+.prose th.col-name,
+.prose td.col-name {
+  min-width: 180px;
+}

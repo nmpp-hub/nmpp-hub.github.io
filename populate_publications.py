@@ -15,6 +15,7 @@ from site_generation import (
 ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data" / "dois.yml"
 OUTPUT_FILE = ROOT / "src" / "pages" / "publications.astro"
+CACHE_FILE = ROOT / "data" / ".publications_cache.json"
 
 
 def fetch_publication_metadata(doi: str) -> dict | None:
@@ -76,12 +77,14 @@ def load_publication_entries() -> list[dict]:
     for index, raw_entry in enumerate(raw_entries, start=1):
         if isinstance(raw_entry, str):
             doi = raw_entry.strip()
-            groups = []
-            codes = []
+            overrides = {}
         elif isinstance(raw_entry, dict):
             doi = str(raw_entry.get("doi", "")).strip()
-            groups = ensure_list(raw_entry.get("groups", []))
-            codes = ensure_list(raw_entry.get("codes", []))
+            overrides = {
+                k: v
+                for k, v in raw_entry.items()
+                if k != "doi" and v is not None
+            }
         else:
             raise ValueError(
                 f"Publication entry {index} has invalid type {type(raw_entry).__name__}"
@@ -92,7 +95,11 @@ def load_publication_entries() -> list[dict]:
         if doi in seen:
             continue
 
-        entries.append({"doi": doi, "groups": groups, "codes": codes})
+        # Normalize list fields
+        overrides["codes"] = ensure_list(overrides.get("codes", []))
+        overrides["groups"] = ensure_list(overrides.get("groups", []))
+
+        entries.append({"doi": doi, "overrides": overrides})
         seen.add(doi)
 
     return entries
@@ -184,8 +191,13 @@ def main() -> None:
             print("failed")
             continue
 
-        publication["groups"] = entry["groups"]
-        publication["codes"] = entry["codes"]
+        # YAML-provided fields override fetched metadata
+        overrides = entry["overrides"]
+        for key in ("title", "authors", "venue", "year"):
+            if key in overrides:
+                publication[key] = overrides[key]
+        publication["groups"] = overrides.get("groups", [])
+        publication["codes"] = overrides.get("codes", [])
         publications.append(publication)
         print("ok")
 
@@ -198,6 +210,21 @@ def main() -> None:
 
     write_text(OUTPUT_FILE, build_page(publications))
     print(f"Updated {OUTPUT_FILE} with {len(publications)} publications")
+
+    # Save metadata cache for use by generate_code_pages.py
+    cache = [
+        {
+            "doi": p["doi"],
+            "title": p["title"],
+            "authors": p["authors"],
+            "venue": p["venue"],
+            "year": p["year"],
+            "codes": p["codes"],
+        }
+        for p in publications
+    ]
+    CACHE_FILE.write_text(json.dumps(cache, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"Saved metadata cache to {CACHE_FILE}")
 
 
 if __name__ == "__main__":

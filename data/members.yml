@@ -1,57 +1,83 @@
 members:
-  - name: A. Example
-    role: permanent staff
-    topic: Plasma simulation methods
-    contact: a.example@example.org
-    group: Numerical Methods in Plasma Physics
-    codes: []
-    alumni: false
-  - name: B. Example
-    role: permanent staff
-    topic: Structure-preserving numerics
-    contact: b.example@example.org
-    group: Numerical Methods in Plasma Physics
-    codes: []
-    alumni: false
-  - name: C. Example
-    role: postdoc
-    topic: Gyrokinetic modeling
-    contact: c.example@example.org
-    group: Numerical Methods in Plasma Physics
-    codes: []
-    alumni: false
-  - name: D. Example
-    role: postdoc
-    topic: High-performance solvers
-    contact: d.example@example.org
-    group: Numerical Methods in Plasma Physics
-    codes: []
-    alumni: false
-  - name: E. Example
-    role: phd
-    topic: Kinetic turbulence simulation
-    contact: e.example@example.org
-    group: Numerical Methods in Plasma Physics
-    codes: []
-    alumni: false
-  - name: F. Example
-    role: msc
-    topic: Geometry kernels for transport
-    contact: f.example@example.org
-    group: Numerical Methods in Plasma Physics
-    codes: []
-    alumni: false
-  - name: G. Example
-    role: phd
-    topic: Completed PhD research
-    contact: ""
-    group: Numerical Methods in Plasma Physics
-    codes: []
-    alumni: true
-  - name: H. Example
-    role: msc
-    topic: Completed MSc research
-    contact: ""
-    group: Numerical Methods in Plasma Physics
-    codes: []
-    alumni: true
+- name: Eric Sonnendrücker
+  role: professor
+  topic: Numerical methods for plasma physics
+  contact: i.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: [gempicx]
+  alumni: false
+  aliases: []
+  picture: 'https://www.ipp.mpg.de/5422649/original-1763388322.webp'  # optional: set to a URL or /images/members/filename.jpg
+- name: A. Example
+  role: permanent staff
+  topic: Plasma simulation methods
+  contact: a.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: [gempicx]
+  alumni: false
+  aliases: []
+  picture: 'https://www.ipp.mpg.de/5446851/original-1727074133.webp'
+- name: B. Example
+  role: permanent staff
+  topic: Structure-preserving numerics
+  contact: b.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: false
+  aliases: []
+- name: C. Example
+  role: postdoc
+  topic: Gyrokinetic modeling
+  contact: c.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: false
+  aliases: []
+- name: D. Example
+  role: postdoc
+  topic: High-performance solvers
+  contact: d.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: false
+  aliases: []
+- name: E. Example
+  role: phd
+  topic: Kinetic turbulence simulation
+  contact: e.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: false
+  aliases: []
+- name: F. Example
+  role: msc
+  topic: Geometry kernels for transport
+  contact: f.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: false
+  aliases: []
+- name: G. Example
+  role: phd
+  topic: Completed PhD research
+  contact: ''
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: true
+  aliases: []
+- name: H. Example
+  role: msc
+  topic: Completed MSc research
+  contact: ''
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: true
+  aliases: []
+- name: J. Example
+  role: admin staff
+  topic: Group administration and coordination
+  contact: j.example@example.org
+  group: Numerical Methods in Plasma Physics
+  codes: []
+  alumni: false
+  aliases: []
