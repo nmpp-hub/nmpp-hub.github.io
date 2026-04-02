@@ -6,7 +6,9 @@ members:
   group: ~
   codes: [gempicx]
   alumni: false
-  aliases: ["E. Sonnendrücker"]
+  aliases:
+    - "E. Sonnendrücker"
+    - "E Sonnendruecker"
   picture: 'https://www.ipp.mpg.de/5422649/original-1763388322.webp'  # optional: set to a URL or /images/members/filename.jpg
 - name: Florian Hindenlang
   role: permanent staff
@@ -56,12 +58,37 @@ members:
   group: Finite Element Methods
   codes: [psydac]
   alumni: false
-  aliases: []
+  aliases:
+    - M. Campos Pinto
 - name: Roman Hatzky
   role: permanent staff
   topic: ""
   contact: b.example@example.org
   group: Advanced Computing Hub
+  codes: []
+  alumni: false
+  aliases: []
+- name: Omar Maj
+  role: permanent staff
+  topic: "Magnetohydrodynamics"
+  contact: b.example@example.org
+  group: ""
+  codes: []
+  alumni: false
+  aliases: []
+- name: Yaman Güçlü
+  role: permanent staff
+  topic: ""
+  contact: b.example@example.org
+  group: "Finite Element Methods"
+  codes: []
+  alumni: false
+  aliases: []
+- name: Francesco Fambri
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: "Magnetohydrodynamics"
   codes: []
   alumni: false
   aliases: []

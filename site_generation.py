@@ -71,16 +71,17 @@ def generate_standard_aliases(name: str) -> list[str]:
     """Generate standard name variations for alias matching.
 
     For "John Smith-Jones", generates:
+    - john smith-jones (full normalized name)
     - j. smith-jones, j smith-jones, smith-jones, j., smith-jones, j, etc.
     """
     import unicodedata
 
     # Normalize unicode
-    name = unicodedata.normalize("NFD", name)
-    name = name.encode("ascii", "ignore").decode("ascii")
-    name = name.strip()
+    name_normalized = unicodedata.normalize("NFD", name)
+    name_normalized = name_normalized.encode("ascii", "ignore").decode("ascii")
+    name_normalized = name_normalized.strip()
 
-    parts = name.split()
+    parts = name_normalized.split()
     if len(parts) < 2:
         return []
 
@@ -92,6 +93,9 @@ def generate_standard_aliases(name: str) -> list[str]:
     last_name = last_part
 
     aliases = set()
+
+    # Always include the full normalized name
+    aliases.add(name_normalized.lower())
 
     # Generate variations for full first name with last name
     first_initial = first_name[0].lower()

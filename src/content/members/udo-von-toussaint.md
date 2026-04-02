@@ -23,7 +23,61 @@ title: Udo von Toussaint
 ## Publications
 
 <!-- AUTO:PUBLICATIONS:START -->
-<p>No publications yet.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Authors</th>
+      <th>Venue</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>2023</td>
+    <td>Dependent state space Student‐t processes for imputation and data augmentation in plasma diagnostics</td>
+    <td>Katharina Rath, David Rügamer, Bernd Bischl, <a href="/members/udo-von-toussaint/">Udo von Toussaint</a>, Christopher G. Albert</td>
+    <td>Contributions to Plasma Physics</td>
+    <td><a href="https://doi.org/10.1002/ctpp.202200175">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2023</td>
+    <td>Uncertainty quantification in three‐dimensional magnetohydrodynamic equilibrium reconstruction via surrogate‐assisted Bayesian inference</td>
+    <td>Robert Köberl, <a href="/members/udo-von-toussaint/">Udo von Toussaint</a>, Hans‐Joachim Bungartz, Jonathan Schilling, Christopher G. Albert, W7‐X Team</td>
+    <td>Contributions to Plasma Physics</td>
+    <td><a href="https://doi.org/10.1002/ctpp.202200173">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2022</td>
+    <td>Data augmentation for disruption prediction via robust surrogate models</td>
+    <td>Katharina Rath, David Rügamer, Bernd Bischl, <a href="/members/udo-von-toussaint/">Udo von Toussaint</a>, Cristina Rea, Andrew Maris, Robert Granetz, Christopher G. Albert</td>
+    <td>Journal of Plasma Physics</td>
+    <td><a href="https://doi.org/10.1017/S0022377822000769">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2021</td>
+    <td>Symplectic Gaussian process regression of maps in Hamiltonian systems</td>
+    <td>Katharina Rath, Christopher G. Albert, Bernd Bischl, <a href="/members/udo-von-toussaint/">Udo von Toussaint</a></td>
+    <td>Chaos: An Interdisciplinary Journal of Nonlinear Science</td>
+    <td><a href="https://doi.org/10.1063/5.0048129">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2017</td>
+    <td>Sequential Batch Design for Gaussian Processes Employing Marginalization †</td>
+    <td>Roland Preuss, <a href="/members/udo-von-toussaint/">Udo Von Toussaint</a></td>
+    <td>Entropy</td>
+    <td><a href="https://doi.org/10.3390/e19020084">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2011</td>
+    <td>Bayesian inference in physics</td>
+    <td><a href="/members/udo-von-toussaint/">Udo von Toussaint</a></td>
+    <td>Reviews of Modern Physics</td>
+    <td><a href="https://doi.org/10.1103/RevModPhys.83.943">DOI</a></td>
+  </tr>
+  </tbody>
+</table>
 <!-- AUTO:PUBLICATIONS:END -->
 
 ## Dissertations

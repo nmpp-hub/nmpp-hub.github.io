@@ -77,10 +77,6 @@ publications:
   title: Variational Framework for Structure-Preserving Electromagnetic Particle-in-Cell Methods
 - doi: 10.1063/5.0048129
   title: Symplectic Gaussian process regression of maps in Hamiltonian systems
-- doi: 10.1088/0741-3335/56/10/105001
-  title: On the meniscus formation and the negative hydrogen ion extraction from ITER neutral beam injection relevant ion source
-- doi: 10.1063/1.4824746
-  title: 3D numerical simulations of negative hydrogen ion extraction using realistic plasma parameters, geometry of the extraction aperture and full 3D magnetic field map
 - doi: 10.1063/5.0022117
   title: Quasi-geometric integration of guiding-center orbits in piecewise linear toroidal fields
 - doi: 10.1098/rsta.2018.0152
@@ -111,8 +107,6 @@ publications:
   title: Finite element discretization of a Stokes-like model arising in plasma physics
 - doi: 10.1017/S0022377818000430
   title: 'Second-order nonlinear gyrokinetic theory: from the particle to the gyrocentre'
-- doi: 10.1088/1361-6595/aa68d0
-  title: Comment on ‘Issues in the understanding of negative ion extraction for fusion’
 - doi: 10.1063/1.4982689
   title: 'Verification of Gyrokinetic codes: Theoretical background and applications'
 - doi: 10.1088/1741-4326/aa8446

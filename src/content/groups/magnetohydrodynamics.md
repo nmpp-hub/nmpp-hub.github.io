@@ -37,6 +37,7 @@ The simulation framework is depicted in Fig.2. As a preprocessing step, HOPR (hi
 <!-- AUTO:MEMBERS:START -->
 <ul>
   <li><a href="/members/florian-hindenlang/">Florian Hindenlang</a></li>
+  <li><a href="/members/francesco-fambri/">Francesco Fambri</a></li>
 </ul>
 <!-- AUTO:MEMBERS:END -->
 
@@ -64,21 +65,21 @@ The simulation framework is depicted in Fig.2. As a preprocessing step, HOPR (hi
   <tr>
     <td>2025</td>
     <td>Computing MHD equilibria of stellarators with a flexible coordinate frame</td>
-    <td><a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Gabriel G Plunk, Omar Maj</td>
+    <td><a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Gabriel G Plunk, <a href="/members/omar-maj/">Omar Maj</a></td>
     <td>Plasma Physics and Controlled Fusion</td>
     <td><a href="https://doi.org/10.1088/1361-6587/adba11">DOI</a></td>
   </tr>
   <tr>
     <td>2025</td>
     <td>Construction of an invertible mapping to boundary conforming coordinates for arbitrarily shaped toroidal domains</td>
-    <td>Robert Babin, <a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Omar Maj, Robert Köberl</td>
+    <td>Robert Babin, <a href="/members/florian-hindenlang/">Florian Hindenlang</a>, <a href="/members/omar-maj/">Omar Maj</a>, Robert Köberl</td>
     <td>Plasma Physics and Controlled Fusion</td>
     <td><a href="https://doi.org/10.1088/1361-6587/adaee6">DOI</a></td>
   </tr>
   <tr>
     <td>2023</td>
     <td>A well-balanced and exactly divergence-free staggered semi-implicit hybrid finite volume / finite element scheme for the incompressible MHD equations</td>
-    <td>F. Fambri, E. Zampa, S. Busto, L. Río-Martín, <a href="/members/florian-hindenlang/">F. Hindenlang</a>, <a href="/members/eric-sonnendrucker/">E. Sonnendrücker</a>, M. Dumbser</td>
+    <td><a href="/members/francesco-fambri/">F. Fambri</a>, E. Zampa, S. Busto, L. Río-Martín, <a href="/members/florian-hindenlang/">F. Hindenlang</a>, <a href="/members/eric-sonnendrucker/">E. Sonnendrücker</a>, M. Dumbser</td>
     <td>Journal of Computational Physics</td>
     <td><a href="https://doi.org/10.1016/j.jcp.2023.112493">DOI</a></td>
   </tr>
@@ -98,10 +99,24 @@ The simulation framework is depicted in Fig.2. As a preprocessing step, HOPR (hi
   </tr>
   <tr>
     <td>2021</td>
+    <td>A novel structure preserving semi‐implicit finite volume method for viscous and resistive magnetohydrodynamics</td>
+    <td><a href="/members/francesco-fambri/">Francesco Fambri</a></td>
+    <td>International Journal for Numerical Methods in Fluids</td>
+    <td><a href="https://doi.org/10.1002/fld.5041">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2021</td>
     <td>Global electromagnetic turbulence simulations of W7-X-like plasmas with GENE-3D</td>
     <td>Felix Wilms, Alejandro Bañón Navarro, Gabriele Merlo, Leonhard Leppin, Tobias Görler, Tilman Dannert, <a href="/members/florian-hindenlang/">Florian Hindenlang</a>, Frank Jenko</td>
     <td>Journal of Plasma Physics</td>
     <td><a href="https://doi.org/10.1017/S0022377821001082">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2020</td>
+    <td>A new continuum model for general relativistic viscous heat-conducting media</td>
+    <td>E. Romenski, I. Peshkov, M. Dumbser, <a href="/members/francesco-fambri/">F. Fambri</a></td>
+    <td>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</td>
+    <td><a href="https://doi.org/10.1098/rsta.2019.0175">DOI</a></td>
   </tr>
   <tr>
     <td>2020</td>
@@ -123,6 +138,13 @@ The simulation framework is depicted in Fig.2. As a preprocessing step, HOPR (hi
     <td>A Bañón Navarro, G Merlo, G G Plunk, P Xanthopoulos, A von Stechow, A Di Siena, M Maurer, <a href="/members/florian-hindenlang/">F Hindenlang</a>, F Wilms, F Jenko</td>
     <td>Plasma Physics and Controlled Fusion</td>
     <td><a href="https://doi.org/10.1088/1361-6587/aba858">DOI</a></td>
+  </tr>
+  <tr>
+    <td>2020</td>
+    <td>On GLM curl cleaning for a first order reduction of the CCZ4 formulation of the Einstein field equations</td>
+    <td>Michael Dumbser, <a href="/members/francesco-fambri/">Francesco Fambri</a>, Elena Gaburro, Anne Reinarz</td>
+    <td>Journal of Computational Physics</td>
+    <td><a href="https://doi.org/10.1016/j.jcp.2019.109088">DOI</a></td>
   </tr>
   </tbody>
 </table>

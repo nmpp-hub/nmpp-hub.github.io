@@ -524,14 +524,6 @@
     "codes": []
   },
   {
-    "doi": "10.1088/1361-6595/aa68d0",
-    "title": "Comment on ‘Issues in the understanding of negative ion extraction for fusion’",
-    "authors": "S Mochalskyy, T Minea, A Revel, I Montellano, D Wünderlich, U Fantz",
-    "venue": "Plasma Sources Science and Technology",
-    "year": 2017,
-    "codes": []
-  },
-  {
     "doi": "10.5802/smai-jcm.20",
     "title": "Compatible Maxwell solvers with particles I: conforming and non-conforming 2D schemes with a strong Ampere law",
     "authors": "Martin Campos Pinto, Eric Sonnendrücker",
@@ -643,22 +635,6 @@
     "authors": "Natalia Tronko, Alain J. Brizard",
     "venue": "Physics of Plasmas",
     "year": 2015,
-    "codes": []
-  },
-  {
-    "doi": "10.1088/0741-3335/56/10/105001",
-    "title": "On the meniscus formation and the negative hydrogen ion extraction from ITER neutral beam injection relevant ion source",
-    "authors": "S Mochalskyy, D Wünderlich, B Ruf, U Fantz, P Franzen, T Minea",
-    "venue": "Plasma Physics and Controlled Fusion",
-    "year": 2014,
-    "codes": []
-  },
-  {
-    "doi": "10.1063/1.4824746",
-    "title": "3D numerical simulations of negative hydrogen ion extraction using realistic plasma parameters, geometry of the extraction aperture and full 3D magnetic field map",
-    "authors": "S. Mochalskyy, D. Wünderlich, B. Ruf, P. Franzen, U. Fantz, T. Minea",
-    "venue": "Review of Scientific Instruments",
-    "year": 2013,
     "codes": []
   },
   {

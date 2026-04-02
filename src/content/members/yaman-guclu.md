@@ -1,5 +1,5 @@
 ---
-title: Martin Campos Pinto
+title: Yaman Güçlü
 ---
 
 ## Profile
@@ -11,7 +11,6 @@ title: Martin Campos Pinto
 </div>
 <div class="member-profile-text">
 <p><strong>Group:</strong> Finite Element Methods</p>
-<p><strong>Codes:</strong> <a href="/codes/psydac/">psydac</a></p>
 </div>
 </div>
 <!-- AUTO:PROFILE:END -->
@@ -37,24 +36,10 @@ title: Martin Campos Pinto
   <tbody>
   <tr>
     <td>2025</td>
-    <td>Bounded commuting projections for multipatch spaces with non-matching interfaces</td>
-    <td><a href="/members/martin-campos-pinto/">Martin Campos Pinto</a>, Frederik Schnack</td>
-    <td>The SMAI Journal of computational mathematics</td>
-    <td><a href="https://doi.org/10.5802/smai-jcm.120">DOI</a></td>
-  </tr>
-  <tr>
-    <td>2025</td>
     <td>Time-splitting methods for the cold-plasma model using finite element exterior calculus</td>
     <td>Elena Moral Sánchez, <a href="/members/martin-campos-pinto/">Martin Campos Pinto</a>, <a href="/members/yaman-guclu/">Yaman Güçlü</a>, <a href="/members/omar-maj/">Omar Maj</a></td>
     <td>Journal of Computational Physics</td>
     <td><a href="https://doi.org/10.1016/j.jcp.2025.114305">DOI</a></td>
-  </tr>
-  <tr>
-    <td>2023</td>
-    <td>A δf PIC method with forward–backward Lagrangian reconstructions</td>
-    <td><a href="/members/martin-campos-pinto/">M. Campos Pinto</a>, M. Pelz, P.-H. Tournier</td>
-    <td>Physics of Plasmas</td>
-    <td><a href="https://doi.org/10.1063/5.0129989">DOI</a></td>
   </tr>
   <tr>
     <td>2023</td>
@@ -64,18 +49,18 @@ title: Martin Campos Pinto
     <td><a href="https://doi.org/10.1007/s10915-023-02351-x">DOI</a></td>
   </tr>
   <tr>
-    <td>2022</td>
-    <td>Variational Framework for Structure-Preserving Electromagnetic Particle-in-Cell Methods</td>
-    <td><a href="/members/martin-campos-pinto/">Martin Campos Pinto</a>, Katharina Kormann, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-    <td>Journal of Scientific Computing</td>
-    <td><a href="https://doi.org/10.1007/s10915-022-01781-3">DOI</a></td>
+    <td>2023</td>
+    <td>High-Order Structure-Preserving Algorithms for Plasma Hybrid Models</td>
+    <td><a href="/members/stefan-possanner/">Stefan Possanner</a>, Florian Holderied, Yingzhe Li, Byung Kyu Na, Dominik Bell, Said Hadjout, <a href="/members/yaman-guclu/">Yaman Güçlü</a></td>
+    <td>Lecture Notes in Computer Science</td>
+    <td><a href="https://doi.org/10.1007/978-3-031-38299-4_28">DOI</a></td>
   </tr>
   <tr>
-    <td>2017</td>
-    <td>Compatible Maxwell solvers with particles I: conforming and non-conforming 2D schemes with a strong Ampere law</td>
-    <td><a href="/members/martin-campos-pinto/">Martin Campos Pinto</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-    <td>The SMAI Journal of computational mathematics</td>
-    <td><a href="https://doi.org/10.5802/smai-jcm.20">DOI</a></td>
+    <td>2019</td>
+    <td>Solving hyperbolic-elliptic problems on singular mapped disk-like domains with the method of characteristics and spline finite elements</td>
+    <td>Edoardo Zoni, <a href="/members/yaman-guclu/">Yaman Güçlü</a></td>
+    <td>Journal of Computational Physics</td>
+    <td><a href="https://doi.org/10.1016/j.jcp.2019.108889">DOI</a></td>
   </tr>
   </tbody>
 </table>
