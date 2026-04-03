@@ -132,3 +132,332 @@ members:
   codes: []
   alumni: false
   aliases: []
+
+# Kinetic and Gyrokinetic Models (code: struphy)
+- name: Florian Holderied
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Kinetic and Gyrokinetic Models
+  codes: [struphy]
+  alumni: false
+  aliases: []
+- name: Yingzhe Li
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Kinetic and Gyrokinetic Models
+  codes: [struphy]
+  alumni: false
+  aliases: []
+- name: Byung Kyu Na
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Kinetic and Gyrokinetic Models
+  codes: [struphy]
+  alumni: false
+  aliases: []
+- name: Dominik Bell
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Kinetic and Gyrokinetic Models
+  codes: [struphy]
+  alumni: false
+  aliases: []
+- name: Said Hadjout
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Kinetic and Gyrokinetic Models
+  codes: [struphy]
+  alumni: false
+  aliases: []
+
+# Magnetohydrodynamics (code: gvec)
+- name: Robert Babin
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: [gvec]
+  alumni: false
+  aliases: []
+- name: Robert Köberl
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: [gvec]
+  alumni: false
+  aliases:
+    - Robert Koeberl
+- name: Ahmed Ratnani
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: [gvec]
+  alumni: true
+  aliases: []
+- name: Jalal Lakhlili
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: [gvec]
+  alumni: true
+  aliases: []
+- name: Mustafa Gaja
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: [gvec]
+  alumni: true
+  aliases: []
+- name: Mariarosa Mazza
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: [gvec]
+  alumni: true
+  aliases: []
+- name: Benedict Dingfelder
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: [gvec]
+  alumni: true
+  aliases: []
+
+# Geometric Numerical Integration
+- name: Tobias Blickhan
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Geometric Numerical Integration
+  codes: []
+  alumni: false
+  aliases: []
+- name: Benedikt Brantner
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Geometric Numerical Integration
+  codes: []
+  alumni: false
+  aliases: []
+- name: Tomasz Tyranowski
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Geometric Numerical Integration
+  codes: []
+  alumni: false
+  aliases: []
+- name: Camilla Bressan
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Geometric Numerical Integration
+  codes: []
+  alumni: true
+  aliases: []
+- name: Lorenzo Guidi
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Geometric Numerical Integration
+  codes: []
+  alumni: true
+  aliases: []
+- name: Nicolas Legouy
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Geometric Numerical Integration
+  codes: []
+  alumni: true
+  aliases: []
+- name: Herbert Oberlin
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Geometric Numerical Integration
+  codes: []
+  alumni: true
+  aliases: []
+- name: Marco Restelli
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Geometric Numerical Integration
+  codes: []
+  alumni: true
+  aliases: []
+
+# Probabilistic Data Analysis and Active Learning (DAAL)
+- name: Roland Preuss
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Probabilistic Data Analysis and Active Learning
+  codes: []
+  alumni: false
+  aliases: []
+- name: Katharina Rath
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Probabilistic Data Analysis and Active Learning
+  codes: []
+  alumni: false
+  aliases: []
+- name: Dirk Stieglitz
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Probabilistic Data Analysis and Active Learning
+  codes: []
+  alumni: true
+  aliases: []
+
+# Zonal Flows in Turbulent Plasmas (code: bsl6d)
+- name: Mario Räth
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Zonal Flows in Turbulent Plasmas
+  codes: [bsl6d]
+  alumni: false
+  aliases:
+    - Mario Raeth
+- name: Nils Schild
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Zonal Flows in Turbulent Plasmas
+  codes: [bsl6d]
+  alumni: false
+  aliases: []
+- name: Andreas Kammel
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Zonal Flows in Turbulent Plasmas
+  codes: [bsl6d]
+  alumni: true
+  aliases: []
+- name: Robert Hager
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Zonal Flows in Turbulent Plasmas
+  codes: [bsl6d]
+  alumni: true
+  aliases: []
+- name: Niels Gürtler
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Zonal Flows in Turbulent Plasmas
+  codes: [bsl6d]
+  alumni: true
+  aliases:
+    - Niels Guertler
+
+# Advanced Computing Hub
+- name: Matthias Borchardt
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Advanced Computing Hub
+  codes: []
+  alumni: false
+  aliases: []
+- name: Cristian Lalescu
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Advanced Computing Hub
+  codes: []
+  alumni: false
+  aliases: []
+- name: Max Lindqvist
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Advanced Computing Hub
+  codes: []
+  alumni: false
+  aliases: []
+- name: Serhiy Mochalskyy
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Advanced Computing Hub
+  codes: []
+  alumni: false
+  aliases: []
+- name: Tiago Ribeiro
+  role: postdoc
+  topic: ""
+  contact: b.example@example.org
+  group: Advanced Computing Hub
+  codes: []
+  alumni: false
+  aliases: []
+
+# Finite Element Methods (code: psydac)
+- name: Valentin Carlier
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Finite Element Methods
+  codes: [psydac]
+  alumni: false
+  aliases: []
+- name: Alexander Hoffmann
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Finite Element Methods
+  codes: [psydac]
+  alumni: false
+  aliases: []
+- name: Elena Moral Sánchez
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Finite Element Methods
+  codes: [psydac]
+  alumni: false
+  aliases: []
+- name: Frederik Schnack
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Finite Element Methods
+  codes: [psydac]
+  alumni: false
+  aliases: []
+- name: Said Hadjout
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Finite Element Methods
+  codes: [psydac]
+  alumni: true
+  aliases: []
+- name: Francesco Patrizi
+  role: phd
+  topic: ""
+  contact: c.example@example.org
+  group: Finite Element Methods
+  codes: [psydac]
+  alumni: true
+  aliases: []
