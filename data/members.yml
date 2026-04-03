@@ -29,7 +29,7 @@ members:
   aliases: []
 # Advanced Computing Hub
 - name: Roman Hatzky
-  role: permanent staff
+  role: group leader
   topic: ""
   contact: b.example@example.org
   group: Advanced Computing Hub
@@ -45,7 +45,7 @@ members:
   alumni: false
   aliases: []
 - name: Cristian Lalescu
-  role: postdoc
+  role: permanent staff
   topic: ""
   contact: b.example@example.org
   group: Advanced Computing Hub
@@ -61,7 +61,7 @@ members:
   alumni: false
   aliases: []
 - name: Serhiy Mochalskyy
-  role: postdoc
+  role: permanent staff
   topic: ""
   contact: b.example@example.org
   group: Advanced Computing Hub
@@ -69,7 +69,7 @@ members:
   alumni: false
   aliases: []
 - name: Tiago Ribeiro
-  role: postdoc
+  role: permanent staff
   topic: ""
   contact: b.example@example.org
   group: Advanced Computing Hub
@@ -79,7 +79,7 @@ members:
 
 # Finite Element Methods
 - name: Martin Campos Pinto
-  role: permanent staff
+  role: group leader
   topic: ""
   contact: b.example@example.org
   group: Finite Element Methods
@@ -101,7 +101,7 @@ members:
   contact: c.example@example.org
   group: Finite Element Methods
   codes: [psydac]
-  alumni: false
+  alumni: true
   aliases: []
 - name: Alexander Hoffmann
   role: phd
@@ -146,7 +146,7 @@ members:
 
 # Geometric Numerical Integration
 - name: Michael Kraus
-  role: permanent staff
+  role: group leader
   topic: ""
   contact: b.example@example.org
   group: Geometric Numerical Integration
@@ -159,7 +159,7 @@ members:
   contact: b.example@example.org
   group: Geometric Numerical Integration
   codes: []
-  alumni: false
+  alumni: true
   aliases: []
 - name: Benedikt Brantner
   role: postdoc
@@ -220,7 +220,7 @@ members:
 
 # Kinetic and Gyrokinetic Models
 - name: Stefan Possanner
-  role: permanent staff
+  role: group leader
   topic: ""
   contact: b.example@example.org
   group: Kinetic and Gyrokinetic Models
@@ -233,14 +233,14 @@ members:
   contact: c.example@example.org
   group: Kinetic and Gyrokinetic Models
   codes: [struphy]
-  alumni: false
+  alumni: true
   aliases: []
 - name: Yingzhe Li
   role: postdoc
   topic: ""
   contact: c.example@example.org
   group: Kinetic and Gyrokinetic Models
-  codes: [struphy]
+  codes: [gyselalibxx, struphy]
   alumni: false
   aliases: []
 - name: Byung Kyu Na
@@ -249,7 +249,7 @@ members:
   contact: c.example@example.org
   group: Kinetic and Gyrokinetic Models
   codes: [struphy]
-  alumni: false
+  alumni: true
   aliases: []
 - name: Dominik Bell
   role: phd
@@ -265,7 +265,7 @@ members:
   contact: c.example@example.org
   group: Kinetic and Gyrokinetic Models
   codes: [struphy]
-  alumni: false
+  alumni: true
   aliases: []
 - name: Nathan Marin
   role: msc
@@ -294,7 +294,7 @@ members:
 
 # Magnetohydrodynamics
 - name: Florian Hindenlang
-  role: permanent staff
+  role: group leader
   topic: ""
   contact: a.example@example.org
   group: Magnetohydrodynamics
@@ -386,7 +386,7 @@ members:
 
 # Probabilistic Data Analysis and Active Learning
 - name: Udo von Toussaint
-  role: permanent staff
+  role: group leader
   topic: ""
   contact: b.example@example.org
   group: Probabilistic Data Analysis and Active Learning
@@ -420,7 +420,7 @@ members:
 
 # Zonal Flows in Turbulent Plasmas
 - name: Klaus Hallatschek
-  role: permanent staff
+  role: group leader
   topic: ""
   contact: b.example@example.org
   group: Zonal Flows in Turbulent Plasmas

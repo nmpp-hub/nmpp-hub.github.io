@@ -33,6 +33,7 @@ DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
 # Display labels for member roles (used in per-code member lists)
 MEMBER_ROLE_LABELS = {
     "professor": "Professor",
+    "group leader": "Group leader",
     "permanent staff": "Permanent staff",
     "postdoc": "Postdoc",
     "phd": "PhD student",

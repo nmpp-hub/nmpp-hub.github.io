@@ -26,9 +26,10 @@ ROOT = Path(__file__).resolve().parent.parent
 MEMBERS_FILE = ROOT / "data" / "members.yml"
 OUTPUT_FILE = ROOT / "src" / "pages" / "members.astro"
 
-ROLE_ORDER = ["professor", "permanent staff", "postdoc", "phd", "msc", "admin staff"]
+ROLE_ORDER = ["professor", "group leader", "permanent staff", "postdoc", "phd", "msc", "admin staff"]
 ROLE_TITLES = {
     "professor": "Professors",
+    "group leader": "Group Leaders",
     "permanent staff": "Permanent Staff",
     "postdoc": "Postdocs",
     "phd": "PhD Students",
