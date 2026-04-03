@@ -23,5 +23,5 @@ The plasma inside a fusion power plant is never perfectly confined. Some of it i
 Details to lectures on the research topics of DAAL are given [here](https://www.ipp.mpg.de/3958149/vonToussaint_udo).
 
 ## Additional Links
-- [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
-- [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
+
+- [DAAL official webpage](https://www.ipp.mpg.de/3989973/daal)

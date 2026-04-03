@@ -18,7 +18,7 @@ from pathlib import Path
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list
+from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, slugify
 
 ROOT = Path(__file__).resolve().parent.parent
 CODES_DIR = ROOT / "src" / "content" / "codes"
@@ -33,6 +33,7 @@ DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
 # Display labels for member roles (used in per-code member lists)
 MEMBER_ROLE_LABELS = {
     "professor": "Professor",
+    "group leader": "Group leader",
     "permanent staff": "Permanent staff",
     "postdoc": "Postdoc",
     "phd": "PhD student",
@@ -93,9 +94,12 @@ def build_members_list(members: list[dict]) -> str:
 
     items = []
     for member in sorted(members, key=sort_key):
+        member_slug = slugify(member["name"])
         label = MEMBER_ROLE_LABELS.get(member["role"], member["role"])
         suffix = ", alumni" if member["alumni"] else ""
-        items.append(f"  <li>{escape_text(member['name'])} ({label}{suffix})</li>")
+        items.append(
+            f'  <li><a href="/members/{member_slug}/">{escape_text(member["name"])}</a> ({label}{suffix})</li>'
+        )
 
     body = "\n".join(items)
     return f"<ul>\n{body}\n</ul>"
@@ -141,9 +145,12 @@ def build_publications_table(publications: list[dict], author_to_slug: dict[str,
 </table>"""
 
 
-def build_dissertations_table(dissertations: list[dict]) -> str:
+def build_dissertations_table(dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
     if not dissertations:
         return "<p>No dissertations linked to this code yet.</p>"
+
+    if author_to_slug is None:
+        author_to_slug = build_author_to_slug_map()
 
     rows = []
     for diss in dissertations:
@@ -154,7 +161,7 @@ def build_dissertations_table(dissertations: list[dict]) -> str:
                     "  <tr>",
                     f"    <td>{diss['year']}</td>",
                     f"    <td>{escape_text(diss['title'])}</td>",
-                    f"    <td>{escape_text(diss['author'])}</td>",
+                    f"    <td>{render_author_list(diss['author'], author_to_slug)}</td>",
                     f"    <td>{escape_text(degree)}</td>",
                     f'    <td><a href="{escape_text(diss["link"])}">Full text</a></td>',
                     "  </tr>",
@@ -231,7 +238,7 @@ def main() -> None:
             build_publications_table(pubs, author_to_slug) + "\n", encoding="utf-8"
         )
         (CODES_AUTO_DIR / f"{slug}.dissertations.html").write_text(
-            build_dissertations_table(diss) + "\n", encoding="utf-8"
+            build_dissertations_table(diss, author_to_slug) + "\n", encoding="utf-8"
         )
 
         print(f"  {slug}: {len(members)} members, {len(pubs)} publications, {len(diss)} dissertations")

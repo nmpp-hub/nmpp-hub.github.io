@@ -29,6 +29,7 @@ from site_generation import build_author_to_slug_map, ensure_list, escape_text, 
 
 ROOT = Path(__file__).resolve().parent.parent
 MEMBERS_FILE = ROOT / "data" / "members.yml"
+GROUPS_FILE = ROOT / "data" / "groups.yml"
 DISSERTATIONS_FILE = ROOT / "data" / "dissertations.yml"
 CACHE_FILE = ROOT / "data" / ".publications_cache.json"
 MEMBERS_OUTPUT_DIR = ROOT / "src" / "content" / "members"
@@ -153,6 +154,18 @@ def load_members() -> list[dict]:
     return members
 
 
+def load_group_slug_map() -> dict[str, str]:
+    """Load mapping from group display name to group slug."""
+    raw = load_yaml(GROUPS_FILE).get("groups", [])
+    mapping: dict[str, str] = {}
+    for entry in raw:
+        name = str(entry.get("name", "")).strip()
+        slug = str(entry.get("slug", "")).strip()
+        if name and slug:
+            mapping[name] = slug
+    return mapping
+
+
 def load_dissertations() -> list[dict]:
     """Load and validate dissertations from YAML."""
     raw = load_yaml(DISSERTATIONS_FILE).get("dissertations", [])
@@ -183,32 +196,32 @@ def member_matches_dissertation(member: dict, dissertation: dict) -> bool:
     return False
 
 
-def member_matches_publication(member: dict, publication: dict) -> bool:
-    """Check if a member's aliases match publication authors or codes."""
+def member_matches_publication(member: dict, publication: dict, author_to_slug: dict[str, str]) -> bool:
+    """Check if a member is explicitly in the publication author list.
+
+    This avoids false positives from code overlap (e.g., member works on a code
+    but is not an author of every paper tagged with that code).
+    """
     import unicodedata
 
-    # Check if publication is linked to member's codes
-    for code in member["codes"]:
-        if code in publication.get("codes", []):
-            return True
-
-    # Check if member's aliases match author names
-    if not member["aliases"]:
+    member_slug = slugify(member["name"])
+    authors_raw = publication.get("authors", "")
+    if not authors_raw:
         return False
 
-    # Normalize author names (remove accents) for comparison
-    authors_raw = publication.get("authors", "")
-    authors_normalized = unicodedata.normalize("NFD", authors_raw)
-    authors_normalized = authors_normalized.encode("ascii", "ignore").decode("ascii")
-    authors_lower = authors_normalized.lower()
-
-    for alias in member["aliases"]:
-        if alias.lower() in authors_lower or authors_lower in alias.lower():
+    for author in [a.strip() for a in authors_raw.split(",") if a.strip()]:
+        author_key = author.lower()
+        author_slug = author_to_slug.get(author_key)
+        if author_slug is None:
+            normalized = unicodedata.normalize("NFD", author).encode("ascii", "ignore").decode("ascii").lower().strip()
+            author_slug = author_to_slug.get(normalized)
+        if author_slug == member_slug:
             return True
+
     return False
 
 
-def build_profile_section(member: dict) -> str:
+def build_profile_section(member: dict, group_slug_map: dict[str, str]) -> str:
     """Build the profile section with picture on left (circular), info on right."""
     # Profile picture (left side) - circular frame
     if member["picture"]:
@@ -221,7 +234,14 @@ def build_profile_section(member: dict) -> str:
 
     # Group
     if member.get("group"):
-        info_lines.append(f"<p><strong>Group:</strong> {escape_text(member['group'])}</p>")
+        group_name = member["group"]
+        group_slug = group_slug_map.get(group_name)
+        if group_slug:
+            info_lines.append(
+                f'<p><strong>Group:</strong> <a href="/groups/{group_slug}/">{escape_text(group_name)}</a></p>'
+            )
+        else:
+            info_lines.append(f"<p><strong>Group:</strong> {escape_text(group_name)}</p>")
 
     # Topic
     if member["topic"]:
@@ -343,6 +363,7 @@ def main() -> None:
     """Generate member pages."""
     # Load data
     all_members = load_members()
+    group_slug_map = load_group_slug_map()
     all_publications = load_publications_cache()
     all_dissertations = load_dissertations()
     author_to_slug = build_author_to_slug_map()
@@ -357,7 +378,7 @@ def main() -> None:
         slug = slugify(member["name"])
 
         # Filter publications and dissertations for this member
-        member_pubs = [p for p in all_publications if member_matches_publication(member, p)]
+        member_pubs = [p for p in all_publications if member_matches_publication(member, p, author_to_slug)]
         member_pubs.sort(key=lambda p: (-(p["year"] or 0), p["title"].lower()))
 
         member_diss = [d for d in all_dissertations if member_matches_dissertation(member, d)]
@@ -372,7 +393,7 @@ def main() -> None:
 
         # Write auto sections to separate files
         (MEMBERS_AUTO_DIR / f"{slug}.profile.html").write_text(
-            build_profile_section(member) + "\n", encoding="utf-8"
+            build_profile_section(member, group_slug_map) + "\n", encoding="utf-8"
         )
         (MEMBERS_AUTO_DIR / f"{slug}.publications.html").write_text(
             build_publications_table(member_pubs, author_to_slug) + "\n", encoding="utf-8"

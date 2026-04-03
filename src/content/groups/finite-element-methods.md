@@ -32,5 +32,5 @@ Psydac is a high-level finite-element library in Python 3, that uses high-order 
 Research on this topic is carried out in collaboration with the [MHD](/groups/magnetohydrodynamics/) group.
 
 ## Additional Links
-- [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
-- [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
+
+- [FEM official webpage](https://www.ipp.mpg.de/5150531/fem)
