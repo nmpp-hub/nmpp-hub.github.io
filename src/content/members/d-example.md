@@ -1,5 +1,0 @@
----
-title: D. Example
----
-
-## About
