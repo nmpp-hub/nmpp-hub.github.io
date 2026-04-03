@@ -5,7 +5,17 @@
     "authors": "Omar Maj, Hannes Weber, Emanuele Poli",
     "venue": "EPJ Web of Conferences",
     "year": 2026,
-    "codes": []
+    "codes": [],
+    "slug": "beam-tracing-in-phase-space-paraxial",
+    "journal": "EPJ Web of Conferences",
+    "abstract": "The averaged wave energy density carried by an electron-cyclotron wave beam in a turbulent plasma can be computed by solving numerically the wave kinetic equation. This approach however can be computationally demanding due to the high dimensionality of the problem. In this work, we show how ideas from paraxial optics can be applied to construct an approximate solution of the wave kinetic equation. This construction requires only the solution of a small system of ordinary differential equations.",
+    "bibtex": "@article{Maj_2026, title={Beam Tracing in Phase Space: Paraxial Description of High-Frequency Wave Beams in Turbulent Plasmas}, volume={346}, ISSN={2100-014X}, url={http://dx.doi.org/10.1051/epjconf/202634601003}, DOI={10.1051/epjconf/202634601003}, journal={EPJ Web of Conferences}, publisher={EDP Sciences}, author={Maj, Omar and Weber, Hannes and Poli, Emanuele}, year={2026}, pages={01003} }",
+    "publisher": "EDP Sciences",
+    "volume": "346",
+    "issue": "",
+    "pages": "01003",
+    "url": "http://dx.doi.org/10.1051/epjconf/202634601003",
+    "groups": []
   },
   {
     "doi": "10.1016/j.cnsns.2025.109384",
@@ -13,7 +23,17 @@
     "authors": "Markus Lohmayer, Michael Kraus, Sigrid Leyendecker",
     "venue": "Communications in Nonlinear Science and Numerical Simulation",
     "year": 2026,
-    "codes": []
+    "codes": [],
+    "slug": "energy-based-geometric-and-compositional-formulation-of",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation",
+    "abstract": "",
+    "bibtex": "@article{Lohmayer_2026, title={Energy-based, geometric, and compositional formulation of fluid and plasma models}, volume={152}, ISSN={1007-5704}, url={http://dx.doi.org/10.1016/j.cnsns.2025.109384}, DOI={10.1016/j.cnsns.2025.109384}, journal={Communications in Nonlinear Science and Numerical Simulation}, publisher={Elsevier BV}, author={Lohmayer, Markus and Kraus, Michael and Leyendecker, Sigrid}, year={2026}, month=jan, pages={109384} }",
+    "publisher": "Elsevier BV",
+    "volume": "152",
+    "issue": "",
+    "pages": "109384",
+    "url": "http://dx.doi.org/10.1016/j.cnsns.2025.109384",
+    "groups": []
   },
   {
     "doi": "10.1007/s10915-025-03161-z",
@@ -21,7 +41,17 @@
     "authors": "Pauline Vidal, Emily Bourne, Virginie Grandgirard, Michel Mehrenberger, Eric Sonnendrücker",
     "venue": "Journal of Scientific Computing",
     "year": 2026,
-    "codes": []
+    "codes": [],
+    "slug": "local-cubic-spline-interpolation-for-vlasov-type",
+    "journal": "Journal of Scientific Computing",
+    "abstract": "Abstract We present a semi-Lagrangian method for the numerical resolution of Vlasov-type equations on multi-patch meshes. Following N. Crouseilles et al. [ A parallel Vlasov solver based on local cubic spline interpolation on patches. Journal of Computational Physics (2009)], we employ a local cubic spline interpolation with Hermite boundary conditions between the patches. The derivative reconstruction is adapted to cope with non-uniform meshes as well as non-conforming situations. In the conforming case, the constraint of the number of points for each patch, found in previous studies, is removed; however, a small global system must now be solved. In that case, the local spline representations coincide with the corresponding global spline reconstruction. Alternatively, we can choose not to apply the global system and the derivatives can be approximated. The influence of the most distant points diminishes as the number of points per patch increases. For uniform per patch configurations, a study of the explicit and asymptotic behavior of this influence has been led. The method is validated using a two-dimensional guiding-center model with an O-point. All the numerical results are carried out in the Gyselalib++ library.",
+    "bibtex": "@article{Vidal_2026, title={Local cubic spline interpolation for Vlasov-type equations on a multi-patch geometry.}, volume={106}, ISSN={1573-7691}, url={http://dx.doi.org/10.1007/s10915-025-03161-z}, DOI={10.1007/s10915-025-03161-z}, number={2}, journal={Journal of Scientific Computing}, publisher={Springer Science and Business Media LLC}, author={Vidal, Pauline and Bourne, Emily and Grandgirard, Virginie and Mehrenberger, Michel and Sonnendrücker, Eric}, year={2026}, month=jan }",
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "106",
+    "issue": "2",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1007/s10915-025-03161-z",
+    "groups": []
   },
   {
     "doi": "10.1007/s10915-025-03078-7",
@@ -29,7 +59,17 @@
     "authors": "Lukas Einkemmer, Julian Mangott, Martina Prugger",
     "venue": "Journal of Scientific Computing",
     "year": 2025,
-    "codes": []
+    "codes": [],
+    "slug": "automatic-partitioning-for-the-low-rank-integration",
+    "journal": "Journal of Scientific Computing",
+    "abstract": "Abstract Boolean reaction networks are an important tool in biochemistry for studying mechanisms in the biological cell. However, the stochastic formulation of such networks requires the solution of a master equation which inherently suffers from the curse of dimensionality. In the past, the dynamical low-rank (DLR) approximation has been repeatedly used to solve high-dimensional reaction networks by separating the network into smaller partitions. However, the partitioning of these networks was so far only done by hand. In this paper, we present a heuristic, automatic partitioning scheme based on two ingredients: the Kernighan-Lin algorithm and information entropy. Our approach is computationally inexpensive and can be easily incorporated as a preprocessing step into the existing simulation workflow. We test our scheme by partitioning Boolean reaction networks on a single level and also in a hierarchical fashion with tree tensor networks. The resulting accuracy of the scheme is superior to both partitionings chosen by human experts and those found by simply minimizing the number of reaction pathways between partitions.",
+    "bibtex": "@article{Einkemmer_2025, title={Automatic Partitioning for the Low-Rank Integration of Stochastic Boolean Reaction Networks}, volume={105}, ISSN={1573-7691}, url={http://dx.doi.org/10.1007/s10915-025-03078-7}, DOI={10.1007/s10915-025-03078-7}, number={3}, journal={Journal of Scientific Computing}, publisher={Springer Science and Business Media LLC}, author={Einkemmer, Lukas and Mangott, Julian and Prugger, Martina}, year={2025}, month=nov }",
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "105",
+    "issue": "3",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1007/s10915-025-03078-7",
+    "groups": []
   },
   {
     "doi": "10.1088/1361-6587/adb64b",
@@ -37,7 +77,17 @@
     "authors": "G G Plunk, M Drevlak, E Rodríguez, R Babin, A Goodman, F Hindenlang",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2025,
-    "codes": []
+    "codes": [],
+    "slug": "back-to-the-figure-8-stellarator",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "Abstract The first stellarator design was a simple tube of plasma twisted and closed on itself in the form of a figure-8. The line of such devices, however, was quickly ended over concerns related to plasma stability. We revisit the figure-8 concept, re-imagined as a modern optimized stellarator, and find the potential for a high degree of stability, as well as exceptionally simple construction. In particular, the design that we find admits planar coils, and is the first quasi-isodynamic stellarator design to have this property. Our work is made possible by recent theoretical progress in the near-axis theory of quasi-isodynamic stellarators, combined with fundamental progress in the numerical solution of three-dimensional magnetohydrodynamic equilibria that cannot be well represented using traditional cylindrical coordinates.",
+    "bibtex": "@article{Plunk_2025, title={Back to the figure-8 stellarator}, volume={67}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/1361-6587/adb64b}, DOI={10.1088/1361-6587/adb64b}, number={3}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Plunk, G G and Drevlak, M and Rodríguez, E and Babin, R and Goodman, A and Hindenlang, F}, year={2025}, month=feb, pages={035025} }",
+    "publisher": "IOP Publishing",
+    "volume": "67",
+    "issue": "3",
+    "pages": "035025",
+    "url": "http://dx.doi.org/10.1088/1361-6587/adb64b",
+    "groups": []
   },
   {
     "doi": "10.5802/smai-jcm.120",
@@ -45,7 +95,17 @@
     "authors": "Martin Campos Pinto, Frederik Schnack",
     "venue": "The SMAI Journal of computational mathematics",
     "year": 2025,
-    "codes": []
+    "codes": [],
+    "slug": "bounded-commuting-projections-for-multipatch-spaces",
+    "journal": "The SMAI Journal of computational mathematics",
+    "abstract": "We present commuting projection operators on de Rham sequences of two-dimensional multipatch spaces with local tensor-product parametrization and non-matching interfaces. Our construction yields projection operators which are local and stable in any L p norm with p ∈ [ 1 , ∞ ] : it applies to shape-regular spline patches with different mappings and resolutions, under the assumption that interior vertices are shared by exactly four patches, and that neighboring patches have nested resolutions in a way that excludes local chessboard patterns. Our construction also applies to de Rham sequences with homogeneous boundary conditions. Following a broken-FEEC approach, we first consider tensor-product commuting projections on the single-patch de Rham sequences, and modify the resulting patch-wise operators so as to enforce their conformity and commutation with the global derivatives, while preserving their projection and stability properties with constants independent of both the diameter and inner resolution of the patches.",
+    "bibtex": "@article{Campos_Pinto_2025, title={Bounded commuting projections for multipatch spaces with non-matching interfaces}, volume={11}, ISSN={2426-8399}, url={http://dx.doi.org/10.5802/smai-jcm.120}, DOI={10.5802/smai-jcm.120}, journal={The SMAI Journal of computational mathematics}, publisher={MathDoc/Centre Mersenne}, author={Campos Pinto, Martin and Schnack, Frederik}, year={2025}, month=mar, pages={85–137} }",
+    "publisher": "MathDoc/Centre Mersenne",
+    "volume": "11",
+    "issue": "",
+    "pages": "85-137",
+    "url": "http://dx.doi.org/10.5802/smai-jcm.120",
+    "groups": []
   },
   {
     "doi": "10.1088/1361-6587/adba11",
@@ -55,7 +115,17 @@
     "year": 2025,
     "codes": [
       "gvec"
-    ]
+    ],
+    "slug": "computing-mhd-equilibria-of-stellarators-with",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "Abstract For the representation of axi-symmetric plasma configurations (tokamaks), it is natural to use cylindrical coordinates ( R , Z , ϕ ) , where φ is an independent coordinate. The same cylindrical coordinates have also been widely used for representing 3D MHD equilibria of non-axisymmetric configurations (stellarators), with cross-sections, defined in R , Z -planes, that vary over φ . Stellarator equilibria have been found, however, for which cylindrical coordinates are not at all a natural choice, for instance certain stellarators obtained using the near-axis expansion (NAE) defined by a magnetic axis curve and its Frenet frame. In this contribution, we propose an alternative approach for representing the boundary in a fixed-boundary 3D MHD equilibrium solver, moving away from cylindrical coordinates. Instead, we use planar cross-sections whose orientation is determined by a general coordinate frame ( G -frame). This frame is similar to the conventional Frenet frame, but more flexible. As an additional part of the boundary representation, it becomes an input to the equilibrium solve, along with the geometry of the cross-sections. We see two advantages: (1) the capability to easily represent configurations where the magnetic axis is highly non-planar or even knotted. (2) a reduction in the degrees of freedom needed for the boundary surface, and thus the equilibrium solver, enabling progress in optimization of these configurations. We discuss the properties of the G -frame, starting from the conventional Frenet frame. Then we show two exemplary ways of constructing it, first from a NAE solution and also from a given boundary surface. We present the details of the implementation of the new frame in the 3D MHD equilibrium solver GVEC. Furthermore, we demonstrate for a highly shaped QI-optimized stellarator that far fewer degrees of freedom are necessary to find a high quality equilibrium solution, compared to the solution computed in cylindrical coordinates.",
+    "bibtex": "@article{Hindenlang_2025, title={Computing MHD equilibria of stellarators with a flexible coordinate frame}, volume={67}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/1361-6587/adba11}, DOI={10.1088/1361-6587/adba11}, number={4}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Hindenlang, Florian and Plunk, Gabriel G and Maj, Omar}, year={2025}, month=mar, pages={045002} }",
+    "publisher": "IOP Publishing",
+    "volume": "67",
+    "issue": "4",
+    "pages": "045002",
+    "url": "http://dx.doi.org/10.1088/1361-6587/adba11",
+    "groups": []
   },
   {
     "doi": "10.1088/1361-6587/adaee6",
@@ -63,7 +133,17 @@
     "authors": "Robert Babin, Florian Hindenlang, Omar Maj, Robert Köberl",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2025,
-    "codes": []
+    "codes": [],
+    "slug": "construction-of-an-invertible-mapping-to",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "Abstract Boundary conforming coordinates are commonly used in plasma physics to describe the geometry of toroidal domains, for example, in three-dimensional magnetohydrodynamic equilibrium solvers. The magnetohydrodynamic equilibrium configuration can be approximated with an inverse map, defining nested surfaces of constant magnetic flux. For equilibrium solvers that solve for this inverse map iteratively, the initial guess for the inverse map must be well-defined and invertible. Even if magnetic islands are to be included in the representation, boundary conforming coordinates can still be useful, for example to parametrize the interface surfaces in multi-region, relaxed magnetohydrodynamics or as a general-purpose, field-agnostic coordinate system in strongly shaped domains. Given a fixed boundary shape, finding a valid boundary conforming mapping can be challenging, especially for the non-convex boundaries from recent developments in stellarator optimization. In this work, we propose a new algorithm to construct such a mapping, by solving two Dirichlet–Laplace problems via a boundary integral method. We can prove that the generated harmonic map is always smooth and has a smooth inverse. Furthermore, we can find a discrete approximation of the mapping that preserves this property.",
+    "bibtex": "@article{Babin_2025, title={Construction of an invertible mapping to boundary conforming coordinates for arbitrarily shaped toroidal domains}, volume={67}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/1361-6587/adaee6}, DOI={10.1088/1361-6587/adaee6}, number={3}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Babin, Robert and Hindenlang, Florian and Maj, Omar and Köberl, Robert}, year={2025}, month=feb, pages={035005} }",
+    "publisher": "IOP Publishing",
+    "volume": "67",
+    "issue": "3",
+    "pages": "035005",
+    "url": "http://dx.doi.org/10.1088/1361-6587/adaee6",
+    "groups": []
   },
   {
     "doi": "10.1137/24m1659327",
@@ -71,7 +151,17 @@
     "authors": "Nils Schild, Mario Räth, Klaus Hallatschek, Katharina Kormann",
     "venue": "SIAM Journal on Scientific Computing",
     "year": 2025,
-    "codes": []
+    "codes": [],
+    "slug": "convergence-of-splitting-methods-on-rotating",
+    "journal": "SIAM Journal on Scientific Computing",
+    "abstract": "",
+    "bibtex": "@article{Schild_2025, title={Convergence of Splitting Methods on Rotating Grids for the Magnetized Vlasov Equation}, volume={47}, ISSN={1095-7197}, url={http://dx.doi.org/10.1137/24m1659327}, DOI={10.1137/24m1659327}, number={5}, journal={SIAM Journal on Scientific Computing}, publisher={Society for Industrial & Applied Mathematics (SIAM)}, author={Schild, Nils and Räth, Mario and Hallatschek, Klaus and Kormann, Katharina}, year={2025}, month=oct, pages={B1272–B1292} }",
+    "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+    "volume": "47",
+    "issue": "5",
+    "pages": "B1272-B1292",
+    "url": "http://dx.doi.org/10.1137/24m1659327",
+    "groups": []
   },
   {
     "doi": "10.1016/j.cpc.2024.109391",
@@ -79,7 +169,17 @@
     "authors": "S.J.P. Pamela, N. Carey, J. Brandstetter, R. Akers, L. Zanisi, J. Buchanan, V. Gopakumar, M. Hoelzl, G. Huijsmans, K. Pentland, T. James, G. Antonucci",
     "venue": "Computer Physics Communications",
     "year": 2025,
-    "codes": []
+    "codes": [],
+    "slug": "neural-parareal-self-improving-acceleration-of-fusion-mhd",
+    "journal": "Computer Physics Communications",
+    "abstract": "",
+    "bibtex": "@article{Pamela_2025, title={Neural-Parareal: Self-improving acceleration of fusion MHD simulations using time-parallelisation and neural operators}, volume={307}, ISSN={0010-4655}, url={http://dx.doi.org/10.1016/j.cpc.2024.109391}, DOI={10.1016/j.cpc.2024.109391}, journal={Computer Physics Communications}, publisher={Elsevier BV}, author={Pamela, S.J.P. and Carey, N. and Brandstetter, J. and Akers, R. and Zanisi, L. and Buchanan, J. and Gopakumar, V. and Hoelzl, M. and Huijsmans, G. and Pentland, K. and James, T. and Antonucci, G.}, year={2025}, month=feb, pages={109391} }",
+    "publisher": "Elsevier BV",
+    "volume": "307",
+    "issue": "",
+    "pages": "109391",
+    "url": "http://dx.doi.org/10.1016/j.cpc.2024.109391",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2025.114305",
@@ -87,7 +187,17 @@
     "authors": "Elena Moral Sánchez, Martin Campos Pinto, Yaman Güçlü, Omar Maj",
     "venue": "Journal of Computational Physics",
     "year": 2025,
-    "codes": []
+    "codes": [],
+    "slug": "time-splitting-methods-for-the-cold-plasma-model",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Moral_S_nchez_2025, title={Time-splitting methods for the cold-plasma model using finite element exterior calculus}, volume={541}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2025.114305}, DOI={10.1016/j.jcp.2025.114305}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Moral Sánchez, Elena and Campos Pinto, Martin and Güçlü, Yaman and Maj, Omar}, year={2025}, month=nov, pages={114305} }",
+    "publisher": "Elsevier BV",
+    "volume": "541",
+    "issue": "",
+    "pages": "114305",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2025.114305",
+    "groups": []
   },
   {
     "doi": "10.1137/23M1618910",
@@ -95,7 +205,17 @@
     "authors": "Katharina Kormann, Eric Sonnendrücker",
     "venue": "SIAM Journal on Scientific Computing",
     "year": 2024,
-    "codes": []
+    "codes": [],
+    "slug": "a-dual-grid-geometric-electromagnetic-particle",
+    "journal": "SIAM Journal on Scientific Computing",
+    "abstract": "",
+    "bibtex": "@article{Kormann_2024, title={A Dual Grid Geometric Electromagnetic Particle in Cell Method}, volume={46}, ISSN={1095-7197}, url={http://dx.doi.org/10.1137/23M1618910}, DOI={10.1137/23m1618910}, number={5}, journal={SIAM Journal on Scientific Computing}, publisher={Society for Industrial & Applied Mathematics (SIAM)}, author={Kormann, Katharina and Sonnendrücker, Eric}, year={2024}, month=oct, pages={B621–B646} }",
+    "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+    "volume": "46",
+    "issue": "5",
+    "pages": "B621-B646",
+    "url": "http://dx.doi.org/10.1137/23M1618910",
+    "groups": []
   },
   {
     "doi": "10.1016/j.cpc.2023.108973",
@@ -103,7 +223,17 @@
     "authors": "Nils Schild, Mario Räth, Sebastian Eibl, Klaus Hallatschek, Katharina Kormann",
     "venue": "Computer Physics Communications",
     "year": 2024,
-    "codes": []
+    "codes": [],
+    "slug": "a-performance-portable-implementation-of-the",
+    "journal": "Computer Physics Communications",
+    "abstract": "",
+    "bibtex": "@article{Schild_2024, title={A performance portable implementation of the semi-Lagrangian algorithm in six dimensions}, volume={295}, ISSN={0010-4655}, url={http://dx.doi.org/10.1016/j.cpc.2023.108973}, DOI={10.1016/j.cpc.2023.108973}, journal={Computer Physics Communications}, publisher={Elsevier BV}, author={Schild, Nils and Räth, Mario and Eibl, Sebastian and Hallatschek, Klaus and Kormann, Katharina}, year={2024}, month=feb, pages={108973} }",
+    "publisher": "Elsevier BV",
+    "volume": "295",
+    "issue": "",
+    "pages": "108973",
+    "url": "http://dx.doi.org/10.1016/j.cpc.2023.108973",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2024.112916",
@@ -111,7 +241,17 @@
     "authors": "Yingzhe Li, Florian Holderied, Stefan Possanner, Eric Sonnendrücker",
     "venue": "Journal of Computational Physics",
     "year": 2024,
-    "codes": []
+    "codes": [],
+    "slug": "canonical-variables-based-numerical-schemes-for",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Li_2024, title={Canonical variables based numerical schemes for hybrid plasma models with kinetic ions and massless electrons}, volume={505}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2024.112916}, DOI={10.1016/j.jcp.2024.112916}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Li, Yingzhe and Holderied, Florian and Possanner, Stefan and Sonnendrücker, Eric}, year={2024}, month=may, pages={112916} }",
+    "publisher": "Elsevier BV",
+    "volume": "505",
+    "issue": "",
+    "pages": "112916",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2024.112916",
+    "groups": []
   },
   {
     "doi": "10.1103/PhysRevLett.133.195101",
@@ -119,7 +259,17 @@
     "authors": "M. Raeth, K. Hallatschek",
     "venue": "Physical Review Letters",
     "year": 2024,
-    "codes": []
+    "codes": [],
+    "slug": "high-frequency-nongyrokinetic-turbulence-at-tokamak-edge",
+    "journal": "Physical Review Letters",
+    "abstract": "First of a kind 6D-Vlasov computer simulations of high frequency ion Bernstein wave turbulence for parameters relevant to the tokamak edge show transport comparable to sub-Larmor-frequency gyrokinetic turbulence. The customary restriction of magnetized plasma turbulence studies to the gyrokinetic approximation may not be based on physics but only on a practical constraint due to computational cost. Deciphering turbulent transport is crucial since edge turbulence significantly influences the confinement properties of magnetically confined plasmas. Despite the high computational costs, performing 6D kinetic simulations is essential for understanding the limitations of our current models. Published by the American Physical Society 2024",
+    "bibtex": "@article{Raeth_2024, title={High-Frequency Nongyrokinetic Turbulence at Tokamak Edge Parameters}, volume={133}, ISSN={1079-7114}, url={http://dx.doi.org/10.1103/PhysRevLett.133.195101}, DOI={10.1103/physrevlett.133.195101}, number={19}, journal={Physical Review Letters}, publisher={American Physical Society (APS)}, author={Raeth, M. and Hallatschek, K.}, year={2024}, month=nov }",
+    "publisher": "American Physical Society (APS)",
+    "volume": "133",
+    "issue": "19",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1103/PhysRevLett.133.195101",
+    "groups": []
   },
   {
     "doi": "10.1063/5.0197970",
@@ -127,7 +277,17 @@
     "authors": "M. Raeth, K. Hallatschek, K. Kormann",
     "venue": "Physics of Plasmas",
     "year": 2024,
-    "codes": []
+    "codes": [],
+    "slug": "simulation-of-ion-temperature-gradient-driven",
+    "journal": "Physics of Plasmas",
+    "abstract": "With the increase in computational capabilities over the last few years, it becomes possible to simulate more and more complex and accurate physical models. Gyrokinetic theory has been introduced in the 1960s and 1970s in the need of describing a plasma with more accurate models than fluid equations but eliminating the complexity of the fast gyration about the magnetic field lines. Although results from current gyrokinetic computer simulations are in fair agreement with experimental results in core physics, crucial assumptions made in the derivation make it unreliable in regimes of higher fluctuations and stronger gradient, such as the tokamak edge. With our novel optimized and scalable semi-Lagrangian solver, we are able to simulate ion temperature gradient modes with the 6D kinetic model including the turbulent saturation. After thoroughly testing our simulation code against analytical computations and gyrokinetic simulations (with the gyrokinetic code GYRO), it has been possible to show first plasma properties that go beyond standard gyrokinetic simulations. This includes the explicit description of the complete perpendicular energy fluxes and the excitation of high-frequency waves (around the Larmor frequency) in the nonlinear saturation phase.",
+    "bibtex": "@article{Raeth_2024, title={Simulation of ion temperature gradient driven modes with 6D kinetic Vlasov code}, volume={31}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/5.0197970}, DOI={10.1063/5.0197970}, number={4}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Raeth, M. and Hallatschek, K. and Kormann, K.}, year={2024}, month=apr }",
+    "publisher": "AIP Publishing",
+    "volume": "31",
+    "issue": "4",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/5.0197970",
+    "groups": []
   },
   {
     "doi": "10.1063/5.0223009",
@@ -135,15 +295,17 @@
     "authors": "Mario Raeth, Klaus Hallatschek",
     "venue": "Physics of Fluids",
     "year": 2024,
-    "codes": []
-  },
-  {
-    "doi": "10.1063/5.0129989",
-    "title": "A <b><i>δf</i></b> PIC method with forward–backward Lagrangian reconstructions",
-    "authors": "M. Campos Pinto, M. Pelz, P.-H. Tournier",
-    "venue": "Physics of Plasmas",
-    "year": 2023,
-    "codes": []
+    "codes": [],
+    "slug": "surprisingly-tight-courantfriedrichslewy-condition-in-explicit",
+    "journal": "Physics of Fluids",
+    "abstract": "The Arakawa scheme, which exactly conserves energy and enstrophy in two-dimensional hydrodynamics, severely reduces the maximum allowable stable time step compared to the Courant–Friedrichs–Lewy condition when combined with a spectral or spectral-like high-order discretization. We calculate the time step restriction by finding the responsible high frequency eigenfunctions and suggest a remedy. The phenomenon has relevance for analogous methods conserving multiple quadratic invariants in gyrokinetic or magnetohydrodynamic simulations.",
+    "bibtex": "@article{Raeth_2024, title={Surprisingly tight Courant–Friedrichs–Lewy condition in explicit high-order Arakawa schemes}, volume={36}, ISSN={1089-7666}, url={http://dx.doi.org/10.1063/5.0223009}, DOI={10.1063/5.0223009}, number={10}, journal={Physics of Fluids}, publisher={AIP Publishing}, author={Raeth, Mario and Hallatschek, Klaus}, year={2024}, month=oct }",
+    "publisher": "AIP Publishing",
+    "volume": "36",
+    "issue": "10",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/5.0223009",
+    "groups": []
   },
   {
     "doi": "10.1007/s10915-023-02351-x",
@@ -151,7 +313,17 @@
     "authors": "Yaman Güçlü, Said Hadjout, Martin Campos Pinto",
     "venue": "Journal of Scientific Computing",
     "year": 2023,
-    "codes": []
+    "codes": [],
+    "slug": "a-broken-feec-framework-for-electromagnetic",
+    "journal": "Journal of Scientific Computing",
+    "abstract": "Abstract We present a framework for the structure-preserving approximation of partial differential equations on mapped multipatch domains, extending the classical theory of finite element exterior calculus (FEEC) to discrete de Rham sequences which are broken, i.e., fully discontinuous across the patch interfaces. Following the Conforming/Nonconforming Galerkin (CONGA) schemes developed in Campos Pinto and Sonnendrücker (Math Comput 85:2651–2685, 2016) and Campos Pinto and Güçlü (Broken-FEEC discretizations and Hodge Laplace problems. arXiv:2109.02553 , 2022), our approach is based on: (i) the identification of a conforming discrete de Rham sequence with stable commuting projection operators, (ii) the relaxation of the continuity constraints between patches, and (iii) the construction of conforming projections mapping back to the conforming subspaces, allowing to define discrete differentials on the broken sequence. This framework combines the advantages of conforming FEEC discretizations (e.g. commuting projections, discrete duality and Hodge–Helmholtz decompositions) with the data locality and implementation simplicity of interior penalty methods for discontinuous Galerkin discretizations. We apply it to several initial- and boundary-value problems, as well as eigenvalue problems arising in electromagnetics. In each case our formulations are shown to be well posed thanks to an appropriate stabilization of the jumps across the interfaces, and the solutions are extremely robust with respect to the stabilization parameter. Finally we describe a construction using tensor-product splines on mapped cartesian patches, and we detail the associated matrix operators. Our numerical experiments confirm the accuracy and stability of this discrete framework, and they allow us to verify that expected structure-preserving properties such as divergence or harmonic constraints are respected to floating-point accuracy.",
+    "bibtex": "@article{G_l__2023, title={A Broken FEEC Framework for Electromagnetic Problems on Mapped Multipatch Domains}, volume={97}, ISSN={1573-7691}, url={http://dx.doi.org/10.1007/s10915-023-02351-x}, DOI={10.1007/s10915-023-02351-x}, number={2}, journal={Journal of Scientific Computing}, publisher={Springer Science and Business Media LLC}, author={Güçlü, Yaman and Hadjout, Said and Campos Pinto, Martin}, year={2023}, month=oct }",
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "97",
+    "issue": "2",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1007/s10915-023-02351-x",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2023.112493",
@@ -159,7 +331,35 @@
     "authors": "F. Fambri, E. Zampa, S. Busto, L. Río-Martín, F. Hindenlang, E. Sonnendrücker, M. Dumbser",
     "venue": "Journal of Computational Physics",
     "year": 2023,
-    "codes": []
+    "codes": [],
+    "slug": "a-well-balanced-and-exactly-divergence-free-staggered",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Fambri_2023, title={A well-balanced and exactly divergence-free staggered semi-implicit hybrid finite volume / finite element scheme for the incompressible MHD equations}, volume={493}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2023.112493}, DOI={10.1016/j.jcp.2023.112493}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Fambri, F. and Zampa, E. and Busto, S. and Río-Martín, L. and Hindenlang, F. and Sonnendrücker, E. and Dumbser, M.}, year={2023}, month=nov, pages={112493} }",
+    "publisher": "Elsevier BV",
+    "volume": "493",
+    "issue": "",
+    "pages": "112493",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2023.112493",
+    "groups": []
+  },
+  {
+    "doi": "10.1063/5.0129989",
+    "title": "A δf PIC method with forward–backward Lagrangian reconstructions",
+    "authors": "M. Campos Pinto, M. Pelz, P.-H. Tournier",
+    "venue": "Physics of Plasmas",
+    "year": 2023,
+    "codes": [],
+    "slug": "a-f-pic-method-with-forwardbackward",
+    "journal": "Physics of Plasmas",
+    "abstract": "In this work, we describe a δf particle simulation method where the bulk density is periodically remapped on a coarse spline grid using a forward–backward Lagrangian approach. This method is designed to handle plasma regimes where the densities strongly deviate from their initial state and may evolve into general profiles. We describe the method in the case of an electrostatic particle-in-cell scheme and validate its qualitative properties using a classical two-stream instability subject to a uniform oscillating drive.",
+    "bibtex": "@article{Campos_Pinto_2023, title={A \n                     δf\n                   PIC method with forward–backward Lagrangian reconstructions}, volume={30}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/5.0129989}, DOI={10.1063/5.0129989}, number={3}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Campos Pinto, M. and Pelz, M. and Tournier, P.-H.}, year={2023}, month=mar }",
+    "publisher": "AIP Publishing",
+    "volume": "30",
+    "issue": "3",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/5.0129989",
+    "groups": []
   },
   {
     "doi": "10.1002/ctpp.202200175",
@@ -167,7 +367,17 @@
     "authors": "Katharina Rath, David Rügamer, Bernd Bischl, Udo von Toussaint, Christopher G. Albert",
     "venue": "Contributions to Plasma Physics",
     "year": 2023,
-    "codes": []
+    "codes": [],
+    "slug": "dependent-state-space-studentt-processes-for",
+    "journal": "Contributions to Plasma Physics",
+    "abstract": "Abstract Multivariate time series measurements in plasma diagnostics present several challenges when training machine learning models: the availability of only a few labeled data increases the risk of overfitting, and missing data points or outliers due to sensor failures pose additional difficulties. To overcome these issues, we introduce a fast and robust regression model that enables imputation of missing points and data augmentation by massive sampling while exploiting the inherent correlation between input signals. The underlying Student‐t process allows for a noise distribution with heavy tails and thus produces robust results in the case of outliers. We consider the state space form of the Student‐t process, which reduces the computational complexity and makes the model suitable for high‐resolution time series. We evaluate the performance of the proposed method using two test cases, one of which was inspired by measurements of flux loop signals.",
+    "bibtex": "@article{Rath_2023, title={Dependent state space Student‐t processes for imputation and data augmentation in plasma diagnostics}, volume={63}, ISSN={1521-3986}, url={http://dx.doi.org/10.1002/ctpp.202200175}, DOI={10.1002/ctpp.202200175}, number={5–6}, journal={Contributions to Plasma Physics}, publisher={Wiley}, author={Rath, Katharina and Rügamer, David and Bischl, Bernd and von Toussaint, Udo and Albert, Christopher G.}, year={2023}, month=may }",
+    "publisher": "Wiley",
+    "volume": "63",
+    "issue": "5-6",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1002/ctpp.202200175",
+    "groups": []
   },
   {
     "doi": "10.1088/1741-4326/acdd12",
@@ -175,25 +385,55 @@
     "authors": "Jonas Puchmayr, Mike Dunne, Erika Strumberger, Matthias Willensdorfer, Hartmut Zohm, Florian Hindenlang",
     "venue": "Nuclear Fusion",
     "year": 2023,
-    "codes": []
+    "codes": [],
+    "slug": "helical-mode-localization-and-mode-locking",
+    "journal": "Nuclear Fusion",
+    "abstract": "Abstract In H-mode tokamak plasmas, the achievable pressure-gradient is limited by type-I Edge Localized Modes (ELMs), which are projected to cause severe damage to future fusion devices. There are several approaches aiming to mitigate/suppress the occurrence of ELMs, such as the application of an external non-axisymmetric magnetic perturbation field, which breaks the axisymmetry of the tokamak plasma. In this work we use the CASTOR3D code to investigate helical localization and mode locking of edge-localized ideal MHD instabilities in rotating and flow-free magnetically perturbed tokamak plasmas with N P = 2 periodicity. Helically localized instabilities are separated into two classes: quasi-locked and strictly locked. In a non-rotating plasma, the localization of quasi-locked modes is determined by an envelope while their precise location under the envelope is arbitrary, whereas strictly locked modes can only occur at a single helical position. Strictly locked modes only rotate if the toroidal plasma rotation exceeds a critical threshold; above the threshold the forced rotation of the strictly locked modes is non-uniform. For quasi-locked modes, no such critical threshold exists; they rotate uniformly beneath their envelope in the case of finite plasma rotation. The helical localization of both quasi-locked and strictly locked instabilities is determined by the energetic decomposition of the instabilities close to the most unstable flux-surface; for example, strongly current-density driven instabilities are aligned with regions of augmented parallel equilibrium current-density. Finally, we compare the computationally determined localization of MHD instabilities to experimental observations. The determined MHD instability is located at the same position as the experimentally measured modes with respect to the equilibrium corrugation, verifying that ideal MHD can describe the experimentally observed instabilities.",
+    "bibtex": "@article{Puchmayr_2023, title={Helical mode localization and mode locking of ideal MHD instabilities in magnetically perturbed tokamak plasmas}, volume={63}, ISSN={1741-4326}, url={http://dx.doi.org/10.1088/1741-4326/acdd12}, DOI={10.1088/1741-4326/acdd12}, number={8}, journal={Nuclear Fusion}, publisher={IOP Publishing}, author={Puchmayr, Jonas and Dunne, Mike and Strumberger, Erika and Willensdorfer, Matthias and Zohm, Hartmut and Hindenlang, Florian}, year={2023}, month=jun, pages={086008} }",
+    "publisher": "IOP Publishing",
+    "volume": "63",
+    "issue": "8",
+    "pages": "086008",
+    "url": "http://dx.doi.org/10.1088/1741-4326/acdd12",
+    "groups": []
   },
   {
     "doi": "10.1007/978-3-031-38299-4_28",
-    "title": "High-Order Structure-Preserving Algorithms for Plasma Hybrid Models",
+    "title": "High-Order Structure-Preserving Algorithms for Plasma Hybrid Models",
     "authors": "Stefan Possanner, Florian Holderied, Yingzhe Li, Byung Kyu Na, Dominik Bell, Said Hadjout, Yaman Güçlü",
     "venue": "Lecture Notes in Computer Science",
     "year": 2023,
     "codes": [
       "struphy"
-    ]
+    ],
+    "slug": "high-order-structure-preserving-algorithms-for-plasma-hybrid",
+    "journal": "Lecture Notes in Computer Science",
+    "abstract": "",
+    "bibtex": "@inbook{Possanner_2023, title={High-Order Structure-Preserving Algorithms for Plasma Hybrid Models}, ISBN={9783031382994}, ISSN={1611-3349}, url={http://dx.doi.org/10.1007/978-3-031-38299-4_28}, DOI={10.1007/978-3-031-38299-4_28}, booktitle={Geometric Science of Information}, publisher={Springer Nature Switzerland}, author={Possanner, Stefan and Holderied, Florian and Li, Yingzhe and Na, Byung Kyu and Bell, Dominik and Hadjout, Said and Güçlü, Yaman}, year={2023}, pages={263–271} }",
+    "publisher": "Springer Nature Switzerland",
+    "volume": "",
+    "issue": "",
+    "pages": "263-271",
+    "url": "http://dx.doi.org/10.1007/978-3-031-38299-4_28",
+    "groups": []
   },
   {
     "doi": "10.1002/ctpp.202200173",
-    "title": "Uncertainty quantification in <scp>three‐dimensional</scp> magnetohydrodynamic equilibrium reconstruction via surrogate‐assisted Bayesian inference",
+    "title": "Uncertainty quantification in three‐dimensional magnetohydrodynamic equilibrium reconstruction via surrogate‐assisted Bayesian inference",
     "authors": "Robert Köberl, Udo von Toussaint, Hans‐Joachim Bungartz, Jonathan Schilling, Christopher G. Albert, W7‐X Team",
     "venue": "Contributions to Plasma Physics",
     "year": 2023,
-    "codes": []
+    "codes": [],
+    "slug": "uncertainty-quantification-in-threedimensional-magnetohydrodynamic-equilibrium",
+    "journal": "Contributions to Plasma Physics",
+    "abstract": "Abstract In three‐dimensional (3D) equilibrium, reconstruction defining parameters of an ideal magneto‐hydrodynamic equilibrium are inferred from a set of plasma diagnostic measurements. For the reconstructed parameters, various forms of uncertainty estimates exist within common 3D reconstruction frameworks. These estimates often assume a Gaussian posterior distribution. The validity of this assumption is not obvious in such highly nonlinear inverse problems, and therefore the accuracy of the estimates cannot be guaranteed. In this work, we formulate the problem of 3D equilibrium reconstruction in a Bayesian sense and explore the posterior distribution of reconstruction parameters via Markov chain Monte Carlo (MCMC) sampling. The target reconstruction parameters, that is, shape and scaling factors of the pressure and toroidal current‐density profiles as well as the total toroidal flux, are taken from a reduced subspace of Wendelstein 7‐X equilibrium configurations. Since the corresponding forward model evaluations are computationally demanding, we replace the forward model via a polynomial chaos expansion surrogate. We compare the posterior distribution obtained via MCMC sampling to Laplace's approximation, which assumes a Gaussian posterior. We find that the two approaches provide similar results in regimes where the uncertainty on the plasma diagnostic signals is low. However, discrepancies between the posteriors are observed in cases of higher diagnostic signal uncertainty. Therefore, we provide further validation of the commonly used Laplace's approximation as a method of uncertainty quantification in 3D equilibrium reconstruction and showcase some of its limitations.",
+    "bibtex": "@article{K_berl_2023, title={Uncertainty quantification in <scp>three‐dimensional</scp> magnetohydrodynamic equilibrium reconstruction via surrogate‐assisted Bayesian inference}, volume={63}, ISSN={1521-3986}, url={http://dx.doi.org/10.1002/ctpp.202200173}, DOI={10.1002/ctpp.202200173}, number={5–6}, journal={Contributions to Plasma Physics}, publisher={Wiley}, author={Köberl, Robert and von Toussaint, Udo and Bungartz, Hans‐Joachim and Schilling, Jonathan and Albert, Christopher G.}, year={2023}, month=may }",
+    "publisher": "Wiley",
+    "volume": "63",
+    "issue": "5-6",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1002/ctpp.202200173",
+    "groups": []
   },
   {
     "doi": "10.1016/j.cpc.2022.108401",
@@ -201,7 +441,17 @@
     "authors": "Christopher G. Albert, Patrick Lainer, Oszkár Bíró",
     "venue": "Computer Physics Communications",
     "year": 2022,
-    "codes": []
+    "codes": [],
+    "slug": "2d-fourier-finite-element-formulation-for",
+    "journal": "Computer Physics Communications",
+    "abstract": "",
+    "bibtex": "@article{Albert_2022, title={2D Fourier finite element formulation for magnetostatics in curvilinear coordinates with a symmetry direction}, volume={277}, ISSN={0010-4655}, url={http://dx.doi.org/10.1016/j.cpc.2022.108401}, DOI={10.1016/j.cpc.2022.108401}, journal={Computer Physics Communications}, publisher={Elsevier BV}, author={Albert, Christopher G. and Lainer, Patrick and Bíró, Oszkár}, year={2022}, month=aug, pages={108401} }",
+    "publisher": "Elsevier BV",
+    "volume": "277",
+    "issue": "",
+    "pages": "108401",
+    "url": "http://dx.doi.org/10.1016/j.cpc.2022.108401",
+    "groups": []
   },
   {
     "doi": "10.1017/S0022377822000769",
@@ -209,7 +459,17 @@
     "authors": "Katharina Rath, David Rügamer, Bernd Bischl, Udo von Toussaint, Cristina Rea, Andrew Maris, Robert Granetz, Christopher G. Albert",
     "venue": "Journal of Plasma Physics",
     "year": 2022,
-    "codes": []
+    "codes": [],
+    "slug": "data-augmentation-for-disruption-prediction-via",
+    "journal": "Journal of Plasma Physics",
+    "abstract": "The goal of this work is to generate large statistically representative data sets to train machine learning models for disruption prediction provided by data from few existing discharges. Such a comprehensive training database is important to achieve satisfying and reliable prediction results in artificial neural network classifiers. Here, we aim for a robust augmentation of the training database for multivariate time series data using Student $t$ process regression. We apply Student $t$ process regression in a state space formulation via Bayesian filtering to tackle challenges imposed by outliers and noise in the training data set and to reduce the computational complexity. Thus, the method can also be used if the time resolution is high. We use an uncorrelated model for each dimension and impose correlations afterwards via colouring transformations. We demonstrate the efficacy of our approach on plasma diagnostics data of three different disruption classes from the DIII-D tokamak. To evaluate if the distribution of the generated data is similar to the training data, we additionally perform statistical analyses using methods from time series analysis, descriptive statistics and classic machine learning clustering algorithms.",
+    "bibtex": "@article{Rath_2022, title={Data augmentation for disruption prediction via robust surrogate models}, volume={88}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/S0022377822000769}, DOI={10.1017/s0022377822000769}, number={5}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Rath, Katharina and Rügamer, David and Bischl, Bernd and von Toussaint, Udo and Rea, Cristina and Maris, Andrew and Granetz, Robert and Albert, Christopher G.}, year={2022}, month=oct }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "88",
+    "issue": "5",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/S0022377822000769",
+    "groups": []
   },
   {
     "doi": "10.1063/5.0087104",
@@ -217,15 +477,35 @@
     "authors": "N. Nikulsin, R. Ramasamy, M. Hoelzl, F. Hindenlang, E. Strumberger, K. Lackner, S. Günter, JOREK Team",
     "venue": "Physics of Plasmas",
     "year": 2022,
-    "codes": []
+    "codes": [],
+    "slug": "jorek3d-an-extension-of-the-jorek",
+    "journal": "Physics of Plasmas",
+    "abstract": "Although the basic concept of a stellarator was known since the early days of fusion research, advances in computational technology have enabled the modeling of increasingly complicated devices, leading up to the construction of Wendelstein 7-X, which has recently shown promising results. This recent success has revived interest in the nonlinear 3D MHD modeling of stellarators in order to better understand their performance and operational limits. This study reports on the extension of the JOREK code to 3D geometries and on the first stellarator simulations carried out with it. The first simple simulations shown here address the classic Wendelstein 7-A stellarator using a reduced MHD model previously derived by us. The results demonstrate that stable full MHD equilibria are preserved in the reduced model: the flux surfaces do not move throughout the simulation and closely match the flux surfaces of the full MHD equilibrium. Furthermore, both tearing and ballooning modes were simulated, and the linear growth rates measured in JOREK are in reasonable agreement with the growth rates from the CASTOR3D linear MHD code.",
+    "bibtex": "@article{Nikulsin_2022, title={JOREK3D: An extension of the JOREK nonlinear MHD code to stellarators}, volume={29}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/5.0087104}, DOI={10.1063/5.0087104}, number={6}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Nikulsin, N. and Ramasamy, R. and Hoelzl, M. and Hindenlang, F. and Strumberger, E. and Lackner, K. and Günter, S.}, year={2022}, month=jun }",
+    "publisher": "AIP Publishing",
+    "volume": "29",
+    "issue": "6",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/5.0087104",
+    "groups": []
   },
   {
     "doi": "10.1088/1361-6587/ac985e",
-    "title": "Numerical modelling for beam duct heat loads calculations and application to the new 1 MW neutral beam injector in the COMPASS tokamak",
+    "title": "Numerical modelling for beam duct heat loads calculations and application to the new 1 MW neutral beam injector in the COMPASS tokamak",
     "authors": "F Jaulmes, G Zadvitskiy, K Bogar, I Mysiura, J Varju, M Jeřáb, M Komm, M Imrisek, The COMPASS Team",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2022,
-    "codes": []
+    "codes": [],
+    "slug": "numerical-modelling-for-beam-duct-heat",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "Abstract We introduce detailed numerical modelling of the fast neutral particles inside the duct of a new neutral beam injector (NBI) recently installed at the COMPASS tokamak (major radius R 0 = 0.56 m , vessel midplane minor radius a = 0.23 m , toroidal field B t = 0.9–2.1 T ). This new NBI system is able to deliver 1 M W power to the plasma at nominal injection energy of 80 k e V . Collisions with the background neutrals inside the beam duct give birth to fast ions according to the density of the gas and tabulated cross-sections. The ion trajectories are then computed in the complete 3D magnetic field, showing the importance of the stray magnetic field and the magnitude of the field within the gap in between toroidal coils.During the experimental campaign dedicated to the new 1 MW NBI, the beam duct heating was measured by a row of thermocouples located on the top-half of the beam duct. The fast ions collisions with the duct wall cause a local temperature increase with a characteristic pattern. In COMPASS, the location of the fast ions power deposition measured experimentally is in qualitative agreement with modelling of ion losses when following them after the re-ionization process. We trace back the details of the orbits corresponding to deposition at the hot-spot inside the beam duct. Quantitative comparison between the experiment and the simulation shows that a larger than expected amount of neutral gas was inside the duct and this study will guide the design of the future NBI duct in COMPASS Upgrade.",
+    "bibtex": "@article{Jaulmes_2022, title={Numerical modelling for beam duct heat loads calculations and application to the new 1 MW neutral beam injector in the COMPASS tokamak}, volume={64}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/1361-6587/ac985e}, DOI={10.1088/1361-6587/ac985e}, number={12}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Jaulmes, F and Zadvitskiy, G and Bogar, K and Mysiura, I and Varju, J and Jeřáb, M and Komm, M and Imrisek, M}, year={2022}, month=oct, pages={125001} }",
+    "publisher": "IOP Publishing",
+    "volume": "64",
+    "issue": "12",
+    "pages": "125001",
+    "url": "http://dx.doi.org/10.1088/1361-6587/ac985e",
+    "groups": []
   },
   {
     "doi": "10.1007/s10915-022-01781-3",
@@ -233,7 +513,17 @@
     "authors": "Martin Campos Pinto, Katharina Kormann, Eric Sonnendrücker",
     "venue": "Journal of Scientific Computing",
     "year": 2022,
-    "codes": []
+    "codes": [],
+    "slug": "variational-framework-for-structure-preserving-electromagnetic-particle-in-cell",
+    "journal": "Journal of Scientific Computing",
+    "abstract": "Abstract In this article we apply a discrete action principle for the Vlasov–Maxwell equations in a structure-preserving particle-field discretization framework. In this framework the finite-dimensional electromagnetic potentials and fields are represented in a discrete de Rham sequence involving general finite element spaces, and the particle-field coupling is represented by a set of projection operators that commute with the differential operators. With a minimal number of assumptions which allow for a variety of finite elements and shape functions for the particles, we show that the resulting variational scheme has a general discrete Poisson structure and thus leads to a semi-discrete Hamiltonian system. By introducing discrete interior products we derive a second type of space discretization which is momentum preserving, based on the same finite elements and shape functions. We illustrate our method by applying it to spline finite elements, and to a new spectral discretization where the particle-field coupling relies on discrete Fourier transforms.",
+    "bibtex": "@article{Campos_Pinto_2022, title={Variational Framework for Structure-Preserving Electromagnetic Particle-in-Cell Methods}, volume={91}, ISSN={1573-7691}, url={http://dx.doi.org/10.1007/s10915-022-01781-3}, DOI={10.1007/s10915-022-01781-3}, number={2}, journal={Journal of Scientific Computing}, publisher={Springer Science and Business Media LLC}, author={Campos Pinto, Martin and Kormann, Katharina and Sonnendrücker, Eric}, year={2022}, month=mar }",
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "91",
+    "issue": "2",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1007/s10915-022-01781-3",
+    "groups": []
   },
   {
     "doi": "10.1002/fld.5041",
@@ -241,7 +531,17 @@
     "authors": "Francesco Fambri",
     "venue": "International Journal for Numerical Methods in Fluids",
     "year": 2021,
-    "codes": []
+    "codes": [],
+    "slug": "a-novel-structure-preserving-semiimplicit-finite",
+    "journal": "International Journal for Numerical Methods in Fluids",
+    "abstract": "Abstract In this work we introduce a novel semi‐implicit structure‐preserving finite‐volume/finite‐difference scheme for the viscous and resistive equations of magneto‐hydrodynamics (VRMHD) based on an appropriate 3‐split of the governing PDE system, which is decomposed into a first convective subsystem, a second subsystem involving the coupling of the velocity field with the magnetic field, and a third subsystem involving the pressure‐velocity coupling. The nonlinear convective terms are discretized explicitly, while the remaining two subsystems accounting for the Alfvén waves and the magneto‐acoustic waves are treated implicitly. Thanks to this, the final algorithm is at least formally constrained only by a mild CFL stability condition depending on the velocity field of the pure hydrodynamic convection. To preserve the divergence‐free constraint of the magnetic field exactly at the discrete level, a proper set of overlapping dual (staggered) meshes is employed. The resulting linear algebraic systems are shown to be symmetric and therefore can be solved by means of an efficient standard matrix‐free conjugate gradient algorithm. The final scheme can be regarded as a novel shock‐capturing, conservative, and structure preserving semi‐implicit scheme for VRMHD. Several numerical tests are presented to show the main features of our novel divergence‐free semi‐implicit FV/FD solver: linear‐stability in the sense of Lyapunov is verified at a prescribed constant equilibrium solution; a second‐order of convergence is obtained for a smooth time‐dependent solution; shock‐capturing capabilities are proven against a standard set of stringent MHD shock‐problems; accuracy and robustness are verified against a non‐trivial set of two‐ and three‐dimensional MHD problems.",
+    "bibtex": "@article{Fambri_2021, title={A novel structure preserving semi‐implicit finite volume method for viscous and resistive magnetohydrodynamics}, volume={93}, ISSN={1097-0363}, url={http://dx.doi.org/10.1002/fld.5041}, DOI={10.1002/fld.5041}, number={12}, journal={International Journal for Numerical Methods in Fluids}, publisher={Wiley}, author={Fambri, Francesco}, year={2021}, month=sep, pages={3447–3489} }",
+    "publisher": "Wiley",
+    "volume": "93",
+    "issue": "12",
+    "pages": "3447-3489",
+    "url": "http://dx.doi.org/10.1002/fld.5041",
+    "groups": []
   },
   {
     "doi": "10.1088/1741-4326/ac359f",
@@ -249,7 +549,17 @@
     "authors": "D.P. Coster, R. Fischer, O. Hoenen, J. Lakhlili, O.O. Luk, R. Preuss, B.D. Scott, U. von Toussaint, the ASDEX Upgrade Team",
     "venue": "Nuclear Fusion",
     "year": 2021,
-    "codes": []
+    "codes": [],
+    "slug": "building-a-turbulence-transport-workflow-incorporating-uncertainty",
+    "journal": "Nuclear Fusion",
+    "abstract": "Abstract The impact of micro-scale turbulence on the macro-scale plasma profiles in a tokamak is a multi-scale problem (both in space and time) that is treated in this paper by the coupling of turbulence simulations of multiple flux-tubes to a core transport code, together with an equilibrium code. Work on quantifying the uncertainty in the predicted profiles, together with a comparison to experiment is also presented.",
+    "bibtex": "@article{Coster_2021, title={Building a turbulence-transport workflow incorporating uncertainty quantification for predicting core profiles in a tokamak plasma}, volume={61}, ISSN={1741-4326}, url={http://dx.doi.org/10.1088/1741-4326/ac359f}, DOI={10.1088/1741-4326/ac359f}, number={12}, journal={Nuclear Fusion}, publisher={IOP Publishing}, author={Coster, D.P. and Fischer, R. and Hoenen, O. and Lakhlili, J. and Luk, O.O. and Preuss, R. and Scott, B.D. and von Toussaint, U. and the ASDEX Upgrade Team}, year={2021}, month=nov, pages={126068} }",
+    "publisher": "IOP Publishing",
+    "volume": "61",
+    "issue": "12",
+    "pages": "126068",
+    "url": "http://dx.doi.org/10.1088/1741-4326/ac359f",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2020.109890",
@@ -257,7 +567,17 @@
     "authors": "Katharina Kormann, Eric Sonnendrücker",
     "venue": "Journal of Computational Physics",
     "year": 2021,
-    "codes": []
+    "codes": [],
+    "slug": "energy-conserving-time-propagation-for-a-structure-preserving",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Kormann_2021, title={Energy-conserving time propagation for a structure-preserving particle-in-cell Vlasov–Maxwell solver}, volume={425}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2020.109890}, DOI={10.1016/j.jcp.2020.109890}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Kormann, Katharina and Sonnendrücker, Eric}, year={2021}, month=jan, pages={109890} }",
+    "publisher": "Elsevier BV",
+    "volume": "425",
+    "issue": "",
+    "pages": "109890",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2020.109890",
+    "groups": []
   },
   {
     "doi": "10.1137/20M1311934",
@@ -265,7 +585,17 @@
     "authors": "Benedikt Perse, Katharina Kormann, Eric Sonnendrücker",
     "venue": "SIAM Journal on Scientific Computing",
     "year": 2021,
-    "codes": []
+    "codes": [],
+    "slug": "geometric-particle-in-cell-simulations-of-the-vlasov-maxwell",
+    "journal": "SIAM Journal on Scientific Computing",
+    "abstract": "",
+    "bibtex": "@article{Perse_2021, title={Geometric Particle-in-Cell Simulations of the Vlasov--Maxwell System in Curvilinear Coordinates}, volume={43}, ISSN={1095-7197}, url={http://dx.doi.org/10.1137/20M1311934}, DOI={10.1137/20m1311934}, number={1}, journal={SIAM Journal on Scientific Computing}, publisher={Society for Industrial & Applied Mathematics (SIAM)}, author={Perse, Benedikt and Kormann, Katharina and Sonnendrücker, Eric}, year={2021}, month=jan, pages={B194–B218} }",
+    "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+    "volume": "43",
+    "issue": "1",
+    "pages": "B194-B218",
+    "url": "http://dx.doi.org/10.1137/20M1311934",
+    "groups": []
   },
   {
     "doi": "10.1017/S0022377821001082",
@@ -273,7 +603,17 @@
     "authors": "Felix Wilms, Alejandro Bañón Navarro, Gabriele Merlo, Leonhard Leppin, Tobias Görler, Tilman Dannert, Florian Hindenlang, Frank Jenko",
     "venue": "Journal of Plasma Physics",
     "year": 2021,
-    "codes": []
+    "codes": [],
+    "slug": "global-electromagnetic-turbulence-simulations-of-w7-x-like",
+    "journal": "Journal of Plasma Physics",
+    "abstract": "The GENE-3D code, the global stellarator version of the established GENE framework, has been extended to an electromagnetic gyrokinetic code. This paper outlines the basic structure of the algorithm, highlighting the treatment of the electromagnetic terms. The numerical implementation is verified against the radially global GENE code in linear and nonlinear tokamak simulations, recovering excellent agreement between both codes. As a first application to stellarator plasmas, linear and nonlinear global simulations with kinetic electrons of ion temperature gradient (ITG) turbulence in Wendelstein 7-X were performed, showing a decrease of ITG activity through the introduction of electromagnetic effects via a finite plasma- $\\beta$ . The upgrade makes it possible to study a large variety of new physical scenarios, including kinetic electron and electromagnetic effects, reducing the gap between gyrokinetic models and physically realistic systems.",
+    "bibtex": "@article{Wilms_2021, title={Global electromagnetic turbulence simulations of W7-X-like plasmas with GENE-3D}, volume={87}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/S0022377821001082}, DOI={10.1017/s0022377821001082}, number={6}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Wilms, Felix and Navarro, Alejandro Bañón and Merlo, Gabriele and Leppin, Leonhard and Görler, Tobias and Dannert, Tilman and Hindenlang, Florian and Jenko, Frank}, year={2021}, month=nov }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "87",
+    "issue": "6",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/S0022377821001082",
+    "groups": []
   },
   {
     "doi": "10.1016/j.cpc.2021.108041",
@@ -281,7 +621,17 @@
     "authors": "C.U. Schuster, T. Johnson, G. Papp, R. Bilato, S. Sipilä, J. Varje, M. Hasenöhrl",
     "venue": "Computer Physics Communications",
     "year": 2021,
-    "codes": []
+    "codes": [],
+    "slug": "moment-preserving-and-mesh-adaptive-reweighting-method-for",
+    "journal": "Computer Physics Communications",
+    "abstract": "",
+    "bibtex": "@article{Schuster_2021, title={Moment-preserving and mesh-adaptive reweighting method for rare-event sampling in Monte-Carlo algorithms}, volume={267}, ISSN={0010-4655}, url={http://dx.doi.org/10.1016/j.cpc.2021.108041}, DOI={10.1016/j.cpc.2021.108041}, journal={Computer Physics Communications}, publisher={Elsevier BV}, author={Schuster, C.U. and Johnson, T. and Papp, G. and Bilato, R. and Sipilä, S. and Varje, J. and Hasenöhrl, M.}, year={2021}, month=oct, pages={108041} }",
+    "publisher": "Elsevier BV",
+    "volume": "267",
+    "issue": "",
+    "pages": "108041",
+    "url": "http://dx.doi.org/10.1016/j.cpc.2021.108041",
+    "groups": []
   },
   {
     "doi": "10.1063/5.0048129",
@@ -289,7 +639,17 @@
     "authors": "Katharina Rath, Christopher G. Albert, Bernd Bischl, Udo von Toussaint",
     "venue": "Chaos: An Interdisciplinary Journal of Nonlinear Science",
     "year": 2021,
-    "codes": []
+    "codes": [],
+    "slug": "symplectic-gaussian-process-regression-of-maps",
+    "journal": "Chaos: An Interdisciplinary Journal of Nonlinear Science",
+    "abstract": "We present an approach to construct structure-preserving emulators for Hamiltonian flow maps and Poincaré maps based directly on orbit data. Intended applications are in moderate-dimensional systems, in particular, long-term tracing of fast charged particles in accelerators and magnetic plasma confinement configurations. The method is based on multi-output Gaussian process (GP) regression on scattered training data. To obtain long-term stability, the symplectic property is enforced via the choice of the matrix-valued covariance function. Based on earlier work on spline interpolation, we observe derivatives of the generating function of a canonical transformation. A product kernel produces an accurate implicit method, whereas a sum kernel results in a fast explicit method from this approach. Both are related to symplectic Euler methods in terms of numerical integration but fulfill a complementary purpose. The developed methods are first tested on the pendulum and the Hénon–Heiles system and results compared to spectral regression of the flow map with orthogonal polynomials. Chaotic behavior is studied on the standard map. Finally, the application to magnetic field line tracing in a perturbed tokamak configuration is demonstrated. As an additional feature, in the limit of small mapping times, the Hamiltonian function can be identified with a part of the generating function and thereby learned from observed time-series data of the system’s evolution. For implicit GP methods, we demonstrate regression performance comparable to spectral bases and artificial neural networks for symplectic flow maps, applicability to Poincaré maps, and correct representation of chaotic diffusion as well as a substantial increase in performance for learning the Hamiltonian function compared to existing approaches.",
+    "bibtex": "@article{Rath_2021, title={Symplectic Gaussian process regression of maps in Hamiltonian systems}, volume={31}, ISSN={1089-7682}, url={http://dx.doi.org/10.1063/5.0048129}, DOI={10.1063/5.0048129}, number={5}, journal={Chaos: An Interdisciplinary Journal of Nonlinear Science}, publisher={AIP Publishing}, author={Rath, Katharina and Albert, Christopher G. and Bischl, Bernd and von Toussaint, Udo}, year={2021}, month=may }",
+    "publisher": "AIP Publishing",
+    "volume": "31",
+    "issue": "5",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/5.0048129",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jocs.2021.101402",
@@ -297,7 +657,17 @@
     "authors": "Diana Suleimenova, Hamid Arabnejad, Wouter N. Edeling, David Coster, Onnie O. Luk, Jalal Lakhlili, Vytautas Jancauskas, Michal Kulczewski, Lourens Veen, Dongwei Ye, Pavel Zun, Valeria Krzhizhanovskaya, Alfons Hoekstra, Daan Crommelin, Peter V. Coveney, Derek Groen",
     "venue": "Journal of Computational Science",
     "year": 2021,
-    "codes": []
+    "codes": [],
+    "slug": "tutorial-applications-for-verification-validation-and",
+    "journal": "Journal of Computational Science",
+    "abstract": "",
+    "bibtex": "@article{Suleimenova_2021, title={Tutorial applications for Verification, Validation and Uncertainty Quantification using VECMA toolkit}, volume={53}, ISSN={1877-7503}, url={http://dx.doi.org/10.1016/j.jocs.2021.101402}, DOI={10.1016/j.jocs.2021.101402}, journal={Journal of Computational Science}, publisher={Elsevier BV}, author={Suleimenova, Diana and Arabnejad, Hamid and Edeling, Wouter N. and Coster, David and Luk, Onnie O. and Lakhlili, Jalal and Jancauskas, Vytautas and Kulczewski, Michal and Veen, Lourens and Ye, Dongwei and Zun, Pavel and Krzhizhanovskaya, Valeria and Hoekstra, Alfons and Crommelin, Daan and Coveney, Peter V. and Groen, Derek}, year={2021}, month=jul, pages={101402} }",
+    "publisher": "Elsevier BV",
+    "volume": "53",
+    "issue": "",
+    "pages": "101402",
+    "url": "http://dx.doi.org/10.1016/j.jocs.2021.101402",
+    "groups": []
   },
   {
     "doi": "10.1088/1361-6587/ab5fa8",
@@ -305,7 +675,17 @@
     "authors": "J Vicente, T Ribeiro, F Da Silva, S Heuraux, G D Conway, B Scott, C Silva",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "2d-full-wave-simulations-of-conventional-reflectometry",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "Abstract A synthetic reflectometer based on the 2D finite-difference time-domain full-wave code REFMUL is applied to data from 3D numerical simulations of edge and scrape-off layer plasma turbulence obtained with the GEMR code. Full-wave simulations are performed using the conventional reflectometry set-up with O-mode waves, fixed frequency probing and an equivalent I / Q detection scheme. Results show a significant spectral broadening of the synthetic reflectometry complex amplitude A ( t )e i φ ( t ) with increasing probing frequency. The reflectometry response displays ± 2 π phase jumps which are due to the self-consistent evolution of turbulent density structures. The range ∼3%–6% of moderate turbulence amplitude is studied here, in the transition from the linear to nonlinear regimes of conventional reflectometry. While a phase jump removal algorithm is applied, spectral broadening of the phase with increasing probing frequency is nevertheless observed. Linear scaling of phase fluctuations with δ n e / n e is also retrieved. REFMUL simulations with turbulence data rendered on both the GEMR field aligned coordinates (drift planes, neglecting circular magnetic flux surfaces) and on polar geometry (poloidal planes, taking into account plasma curvature) are carried out revealing similar trends on both coordinate systems. However, phase fluctuations obtained from poloidal planes display higher root mean square values, compared to drift planes. This could be expected from an increased sensitivity of the reflectometer to higher wavenumbers, due to plasma curvature effects.",
+    "bibtex": "@article{Vicente_2020, title={2D full-wave simulations of conventional reflectometry using 3D gyro-fluid plasma turbulence}, volume={62}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/1361-6587/ab5fa8}, DOI={10.1088/1361-6587/ab5fa8}, number={2}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Vicente, J and Ribeiro, T and Da Silva, F and Heuraux, S and Conway, G D and Scott, B and Silva, C}, year={2020}, month=jan, pages={025031} }",
+    "publisher": "IOP Publishing",
+    "volume": "62",
+    "issue": "2",
+    "pages": "025031",
+    "url": "http://dx.doi.org/10.1088/1361-6587/ab5fa8",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2020.109273",
@@ -313,7 +693,17 @@
     "authors": "Benedict Dingfelder, Florian J. Hindenlang",
     "venue": "Journal of Computational Physics",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "a-locally-field-aligned-discontinuous-galerkin-method",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Dingfelder_2020, title={A locally field-aligned discontinuous Galerkin method for anisotropic wave equations}, volume={408}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2020.109273}, DOI={10.1016/j.jcp.2020.109273}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Dingfelder, Benedict and Hindenlang, Florian J.}, year={2020}, month=may, pages={109273} }",
+    "publisher": "Elsevier BV",
+    "volume": "408",
+    "issue": "",
+    "pages": "109273",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2020.109273",
+    "groups": []
   },
   {
     "doi": "10.1098/rsta.2019.0175",
@@ -321,7 +711,17 @@
     "authors": "E. Romenski, I. Peshkov, M. Dumbser, F. Fambri",
     "venue": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "a-new-continuum-model-for-general",
+    "journal": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+    "abstract": "The lack of formulation of macroscopic equations for irreversible dynamics of viscous heat-conducting media compatible with the causality principle of Einstein’s special relativity and the Euler–Lagrange structure of general relativity is a long-lasting problem. In this paper, we propose a possible solution to this problem in the framework of SHTC equations. The approach does not rely on postulates of equilibrium irreversible thermodynamics but treats irreversible processes from the non-equilibrium point of view. Thus, each transfer process is characterized by a characteristic velocity of perturbation propagation in the non-equilibrium state, as well as by an intrinsic time/length scale of the dissipative dynamics. The resulting system of governing equations is formulated as a first-order system of hyperbolic equations with relaxation-type irreversible terms. Via a formal asymptotic analysis, we demonstrate that classical transport coefficients such as viscosity, heat conductivity, etc., are recovered in leading terms of our theory as effective transport coefficients. Some numerical examples are presented in order to demonstrate the viability of the approach. This article is part of the theme issue ‘Fundamental aspects of nonequilibrium thermodynamics’.",
+    "bibtex": "@article{Romenski_2020, title={A new continuum model for general relativistic viscous heat-conducting media}, volume={378}, ISSN={1471-2962}, url={http://dx.doi.org/10.1098/rsta.2019.0175}, DOI={10.1098/rsta.2019.0175}, number={2170}, journal={Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences}, publisher={The Royal Society}, author={Romenski, E. and Peshkov, I. and Dumbser, M. and Fambri, F.}, year={2020}, month=mar, pages={20190175} }",
+    "publisher": "The Royal Society",
+    "volume": "378",
+    "issue": "2170",
+    "pages": "20190175",
+    "url": "http://dx.doi.org/10.1098/rsta.2019.0175",
+    "groups": []
   },
   {
     "doi": "10.1017/S0022377820000203",
@@ -329,7 +729,17 @@
     "authors": "Christopher G. Albert, Sergei V. Kasilov, Winfried Kernbichler",
     "venue": "Journal of Plasma Physics",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "accelerated-methods-for-direct-computation-of",
+    "journal": "Journal of Plasma Physics",
+    "abstract": "Accelerated statistical computation of collisionless fusion alpha particle losses in stellarator configurations is presented based on direct guiding-centre orbit tracing. The approach relies on the combination of recently developed symplectic integrators in canonicalized magnetic flux coordinates and early classification into regular and chaotic orbit types. Only chaotic orbits have to be traced up to the end, as their behaviour is unpredictable. An implementation of this technique is provided in the code SIMPLE (symplectic integration methods for particle loss estimation, Albert et al. , 2020 b , doi: 10.5281/zenodo.3666820 ). Reliable results were obtained for an ensemble of 1000 orbits in a quasi-isodynamic, a quasi-helical and a quasi-axisymmetric configuration. Overall, a computational speed up of approximately one order of magnitude is achieved compared to direct integration via adaptive Runge–Kutta methods. This reduces run times to the range of typical magnetic equilibrium computations and makes direct alpha particle loss computation adequate for use within a stellarator optimization loop.",
+    "bibtex": "@article{Albert_2020, title={Accelerated methods for direct computation of fusion alpha particle losses within, stellarator optimization}, volume={86}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/S0022377820000203}, DOI={10.1017/s0022377820000203}, number={2}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Albert, Christopher G. and Kasilov, Sergei V. and Kernbichler, Winfried}, year={2020}, month=mar }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "86",
+    "issue": "2",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/S0022377820000203",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2018.06.027",
@@ -337,7 +747,17 @@
     "authors": "Marvin Bohm, Andrew R. Winters, Gregor J. Gassner, Dominik Derigs, Florian Hindenlang, Joachim Saur",
     "venue": "Journal of Computational Physics",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "an-entropy-stable-nodal-discontinuous-galerkin",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Bohm_2020, title={An entropy stable nodal discontinuous Galerkin method for the resistive MHD equations. Part I: Theory and numerical verification}, volume={422}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2018.06.027}, DOI={10.1016/j.jcp.2018.06.027}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Bohm, Marvin and Winters, Andrew R. and Gassner, Gregor J. and Derigs, Dominik and Hindenlang, Florian and Saur, Joachim}, year={2020}, month=dec, pages={108076} }",
+    "publisher": "Elsevier BV",
+    "volume": "422",
+    "issue": "",
+    "pages": "108076",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2018.06.027",
+    "groups": []
   },
   {
     "doi": "10.1088/1361-6587/ab9a61",
@@ -345,7 +765,17 @@
     "authors": "S R Hudson, J Loizu, C Zhu, Z S Qu, C Nührenberg, S Lazerson, C B Smiet, M J Hole",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "free-boundary-mrxmhd-equilibrium-calculations-using-the",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "",
+    "bibtex": "@article{Hudson_2020, title={Free-boundary MRxMHD equilibrium calculations using the stepped-pressure equilibrium code}, volume={62}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/1361-6587/ab9a61}, DOI={10.1088/1361-6587/ab9a61}, number={8}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Hudson, S R and Loizu, J and Zhu, C and Qu, Z S and Nührenberg, C and Lazerson, S and Smiet, C B and Hole, M J}, year={2020}, month=jul, pages={084002} }",
+    "publisher": "IOP Publishing",
+    "volume": "62",
+    "issue": "8",
+    "pages": "084002",
+    "url": "http://dx.doi.org/10.1088/1361-6587/ab9a61",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2020.109694",
@@ -353,7 +783,17 @@
     "authors": "M. Maurer, A. Bañón Navarro, T. Dannert, M. Restelli, F. Hindenlang, T. Görler, D. Told, D. Jarema, G. Merlo, F. Jenko",
     "venue": "Journal of Computational Physics",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "gene-3d-a-global-gyrokinetic-turbulence-code",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Maurer_2020, title={GENE-3D: A global gyrokinetic turbulence code for stellarators}, volume={420}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2020.109694}, DOI={10.1016/j.jcp.2020.109694}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Maurer, M. and Bañón Navarro, A. and Dannert, T. and Restelli, M. and Hindenlang, F. and Görler, T. and Told, D. and Jarema, D. and Merlo, G. and Jenko, F.}, year={2020}, month=nov, pages={109694} }",
+    "publisher": "Elsevier BV",
+    "volume": "420",
+    "issue": "",
+    "pages": "109694",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2020.109694",
+    "groups": []
   },
   {
     "doi": "10.1088/1361-6587/aba858",
@@ -361,7 +801,17 @@
     "authors": "A Bañón Navarro, G Merlo, G G Plunk, P Xanthopoulos, A von Stechow, A Di Siena, M Maurer, F Hindenlang, F Wilms, F Jenko",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "global-gyrokinetic-simulations-of-itg-turbulence",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "Abstract We study the effect of turbulent transport in different magnetic configurations of the Weldenstein 7-X stellarator. In particular, we performed direct numerical simulations with the global gyrokinetic code GENE-3D, modeling the behavior of Ion Temperature Gradient turbulence in the Standard, High-Mirror and Low-Mirror configurations of W7-X. We found that the Low-Mirror configuration produces more transport than both the High-Mirror and the Standard configurations. By comparison with radially local simulations, we have demonstrated the importance of performing global non-linear simulations to predict the turbulent fluxes quantitatively.",
+    "bibtex": "@article{Ba_n_Navarro_2020, title={Global gyrokinetic simulations of ITG turbulence in the magnetic configuration space of the Wendelstein 7-X stellarator}, volume={62}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/1361-6587/aba858}, DOI={10.1088/1361-6587/aba858}, number={10}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Bañón Navarro, A and Merlo, G and Plunk, G G and Xanthopoulos, P and von Stechow, A and Di Siena, A and Maurer, M and Hindenlang, F and Wilms, F and Jenko, F}, year={2020}, month=aug, pages={105005} }",
+    "publisher": "IOP Publishing",
+    "volume": "62",
+    "issue": "10",
+    "pages": "105005",
+    "url": "http://dx.doi.org/10.1088/1361-6587/aba858",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2019.109088",
@@ -369,7 +819,17 @@
     "authors": "Michael Dumbser, Francesco Fambri, Elena Gaburro, Anne Reinarz",
     "venue": "Journal of Computational Physics",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "on-glm-curl-cleaning-for-a",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Dumbser_2020, title={On GLM curl cleaning for a first order reduction of the CCZ4 formulation of the Einstein field equations}, volume={404}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2019.109088}, DOI={10.1016/j.jcp.2019.109088}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Dumbser, Michael and Fambri, Francesco and Gaburro, Elena and Reinarz, Anne}, year={2020}, month=mar, pages={109088} }",
+    "publisher": "Elsevier BV",
+    "volume": "404",
+    "issue": "",
+    "pages": "109088",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2019.109088",
+    "groups": []
   },
   {
     "doi": "10.1016/j.nme.2019.100724",
@@ -377,7 +837,17 @@
     "authors": "F.J. Domínguez-Gutiérrez, J. Byggmästar, K. Nordlund, F. Djurabekova, U. von Toussaint",
     "venue": "Nuclear Materials and Energy",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "on-the-classification-and-quantification-of",
+    "journal": "Nuclear Materials and Energy",
+    "abstract": "",
+    "bibtex": "@article{Dom_nguez_Guti_rrez_2020, title={On the classification and quantification of crystal defects after energetic bombardment by machine learned molecular dynamics simulations}, volume={22}, ISSN={2352-1791}, url={http://dx.doi.org/10.1016/j.nme.2019.100724}, DOI={10.1016/j.nme.2019.100724}, journal={Nuclear Materials and Energy}, publisher={Elsevier BV}, author={Domínguez-Gutiérrez, F.J. and Byggmästar, J. and Nordlund, K. and Djurabekova, F. and von Toussaint, U.}, year={2020}, month=jan, pages={100724} }",
+    "publisher": "Elsevier BV",
+    "volume": "22",
+    "issue": "",
+    "pages": "100724",
+    "url": "http://dx.doi.org/10.1016/j.nme.2019.100724",
+    "groups": []
   },
   {
     "doi": "10.1063/5.0022117",
@@ -385,7 +855,17 @@
     "authors": "M. Eder, C. G. Albert, L. M. P. Bauer, S. V. Kasilov, W. Kernbichler",
     "venue": "Physics of Plasmas",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "quasi-geometric-integration-of-guiding-center-orbits-in",
+    "journal": "Physics of Plasmas",
+    "abstract": "A numerical integration method for guiding-center orbits of charged particles in toroidal fusion devices with three-dimensional field geometry is described. Here, high order interpolation of electromagnetic fields in space is replaced by a special linear interpolation, leading to locally linear Hamiltonian equations of motion with piecewise constant coefficients. This approach reduces computational effort and noise sensitivity, while the conservation of total energy, magnetic moment and phase space volume is retained. The underlying formulation treats motion in piecewise linear fields exactly and, thus, preserves the non-canonical symplectic form. The algorithm itself is only quasi-geometric due to a series expansion in the orbit parameter. For practical purposes, an expansion to the fourth order retains geometric properties down to computer accuracy in typical examples. When applied to collisionless guiding-center orbits in an axisymmetric tokamak and a realistic three-dimensional stellarator configuration, the method demonstrates stable long-term orbit dynamics conserving invariants. In Monte Carlo evaluation of transport coefficients, the computational efficiency of quasi-geometric integration is an order of magnitude higher than with a standard fourth order Runge–Kutta integrator.",
+    "bibtex": "@article{Eder_2020, title={Quasi-geometric integration of guiding-center orbits in piecewise linear toroidal fields}, volume={27}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/5.0022117}, DOI={10.1063/5.0022117}, number={12}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Eder, M. and Albert, C. G. and Bauer, L. M. P. and Kasilov, S. V. and Kernbichler, W.}, year={2020}, month=dec }",
+    "publisher": "AIP Publishing",
+    "volume": "27",
+    "issue": "12",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/5.0022117",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2020.109394",
@@ -393,7 +873,17 @@
     "authors": "Ionuţ-Gabriel Farcaş, Tobias Görler, Hans-Joachim Bungartz, Frank Jenko, Tobias Neckel",
     "venue": "Journal of Computational Physics",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "sensitivity-driven-adaptive-sparse-stochastic-approximations-in",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Farca__2020, title={Sensitivity-driven adaptive sparse stochastic approximations in plasma microinstability analysis}, volume={410}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2020.109394}, DOI={10.1016/j.jcp.2020.109394}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Farcaş, Ionuţ-Gabriel and Görler, Tobias and Bungartz, Hans-Joachim and Jenko, Frank and Neckel, Tobias}, year={2020}, month=jun, pages={109394} }",
+    "publisher": "Elsevier BV",
+    "volume": "410",
+    "issue": "",
+    "pages": "109394",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2020.109394",
+    "groups": []
   },
   {
     "doi": "10.1063/5.0006403",
@@ -401,7 +891,17 @@
     "authors": "Eero Hirvijoki, Katharina Kormann, Filippo Zonta",
     "venue": "Physics of Plasmas",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "subcycling-of-particle-orbits-in-variational",
+    "journal": "Physics of Plasmas",
+    "abstract": "This paper investigates the subcycling of particle orbits in variational, geometric particle-in-cell methods, addressing the Vlasov–Maxwell system in magnetized plasmas. The purpose of subcycling is to allow different time steps for different particle species and, ideally, time steps longer than the electron gyroperiod for the global field solves while sampling the local cyclotron orbits accurately. The considered algorithms retain the electromagnetic gauge invariance of the discrete action, guaranteeing a local charge conservation law, while the variational approach provides a bounded long-time energy behavior.",
+    "bibtex": "@article{Hirvijoki_2020, title={Subcycling of particle orbits in variational, geometric electromagnetic particle-in-cell methods}, volume={27}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/5.0006403}, DOI={10.1063/5.0006403}, number={9}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Hirvijoki, Eero and Kormann, Katharina and Zonta, Filippo}, year={2020}, month=sep }",
+    "publisher": "AIP Publishing",
+    "volume": "27",
+    "issue": "9",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/5.0006403",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2019.109065",
@@ -409,7 +909,17 @@
     "authors": "Christopher G. Albert, Sergei V. Kasilov, Winfried Kernbichler",
     "venue": "Journal of Computational Physics",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "symplectic-integration-with-non-canonical-quadrature-for",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Albert_2020, title={Symplectic integration with non-canonical quadrature for guiding-center orbits in magnetic confinement devices}, volume={403}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2019.109065}, DOI={10.1016/j.jcp.2019.109065}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Albert, Christopher G. and Kasilov, Sergei V. and Kernbichler, Winfried}, year={2020}, month=feb, pages={109065} }",
+    "publisher": "Elsevier BV",
+    "volume": "403",
+    "issue": "",
+    "pages": "109065",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2019.109065",
+    "groups": []
   },
   {
     "doi": "10.1093/imanum/draa022",
@@ -417,7 +927,17 @@
     "authors": "Michael Kraus, Tomasz M Tyranowski",
     "venue": "IMA Journal of Numerical Analysis",
     "year": 2020,
-    "codes": []
+    "codes": [],
+    "slug": "variational-integrators-for-stochastic-dissipative-hamiltonian",
+    "journal": "IMA Journal of Numerical Analysis",
+    "abstract": "Abstract Variational integrators are derived for structure-preserving simulation of stochastic forced Hamiltonian systems. The derivation is based on a stochastic discrete Hamiltonian, which approximates a type-II stochastic generating function for the stochastic flow of the Hamiltonian system. The generating function is obtained by introducing an appropriate stochastic action functional and considering a stochastic generalization of the deterministic Lagrange–d’Alembert principle. Our approach presents a general methodology to derive new structure-preserving numerical schemes. The resulting integrators satisfy a discrete version of the stochastic Lagrange–d’Alembert principle, and in the presence of symmetries, they also satisfy a discrete counterpart of Noether’s theorem. Furthermore, mean-square and weak Lagrange–d’Alembert Runge–Kutta methods are proposed and tested numerically to demonstrate their superior long-time numerical stability and energy behaviour compared to nongeometric methods. The Vlasov–Fokker–Planck equation is considered as one of the numerical test cases, and a new geometric approach to collisional kinetic plasmas is presented.",
+    "bibtex": "@article{Kraus_2020, title={Variational integrators for stochastic dissipative Hamiltonian systems}, volume={41}, ISSN={1464-3642}, url={http://dx.doi.org/10.1093/imanum/draa022}, DOI={10.1093/imanum/draa022}, number={2}, journal={IMA Journal of Numerical Analysis}, publisher={Oxford University Press (OUP)}, author={Kraus, Michael and Tyranowski, Tomasz M}, year={2020}, month=jul, pages={1318–1367} }",
+    "publisher": "Oxford University Press (OUP)",
+    "volume": "41",
+    "issue": "2",
+    "pages": "1318-1367",
+    "url": "http://dx.doi.org/10.1093/imanum/draa022",
+    "groups": []
   },
   {
     "doi": "10.1177/1094342019834644",
@@ -425,7 +945,17 @@
     "authors": "Katharina Kormann, Klaus Reuter, Markus Rampp",
     "venue": "The International Journal of High Performance Computing Applications",
     "year": 2019,
-    "codes": []
+    "codes": [],
+    "slug": "a-massively-parallel-semi-lagrangian-solver-for",
+    "journal": "The International Journal of High Performance Computing Applications",
+    "abstract": "This article presents an optimized and scalable semi-Lagrangian solver for the Vlasov–Poisson system in six-dimensional phase space. Grid-based solvers of the Vlasov equation are known to give accurate results. At the same time, these solvers are challenged by the curse of dimensionality resulting in very high memory requirements, and moreover, requiring highly efficient parallelization schemes. In this article, we consider the 6-D Vlasov–Poisson problem discretized by a split-step semi-Lagrangian scheme, using successive 1-D interpolations on 1-D stripes of the 6-D domain. Two parallelization paradigms are compared, a remapping scheme and a domain decomposition approach applied to the full 6-D problem. From numerical experiments, the latter approach is found to be superior in the massively parallel case in various respects. We address the challenge of artificial time step restrictions due to the decomposition of the domain by introducing a blocked one-sided communication scheme for the purely electrostatic case and a rotating mesh for the case with a constant magnetic field. In addition, we propose a pipelining scheme that enables to hide the costs for the halo communication between neighbor processes efficiently behind useful computation. Parallel scalability on up to 65,536 processes is demonstrated for benchmark problems on a supercomputer.",
+    "bibtex": "@article{Kormann_2019, title={A massively parallel semi-Lagrangian solver for the six-dimensional Vlasov–Poisson equation}, volume={33}, ISSN={1741-2846}, url={http://dx.doi.org/10.1177/1094342019834644}, DOI={10.1177/1094342019834644}, number={5}, journal={The International Journal of High Performance Computing Applications}, publisher={SAGE Publications}, author={Kormann, Katharina and Reuter, Klaus and Rampp, Markus}, year={2019}, month=mar, pages={924–947} }",
+    "publisher": "SAGE Publications",
+    "volume": "33",
+    "issue": "5",
+    "pages": "924-947",
+    "url": "http://dx.doi.org/10.1177/1094342019834644",
+    "groups": []
   },
   {
     "doi": "10.1098/rsta.2018.0152",
@@ -433,7 +963,17 @@
     "authors": "O. O. Luk, O. Hoenen, O. Perks, K. Brabazon, T. Piontek, P. Kopta, B. Bosak, A. Bottino, B. D. Scott, D. P. Coster",
     "venue": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
     "year": 2019,
-    "codes": []
+    "codes": [],
+    "slug": "application-of-the-extreme-scaling-computing",
+    "journal": "Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences",
+    "abstract": "The extreme scaling pattern of the ComPat project is applied to a multi-scale workflow relevant to the magnetically confined fusion problem. This workflow combines transport, turbulence and equilibrium codes (together with additional auxiliaries such as initial conditions and numerical module), which aims at calculating the behaviour of a fusion plasma on long (transport) time scales based on information from much faster (turbulence) time scales. Initial findings of profile measurements are reported in this paper and indicate that, depending on the chosen performance metric for defining ‘cost’, such as time to completion, efficiency and total energy consumption of the mutliscale workflow, different choices on the number of cores would be made when determining the optimal execution configuration. A variant of the workflow which increases the inherent parallelism is presented, and shown to produce equivalent results at (typically) lower cost compared with the original workflow. This article is part of the theme issue ‘Multiscale modelling, simulation and computing: from the desktop to the exascale’.",
+    "bibtex": "@article{Luk_2019, title={Application of the extreme scaling computing pattern on multiscale fusion plasma modelling}, volume={377}, ISSN={1471-2962}, url={http://dx.doi.org/10.1098/rsta.2018.0152}, DOI={10.1098/rsta.2018.0152}, number={2142}, journal={Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences}, publisher={The Royal Society}, author={Luk, O. O. and Hoenen, O. and Perks, O. and Brabazon, K. and Piontek, T. and Kopta, P. and Bosak, B. and Bottino, A. and Scott, B. D. and Coster, D. P.}, year={2019}, month=feb, pages={20180152} }",
+    "publisher": "The Royal Society",
+    "volume": "377",
+    "issue": "2142",
+    "pages": "20180152",
+    "url": "http://dx.doi.org/10.1098/rsta.2018.0152",
+    "groups": []
   },
   {
     "doi": "10.1063/1.5078451",
@@ -441,7 +981,17 @@
     "authors": "L. Vela Vela, R. Sánchez, J. M. Reynolds-Barredo, J. Geiger",
     "venue": "Physics of Plasmas",
     "year": 2019,
-    "codes": []
+    "codes": [],
+    "slug": "magneto-hydrodynamical-nonlinear-simulations-of-magnetically-confined",
+    "journal": "Physics of Plasmas",
+    "abstract": "The successful application of techniques inspired in Smoothed Particle Hydrodynamics (SPH) to magnetohydrodynamical (MHD) nonlinear simulations of magnetically confined plasmas requires the previous solution to a number of challenging issues that are still not fully resolved, namely, the construction of precise, arbitrary initial conditions in complicated geometries, the formulation of adequate boundary conditions for the magnetic field, and the correct treatment of three-dimensional toroidal boundaries of the arbitrary shape. In this paper, we present an SPH implementation of the nonlinear MHD equations that include our proposed solution to these issues and test its performance on a broad selection of nonlinear MHD problems: (1) the propagation of circularly polarized Alfvén waves, (2) the occurrence of magnetic reconnection for a Harris current-sheet, and (3) the nonlinear MHD stability properties of various cylindrical pinches.",
+    "bibtex": "@article{Vela_Vela_2019, title={Magneto-hydrodynamical nonlinear simulations of magnetically confined plasmas using smooth particle hydrodynamics (SPH)}, volume={26}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.5078451}, DOI={10.1063/1.5078451}, number={1}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Vela Vela, L. and Sánchez, R. and Reynolds-Barredo, J. M. and Geiger, J.}, year={2019}, month=jan }",
+    "publisher": "AIP Publishing",
+    "volume": "26",
+    "issue": "1",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.5078451",
+    "groups": []
   },
   {
     "doi": "10.1063/1.5079495",
@@ -449,15 +999,35 @@
     "authors": "F. J. Domínguez-Gutiérrez, C. Martínez-Flores, R. Cabrera-Trujillo",
     "venue": "Journal of Applied Physics",
     "year": 2019,
-    "codes": []
+    "codes": [],
+    "slug": "molecular-dynamics-simulations-for-hydrogen-adsorption",
+    "journal": "Journal of Applied Physics",
+    "abstract": "The capability of carbon nanotubes (CNTs) and boron-nitride nanotubes (BNNTs) to absorb hydrogen atoms might indicate if these materials can be used to develop an efficient and fast hydrogen nanosensor device. In this work, we carry out a theoretical study of the hydrogen adsorption mechanism by carbon and boron-nitride nanotubes irradiated by atomic hydrogen in the impact energy range of 0.25–100 eV. Hydrogen adsorption, reflection, and transmission probabilities are reported. The collision dynamics is calculated by performing quantum-classical molecular dynamics simulations within the self-consistent-charge density-functional tight-binding method. We include fitting curves for the angular distribution of reflected and transmitted H atoms by using a modified Yamamura formula. Results for CNTs follow a cosine-like law, while the majority of the projectiles tend to be scattered at angles lower than 60° for BNNTs. Based on previous studies for spherical and planar carbon-based configurations, we analyse the effect of the system’s curvature on the hydrogen adsorption on CNTs. We find that for collision energies below 5 eV, the scattering process depends on the carbon system curvature; meanwhile, the adsorption is independent for collision energies below 0.5 eV. Our results for the hydrogen adsorption rates for both types of nanotubes suggest that these materials can be used in hydrogen detector devices in a wide impact energy range.",
+    "bibtex": "@article{Dom_nguez_Guti_rrez_2019, title={Molecular dynamics simulations for hydrogen adsorption in low energy collisions with carbon and boron-nitride nanotubes}, volume={125}, ISSN={1089-7550}, url={http://dx.doi.org/10.1063/1.5079495}, DOI={10.1063/1.5079495}, number={9}, journal={Journal of Applied Physics}, publisher={AIP Publishing}, author={Domínguez-Gutiérrez, F. J. and Martínez-Flores, C. and Cabrera-Trujillo, R.}, year={2019}, month=mar }",
+    "publisher": "AIP Publishing",
+    "volume": "125",
+    "issue": "9",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.5079495",
+    "groups": []
   },
   {
     "doi": "10.1017/S0022377819000096",
-    "title": "Reduction of the statistical error in electromagnetic gyrokinetic particle-in-cell simulations",
+    "title": "Reduction of the statistical error in electromagnetic gyrokinetic particle-in-cell simulations",
     "authors": "R. Hatzky, R. Kleiber, A. Könies, A. Mishchenko, M. Borchardt, A. Bottino, E. Sonnendrücker",
     "venue": "Journal of Plasma Physics",
     "year": 2019,
-    "codes": []
+    "codes": [],
+    "slug": "reduction-of-the-statistical-error-in",
+    "journal": "Journal of Plasma Physics",
+    "abstract": "The $\\unicode[STIX]{x1D6FF}f$ -PIC method is widely used for electrostatic particle-in-cell (PIC) simulations. Its basic idea is the ansatz $f=f_{0}+\\unicode[STIX]{x1D6FF}f$ ( $\\unicode[STIX]{x1D6FF}f$ -ansatz) where the particle distribution function $f$ is split into a usually time-independent background $f_{0}$ and a time-dependent perturbation $\\unicode[STIX]{x1D6FF}f$ . In principle, it can also be used for electromagnetic gyrokinetic PIC simulations, but the required number of markers can be so large that PIC simulations become impractical. The reason is a decreasing efficiency of the $\\unicode[STIX]{x1D6FF}f$ -ansatz for the so-called ‘Hamiltonian formulation’ using $p_{\\Vert }$ as a dynamic variable. As a result, the density and current moment of the distribution function develop large statistical errors. To overcome this obstacle we propose to solve the potential equations in the symplectic formulation using $v_{\\Vert }$ as a dynamic variable. The distribution function itself is still evolved in the Hamiltonian formulation which is better suited for the numerical integration of the parallel dynamics. The contributions from the full Jacobian of phase space, a finite velocity sphere of the simulation domain and a shifted Maxwellian as a background are considered. Special care has been taken at the discretisation level to make damped magnetohydrodynamics (MHD) mode simulations within a realistic gyrokinetic model feasible. This includes devices like e.g. large tokamaks with a small aspect ratio.",
+    "bibtex": "@article{Hatzky_2019, title={Reduction of the statistical error in electromagnetic gyrokinetic particle-in-cell simulations}, volume={85}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/S0022377819000096}, DOI={10.1017/s0022377819000096}, number={1}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Hatzky, R. and Kleiber, R. and Könies, A. and Mishchenko, A. and Borchardt, M. and Bottino, A. and Sonnendrücker, E.}, year={2019}, month=feb }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "85",
+    "issue": "1",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/S0022377819000096",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2019.108889",
@@ -465,7 +1035,17 @@
     "authors": "Edoardo Zoni, Yaman Güçlü",
     "venue": "Journal of Computational Physics",
     "year": 2019,
-    "codes": []
+    "codes": [],
+    "slug": "solving-hyperbolic-elliptic-problems-on-singular-mapped",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Zoni_2019, title={Solving hyperbolic-elliptic problems on singular mapped disk-like domains with the method of characteristics and spline finite elements}, volume={398}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2019.108889}, DOI={10.1016/j.jcp.2019.108889}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Zoni, Edoardo and Güçlü, Yaman}, year={2019}, month=dec, pages={108889} }",
+    "publisher": "Elsevier BV",
+    "volume": "398",
+    "issue": "",
+    "pages": "108889",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2019.108889",
+    "groups": []
   },
   {
     "doi": "10.1016/j.cpc.2017.10.017",
@@ -473,7 +1053,17 @@
     "authors": "Luis Vela Vela, Raul Sanchez, Joachim Geiger",
     "venue": "Computer Physics Communications",
     "year": 2018,
-    "codes": []
+    "codes": [],
+    "slug": "alaric-an-algorithm-for-constructing-arbitrarily",
+    "journal": "Computer Physics Communications",
+    "abstract": "",
+    "bibtex": "@article{Vela_Vela_2018, title={ALARIC: An algorithm for constructing arbitrarily complex initial density distributions with low particle noise for SPH/SPMHD applications}, volume={224}, ISSN={0010-4655}, url={http://dx.doi.org/10.1016/j.cpc.2017.10.017}, DOI={10.1016/j.cpc.2017.10.017}, journal={Computer Physics Communications}, publisher={Elsevier BV}, author={Vela Vela, Luis and Sanchez, Raul and Geiger, Joachim}, year={2018}, month=mar, pages={186–197} }",
+    "publisher": "Elsevier BV",
+    "volume": "224",
+    "issue": "",
+    "pages": "186-197",
+    "url": "http://dx.doi.org/10.1016/j.cpc.2017.10.017",
+    "groups": []
   },
   {
     "doi": "10.1007/s10915-018-0758-y",
@@ -481,7 +1071,17 @@
     "authors": "Gregor J. Gassner, Andrew R. Winters, Florian J. Hindenlang, David A. Kopriva",
     "venue": "Journal of Scientific Computing",
     "year": 2018,
-    "codes": []
+    "codes": [],
+    "slug": "correction-to-the-br1-scheme-is",
+    "journal": "Journal of Scientific Computing",
+    "abstract": "",
+    "bibtex": "@article{Gassner_2018, title={Correction to: The BR1 Scheme is Stable for the Compressible Navier–Stokes Equations}, volume={77}, ISSN={1573-7691}, url={http://dx.doi.org/10.1007/s10915-018-0758-y}, DOI={10.1007/s10915-018-0758-y}, number={1}, journal={Journal of Scientific Computing}, publisher={Springer Science and Business Media LLC}, author={Gassner, Gregor J. and Winters, Andrew R. and Hindenlang, Florian J. and Kopriva, David A.}, year={2018}, month=jun, pages={201–203} }",
+    "publisher": "Springer Science and Business Media LLC",
+    "volume": "77",
+    "issue": "1",
+    "pages": "201-203",
+    "url": "http://dx.doi.org/10.1007/s10915-018-0758-y",
+    "groups": []
   },
   {
     "doi": "10.1016/j.jcp.2018.06.046",
@@ -489,7 +1089,17 @@
     "authors": "Juan Vicente Gutiérrez-Santacreu, Omar Maj, Marco Restelli",
     "venue": "Journal of Computational Physics",
     "year": 2018,
-    "codes": []
+    "codes": [],
+    "slug": "finite-element-discretization-of-a-stokes-like",
+    "journal": "Journal of Computational Physics",
+    "abstract": "",
+    "bibtex": "@article{Guti_rrez_Santacreu_2018, title={Finite element discretization of a Stokes-like model arising in plasma physics}, volume={373}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2018.06.046}, DOI={10.1016/j.jcp.2018.06.046}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Gutiérrez-Santacreu, Juan Vicente and Maj, Omar and Restelli, Marco}, year={2018}, month=nov, pages={811–834} }",
+    "publisher": "Elsevier BV",
+    "volume": "373",
+    "issue": "",
+    "pages": "811-834",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2018.06.046",
+    "groups": []
   },
   {
     "doi": "10.1002/ctpp.201700135",
@@ -497,15 +1107,35 @@
     "authors": "E. Sytova, E. Kaveeva, V. Rozhansky, I. Senichenkov, S. Voskoboynikov, D. Coster, X. Bonnin, R.A. Pitts",
     "venue": "Contributions to Plasma Physics",
     "year": 2018,
-    "codes": []
+    "codes": [],
+    "slug": "impact-of-a-new-general-form",
+    "journal": "Contributions to Plasma Physics",
+    "abstract": "The SOLPS‐ITER transport code was released in 2015 on the basis of older versions of SOLPS and the EIRENE Monte Carlo code for neutrals. In the parallel momentum balance equations of this first release, each of the ion species was combined with the parallel momentum balance for electrons so as to eliminate the electric field term. In doing so, the expressions for the thermal and friction forces were approximated for simplification. Such approximations break down for multi‐component plasma modelling. It was subsequently proposed to return to solving the original (Braginskii) ion momentum balance equations, with the electric field term included, and with more accurate treatment of friction and thermal force terms, although the treatment of these terms still assumed trace impurities. In the present work, more general expressions for the friction and thermal forces, valid for high impurity densities ( z eff − 1 > 1 at the separatrix), are suggested. This new form for the force terms within the Braginskii equation has now been implemented in SOLPS‐ITER and has been tested through the use of simulation test cases of nitrogen‐seeded scenarios in ASDEX Upgrade geometry, with drifts and currents switched on. This paper discusses the effect of the new form of the terms in the Braginskii equation, emphasizing the differences with the trace impurity approach. It demonstrates that the latter already begins to fail in simulations for which z eff = 1.5. The influence of the transition from the old form of the momentum balance equation to the new general Braginskii formulation with corrected friction and thermal force terms is demonstrated by comparing SOLPS‐ITER ASDEX Upgrade simulations employing both descriptions.",
+    "bibtex": "@article{Sytova_2018, title={Impact of a new general form of friction and thermal forces on SOLPS‐ITER modelling results}, volume={58}, ISSN={1521-3986}, url={http://dx.doi.org/10.1002/ctpp.201700135}, DOI={10.1002/ctpp.201700135}, number={6–8}, journal={Contributions to Plasma Physics}, publisher={Wiley}, author={Sytova, E. and Kaveeva, E. and Rozhansky, V. and Senichenkov, I. and Voskoboynikov, S. and Coster, D. and Bonnin, X. and Pitts, R.A.}, year={2018}, month=feb, pages={622–628} }",
+    "publisher": "Wiley",
+    "volume": "58",
+    "issue": "6-8",
+    "pages": "622-628",
+    "url": "http://dx.doi.org/10.1002/ctpp.201700135",
+    "groups": []
   },
   {
     "doi": "10.1007/978-3-319-91143-4_6",
     "title": "Probabilistic Inference of Surface Heat Flux Densities from Infrared Thermography",
     "authors": "D. Nille, U. von Toussaint, B. Sieglin, M. Faitsch",
-    "venue": "Springer Proceedings in Mathematics &amp; Statistics",
+    "venue": "Springer Proceedings in Mathematics & Statistics",
     "year": 2018,
-    "codes": []
+    "codes": [],
+    "slug": "probabilistic-inference-of-surface-heat-flux",
+    "journal": "Springer Proceedings in Mathematics & Statistics",
+    "abstract": "",
+    "bibtex": "@inbook{Nille_2018, title={Probabilistic Inference of Surface Heat Flux Densities from Infrared Thermography}, ISBN={9783319911434}, ISSN={2194-1017}, url={http://dx.doi.org/10.1007/978-3-319-91143-4_6}, DOI={10.1007/978-3-319-91143-4_6}, booktitle={Bayesian Inference and Maximum Entropy Methods in Science and Engineering}, publisher={Springer International Publishing}, author={Nille, D. and von Toussaint, U. and Sieglin, B. and Faitsch, M.}, year={2018}, pages={55–64} }",
+    "publisher": "Springer International Publishing",
+    "volume": "",
+    "issue": "",
+    "pages": "55-64",
+    "url": "http://dx.doi.org/10.1007/978-3-319-91143-4_6",
+    "groups": []
   },
   {
     "doi": "10.1017/S0022377818000430",
@@ -513,7 +1143,17 @@
     "authors": "Natalia Tronko, Cristel Chandre",
     "venue": "Journal of Plasma Physics",
     "year": 2018,
-    "codes": []
+    "codes": [],
+    "slug": "second-order-nonlinear-gyrokinetic-theory-from-the",
+    "journal": "Journal of Plasma Physics",
+    "abstract": "A gyrokinetic reduction is based on a specific ordering of the different small parameters characterizing the background magnetic field and the fluctuating electromagnetic fields. In this tutorial, we consider the following ordering of the small parameters: $\\unicode[STIX]{x1D716}_{B}=\\unicode[STIX]{x1D716}_{\\unicode[STIX]{x1D6FF}}^{2}$ where $\\unicode[STIX]{x1D716}_{B}$ is the small parameter associated with spatial inhomogeneities of the background magnetic field and $\\unicode[STIX]{x1D716}_{\\unicode[STIX]{x1D6FF}}$ characterizes the small amplitude of the fluctuating fields. In particular, we do not make any assumption on the amplitude of the background magnetic field. Given this choice of ordering, we describe a self-contained and systematic derivation which is particularly well suited for the gyrokinetic reduction, following a two-step procedure. We follow the approach developed in Sugama ( Phys. Plasmas , vol. 7, 2000, p. 466): In a first step, using a translation in velocity, we embed the transformation performed on the symplectic part of the gyrocentre reduction in the guiding-centre one. In a second step, using a canonical Lie transform, we eliminate the gyroangle dependence from the Hamiltonian. As a consequence, we explicitly derive the fully electromagnetic gyrokinetic equations at the second order in $\\unicode[STIX]{x1D716}_{\\unicode[STIX]{x1D6FF}}$ .",
+    "bibtex": "@article{Tronko_2018, title={Second-order nonlinear gyrokinetic theory: from the particle to the gyrocentre}, volume={84}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/S0022377818000430}, DOI={10.1017/s0022377818000430}, number={3}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Tronko, Natalia and Chandre, Cristel}, year={2018}, month=jun }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "84",
+    "issue": "3",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/S0022377818000430",
+    "groups": []
   },
   {
     "doi": "10.1088/1741-4326/aa8446",
@@ -521,7 +1161,17 @@
     "authors": "M. Tripský, T. Wauters, A. Lyssoivan, V. Bobkov, P.A. Schneider, I. Stepanov, D. Douai, D. Van Eester, J.-M. Noterdaeme, M. Van Schoor, ASDEX Upgrade Team, EUROfusion MST1 Team",
     "venue": "Nuclear Fusion",
     "year": 2017,
-    "codes": []
+    "codes": [],
+    "slug": "a-pic-mcc-code-rfdinity1d-for-simulation",
+    "journal": "Nuclear Fusion",
+    "abstract": "",
+    "bibtex": "@article{Tripsk__2017, title={A PIC-MCC code RFdinity1d for simulation of discharge initiation by ICRF antenna}, volume={57}, ISSN={1741-4326}, url={http://dx.doi.org/10.1088/1741-4326/aa8446}, DOI={10.1088/1741-4326/aa8446}, number={12}, journal={Nuclear Fusion}, publisher={IOP Publishing}, author={Tripský, M. and Wauters, T. and Lyssoivan, A. and Bobkov, V. and Schneider, P.A. and Stepanov, I. and Douai, D. and Van Eester, D. and Noterdaeme, J.-M. and Van Schoor, M.}, year={2017}, month=oct, pages={126043} }",
+    "publisher": "IOP Publishing",
+    "volume": "57",
+    "issue": "12",
+    "pages": "126043",
+    "url": "http://dx.doi.org/10.1088/1741-4326/aa8446",
+    "groups": []
   },
   {
     "doi": "10.5802/smai-jcm.20",
@@ -529,7 +1179,17 @@
     "authors": "Martin Campos Pinto, Eric Sonnendrücker",
     "venue": "The SMAI Journal of computational mathematics",
     "year": 2017,
-    "codes": []
+    "codes": [],
+    "slug": "compatible-maxwell-solvers-with-particles-i",
+    "journal": "The SMAI Journal of computational mathematics",
+    "abstract": "This article is the first of a series where we develop and analyze structure-preserving finite element discretizations for the time-dependent 2D Maxwell system with long-time stability properties, and propose a charge-conserving deposition scheme to extend the stability properties in the case where the current source is provided by a particle method. The schemes proposed here derive from a previous study where a generalized commuting diagram was identified as an abstract compatibility criterion in the design of stable schemes for the Maxwell system alone, and applied to build a series of conforming and non-conforming schemes in the 3D case. Here the theory is extended to account for approximate sources, and specific charge-conserving schemes are provided for the 2D case. In this article we study two schemes which include a strong discretization of the Ampere law. The first one is based on a standard conforming mixed finite element discretization and the long-time stability is ensured by a Raviart-Thomas finite element interpolation for the current source, thanks to its commuting diagram properties. The second one is a new non-conforming variant where the numerical fields are sought in fully discontinuous spaces. Numerical experiments involving Maxwell and Maxwell-Vlasov problems are then provided to validate the stability of the proposed methods.",
+    "bibtex": "@article{Campos_Pinto_2017, title={Compatible Maxwell solvers with particles I: conforming and non-conforming 2D schemes with a strong Ampere law}, volume={3}, ISSN={2426-8399}, url={http://dx.doi.org/10.5802/smai-jcm.20}, DOI={10.5802/smai-jcm.20}, journal={The SMAI Journal of computational mathematics}, publisher={MathDoc/Centre Mersenne}, author={Campos Pinto, Martin and Sonnendrücker, Eric}, year={2017}, month=sep, pages={53–89} }",
+    "publisher": "MathDoc/Centre Mersenne",
+    "volume": "3",
+    "issue": "",
+    "pages": "53-89",
+    "url": "http://dx.doi.org/10.5802/smai-jcm.20",
+    "groups": []
   },
   {
     "doi": "10.1063/1.4986447",
@@ -537,17 +1197,37 @@
     "authors": "H. Peraza-Rodriguez, J. M. Reynolds-Barredo, R. Sanchez, J. Geiger, V. Tribaldos, S. P. Hirshman, M. Cianciosa",
     "venue": "Physics of Plasmas",
     "year": 2017,
-    "codes": []
+    "codes": [],
+    "slug": "extension-of-the-siesta-mhd-equilibrium",
+    "journal": "Physics of Plasmas",
+    "abstract": "SIESTA [Hirshman et al., Phys. Plasmas 18, 062504 (2011)] is a recently developed MHD equilibrium code designed to perform fast and accurate calculations of ideal MHD equilibria for three-dimensional magnetic configurations. Since SIESTA does not assume closed magnetic surfaces, the solution can exhibit magnetic islands and stochastic regions. In its original implementation SIESTA addressed only fixed-boundary problems. That is, the shape of the plasma edge, assumed to be a magnetic surface, was kept fixed as the solution iteratively converges to equilibrium. This condition somewhat restricts the possible applications of SIESTA. In this paper, we discuss an extension that will enable SIESTA to address free-plasma-boundary problems, opening up the possibility of investigating problems in which the plasma boundary is perturbed either externally or internally. As an illustration, SIESTA is applied to a configuration of the W7-X stellarator.",
+    "bibtex": "@article{Peraza_Rodriguez_2017, title={Extension of the SIESTA MHD equilibrium code to free-plasma-boundary problems}, volume={24}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.4986447}, DOI={10.1063/1.4986447}, number={8}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Peraza-Rodriguez, H. and Reynolds-Barredo, J. M. and Sanchez, R. and Geiger, J. and Tribaldos, V. and Hirshman, S. P. and Cianciosa, M.}, year={2017}, month=aug }",
+    "publisher": "AIP Publishing",
+    "volume": "24",
+    "issue": "8",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.4986447",
+    "groups": []
   },
   {
     "doi": "10.1017/S002237781700040X",
     "title": "GEMPIC: geometric electromagnetic particle-in-cell methods",
-    "authors": "Michael Kraus, Katharina Kormann, Philip J. Morrison, Eric Sonnendrücker",
+    "authors": "Michael Kraus, Katharina Kormann, Philip J. Morrison, Eric Sonnendrücker",
     "venue": "Journal of Plasma Physics",
     "year": 2017,
     "codes": [
       "gempicx"
-    ]
+    ],
+    "slug": "gempic-geometric-electromagnetic-particle-in-cell-methods",
+    "journal": "Journal of Plasma Physics",
+    "abstract": "We present a novel framework for finite element particle-in-cell methods based on the discretization of the underlying Hamiltonian structure of the Vlasov–Maxwell system. We derive a semi-discrete Poisson bracket, which retains the defining properties of a bracket, anti-symmetry and the Jacobi identity, as well as conservation of its Casimir invariants, implying that the semi-discrete system is still a Hamiltonian system. In order to obtain a fully discrete Poisson integrator, the semi-discrete bracket is used in conjunction with Hamiltonian splitting methods for integration in time. Techniques from finite element exterior calculus ensure conservation of the divergence of the magnetic field and Gauss’ law as well as stability of the field solver. The resulting methods are gauge invariant, feature exact charge conservation and show excellent long-time energy and momentum behaviour. Due to the generality of our framework, these conservation properties are guaranteed independently of a particular choice of the finite element basis, as long as the corresponding finite element spaces satisfy certain compatibility conditions.",
+    "bibtex": "@article{Kraus_2017, title={GEMPIC: geometric electromagnetic particle-in-cell methods}, volume={83}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/S002237781700040X}, DOI={10.1017/s002237781700040x}, number={4}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Kraus, Michael and Kormann, Katharina and Morrison, Philip J. and Sonnendrücker, Eric}, year={2017}, month=jul }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "83",
+    "issue": "4",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/S002237781700040X",
+    "groups": []
   },
   {
     "doi": "10.1088/1361-6587/aa68af",
@@ -555,7 +1235,17 @@
     "authors": "N Tronko, A Bottino, C Chandre, E Sonnendruecker",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2017,
-    "codes": []
+    "codes": [],
+    "slug": "hierarchy-of-second-order-gyrokinetic-hamiltonian",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "",
+    "bibtex": "@article{Tronko_2017, title={Hierarchy of second order gyrokinetic Hamiltonian models for particle-in-cell codes}, volume={59}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/1361-6587/aa68af}, DOI={10.1088/1361-6587/aa68af}, number={6}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Tronko, N and Bottino, A and Chandre, C and Sonnendruecker, E}, year={2017}, month=may, pages={064008} }",
+    "publisher": "IOP Publishing",
+    "volume": "59",
+    "issue": "6",
+    "pages": "064008",
+    "url": "http://dx.doi.org/10.1088/1361-6587/aa68af",
+    "groups": []
   },
   {
     "doi": "10.1063/1.4998610",
@@ -563,7 +1253,17 @@
     "authors": "Michael Kraus, Eero Hirvijoki",
     "venue": "Physics of Plasmas",
     "year": 2017,
-    "codes": []
+    "codes": [],
+    "slug": "metriplectic-integrators-for-the-landau-collision",
+    "journal": "Physics of Plasmas",
+    "abstract": "We present a novel framework for addressing the nonlinear Landau collision integral in terms of finite element and other subspace projection methods. We employ the underlying metriplectic structure of the Landau collision integral and, using a Galerkin discretization for the velocity space, we transform the infinite-dimensional system into a finite-dimensional, time-continuous metriplectic system. Temporal discretization is accomplished using the concept of discrete gradients. The conservation of energy, momentum, and particle densities, as well as the production of entropy is demonstrated algebraically for the fully discrete system. Due to the generality of our approach, the conservation properties and the monotonic behavior of entropy are guaranteed for finite element discretizations, in general, independently of the mesh configuration.",
+    "bibtex": "@article{Kraus_2017, title={Metriplectic integrators for the Landau collision operator}, volume={24}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.4998610}, DOI={10.1063/1.4998610}, number={10}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Kraus, Michael and Hirvijoki, Eero}, year={2017}, month=oct }",
+    "publisher": "AIP Publishing",
+    "volume": "24",
+    "issue": "10",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.4998610",
+    "groups": []
   },
   {
     "doi": "10.3390/e19020084",
@@ -571,7 +1271,17 @@
     "authors": "Roland Preuss, Udo Von Toussaint",
     "venue": "Entropy",
     "year": 2017,
-    "codes": []
+    "codes": [],
+    "slug": "sequential-batch-design-for-gaussian-processes",
+    "journal": "Entropy",
+    "abstract": "Within the Bayesian framework, we utilize Gaussian processes for parametric studies of long running computer codes. Since the simulations are expensive, it is necessary to exploit the computational budget in the best possible manner. Employing the sum over variances —being indicators for the quality of the fit—as the utility function, we establish an optimized and automated sequential parameter selection procedure. However, it is also often desirable to utilize the parallel running capabilities of present computer technology and abandon the sequential parameter selection for a faster overall turn-around time (wall-clock time). This paper proposes to achieve this by marginalizing over the expected outcomes at optimized test points in order to set up a pool of starting values for batch execution. For a one-dimensional test case, the numerical results are validated with the analytical solution. Eventually, a systematic convergence study demonstrates the advantage of the optimized approach over randomly chosen parameter settings.",
+    "bibtex": "@article{Preuss_2017, title={Sequential Batch Design for Gaussian Processes Employing Marginalization †}, volume={19}, ISSN={1099-4300}, url={http://dx.doi.org/10.3390/e19020084}, DOI={10.3390/e19020084}, number={2}, journal={Entropy}, publisher={MDPI AG}, author={Preuss, Roland and Von Toussaint, Udo}, year={2017}, month=feb, pages={84} }",
+    "publisher": "MDPI AG",
+    "volume": "19",
+    "issue": "2",
+    "pages": "84",
+    "url": "http://dx.doi.org/10.3390/e19020084",
+    "groups": []
   },
   {
     "doi": "10.1016/j.cpc.2017.07.012",
@@ -579,7 +1289,17 @@
     "authors": "D. Samaddar, D.P. Coster, X. Bonnin, C. Bergmeister, E. Havlíc̆ková, L.A. Berry, W.R. Elwasif, D.B. Batchelor",
     "venue": "Computer Physics Communications",
     "year": 2017,
-    "codes": []
+    "codes": [],
+    "slug": "temporal-parallelization-of-edge-plasma-simulations",
+    "journal": "Computer Physics Communications",
+    "abstract": "",
+    "bibtex": "@article{Samaddar_2017, title={Temporal parallelization of edge plasma simulations using the parareal algorithm and the SOLPS code}, volume={221}, ISSN={0010-4655}, url={http://dx.doi.org/10.1016/j.cpc.2017.07.012}, DOI={10.1016/j.cpc.2017.07.012}, journal={Computer Physics Communications}, publisher={Elsevier BV}, author={Samaddar, D. and Coster, D.P. and Bonnin, X. and Bergmeister, C. and Havlíc̆ková, E. and Berry, L.A. and Elwasif, W.R. and Batchelor, D.B.}, year={2017}, month=dec, pages={19–27} }",
+    "publisher": "Elsevier BV",
+    "volume": "221",
+    "issue": "",
+    "pages": "19-27",
+    "url": "http://dx.doi.org/10.1016/j.cpc.2017.07.012",
+    "groups": []
   },
   {
     "doi": "10.1063/1.4982689",
@@ -587,7 +1307,17 @@
     "authors": "Natalia Tronko, Alberto Bottino, Tobias Görler, Eric Sonnendrücker, Daniel Told, Laurent Villard",
     "venue": "Physics of Plasmas",
     "year": 2017,
-    "codes": []
+    "codes": [],
+    "slug": "verification-of-gyrokinetic-codes-theoretical-background",
+    "journal": "Physics of Plasmas",
+    "abstract": "In fusion plasmas, the strong magnetic field allows the fast gyro-motion to be systematically removed from the description of the dynamics, resulting in a considerable model simplification and gain of computational time. Nowadays, the gyrokinetic (GK) codes play a major role in the understanding of the development and the saturation of turbulence and in the prediction of the subsequent transport. Naturally, these codes require thorough verification and validation. Here, we present a new and generic theoretical framework and specific numerical applications to test the faithfulness of the implemented models to theory and to verify the domain of applicability of existing GK codes. For a sound verification process, the underlying theoretical GK model and the numerical scheme must be considered at the same time, which has rarely been done and therefore makes this approach pioneering. At the analytical level, the main novelty consists in using advanced mathematical tools such as variational formulation of dynamics for systematization of basic GK code's equations to access the limits of their applicability. The verification of the numerical scheme is proposed via the benchmark effort. In this work, specific examples of code verification are presented for two GK codes: the multi-species electromagnetic ORB5 (PIC) and the radially global version of GENE (Eulerian). The proposed methodology can be applied to any existing GK code. We establish a hierarchy of reduced GK Vlasov-Maxwell equations implemented in the ORB5 and GENE codes using the Lagrangian variational formulation. At the computational level, detailed verifications of global electromagnetic test cases developed from the CYCLONE Base Case are considered, including a parametric β-scan covering the transition from ITG to KBM and the spectral properties at the nominal β value.",
+    "bibtex": "@article{Tronko_2017, title={Verification of Gyrokinetic codes: Theoretical background and applications}, volume={24}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.4982689}, DOI={10.1063/1.4982689}, number={5}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Tronko, Natalia and Bottino, Alberto and Görler, Tobias and Sonnendrücker, Eric and Told, Daniel and Villard, Laurent}, year={2017}, month=may }",
+    "publisher": "AIP Publishing",
+    "volume": "24",
+    "issue": "5",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.4982689",
+    "groups": []
   },
   {
     "doi": "10.1063/1.4954915",
@@ -595,7 +1325,17 @@
     "authors": "T. Görler, N. Tronko, W. A. Hornsby, A. Bottino, R. Kleiber, C. Norscini, V. Grandgirard, F. Jenko, E. Sonnendrücker",
     "venue": "Physics of Plasmas",
     "year": 2016,
-    "codes": []
+    "codes": [],
+    "slug": "intercode-comparison-of-gyrokinetic-global-electromagnetic",
+    "journal": "Physics of Plasmas",
+    "abstract": "Aiming to fill a corresponding lack of sophisticated test cases for global electromagnetic gyrokinetic codes, a new hierarchical benchmark is proposed. Starting from established test sets with adiabatic electrons, fully gyrokinetic electrons, and electrostatic fluctuations are taken into account before finally studying the global electromagnetic micro-instabilities. Results from up to five codes involving representatives from different numerical approaches as particle-in-cell methods, Eulerian and Semi-Lagrangian are shown. By means of spectrally resolved growth rates and frequencies and mode structure comparisons, agreement can be confirmed on ion-gyro-radius scales, thus providing confidence in the correct implementation of the underlying equations.",
+    "bibtex": "@article{G_rler_2016, title={Intercode comparison of gyrokinetic global electromagnetic modes}, volume={23}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.4954915}, DOI={10.1063/1.4954915}, number={7}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Görler, T. and Tronko, N. and Hornsby, W. A. and Bottino, A. and Kleiber, R. and Norscini, C. and Grandgirard, V. and Jenko, F. and Sonnendrücker, E.}, year={2016}, month=jul }",
+    "publisher": "AIP Publishing",
+    "volume": "23",
+    "issue": "7",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.4954915",
+    "groups": []
   },
   {
     "doi": "10.1088/0741-3335/58/4/045016",
@@ -603,7 +1343,17 @@
     "authors": "A S Jacobsen, L Stagner, M Salewski, B Geiger, W W Heidbrink, S B Korsholm, F Leipold, S K Nielsen, J Rasmussen, M Stejner, H Thomsen, M Weiland, the ASDEX Upgrade team",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2016,
-    "codes": []
+    "codes": [],
+    "slug": "inversion-methods-for-fast-ion-velocity-space-tomography",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "",
+    "bibtex": "@article{Jacobsen_2016, title={Inversion methods for fast-ion velocity-space tomography in fusion plasmas}, volume={58}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/0741-3335/58/4/045016}, DOI={10.1088/0741-3335/58/4/045016}, number={4}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Jacobsen, A S and Stagner, L and Salewski, M and Geiger, B and Heidbrink, W W and Korsholm, S B and Leipold, F and Nielsen, S K and Rasmussen, J and Stejner, M and Thomsen, H and Weiland, M}, year={2016}, month=feb, pages={045016} }",
+    "publisher": "IOP Publishing",
+    "volume": "58",
+    "issue": "4",
+    "pages": "045016",
+    "url": "http://dx.doi.org/10.1088/0741-3335/58/4/045016",
+    "groups": []
   },
   {
     "doi": "10.1063/1.4942539",
@@ -611,7 +1361,17 @@
     "authors": "G. Merlo, O. Sauter, S. Brunner, A. Burckel, Y. Camenen, F. J. Casson, W. Dorland, E. Fable, T. Görler, F. Jenko, A. G. Peeters, D. Told, L. Villard",
     "venue": "Physics of Plasmas",
     "year": 2016,
-    "codes": []
+    "codes": [],
+    "slug": "linear-multispecies-gyrokinetic-flux-tube-benchmarks",
+    "journal": "Physics of Plasmas",
+    "abstract": "Verification is the fundamental step that any turbulence simulation code has to be submitted in order to assess the proper implementation of the underlying equations. We have carried out a cross comparison of three flux tube gyrokinetic codes, GENE [F. Jenko et al., Phys. Plasmas 7, 1904 (2000)], GKW [A. G. Peeters et al., Comput. Phys. Commun. 180, 2650 (2009)], and GS2 [W. Dorland et al., Phys. Rev. Lett. 85, 5579 (2000)], focusing our attention on the effect of realistic geometries described by a series of MHD equilibria with increasing shaping complexity. To simplify the effort, the benchmark has been limited to the electrostatic collisionless linear behaviour of the system. A fully gyrokinetic model has been used to describe the dynamics of both ions and electrons. Several tests have been carried out looking at linear stability at ion and electron scales, where for the assumed profiles Ion Temperature Gradient (ITG)/Trapped Electron Modes and Electron Temperature Gradient modes are unstable. The capability of the codes to handle a non-zero ballooning angle has been successfully benchmarked in the ITG regime. Finally, the standard Rosenbluth-Hinton test has been successfully carried out looking at the effect of shaping on Zonal Flows (ZFs) and Geodesic Acoustic Modes (GAMs). Inter-code comparison as well as validation of simulation results against analytical estimates has been accomplished. All the performed tests confirm that plasma elongation strongly stabilizes plasma instabilities as well as leads to a strong increase in ZF residual and GAM damping.",
+    "bibtex": "@article{Merlo_2016, title={Linear multispecies gyrokinetic flux tube benchmarks in shaped tokamak plasmas}, volume={23}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.4942539}, DOI={10.1063/1.4942539}, number={3}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Merlo, G. and Sauter, O. and Brunner, S. and Burckel, A. and Camenen, Y. and Casson, F. J. and Dorland, W. and Fable, E. and Görler, T. and Jenko, F. and Peeters, A. G. and Told, D. and Villard, L.}, year={2016}, month=mar }",
+    "publisher": "AIP Publishing",
+    "volume": "23",
+    "issue": "3",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.4942539",
+    "groups": []
   },
   {
     "doi": "10.1063/1.4960039",
@@ -619,7 +1379,17 @@
     "authors": "Natalia Tronko, Alberto Bottino, Eric Sonnendrücker",
     "venue": "Physics of Plasmas",
     "year": 2016,
-    "codes": []
+    "codes": [],
+    "slug": "second-order-gyrokinetic-theory-for-particle-in-cell",
+    "journal": "Physics of Plasmas",
+    "abstract": "The main idea of the gyrokinetic dynamical reduction consists in a systematical removal of the fast scale motion (the gyromotion) from the dynamics of the plasma, resulting in a considerable simplification and a significant gain of computational time. The gyrokinetic Maxwell–Vlasov equations are nowadays implemented in for modeling (both laboratory and astrophysical) strongly magnetized plasmas. Different versions of the reduced set of equations exist, depending on the construction of the gyrokinetic reduction procedure and the approximations performed in the derivation. The purpose of this article is to explicitly show the connection between the general second order gyrokinetic Maxwell–Vlasov system issued from the modern gyrokinetic theory and the model currently implemented in the global electromagnetic Particle-in-Cell code ORB5. Necessary information about the modern gyrokinetic formalism is given together with the consistent derivation of the gyrokinetic Maxwell–Vlasov equations from first principles. The variational formulation of the dynamics is used to obtain the corresponding energy conservation law, which in turn is used for the verification of energy conservation diagnostics currently implemented in ORB5. This work fits within the context of the code verification project VeriGyro currently run at IPP Max-Planck Institut in collaboration with others European institutions.",
+    "bibtex": "@article{Tronko_2016, title={Second order gyrokinetic theory for particle-in-cell codes}, volume={23}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.4960039}, DOI={10.1063/1.4960039}, number={8}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Tronko, Natalia and Bottino, Alberto and Sonnendrücker, Eric}, year={2016}, month=aug }",
+    "publisher": "AIP Publishing",
+    "volume": "23",
+    "issue": "8",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.4960039",
+    "groups": []
   },
   {
     "doi": "10.1017/S0022377815001361",
@@ -627,7 +1397,17 @@
     "authors": "Leonid E. Zakharov, Calin V. Atanasiu, Karl Lackner, Matthias Hoelzl, Erika Strumberger",
     "venue": "Journal of Plasma Physics",
     "year": 2015,
-    "codes": []
+    "codes": [],
+    "slug": "electromagnetic-thin-wall-model-for-simulations-of",
+    "journal": "Journal of Plasma Physics",
+    "abstract": "The understanding of plasma disruptions in tokamaks and predictions of their effects require realistic simulations of electric current excitation in three-dimensional vessel structures by the plasma touching the walls. As discovered at JET in 1996 (Litunovski JET Internal Report contract no. JQ5/11961, 1995; Noll et al. , Proceedings of the 19th Symposium on Fusion Technology, Lisbon (ed. C. Varandas & F. Serra), vol. 1, 1996, p. 751. Elsevier) the wall-touching kink modes are frequently excited during vertical displacement events and cause large sideways forces on the vacuum vessel which are difficult to withstand in large tokamaks. In disruptions, the sharing of electric current between the plasma and the wall plays an important role in plasma dynamics and determines the amplitude and localization of the sideways force (Riccardo et al. , Nucl. Fusion , vol. 40, 2000, p. 1805; Riccardo & Walker, Plasma Phys. Control. Fusion , vol. 42, 2000, p. 29; Zakharov, Phys. Plasmas , vol. 15, 2008, 062507; Riccardo et al. , Nucl. Fusion , vol. 49, 2009, 055012; Bachmann et al. , Fusion Engng Des. , vol. 86, 2011, pp. 1915–1919). This paper describes a flat triangle representation of the electric circuits of a thin conducting wall of arbitrary three-dimensional geometry. Implemented into the shell simulation code (SHL) and the source sink current code (SSC), this model is suitable for modelling the electric currents excited in the wall inductively and through current sharing with the plasma.",
+    "bibtex": "@article{Zakharov_2015, title={Electromagnetic thin-wall model for simulations of plasma wall-touching kink and vertical modes}, volume={81}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/S0022377815001361}, DOI={10.1017/s0022377815001361}, number={6}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Zakharov, Leonid E. and Atanasiu, Calin V. and Lackner, Karl and Hoelzl, Matthias and Strumberger, Erika}, year={2015}, month=dec }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "81",
+    "issue": "6",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/S0022377815001361",
+    "groups": []
   },
   {
     "doi": "10.1063/1.4935925",
@@ -635,7 +1415,17 @@
     "authors": "Natalia Tronko, Alain J. Brizard",
     "venue": "Physics of Plasmas",
     "year": 2015,
-    "codes": []
+    "codes": [],
+    "slug": "lagrangian-and-hamiltonian-constraints-for-guiding-center",
+    "journal": "Physics of Plasmas",
+    "abstract": "A consistent guiding-center Hamiltonian theory is derived by Lie-transform perturbation method, with terms up to second order in magnetic-field nonuniformity. Consistency is demonstrated by showing that the guiding-center transformation presented here satisfies separate Jacobian and Lagrangian constraints that have not been explored before. A new first-order term appearing in the guiding-center phase-space Lagrangian is identified through a calculation of the guiding-center polarization. It is shown that this new polarization term also yields a simpler expression of the guiding-center toroidal canonical momentum, which satisfies an exact conservation law in axisymmetric magnetic geometries. Finally, an application of the guiding-center Lagrangian constraint on the guiding-center Hamiltonian yields a natural interpretation for its higher-order corrections.",
+    "bibtex": "@article{Tronko_2015, title={Lagrangian and Hamiltonian constraints for guiding-center Hamiltonian theories}, volume={22}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.4935925}, DOI={10.1063/1.4935925}, number={11}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Tronko, Natalia and Brizard, Alain J.}, year={2015}, month=nov }",
+    "publisher": "AIP Publishing",
+    "volume": "22",
+    "issue": "11",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.4935925",
+    "groups": []
   },
   {
     "doi": "10.1103/PhysRevLett.109.245001",
@@ -643,7 +1433,17 @@
     "authors": "K. Hallatschek, G. R. McKee",
     "venue": "Physical Review Letters",
     "year": 2012,
-    "codes": []
+    "codes": [],
+    "slug": "excitation-of-geodesic-acoustic-modes-by",
+    "journal": "Physical Review Letters",
+    "abstract": "",
+    "bibtex": "@article{Hallatschek_2012, title={Excitation of Geodesic Acoustic Modes by External Fields}, volume={109}, ISSN={1079-7114}, url={http://dx.doi.org/10.1103/PhysRevLett.109.245001}, DOI={10.1103/physrevlett.109.245001}, number={24}, journal={Physical Review Letters}, publisher={American Physical Society (APS)}, author={Hallatschek, K. and McKee, G. R.}, year={2012}, month=dec }",
+    "publisher": "American Physical Society (APS)",
+    "volume": "109",
+    "issue": "24",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1103/PhysRevLett.109.245001",
+    "groups": []
   },
   {
     "doi": "10.1063/1.4747725",
@@ -651,7 +1451,17 @@
     "authors": "Robert Hager, Klaus Hallatschek",
     "venue": "Physics of Plasmas",
     "year": 2012,
-    "codes": []
+    "codes": [],
+    "slug": "the-nonlinear-dispersion-relation-of-geodesic",
+    "journal": "Physics of Plasmas",
+    "abstract": "The energy input and frequency shift of geodesic acoustic modes (GAMs) due to turbulence in tokamak edge plasmas are investigated in numerical two-fluid turbulence studies. Surprisingly, the turbulent GAM dispersion relation is qualitatively equivalent to the linear GAM dispersion but can have drastically enhanced group velocities. As a consequence radially broad (∼cm) GAM eigenmodes may form. Those may lead to experimentally observable deviations from the expected scaling of the GAM frequency with the square root of the plasma temperature. In up-down asymmetric geometry, the energy input due to turbulent transport may favor the excitation of GAMs with one particular sign of the radial phase velocity relative to the magnetic drifts. Including the radial gradient of the GAM frequency may lead to periodic bursts of the GAM and the turbulence intensity.",
+    "bibtex": "@article{Hager_2012, title={The nonlinear dispersion relation of geodesic acoustic modes}, volume={19}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/1.4747725}, DOI={10.1063/1.4747725}, number={8}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Hager, Robert and Hallatschek, Klaus}, year={2012}, month=aug }",
+    "publisher": "AIP Publishing",
+    "volume": "19",
+    "issue": "8",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/1.4747725",
+    "groups": []
   },
   {
     "doi": "10.1103/RevModPhys.83.943",
@@ -659,7 +1469,17 @@
     "authors": "Udo von Toussaint",
     "venue": "Reviews of Modern Physics",
     "year": 2011,
-    "codes": []
+    "codes": [],
+    "slug": "bayesian-inference-in-physics",
+    "journal": "Reviews of Modern Physics",
+    "abstract": "",
+    "bibtex": "@article{von_Toussaint_2011, title={Bayesian inference in physics}, volume={83}, ISSN={1539-0756}, url={http://dx.doi.org/10.1103/RevModPhys.83.943}, DOI={10.1103/revmodphys.83.943}, number={3}, journal={Reviews of Modern Physics}, publisher={American Physical Society (APS)}, author={von Toussaint, Udo}, year={2011}, month=sep, pages={943–999} }",
+    "publisher": "American Physical Society (APS)",
+    "volume": "83",
+    "issue": "3",
+    "pages": "943-999",
+    "url": "http://dx.doi.org/10.1103/RevModPhys.83.943",
+    "groups": []
   },
   {
     "doi": "10.1088/0741-3335/49/12B/S13",
@@ -667,7 +1487,17 @@
     "authors": "K Hallatschek",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2007,
-    "codes": []
+    "codes": [],
+    "slug": "nonlinear-three-dimensional-flows-in-magnetized-plasmas",
+    "journal": "Plasma Physics and Controlled Fusion",
+    "abstract": "",
+    "bibtex": "@article{Hallatschek_2007, title={Nonlinear three-dimensional flows in magnetized plasmas}, volume={49}, ISSN={1361-6587}, url={http://dx.doi.org/10.1088/0741-3335/49/12B/S13}, DOI={10.1088/0741-3335/49/12b/s13}, number={12B}, journal={Plasma Physics and Controlled Fusion}, publisher={IOP Publishing}, author={Hallatschek, K}, year={2007}, month=nov, pages={B137–B148} }",
+    "publisher": "IOP Publishing",
+    "volume": "49",
+    "issue": "12B",
+    "pages": "B137-B148",
+    "url": "http://dx.doi.org/10.1088/0741-3335/49/12B/S13",
+    "groups": []
   },
   {
     "doi": "10.1103/PhysRevLett.93.065001",
@@ -675,7 +1505,17 @@
     "authors": "K. Hallatschek",
     "venue": "Physical Review Letters",
     "year": 2004,
-    "codes": []
+    "codes": [],
+    "slug": "turbulent-saturation-of-tokamak-core-zonal-flows",
+    "journal": "Physical Review Letters",
+    "abstract": "",
+    "bibtex": "@article{Hallatschek_2004, title={Turbulent Saturation of Tokamak-Core Zonal Flows}, volume={93}, ISSN={1079-7114}, url={http://dx.doi.org/10.1103/PhysRevLett.93.065001}, DOI={10.1103/physrevlett.93.065001}, number={6}, journal={Physical Review Letters}, publisher={American Physical Society (APS)}, author={Hallatschek, K.}, year={2004}, month=aug }",
+    "publisher": "American Physical Society (APS)",
+    "volume": "93",
+    "issue": "6",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1103/PhysRevLett.93.065001",
+    "groups": []
   },
   {
     "doi": "10.1103/PhysRevLett.86.1223",
@@ -683,6 +1523,16 @@
     "authors": "K. Hallatschek, D. Biskamp",
     "venue": "Physical Review Letters",
     "year": 2001,
-    "codes": []
+    "codes": [],
+    "slug": "transport-control-by-coherent-zonal-flows",
+    "journal": "Physical Review Letters",
+    "abstract": "",
+    "bibtex": "@article{Hallatschek_2001, title={Transport Control by Coherent Zonal Flows in the Core/Edge Transitional Regime}, volume={86}, ISSN={1079-7114}, url={http://dx.doi.org/10.1103/PhysRevLett.86.1223}, DOI={10.1103/physrevlett.86.1223}, number={7}, journal={Physical Review Letters}, publisher={American Physical Society (APS)}, author={Hallatschek, K. and Biskamp, D.}, year={2001}, month=feb, pages={1223–1226} }",
+    "publisher": "American Physical Society (APS)",
+    "volume": "86",
+    "issue": "7",
+    "pages": "1223-1226",
+    "url": "http://dx.doi.org/10.1103/PhysRevLett.86.1223",
+    "groups": []
   }
 ]

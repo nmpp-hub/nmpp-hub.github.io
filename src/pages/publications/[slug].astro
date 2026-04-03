@@ -1,0 +1,145 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import publicationsCache from '../../../data/.publications_cache.json';
+
+type Publication = {
+  slug: string;
+  title: string;
+  authors?: string;
+  venue?: string;
+  journal?: string;
+  year?: number;
+  doi: string;
+  abstract?: string;
+  bibtex?: string;
+  publisher?: string;
+  volume?: string;
+  issue?: string;
+  pages?: string;
+  url?: string;
+  codes?: string[];
+  groups?: string[];
+};
+
+export function getStaticPaths() {
+  const publications = (Array.isArray(publicationsCache) ? publicationsCache : []) as Publication[];
+
+  return publications
+    .filter(
+      (publication): publication is Publication =>
+        typeof publication.slug === 'string' &&
+        typeof publication.title === 'string' &&
+        typeof publication.doi === 'string'
+    )
+    .map(publication => ({
+      params: { slug: publication.slug },
+      props: { publication },
+    }));
+}
+
+const { publication } = Astro.props as { publication: Publication };
+const codes = await getCollection('codes');
+const groups = await getCollection('groups');
+const codeTitleBySlug = new Map(codes.map(code => [code.slug, code.data.title]));
+const groupTitleBySlug = new Map(groups.map(group => [group.slug, group.data.title]));
+
+const relatedCodes = (Array.isArray(publication.codes) ? publication.codes : []).filter(Boolean);
+const relatedGroups = (Array.isArray(publication.groups) ? publication.groups : []).filter(Boolean);
+const abstract = publication.abstract?.trim() ?? '';
+const bibtex = publication.bibtex?.trim() ?? '';
+const details = [
+  { label: 'Year', value: publication.year ? String(publication.year) : '' },
+  { label: 'Venue', value: publication.venue ?? '' },
+  { label: 'Journal', value: publication.journal ?? '' },
+  { label: 'Publisher', value: publication.publisher ?? '' },
+  { label: 'Volume', value: publication.volume ?? '' },
+  { label: 'Issue', value: publication.issue ?? '' },
+  { label: 'Pages', value: publication.pages ?? '' },
+].filter(item => item.value);
+---
+
+<Base
+  title={publication.title}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Publications', href: '/publications/' },
+    { label: publication.title },
+  ]}
+>
+  <div class="page-wrapper publication-page">
+    <div class="page-header publication-header">
+      <p class="publication-kicker">Publication</p>
+      <h1>{publication.title}</h1>
+      {publication.authors && <p class="publication-authors">{publication.authors}</p>}
+      <div class="publication-actions">
+        <a class="publication-action-link" href={`https://doi.org/${publication.doi}`}>View DOI</a>
+        {publication.url && publication.url !== `https://doi.org/${publication.doi}` && (
+          <a class="publication-action-link publication-action-secondary" href={publication.url}>Source</a>
+        )}
+      </div>
+    </div>
+
+    <div class="publication-meta-grid">
+      <section class="publication-meta-card">
+        <h2>Details</h2>
+        <dl class="publication-meta-list">
+          <div>
+            <dt>DOI</dt>
+            <dd><a href={`https://doi.org/${publication.doi}`}>{publication.doi}</a></dd>
+          </div>
+          {details.map(item => (
+            <div>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {(relatedCodes.length > 0 || relatedGroups.length > 0) && (
+        <section class="publication-meta-card">
+          <h2>Related</h2>
+          {relatedCodes.length > 0 && (
+            <div class="publication-related-block">
+              <h3>Codes</h3>
+              <ul class="publication-pill-list" role="list">
+                {relatedCodes.map(code => (
+                  <li>
+                    <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {relatedGroups.length > 0 && (
+            <div class="publication-related-block">
+              <h3>Groups</h3>
+              <ul class="publication-pill-list" role="list">
+                {relatedGroups.map(group => (
+                  <li>
+                    <a href={`/groups/${group}/`}>{groupTitleBySlug.get(group) ?? group}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )}
+    </div>
+
+    <section class="publication-section">
+      <h2>Abstract</h2>
+      {abstract ? <p>{abstract}</p> : <p class="publication-empty">No abstract was available from the DOI metadata.</p>}
+    </section>
+
+    <section class="publication-section">
+      <h2>BibTeX</h2>
+      {bibtex ? (
+        <pre class="publication-bibtex"><code>{bibtex}</code></pre>
+      ) : (
+        <p class="publication-empty">No BibTeX entry was returned for this DOI.</p>
+      )}
+    </section>
+  </div>
+</Base>

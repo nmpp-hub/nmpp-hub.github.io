@@ -18,7 +18,7 @@ from pathlib import Path
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, slugify
+from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_publication_title, slugify
 
 ROOT = Path(__file__).resolve().parent.parent
 CODES_DIR = ROOT / "src" / "content" / "codes"
@@ -119,7 +119,7 @@ def build_publications_table(publications: list[dict], author_to_slug: dict[str,
                 [
                     "  <tr>",
                     f"    <td>{pub['year'] or ''}</td>",
-                    f"    <td>{escape_text(pub['title'])}</td>",
+                    f"    <td>{render_publication_title(pub)}</td>",
                     f"    <td>{render_author_list(pub['authors'], author_to_slug)}</td>",
                     f"    <td>{escape_text(pub['venue'])}</td>",
                     f'    <td><a href="https://doi.org/{escape_text(pub["doi"])}">DOI</a></td>',
