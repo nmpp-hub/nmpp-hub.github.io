@@ -22,7 +22,7 @@ npm run build
 
 The generated site is written to `dist/`.
 
-## Add new publications
+## Regenerate generated content
 
 Install the Python dependency once:
 
@@ -30,33 +30,22 @@ Install the Python dependency once:
 python -m pip install -r requirements.txt
 ```
 
-Add or edit entries in `data/dois.yml`, then run:
+
+- Edit members in `data/members.yml`
+- Edit publication entries in `data/dois.yml`
+- Edit dissertations in `data/dissertations.yml`
+
+Each publication entry supports optional `groups` and `codes` fields in addition to the DOI. This regenerates all derived website content, including `src/pages/members.astro` from the YAML roster. This regenerates all derived website content, including `src/pages/dissertations.astro` from the YAML list.
+
+## Regenerate generated content
+
+After editing any YAML data files, run:
 
 ```bash
-python populate_publications.py
+python generate_website.py
 ```
 
-Each publication entry supports optional `groups` and `codes` fields in addition to the DOI.
-
-## Update members
-
-Edit `data/members.yml`, then run:
-
-```bash
-python generate_members_page.py
-```
-
-This regenerates `src/pages/members.astro` from the YAML roster.
-
-## Update dissertations
-
-Edit `data/dissertations.yml`, then run:
-
-```bash
-python generate_dissertations_page.py
-```
-
-This regenerates `src/pages/dissertations.astro` from the YAML list.
+Use `python generate_website.py --refresh` only when you want to re-fetch publication metadata from remote APIs.
 
 ## Customize the website
 
