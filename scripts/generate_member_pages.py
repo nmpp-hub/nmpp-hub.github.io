@@ -306,87 +306,16 @@ def build_dissertations_list(dissertations: list[dict]) -> str:
     return "\n".join(lines)
 
 
-PROFILE_START = "<!-- AUTO:PROFILE:START -->"
-PROFILE_END = "<!-- AUTO:PROFILE:END -->"
-ABOUT_START = "<!-- CUSTOM:ABOUT:START -->"
-ABOUT_END = "<!-- CUSTOM:ABOUT:END -->"
-PUBLICATIONS_START = "<!-- AUTO:PUBLICATIONS:START -->"
-PUBLICATIONS_END = "<!-- AUTO:PUBLICATIONS:END -->"
-DISSERTATIONS_START = "<!-- AUTO:DISSERTATIONS:START -->"
-DISSERTATIONS_END = "<!-- AUTO:DISSERTATIONS:END -->"
-
-
-def inject_between_markers(
-    content: str, start_marker: str, end_marker: str, payload: str
-) -> str:
-    """Replace content between markers, or add markers if not present."""
-    pattern = re.escape(start_marker) + r".*?" + re.escape(end_marker)
-    replacement = f"{start_marker}\n{payload}\n{end_marker}"
-    if start_marker in content:
-        return re.sub(pattern, replacement, content, flags=re.DOTALL)
-    return content
-
-
-def ensure_member_markers(content: str, member_name: str) -> str:
-    """Ensure all auto-generated section markers are present."""
-    if PROFILE_START in content and PUBLICATIONS_START in content and DISSERTATIONS_START in content:
-        return content
-
-    # Create template if markers are missing
-    block = f"""---
-title: {escape_text(member_name)}
----
-
-## Profile
-
-{PROFILE_START}
-{PROFILE_END}
-
-## About
-
-{ABOUT_START}
-Add custom content here (research interests, bio, etc.)
-{ABOUT_END}
-
-## Publications
-
-{PUBLICATIONS_START}
-{PUBLICATIONS_END}
-
-## Dissertations
-
-{DISSERTATIONS_START}
-{DISSERTATIONS_END}
-"""
-    return content if content.strip() else block
-
-
-def build_member_page_content(member: dict, existing_content: str = "") -> str:
-    """Build the member page .md content, preserving the custom About section."""
-    # Preserve existing ABOUT content if present
-    about_content = ""
-    if existing_content:
-        import re
-        match = re.search(
-            re.escape(ABOUT_START) + r"(.*?)" + re.escape(ABOUT_END),
-            existing_content,
-            re.DOTALL,
-        )
-        if match:
-            about_content = match.group(1).strip()
-
-    content = f"""---
+def build_new_member_page(member: dict) -> str:
+    """Build the initial member page .md content for a new member."""
+    return f"""---
 title: {escape_text(member['name'])}
 ---
 
 ## About
 
-{ABOUT_START}
+Add custom content here (research interests, bio, etc.)
 """
-    if about_content:
-        content += about_content + "\n"
-    content += f"{ABOUT_END}\n"
-    return content
 
 
 def main() -> None:
@@ -416,11 +345,9 @@ def main() -> None:
         # Generate page
         output_file = MEMBERS_OUTPUT_DIR / f"{slug}.md"
 
-        # Read existing file content to preserve About section
-        existing_content = output_file.read_text(encoding="utf-8") if output_file.exists() else ""
-
-        page_content = build_member_page_content(member, existing_content)
-        write_text(output_file, page_content)
+        # Only create the .md file if it doesn't exist yet; never overwrite existing files
+        if not output_file.exists():
+            write_text(output_file, build_new_member_page(member))
 
         # Write auto sections to separate files
         (MEMBERS_AUTO_DIR / f"{slug}.profile.html").write_text(
