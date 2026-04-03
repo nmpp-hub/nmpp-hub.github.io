@@ -33,6 +33,8 @@ DISSERTATIONS_FILE = ROOT / "data" / "dissertations.yml"
 CACHE_FILE = ROOT / "data" / ".publications_cache.json"
 GROUPS_OUTPUT_DIR = ROOT / "src" / "content" / "groups"
 GROUPS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+GROUPS_AUTO_DIR = GROUPS_OUTPUT_DIR / "_auto"
+GROUPS_AUTO_DIR.mkdir(parents=True, exist_ok=True)
 
 DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
 
@@ -326,27 +328,7 @@ title: {escape_text(group['name'])}
 {CUSTOM_START}
 {custom_content}
 {CUSTOM_END}
-
-## Members
-
-{MEMBERS_START}
-{MEMBERS_END}
-
-## Publications
-
-{PUBLICATIONS_START}
-{PUBLICATIONS_END}
-
-## Dissertations
-
-{DISSERTATIONS_START}
-{DISSERTATIONS_END}
 """
-
-    # Inject content between markers
-    content = inject_between_markers(content, MEMBERS_START, MEMBERS_END, members_section)
-    content = inject_between_markers(content, PUBLICATIONS_START, PUBLICATIONS_END, pubs_section)
-    content = inject_between_markers(content, DISSERTATIONS_START, DISSERTATIONS_END, diss_section)
 
     return content
 
@@ -403,6 +385,17 @@ def main() -> None:
 
         page_content = build_group_page_content(group, group_members, group_pubs, group_diss, existing_content, author_to_slug)
         write_text(output_file, page_content)
+
+        slug = group["slug"]
+        (GROUPS_AUTO_DIR / f"{slug}.members.html").write_text(
+            build_members_list(group_members) + "\n", encoding="utf-8"
+        )
+        (GROUPS_AUTO_DIR / f"{slug}.publications.html").write_text(
+            build_publications_table(group_pubs, author_to_slug) + "\n", encoding="utf-8"
+        )
+        (GROUPS_AUTO_DIR / f"{slug}.dissertations.html").write_text(
+            build_dissertations_table(group_diss) + "\n", encoding="utf-8"
+        )
 
         print(f"  {group['name']:50} → {group['slug']:30} ({len(group_members)} members, {len(group_pubs)} pubs, {len(group_diss)} diss)")
 

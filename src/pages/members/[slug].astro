@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
+const autoPartials = import.meta.glob('/src/content/members/_auto/*.html', { query: '?raw', import: 'default', eager: true });
+
 export async function getStaticPaths() {
   const members = await getCollection('members');
   return members.map(entry => ({
@@ -12,6 +14,10 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const profileHtml = (autoPartials[`/src/content/members/_auto/${entry.slug}.profile.html`] as string) ?? '';
+const publicationsHtml = (autoPartials[`/src/content/members/_auto/${entry.slug}.publications.html`] as string) ?? '';
+const dissertationsHtml = (autoPartials[`/src/content/members/_auto/${entry.slug}.dissertations.html`] as string) ?? '';
 ---
 
 <Base title={entry.data.title}>
@@ -23,7 +29,13 @@ const { Content } = await entry.render();
     </nav>
     <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{entry.data.title}</h1>
     <div class="prose">
+      <h2>Profile</h2>
+      <Fragment set:html={profileHtml} />
       <Content />
+      <h2>Publications</h2>
+      <Fragment set:html={publicationsHtml} />
+      <h2>Dissertations</h2>
+      <Fragment set:html={dissertationsHtml} />
     </div>
   </div>
 </Base>

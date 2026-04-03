@@ -33,6 +33,8 @@ DISSERTATIONS_FILE = ROOT / "data" / "dissertations.yml"
 CACHE_FILE = ROOT / "data" / ".publications_cache.json"
 MEMBERS_OUTPUT_DIR = ROOT / "src" / "content" / "members"
 MEMBERS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+MEMBERS_AUTO_DIR = MEMBERS_OUTPUT_DIR / "_auto"
+MEMBERS_AUTO_DIR.mkdir(parents=True, exist_ok=True)
 
 DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
 
@@ -359,43 +361,31 @@ Add custom content here (research interests, bio, etc.)
     return content if content.strip() else block
 
 
-def build_member_page_content(member: dict, publications: list[dict], dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
-    """Build the complete member page content with markers."""
-    profile_section = build_profile_section(member)
-    pubs_section = build_publications_table(publications, author_to_slug)
-    diss_section = build_dissertations_list(dissertations)
+def build_member_page_content(member: dict, existing_content: str = "") -> str:
+    """Build the member page .md content, preserving the custom About section."""
+    # Preserve existing ABOUT content if present
+    about_content = ""
+    if existing_content:
+        import re
+        match = re.search(
+            re.escape(ABOUT_START) + r"(.*?)" + re.escape(ABOUT_END),
+            existing_content,
+            re.DOTALL,
+        )
+        if match:
+            about_content = match.group(1).strip()
 
-    # Start with template
     content = f"""---
 title: {escape_text(member['name'])}
 ---
 
-## Profile
-
-{PROFILE_START}
-{PROFILE_END}
-
 ## About
 
 {ABOUT_START}
-{ABOUT_END}
-
-## Publications
-
-{PUBLICATIONS_START}
-{PUBLICATIONS_END}
-
-## Dissertations
-
-{DISSERTATIONS_START}
-{DISSERTATIONS_END}
 """
-
-    # Inject content between markers
-    content = inject_between_markers(content, PROFILE_START, PROFILE_END, profile_section)
-    content = inject_between_markers(content, PUBLICATIONS_START, PUBLICATIONS_END, pubs_section)
-    content = inject_between_markers(content, DISSERTATIONS_START, DISSERTATIONS_END, diss_section)
-
+    if about_content:
+        content += about_content + "\n"
+    content += f"{ABOUT_END}\n"
     return content
 
 
@@ -426,16 +416,22 @@ def main() -> None:
         # Generate page
         output_file = MEMBERS_OUTPUT_DIR / f"{slug}.md"
 
-        # Read existing file if it exists, otherwise create new one
-        if output_file.exists():
-            existing_content = output_file.read_text(encoding="utf-8")
-            content = ensure_member_markers(existing_content, member["name"])
-        else:
-            content = f"---\ntitle: {escape_text(member['name'])}\n---\n"
+        # Read existing file content to preserve About section
+        existing_content = output_file.read_text(encoding="utf-8") if output_file.exists() else ""
 
-        # Inject generated content between markers
-        page_content = build_member_page_content(member, member_pubs, member_diss, author_to_slug)
+        page_content = build_member_page_content(member, existing_content)
         write_text(output_file, page_content)
+
+        # Write auto sections to separate files
+        (MEMBERS_AUTO_DIR / f"{slug}.profile.html").write_text(
+            build_profile_section(member) + "\n", encoding="utf-8"
+        )
+        (MEMBERS_AUTO_DIR / f"{slug}.publications.html").write_text(
+            build_publications_table(member_pubs, author_to_slug) + "\n", encoding="utf-8"
+        )
+        (MEMBERS_AUTO_DIR / f"{slug}.dissertations.html").write_text(
+            build_dissertations_list(member_diss) + "\n", encoding="utf-8"
+        )
 
         print(f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)")
 

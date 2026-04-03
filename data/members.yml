@@ -92,12 +92,20 @@ members:
   codes: []
   alumni: false
   aliases: []
-- name: C. Example
+- name: Martina Prugger
   role: postdoc
-  topic: Gyrokinetic modeling
+  topic: ""
+  contact: b.example@example.org
+  group: "Magnetohydrodynamics"
+  codes: []
+  alumni: false
+  aliases: []
+- name: Pauline Vidal
+  role: phd
+  topic: ""
   contact: c.example@example.org
   group: ~
-  codes: []
+  codes: [gyselalibxx]
   alumni: false
   aliases: []
 - name: D. Example

@@ -68,7 +68,7 @@ publications:
 - doi: 10.1002/ctpp.202200173
   title: Uncertainty quantification in <scp>three‐dimensional</scp> magnetohydrodynamic equilibrium reconstruction via surrogate‐assisted Bayesian inference
 - doi: 10.1063/5.0129989
-  title: "A <b>\n                     <i>δf</i>\n                  </b> PIC method with forward–backward Lagrangian reconstructions"
+  title: "A <b><i>δf</i></b> PIC method with forward–backward Lagrangian reconstructions"
 - doi: 10.1017/S0022377822000769
   title: Data augmentation for disruption prediction via robust surrogate models
 - doi: 10.1016/j.cpc.2022.108401
