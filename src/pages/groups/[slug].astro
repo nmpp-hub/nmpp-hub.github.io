@@ -20,13 +20,15 @@ const publicationsHtml = (autoPartials[`/src/content/groups/_auto/${group.slug}.
 const dissertationsHtml = (autoPartials[`/src/content/groups/_auto/${group.slug}.dissertations.html`] as string) ?? '';
 ---
 
-<Base title={group.data.title}>
+<Base
+  title={group.data.title}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Groups', href: '/groups/' },
+    { label: group.data.title },
+  ]}
+>
   <div class="page-wrapper">
-    <nav aria-label="Breadcrumb" style="margin-bottom: 0.75rem;">
-      <a href="/groups/" style="text-decoration: underline;">Groups</a>
-      <span aria-hidden="true" style="margin: 0 0.5rem;">/</span>
-      <span>{group.data.title}</span>
-    </nav>
     <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{group.data.title}</h1>
     <div class="prose">
       <Content />

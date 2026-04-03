@@ -1,12 +1,19 @@
 ---
 import { getCollection } from 'astro:content';
+import publicationsCache from '../../data/.publications_cache.json';
 import '../styles/global.css';
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
 
 interface Props {
   title?: string;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
-const { title } = Astro.props;
+const { title, breadcrumbs = [] } = Astro.props;
 const pageTitle = title ? `${title} — NMPP Division at IPP` : 'NMPP Division at IPP';
 
 const codes = await getCollection('codes');
@@ -14,6 +21,47 @@ const codeList = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.tit
 
 const groups = await getCollection('groups');
 const groupList = [...groups].sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+type SearchItem = {
+  type: 'Member' | 'Code' | 'Publication';
+  title: string;
+  href: string;
+  subtitle?: string;
+  keywords?: string;
+};
+
+const publications: Array<Record<string, unknown>> = Array.isArray(publicationsCache)
+  ? publicationsCache
+  : [];
+
+const memberSearchItems: SearchItem[] = (await getCollection('members')).map(member => ({
+  type: 'Member',
+  title: member.data.title,
+  href: `/members/${member.slug}/`,
+}));
+
+const codeSearchItems: SearchItem[] = codes.map(code => ({
+  type: 'Code',
+  title: code.data.title,
+  href: `/codes/${code.slug}/`,
+}));
+
+const publicationSearchItems: SearchItem[] = publications
+  .filter(pub => typeof pub.title === 'string' && typeof pub.doi === 'string')
+  .map(pub => ({
+    type: 'Publication',
+    title: String(pub.title),
+    href: `https://doi.org/${String(pub.doi)}`,
+    subtitle: [pub.year, pub.authors]
+      .filter(value => typeof value === 'string' || typeof value === 'number')
+      .join(' · '),
+    keywords: [pub.authors, pub.venue, pub.year, pub.doi]
+      .filter(value => typeof value === 'string' || typeof value === 'number')
+      .join(' '),
+  }));
+
+const siteSearchItems = [...memberSearchItems, ...codeSearchItems, ...publicationSearchItems];
+const siteSearchJson = JSON.stringify(siteSearchItems);
 
 const path = Astro.url.pathname;
 ---
@@ -86,10 +134,38 @@ const path = Astro.url.pathname;
             <a href="/members/">Members</a>
           </li>
         </ul>
+
+        <div class="site-search" role="search" aria-label="Site search">
+          <label for="site-search-input" class="sr-only">Search members, codes, and publications</label>
+          <input
+            id="site-search-input"
+            type="search"
+            placeholder="Search members, codes, publications..."
+            autocomplete="off"
+          />
+          <div id="site-search-results" class="site-search-results" hidden></div>
+        </div>
       </nav>
     </header>
 
     <main>
+      {breadcrumbs.length > 0 && (
+        <div class="site-breadcrumb-wrap">
+          <nav aria-label="Breadcrumb" class="site-breadcrumb">
+            <ol>
+              {breadcrumbs.map((crumb, index) => (
+                <li>
+                  {crumb.href && index < breadcrumbs.length - 1 ? (
+                    <a href={crumb.href}>{crumb.label}</a>
+                  ) : (
+                    <span aria-current="page">{crumb.label}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </div>
+      )}
       <slot />
     </main>
 
@@ -104,6 +180,12 @@ const path = Astro.url.pathname;
       </div>
     </footer>
 
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+      Top
+    </button>
+
+    <script id="site-search-data" type="application/json" set:html={siteSearchJson}></script>
+
     <script>
       const toggle = document.getElementById('nav-toggle') as HTMLButtonElement | null;
       const links = document.getElementById('nav-links') as HTMLElement | null;
@@ -112,6 +194,109 @@ const path = Astro.url.pathname;
           const open = links.classList.toggle('nav-open');
           toggle.setAttribute('aria-expanded', String(open));
         });
+      }
+
+      const searchInput = document.getElementById('site-search-input') as HTMLInputElement | null;
+      const searchResults = document.getElementById('site-search-results') as HTMLDivElement | null;
+      const searchDataScript = document.getElementById('site-search-data') as HTMLScriptElement | null;
+
+      function normalize(value: string): string {
+        return value
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .trim();
+      }
+
+      function escapeHtml(value: string): string {
+        return value
+          .replaceAll('&', '&amp;')
+          .replaceAll('<', '&lt;')
+          .replaceAll('>', '&gt;')
+          .replaceAll('"', '&quot;')
+          .replaceAll("'", '&#039;');
+      }
+
+      type SearchItem = {
+        type: 'Member' | 'Code' | 'Publication';
+        title: string;
+        href: string;
+        subtitle?: string;
+        keywords?: string;
+      };
+
+      let searchItems: SearchItem[] = [];
+      if (searchDataScript?.textContent) {
+        try {
+          const parsed = JSON.parse(searchDataScript.textContent);
+          if (Array.isArray(parsed)) {
+            searchItems = parsed.filter(item => item && typeof item === 'object') as SearchItem[];
+          }
+        } catch {
+          searchItems = [];
+        }
+      }
+
+      function renderSearchResults(query: string): void {
+        if (!searchResults) return;
+        const cleaned = normalize(query);
+        if (!cleaned) {
+          searchResults.hidden = true;
+          searchResults.innerHTML = '';
+          return;
+        }
+
+        const matched = searchItems
+          .filter(item => {
+            const haystack = normalize(`${item.type} ${item.title} ${item.subtitle ?? ''} ${item.keywords ?? ''}`);
+            return haystack.includes(cleaned);
+          })
+          .slice(0, 10);
+
+        if (matched.length === 0) {
+          searchResults.hidden = false;
+          searchResults.innerHTML = '<p class="site-search-empty">No results</p>';
+          return;
+        }
+
+        searchResults.hidden = false;
+        searchResults.innerHTML = matched
+          .map(item => {
+            const subtitle = item.subtitle ? `<span class="site-search-item-subtitle">${escapeHtml(item.subtitle)}</span>` : '';
+            const target = item.type === 'Publication' ? ' target="_blank" rel="noopener noreferrer"' : '';
+            return `<a class="site-search-item" href="${escapeHtml(item.href)}"${target}>
+              <span class="site-search-item-type">${escapeHtml(item.type)}</span>
+              <span class="site-search-item-title">${escapeHtml(item.title)}</span>
+              ${subtitle}
+            </a>`;
+          })
+          .join('');
+      }
+
+      if (searchInput && searchResults) {
+        searchInput.addEventListener('input', () => renderSearchResults(searchInput.value));
+        searchInput.addEventListener('focus', () => renderSearchResults(searchInput.value));
+        document.addEventListener('click', event => {
+          const target = event.target as Node;
+          if (!searchResults.contains(target) && !searchInput.contains(target)) {
+            searchResults.hidden = true;
+          }
+        });
+      }
+
+      const backToTop = document.getElementById('back-to-top') as HTMLButtonElement | null;
+      if (backToTop) {
+        const toggleBackToTop = () => {
+          const show = window.scrollY > 420;
+          backToTop.classList.toggle('is-visible', show);
+        };
+
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+        toggleBackToTop();
       }
     </script>
   </body>

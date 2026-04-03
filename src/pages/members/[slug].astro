@@ -20,13 +20,15 @@ const publicationsHtml = (autoPartials[`/src/content/members/_auto/${entry.slug}
 const dissertationsHtml = (autoPartials[`/src/content/members/_auto/${entry.slug}.dissertations.html`] as string) ?? '';
 ---
 
-<Base title={entry.data.title}>
+<Base
+  title={entry.data.title}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Members', href: '/members/' },
+    { label: entry.data.title },
+  ]}
+>
   <div class="page-wrapper">
-    <nav aria-label="Breadcrumb" style="margin-bottom: 0.75rem;">
-      <a href="/members/" style="text-decoration: underline;">Members</a>
-      <span aria-hidden="true" style="margin: 0 0.5rem;">/</span>
-      <span>{entry.data.title}</span>
-    </nav>
     <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{entry.data.title}</h1>
     <div class="prose">
       <h2>Profile</h2>

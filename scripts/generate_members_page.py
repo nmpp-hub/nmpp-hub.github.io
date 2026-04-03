@@ -146,7 +146,13 @@ def build_page(members: list[dict]) -> str:
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Members">
+<Base
+    title="Members"
+    breadcrumbs={{[
+        {{ label: 'Home', href: '/' }},
+        {{ label: 'Members' }},
+    ]}}
+>
   <div class="page-wrapper">
     <div class="page-header">
       <h1>Members</h1>

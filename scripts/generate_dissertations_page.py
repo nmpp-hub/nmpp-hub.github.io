@@ -89,7 +89,13 @@ def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None 
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Dissertations">
+<Base
+  title="Dissertations"
+  breadcrumbs={{[
+    {{ label: 'Home', href: '/' }},
+    {{ label: 'Dissertations' }},
+  ]}}
+>
   <div class="page-wrapper">
     <div class="page-header">
       <h1>Dissertations</h1>
