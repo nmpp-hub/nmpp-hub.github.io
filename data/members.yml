@@ -98,7 +98,7 @@ members:
   contact: b.example@example.org
   group: "Magnetohydrodynamics"
   codes: []
-  alumni: false
+  alumni: true
   aliases: []
 - name: Pauline Vidal
   role: phd
@@ -110,11 +110,19 @@ members:
   aliases: []
 - name: Jiayi Li
   role: msc
-  topic: ~
+  topic: ""
   contact: f.example@example.org
   group: Kinetic and Gyrokinetic Models
   codes: [gempicx]
   alumni: true
+  aliases: []
+- name: Nathan Marin
+  role: msc
+  topic: ""
+  contact: f.example@example.org
+  group: Kinetic and Gyrokinetic Models
+  codes: [struphy]
+  alumni: false
   aliases: []
 - name: Svenja Eichler
   role: Secretary
