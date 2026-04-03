@@ -30,5 +30,5 @@ Scientific machine learning is an emerging research area that uses machine learn
 The geometry group studies the design of neural network architectures, that encode important properties of the equations being solved. Geometry guides the design process to facilitate networks that are specifically tailored to the solution of a specific problem. By this approach it is even possible to construct training-free neural networks for the structure-preserving solution of differential equations, where for a given problem the network can be completely pre-computed.
 
 ## Additional Links
-- [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
-- [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
+
+- [GNI on IPP homepage](https://www.ipp.mpg.de/4105128/gspm)

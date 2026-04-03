@@ -4,4 +4,3 @@ path: /codes/gempicx/
 ---
 
 GEMPICX landing page.
-Aaaaa

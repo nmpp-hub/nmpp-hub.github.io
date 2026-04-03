@@ -24,5 +24,5 @@ Since the solution of the kinetic equations is computationally very demanding, t
 On the other hand, certain problems can also be solved based on compressed methods – like low rank tensors or sparse grids – with high efficiency.
 
 ## Additional Links
-- [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
-- [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
+
+- [KGKM on IPP homepage](https://www.ipp.mpg.de/4104717/kgkm)

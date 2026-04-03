@@ -27,5 +27,5 @@ While in the tokamak case, the equilibrium problem reduces to solving a non-line
 The simulation framework is depicted in Fig.2. As a preprocessing step, HOPR (high order preprocessor) generates a curved high order mesh of a periodic cylinder, and using an existing equilibrium solution from VMEC or GVEC, the cylinder is mapped to the flux surface geometry of the equilibrium. Also the equilibrium quantities are evaluated on the mesh, serving as the mesh and initial condition for the nonlinear MHD simulation in FLUXO. FLUXO is an open-source project developed in collaboration with the Mathematical Institute at the University of Cologne.  FLUXO is MPI parallelized and the explicit time integration exhibits excellent weak and strong scaling on current CPU architectures. The code solves general advection-diffusion equations, such as Navier-Stokes equations and the full resistive MHD equations, with a Discontinuous Galerkin Spectral Element Method (DGSEM) on unstructured curvilinear hexahedral meshes. FLUXO allows for general split-form formulations of the equations, and a discretely entropy stable split-form has been recently implemented.
 
 ## Additional Links
-- [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
-- [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
+
+- [MHD on IPP homepage](https://www.ipp.mpg.de/4119345/mhd)
