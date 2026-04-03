@@ -6,7 +6,6 @@ title: Advanced Computing Hub
 
 <p><strong><a href="/members/roman-hatzky/">Dr. Roman Hatzky</a></strong></p>
 
-<!-- CUSTOM:CONTENT:START -->
 ## Overview
 
 The Advanced Computing Hub (ACH) provides support to scientists from all Research Units of the EUROfusion consortium for the development and optimization of codes to be used on supercomputers.
@@ -27,4 +26,3 @@ The ACH consists of a core team based at the Max-Planck-Institut für Plasmaphys
 
 ## Additional Links
 - [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
-<!-- CUSTOM:CONTENT:END -->

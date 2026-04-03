@@ -6,7 +6,6 @@ title: Magnetohydrodynamics
 
 <p><strong><a href="/members/florian-hindenlang/">Dr. Ing. Florian Hindenlang</a></strong></p>
 
-<!-- CUSTOM:CONTENT:START -->
 ## Overview
 
 The MHD group of the NMPP division works on the study, development and analysis of robust and efficient algorithms for linear and nonlinear magneto-hydrodynamics, applied to tokamak and stellarator configurations.
@@ -30,4 +29,3 @@ The simulation framework is depicted in Fig.2. As a preprocessing step, HOPR (hi
 ## Additional Links
 - [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
 - [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
-<!-- CUSTOM:CONTENT:END -->

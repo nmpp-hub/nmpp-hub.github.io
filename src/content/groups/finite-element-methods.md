@@ -6,7 +6,6 @@ title: Finite Element Methods
 
 <p><strong><a href="/members/martin-campos-pinto/">Priv. Doz. Dr. Martin Campos Pinto</a></strong></p>
 
-<!-- CUSTOM:CONTENT:START -->
 ## Overview
 
 The Finite Element group studies numerical models with enhanced stability and structure-preservation properties, with a particular focus on problems arising in electromagnetism and plasma physics.
@@ -35,4 +34,3 @@ Research on this topic is carried out in collaboration with the [MHD](/groups/ma
 ## Additional Links
 - [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
 - [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
-<!-- CUSTOM:CONTENT:END -->

@@ -6,7 +6,6 @@ title: Kinetic and Gyrokinetic Models
 
 <p><strong><a href="/members/stefan-possanner/">Dr. Stefan Possanner</a></strong></p>
 
-<!-- CUSTOM:CONTENT:START -->
 ## Overview
 
 Kinetic theory gives a probabilistic description of the plasma in terms of a distribution function in phase-space. This description is more comprehensive than the magneto-hydrodynamic description but at the same time more computationally demanding. A major challenge for the numerical solution of the kinetic model is the rather high dimensionality of four to six dimensions depending on the geometry and the level of approximation. In addition, the requirements on the resolution are high, since small filaments and turbulent structures can occur in phase-space.
@@ -27,4 +26,3 @@ On the other hand, certain problems can also be solved based on compressed metho
 ## Additional Links
 - [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
 - [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
-<!-- CUSTOM:CONTENT:END -->

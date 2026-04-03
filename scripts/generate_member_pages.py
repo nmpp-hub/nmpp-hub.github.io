@@ -290,20 +290,41 @@ def build_publications_table(publications: list[dict], author_to_slug: dict[str,
 </table>"""
 
 
-def build_dissertations_list(dissertations: list[dict]) -> str:
-    """Build list of dissertations."""
+def build_dissertations_table(dissertations: list[dict]) -> str:
+    """Build HTML table for dissertations."""
     if not dissertations:
         return "<p>No dissertations yet.</p>"
 
-    lines = []
+    rows = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        lines.append(
-            f"- {escape_text(diss['title'])} ({degree}, {diss['year']}) - "
-            f"[Full text]({escape_text(diss['link'])})"
+        rows.append(
+            "\n".join(
+                [
+                    "  <tr>",
+                    f"    <td>{diss['year']}</td>",
+                    f"    <td>{escape_text(diss['title'])}</td>",
+                    f"    <td>{escape_text(degree)}</td>",
+                    f"    <td><a href=\"{escape_text(diss['link'])}\">Full text</a></td>",
+                    "  </tr>",
+                ]
+            )
         )
 
-    return "\n".join(lines)
+    body = "\n".join(rows)
+    return f"""<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Degree</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+{body}
+  </tbody>
+</table>"""
 
 
 def build_new_member_page(member: dict) -> str:
@@ -357,7 +378,7 @@ def main() -> None:
             build_publications_table(member_pubs, author_to_slug) + "\n", encoding="utf-8"
         )
         (MEMBERS_AUTO_DIR / f"{slug}.dissertations.html").write_text(
-            build_dissertations_list(member_diss) + "\n", encoding="utf-8"
+            build_dissertations_table(member_diss) + "\n", encoding="utf-8"
         )
 
         print(f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)")

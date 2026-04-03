@@ -1,8 +1,8 @@
-"""Inject per-code publications and dissertations tables into code markdown files.
+"""Generate per-code auto partials and create missing code markdown files.
 
 Reads the publications metadata cache (written by populate_publications.py) and
-data/dissertations.yml, filters entries by code slug, and injects HTML tables
-between marker comments in each src/content/codes/<slug>.md file.
+data/dissertations.yml, filters entries by code slug, writes HTML partials under
+src/content/codes/_auto/, and creates src/content/codes/<slug>.md only if missing.
 
 Run after populate_publications.py so the cache is up to date:
     python populate_publications.py
@@ -12,7 +12,6 @@ Run after populate_publications.py so the cache is up to date:
 from __future__ import annotations
 
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -28,15 +27,6 @@ CODES_AUTO_DIR.mkdir(parents=True, exist_ok=True)
 CACHE_FILE = ROOT / "data" / ".publications_cache.json"
 DISSERTATIONS_FILE = ROOT / "data" / "dissertations.yml"
 MEMBERS_FILE = ROOT / "data" / "members.yml"
-
-CUSTOM_START = "<!-- CUSTOM:CONTENT:START -->"
-CUSTOM_END = "<!-- CUSTOM:CONTENT:END -->"
-MEM_START = "<!-- AUTO:MEMBERS:START -->"
-MEM_END = "<!-- AUTO:MEMBERS:END -->"
-PUB_START = "<!-- AUTO:PUBLICATIONS:START -->"
-PUB_END = "<!-- AUTO:PUBLICATIONS:END -->"
-DISS_START = "<!-- AUTO:DISSERTATIONS:START -->"
-DISS_END = "<!-- AUTO:DISSERTATIONS:END -->"
 
 DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
 
@@ -189,31 +179,16 @@ def build_dissertations_table(dissertations: list[dict]) -> str:
 </table>"""
 
 
-def inject_between_markers(
-    content: str, start_marker: str, end_marker: str, payload: str
-) -> str:
-    pattern = re.escape(start_marker) + r".*?" + re.escape(end_marker)
-    replacement = f"{start_marker}\n{payload}\n{end_marker}"
-    if start_marker in content:
-        return re.sub(pattern, replacement, content, flags=re.DOTALL)
-    return content
+def build_new_code_page(slug: str) -> str:
+    """Build initial markdown content for a new code page."""
+    title = slug.replace("-", " ").upper()
+    return f"""---
+title: {escape_text(title)}
+path: /codes/{slug}/
+---
 
-
-def ensure_custom_section(content: str) -> str:
-    """Ensure the custom content section markers are present."""
-    if CUSTOM_START in content:
-        return content
-    # Append custom section to file that doesn't have it yet
-    block = (
-        "\n<!-- Custom content can be added between the markers below. -->\n"
-        "<!-- Do not edit the auto-generated sections (they will be overwritten). -->\n"
-        "<!-- To update auto-generated sections, edit the YAML files and run: "
-        "python populate_publications.py && python generate_code_pages.py -->\n\n"
-        f"{CUSTOM_START}\n"
-        "Add custom markdown content here (description, installation, features, etc.)\n"
-        f"{CUSTOM_END}\n"
-    )
-    return content.rstrip() + "\n" + block
+Add custom content here.
+"""
 
 
 def main() -> None:
@@ -222,19 +197,22 @@ def main() -> None:
     all_members = load_members()
     author_to_slug = build_author_to_slug_map()
 
-    code_files = sorted(CODES_DIR.glob("*.md"))
-    if not code_files:
-        print("No code markdown files found.")
+    known_slugs = {path.stem for path in CODES_DIR.glob("*.md")}
+    for member in all_members:
+        known_slugs.update(ensure_list(member.get("codes", [])))
+    for pub in all_pubs:
+        known_slugs.update(ensure_list(pub.get("codes", [])))
+    for dissertation in all_diss:
+        known_slugs.update(ensure_list(dissertation.get("codes", [])))
+
+    if not known_slugs:
+        print("No code slugs found.")
         return
 
-    for code_file in code_files:
-        slug = code_file.stem
-        content = code_file.read_text(encoding="utf-8")
-
-        # Ensure custom section exists (no-op if already present)
-        updated = ensure_custom_section(content)
-        if updated != content:
-            code_file.write_text(updated, encoding="utf-8")
+    for slug in sorted(known_slugs):
+        code_file = CODES_DIR / f"{slug}.md"
+        if not code_file.exists():
+            code_file.write_text(build_new_code_page(slug), encoding="utf-8")
 
         # Filter data for this code
         members = [m for m in all_members if slug in m.get("codes", [])]
@@ -258,7 +236,7 @@ def main() -> None:
 
         print(f"  {slug}: {len(members)} members, {len(pubs)} publications, {len(diss)} dissertations")
 
-    print(f"Updated {len(code_files)} code pages")
+    print(f"Updated {len(known_slugs)} code entries")
 
 
 if __name__ == "__main__":

@@ -6,7 +6,6 @@ title: Geometric Numerical Integration
 
 <p><strong><a href="/members/michael-kraus/">Dr. Michael Kraus</a></strong></p>
 
-<!-- CUSTOM:CONTENT:START -->
 ## Overview
 
 The geometry group studies the abstract mathematical structures underlying plasma-physics models in order to design numerical algorithms that respect important qualitative properties of the physical problem.
@@ -33,4 +32,3 @@ The geometry group studies the design of neural network architectures, that enco
 ## Additional Links
 - [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
 - [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
-<!-- CUSTOM:CONTENT:END -->

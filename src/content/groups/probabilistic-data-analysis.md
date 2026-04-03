@@ -6,7 +6,6 @@ title: Probabilistic Data Analysis and Active Learning
 
 <p><strong><a href="/members/udo-von-toussaint/">Priv. Doz. Dr. Udo von Toussaint</a></strong></p>
 
-<!-- CUSTOM:CONTENT:START -->
 ## Overview
 
 The DAAL group of the NMPP division develops and applies modern data analysis methods (ML/AI-based) and modelling tools within a Bayesian framework to investigate and understand non-equilibrium and plasma-driven processes.
@@ -26,4 +25,3 @@ Details to lectures on the research topics of DAAL are given [here](https://www.
 ## Additional Links
 - [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
 - [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
-<!-- CUSTOM:CONTENT:END -->

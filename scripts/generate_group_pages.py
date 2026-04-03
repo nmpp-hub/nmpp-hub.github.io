@@ -16,15 +16,7 @@ from typing import Any
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import (
-    build_author_to_slug_map,
-    ensure_list,
-    escape_text,
-    load_yaml,
-    render_author_list,
-    slugify,
-    write_text,
-)
+from site_generation import build_author_to_slug_map, escape_text, load_yaml, render_author_list, slugify, write_text
 
 ROOT = Path(__file__).resolve().parent.parent
 GROUPS_FILE = ROOT / "data" / "groups.yml"
@@ -37,16 +29,6 @@ GROUPS_AUTO_DIR = GROUPS_OUTPUT_DIR / "_auto"
 GROUPS_AUTO_DIR.mkdir(parents=True, exist_ok=True)
 
 DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
-
-CUSTOM_START = "<!-- CUSTOM:CONTENT:START -->"
-CUSTOM_END = "<!-- CUSTOM:CONTENT:END -->"
-MEMBERS_START = "<!-- AUTO:MEMBERS:START -->"
-MEMBERS_END = "<!-- AUTO:MEMBERS:END -->"
-PUBLICATIONS_START = "<!-- AUTO:PUBLICATIONS:START -->"
-PUBLICATIONS_END = "<!-- AUTO:PUBLICATIONS:END -->"
-DISSERTATIONS_START = "<!-- AUTO:DISSERTATIONS:START -->"
-DISSERTATIONS_END = "<!-- AUTO:DISSERTATIONS:END -->"
-
 
 def load_groups() -> list[dict]:
     """Load and validate groups from YAML."""
@@ -272,50 +254,20 @@ def build_dissertations_table(dissertations: list[dict]) -> str:
 </table>"""
 
 
-def inject_between_markers(content: str, start_marker: str, end_marker: str, payload: str) -> str:
-    """Replace content between markers."""
-    import re
-
-    pattern = re.escape(start_marker) + r".*?" + re.escape(end_marker)
-    replacement = f"{start_marker}\n{payload}\n{end_marker}"
-    if start_marker in content:
-        return re.sub(pattern, replacement, content, flags=re.DOTALL)
-    return content
-
-
-def extract_custom_content(content: str) -> str:
-    """Extract content between custom markers."""
-    import re
-    pattern = re.escape(CUSTOM_START) + r"(.*?)" + re.escape(CUSTOM_END)
-    match = re.search(pattern, content, re.DOTALL)
-    if match:
-        return match.group(1).strip()
-    return ""
-
-
-def build_group_page_content(
-    group: dict, members: list[dict], publications: list[dict], dissertations: list[dict], existing_content: str = "", author_to_slug: dict[str, str] | None = None
-) -> str:
-    """Build the complete group page content with markers, preserving custom content."""
+def build_group_page_content(group: dict, members: list[dict]) -> str:
+    """Build the initial group page content for a new group page."""
     leader_section = build_leader_section(group, members)
-    members_section = build_members_list(members)
-    pubs_section = build_publications_table(publications, author_to_slug)
-    diss_section = build_dissertations_table(dissertations)
 
-    # Preserve existing custom content, or create default with IPP link
-    if existing_content:
-        custom_content = extract_custom_content(existing_content)
-    else:
-        # Build default custom content with Links section and IPP link
-        abbr = group.get("abbr", "")
-        ipp_url = group.get("ipp_url", "")
-        if ipp_url:
-            link_text = f"{group['name']} ({abbr})" if abbr else group['name']
-            custom_content = f"""## Links
+    custom_lines: list[str] = []
+    abbr = group.get("abbr", "")
+    ipp_url = group.get("ipp_url", "")
+    if ipp_url:
+        link_text = f"{group['name']} ({abbr})" if abbr else group['name']
+        custom_lines.extend(["## Links", "", f"- [{link_text}]({escape_text(ipp_url)})"])
 
-- [{link_text}]({escape_text(ipp_url)})"""
-        else:
-            custom_content = ""
+    custom_content = "\n".join(custom_lines)
+    if custom_content:
+        custom_content = "\n" + custom_content + "\n"
 
     content = f"""---
 title: {escape_text(group['name'])}
@@ -325,10 +277,7 @@ title: {escape_text(group['name'])}
 
 {leader_section}
 
-{CUSTOM_START}
-{custom_content}
-{CUSTOM_END}
-"""
+{custom_content}"""
 
     return content
 
@@ -375,16 +324,11 @@ def main() -> None:
                     break
         group_diss.sort(key=lambda d: (-d["year"], d["author"].lower()))
 
-        # Generate page
+        # Create page only if missing; never overwrite existing user-edited pages
         output_file = GROUPS_OUTPUT_DIR / f"{group['slug']}.md"
-
-        # Read existing content to preserve custom section
-        existing_content = ""
-        if output_file.exists():
-            existing_content = output_file.read_text(encoding="utf-8")
-
-        page_content = build_group_page_content(group, group_members, group_pubs, group_diss, existing_content, author_to_slug)
-        write_text(output_file, page_content)
+        if not output_file.exists():
+            page_content = build_group_page_content(group, group_members)
+            write_text(output_file, page_content)
 
         slug = group["slug"]
         (GROUPS_AUTO_DIR / f"{slug}.members.html").write_text(
