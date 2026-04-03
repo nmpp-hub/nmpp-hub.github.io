@@ -2,7 +2,7 @@ members:
 # Unassigned / cross-group
 - name: Eric Sonnendrücker
   role: professor
-  topic: Numerical methods for plasma physics
+  topic: ""
   contact: i.example@example.org
   group: ~
   codes: [gempicx]
@@ -236,7 +236,7 @@ members:
   alumni: false
   aliases: []
 - name: Yingzhe Li
-  role: phd
+  role: postdoc
   topic: ""
   contact: c.example@example.org
   group: Kinetic and Gyrokinetic Models
@@ -283,11 +283,19 @@ members:
   codes: [gempicx]
   alumni: true
   aliases: []
+- name: Katharina Kormann
+  role: postdoc
+  topic: ""
+  contact: f.example@example.org
+  group: Kinetic and Gyrokinetic Models
+  codes: [gempicx]
+  alumni: true
+  aliases: []
 
 # Magnetohydrodynamics
 - name: Florian Hindenlang
   role: permanent staff
-  topic: Magnetohydrodynamics
+  topic: ""
   contact: a.example@example.org
   group: Magnetohydrodynamics
   codes: [gvec]
@@ -296,7 +304,7 @@ members:
   picture: 'https://www.ipp.mpg.de/5446851/original-1727074133.webp'
 - name: Omar Maj
   role: permanent staff
-  topic: "Magnetohydrodynamics"
+  topic: ""
   contact: b.example@example.org
   group: "Magnetohydrodynamics"
   codes: []

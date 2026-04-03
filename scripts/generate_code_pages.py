@@ -18,7 +18,7 @@ from pathlib import Path
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list
+from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, slugify
 
 ROOT = Path(__file__).resolve().parent.parent
 CODES_DIR = ROOT / "src" / "content" / "codes"
@@ -93,9 +93,12 @@ def build_members_list(members: list[dict]) -> str:
 
     items = []
     for member in sorted(members, key=sort_key):
+        member_slug = slugify(member["name"])
         label = MEMBER_ROLE_LABELS.get(member["role"], member["role"])
         suffix = ", alumni" if member["alumni"] else ""
-        items.append(f"  <li>{escape_text(member['name'])} ({label}{suffix})</li>")
+        items.append(
+            f'  <li><a href="/members/{member_slug}/">{escape_text(member["name"])}</a> ({label}{suffix})</li>'
+        )
 
     body = "\n".join(items)
     return f"<ul>\n{body}\n</ul>"
