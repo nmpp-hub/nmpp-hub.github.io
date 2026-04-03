@@ -24,4 +24,4 @@ The most interesting part of zonal flow physics occurs at the vaccuum boundary o
 
 ## Additional Links
 
-- [ZFSFTP on IPP homepage](https://www.ipp.mpg.de/4171847/zfsftp)
+- [ZFSFTP official webpage](https://www.ipp.mpg.de/4171847/zfsftp)

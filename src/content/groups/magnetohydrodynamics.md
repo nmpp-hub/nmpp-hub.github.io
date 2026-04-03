@@ -28,4 +28,4 @@ The simulation framework is depicted in Fig.2. As a preprocessing step, HOPR (hi
 
 ## Additional Links
 
-- [MHD on IPP homepage](https://www.ipp.mpg.de/4119345/mhd)
+- [MHD official webpage](https://www.ipp.mpg.de/4119345/mhd)

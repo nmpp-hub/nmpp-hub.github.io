@@ -25,4 +25,4 @@ The ACH consists of a core team based at the Max-Planck-Institut für Plasmaphys
 - Provide guidance for young scientists on available training activities in HPC and towards upcoming new computer architectures
 
 ## Additional Links
-- [ACH on IPP homepage](https://www.ipp.mpg.de/3987588/ach)
+- [ACH official webpage](https://www.ipp.mpg.de/3987588/ach)

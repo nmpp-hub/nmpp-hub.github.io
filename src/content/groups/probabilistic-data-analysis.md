@@ -24,4 +24,4 @@ Details to lectures on the research topics of DAAL are given [here](https://www.
 
 ## Additional Links
 
-- [DAAL on IPP homepage](https://www.ipp.mpg.de/3989973/daal)
+- [DAAL official webpage](https://www.ipp.mpg.de/3989973/daal)

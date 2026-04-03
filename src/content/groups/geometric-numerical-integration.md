@@ -31,4 +31,4 @@ The geometry group studies the design of neural network architectures, that enco
 
 ## Additional Links
 
-- [GNI on IPP homepage](https://www.ipp.mpg.de/4105128/gspm)
+- [GNI official webpage](https://www.ipp.mpg.de/4105128/gspm)

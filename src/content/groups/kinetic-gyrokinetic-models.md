@@ -25,4 +25,4 @@ On the other hand, certain problems can also be solved based on compressed metho
 
 ## Additional Links
 
-- [KGKM on IPP homepage](https://www.ipp.mpg.de/4104717/kgkm)
+- [KGKM official webpage](https://www.ipp.mpg.de/4104717/kgkm)
