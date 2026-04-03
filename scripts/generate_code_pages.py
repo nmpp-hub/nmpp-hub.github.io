@@ -141,9 +141,12 @@ def build_publications_table(publications: list[dict], author_to_slug: dict[str,
 </table>"""
 
 
-def build_dissertations_table(dissertations: list[dict]) -> str:
+def build_dissertations_table(dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
     if not dissertations:
         return "<p>No dissertations linked to this code yet.</p>"
+
+    if author_to_slug is None:
+        author_to_slug = build_author_to_slug_map()
 
     rows = []
     for diss in dissertations:
@@ -154,7 +157,7 @@ def build_dissertations_table(dissertations: list[dict]) -> str:
                     "  <tr>",
                     f"    <td>{diss['year']}</td>",
                     f"    <td>{escape_text(diss['title'])}</td>",
-                    f"    <td>{escape_text(diss['author'])}</td>",
+                    f"    <td>{render_author_list(diss['author'], author_to_slug)}</td>",
                     f"    <td>{escape_text(degree)}</td>",
                     f'    <td><a href="{escape_text(diss["link"])}">Full text</a></td>',
                     "  </tr>",
@@ -231,7 +234,7 @@ def main() -> None:
             build_publications_table(pubs, author_to_slug) + "\n", encoding="utf-8"
         )
         (CODES_AUTO_DIR / f"{slug}.dissertations.html").write_text(
-            build_dissertations_table(diss) + "\n", encoding="utf-8"
+            build_dissertations_table(diss, author_to_slug) + "\n", encoding="utf-8"
         )
 
         print(f"  {slug}: {len(members)} members, {len(pubs)} publications, {len(diss)} dissertations")

@@ -57,7 +57,7 @@ members:
   topic: ""
   contact: b.example@example.org
   group: Advanced Computing Hub
-  codes: []
+  codes: [struphy]
   alumni: false
   aliases: []
 - name: Serhiy Mochalskyy
