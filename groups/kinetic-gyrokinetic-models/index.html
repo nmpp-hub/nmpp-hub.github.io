@@ -1,6 +1,5 @@
 <!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kinetic and Gyrokinetic Models — NMPP Division at IPP</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/_slug_.wOvGSwTW.css"><script type="module" src="/_astro/hoisted.B-pQ6Vuw.js"></script></head> <body> <header class="site-header"> <nav class="nav-inner" aria-label="Main navigation"> <a href="/" class="nav-logo">Numerical Methods for Plasma Physics</a> <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"> <line x1="2" y1="5" x2="18" y2="5"></line> <line x1="2" y1="10" x2="18" y2="10"></line> <line x1="2" y1="15" x2="18" y2="15"></line> </svg> </button> <ul class="nav-links" id="nav-links" role="list"> <li class=""> <a href="/">Home</a> </li> <li class=""> <a href="/codes/">Codes</a> <ul class="nav-dropdown" role="list"> <li><a href="/codes/">Overview</a></li> <li> <a href="/codes/bsl6d/">BSL6D</a> </li><li> <a href="/codes/gempicx/">GEMPICX</a> </li><li> <a href="/codes/geometricintegrators/">GeometricIntegrators.jl</a> </li><li> <a href="/codes/geometricmachinelearning/">GeometricMachineLearning.jl</a> </li><li> <a href="/codes/gvec/">GVEC</a> </li><li> <a href="/codes/gyselalibxx/">Gyselalib++</a> </li><li> <a href="/codes/psydac/">PSYDAC</a> </li><li> <a href="/codes/struphy/">STRUPHY</a> </li> </ul> </li> <li class=""> <a href="/publications/">Publications</a> </li> <li class=""> <a href="/dissertations/">Dissertations</a> </li> <li class="nav-active"> <a href="/groups/">Groups</a> <ul class="nav-dropdown" role="list"> <li><a href="/groups/">Overview</a></li> <li> <a href="/groups/advanced-computing-hub/">Advanced Computing Hub</a> </li><li> <a href="/groups/finite-element-methods/">Finite Element Methods</a> </li><li> <a href="/groups/geometric-numerical-integration/">Geometric Numerical Integration</a> </li><li> <a href="/groups/kinetic-gyrokinetic-models/">Kinetic and Gyrokinetic Models</a> </li><li> <a href="/groups/magnetohydrodynamics/">Magnetohydrodynamics</a> </li><li> <a href="/groups/probabilistic-data-analysis/">Probabilistic Data Analysis and Active Learning</a> </li><li> <a href="/groups/zonal-flows-turbulent/">Zonal Flows in Turbulent Plasmas</a> </li> </ul> </li> <li class=""> <a href="/members/">Members</a> </li> </ul> </nav> </header> <main>  <div class="page-wrapper"> <nav aria-label="Breadcrumb" style="margin-bottom: 0.75rem;"> <a href="/groups/" style="text-decoration: underline;">Groups</a> <span aria-hidden="true" style="margin: 0 0.5rem;">/</span> <span>Kinetic and Gyrokinetic Models</span> </nav> <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">Kinetic and Gyrokinetic Models</h1> <div class="prose"> <h2 id="group-leader">Group Leader</h2>
 <p><strong><a href="/members/stefan-possanner/">Dr. Stefan Possanner</a></strong></p>
-<!-- CUSTOM:CONTENT:START -->
 <h2 id="overview">Overview</h2>
 <p>Kinetic theory gives a probabilistic description of the plasma in terms of a distribution function in phase-space. This description is more comprehensive than the magneto-hydrodynamic description but at the same time more computationally demanding. A major challenge for the numerical solution of the kinetic model is the rather high dimensionality of four to six dimensions depending on the geometry and the level of approximation. In addition, the requirements on the resolution are high, since small filaments and turbulent structures can occur in phase-space.</p>
 <p>The kinetics group of the NMPP section works on the development and analysis of robust and efficient algorithms for numerical simulations of the kinetic equations, in its most general six-dimensional form as well as the gyrokinetics equations. Mostly particle-in-cell and semi-Lagrangian methods are developed, but Eulerian methods based on spectral discontinuous Galerkin are also under scrutiny. Moreover, the group works with the analysis of various approximations in the model and on verification.</p>
@@ -15,17 +14,12 @@
 <ul>
 <li><a href="https://www.ipp.mpg.de/15333/bereiche">Scientific Divisions</a></li>
 <li><a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik">Numerical Methods in Plasma Physics</a></li>
-</ul>
-<!-- CUSTOM:CONTENT:END -->
-<h2 id="members">Members</h2>
-<!-- AUTO:MEMBERS:START -->
-<ul>
+</ul> <h2>Members</h2> <ul>
+  <li><a href="/members/nathan-marin/">Nathan Marin</a></li>
   <li><a href="/members/stefan-possanner/">Stefan Possanner</a></li>
+  <li><a href="/members/jiayi-li/">Jiayi Li</a>, alumni</li>
 </ul>
-<!-- AUTO:MEMBERS:END -->
-<h2 id="publications">Publications</h2>
-<!-- AUTO:PUBLICATIONS:START -->
-<table>
+ <h2>Publications</h2> <table>
   <thead>
     <tr>
       <th>Year</th>
@@ -52,10 +46,26 @@
   </tr>
   </tbody>
 </table>
-<!-- AUTO:PUBLICATIONS:END -->
-<h2 id="dissertations">Dissertations</h2>
-<!-- AUTO:DISSERTATIONS:START -->
-<p>No dissertations for this group yet.</p>
-<!-- AUTO:DISSERTATIONS:END --> </div> </div>  </main> <footer class="site-footer"> <div class="footer-inner"> <span>NMPP Division · Max Planck Institute for Plasma Physics</span> <span> <a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik" target="_blank" rel="noopener noreferrer">IPP webpage</a>
+ <h2>Dissertations</h2> <table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Degree</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>2025</td>
+    <td>Development of an implicit Geometric PIC method</td>
+    <td>Jiayi Li</td>
+    <td>MSc</td>
+    <td><a href="https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf">Full text</a></td>
+  </tr>
+  </tbody>
+</table>
+ </div> </div>  </main> <footer class="site-footer"> <div class="footer-inner"> <span>NMPP Division · Max Planck Institute for Plasma Physics</span> <span> <a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik" target="_blank" rel="noopener noreferrer">IPP webpage</a>
 &middot;
 <a href="https://github.com/nmpp-hub/nmpp-hub.github.io" target="_blank" rel="noopener noreferrer">GitHub</a> </span> </div> </footer>  </body> </html>
