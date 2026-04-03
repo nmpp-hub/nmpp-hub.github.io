@@ -6,7 +6,13 @@ const codes = await getCollection('codes');
 const sorted = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
-<Base title="Codes">
+<Base
+  title="Codes"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Codes' },
+  ]}
+>
   <div class="page-wrapper">
     <div class="page-header">
       <h1>Codes</h1>

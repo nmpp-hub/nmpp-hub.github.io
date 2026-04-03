@@ -1,169 +1,171 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const codes = await getCollection('codes');
+const groups = await getCollection('groups');
+
+const topCodes = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title)).slice(0, 6);
+const topGroups = [...groups].sort((a, b) => a.data.title.localeCompare(b.data.title)).slice(0, 6);
 ---
 
-<Base>
-  <div class="page-wrapper">
-    <div class="nmpp-slideshow">
-      <button class="nmpp-arrow nmpp-arrow-left" aria-label="Previous slide">&#8592;</button>
-      <button class="nmpp-arrow nmpp-arrow-right" aria-label="Next slide">&#8594;</button>
-
-      <div class="nmpp-slide active">
-        <img src="/images/banner1.png" alt="Magnetohydrodynamics" />
-        <div class="nmpp-slide-caption">
-          <div class="nmpp-slide-caption-content">
-            <strong>GVEC</strong>
-            blablabla stellarator equils.
-          </div>
+<Base title="NMPP Division">
+  <div class="page-wrapper nmpp-home">
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <p class="home-eyebrow">Numerical Methods for Plasma Physics</p>
+        <h1>NMPP Division at the Max Planck Institute for Plasma Physics</h1>
+        <p class="home-intro">
+          We develop advanced numerical methods, high-performance simulation software, and data-driven tools
+          for plasma physics across magnetic confinement, geometric integration, and uncertainty quantification.
+        </p>
+        <div class="home-hero-actions">
+          <a class="home-btn home-btn-primary" href="/codes/">Explore Codes</a>
+          <a class="home-btn home-btn-secondary" href="/groups/">Explore Groups</a>
         </div>
       </div>
-      <div class="nmpp-slide">
-        <img src="/images/banner2.jpg" alt="Simulation Visualization" />
-        <div class="nmpp-slide-caption">
-          <div class="nmpp-slide-caption-content">
-            <strong>Hybrid simulations</strong>
-            wow particles.
+      <div class="home-hero-visual" aria-hidden="true">
+        <div class="home-hero-slideshow" data-home-slideshow>
+          <div class="home-slide is-active">
+            <img src="/images/banner1.png" alt="Wendelstein 7-X related numerical plasma simulation visual" />
+            <div class="home-slide-caption">
+              <strong>Figure Slot 01</strong>
+              Add your first highlight image and caption here.
+            </div>
+          </div>
+          <div class="home-slide">
+            <img src="/images/banner2.jpg" alt="High-performance plasma computation visualization" />
+            <div class="home-slide-caption">
+              <strong>Figure Slot 02</strong>
+              Showcase another method, simulation, or project snapshot.
+            </div>
+          </div>
+          <div class="home-slide">
+            <img src="/images/banner3.png" alt="Numerical method visual with geometric structures" />
+            <div class="home-slide-caption">
+              <strong>Figure Slot 03</strong>
+              Use this panel for updates, milestones, or visual results.
+            </div>
+          </div>
+          <div class="home-slide-dots" data-home-slide-dots>
+            <button type="button" class="home-slide-dot is-active" aria-label="Show slide 1"></button>
+            <button type="button" class="home-slide-dot" aria-label="Show slide 2"></button>
+            <button type="button" class="home-slide-dot" aria-label="Show slide 3"></button>
           </div>
         </div>
+        <!-- <div class="home-banner-card home-banner-card-side">
+          <span>Geometry</span>
+          <span>HPC</span>
+          <span>Data Analysis</span>
+        </div> -->
       </div>
-      <div class="nmpp-slide">
-        <img src="/images/banner3.png" alt="Numerical Methods" />
-        <div class="nmpp-slide-caption">
-          <div class="nmpp-slide-caption-content">
-            <strong>Numerical Methods</strong>
-            Geometric Numerical Integration.
-          </div>
+    </section>
+
+    <section class="home-explore-grid" aria-label="Primary site sections">
+      <a class="home-explore-card" href="/codes/">
+        <p>Software</p>
+        <h2>Codes</h2>
+        <span>Browse all NMPP simulation and analysis codes</span>
+      </a>
+      <a class="home-explore-card" href="/groups/">
+        <p>Research</p>
+        <h2>Groups</h2>
+        <span>Discover the thematic research teams in NMPP</span>
+      </a>
+      <a class="home-explore-card" href="/members/">
+        <p>People</p>
+        <h2>Members</h2>
+        <span>Find scientists, students, and collaborators</span>
+      </a>
+      <a class="home-explore-card" href="/publications/">
+        <p>Results</p>
+        <h2>Publications</h2>
+        <span>Search papers and dissertation outputs</span>
+      </a>
+    </section>
+
+    <section class="home-discovery">
+      <article class="home-discovery-block">
+        <div class="home-section-head">
+          <h2>Featured Codes</h2>
+          <a href="/codes/">View all codes</a>
         </div>
-      </div>
+        <div class="home-link-grid">
+          {topCodes.map((code) => (
+            <a href={`/codes/${code.slug}/`} class="home-link-card">
+              <strong>{code.data.title}</strong>
+              <span>Open code page</span>
+            </a>
+          ))}
+        </div>
+      </article>
 
-      <div class="nmpp-slideshow-controls">
-        <span class="nmpp-dot active"></span>
-        <span class="nmpp-dot"></span>
-        <span class="nmpp-dot"></span>
-      </div>
-    </div>
+      <article class="home-discovery-block">
+        <div class="home-section-head">
+          <h2>Research Groups</h2>
+          <a href="/groups/">View all groups</a>
+        </div>
+        <div class="home-link-grid">
+          {topGroups.map((group) => (
+            <a href={`/groups/${group.slug}/`} class="home-link-card">
+              <strong>{group.data.title}</strong>
+              <span>Open group page</span>
+            </a>
+          ))}
+        </div>
+      </article>
+    </section>
 
-    <h2 class="section-heading">Codes</h2>
-    <div class="nmpp-grid">
-      <a class="nmpp-card" href="/codes/gempicx/">
-        <strong>GEMPICX</strong>
-        <span>Description of GEMPICX.</span>
+    <section class="home-results">
+      <a class="home-results-card" href="/publications/">
+        <h3>Publications</h3>
+        <p>Track scientific output across all NMPP topics and software efforts.</p>
       </a>
-      <a class="nmpp-card" href="/codes/gvec/">
-        <strong>GVEC</strong>
-        <span>Description of GVEC.</span>
+      <a class="home-results-card" href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik">
+        <h3>Official IPP Page</h3>
+        <p>Visit the institutional webpage for the NMPP division at IPP.</p>
       </a>
-      <a class="nmpp-card" href="/codes/struphy/">
-        <strong>STRUPHY</strong>
-        <span>Description of STRUPHY.</span>
+      <a class="home-results-card" href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer">
+        <h3>GitHub Organization</h3>
+        <p>Browse repositories, code activity, and open-source tools from NMPP.</p>
       </a>
-      <a class="nmpp-card" href="/codes/psydac/">
-        <strong>PSYDAC</strong>
-        <span>Description of PSYDAC.</span>
-      </a>
-      <a class="nmpp-card" href="/codes/geometricintegrators/">
-        <strong>GeometricIntegrators.jl</strong>
-        <span>Description of GeometricIntegrators.jl.</span>
-      </a>
-      <a class="nmpp-card" href="/codes/geometricmachinelearning/">
-        <strong>GeometricMachineLearning.jl</strong>
-        <span>Description of GeometricMachineLearning.jl.</span>
-      </a>
-      <a class="nmpp-card" href="/codes/gyselalibxx/">
-        <strong>Gyselalib++</strong>
-        <span>Description of Gyselalib++.</span>
-      </a>
-      <a class="nmpp-card" href="/codes/bsl6d/">
-        <strong>BSL6D</strong>
-        <span>Description of BSL6D.</span>
-      </a>
-    </div>
-    <!-- <p>Check out <a href="/codes/">this page</a> for more codes!</p> -->
-
-    <h2 class="section-heading" style="margin-top: 2.5rem;">Publications</h2>
-    <div class="nmpp-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <a class="nmpp-card" href="/publications/">
-        <strong>Publications</strong>
-        <span>List of scientific publications.</span>
-      </a>
-      <a class="nmpp-card" href="/dissertations/">
-        <strong>Dissertations</strong>
-        <span>List of student dissertation outputs.</span>
-      </a>
-    </div>
-
-    <h2 class="section-heading" style="margin-top: 2.5rem;">Working groups</h2>
-    <div class="nmpp-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <a class="nmpp-card" href="/groups/advanced-computing-hub/">
-        <strong>Advanced Computing Hub</strong>
-        <span>Description of ACH.</span>
-      </a>
-      <a class="nmpp-card" href="/groups/finite-element-methods/">
-        <strong>Finite Element Methods</strong>
-        <span>Description of FEM.</span>
-      </a>
-      <a class="nmpp-card" href="/groups/geometric-numerical-integration/">
-        <strong>Geometric Numerical Integration</strong>
-        <span>Description of GNI.</span>
-      </a>
-      <a class="nmpp-card" href="/groups/kinetic-gyrokinetic-models/">
-        <strong>Kinetic and Gyrokinetic Models</strong>
-        <span>Description of KGKM.</span>
-      </a>
-      <a class="nmpp-card" href="/groups/magnetohydrodynamics/">
-        <strong>Magnetohydrodynamics</strong>
-        <span>Description of MHD.</span>
-      </a>
-      <a class="nmpp-card" href="/groups/probabilistic-data-analysis/">
-        <strong>Probabilistic Data Analysis</strong>
-        <span>Description of DAAL.</span>
-      </a>
-      <a class="nmpp-card" href="/groups/zonal-flows-turbulent/">
-        <strong>Zonal Flows in Turbulent Plasmas</strong>
-        <span>Description of ZFSFTP.</span>
-      </a>
-    </div>
-
-    <h2 class="section-heading" style="margin-top: 2.5rem;">Links</h2>
-    <ul style="padding-left: 1.25rem; line-height: 2;">
-      <li><a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik">NMPP's official webpage</a></li>
-      <li><a href="https://github.com/nmpp-hub">NMPP's GitHub repository</a></li>
-    </ul>
+    </section>
   </div>
 </Base>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.nmpp-slideshow');
-    if (!container) return;
-    const slides = Array.from(container.querySelectorAll('.nmpp-slide'));
-    const dots = Array.from(container.querySelectorAll('.nmpp-dot'));
-    const leftArrow = container.querySelector('.nmpp-arrow-left');
-    const rightArrow = container.querySelector('.nmpp-arrow-right');
+  document.addEventListener('DOMContentLoaded', () => {
+    const slideshow = document.querySelector('[data-home-slideshow]');
+    if (!slideshow) return;
+
+    const slides = Array.from(slideshow.querySelectorAll('.home-slide'));
+    const dots = Array.from(slideshow.querySelectorAll('.home-slide-dot'));
+    if (slides.length === 0 || dots.length === 0) return;
+
     let current = 0;
-    let interval: ReturnType<typeof setInterval> | null = null;
+    let timer: ReturnType<typeof setInterval> | null = null;
 
-    function showSlide(idx: number) {
-      slides.forEach((s, i) => s.classList.toggle('active', i === idx));
-      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-      current = idx;
-    }
+    const setSlide = (index: number) => {
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+      current = index;
+    };
 
-    function next() { showSlide((current + 1) % slides.length); }
-    function prev() { showSlide((current - 1 + slides.length) % slides.length); }
+    const start = () => {
+      if (timer) clearInterval(timer);
+      timer = setInterval(() => {
+        setSlide((current + 1) % slides.length);
+      }, 4800);
+    };
 
-    function resetInterval() {
-      if (interval) clearInterval(interval);
-      interval = setInterval(next, 5000);
-    }
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => { showSlide(i); resetInterval(); });
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        setSlide(index);
+        start();
+      });
     });
-    leftArrow?.addEventListener('click', (e) => { e.preventDefault(); prev(); resetInterval(); });
-    rightArrow?.addEventListener('click', (e) => { e.preventDefault(); next(); resetInterval(); });
 
-    showSlide(0);
-    resetInterval();
+    setSlide(0);
+    start();
   });
 </script>

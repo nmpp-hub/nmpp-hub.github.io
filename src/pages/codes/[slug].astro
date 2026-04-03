@@ -19,24 +19,20 @@ const normalizedPath = entry.data.path?.endsWith('/')
   ? entry.data.path
   : `${entry.data.path}/`;
 
-const breadcrumb = {
-  // Expected path format: `/codes/<slug>/`
-  homeHref: '/codes/',
-  currentLabel: entry.data.title,
-};
-
 const membersHtml = (autoPartials[`/src/content/codes/_auto/${entry.slug}.members.html`] as string) ?? '';
 const publicationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.slug}.publications.html`] as string) ?? '';
 const dissertationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.slug}.dissertations.html`] as string) ?? '';
 ---
 
-<Base title={entry.data.title}>
+<Base
+  title={entry.data.title}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Codes', href: '/codes/' },
+    { label: entry.data.title },
+  ]}
+>
   <div class="page-wrapper">
-    <nav aria-label="Breadcrumb" style="margin-bottom: 0.75rem;">
-      <a href={breadcrumb.homeHref} style="text-decoration: underline;">Codes</a>
-      <span aria-hidden="true" style="margin: 0 0.5rem;">/</span>
-      <span>{breadcrumb.currentLabel}</span>
-    </nav>
     <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{entry.data.title}</h1>
     <div class="prose">
       <Content />

@@ -10,7 +10,13 @@ const sortedGroups = groups.sort((a, b) =>
 );
 ---
 
-<Base title="Groups">
+<Base
+  title="Groups"
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Groups' },
+  ]}
+>
   <div class="page-wrapper">
     <div class="page-header">
       <h1>Research Groups</h1>
