@@ -6,7 +6,6 @@ title: Kinetic and Gyrokinetic Models
 
 <p><strong><a href="/members/stefan-possanner/">Dr. Stefan Possanner</a></strong></p>
 
-<!-- CUSTOM:CONTENT:START -->
 ## Overview
 
 Kinetic theory gives a probabilistic description of the plasma in terms of a distribution function in phase-space. This description is more comprehensive than the magneto-hydrodynamic description but at the same time more computationally demanding. A major challenge for the numerical solution of the kinetic model is the rather high dimensionality of four to six dimensions depending on the geometry and the level of approximation. In addition, the requirements on the resolution are high, since small filaments and turbulent structures can occur in phase-space.
@@ -27,50 +26,3 @@ On the other hand, certain problems can also be solved based on compressed metho
 ## Additional Links
 - [Scientific Divisions](https://www.ipp.mpg.de/15333/bereiche)
 - [Numerical Methods in Plasma Physics](https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik)
-<!-- CUSTOM:CONTENT:END -->
-
-## Members
-
-<!-- AUTO:MEMBERS:START -->
-<ul>
-  <li><a href="/members/stefan-possanner/">Stefan Possanner</a></li>
-</ul>
-<!-- AUTO:MEMBERS:END -->
-
-## Publications
-
-<!-- AUTO:PUBLICATIONS:START -->
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>Title</th>
-      <th>Authors</th>
-      <th>Venue</th>
-      <th>Link</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>2024</td>
-    <td>Canonical variables based numerical schemes for hybrid plasma models with kinetic ions and massless electrons</td>
-    <td>Yingzhe Li, Florian Holderied, <a href="/members/stefan-possanner/">Stefan Possanner</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-    <td>Journal of Computational Physics</td>
-    <td><a href="https://doi.org/10.1016/j.jcp.2024.112916">DOI</a></td>
-  </tr>
-  <tr>
-    <td>2023</td>
-    <td>High-Order Structure-Preserving Algorithms for Plasma Hybrid Models</td>
-    <td><a href="/members/stefan-possanner/">Stefan Possanner</a>, Florian Holderied, Yingzhe Li, Byung Kyu Na, Dominik Bell, Said Hadjout, <a href="/members/yaman-guclu/">Yaman Güçlü</a></td>
-    <td>Lecture Notes in Computer Science</td>
-    <td><a href="https://doi.org/10.1007/978-3-031-38299-4_28">DOI</a></td>
-  </tr>
-  </tbody>
-</table>
-<!-- AUTO:PUBLICATIONS:END -->
-
-## Dissertations
-
-<!-- AUTO:DISSERTATIONS:START -->
-<p>No dissertations for this group yet.</p>
-<!-- AUTO:DISSERTATIONS:END -->

@@ -33,6 +33,8 @@ DISSERTATIONS_FILE = ROOT / "data" / "dissertations.yml"
 CACHE_FILE = ROOT / "data" / ".publications_cache.json"
 MEMBERS_OUTPUT_DIR = ROOT / "src" / "content" / "members"
 MEMBERS_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+MEMBERS_AUTO_DIR = MEMBERS_OUTPUT_DIR / "_auto"
+MEMBERS_AUTO_DIR.mkdir(parents=True, exist_ok=True)
 
 DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
 
@@ -288,115 +290,53 @@ def build_publications_table(publications: list[dict], author_to_slug: dict[str,
 </table>"""
 
 
-def build_dissertations_list(dissertations: list[dict]) -> str:
-    """Build list of dissertations."""
+def build_dissertations_table(dissertations: list[dict]) -> str:
+    """Build HTML table for dissertations."""
     if not dissertations:
         return "<p>No dissertations yet.</p>"
 
-    lines = []
+    rows = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        lines.append(
-            f"- {escape_text(diss['title'])} ({degree}, {diss['year']}) - "
-            f"[Full text]({escape_text(diss['link'])})"
+        rows.append(
+            "\n".join(
+                [
+                    "  <tr>",
+                    f"    <td>{diss['year']}</td>",
+                    f"    <td>{escape_text(diss['title'])}</td>",
+                    f"    <td>{escape_text(degree)}</td>",
+                    f"    <td><a href=\"{escape_text(diss['link'])}\">Full text</a></td>",
+                    "  </tr>",
+                ]
+            )
         )
 
-    return "\n".join(lines)
+    body = "\n".join(rows)
+    return f"""<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Degree</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+{body}
+  </tbody>
+</table>"""
 
 
-PROFILE_START = "<!-- AUTO:PROFILE:START -->"
-PROFILE_END = "<!-- AUTO:PROFILE:END -->"
-ABOUT_START = "<!-- CUSTOM:ABOUT:START -->"
-ABOUT_END = "<!-- CUSTOM:ABOUT:END -->"
-PUBLICATIONS_START = "<!-- AUTO:PUBLICATIONS:START -->"
-PUBLICATIONS_END = "<!-- AUTO:PUBLICATIONS:END -->"
-DISSERTATIONS_START = "<!-- AUTO:DISSERTATIONS:START -->"
-DISSERTATIONS_END = "<!-- AUTO:DISSERTATIONS:END -->"
-
-
-def inject_between_markers(
-    content: str, start_marker: str, end_marker: str, payload: str
-) -> str:
-    """Replace content between markers, or add markers if not present."""
-    pattern = re.escape(start_marker) + r".*?" + re.escape(end_marker)
-    replacement = f"{start_marker}\n{payload}\n{end_marker}"
-    if start_marker in content:
-        return re.sub(pattern, replacement, content, flags=re.DOTALL)
-    return content
-
-
-def ensure_member_markers(content: str, member_name: str) -> str:
-    """Ensure all auto-generated section markers are present."""
-    if PROFILE_START in content and PUBLICATIONS_START in content and DISSERTATIONS_START in content:
-        return content
-
-    # Create template if markers are missing
-    block = f"""---
-title: {escape_text(member_name)}
----
-
-## Profile
-
-{PROFILE_START}
-{PROFILE_END}
-
-## About
-
-{ABOUT_START}
-Add custom content here (research interests, bio, etc.)
-{ABOUT_END}
-
-## Publications
-
-{PUBLICATIONS_START}
-{PUBLICATIONS_END}
-
-## Dissertations
-
-{DISSERTATIONS_START}
-{DISSERTATIONS_END}
-"""
-    return content if content.strip() else block
-
-
-def build_member_page_content(member: dict, publications: list[dict], dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
-    """Build the complete member page content with markers."""
-    profile_section = build_profile_section(member)
-    pubs_section = build_publications_table(publications, author_to_slug)
-    diss_section = build_dissertations_list(dissertations)
-
-    # Start with template
-    content = f"""---
+def build_new_member_page(member: dict) -> str:
+    """Build the initial member page .md content for a new member."""
+    return f"""---
 title: {escape_text(member['name'])}
 ---
 
-## Profile
-
-{PROFILE_START}
-{PROFILE_END}
-
 ## About
 
-{ABOUT_START}
-{ABOUT_END}
-
-## Publications
-
-{PUBLICATIONS_START}
-{PUBLICATIONS_END}
-
-## Dissertations
-
-{DISSERTATIONS_START}
-{DISSERTATIONS_END}
+Add custom content here (research interests, bio, etc.)
 """
-
-    # Inject content between markers
-    content = inject_between_markers(content, PROFILE_START, PROFILE_END, profile_section)
-    content = inject_between_markers(content, PUBLICATIONS_START, PUBLICATIONS_END, pubs_section)
-    content = inject_between_markers(content, DISSERTATIONS_START, DISSERTATIONS_END, diss_section)
-
-    return content
 
 
 def main() -> None:
@@ -426,16 +366,20 @@ def main() -> None:
         # Generate page
         output_file = MEMBERS_OUTPUT_DIR / f"{slug}.md"
 
-        # Read existing file if it exists, otherwise create new one
-        if output_file.exists():
-            existing_content = output_file.read_text(encoding="utf-8")
-            content = ensure_member_markers(existing_content, member["name"])
-        else:
-            content = f"---\ntitle: {escape_text(member['name'])}\n---\n"
+        # Only create the .md file if it doesn't exist yet; never overwrite existing files
+        if not output_file.exists():
+            write_text(output_file, build_new_member_page(member))
 
-        # Inject generated content between markers
-        page_content = build_member_page_content(member, member_pubs, member_diss, author_to_slug)
-        write_text(output_file, page_content)
+        # Write auto sections to separate files
+        (MEMBERS_AUTO_DIR / f"{slug}.profile.html").write_text(
+            build_profile_section(member) + "\n", encoding="utf-8"
+        )
+        (MEMBERS_AUTO_DIR / f"{slug}.publications.html").write_text(
+            build_publications_table(member_pubs, author_to_slug) + "\n", encoding="utf-8"
+        )
+        (MEMBERS_AUTO_DIR / f"{slug}.dissertations.html").write_text(
+            build_dissertations_table(member_diss) + "\n", encoding="utf-8"
+        )
 
         print(f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)")
 
