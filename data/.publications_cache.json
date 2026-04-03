@@ -15,7 +15,8 @@
     "issue": "",
     "pages": "01003",
     "url": "http://dx.doi.org/10.1051/epjconf/202634601003",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/omar-maj/\">Omar Maj</a>, Hannes Weber, Emanuele Poli"
   },
   {
     "doi": "10.1016/j.cnsns.2025.109384",
@@ -33,7 +34,8 @@
     "issue": "",
     "pages": "109384",
     "url": "http://dx.doi.org/10.1016/j.cnsns.2025.109384",
-    "groups": []
+    "groups": [],
+    "authors_html": "Markus Lohmayer, <a href=\"/members/michael-kraus/\">Michael Kraus</a>, Sigrid Leyendecker"
   },
   {
     "doi": "10.1007/s10915-025-03161-z",
@@ -51,7 +53,8 @@
     "issue": "2",
     "pages": "",
     "url": "http://dx.doi.org/10.1007/s10915-025-03161-z",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/pauline-vidal/\">Pauline Vidal</a>, Emily Bourne, Virginie Grandgirard, Michel Mehrenberger, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1007/s10915-025-03078-7",
@@ -69,7 +72,8 @@
     "issue": "3",
     "pages": "",
     "url": "http://dx.doi.org/10.1007/s10915-025-03078-7",
-    "groups": []
+    "groups": [],
+    "authors_html": "Lukas Einkemmer, Julian Mangott, <a href=\"/members/martina-prugger/\">Martina Prugger</a>"
   },
   {
     "doi": "10.1088/1361-6587/adb64b",
@@ -87,7 +91,8 @@
     "issue": "3",
     "pages": "035025",
     "url": "http://dx.doi.org/10.1088/1361-6587/adb64b",
-    "groups": []
+    "groups": [],
+    "authors_html": "G G Plunk, M Drevlak, E Rodríguez, <a href=\"/members/robert-babin/\">R Babin</a>, A Goodman, <a href=\"/members/florian-hindenlang/\">F Hindenlang</a>"
   },
   {
     "doi": "10.5802/smai-jcm.120",
@@ -105,7 +110,8 @@
     "issue": "",
     "pages": "85-137",
     "url": "http://dx.doi.org/10.5802/smai-jcm.120",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>, <a href=\"/members/frederik-schnack/\">Frederik Schnack</a>"
   },
   {
     "doi": "10.1088/1361-6587/adba11",
@@ -125,7 +131,8 @@
     "issue": "4",
     "pages": "045002",
     "url": "http://dx.doi.org/10.1088/1361-6587/adba11",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, Gabriel G Plunk, <a href=\"/members/omar-maj/\">Omar Maj</a>"
   },
   {
     "doi": "10.1088/1361-6587/adaee6",
@@ -143,7 +150,8 @@
     "issue": "3",
     "pages": "035005",
     "url": "http://dx.doi.org/10.1088/1361-6587/adaee6",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/robert-babin/\">Robert Babin</a>, <a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, <a href=\"/members/omar-maj/\">Omar Maj</a>, <a href=\"/members/robert-koberl/\">Robert Köberl</a>"
   },
   {
     "doi": "10.1137/24m1659327",
@@ -161,7 +169,8 @@
     "issue": "5",
     "pages": "B1272-B1292",
     "url": "http://dx.doi.org/10.1137/24m1659327",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/nils-schild/\">Nils Schild</a>, <a href=\"/members/mario-rath/\">Mario Räth</a>, <a href=\"/members/klaus-hallatschek/\">Klaus Hallatschek</a>, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>"
   },
   {
     "doi": "10.1016/j.cpc.2024.109391",
@@ -179,7 +188,8 @@
     "issue": "",
     "pages": "109391",
     "url": "http://dx.doi.org/10.1016/j.cpc.2024.109391",
-    "groups": []
+    "groups": [],
+    "authors_html": "S.J.P. Pamela, N. Carey, J. Brandstetter, R. Akers, L. Zanisi, J. Buchanan, V. Gopakumar, M. Hoelzl, G. Huijsmans, K. Pentland, T. James, G. Antonucci"
   },
   {
     "doi": "10.1016/j.jcp.2025.114305",
@@ -197,7 +207,8 @@
     "issue": "",
     "pages": "114305",
     "url": "http://dx.doi.org/10.1016/j.jcp.2025.114305",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/elena-moral-sanchez/\">Elena Moral Sánchez</a>, <a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>, <a href=\"/members/yaman-guclu/\">Yaman Güçlü</a>, <a href=\"/members/omar-maj/\">Omar Maj</a>"
   },
   {
     "doi": "10.1137/23M1618910",
@@ -215,7 +226,8 @@
     "issue": "5",
     "pages": "B621-B646",
     "url": "http://dx.doi.org/10.1137/23M1618910",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1016/j.cpc.2023.108973",
@@ -233,7 +245,8 @@
     "issue": "",
     "pages": "108973",
     "url": "http://dx.doi.org/10.1016/j.cpc.2023.108973",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/nils-schild/\">Nils Schild</a>, <a href=\"/members/mario-rath/\">Mario Räth</a>, Sebastian Eibl, <a href=\"/members/klaus-hallatschek/\">Klaus Hallatschek</a>, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>"
   },
   {
     "doi": "10.1016/j.jcp.2024.112916",
@@ -251,7 +264,8 @@
     "issue": "",
     "pages": "112916",
     "url": "http://dx.doi.org/10.1016/j.jcp.2024.112916",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/yingzhe-li/\">Yingzhe Li</a>, <a href=\"/members/florian-holderied/\">Florian Holderied</a>, <a href=\"/members/stefan-possanner/\">Stefan Possanner</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1103/PhysRevLett.133.195101",
@@ -269,7 +283,8 @@
     "issue": "19",
     "pages": "",
     "url": "http://dx.doi.org/10.1103/PhysRevLett.133.195101",
-    "groups": []
+    "groups": [],
+    "authors_html": "M. Raeth, <a href=\"/members/klaus-hallatschek/\">K. Hallatschek</a>"
   },
   {
     "doi": "10.1063/5.0197970",
@@ -287,7 +302,8 @@
     "issue": "4",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/5.0197970",
-    "groups": []
+    "groups": [],
+    "authors_html": "M. Raeth, <a href=\"/members/klaus-hallatschek/\">K. Hallatschek</a>, <a href=\"/members/katharina-kormann/\">K. Kormann</a>"
   },
   {
     "doi": "10.1063/5.0223009",
@@ -305,7 +321,8 @@
     "issue": "10",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/5.0223009",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/mario-rath/\">Mario Raeth</a>, <a href=\"/members/klaus-hallatschek/\">Klaus Hallatschek</a>"
   },
   {
     "doi": "10.1007/s10915-023-02351-x",
@@ -323,7 +340,8 @@
     "issue": "2",
     "pages": "",
     "url": "http://dx.doi.org/10.1007/s10915-023-02351-x",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/yaman-guclu/\">Yaman Güçlü</a>, <a href=\"/members/said-hadjout/\">Said Hadjout</a>, <a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>"
   },
   {
     "doi": "10.1016/j.jcp.2023.112493",
@@ -341,7 +359,8 @@
     "issue": "",
     "pages": "112493",
     "url": "http://dx.doi.org/10.1016/j.jcp.2023.112493",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/francesco-fambri/\">F. Fambri</a>, E. Zampa, S. Busto, L. Río-Martín, <a href=\"/members/florian-hindenlang/\">F. Hindenlang</a>, <a href=\"/members/eric-sonnendrucker/\">E. Sonnendrücker</a>, M. Dumbser"
   },
   {
     "doi": "10.1063/5.0129989",
@@ -359,7 +378,8 @@
     "issue": "3",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/5.0129989",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/martin-campos-pinto/\">M. Campos Pinto</a>, M. Pelz, P.-H. Tournier"
   },
   {
     "doi": "10.1002/ctpp.202200175",
@@ -377,7 +397,8 @@
     "issue": "5-6",
     "pages": "",
     "url": "http://dx.doi.org/10.1002/ctpp.202200175",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/katharina-rath/\">Katharina Rath</a>, David Rügamer, Bernd Bischl, <a href=\"/members/udo-von-toussaint/\">Udo von Toussaint</a>, Christopher G. Albert"
   },
   {
     "doi": "10.1088/1741-4326/acdd12",
@@ -395,7 +416,8 @@
     "issue": "8",
     "pages": "086008",
     "url": "http://dx.doi.org/10.1088/1741-4326/acdd12",
-    "groups": []
+    "groups": [],
+    "authors_html": "Jonas Puchmayr, Mike Dunne, Erika Strumberger, Matthias Willensdorfer, Hartmut Zohm, <a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>"
   },
   {
     "doi": "10.1007/978-3-031-38299-4_28",
@@ -415,7 +437,8 @@
     "issue": "",
     "pages": "263-271",
     "url": "http://dx.doi.org/10.1007/978-3-031-38299-4_28",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/stefan-possanner/\">Stefan Possanner</a>, <a href=\"/members/florian-holderied/\">Florian Holderied</a>, <a href=\"/members/yingzhe-li/\">Yingzhe Li</a>, <a href=\"/members/byung-kyu-na/\">Byung Kyu Na</a>, <a href=\"/members/dominik-bell/\">Dominik Bell</a>, <a href=\"/members/said-hadjout/\">Said Hadjout</a>, <a href=\"/members/yaman-guclu/\">Yaman Güçlü</a>"
   },
   {
     "doi": "10.1002/ctpp.202200173",
@@ -433,7 +456,8 @@
     "issue": "5-6",
     "pages": "",
     "url": "http://dx.doi.org/10.1002/ctpp.202200173",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/robert-koberl/\">Robert Köberl</a>, <a href=\"/members/udo-von-toussaint/\">Udo von Toussaint</a>, Hans‐Joachim Bungartz, Jonathan Schilling, Christopher G. Albert, W7‐X Team"
   },
   {
     "doi": "10.1016/j.cpc.2022.108401",
@@ -451,7 +475,8 @@
     "issue": "",
     "pages": "108401",
     "url": "http://dx.doi.org/10.1016/j.cpc.2022.108401",
-    "groups": []
+    "groups": [],
+    "authors_html": "Christopher G. Albert, Patrick Lainer, Oszkár Bíró"
   },
   {
     "doi": "10.1017/S0022377822000769",
@@ -469,7 +494,8 @@
     "issue": "5",
     "pages": "",
     "url": "http://dx.doi.org/10.1017/S0022377822000769",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/katharina-rath/\">Katharina Rath</a>, David Rügamer, Bernd Bischl, <a href=\"/members/udo-von-toussaint/\">Udo von Toussaint</a>, Cristina Rea, Andrew Maris, Robert Granetz, Christopher G. Albert"
   },
   {
     "doi": "10.1063/5.0087104",
@@ -487,7 +513,8 @@
     "issue": "6",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/5.0087104",
-    "groups": []
+    "groups": [],
+    "authors_html": "N. Nikulsin, R. Ramasamy, M. Hoelzl, <a href=\"/members/florian-hindenlang/\">F. Hindenlang</a>, E. Strumberger, K. Lackner, S. Günter, JOREK Team"
   },
   {
     "doi": "10.1088/1361-6587/ac985e",
@@ -505,7 +532,8 @@
     "issue": "12",
     "pages": "125001",
     "url": "http://dx.doi.org/10.1088/1361-6587/ac985e",
-    "groups": []
+    "groups": [],
+    "authors_html": "F Jaulmes, G Zadvitskiy, K Bogar, I Mysiura, J Varju, M Jeřáb, M Komm, M Imrisek, The COMPASS Team"
   },
   {
     "doi": "10.1007/s10915-022-01781-3",
@@ -523,7 +551,8 @@
     "issue": "2",
     "pages": "",
     "url": "http://dx.doi.org/10.1007/s10915-022-01781-3",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1002/fld.5041",
@@ -541,7 +570,8 @@
     "issue": "12",
     "pages": "3447-3489",
     "url": "http://dx.doi.org/10.1002/fld.5041",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/francesco-fambri/\">Francesco Fambri</a>"
   },
   {
     "doi": "10.1088/1741-4326/ac359f",
@@ -559,7 +589,8 @@
     "issue": "12",
     "pages": "126068",
     "url": "http://dx.doi.org/10.1088/1741-4326/ac359f",
-    "groups": []
+    "groups": [],
+    "authors_html": "D.P. Coster, R. Fischer, O. Hoenen, <a href=\"/members/jalal-lakhlili/\">J. Lakhlili</a>, O.O. Luk, <a href=\"/members/roland-preuss/\">R. Preuss</a>, B.D. Scott, U. von Toussaint, the ASDEX Upgrade Team"
   },
   {
     "doi": "10.1016/j.jcp.2020.109890",
@@ -577,7 +608,8 @@
     "issue": "",
     "pages": "109890",
     "url": "http://dx.doi.org/10.1016/j.jcp.2020.109890",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1137/20M1311934",
@@ -595,7 +627,8 @@
     "issue": "1",
     "pages": "B194-B218",
     "url": "http://dx.doi.org/10.1137/20M1311934",
-    "groups": []
+    "groups": [],
+    "authors_html": "Benedikt Perse, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1017/S0022377821001082",
@@ -613,7 +646,8 @@
     "issue": "6",
     "pages": "",
     "url": "http://dx.doi.org/10.1017/S0022377821001082",
-    "groups": []
+    "groups": [],
+    "authors_html": "Felix Wilms, Alejandro Bañón Navarro, Gabriele Merlo, Leonhard Leppin, Tobias Görler, Tilman Dannert, <a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, Frank Jenko"
   },
   {
     "doi": "10.1016/j.cpc.2021.108041",
@@ -631,7 +665,8 @@
     "issue": "",
     "pages": "108041",
     "url": "http://dx.doi.org/10.1016/j.cpc.2021.108041",
-    "groups": []
+    "groups": [],
+    "authors_html": "C.U. Schuster, T. Johnson, G. Papp, R. Bilato, S. Sipilä, J. Varje, M. Hasenöhrl"
   },
   {
     "doi": "10.1063/5.0048129",
@@ -649,7 +684,8 @@
     "issue": "5",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/5.0048129",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/katharina-rath/\">Katharina Rath</a>, Christopher G. Albert, Bernd Bischl, <a href=\"/members/udo-von-toussaint/\">Udo von Toussaint</a>"
   },
   {
     "doi": "10.1016/j.jocs.2021.101402",
@@ -667,7 +703,8 @@
     "issue": "",
     "pages": "101402",
     "url": "http://dx.doi.org/10.1016/j.jocs.2021.101402",
-    "groups": []
+    "groups": [],
+    "authors_html": "Diana Suleimenova, Hamid Arabnejad, Wouter N. Edeling, David Coster, Onnie O. Luk, <a href=\"/members/jalal-lakhlili/\">Jalal Lakhlili</a>, Vytautas Jancauskas, Michal Kulczewski, Lourens Veen, Dongwei Ye, Pavel Zun, Valeria Krzhizhanovskaya, Alfons Hoekstra, Daan Crommelin, Peter V. Coveney, Derek Groen"
   },
   {
     "doi": "10.1088/1361-6587/ab5fa8",
@@ -685,7 +722,8 @@
     "issue": "2",
     "pages": "025031",
     "url": "http://dx.doi.org/10.1088/1361-6587/ab5fa8",
-    "groups": []
+    "groups": [],
+    "authors_html": "J Vicente, <a href=\"/members/tiago-ribeiro/\">T Ribeiro</a>, F Da Silva, S Heuraux, G D Conway, B Scott, C Silva"
   },
   {
     "doi": "10.1016/j.jcp.2020.109273",
@@ -703,7 +741,8 @@
     "issue": "",
     "pages": "109273",
     "url": "http://dx.doi.org/10.1016/j.jcp.2020.109273",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/benedict-dingfelder/\">Benedict Dingfelder</a>, Florian J. Hindenlang"
   },
   {
     "doi": "10.1098/rsta.2019.0175",
@@ -721,7 +760,8 @@
     "issue": "2170",
     "pages": "20190175",
     "url": "http://dx.doi.org/10.1098/rsta.2019.0175",
-    "groups": []
+    "groups": [],
+    "authors_html": "E. Romenski, I. Peshkov, M. Dumbser, <a href=\"/members/francesco-fambri/\">F. Fambri</a>"
   },
   {
     "doi": "10.1017/S0022377820000203",
@@ -739,7 +779,8 @@
     "issue": "2",
     "pages": "",
     "url": "http://dx.doi.org/10.1017/S0022377820000203",
-    "groups": []
+    "groups": [],
+    "authors_html": "Christopher G. Albert, Sergei V. Kasilov, Winfried Kernbichler"
   },
   {
     "doi": "10.1016/j.jcp.2018.06.027",
@@ -757,7 +798,8 @@
     "issue": "",
     "pages": "108076",
     "url": "http://dx.doi.org/10.1016/j.jcp.2018.06.027",
-    "groups": []
+    "groups": [],
+    "authors_html": "Marvin Bohm, Andrew R. Winters, Gregor J. Gassner, Dominik Derigs, <a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, Joachim Saur"
   },
   {
     "doi": "10.1088/1361-6587/ab9a61",
@@ -775,7 +817,8 @@
     "issue": "8",
     "pages": "084002",
     "url": "http://dx.doi.org/10.1088/1361-6587/ab9a61",
-    "groups": []
+    "groups": [],
+    "authors_html": "S R Hudson, J Loizu, C Zhu, Z S Qu, C Nührenberg, S Lazerson, C B Smiet, M J Hole"
   },
   {
     "doi": "10.1016/j.jcp.2020.109694",
@@ -793,7 +836,8 @@
     "issue": "",
     "pages": "109694",
     "url": "http://dx.doi.org/10.1016/j.jcp.2020.109694",
-    "groups": []
+    "groups": [],
+    "authors_html": "M. Maurer, A. Bañón Navarro, T. Dannert, <a href=\"/members/marco-restelli/\">M. Restelli</a>, <a href=\"/members/florian-hindenlang/\">F. Hindenlang</a>, T. Görler, D. Told, D. Jarema, G. Merlo, F. Jenko"
   },
   {
     "doi": "10.1088/1361-6587/aba858",
@@ -811,7 +855,8 @@
     "issue": "10",
     "pages": "105005",
     "url": "http://dx.doi.org/10.1088/1361-6587/aba858",
-    "groups": []
+    "groups": [],
+    "authors_html": "A Bañón Navarro, G Merlo, G G Plunk, P Xanthopoulos, A von Stechow, A Di Siena, M Maurer, <a href=\"/members/florian-hindenlang/\">F Hindenlang</a>, F Wilms, F Jenko"
   },
   {
     "doi": "10.1016/j.jcp.2019.109088",
@@ -829,7 +874,8 @@
     "issue": "",
     "pages": "109088",
     "url": "http://dx.doi.org/10.1016/j.jcp.2019.109088",
-    "groups": []
+    "groups": [],
+    "authors_html": "Michael Dumbser, <a href=\"/members/francesco-fambri/\">Francesco Fambri</a>, Elena Gaburro, Anne Reinarz"
   },
   {
     "doi": "10.1016/j.nme.2019.100724",
@@ -847,7 +893,8 @@
     "issue": "",
     "pages": "100724",
     "url": "http://dx.doi.org/10.1016/j.nme.2019.100724",
-    "groups": []
+    "groups": [],
+    "authors_html": "F.J. Domínguez-Gutiérrez, J. Byggmästar, K. Nordlund, F. Djurabekova, U. von Toussaint"
   },
   {
     "doi": "10.1063/5.0022117",
@@ -865,7 +912,8 @@
     "issue": "12",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/5.0022117",
-    "groups": []
+    "groups": [],
+    "authors_html": "M. Eder, C. G. Albert, L. M. P. Bauer, S. V. Kasilov, W. Kernbichler"
   },
   {
     "doi": "10.1016/j.jcp.2020.109394",
@@ -883,7 +931,8 @@
     "issue": "",
     "pages": "109394",
     "url": "http://dx.doi.org/10.1016/j.jcp.2020.109394",
-    "groups": []
+    "groups": [],
+    "authors_html": "Ionuţ-Gabriel Farcaş, Tobias Görler, Hans-Joachim Bungartz, Frank Jenko, Tobias Neckel"
   },
   {
     "doi": "10.1063/5.0006403",
@@ -901,7 +950,8 @@
     "issue": "9",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/5.0006403",
-    "groups": []
+    "groups": [],
+    "authors_html": "Eero Hirvijoki, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, Filippo Zonta"
   },
   {
     "doi": "10.1016/j.jcp.2019.109065",
@@ -919,7 +969,8 @@
     "issue": "",
     "pages": "109065",
     "url": "http://dx.doi.org/10.1016/j.jcp.2019.109065",
-    "groups": []
+    "groups": [],
+    "authors_html": "Christopher G. Albert, Sergei V. Kasilov, Winfried Kernbichler"
   },
   {
     "doi": "10.1093/imanum/draa022",
@@ -937,7 +988,8 @@
     "issue": "2",
     "pages": "1318-1367",
     "url": "http://dx.doi.org/10.1093/imanum/draa022",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/michael-kraus/\">Michael Kraus</a>, Tomasz M Tyranowski"
   },
   {
     "doi": "10.1177/1094342019834644",
@@ -955,7 +1007,8 @@
     "issue": "5",
     "pages": "924-947",
     "url": "http://dx.doi.org/10.1177/1094342019834644",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, Klaus Reuter, Markus Rampp"
   },
   {
     "doi": "10.1098/rsta.2018.0152",
@@ -973,7 +1026,8 @@
     "issue": "2142",
     "pages": "20180152",
     "url": "http://dx.doi.org/10.1098/rsta.2018.0152",
-    "groups": []
+    "groups": [],
+    "authors_html": "O. O. Luk, O. Hoenen, O. Perks, K. Brabazon, T. Piontek, P. Kopta, B. Bosak, A. Bottino, B. D. Scott, D. P. Coster"
   },
   {
     "doi": "10.1063/1.5078451",
@@ -991,7 +1045,8 @@
     "issue": "1",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.5078451",
-    "groups": []
+    "groups": [],
+    "authors_html": "L. Vela Vela, R. Sánchez, J. M. Reynolds-Barredo, J. Geiger"
   },
   {
     "doi": "10.1063/1.5079495",
@@ -1009,7 +1064,8 @@
     "issue": "9",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.5079495",
-    "groups": []
+    "groups": [],
+    "authors_html": "F. J. Domínguez-Gutiérrez, C. Martínez-Flores, R. Cabrera-Trujillo"
   },
   {
     "doi": "10.1017/S0022377819000096",
@@ -1027,7 +1083,8 @@
     "issue": "1",
     "pages": "",
     "url": "http://dx.doi.org/10.1017/S0022377819000096",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/roman-hatzky/\">R. Hatzky</a>, R. Kleiber, A. Könies, A. Mishchenko, <a href=\"/members/matthias-borchardt/\">M. Borchardt</a>, A. Bottino, <a href=\"/members/eric-sonnendrucker/\">E. Sonnendrücker</a>"
   },
   {
     "doi": "10.1016/j.jcp.2019.108889",
@@ -1045,7 +1102,8 @@
     "issue": "",
     "pages": "108889",
     "url": "http://dx.doi.org/10.1016/j.jcp.2019.108889",
-    "groups": []
+    "groups": [],
+    "authors_html": "Edoardo Zoni, <a href=\"/members/yaman-guclu/\">Yaman Güçlü</a>"
   },
   {
     "doi": "10.1016/j.cpc.2017.10.017",
@@ -1063,7 +1121,8 @@
     "issue": "",
     "pages": "186-197",
     "url": "http://dx.doi.org/10.1016/j.cpc.2017.10.017",
-    "groups": []
+    "groups": [],
+    "authors_html": "Luis Vela Vela, Raul Sanchez, Joachim Geiger"
   },
   {
     "doi": "10.1007/s10915-018-0758-y",
@@ -1081,7 +1140,8 @@
     "issue": "1",
     "pages": "201-203",
     "url": "http://dx.doi.org/10.1007/s10915-018-0758-y",
-    "groups": []
+    "groups": [],
+    "authors_html": "Gregor J. Gassner, Andrew R. Winters, Florian J. Hindenlang, David A. Kopriva"
   },
   {
     "doi": "10.1016/j.jcp.2018.06.046",
@@ -1099,7 +1159,8 @@
     "issue": "",
     "pages": "811-834",
     "url": "http://dx.doi.org/10.1016/j.jcp.2018.06.046",
-    "groups": []
+    "groups": [],
+    "authors_html": "Juan Vicente Gutiérrez-Santacreu, <a href=\"/members/omar-maj/\">Omar Maj</a>, <a href=\"/members/marco-restelli/\">Marco Restelli</a>"
   },
   {
     "doi": "10.1002/ctpp.201700135",
@@ -1117,7 +1178,8 @@
     "issue": "6-8",
     "pages": "622-628",
     "url": "http://dx.doi.org/10.1002/ctpp.201700135",
-    "groups": []
+    "groups": [],
+    "authors_html": "E. Sytova, E. Kaveeva, V. Rozhansky, I. Senichenkov, S. Voskoboynikov, D. Coster, X. Bonnin, R.A. Pitts"
   },
   {
     "doi": "10.1007/978-3-319-91143-4_6",
@@ -1135,7 +1197,8 @@
     "issue": "",
     "pages": "55-64",
     "url": "http://dx.doi.org/10.1007/978-3-319-91143-4_6",
-    "groups": []
+    "groups": [],
+    "authors_html": "D. Nille, U. von Toussaint, B. Sieglin, M. Faitsch"
   },
   {
     "doi": "10.1017/S0022377818000430",
@@ -1153,7 +1216,8 @@
     "issue": "3",
     "pages": "",
     "url": "http://dx.doi.org/10.1017/S0022377818000430",
-    "groups": []
+    "groups": [],
+    "authors_html": "Natalia Tronko, Cristel Chandre"
   },
   {
     "doi": "10.1088/1741-4326/aa8446",
@@ -1171,7 +1235,8 @@
     "issue": "12",
     "pages": "126043",
     "url": "http://dx.doi.org/10.1088/1741-4326/aa8446",
-    "groups": []
+    "groups": [],
+    "authors_html": "M. Tripský, T. Wauters, A. Lyssoivan, V. Bobkov, P.A. Schneider, I. Stepanov, D. Douai, D. Van Eester, J.-M. Noterdaeme, M. Van Schoor, ASDEX Upgrade Team, EUROfusion MST1 Team"
   },
   {
     "doi": "10.5802/smai-jcm.20",
@@ -1189,7 +1254,8 @@
     "issue": "",
     "pages": "53-89",
     "url": "http://dx.doi.org/10.5802/smai-jcm.20",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1063/1.4986447",
@@ -1207,7 +1273,8 @@
     "issue": "8",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.4986447",
-    "groups": []
+    "groups": [],
+    "authors_html": "H. Peraza-Rodriguez, J. M. Reynolds-Barredo, R. Sanchez, J. Geiger, V. Tribaldos, S. P. Hirshman, M. Cianciosa"
   },
   {
     "doi": "10.1017/S002237781700040X",
@@ -1227,7 +1294,8 @@
     "issue": "4",
     "pages": "",
     "url": "http://dx.doi.org/10.1017/S002237781700040X",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/michael-kraus/\">Michael Kraus</a>, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, Philip J. Morrison, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1088/1361-6587/aa68af",
@@ -1245,7 +1313,8 @@
     "issue": "6",
     "pages": "064008",
     "url": "http://dx.doi.org/10.1088/1361-6587/aa68af",
-    "groups": []
+    "groups": [],
+    "authors_html": "N Tronko, A Bottino, C Chandre, <a href=\"/members/eric-sonnendrucker/\">E Sonnendruecker</a>"
   },
   {
     "doi": "10.1063/1.4998610",
@@ -1263,7 +1332,8 @@
     "issue": "10",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.4998610",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/michael-kraus/\">Michael Kraus</a>, Eero Hirvijoki"
   },
   {
     "doi": "10.3390/e19020084",
@@ -1281,7 +1351,8 @@
     "issue": "2",
     "pages": "84",
     "url": "http://dx.doi.org/10.3390/e19020084",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/roland-preuss/\">Roland Preuss</a>, <a href=\"/members/udo-von-toussaint/\">Udo Von Toussaint</a>"
   },
   {
     "doi": "10.1016/j.cpc.2017.07.012",
@@ -1299,7 +1370,8 @@
     "issue": "",
     "pages": "19-27",
     "url": "http://dx.doi.org/10.1016/j.cpc.2017.07.012",
-    "groups": []
+    "groups": [],
+    "authors_html": "D. Samaddar, D.P. Coster, X. Bonnin, C. Bergmeister, E. Havlíc̆ková, L.A. Berry, W.R. Elwasif, D.B. Batchelor"
   },
   {
     "doi": "10.1063/1.4982689",
@@ -1317,7 +1389,8 @@
     "issue": "5",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.4982689",
-    "groups": []
+    "groups": [],
+    "authors_html": "Natalia Tronko, Alberto Bottino, Tobias Görler, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>, Daniel Told, Laurent Villard"
   },
   {
     "doi": "10.1063/1.4954915",
@@ -1335,7 +1408,8 @@
     "issue": "7",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.4954915",
-    "groups": []
+    "groups": [],
+    "authors_html": "T. Görler, N. Tronko, W. A. Hornsby, A. Bottino, R. Kleiber, C. Norscini, V. Grandgirard, F. Jenko, <a href=\"/members/eric-sonnendrucker/\">E. Sonnendrücker</a>"
   },
   {
     "doi": "10.1088/0741-3335/58/4/045016",
@@ -1353,7 +1427,8 @@
     "issue": "4",
     "pages": "045016",
     "url": "http://dx.doi.org/10.1088/0741-3335/58/4/045016",
-    "groups": []
+    "groups": [],
+    "authors_html": "A S Jacobsen, L Stagner, M Salewski, B Geiger, W W Heidbrink, S B Korsholm, F Leipold, S K Nielsen, J Rasmussen, M Stejner, H Thomsen, M Weiland, the ASDEX Upgrade team"
   },
   {
     "doi": "10.1063/1.4942539",
@@ -1371,7 +1446,8 @@
     "issue": "3",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.4942539",
-    "groups": []
+    "groups": [],
+    "authors_html": "G. Merlo, O. Sauter, S. Brunner, A. Burckel, Y. Camenen, F. J. Casson, W. Dorland, E. Fable, T. Görler, F. Jenko, A. G. Peeters, D. Told, L. Villard"
   },
   {
     "doi": "10.1063/1.4960039",
@@ -1389,7 +1465,8 @@
     "issue": "8",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.4960039",
-    "groups": []
+    "groups": [],
+    "authors_html": "Natalia Tronko, Alberto Bottino, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1017/S0022377815001361",
@@ -1407,7 +1484,8 @@
     "issue": "6",
     "pages": "",
     "url": "http://dx.doi.org/10.1017/S0022377815001361",
-    "groups": []
+    "groups": [],
+    "authors_html": "Leonid E. Zakharov, Calin V. Atanasiu, Karl Lackner, Matthias Hoelzl, Erika Strumberger"
   },
   {
     "doi": "10.1063/1.4935925",
@@ -1425,7 +1503,8 @@
     "issue": "11",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.4935925",
-    "groups": []
+    "groups": [],
+    "authors_html": "Natalia Tronko, Alain J. Brizard"
   },
   {
     "doi": "10.1103/PhysRevLett.109.245001",
@@ -1443,7 +1522,8 @@
     "issue": "24",
     "pages": "",
     "url": "http://dx.doi.org/10.1103/PhysRevLett.109.245001",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/klaus-hallatschek/\">K. Hallatschek</a>, G. R. McKee"
   },
   {
     "doi": "10.1063/1.4747725",
@@ -1461,7 +1541,8 @@
     "issue": "8",
     "pages": "",
     "url": "http://dx.doi.org/10.1063/1.4747725",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/robert-hager/\">Robert Hager</a>, <a href=\"/members/klaus-hallatschek/\">Klaus Hallatschek</a>"
   },
   {
     "doi": "10.1103/RevModPhys.83.943",
@@ -1479,7 +1560,8 @@
     "issue": "3",
     "pages": "943-999",
     "url": "http://dx.doi.org/10.1103/RevModPhys.83.943",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/udo-von-toussaint/\">Udo von Toussaint</a>"
   },
   {
     "doi": "10.1088/0741-3335/49/12B/S13",
@@ -1497,7 +1579,8 @@
     "issue": "12B",
     "pages": "B137-B148",
     "url": "http://dx.doi.org/10.1088/0741-3335/49/12B/S13",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/klaus-hallatschek/\">K Hallatschek</a>"
   },
   {
     "doi": "10.1103/PhysRevLett.93.065001",
@@ -1515,7 +1598,8 @@
     "issue": "6",
     "pages": "",
     "url": "http://dx.doi.org/10.1103/PhysRevLett.93.065001",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/klaus-hallatschek/\">K. Hallatschek</a>"
   },
   {
     "doi": "10.1103/PhysRevLett.86.1223",
@@ -1533,6 +1617,7 @@
     "issue": "7",
     "pages": "1223-1226",
     "url": "http://dx.doi.org/10.1103/PhysRevLett.86.1223",
-    "groups": []
+    "groups": [],
+    "authors_html": "<a href=\"/members/klaus-hallatschek/\">K. Hallatschek</a>, D. Biskamp"
   }
 ]

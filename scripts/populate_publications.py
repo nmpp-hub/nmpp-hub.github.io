@@ -30,6 +30,7 @@ REQUIRED_CACHE_FIELDS = {
     "slug",
     "title",
     "authors",
+    "authors_html",
     "venue",
     "journal",
     "year",
@@ -371,6 +372,9 @@ def main() -> None:
     assign_publication_slugs(publications)
 
     author_to_slug = build_author_to_slug_map()
+    for publication in publications:
+        publication["authors_html"] = render_author_list(publication["authors"], author_to_slug)
+
     write_text(OUTPUT_FILE, build_page(publications, author_to_slug))
     print(f"Updated {OUTPUT_FILE} with {len(publications)} publications")
 
