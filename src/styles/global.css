@@ -904,6 +904,13 @@ html[data-theme='dark'] .theme-toggle-dark {
 
 .publication-bibtex {
   margin-top: 0;
+  background: var(--nmpp-surface-soft);
+  color: var(--nmpp-ink);
+}
+
+html[data-theme='dark'] .publication-bibtex {
+  background: #1a2535;
+  color: #e8edf2;
 }
 
 .publication-copy-button {
