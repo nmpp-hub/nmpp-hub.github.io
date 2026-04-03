@@ -6,62 +6,37 @@
 npm install
 ```
 
-## Run locally
+
+## Data-driven content and regeneration
+
+All dynamic content (publications, members, dissertations, code links, and group pages) is generated from YAML files in the `data/` directory:
+
+- `data/dois.yml` — publication DOIs and metadata
+- `data/members.yml` — member roster
+- `data/dissertations.yml` — dissertations
+- `data/groups.yml` — research groups
+
+To update the site, simply edit the relevant YAML file(s) and run:
 
 ```bash
-npm run dev
+python -m pip install -r requirements.txt  # first time only
+python generate_website.py
 ```
 
-Open `http://localhost:4321`.
+This will regenerate all derived pages and caches, including:
+- Publication index and detail pages: `src/pages/publications/`
+- Member list and profiles: `src/pages/members.astro`, `src/pages/members/`
+- Dissertations: `src/pages/dissertations.astro`
+- Code and group pages: `src/pages/codes/`, `src/pages/groups/`
+- Publication cache: `data/.publications_cache.json`
 
-## Build static site
+To re-fetch publication metadata from remote APIs (DOI, abstracts, etc), use:
 
 ```bash
-npm run build
+python generate_website.py --refresh
 ```
 
-The generated site is written to `dist/`.
-
-## Add new publications
-
-Install the Python dependency once:
-
-```bash
-python -m pip install -r requirements.txt
-```
-
-Add or edit entries in `data/dois.yml`, then run:
-
-```bash
-python populate_publications.py
-```
-
-Each publication entry supports optional `groups` and `codes` fields in addition to the DOI.
-
-## Update members
-
-Edit `data/members.yml`, then run:
-
-```bash
-python generate_members_page.py
-```
-
-This regenerates `src/pages/members.astro` from the YAML roster.
-
-## Update dissertations
-
-Edit `data/dissertations.yml`, then run:
-
-```bash
-python generate_dissertations_page.py
-```
-
-This regenerates `src/pages/dissertations.astro` from the YAML list.
-
-## Customize the website
-
-1. Edit the landing page at `src/pages/index.astro`.
-2. Add code pages under `src/content/codes/`; they are automatically included under the Codes menu and get their own page. Each file needs a `title` frontmatter field:
+All generated content is written to the `src/pages/` directory and the publication cache in `data/`. The static site output is in `dist/` after running `npm run build`.
    ```md
    ---
    title: MyCode

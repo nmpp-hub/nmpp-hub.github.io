@@ -65,17 +65,68 @@ def normalize_year(value: object) -> int | None:
         return None
 
 
+CROSSREF_API = "https://api.crossref.org/works"
+SEMANTIC_SCHOLAR_API = "https://api.semanticscholar.org/graph/v1/paper"
+OPENALEX_API = "https://api.openalex.org/works"
+CROSSREF_USER_AGENT = "nmpp-publications-generator/1.0 (mailto:webmaster@nmpp-hub.github.io)"
+
+
 def fetch_doi_content(doi: str, accept: str) -> str:
     req = urllib.request.Request(
         f"https://doi.org/{doi}",
         headers={
             "Accept": accept,
-            "User-Agent": "nmpp-publications-generator/1.0",
+            "User-Agent": CROSSREF_USER_AGENT,
         },
     )
     with urllib.request.urlopen(req) as response:
         return response.read().decode("utf-8")
 
+
+def _fetch_url_json(url: str, extra_headers: dict | None = None) -> dict:
+    headers = {"User-Agent": CROSSREF_USER_AGENT}
+    if extra_headers:
+        headers.update(extra_headers)
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=12) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def fetch_abstract_from_semantic_scholar(doi: str) -> str:
+    """Query the Semantic Scholar Graph API for an abstract."""
+    try:
+        data = _fetch_url_json(
+            f"{SEMANTIC_SCHOLAR_API}/DOI:{doi}?fields=abstract",
+            extra_headers={"Accept": "application/json"},
+        )
+        return normalize_plain_text(data.get("abstract") or "")
+    except Exception:
+        return ""
+
+
+def fetch_abstract_from_openalex(doi: str) -> str:
+    """Query the OpenAlex API and reconstruct abstract from inverted index."""
+    try:
+        data = _fetch_url_json(f"{OPENALEX_API}/https://doi.org/{doi}")
+        inv = data.get("abstract_inverted_index") or {}
+        if not inv:
+            return ""
+        size = max(pos for positions in inv.values() for pos in positions) + 1
+        words: list[str] = [""] * size
+        for word, positions in inv.items():
+            for pos in positions:
+                words[pos] = word
+        return normalize_plain_text(" ".join(words))
+    except Exception:
+        return ""
+
+
+def fetch_abstract_fallbacks(doi: str) -> str:
+    """Try Semantic Scholar then OpenAlex to find a missing abstract."""
+    abstract = fetch_abstract_from_semantic_scholar(doi)
+    if abstract:
+        return abstract
+    return fetch_abstract_from_openalex(doi)
 
 def extract_publication_year(data: dict) -> int | None:
     for key in ("published-online", "published-print", "issued", "created"):
@@ -317,14 +368,71 @@ def main() -> None:
         action="store_true",
         help="Re-fetch metadata from DOI for missing or incomplete cache entries",
     )
+    parser.add_argument(
+        "--fill-abstracts",
+        action="store_true",
+        help="Try Semantic Scholar / OpenAlex to fill in missing abstracts without a full re-fetch",
+    )
+    parser.add_argument(
+        "--doi",
+        metavar="DOI",
+        nargs="+",
+        help="Limit processing to these specific DOIs (useful with --fill-abstracts for quick tests)",
+    )
     args = parser.parse_args()
 
     entries = load_publication_entries()
     print(f"Found {len(entries)} unique DOI entries")
 
+    # When --doi is given, filter the list immediately
+    if args.doi:
+        doi_filter = {d.strip() for d in args.doi}
+        entries = [e for e in entries if e["doi"] in doi_filter]
+        print(f"Filtered to {len(entries)} DOI(s) via --doi")
+
     cached_pubs = load_cached_publications()
     if cached_pubs:
         print(f"Loaded {len(cached_pubs)} publications from cache")
+
+    # --fill-abstracts: patch only the abstract field for publications that are
+    # missing one, without touching any other cached data.
+    if args.fill_abstracts:
+        targets = {
+            e["doi"]: cached_pubs[e["doi"]]
+            for e in entries
+            if e["doi"] in cached_pubs and not cached_pubs[e["doi"]].get("abstract", "").strip()
+        }
+        if not targets:
+            print("No publications with missing abstracts found in the given selection.")
+        else:
+            print(f"Attempting to fill abstracts for {len(targets)} publication(s)…")
+            filled = 0
+            for idx, (doi, pub) in enumerate(targets.items(), start=1):
+                print(f"  [{idx}/{len(targets)}] {doi}...", end=" ", flush=True)
+                abstract = fetch_abstract_fallbacks(doi)
+                if abstract:
+                    pub["abstract"] = abstract
+                    cached_pubs[doi]["abstract"] = abstract
+                    filled += 1
+                    print(f"found ({len(abstract)} chars)")
+                else:
+                    print("not found")
+            print(f"Filled {filled}/{len(targets)} abstracts")
+
+        # Rebuild authors_html and regenerate outputs even if nothing changed
+        all_pubs = list(cached_pubs.values())
+        all_pubs.sort(
+            key=lambda p: (-(p.get("year") or 0), p.get("title", "").lower(), p.get("doi", "").lower())
+        )
+        assign_publication_slugs(all_pubs)
+        author_to_slug = build_author_to_slug_map()
+        for pub in all_pubs:
+            pub["authors_html"] = render_author_list(pub.get("authors", ""), author_to_slug)
+        write_text(OUTPUT_FILE, build_page(all_pubs, author_to_slug))
+        print(f"Updated {OUTPUT_FILE} with {len(all_pubs)} publications")
+        CACHE_FILE.write_text(json.dumps(all_pubs, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"Saved metadata cache to {CACHE_FILE}")
+        return
 
     publications = []
     for index, entry in enumerate(entries, start=1):
