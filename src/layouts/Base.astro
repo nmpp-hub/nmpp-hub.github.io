@@ -51,11 +51,13 @@ const publicationSearchItems: SearchItem[] = publications
   .map(pub => ({
     type: 'Publication',
     title: String(pub.title),
-    href: `https://doi.org/${String(pub.doi)}`,
+    href: typeof pub.slug === 'string' && pub.slug
+      ? `/publications/${String(pub.slug)}/`
+      : `https://doi.org/${String(pub.doi)}`,
     subtitle: [pub.year, pub.authors]
       .filter(value => typeof value === 'string' || typeof value === 'number')
       .join(' · '),
-    keywords: [pub.authors, pub.venue, pub.year, pub.doi]
+    keywords: [pub.authors, pub.venue, pub.journal, pub.abstract, pub.year, pub.doi]
       .filter(value => typeof value === 'string' || typeof value === 'number')
       .join(' '),
   }));

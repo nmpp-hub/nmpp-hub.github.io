@@ -61,6 +61,35 @@ def slugify(text: str) -> str:
     return slug
 
 
+def publication_base_slug(title: str, doi: str = "", max_words: int = 6) -> str:
+    plain_title = html.unescape(strip_tags(title or ""))
+    words = plain_title.split()
+    if words:
+        slug = slugify(" ".join(words[:max_words]))
+        if slug:
+            return slug
+
+    doi_tail = doi.split("/", 1)[-1] if doi else "publication"
+    return slugify(doi_tail) or "publication"
+
+
+def publication_href(publication: dict[str, Any]) -> str:
+    slug = slugify(str(publication.get("slug", "")).strip())
+    if slug:
+        return f'/publications/{html.escape(slug, quote=True)}/'
+
+    doi = str(publication.get("doi", "")).strip()
+    if doi:
+        return f'https://doi.org/{html.escape(doi, quote=True)}'
+
+    return '/publications/'
+
+
+def render_publication_title(publication: dict[str, Any]) -> str:
+    label = escape_text(publication.get("title", "Untitled publication"))
+    return f'<a href="{publication_href(publication)}">{label}</a>'
+
+
 def get_known_members() -> set[str]:
     """Get set of known member slugs."""
     members_dir = ROOT / "src" / "content" / "members"
@@ -221,4 +250,5 @@ def render_related(groups: list[str], codes: list[str]) -> str:
 
 
 def write_text(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content.rstrip() + "\n", encoding="utf-8")

@@ -1,0 +1,203 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import publicationsCache from '../../../data/.publications_cache.json';
+
+type Publication = {
+  slug: string;
+  title: string;
+  authors?: string;
+  authors_html?: string;
+  venue?: string;
+  journal?: string;
+  year?: number;
+  doi: string;
+  abstract?: string;
+  bibtex?: string;
+  publisher?: string;
+  volume?: string;
+  issue?: string;
+  pages?: string;
+  url?: string;
+  codes?: string[];
+  groups?: string[];
+};
+
+export function getStaticPaths() {
+  const publications = (Array.isArray(publicationsCache) ? publicationsCache : []) as Publication[];
+
+  return publications
+    .filter(
+      (publication): publication is Publication =>
+        typeof publication.slug === 'string' &&
+        typeof publication.title === 'string' &&
+        typeof publication.doi === 'string'
+    )
+    .map(publication => ({
+      params: { slug: publication.slug },
+      props: { publication },
+    }));
+}
+
+const { publication } = Astro.props as { publication: Publication };
+const codes = await getCollection('codes');
+const groups = await getCollection('groups');
+const codeTitleBySlug = new Map(codes.map(code => [code.slug, code.data.title]));
+const groupTitleBySlug = new Map(groups.map(group => [group.slug, group.data.title]));
+
+const relatedCodes = (Array.isArray(publication.codes) ? publication.codes : []).filter(Boolean);
+const relatedGroups = (Array.isArray(publication.groups) ? publication.groups : []).filter(Boolean);
+const abstract = publication.abstract?.trim() ?? '';
+const bibtex = publication.bibtex?.trim() ?? '';
+
+function formatBibtexEntry(entry: string): string {
+  let result = '';
+  let depth = 0;
+  let inQuotes = false;
+
+  for (let index = 0; index < entry.length; index += 1) {
+    const character = entry[index];
+    const previous = index > 0 ? entry[index - 1] : '';
+
+    if (character === '"' && previous !== '\\') {
+      inQuotes = !inQuotes;
+    }
+
+    if (!inQuotes && character === '{') {
+      depth += 1;
+      result += character;
+      continue;
+    }
+
+    if (!inQuotes && character === '}') {
+      depth = Math.max(0, depth - 1);
+      if (depth === 0 && result.endsWith(',\n')) {
+        result = result.slice(0, -2) + '\n';
+      }
+      result += character;
+      continue;
+    }
+
+    if (!inQuotes && character === ',' && depth === 1) {
+      result += ',\n';
+      continue;
+    }
+
+    result += character;
+  }
+
+  return result.replace(/\n{3,}/g, '\n\n').trim();
+}
+
+const bibtexDisplay = bibtex ? formatBibtexEntry(bibtex) : '';
+const detailsSummary = [
+  publication.year ? String(publication.year) : '',
+  publication.venue ?? '',
+  publication.volume ? `vol. ${publication.volume}` : '',
+  publication.issue ? `no. ${publication.issue}` : '',
+  publication.pages ? `pp. ${publication.pages}` : '',
+  publication.publisher ?? '',
+].filter(Boolean).join(' · ');
+---
+
+<Base
+  title={publication.title}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Publications', href: '/publications/' },
+    { label: publication.title },
+  ]}
+>
+  <div class="page-wrapper publication-page">
+    <div class="page-header publication-header">
+      <p class="publication-kicker">Publication</p>
+      <h1>{publication.title}</h1>
+      {publication.authors_html ? (
+        <p class="publication-authors" set:html={publication.authors_html}></p>
+      ) : publication.authors && <p class="publication-authors">{publication.authors}</p>}
+      <p class="publication-meta-summary">
+        {detailsSummary && <span>{detailsSummary} · </span>}
+        <a href={`https://doi.org/${publication.doi}`}>{publication.doi}</a>
+      </p>
+    </div>
+
+    {(relatedCodes.length > 0 || relatedGroups.length > 0) && (
+      <section class="publication-section">
+        <h2>Related</h2>
+        {relatedCodes.length > 0 && (
+          <div class="publication-related-block">
+            <h3>Codes</h3>
+            <ul class="publication-pill-list" role="list">
+              {relatedCodes.map(code => (
+                <li>
+                  <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {relatedGroups.length > 0 && (
+          <div class="publication-related-block">
+            <h3>Groups</h3>
+            <ul class="publication-pill-list" role="list">
+              {relatedGroups.map(group => (
+                <li>
+                  <a href={`/groups/${group}/`}>{groupTitleBySlug.get(group) ?? group}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
+    )}
+
+    <section class="publication-section">
+      <h2>Abstract</h2>
+      {abstract ? <p>{abstract}</p> : <p class="publication-empty">No abstract was available from the DOI metadata.</p>}
+    </section>
+
+    <section class="publication-section">
+      <div class="publication-section-heading">
+        <h2>BibTeX</h2>
+        {bibtexDisplay && (
+          <button class="publication-copy-button" type="button" data-copy-target="publication-bibtex-code">
+            Copy
+          </button>
+        )}
+      </div>
+      {bibtex ? (
+        <pre class="publication-bibtex"><code id="publication-bibtex-code">{bibtexDisplay}</code></pre>
+      ) : (
+        <p class="publication-empty">No BibTeX entry was returned for this DOI.</p>
+      )}
+    </section>
+  </div>
+</Base>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.publication-copy-button');
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    button.addEventListener('click', async () => {
+      const targetId = button.dataset.copyTarget;
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      try {
+        await navigator.clipboard.writeText(target.textContent ?? '');
+        const originalText = button.textContent;
+        button.textContent = 'Copied';
+        window.setTimeout(() => {
+          button.textContent = originalText;
+        }, 1600);
+      } catch {
+        button.textContent = 'Failed';
+        window.setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 1600);
+      }
+    });
+  });
+</script>

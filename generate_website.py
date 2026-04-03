@@ -13,6 +13,7 @@ Run this once to regenerate all content:
 
 from __future__ import annotations
 
+import argparse
 import subprocess
 import sys
 from pathlib import Path
@@ -20,7 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 
 
-def run_script(script_path: Path, script_name: str) -> bool:
+def run_script(script_path: Path, script_name: str, extra_args: list[str] | None = None) -> bool:
     """Run a Python script and return True if successful."""
     print(f"\n{'=' * 70}")
     print(f"Running: {script_name}")
@@ -28,7 +29,7 @@ def run_script(script_path: Path, script_name: str) -> bool:
 
     try:
         result = subprocess.run(
-            ["python3", str(script_path)],
+            ["python3", str(script_path)] + (extra_args or []),
             cwd=ROOT,
             check=False,
         )
@@ -44,30 +45,39 @@ def run_script(script_path: Path, script_name: str) -> bool:
 
 def main() -> int:
     """Run all generation scripts in order."""
+    parser = argparse.ArgumentParser(description="Generate all website pages from YAML data.")
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-fetch publication metadata from DOI for missing or incomplete cache entries",
+    )
+    args = parser.parse_args()
+
     scripts_dir = ROOT / "scripts"
+    populate_args = ["--refresh"] if args.refresh else []
     scripts = [
-        (scripts_dir / "populate_publications.py", "Populate Publications"),
-        (scripts_dir / "generate_dissertations_page.py", "Generate Dissertations Page"),
-        (scripts_dir / "generate_code_pages.py", "Generate Code Pages"),
-        (scripts_dir / "generate_members_page.py", "Generate Members Page"),
-        (scripts_dir / "generate_member_pages.py", "Generate Individual Member Pages"),
-        (scripts_dir / "generate_group_pages.py", "Generate Group Pages"),
+        (scripts_dir / "populate_publications.py", "Populate Publications", populate_args),
+        (scripts_dir / "generate_dissertations_page.py", "Generate Dissertations Page", []),
+        (scripts_dir / "generate_code_pages.py", "Generate Code Pages", []),
+        (scripts_dir / "generate_members_page.py", "Generate Members Page", []),
+        (scripts_dir / "generate_member_pages.py", "Generate Individual Member Pages", []),
+        (scripts_dir / "generate_group_pages.py", "Generate Group Pages", []),
     ]
 
     results = []
-    for script_path, script_name in scripts:
+    for script_path, script_name, extra_args in scripts:
         if not script_path.exists():
             print(f"❌ Script not found: {script_path}")
             results.append(False)
         else:
-            results.append(run_script(script_path, script_name))
+            results.append(run_script(script_path, script_name, extra_args))
 
     # Summary
     print(f"\n{'=' * 70}")
     print("SUMMARY")
     print(f"{'=' * 70}")
 
-    for (_, script_name), success in zip(scripts, results):
+    for (_, script_name, _args), success in zip(scripts, results):
         status = "✅ PASS" if success else "❌ FAIL"
         print(f"{status}: {script_name}")
 
