@@ -25,15 +25,39 @@ const topGroups = [...groups].sort((a, b) => a.data.title.localeCompare(b.data.t
         </div>
       </div>
       <div class="home-hero-visual" aria-hidden="true">
-        <div class="home-banner-card home-banner-card-main">
-          <p>Simulation Software</p>
-          <strong>Codes + Methods</strong>
+        <div class="home-hero-slideshow" data-home-slideshow>
+          <div class="home-slide is-active">
+            <img src="/images/banner1.png" alt="Wendelstein 7-X related numerical plasma simulation visual" />
+            <div class="home-slide-caption">
+              <strong>Figure Slot 01</strong>
+              Add your first highlight image and caption here.
+            </div>
+          </div>
+          <div class="home-slide">
+            <img src="/images/banner2.jpg" alt="High-performance plasma computation visualization" />
+            <div class="home-slide-caption">
+              <strong>Figure Slot 02</strong>
+              Showcase another method, simulation, or project snapshot.
+            </div>
+          </div>
+          <div class="home-slide">
+            <img src="/images/banner3.png" alt="Numerical method visual with geometric structures" />
+            <div class="home-slide-caption">
+              <strong>Figure Slot 03</strong>
+              Use this panel for updates, milestones, or visual results.
+            </div>
+          </div>
+          <div class="home-slide-dots" data-home-slide-dots>
+            <button type="button" class="home-slide-dot is-active" aria-label="Show slide 1"></button>
+            <button type="button" class="home-slide-dot" aria-label="Show slide 2"></button>
+            <button type="button" class="home-slide-dot" aria-label="Show slide 3"></button>
+          </div>
         </div>
-        <div class="home-banner-card home-banner-card-side">
+        <!-- <div class="home-banner-card home-banner-card-side">
           <span>Geometry</span>
           <span>HPC</span>
           <span>Data Analysis</span>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -97,14 +121,51 @@ const topGroups = [...groups].sort((a, b) => a.data.title.localeCompare(b.data.t
         <h3>Publications</h3>
         <p>Track scientific output across all NMPP topics and software efforts.</p>
       </a>
-      <a class="home-results-card" href="/dissertations/">
-        <h3>Dissertations</h3>
-        <p>Explore student theses and research training output within the division.</p>
-      </a>
       <a class="home-results-card" href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik">
         <h3>Official IPP Page</h3>
         <p>Visit the institutional webpage for the NMPP division at IPP.</p>
       </a>
+      <a class="home-results-card" href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer">
+        <h3>GitHub Organization</h3>
+        <p>Browse repositories, code activity, and open-source tools from NMPP.</p>
+      </a>
     </section>
   </div>
 </Base>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slideshow = document.querySelector('[data-home-slideshow]');
+    if (!slideshow) return;
+
+    const slides = Array.from(slideshow.querySelectorAll('.home-slide'));
+    const dots = Array.from(slideshow.querySelectorAll('.home-slide-dot'));
+    if (slides.length === 0 || dots.length === 0) return;
+
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    const setSlide = (index: number) => {
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+      current = index;
+    };
+
+    const start = () => {
+      if (timer) clearInterval(timer);
+      timer = setInterval(() => {
+        setSlide((current + 1) % slides.length);
+      }, 4800);
+    };
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        setSlide(index);
+        start();
+      });
+    });
+
+    setSlide(0);
+    start();
+  });
+</script>
