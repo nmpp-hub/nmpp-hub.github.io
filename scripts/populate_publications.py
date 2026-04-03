@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import html
 import json
 import sys
@@ -310,6 +311,14 @@ def assign_publication_slugs(publications: list[dict]) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Populate publications cache and generate index page.")
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-fetch metadata from DOI for missing or incomplete cache entries",
+    )
+    args = parser.parse_args()
+
     entries = load_publication_entries()
     print(f"Found {len(entries)} unique DOI entries")
 
@@ -324,7 +333,7 @@ def main() -> None:
 
         publication = cached_pubs.get(doi, {}).copy()
         was_cached = bool(publication)
-        needs_refresh = not was_cached or cache_needs_refresh(publication)
+        needs_refresh = args.refresh and (not was_cached or cache_needs_refresh(publication))
 
         if needs_refresh:
             fetched = fetch_publication_metadata(doi)
@@ -336,6 +345,9 @@ def main() -> None:
                 continue
             else:
                 print("cache-fallback", end=" ")
+        elif not was_cached:
+            print("not in cache (run with --refresh to fetch)")
+            continue
         else:
             print("cached", end=" ")
 

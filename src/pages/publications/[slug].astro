@@ -115,54 +115,41 @@ const detailsSummary = [
       {publication.authors_html ? (
         <p class="publication-authors" set:html={publication.authors_html}></p>
       ) : publication.authors && <p class="publication-authors">{publication.authors}</p>}
-      <div class="publication-actions">
-        <a class="publication-action-link" href={`https://doi.org/${publication.doi}`}>View DOI</a>
-        {publication.url && publication.url !== `https://doi.org/${publication.doi}` && (
-          <a class="publication-action-link publication-action-secondary" href={publication.url}>Source</a>
+      <p class="publication-meta-summary">
+        {detailsSummary && <span>{detailsSummary} · </span>}
+        <a href={`https://doi.org/${publication.doi}`}>{publication.doi}</a>
+      </p>
+    </div>
+
+    {(relatedCodes.length > 0 || relatedGroups.length > 0) && (
+      <section class="publication-section">
+        <h2>Related</h2>
+        {relatedCodes.length > 0 && (
+          <div class="publication-related-block">
+            <h3>Codes</h3>
+            <ul class="publication-pill-list" role="list">
+              {relatedCodes.map(code => (
+                <li>
+                  <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
-      </div>
-    </div>
-
-    <div class="publication-meta-grid">
-      <section class="publication-meta-card">
-        <h2>Details</h2>
-        <p class="publication-meta-summary">
-          {detailsSummary && <span>{detailsSummary}</span>}
-          {detailsSummary && <span> · </span>}
-          <a href={`https://doi.org/${publication.doi}`}>{publication.doi}</a>
-        </p>
+        {relatedGroups.length > 0 && (
+          <div class="publication-related-block">
+            <h3>Groups</h3>
+            <ul class="publication-pill-list" role="list">
+              {relatedGroups.map(group => (
+                <li>
+                  <a href={`/groups/${group}/`}>{groupTitleBySlug.get(group) ?? group}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </section>
-
-      {(relatedCodes.length > 0 || relatedGroups.length > 0) && (
-        <section class="publication-meta-card">
-          <h2>Related</h2>
-          {relatedCodes.length > 0 && (
-            <div class="publication-related-block">
-              <h3>Codes</h3>
-              <ul class="publication-pill-list" role="list">
-                {relatedCodes.map(code => (
-                  <li>
-                    <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {relatedGroups.length > 0 && (
-            <div class="publication-related-block">
-              <h3>Groups</h3>
-              <ul class="publication-pill-list" role="list">
-                {relatedGroups.map(group => (
-                  <li>
-                    <a href={`/groups/${group}/`}>{groupTitleBySlug.get(group) ?? group}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </section>
-      )}
-    </div>
+    )}
 
     <section class="publication-section">
       <h2>Abstract</h2>
