@@ -1,3 +1,18 @@
+# Dissertation input file.
+# Each entry in the list defines one dissertation.
+# Fields:
+#   year: graduation year (integer)
+#   title: dissertation title
+#   author: author name
+#   degree: phd or msc
+#   institution: optional institution name
+#   groups: optional list of group names from groups.yml
+#   codes: optional list of code slugs
+#   link: external URL to the dissertation or document
+#   bibtex: optional BibTeX block; if empty, it may be fetched automatically from mediatum
+#
+# Keep entries organized as desired, then run generate_website.py to update the website.
+#
 dissertations:
   - year: 2025
     title: Development and analysis of structure-preserving finite element methods on non-conforming meshes

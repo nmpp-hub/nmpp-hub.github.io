@@ -1,3 +1,13 @@
+# DOI input file.
+# Each entry under 'publications:' defines a publication by DOI.
+# Fields:
+#   doi: required publication DOI
+#   title: optional title for human-readable context
+#   codes: optional list of code slugs associated with the publication
+#
+# Use this file to add DOI metadata for publications. The generator fetches details automatically.
+# After editing, run generate_website.py to update the website.
+#
 publications:
 - doi: 10.1017/S0022377821001082
   title: Global electromagnetic turbulence simulations of W7-X-like plasmas with GENE-3D
