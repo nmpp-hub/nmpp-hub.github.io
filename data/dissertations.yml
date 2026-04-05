@@ -6,7 +6,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [psydac]
-    link: https://mediatum.ub.tum.de/?id=1776749
+    link: https://mediatum.ub.tum.de/1776749
   - year: 2025
     title: Uncertainty quantification in three-dimensional plasma equilibrium reconstruction
     author: Robert Köberl
@@ -14,7 +14,7 @@ dissertations:
     institution: ""
     groups: []
     codes: []
-    link: https://mediatum.ub.tum.de/?id=1763047
+    link: https://mediatum.ub.tum.de/1763047
   - year: 2025
     title: Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures
     author: Nils Schild
@@ -22,7 +22,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [bsl6d]
-    link: https://mediatum.ub.tum.de/?id=1762920
+    link: https://mediatum.ub.tum.de/1762920
   - year: 2025
     title: Structure-Preserving Neural Networks for Scientific Computing
     author: Benedikt Brantner
@@ -30,7 +30,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [geometricmachinelearning]
-    link: https://mediatum.ub.tum.de/?id=1754855
+    link: https://mediatum.ub.tum.de/1754855
   - year: 2025
     title: Development of an implicit Geometric PIC method
     author: Jiayi Li
