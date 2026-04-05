@@ -1,31 +1,15 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Kinetic and Gyrokinetic Models — NMPP Division at IPP</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/_astro/_slug_.DaGqgKRa.css"><script type="module" src="/_astro/hoisted.BP-Je9as.js"></script></head> <body> <header class="site-header"> <nav class="nav-inner" aria-label="Main navigation"> <a href="/" class="nav-logo">NMPP</a> <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"> <line x1="2" y1="5" x2="18" y2="5"></line> <line x1="2" y1="10" x2="18" y2="10"></line> <line x1="2" y1="15" x2="18" y2="15"></line> </svg> </button> <ul class="nav-links" id="nav-links" role="list"> <li class=""> <a href="/">Home</a> </li> <li class=""> <a href="/codes/">Codes</a> <ul class="nav-dropdown" role="list"> <li><a href="/codes/">Overview</a></li> <li> <a href="/codes/bsl6d/">BSL6D</a> </li><li> <a href="/codes/gempicx/">GEMPICX</a> </li><li> <a href="/codes/geometricintegrators/">GeometricIntegrators.jl</a> </li><li> <a href="/codes/geometricmachinelearning/">GeometricMachineLearning.jl</a> </li><li> <a href="/codes/gvec/">GVEC</a> </li><li> <a href="/codes/gyselalibxx/">Gyselalib++</a> </li><li> <a href="/codes/psydac/">PSYDAC</a> </li><li> <a href="/codes/struphy/">STRUPHY</a> </li> </ul> </li> <li class=""> <a href="/publications/">Publications</a> </li> <li class=""> <a href="/dissertations/">Dissertations</a> </li> <li class="nav-active"> <a href="/groups/">Groups</a> <ul class="nav-dropdown" role="list"> <li><a href="/groups/">Overview</a></li> <li> <a href="/groups/advanced-computing-hub/">Advanced Computing Hub</a> </li><li> <a href="/groups/finite-element-methods/">Finite Element Methods</a> </li><li> <a href="/groups/geometric-numerical-integration/">Geometric Numerical Integration</a> </li><li> <a href="/groups/kinetic-gyrokinetic-models/">Kinetic and Gyrokinetic Models</a> </li><li> <a href="/groups/magnetohydrodynamics/">Magnetohydrodynamics</a> </li><li> <a href="/groups/probabilistic-data-analysis/">Probabilistic Data Analysis and Active Learning</a> </li><li> <a href="/groups/zonal-flows-turbulent/">Zonal Flows in Turbulent Plasmas</a> </li> </ul> </li> <li class=""> <a href="/members/">Members</a> </li> </ul> <div class="site-search" role="search" aria-label="Site search"> <label for="site-search-input" class="sr-only">Search members, codes, and publications</label> <input id="site-search-input" type="search" placeholder="Search members, codes, publications..." autocomplete="off"> <div id="site-search-results" class="site-search-results" hidden></div> </div> <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"> <span class="theme-toggle-light" aria-hidden="true">Light</span> <span class="theme-toggle-dark" aria-hidden="true">Dark</span> </button> </nav> </header> <main> <div class="site-breadcrumb-wrap"> <nav aria-label="Breadcrumb" class="site-breadcrumb"> <ol> <li> <a href="/">Home</a> </li><li> <a href="/groups/">Groups</a> </li><li> <span aria-current="page">Kinetic and Gyrokinetic Models</span> </li> </ol> </nav> </div>  <div class="page-wrapper"> <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">Kinetic and Gyrokinetic Models</h1> <div class="prose"> <h2 id="group-leader">Group Leader</h2>
-<p><strong><a href="/members/stefan-possanner/">Dr. Stefan Possanner</a></strong></p>
-<h2 id="overview">Overview</h2>
-<p>Kinetic theory gives a probabilistic description of the plasma in terms of a distribution function in phase-space. This description is more comprehensive than the magneto-hydrodynamic description but at the same time more computationally demanding. A major challenge for the numerical solution of the kinetic model is the rather high dimensionality of four to six dimensions depending on the geometry and the level of approximation. In addition, the requirements on the resolution are high, since small filaments and turbulent structures can occur in phase-space.</p>
-<p>The kinetics group of the NMPP section works on the development and analysis of robust and efficient algorithms for numerical simulations of the kinetic equations, in its most general six-dimensional form as well as the gyrokinetics equations. Mostly particle-in-cell and semi-Lagrangian methods are developed, but Eulerian methods based on spectral discontinuous Galerkin are also under scrutiny. Moreover, the group works with the analysis of various approximations in the model and on verification.</p>
-<h3 id="geometric-particle-in-cell-methods">Geometric Particle-In-Cell Methods</h3>
-<p>The main focus of the group is currently the development of geometric particle-in-cell algorithms. Such particle-based codes are well-suited for high-dimensional problems and scale relatively well on supercomputers. In collaboration with the groups on “Geometrical numerical integration” and “Geometric finite elements”, we develop structure-preserving schemes for kinetic and hybrid models of various forms. Our methods do not only conserve the physical structure of the problem but also come with favorable numerical stability properties, in particular for long-time simulations. Our theoretical framework allows to mix various types of discretization methods. In particular a Fourier description of the angular dimensions can be combined with a polynomial finite element description of the radial component. At the moment we are interested in extending our methods to reduced models, such as a drift-kinetic description, and regarding the geometry. Together with physicists from Aalto University, it is our goal to simulate plasmas – in particular in the edge and scrape off layer – within the framework of an EUROfusion project.</p>
-<h3 id="interaction-between-plasma-waves-and-energetic-particles">Interaction between plasma waves and energetic particles</h3>
-<p>Waves in plasmas are usually described as magneto-hydrodynamic fluids. However, there may be interaction with fast particles, that cause a growth or damping of these waves. We are currently developing structure-preserving schemes that combine a magneto-hydrodynamical description of the bulk of the plasma with a kinetic description of the fast particles. Our investigations focus on current and pressure coupling models of the full idealized MHD equations and their extension to two-fluid MHD. We collaborate with the MHD group on the stability analysis and a coupling to the equilibrium solver GVEC.</p>
-<h3 id="implementation-on-high-performance-computers-and-efficiency">Implementation on high-performance computers and efficiency</h3>
-<p>Since the solution of the kinetic equations is computationally very demanding, the group is also concerned with efficiency and scalability of the solution methods. During the past years, we have developed two highly optimized codes: The first code is based on the semi-Lagrangian method and has been implemented in collaboration with the Max Planck computing center MPCDF. The second one builds on discontinuous Galerkin methods and has been developed together with TU Munich as a part of the DFG project EXA-DG. The former is currently used by the group “Zonal flows in turbulent plasmas” to compare the kinetic and the gyrokinetic model.</p>
-<p>On the other hand, certain problems can also be solved based on compressed methods – like low rank tensors or sparse grids – with high efficiency.</p>
-<h2 id="additional-links">Additional Links</h2>
-<ul>
-<li><a href="https://www.ipp.mpg.de/4104717/kgkm">KGKM official webpage</a></li>
-</ul> <h2>Members</h2> <ul>
-  <li><a href="/members/dominik-bell/">Dominik Bell</a></li>
-  <li><a href="/members/nathan-marin/">Nathan Marin</a></li>
-  <li><a href="/members/stefan-possanner/">Stefan Possanner</a></li>
-  <li><a href="/members/yingzhe-li/">Yingzhe Li</a></li>
-  <li><a href="/members/byung-kyu-na/">Byung Kyu Na</a>, alumni</li>
-  <li><a href="/members/florian-holderied/">Florian Holderied</a>, alumni</li>
-  <li><a href="/members/jiayi-li/">Jiayi Li</a>, alumni</li>
-  <li><a href="/members/katharina-kormann/">Katharina Kormann</a>, alumni</li>
-  <li><a href="/members/said-hadjout/">Said Hadjout</a>, alumni</li>
-</ul>
- <h2>Publications</h2> <div class="searchable-section">
-    <input type="search" class="section-search-input" placeholder="Search..." aria-label="Search" />
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Bruce Scott — NMPP Division at IPP</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/_astro/_slug_.DaGqgKRa.css"><script type="module" src="/_astro/hoisted.BP-Je9as.js"></script></head> <body> <header class="site-header"> <nav class="nav-inner" aria-label="Main navigation"> <a href="/" class="nav-logo">NMPP</a> <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links"> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"> <line x1="2" y1="5" x2="18" y2="5"></line> <line x1="2" y1="10" x2="18" y2="10"></line> <line x1="2" y1="15" x2="18" y2="15"></line> </svg> </button> <ul class="nav-links" id="nav-links" role="list"> <li class=""> <a href="/">Home</a> </li> <li class=""> <a href="/codes/">Codes</a> <ul class="nav-dropdown" role="list"> <li><a href="/codes/">Overview</a></li> <li> <a href="/codes/bsl6d/">BSL6D</a> </li><li> <a href="/codes/gempicx/">GEMPICX</a> </li><li> <a href="/codes/geometricintegrators/">GeometricIntegrators.jl</a> </li><li> <a href="/codes/geometricmachinelearning/">GeometricMachineLearning.jl</a> </li><li> <a href="/codes/gvec/">GVEC</a> </li><li> <a href="/codes/gyselalibxx/">Gyselalib++</a> </li><li> <a href="/codes/psydac/">PSYDAC</a> </li><li> <a href="/codes/struphy/">STRUPHY</a> </li> </ul> </li> <li class=""> <a href="/publications/">Publications</a> </li> <li class=""> <a href="/dissertations/">Dissertations</a> </li> <li class=""> <a href="/groups/">Groups</a> <ul class="nav-dropdown" role="list"> <li><a href="/groups/">Overview</a></li> <li> <a href="/groups/advanced-computing-hub/">Advanced Computing Hub</a> </li><li> <a href="/groups/finite-element-methods/">Finite Element Methods</a> </li><li> <a href="/groups/geometric-numerical-integration/">Geometric Numerical Integration</a> </li><li> <a href="/groups/kinetic-gyrokinetic-models/">Kinetic and Gyrokinetic Models</a> </li><li> <a href="/groups/magnetohydrodynamics/">Magnetohydrodynamics</a> </li><li> <a href="/groups/probabilistic-data-analysis/">Probabilistic Data Analysis and Active Learning</a> </li><li> <a href="/groups/zonal-flows-turbulent/">Zonal Flows in Turbulent Plasmas</a> </li> </ul> </li> <li class="nav-active"> <a href="/members/">Members</a> </li> </ul> <div class="site-search" role="search" aria-label="Site search"> <label for="site-search-input" class="sr-only">Search members, codes, and publications</label> <input id="site-search-input" type="search" placeholder="Search members, codes, publications..." autocomplete="off"> <div id="site-search-results" class="site-search-results" hidden></div> </div> <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"> <span class="theme-toggle-light" aria-hidden="true">Light</span> <span class="theme-toggle-dark" aria-hidden="true">Dark</span> </button> </nav> </header> <main> <div class="site-breadcrumb-wrap"> <nav aria-label="Breadcrumb" class="site-breadcrumb"> <ol> <li> <a href="/">Home</a> </li><li> <a href="/members/">Members</a> </li><li> <span aria-current="page">Bruce Scott</span> </li> </ol> </nav> </div>  <div class="page-wrapper"> <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">Bruce Scott</h1> <div class="prose"> <h2>Profile</h2> <div class="member-profile-flex">
+<div class="member-profile-photo-wrapper">
+<div class="member-profile-photo-circle member-photo-placeholder"></div>
+
+</div>
+<div class="member-profile-text">
+<p><strong>Group:</strong> <a href="/groups/magnetohydrodynamics/">Magnetohydrodynamics</a></p>
+</div>
+</div>
+ <h2 id="about">About</h2>
+<p>Add custom content here (research interests, bio, etc.)</p> <h2>Publications</h2> <div class="searchable-section">
+    <input type="search" class="section-search-input" placeholder="Search publications..." aria-label="Search publications" />
     <table class="publications-table">
       <thead>
         <tr>
@@ -37,251 +21,59 @@
       </thead>
       <tbody>
     <tr>
-      <td>2025</td>
-      <td><a href="/publications/convergence-of-splitting-methods-on-rotating/">Convergence of Splitting Methods on Rotating Grids for the Magnetized Vlasov Equation</a></td>
-      <td><a href="/members/nils-schild/">Nils Schild</a>, <a href="/members/mario-rath/">Mario Räth</a>, <a href="/members/klaus-hallatschek/">Klaus Hallatschek</a>, <a href="/members/katharina-kormann/">Katharina Kormann</a></td>
-      <td>SIAM Journal on Scientific Computing · <a href="https://doi.org/10.1137/24m1659327">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2024</td>
-      <td><a href="/publications/a-dual-grid-geometric-electromagnetic-particle/">A Dual Grid Geometric Electromagnetic Particle in Cell Method</a></td>
-      <td><a href="/members/katharina-kormann/">Katharina Kormann</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-      <td>SIAM Journal on Scientific Computing · <a href="https://doi.org/10.1137/23M1618910">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2024</td>
-      <td><a href="/publications/a-performance-portable-implementation-of-the/">A performance portable implementation of the semi-Lagrangian algorithm in six dimensions</a></td>
-      <td><a href="/members/nils-schild/">Nils Schild</a>, <a href="/members/mario-rath/">Mario Räth</a>, Sebastian Eibl, <a href="/members/klaus-hallatschek/">Klaus Hallatschek</a>, <a href="/members/katharina-kormann/">Katharina Kormann</a></td>
-      <td>Computer Physics Communications · <a href="https://doi.org/10.1016/j.cpc.2023.108973">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2024</td>
-      <td><a href="/publications/canonical-variables-based-numerical-schemes-for/">Canonical variables based numerical schemes for hybrid plasma models with kinetic ions and massless electrons</a></td>
-      <td><a href="/members/yingzhe-li/">Yingzhe Li</a>, <a href="/members/florian-holderied/">Florian Holderied</a>, <a href="/members/stefan-possanner/">Stefan Possanner</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-      <td>Journal of Computational Physics · <a href="https://doi.org/10.1016/j.jcp.2024.112916">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2024</td>
-      <td><a href="/publications/simulation-of-ion-temperature-gradient-driven/">Simulation of ion temperature gradient driven modes with 6D kinetic Vlasov code</a></td>
-      <td>M. Raeth, <a href="/members/klaus-hallatschek/">K. Hallatschek</a>, <a href="/members/katharina-kormann/">K. Kormann</a></td>
-      <td>Physics of Plasmas · <a href="https://doi.org/10.1063/5.0197970">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2023</td>
-      <td><a href="/publications/a-broken-feec-framework-for-electromagnetic/">A Broken FEEC Framework for Electromagnetic Problems on Mapped Multipatch Domains</a></td>
-      <td><a href="/members/yaman-guclu/">Yaman Güçlü</a>, <a href="/members/said-hadjout/">Said Hadjout</a>, <a href="/members/martin-campos-pinto/">Martin Campos Pinto</a></td>
-      <td>Journal of Scientific Computing · <a href="https://doi.org/10.1007/s10915-023-02351-x">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2023</td>
-      <td><a href="/publications/high-order-structure-preserving-algorithms-for-plasma-hybrid/">High-Order Structure-Preserving Algorithms for Plasma Hybrid Models</a></td>
-      <td><a href="/members/stefan-possanner/">Stefan Possanner</a>, <a href="/members/florian-holderied/">Florian Holderied</a>, <a href="/members/yingzhe-li/">Yingzhe Li</a>, <a href="/members/byung-kyu-na/">Byung Kyu Na</a>, <a href="/members/dominik-bell/">Dominik Bell</a>, <a href="/members/said-hadjout/">Said Hadjout</a>, <a href="/members/yaman-guclu/">Yaman Güçlü</a></td>
-      <td>Lecture Notes in Computer Science · <a href="https://doi.org/10.1007/978-3-031-38299-4_28">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2022</td>
-      <td><a href="/publications/variational-framework-for-structure-preserving-electromagnetic-particle-in-cell/">Variational Framework for Structure-Preserving Electromagnetic Particle-in-Cell Methods</a></td>
-      <td><a href="/members/martin-campos-pinto/">Martin Campos Pinto</a>, <a href="/members/katharina-kormann/">Katharina Kormann</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-      <td>Journal of Scientific Computing · <a href="https://doi.org/10.1007/s10915-022-01781-3">DOI</a></td>
-    </tr>
-    <tr>
       <td>2021</td>
-      <td><a href="/publications/energy-conserving-time-propagation-for-a-structure-preserving/">Energy-conserving time propagation for a structure-preserving particle-in-cell Vlasov–Maxwell solver</a></td>
-      <td><a href="/members/katharina-kormann/">Katharina Kormann</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-      <td>Journal of Computational Physics · <a href="https://doi.org/10.1016/j.jcp.2020.109890">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2021</td>
-      <td><a href="/publications/geometric-particle-in-cell-simulations-of-the-vlasov-maxwell/">Geometric Particle-in-Cell Simulations of the Vlasov-Maxwell System in Curvilinear Coordinates</a></td>
-      <td>Benedikt Perse, <a href="/members/katharina-kormann/">Katharina Kormann</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-      <td>SIAM Journal on Scientific Computing · <a href="https://doi.org/10.1137/20M1311934">DOI</a></td>
+      <td><a href="/publications/building-a-turbulence-transport-workflow-incorporating-uncertainty/">Building a turbulence-transport workflow incorporating uncertainty quantification for predicting core profiles in a tokamak plasma</a></td>
+      <td>D.P. Coster, R. Fischer, O. Hoenen, <a href="/members/jalal-lakhlili/">J. Lakhlili</a>, O.O. Luk, <a href="/members/roland-preuss/">R. Preuss</a>, <a href="/members/bruce-scott/">B.D. Scott</a>, U. von Toussaint, the ASDEX Upgrade Team</td>
+      <td>Nuclear Fusion · <a href="https://doi.org/10.1088/1741-4326/ac359f">DOI</a></td>
     </tr>
     <tr>
       <td>2020</td>
-      <td><a href="/publications/subcycling-of-particle-orbits-in-variational/">Subcycling of particle orbits in variational, geometric electromagnetic particle-in-cell methods</a></td>
-      <td>Eero Hirvijoki, <a href="/members/katharina-kormann/">Katharina Kormann</a>, Filippo Zonta</td>
-      <td>Physics of Plasmas · <a href="https://doi.org/10.1063/5.0006403">DOI</a></td>
+      <td><a href="/publications/2d-full-wave-simulations-of-conventional-reflectometry/">2D full-wave simulations of conventional reflectometry using 3D gyro-fluid plasma turbulence</a></td>
+      <td>J Vicente, <a href="/members/tiago-ribeiro/">T Ribeiro</a>, F Da Silva, S Heuraux, G D Conway, <a href="/members/bruce-scott/">B Scott</a>, C Silva</td>
+      <td>Plasma Physics and Controlled Fusion · <a href="https://doi.org/10.1088/1361-6587/ab5fa8">DOI</a></td>
     </tr>
     <tr>
       <td>2019</td>
-      <td><a href="/publications/a-massively-parallel-semi-lagrangian-solver-for/">A massively parallel semi-Lagrangian solver for the six-dimensional Vlasov–Poisson equation</a></td>
-      <td><a href="/members/katharina-kormann/">Katharina Kormann</a>, Klaus Reuter, Markus Rampp</td>
-      <td>The International Journal of High Performance Computing Applications · <a href="https://doi.org/10.1177/1094342019834644">DOI</a></td>
-    </tr>
-    <tr>
-      <td>2017</td>
-      <td><a href="/publications/gempic-geometric-electromagnetic-particle-in-cell-methods/">GEMPIC: geometric electromagnetic particle-in-cell methods</a></td>
-      <td><a href="/members/michael-kraus/">Michael Kraus</a>, <a href="/members/katharina-kormann/">Katharina Kormann</a>, Philip J. Morrison, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></td>
-      <td>Journal of Plasma Physics · <a href="https://doi.org/10.1017/S002237781700040X">DOI</a></td>
+      <td><a href="/publications/application-of-the-extreme-scaling-computing/">Application of the extreme scaling computing pattern on multiscale fusion plasma modelling</a></td>
+      <td>O. O. Luk, O. Hoenen, O. Perks, K. Brabazon, T. Piontek, P. Kopta, B. Bosak, A. Bottino, <a href="/members/bruce-scott/">B. D. Scott</a>, D. P. Coster</td>
+      <td>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences · <a href="https://doi.org/10.1098/rsta.2018.0152">DOI</a></td>
     </tr>
       </tbody>
     </table>
     <div class="publication-cards">
 <div class="publication-card">
           <div class="publication-card-header">
-            <div class="publication-card-year">2025</div>
-            <div class="publication-card-title"><a href="/publications/convergence-of-splitting-methods-on-rotating/">Convergence of Splitting Methods on Rotating Grids for the Magnetized Vlasov Equation</a></div>
-            <div class="publication-card-authors"><a href="/members/nils-schild/">Nils Schild</a>, <a href="/members/mario-rath/">Mario Räth</a>, <a href="/members/klaus-hallatschek/">Klaus Hallatschek</a>, <a href="/members/katharina-kormann/">Katharina Kormann</a></div>
-            <div class="publication-card-details">
-              SIAM Journal on Scientific Computing · <a href="https://doi.org/10.1137/24m1659327">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2024</div>
-            <div class="publication-card-title"><a href="/publications/a-dual-grid-geometric-electromagnetic-particle/">A Dual Grid Geometric Electromagnetic Particle in Cell Method</a></div>
-            <div class="publication-card-authors"><a href="/members/katharina-kormann/">Katharina Kormann</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></div>
-            <div class="publication-card-details">
-              SIAM Journal on Scientific Computing · <a href="https://doi.org/10.1137/23M1618910">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2024</div>
-            <div class="publication-card-title"><a href="/publications/a-performance-portable-implementation-of-the/">A performance portable implementation of the semi-Lagrangian algorithm in six dimensions</a></div>
-            <div class="publication-card-authors"><a href="/members/nils-schild/">Nils Schild</a>, <a href="/members/mario-rath/">Mario Räth</a>, Sebastian Eibl, <a href="/members/klaus-hallatschek/">Klaus Hallatschek</a>, <a href="/members/katharina-kormann/">Katharina Kormann</a></div>
-            <div class="publication-card-details">
-              Computer Physics Communications · <a href="https://doi.org/10.1016/j.cpc.2023.108973">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2024</div>
-            <div class="publication-card-title"><a href="/publications/canonical-variables-based-numerical-schemes-for/">Canonical variables based numerical schemes for hybrid plasma models with kinetic ions and massless electrons</a></div>
-            <div class="publication-card-authors"><a href="/members/yingzhe-li/">Yingzhe Li</a>, <a href="/members/florian-holderied/">Florian Holderied</a>, <a href="/members/stefan-possanner/">Stefan Possanner</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></div>
-            <div class="publication-card-details">
-              Journal of Computational Physics · <a href="https://doi.org/10.1016/j.jcp.2024.112916">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2024</div>
-            <div class="publication-card-title"><a href="/publications/simulation-of-ion-temperature-gradient-driven/">Simulation of ion temperature gradient driven modes with 6D kinetic Vlasov code</a></div>
-            <div class="publication-card-authors">M. Raeth, <a href="/members/klaus-hallatschek/">K. Hallatschek</a>, <a href="/members/katharina-kormann/">K. Kormann</a></div>
-            <div class="publication-card-details">
-              Physics of Plasmas · <a href="https://doi.org/10.1063/5.0197970">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2023</div>
-            <div class="publication-card-title"><a href="/publications/a-broken-feec-framework-for-electromagnetic/">A Broken FEEC Framework for Electromagnetic Problems on Mapped Multipatch Domains</a></div>
-            <div class="publication-card-authors"><a href="/members/yaman-guclu/">Yaman Güçlü</a>, <a href="/members/said-hadjout/">Said Hadjout</a>, <a href="/members/martin-campos-pinto/">Martin Campos Pinto</a></div>
-            <div class="publication-card-details">
-              Journal of Scientific Computing · <a href="https://doi.org/10.1007/s10915-023-02351-x">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2023</div>
-            <div class="publication-card-title"><a href="/publications/high-order-structure-preserving-algorithms-for-plasma-hybrid/">High-Order Structure-Preserving Algorithms for Plasma Hybrid Models</a></div>
-            <div class="publication-card-authors"><a href="/members/stefan-possanner/">Stefan Possanner</a>, <a href="/members/florian-holderied/">Florian Holderied</a>, <a href="/members/yingzhe-li/">Yingzhe Li</a>, <a href="/members/byung-kyu-na/">Byung Kyu Na</a>, <a href="/members/dominik-bell/">Dominik Bell</a>, <a href="/members/said-hadjout/">Said Hadjout</a>, <a href="/members/yaman-guclu/">Yaman Güçlü</a></div>
-            <div class="publication-card-details">
-              Lecture Notes in Computer Science · <a href="https://doi.org/10.1007/978-3-031-38299-4_28">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2022</div>
-            <div class="publication-card-title"><a href="/publications/variational-framework-for-structure-preserving-electromagnetic-particle-in-cell/">Variational Framework for Structure-Preserving Electromagnetic Particle-in-Cell Methods</a></div>
-            <div class="publication-card-authors"><a href="/members/martin-campos-pinto/">Martin Campos Pinto</a>, <a href="/members/katharina-kormann/">Katharina Kormann</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></div>
-            <div class="publication-card-details">
-              Journal of Scientific Computing · <a href="https://doi.org/10.1007/s10915-022-01781-3">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
             <div class="publication-card-year">2021</div>
-            <div class="publication-card-title"><a href="/publications/energy-conserving-time-propagation-for-a-structure-preserving/">Energy-conserving time propagation for a structure-preserving particle-in-cell Vlasov–Maxwell solver</a></div>
-            <div class="publication-card-authors"><a href="/members/katharina-kormann/">Katharina Kormann</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></div>
+            <div class="publication-card-title"><a href="/publications/building-a-turbulence-transport-workflow-incorporating-uncertainty/">Building a turbulence-transport workflow incorporating uncertainty quantification for predicting core profiles in a tokamak plasma</a></div>
+            <div class="publication-card-authors">D.P. Coster, R. Fischer, O. Hoenen, <a href="/members/jalal-lakhlili/">J. Lakhlili</a>, O.O. Luk, <a href="/members/roland-preuss/">R. Preuss</a>, <a href="/members/bruce-scott/">B.D. Scott</a>, U. von Toussaint, the ASDEX Upgrade Team</div>
             <div class="publication-card-details">
-              Journal of Computational Physics · <a href="https://doi.org/10.1016/j.jcp.2020.109890">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2021</div>
-            <div class="publication-card-title"><a href="/publications/geometric-particle-in-cell-simulations-of-the-vlasov-maxwell/">Geometric Particle-in-Cell Simulations of the Vlasov-Maxwell System in Curvilinear Coordinates</a></div>
-            <div class="publication-card-authors">Benedikt Perse, <a href="/members/katharina-kormann/">Katharina Kormann</a>, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></div>
-            <div class="publication-card-details">
-              SIAM Journal on Scientific Computing · <a href="https://doi.org/10.1137/20M1311934">DOI</a>
+              Nuclear Fusion · <a href="https://doi.org/10.1088/1741-4326/ac359f">DOI</a>
             </div>
           </div>
         </div>
 <div class="publication-card">
           <div class="publication-card-header">
             <div class="publication-card-year">2020</div>
-            <div class="publication-card-title"><a href="/publications/subcycling-of-particle-orbits-in-variational/">Subcycling of particle orbits in variational, geometric electromagnetic particle-in-cell methods</a></div>
-            <div class="publication-card-authors">Eero Hirvijoki, <a href="/members/katharina-kormann/">Katharina Kormann</a>, Filippo Zonta</div>
+            <div class="publication-card-title"><a href="/publications/2d-full-wave-simulations-of-conventional-reflectometry/">2D full-wave simulations of conventional reflectometry using 3D gyro-fluid plasma turbulence</a></div>
+            <div class="publication-card-authors">J Vicente, <a href="/members/tiago-ribeiro/">T Ribeiro</a>, F Da Silva, S Heuraux, G D Conway, <a href="/members/bruce-scott/">B Scott</a>, C Silva</div>
             <div class="publication-card-details">
-              Physics of Plasmas · <a href="https://doi.org/10.1063/5.0006403">DOI</a>
+              Plasma Physics and Controlled Fusion · <a href="https://doi.org/10.1088/1361-6587/ab5fa8">DOI</a>
             </div>
           </div>
         </div>
 <div class="publication-card">
           <div class="publication-card-header">
             <div class="publication-card-year">2019</div>
-            <div class="publication-card-title"><a href="/publications/a-massively-parallel-semi-lagrangian-solver-for/">A massively parallel semi-Lagrangian solver for the six-dimensional Vlasov–Poisson equation</a></div>
-            <div class="publication-card-authors"><a href="/members/katharina-kormann/">Katharina Kormann</a>, Klaus Reuter, Markus Rampp</div>
+            <div class="publication-card-title"><a href="/publications/application-of-the-extreme-scaling-computing/">Application of the extreme scaling computing pattern on multiscale fusion plasma modelling</a></div>
+            <div class="publication-card-authors">O. O. Luk, O. Hoenen, O. Perks, K. Brabazon, T. Piontek, P. Kopta, B. Bosak, A. Bottino, <a href="/members/bruce-scott/">B. D. Scott</a>, D. P. Coster</div>
             <div class="publication-card-details">
-              The International Journal of High Performance Computing Applications · <a href="https://doi.org/10.1177/1094342019834644">DOI</a>
-            </div>
-          </div>
-        </div>
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2017</div>
-            <div class="publication-card-title"><a href="/publications/gempic-geometric-electromagnetic-particle-in-cell-methods/">GEMPIC: geometric electromagnetic particle-in-cell methods</a></div>
-            <div class="publication-card-authors"><a href="/members/michael-kraus/">Michael Kraus</a>, <a href="/members/katharina-kormann/">Katharina Kormann</a>, Philip J. Morrison, <a href="/members/eric-sonnendrucker/">Eric Sonnendrücker</a></div>
-            <div class="publication-card-details">
-              Journal of Plasma Physics · <a href="https://doi.org/10.1017/S002237781700040X">DOI</a>
+              Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences · <a href="https://doi.org/10.1098/rsta.2018.0152">DOI</a>
             </div>
           </div>
         </div>
     </div>
     </div>
- <h2>Dissertations</h2> <div class="searchable-section">
-    <input type="search" class="section-search-input" placeholder="Search..." aria-label="Search" />
-    <table class="publications-table">
-      <thead>
-        <tr>
-          <th>Year</th>
-          <th>Title</th>
-          <th>Authors</th>
-          <th>Details</th>
-        </tr>
-      </thead>
-      <tbody>
-    <tr>
-      <td>2025</td>
-      <td><a href="/dissertations/development-of-an-implicit-geometric-pic/">Development of an implicit Geometric PIC method</a></td>
-      <td><a href="/members/jiayi-li/">Jiayi Li</a></td>
-      <td>MSc · <a href="https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf">Full text</a></td>
-    </tr>
-      </tbody>
-    </table>
-    <div class="publication-cards">
-<div class="publication-card">
-          <div class="publication-card-header">
-            <div class="publication-card-year">2025</div>
-            <div class="publication-card-title"><a href="/dissertations/development-of-an-implicit-geometric-pic/">Development of an implicit Geometric PIC method</a></div>
-            <div class="publication-card-authors"><a href="/members/jiayi-li/">Jiayi Li</a></div>
-            <div class="publication-card-details">
-              MSc · <a href="https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf">Full text</a>
-            </div>
-          </div>
-        </div>
-    </div>
-    </div>
+ <h2>Dissertations</h2> <p>No dissertations yet.</p>
  </div> </div>  </main> <footer class="site-footer"> <div class="footer-inner"> <span>NMPP Division · Max Planck Institute for Plasma Physics</span> <span> <a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik" target="_blank" rel="noopener noreferrer">IPP webpage</a>
 &middot;
 <a href="https://github.com/nmpp-hub/nmpp-hub.github.io" target="_blank" rel="noopener noreferrer">GitHub</a> </span> </div> </footer> <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
