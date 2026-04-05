@@ -269,12 +269,14 @@ def main() -> None:
     )
 
     author_group_map = build_author_group_map()
+    author_to_slug = build_author_to_slug_map()
 
     def enrich(d: dict) -> dict:
         import unicodedata
         key = unicodedata.normalize("NFD", d["author"]).encode("ascii", "ignore").decode("ascii").lower()
         member_info = author_group_map.get(key, {})
-        return {"slug": dissertation_slug(d), **d, **member_info}
+        author_html = render_author_name(d["author"], author_to_slug)
+        return {"slug": dissertation_slug(d), "author_html": author_html, **d, **member_info}
 
     # Write JSON cache for use by the Astro [slug].astro page
     cache = [enrich(d) for d in dissertations]

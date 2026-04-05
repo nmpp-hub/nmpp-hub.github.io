@@ -1,6 +1,7 @@
 [
   {
     "slug": "structure-preserving-neural-networks-for-scientific-computing",
+    "author_html": "<a href=\"/members/benedikt-brantner/\">Benedikt Brantner</a>",
     "year": 2025,
     "title": "Structure-Preserving Neural Networks for Scientific Computing",
     "author": "Benedikt Brantner",
@@ -11,12 +12,13 @@
     "codes": [
       "geometricmachinelearning"
     ],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Brantner, Benedikt},\r\n\ttitle = {Geometric Machine Learning},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {306},\r\n\tlanguage = {en},\r\n\tabstract = {In this dissertation we propose an array of novel neural network architectures and optimization algorithms to treat problems in scientific computing, especially reduced order modeling. All the new architectures are structure-preserving (symplectic, volume-preserving, ...) in some sense and we show how these structure-preserving properties can improve the application of neural networks to problems from scientific computing.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1754855},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Geometric Numerical Integration",
     "group_slug": "geometric-numerical-integration"
   },
   {
     "slug": "development-and-analysis-of-structure-preserving-finite",
+    "author_html": "<a href=\"/members/frederik-schnack/\">Frederik Schnack</a>",
     "year": 2025,
     "title": "Development and analysis of structure-preserving finite element methods on non-conforming meshes",
     "author": "Frederik Schnack",
@@ -33,6 +35,7 @@
   },
   {
     "slug": "development-of-an-implicit-geometric-pic",
+    "author_html": "<a href=\"/members/jiayi-li/\">Jiayi Li</a>",
     "year": 2025,
     "title": "Development of an implicit Geometric PIC method",
     "author": "Jiayi Li",
@@ -49,6 +52,7 @@
   },
   {
     "slug": "development-and-implementation-of-algorithms-for",
+    "author_html": "<a href=\"/members/nils-schild/\">Nils Schild</a>",
     "year": 2025,
     "title": "Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures",
     "author": "Nils Schild",
@@ -59,12 +63,13 @@
     "codes": [
       "bsl6d"
     ],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Schild, Nils},\r\n\ttitle = {Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {123},\r\n\tlanguage = {en},\r\n\tabstract = {This thesis examines simulations of strongly magnetized plasmas, focusing on efficient algorithms for the kinetic Vlasov equation. It develops a performance-portable semi-Lagrangian solver with a rotating velocity grid, outperforming standard methods. The BSL6D simulation code addresses challenges in high-performance computing, and exposes inter-node hardware bottlenecks. A physical model with net-zero charge transport is validated against ion Bernstein wave theory.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1762920},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Zonal Flows in Turbulent Plasmas",
     "group_slug": "zonal-flows-turbulent"
   },
   {
     "slug": "uncertainty-quantification-in-three-dimensional-plasma-equilibrium",
+    "author_html": "<a href=\"/members/robert-koberl/\">Robert Köberl</a>",
     "year": 2025,
     "title": "Uncertainty quantification in three-dimensional plasma equilibrium reconstruction",
     "author": "Robert Köberl",
@@ -79,6 +84,7 @@
   },
   {
     "slug": "development-of-a-geometric-particle-in-cell-method",
+    "author_html": "Alicia Robles Pérez",
     "year": 2024,
     "title": "Development of a Geometric Particle-in-Cell Method for Cylindrical Coordinate Systems",
     "author": "Alicia Robles Pérez",
@@ -93,6 +99,7 @@
   },
   {
     "slug": "development-of-a-geometric-pic-method",
+    "author_html": "Joris Thiel",
     "year": 2024,
     "title": "Development of a Geometric PIC Method for the Linearized Vlasov-Maxwell Equations",
     "author": "Joris Thiel",
@@ -107,6 +114,7 @@
   },
   {
     "slug": "implementation-of-a-galerkin-hodge-operator",
+    "author_html": "Andreas Scheibner",
     "year": 2023,
     "title": "Implementation of a Galerkin Hodge Operator in the GEMPICX Framework",
     "author": "Andreas Scheibner",
@@ -121,6 +129,7 @@
   },
   {
     "slug": "gempicx-an-amrex-based-high-performance-implementation",
+    "author_html": "Brayan Andreu de Albuquerque",
     "year": 2023,
     "title": "GEMPICX: an AMReX Based High-Performance Implementation of Geometric Particle-in-Cell Algorithms",
     "author": "Brayan Andreu de Albuquerque",
@@ -135,6 +144,7 @@
   },
   {
     "slug": "beyond-gyrokinetic-theory-excitation-of",
+    "author_html": "<a href=\"/members/mario-rath/\">Mario Räth</a>",
     "year": 2023,
     "title": "Beyond gyrokinetic theory - Excitation of high-frequency turbulence in 6D Vlasov simulations of magnetized plasmas with steep temperature and density gradients",
     "author": "Mario Räth",
@@ -145,12 +155,13 @@
     "codes": [
       "bsl6d"
     ],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Räth, Mario},\r\n\ttitle = {Beyond gyrokinetic theory},\r\n\tyear = {2023},\r\n\tschool = {Technische Universität München},\r\n\tpages = {161},\r\n\tlanguage = {en},\r\n\tabstract = {In this work, the stability of ion Bernstein waves (IBWs) is extensively studied in various conditions. Analytical investigations of the dispersion relation are combined with numerical simulations with a novel 6D kinetic Vlasov code. In addition, the energy fluxes induced by such waves have been investigated. The analysis shows the relevance of high-frequency waves in regimes of steep gradients, commonly found in the plasma edge of fusion devices.},\r\n\tkeywords = {plasma physics, turbulence, fusion, edge physics, ion bernstein waves},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1703830},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Zonal Flows in Turbulent Plasmas",
     "group_slug": "zonal-flows-turbulent"
   },
   {
     "slug": "reduced-basis-methods-for-problems-with",
+    "author_html": "<a href=\"/members/tobias-blickhan/\">Tobias Blickhan</a>",
     "year": 2023,
     "title": "Reduced basis methods for problems with moving features",
     "author": "Tobias Blickhan",
@@ -159,12 +170,13 @@
     "link": "https://mediatum.ub.tum.de/1726153",
     "groups": [],
     "codes": [],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Blickhan, Tobias Michael},\r\n\ttitle = {Reduced basis methods for problems with moving features},\r\n\tyear = {2024},\r\n\tschool = {Technische Universität München},\r\n\tpages = {145},\r\n\tlanguage = {en},\r\n\tabstract = {This work deals with reduced order methods for the solution of parametrized partial differential equations with moving features. Solutions of these class of equations are well known to be hard to approximate using linear reduced basis methods. We utilize results from optimal transportation theory to extend these methods. In particular, we present a novel registration method that is based on aligning solution features using an approximation of optimal transport maps.},\r\n\tkeywords = {parameterized partial differential equation, model order reduction, snapshot registration, optimal transport, transport-dominated problems},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1726153},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Geometric Numerical Integration",
     "group_slug": "geometric-numerical-integration"
   },
   {
     "slug": "geometric-particle-in-cell-methods-on-mapped-grids",
+    "author_html": "Benedikt Perse",
     "year": 2021,
     "title": "Geometric Particle-in-Cell Methods on Mapped Grids",
     "author": "Benedikt Perse",
