@@ -391,7 +391,10 @@ members:
   group: Magnetohydrodynamics
   codes: []
   alumni: true
-  aliases: []
+  aliases:
+    - B.D. Scott
+    - B. D. Scott
+    - B D Scott
 
 # Probabilistic Data Analysis and Active Learning
 - name: Udo von Toussaint
