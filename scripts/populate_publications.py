@@ -239,24 +239,54 @@ def build_page(publications: list[dict], author_to_slug: dict[str, str] | None =
     if author_to_slug is None:
         author_to_slug = build_author_to_slug_map()
 
-    rows = []
+    # Build table rows
+    table_rows = []
     for publication in publications:
-        rows.append(
-            "\n".join(
-                [
-                    "        <tr>",
-                    f"          <td>{publication['year'] or ''}</td>",
-                    f"          <td>{render_publication_title(publication)}</td>",
-                    f"          <td>{render_author_list(publication['authors'], author_to_slug)}</td>",
-                    f"          <td>{escape_text(publication['venue'])}</td>",
-                    f"          <td>{render_code_links(publication['codes'])}</td>",
-                    f"          <td><a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a></td>",
-                    "        </tr>",
-                ]
-            )
-        )
+        venue = escape_text(publication['venue'])
+        codes = render_code_links(publication['codes'])
+        doi_link = f"<a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a>"
+        details = f"{venue}"
+        if codes:
+            details += f" · {codes}"
+        details += f" · {doi_link}"
 
-    body = "\n".join(rows)
+        row = f"""    <tr>
+      <td>{publication['year'] or ''}</td>
+      <td>{render_publication_title(publication)}</td>
+      <td>{render_author_list(publication['authors'], author_to_slug)}</td>
+      <td>{details}</td>
+    </tr>"""
+        table_rows.append(row)
+
+    table_body = "\n".join(table_rows)
+
+    # Build cards
+    cards = []
+    for publication in publications:
+        venue = escape_text(publication['venue'])
+        codes = render_code_links(publication['codes'])
+        doi_link = f"<a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a>"
+        details = f"{venue}"
+        if codes:
+            details += f" · {codes}"
+        details += f" · {doi_link}"
+
+        card = f"""
+        <div class="publication-card">
+          <div class="publication-card-header">
+            <div class="publication-card-year">{publication['year'] or ''}</div>
+            <div class="publication-card-title">{render_publication_title(publication)}</div>
+            <div class="publication-card-authors">{render_author_list(publication['authors'], author_to_slug)}</div>
+            <div class="publication-card-details">
+              {details}
+            </div>
+          </div>
+        </div>
+        """
+        cards.append(card.strip())
+
+    cards_body = "\n".join(cards)
+
     return f"""---
 import Base from '../../layouts/Base.astro';
 ---
@@ -276,21 +306,23 @@ import Base from '../../layouts/Base.astro';
 
     <input id="pub-search" type="search" placeholder="Search by title, author, year, journal, group, code, or keyword..." aria-label="Search publications" />
 
-    <table id="publications-table">
+    <table id="publications-table" class="publications-table">
       <thead>
         <tr>
           <th>Year</th>
           <th>Title</th>
           <th>Authors</th>
-          <th>Venue</th>
-          <th>Codes</th>
-          <th>Link</th>
+          <th>Details</th>
         </tr>
       </thead>
       <tbody>
-{body}
+{table_body}
       </tbody>
     </table>
+
+    <div id="publications-cards" class="publication-cards">
+{cards_body}
+    </div>
   </div>
 </Base>
 
@@ -298,8 +330,8 @@ import Base from '../../layouts/Base.astro';
   document.addEventListener('DOMContentLoaded', function () {{
     const input = document.getElementById('pub-search') as HTMLInputElement | null;
     const table = document.getElementById('publications-table') as HTMLTableElement | null;
-    if (!input || !table || !table.tBodies.length) return;
-    const rows = Array.from(table.tBodies[0].rows);
+    const cardsContainer = document.getElementById('publications-cards') as HTMLElement | null;
+    if (!input) return;
 
     function normalize(text: string) {{
       return text.toLowerCase();
@@ -307,10 +339,24 @@ import Base from '../../layouts/Base.astro';
 
     input.addEventListener('input', function () {{
       const query = normalize(input.value.trim());
-      rows.forEach(row => {{
-        const visible = query === '' || normalize(row.textContent ?? '').includes(query);
-        row.style.display = visible ? '' : 'none';
-      }});
+
+      // Handle table rows
+      if (table) {{
+        const rows = Array.from(table.querySelectorAll('tbody tr'));
+        rows.forEach(row => {{
+          const visible = query === '' || normalize(row.textContent ?? '').includes(query);
+          row.style.display = visible ? '' : 'none';
+        }});
+      }}
+
+      // Handle cards
+      if (cardsContainer) {{
+        const cards = Array.from(cardsContainer.querySelectorAll('.publication-card'));
+        cards.forEach(card => {{
+          const visible = query === '' || normalize(card.textContent ?? '').includes(query);
+          card.style.display = visible ? '' : 'none';
+        }});
+      }}
     }});
   }});
 </script>
