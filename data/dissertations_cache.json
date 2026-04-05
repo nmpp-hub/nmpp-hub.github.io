@@ -11,7 +11,7 @@
     "codes": [
       "geometricmachinelearning"
     ],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Brantner, Benedikt},\r\n\ttitle = {Geometric Machine Learning},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {306},\r\n\tlanguage = {en},\r\n\tabstract = {In this dissertation we propose an array of novel neural network architectures and optimization algorithms to treat problems in scientific computing, especially reduced order modeling. All the new architectures are structure-preserving (symplectic, volume-preserving, ...) in some sense and we show how these structure-preserving properties can improve the application of neural networks to problems from scientific computing.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1754855},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Geometric Numerical Integration",
     "group_slug": "geometric-numerical-integration"
   },
@@ -59,7 +59,7 @@
     "codes": [
       "bsl6d"
     ],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Schild, Nils},\r\n\ttitle = {Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {123},\r\n\tlanguage = {en},\r\n\tabstract = {This thesis examines simulations of strongly magnetized plasmas, focusing on efficient algorithms for the kinetic Vlasov equation. It develops a performance-portable semi-Lagrangian solver with a rotating velocity grid, outperforming standard methods. The BSL6D simulation code addresses challenges in high-performance computing, and exposes inter-node hardware bottlenecks. A physical model with net-zero charge transport is validated against ion Bernstein wave theory.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1762920},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Zonal Flows in Turbulent Plasmas",
     "group_slug": "zonal-flows-turbulent"
   },
@@ -73,7 +73,7 @@
     "link": "https://mediatum.ub.tum.de/?id=1763047",
     "groups": [],
     "codes": [],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Köberl, Robert},\r\n\ttitle = {Uncertainty quantification in three-dimensional plasma equilibrium reconstruction},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {153},\r\n\tlanguage = {en},\r\n\tabstract = {The ideal magnetohydrodynamic (MHD) equilibrium is central to analyzing magnetically confined plasmas. Equilibrium reconstruction involves inferring an MHD equilibrium from experimental data. For 3D geometries, such as stellarators, this can be computationally intensive. This work explores probabilistic approaches for uncertainty quantification in equilibrium reconstruction using data-driven methods like dimensionality reduction and surrogate modeling. This enables sample-based uncertainty estimates on equilibrium quantities while reducing computational costs.},\r\n\tkeywords = {Plasma Physics;Ideal Magnetohydrodynamics;Equilibrium Reconstruction;Uncertainty Quantification;Bayesian Inference;Surrogate Modeling;Dimensionality Reduction},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1763047},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Magnetohydrodynamics",
     "group_slug": "magnetohydrodynamics"
   },
@@ -145,7 +145,7 @@
     "codes": [
       "bsl6d"
     ],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Räth, Mario},\r\n\ttitle = {Beyond gyrokinetic theory},\r\n\tyear = {2023},\r\n\tschool = {Technische Universität München},\r\n\tpages = {161},\r\n\tlanguage = {en},\r\n\tabstract = {In this work, the stability of ion Bernstein waves (IBWs) is extensively studied in various conditions. Analytical investigations of the dispersion relation are combined with numerical simulations with a novel 6D kinetic Vlasov code. In addition, the energy fluxes induced by such waves have been investigated. The analysis shows the relevance of high-frequency waves in regimes of steep gradients, commonly found in the plasma edge of fusion devices.},\r\n\tkeywords = {plasma physics, turbulence, fusion, edge physics, ion bernstein waves},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1703830},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Zonal Flows in Turbulent Plasmas",
     "group_slug": "zonal-flows-turbulent"
   },
@@ -159,7 +159,7 @@
     "link": "https://mediatum.ub.tum.de/1726153",
     "groups": [],
     "codes": [],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Blickhan, Tobias Michael},\r\n\ttitle = {Reduced basis methods for problems with moving features},\r\n\tyear = {2024},\r\n\tschool = {Technische Universität München},\r\n\tpages = {145},\r\n\tlanguage = {en},\r\n\tabstract = {This work deals with reduced order methods for the solution of parametrized partial differential equations with moving features. Solutions of these class of equations are well known to be hard to approximate using linear reduced basis methods. We utilize results from optimal transportation theory to extend these methods. In particular, we present a novel registration method that is based on aligning solution features using an approximation of optimal transport maps.},\r\n\tkeywords = {parameterized partial differential equation, model order reduction, snapshot registration, optimal transport, transport-dominated problems},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1726153},\r\n\tdoi = {},\r\n}",
+    "bibtex": "",
     "group": "Geometric Numerical Integration",
     "group_slug": "geometric-numerical-integration"
   },
