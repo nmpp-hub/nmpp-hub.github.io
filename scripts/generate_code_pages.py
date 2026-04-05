@@ -143,7 +143,9 @@ def build_publications_section(publications: list[dict], author_to_slug: dict[st
     table_body = "\n".join(table_rows)
     cards_body = "\n".join(cards)
 
-    return f"""<table id="publications-table" class="publications-table">
+    return f"""<div class="searchable-section">
+    <input type="search" class="section-search-input" placeholder="Search..." aria-label="Search" />
+    <table class="publications-table">
       <thead>
         <tr>
           <th>Year</th>
@@ -156,9 +158,9 @@ def build_publications_section(publications: list[dict], author_to_slug: dict[st
 {table_body}
       </tbody>
     </table>
-
-    <div id="publications-cards" class="publication-cards">
+    <div class="publication-cards">
 {cards_body}
+    </div>
     </div>"""
 
 
@@ -200,7 +202,9 @@ def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[
     table_body = "\n".join(table_rows)
     cards_body = "\n".join(cards)
 
-    return f"""<table id="publications-table" class="publications-table">
+    return f"""<div class="searchable-section">
+    <input type="search" class="section-search-input" placeholder="Search..." aria-label="Search" />
+    <table class="publications-table">
       <thead>
         <tr>
           <th>Year</th>
@@ -213,9 +217,9 @@ def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[
 {table_body}
       </tbody>
     </table>
-
-    <div id="publications-cards" class="publication-cards">
+    <div class="publication-cards">
 {cards_body}
+    </div>
     </div>"""
 
 

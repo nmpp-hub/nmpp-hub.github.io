@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+import urllib.request
 from pathlib import Path
 
 # Add parent directory to path to import site_generation
@@ -32,6 +33,31 @@ DEGREE_LABELS = {
 }
 
 
+def fetch_mediatum_bibtex(url: str) -> str:
+    """Fetch BibTeX from a mediatum URL if it matches the expected pattern."""
+    import re
+    
+    # Extract ID from mediatum URL
+    match = re.search(r'mediatum\.ub\.tum\.de/\??(?:id=)?(\d+)', url)
+    if not match:
+        return ""
+    
+    doc_id = match.group(1)
+    bibtex_url = f"https://mediatum.ub.tum.de/export/{doc_id}/bibtex"
+    
+    try:
+        req = urllib.request.Request(
+            bibtex_url,
+            headers={
+                "User-Agent": "nmpp-dissertations-generator/1.0 (mailto:webmaster@nmpp-hub.github.io)",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=10) as response:
+            return response.read().decode("utf-8").strip()
+    except Exception:
+        return ""
+
+
 def validate_dissertation(raw: dict, index: int) -> dict:
     year = int(raw.get("year"))
     title = str(raw.get("title", "")).strip()
@@ -51,6 +77,13 @@ def validate_dissertation(raw: dict, index: int) -> dict:
     if not link:
         raise ValueError(f"Dissertation {title} is missing a link")
 
+    # Fetch BibTeX for mediatum links
+    bibtex = ""
+    if "mediatum.ub.tum.de" in link:
+        bibtex = fetch_mediatum_bibtex(link)
+        if bibtex:
+            print(f"  Fetched BibTeX for: {title}")
+
     return {
         "year": year,
         "title": title,
@@ -60,6 +93,7 @@ def validate_dissertation(raw: dict, index: int) -> dict:
         "link": link,
         "groups": groups,
         "codes": codes,
+        "bibtex": bibtex,
     }
 
 

@@ -12,6 +12,7 @@ type Dissertation = {
   link: string;
   codes?: string[];
   groups?: string[];
+  bibtex?: string;
 };
 
 const DEGREE_LABELS: Record<string, string> = { phd: 'PhD', msc: 'MSc' };
@@ -49,6 +50,15 @@ const degree = DEGREE_LABELS[dissertation.degree] ?? dissertation.degree;
 const codes = await getCollection('codes');
 const codeTitleBySlug = new Map(codes.map(c => [c.slug, c.data.title]));
 const relatedCodes = (dissertation.codes ?? []).filter(Boolean);
+
+const bibtex = dissertation.bibtex?.trim() ?? '';
+
+function formatBibtexEntry(entry: string): string {
+  // Basic BibTeX formatting - split on @ and add newlines
+  return entry.replace(/(@\w+{[^}]+},?\s*)/g, '$1\n');
+}
+
+const bibtexDisplay = bibtex ? formatBibtexEntry(bibtex) : '';
 ---
 
 <Base
@@ -78,6 +88,48 @@ const relatedCodes = (dissertation.codes ?? []).filter(Boolean);
       ) : (
         <p class="publication-empty">No abstract available.</p>
       )}
+
+      <div class="publication-section-heading">
+        <h2>BibTeX</h2>
+        {bibtexDisplay && (
+          <button class="publication-copy-button" type="button" data-copy-target="publication-bibtex-code">
+            Copy
+          </button>
+        )}
+      </div>
+      {bibtex ? (
+        <pre class="publication-bibtex"><code id="publication-bibtex-code">{bibtexDisplay}</code></pre>
+      ) : (
+        <p class="publication-empty">No BibTeX entry was returned for this dissertation.</p>
+      )}
     </div>
   </div>
 </Base>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.publication-copy-button');
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    button.addEventListener('click', async () => {
+      const targetId = button.dataset.copyTarget;
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      try {
+        await navigator.clipboard.writeText(target.textContent ?? '');
+        const originalText = button.textContent;
+        button.textContent = 'Copied';
+        window.setTimeout(() => {
+          button.textContent = originalText;
+        }, 1600);
+      } catch {
+        button.textContent = 'Failed';
+        window.setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 1600);
+      }
+    });
+  });
+</script>
