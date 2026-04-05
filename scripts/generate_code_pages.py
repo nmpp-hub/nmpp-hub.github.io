@@ -105,85 +105,118 @@ def build_members_list(members: list[dict]) -> str:
     return f"<ul>\n{body}\n</ul>"
 
 
-def build_publications_table(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_publications_section(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
     if not publications:
         return "<p>No publications linked to this code yet.</p>"
 
     if author_to_slug is None:
         author_to_slug = build_author_to_slug_map()
 
-    rows = []
+    table_rows = []
+    cards = []
     for pub in publications:
-        rows.append(
-            "\n".join(
-                [
-                    "  <tr>",
-                    f"    <td>{pub['year'] or ''}</td>",
-                    f"    <td>{render_publication_title(pub)}</td>",
-                    f"    <td>{render_author_list(pub['authors'], author_to_slug)}</td>",
-                    f"    <td>{escape_text(pub['venue'])}</td>",
-                    f'    <td><a href="https://doi.org/{escape_text(pub["doi"])}">DOI</a></td>',
-                    "  </tr>",
-                ]
-            )
-        )
+        venue = escape_text(pub['venue'])
+        doi_link = f"<a href=\"https://doi.org/{escape_text(pub['doi'])}\">DOI</a>"
+        details = f"{venue} · {doi_link}"
 
-    body = "\n".join(rows)
-    return f"""<table>
-<thead>
-  <tr>
-    <th>Year</th>
-    <th>Title</th>
-    <th>Authors</th>
-    <th>Venue</th>
-    <th>Link</th>
-  </tr>
-</thead>
-<tbody>
-{body}
-</tbody>
-</table>"""
+        table_rows.append(f"""    <tr>
+      <td>{pub['year'] or ''}</td>
+      <td>{render_publication_title(pub)}</td>
+      <td>{render_author_list(pub['authors'], author_to_slug)}</td>
+      <td>{details}</td>
+    </tr>""")
+
+        card = f"""
+        <div class="publication-card">
+          <div class="publication-card-header">
+            <div class="publication-card-year">{pub['year'] or ''}</div>
+            <div class="publication-card-title">{render_publication_title(pub)}</div>
+            <div class="publication-card-authors">{render_author_list(pub['authors'], author_to_slug)}</div>
+            <div class="publication-card-details">
+              {details}
+            </div>
+          </div>
+        </div>
+        """
+        cards.append(card.strip())
+
+    table_body = "\n".join(table_rows)
+    cards_body = "\n".join(cards)
+
+    return f"""<table id="publications-table" class="publications-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Title</th>
+          <th>Authors</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+{table_body}
+      </tbody>
+    </table>
+
+    <div id="publications-cards" class="publication-cards">
+{cards_body}
+    </div>"""
 
 
-def build_dissertations_table(dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
     if not dissertations:
         return "<p>No dissertations linked to this code yet.</p>"
 
     if author_to_slug is None:
         author_to_slug = build_author_to_slug_map()
 
-    rows = []
+    table_rows = []
+    cards = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        rows.append(
-            "\n".join(
-                [
-                    "  <tr>",
-                    f"    <td>{diss['year']}</td>",
-                    f"    <td>{escape_text(diss['title'])}</td>",
-                    f"    <td>{render_author_list(diss['author'], author_to_slug)}</td>",
-                    f"    <td>{escape_text(degree)}</td>",
-                    f'    <td><a href="{escape_text(diss["link"])}">Full text</a></td>',
-                    "  </tr>",
-                ]
-            )
-        )
+        link = f"<a href=\"{escape_text(diss['link'])}\">Full text</a>"
+        details = f"{degree} · {link}"
 
-    body = "\n".join(rows)
-    return f"""<table>
-<thead>
-  <tr>
-    <th>Year</th>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Degree</th>
-    <th>Link</th>
-  </tr>
-</thead>
-<tbody>
-{body}
-</tbody>
-</table>"""
+        table_rows.append(f"""    <tr>
+      <td>{diss['year']}</td>
+      <td>{escape_text(diss['title'])}</td>
+      <td>{render_author_list(diss['author'], author_to_slug)}</td>
+      <td>{details}</td>
+    </tr>""")
+
+        card = f"""
+        <div class="publication-card">
+          <div class="publication-card-header">
+            <div class="publication-card-year">{diss['year']}</div>
+            <div class="publication-card-title">{escape_text(diss['title'])}</div>
+            <div class="publication-card-authors">{render_author_list(diss['author'], author_to_slug)}</div>
+            <div class="publication-card-details">
+              {details}
+            </div>
+          </div>
+        </div>
+        """
+        cards.append(card.strip())
+
+    table_body = "\n".join(table_rows)
+    cards_body = "\n".join(cards)
+
+    return f"""<table id="publications-table" class="publications-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Title</th>
+          <th>Authors</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+{table_body}
+      </tbody>
+    </table>
+
+    <div id="publications-cards" class="publication-cards">
+{cards_body}
+    </div>"""
 
 
 def build_new_code_page(slug: str) -> str:
@@ -235,10 +268,10 @@ def main() -> None:
             build_members_list(members) + "\n", encoding="utf-8"
         )
         (CODES_AUTO_DIR / f"{slug}.publications.html").write_text(
-            build_publications_table(pubs, author_to_slug) + "\n", encoding="utf-8"
+            build_publications_section(pubs, author_to_slug) + "\n", encoding="utf-8"
         )
         (CODES_AUTO_DIR / f"{slug}.dissertations.html").write_text(
-            build_dissertations_table(diss, author_to_slug) + "\n", encoding="utf-8"
+            build_dissertations_section(diss, author_to_slug) + "\n", encoding="utf-8"
         )
 
         print(f"  {slug}: {len(members)} members, {len(pubs)} publications, {len(diss)} dissertations")

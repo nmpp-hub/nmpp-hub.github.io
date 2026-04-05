@@ -1161,7 +1161,6 @@ html[data-theme='dark'] .publication-bibtex {
     font-size: 0.85rem;
   }
 }
-}
 
 @media (max-width: 640px) {
   .site-footer {
