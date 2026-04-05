@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import argparse
+import json
 import sys
 import urllib.request
 from pathlib import Path
@@ -77,13 +79,6 @@ def validate_dissertation(raw: dict, index: int) -> dict:
     if not link:
         raise ValueError(f"Dissertation {title} is missing a link")
 
-    # Fetch BibTeX for mediatum links
-    bibtex = ""
-    if "mediatum.ub.tum.de" in link:
-        bibtex = fetch_mediatum_bibtex(link)
-        if bibtex:
-            print(f"  Fetched BibTeX for: {title}")
-
     return {
         "year": year,
         "title": title,
@@ -93,7 +88,7 @@ def validate_dissertation(raw: dict, index: int) -> dict:
         "link": link,
         "groups": groups,
         "codes": codes,
-        "bibtex": bibtex,
+        "bibtex": "",  # Will be set later based on cache/refresh logic
     }
 
 
@@ -252,7 +247,13 @@ def build_author_group_map() -> dict[str, dict]:
 
 
 def main() -> None:
-    import json
+    parser = argparse.ArgumentParser(description="Generate dissertation pages and cache.")
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-fetch BibTeX from mediatum for missing or incomplete cache entries",
+    )
+    args = parser.parse_args()
 
     raw_dissertations = load_yaml(DATA_FILE).get("dissertations", [])
     if not isinstance(raw_dissertations, list):
@@ -260,21 +261,56 @@ def main() -> None:
             "dissertations.yml must contain a top-level 'dissertations' list"
         )
 
-    dissertations = [
-        validate_dissertation(raw_dissertation, index + 1)
-        for index, raw_dissertation in enumerate(raw_dissertations)
-    ]
+    # Load existing cache
+    cached_dissertations = {}
+    if CACHE_FILE.exists():
+        try:
+            cache_data = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+            cached_dissertations = {d["slug"]: d for d in cache_data}
+        except (json.JSONDecodeError, KeyError):
+            pass  # Start with empty cache if corrupted
+
+    dissertations = []
+    for index, raw_dissertation in enumerate(raw_dissertations, 1):
+        dissertation = validate_dissertation(raw_dissertation, index)
+        
+        # Check if we need to fetch BibTeX
+        slug = dissertation_slug(dissertation)
+        cached = cached_dissertations.get(slug, {})
+        was_cached = bool(cached.get("bibtex", "").strip())
+        
+        # Fetch BibTeX if not cached OR if refresh is requested
+        if not was_cached or args.refresh:
+            if "mediatum.ub.tum.de" in dissertation["link"]:
+                bibtex = fetch_mediatum_bibtex(dissertation["link"])
+                if bibtex:
+                    dissertation["bibtex"] = bibtex
+                    print(f"  Fetched BibTeX for: {dissertation['title'][:50]}...")
+                elif was_cached:
+                    # Keep existing BibTeX if fetch failed but we had cached data
+                    dissertation["bibtex"] = cached.get("bibtex", "")
+            elif was_cached:
+                # Keep existing BibTeX for non-mediatum links
+                dissertation["bibtex"] = cached.get("bibtex", "")
+        else:
+            # Use cached BibTeX
+            dissertation["bibtex"] = cached.get("bibtex", "")
+        
+        dissertations.append(dissertation)
+
     dissertations.sort(
         key=lambda dissertation: (-dissertation["year"], dissertation["author"].lower())
     )
 
     author_group_map = build_author_group_map()
+    author_to_slug = build_author_to_slug_map()
 
     def enrich(d: dict) -> dict:
         import unicodedata
         key = unicodedata.normalize("NFD", d["author"]).encode("ascii", "ignore").decode("ascii").lower()
         member_info = author_group_map.get(key, {})
-        return {"slug": dissertation_slug(d), **d, **member_info}
+        author_html = render_author_name(d["author"], author_to_slug)
+        return {"slug": dissertation_slug(d), "author_html": author_html, **d, **member_info}
 
     # Write JSON cache for use by the Astro [slug].astro page
     cache = [enrich(d) for d in dissertations]

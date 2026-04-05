@@ -7,6 +7,7 @@ type Dissertation = {
   year: number;
   title: string;
   author: string;
+  author_html?: string;
   degree: string;
   institution?: string;
   link: string;
@@ -72,7 +73,7 @@ const bibtexDisplay = bibtex ? formatBibtexEntry(bibtex) : '';
   <div class="page-wrapper">
     <h1 style="font-size: 2rem; margin-bottom: 1rem; word-break: break-word; overflow-wrap: anywhere;">{dissertation.title}</h1>
     <div class="prose">
-      <p><strong>{dissertation.author}</strong></p>
+      <p><strong set:html={dissertation.author_html || dissertation.author}></strong></p>
       <p class="publication-meta-summary">
         {dissertation.year} · {degree}{dissertation.institution ? ` · ${dissertation.institution}` : ''}
         {(dissertation as any).group_slug && <span> · <a href={`/groups/${(dissertation as any).group_slug}/`}>{(dissertation as any).group}</a></span>}

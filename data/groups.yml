@@ -1,3 +1,15 @@
+# Group page input file.
+# Each entry under 'groups:' defines a research group and its metadata.
+# Fields:
+#   name: group display name
+#   leader: group leader name
+#   slug: page URL slug for /groups/<slug>/
+#   abbr: short abbreviation
+#   ipp_url: optional external IPP page URL
+#
+# Slugs must be unique. Add new groups here before assigning them to members or dissertations.
+# Run generate_website.py after editing to update the website.
+#
 groups:
 - name: Kinetic and Gyrokinetic Models
   leader: Dr. Stefan Possanner

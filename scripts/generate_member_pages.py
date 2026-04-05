@@ -149,6 +149,22 @@ def load_members() -> list[dict]:
             "alumni": bool(entry.get("alumni", False)),
             "picture": str(entry.get("picture", "") or "").strip(),
             "description": str(entry.get("description", "")).strip(),
+            # Social/academic profile links
+            "github": str(entry.get("github", "")).strip(),
+            "gitlab": str(entry.get("gitlab", "")).strip(),
+            "gitlab_mpcdf": str(entry.get("gitlab_mpcdf", "")).strip(),
+            "google_scholar": str(entry.get("google_scholar", "")).strip(),
+            "orcid": str(entry.get("orcid", "")).strip(),
+            "linkedin": str(entry.get("linkedin", "")).strip(),
+            "website": str(entry.get("website", "")).strip(),
+            "researchgate": str(entry.get("researchgate", "")).strip(),
+            "twitter": str(entry.get("twitter", "")).strip(),
+            "x": str(entry.get("x", "")).strip(),
+            "bluesky": str(entry.get("bluesky", "")).strip(),
+            "mastodon": str(entry.get("mastodon", "")).strip(),
+            "academia_edu": str(entry.get("academia_edu", "")).strip(),
+            "semanticscholar": str(entry.get("semanticscholar", "")).strip(),
+            "dblp": str(entry.get("dblp", "")).strip(),
         }
         members.append(member)
     return members
@@ -221,6 +237,50 @@ def member_matches_publication(member: dict, publication: dict, author_to_slug: 
     return False
 
 
+def build_social_links(member: dict) -> str:
+    """Build social/academic profile links as icons."""
+    social_platforms = {
+        "github": {"icon": "fab fa-github", "url_template": "https://github.com/{username}"},
+        "gitlab": {"icon": "fab fa-gitlab", "url_template": "https://gitlab.com/{username}"},
+        "gitlab_mpcdf": {"icon": "fab fa-gitlab", "url_template": "https://gitlab.mpcdf.mpg.de/{username}"},
+        "google_scholar": {"icon": "fas fa-graduation-cap", "url_template": "https://scholar.google.com/citations?user={user_id}"},
+        "orcid": {"icon": "fab fa-orcid", "url_template": "https://orcid.org/{orcid_id}"},
+        "linkedin": {"icon": "fab fa-linkedin", "url_template": "https://linkedin.com/in/{username}"},
+        "website": {"icon": "fas fa-globe", "url_template": "{url}"},
+        "researchgate": {"icon": "fab fa-researchgate", "url_template": "https://researchgate.net/profile/{username}"},
+        "twitter": {"icon": "fab fa-twitter", "url_template": "https://twitter.com/{username}"},
+        "x": {"icon": "fab fa-x-twitter", "url_template": "https://x.com/{username}"},
+        "bluesky": {"icon": "fas fa-cloud", "url_template": "https://bsky.app/profile/{handle}"},
+        "mastodon": {"icon": "fab fa-mastodon", "url_template": "{url}"},
+        "academia_edu": {"icon": "fas fa-university", "url_template": "https://independent.academia.edu/{username}"},
+        "semanticscholar": {"icon": "fas fa-book", "url_template": "https://semanticscholar.org/author/{author_id}"},
+        "dblp": {"icon": "fas fa-database", "url_template": "https://dblp.org/pid/{pid}"},
+    }
+
+    links = []
+    for platform, config in social_platforms.items():
+        if platform in member and member[platform]:
+            value = member[platform]
+            if platform == "website" or platform == "mastodon":
+                url = config["url_template"].format(url=value)
+            elif platform == "google_scholar":
+                url = config["url_template"].format(user_id=value)
+            elif platform == "orcid":
+                url = config["url_template"].format(orcid_id=value)
+            elif platform == "semanticscholar":
+                url = config["url_template"].format(author_id=value)
+            elif platform == "dblp":
+                url = config["url_template"].format(pid=value)
+            else:
+                url = config["url_template"].format(username=value)
+
+            links.append(f'<a href="{escape_text(url)}" target="_blank" rel="noopener noreferrer" class="social-link" title="{platform.replace("_", " ").title()}"><i class="{config["icon"]}"></i></a>')
+
+    if links:
+        return f'<div class="social-links">{"".join(links)}</div>'
+    return ""
+
+
 def build_profile_section(member: dict, group_slug_map: dict[str, str]) -> str:
     """Build the profile section with picture on left (circular), info on right."""
     # Profile picture (left side) - circular frame
@@ -258,10 +318,14 @@ def build_profile_section(member: dict, group_slug_map: dict[str, str]) -> str:
 
     info = "\n".join(info_lines) if info_lines else "<p>No additional information available.</p>"
 
+    # Social links section
+    social_links = build_social_links(member)
+
     # Return HTML with two-column layout: photo on left, info on right
     return f"""<div class="member-profile-flex">
 <div class="member-profile-photo-wrapper">
 {photo}
+{social_links}
 </div>
 <div class="member-profile-text">
 {info}

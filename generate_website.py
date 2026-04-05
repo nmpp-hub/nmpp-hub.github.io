@@ -49,15 +49,16 @@ def main() -> int:
     parser.add_argument(
         "--refresh",
         action="store_true",
-        help="Re-fetch publication metadata from DOI for missing or incomplete cache entries",
+        help="Re-fetch publication metadata from DOI and dissertation BibTeX from mediatum for missing or incomplete cache entries",
     )
     args = parser.parse_args()
 
     scripts_dir = ROOT / "scripts"
     populate_args = ["--refresh"] if args.refresh else []
+    dissertation_args = ["--refresh"] if args.refresh else []
     scripts = [
         (scripts_dir / "populate_publications.py", "Populate Publications", populate_args),
-        (scripts_dir / "generate_dissertations_page.py", "Generate Dissertations Page", []),
+        (scripts_dir / "generate_dissertations_page.py", "Generate Dissertations Page", dissertation_args),
         (scripts_dir / "generate_code_pages.py", "Generate Code Pages", []),
         (scripts_dir / "generate_members_page.py", "Generate Members Page", []),
         (scripts_dir / "generate_member_pages.py", "Generate Individual Member Pages", []),

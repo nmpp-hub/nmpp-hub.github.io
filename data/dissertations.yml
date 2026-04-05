@@ -1,3 +1,18 @@
+# Dissertation input file.
+# Each entry in the list defines one dissertation.
+# Fields:
+#   year: graduation year (integer)
+#   title: dissertation title
+#   author: author name
+#   degree: phd or msc
+#   institution: optional institution name
+#   groups: optional list of group names from groups.yml
+#   codes: optional list of code slugs
+#   link: external URL to the dissertation or document
+#   bibtex: optional BibTeX block; if empty, it may be fetched automatically from mediatum
+#
+# Keep entries organized as desired, then run generate_website.py to update the website.
+#
 dissertations:
   - year: 2025
     title: Development and analysis of structure-preserving finite element methods on non-conforming meshes
@@ -6,7 +21,22 @@ dissertations:
     institution: ""
     groups: []
     codes: [psydac]
-    link: https://mediatum.ub.tum.de/?id=1776749
+    link: https://mediatum.ub.tum.de/1776749
+    bibtex: |
+      @phdthesis{dissertation,
+        author = {Schnack, Frederik Günter},
+        title = {Development and analysis of structure-preserving finite element methods on non-conforming meshes},
+        year = {2025},
+        school = {Technische Universität München},
+        pages = {161},
+        language = {en},
+        abstract = {This work develops structure-preserving finite element methods on two-dimensional refined multipatch spaces. Within the broken-FEEC framework, we construct bounded commuting projections on non-matching discretizations with certain assumptions on the geometry. 
+      We also design conforming projections, based on interface-averaging and extension-restriction operators, enabling spurious-free numerical schemes.  Additionally, strong-strong discretizations are extended to multipatch setups.},
+        keywords = {},
+        note = {},
+        url = {https://mediatum.ub.tum.de/1776749},
+        doi = {},
+      }
   - year: 2025
     title: Uncertainty quantification in three-dimensional plasma equilibrium reconstruction
     author: Robert Köberl
@@ -14,7 +44,7 @@ dissertations:
     institution: ""
     groups: []
     codes: []
-    link: https://mediatum.ub.tum.de/?id=1763047
+    link: https://mediatum.ub.tum.de/1763047
   - year: 2025
     title: Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures
     author: Nils Schild
@@ -22,7 +52,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [bsl6d]
-    link: https://mediatum.ub.tum.de/?id=1762920
+    link: https://mediatum.ub.tum.de/1762920
   - year: 2025
     title: Structure-Preserving Neural Networks for Scientific Computing
     author: Benedikt Brantner
@@ -30,7 +60,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [geometricmachinelearning]
-    link: https://mediatum.ub.tum.de/?id=1754855
+    link: https://mediatum.ub.tum.de/1754855
   - year: 2025
     title: Development of an implicit Geometric PIC method
     author: Jiayi Li

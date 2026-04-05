@@ -1,3 +1,22 @@
+# Member page input file.
+# Each entry under 'members:' defines a person with optional profile data.
+# Fields:
+#   name: required display name
+#   role: role/position like professor, postdoc, phd, alumni
+#   topic: short research topic or focus area
+#   contact: email address or other contact
+#   group: group name from groups.yml
+#   codes: list of code slugs to link this member with codes
+#   alumni: true/false
+#   aliases: alternative names used for matching publications/dissertations
+#   picture: URL or path to a profile image
+#   description: short bio or research summary
+#   github, gitlab, google_scholar, orcid, linkedin, website, researchgate,
+#   twitter, x, bluesky, mastodon, academia_edu, semanticscholar, dblp:
+#     optional profile identifiers or URLs for social/academic links
+#
+# Add or remove member entries here, then run generate_website.py to update the website.
+#
 members:
 # Unassigned / cross-group
 - name: Eric Sonnendrücker
@@ -54,12 +73,20 @@ members:
   aliases: []
 - name: Max Lindqvist
   role: postdoc
+  picture: https://avatars.githubusercontent.com/u/181350288
   topic: ""
   contact: b.example@example.org
   group: Advanced Computing Hub
   codes: [struphy]
   alumni: false
   aliases: []
+  github: max-models
+  gitlab_mpcdf: maxlin
+  orcid: 0000-0002-1795-5730
+  linkedid: maxlindqv
+  website: https://max-models.github.io/
+  google_scholar: ZVdJO3oAAAAJ
+  researchgate: 2164096735_M_Lindqvist
 - name: Serhiy Mochalskyy
   role: permanent staff
   topic: ""
@@ -383,6 +410,17 @@ members:
   codes: [gvec]
   alumni: true
   aliases: []
+- name: Bruce Scott
+  role: permanent staff
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: []
+  alumni: true
+  aliases:
+    - B.D. Scott
+    - B. D. Scott
+    - B D Scott
 
 # Probabilistic Data Analysis and Active Learning
 - name: Udo von Toussaint

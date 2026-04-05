@@ -1359,6 +1359,39 @@ html[data-theme='dark'] .publication-bibtex {
   color: var(--nmpp-accent);
 }
 
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--nmpp-accent-light);
+  color: var(--nmpp-accent-dark);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 18px;
+}
+
+.social-link:hover {
+  background-color: var(--nmpp-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 127, 138, 0.3);
+}
+
+.social-link i {
+  margin: 0;
+}
+
 /* ─── HOMEPAGE ─── */
 
 .nmpp-home {

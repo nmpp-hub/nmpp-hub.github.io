@@ -30,7 +30,7 @@ This will regenerate all derived pages and caches, including:
 - Code and group pages: `src/pages/codes/`, `src/pages/groups/`
 - Publication cache: `data/.publications_cache.json`
 
-To re-fetch publication metadata from remote APIs (DOI, abstracts, etc), use:
+To re-fetch publication metadata from remote APIs (DOI, abstracts, etc) and dissertation BibTeX from mediatum, use:
 
 ```bash
 python generate_website.py --refresh

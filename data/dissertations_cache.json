@@ -1,12 +1,13 @@
 [
   {
     "slug": "structure-preserving-neural-networks-for-scientific-computing",
+    "author_html": "<a href=\"/members/benedikt-brantner/\">Benedikt Brantner</a>",
     "year": 2025,
     "title": "Structure-Preserving Neural Networks for Scientific Computing",
     "author": "Benedikt Brantner",
     "degree": "phd",
     "institution": "",
-    "link": "https://mediatum.ub.tum.de/?id=1754855",
+    "link": "https://mediatum.ub.tum.de/1754855",
     "groups": [],
     "codes": [
       "geometricmachinelearning"
@@ -17,22 +18,24 @@
   },
   {
     "slug": "development-and-analysis-of-structure-preserving-finite",
+    "author_html": "<a href=\"/members/frederik-schnack/\">Frederik Schnack</a>",
     "year": 2025,
     "title": "Development and analysis of structure-preserving finite element methods on non-conforming meshes",
     "author": "Frederik Schnack",
     "degree": "phd",
     "institution": "",
-    "link": "https://mediatum.ub.tum.de/?id=1776749",
+    "link": "https://mediatum.ub.tum.de/1776749",
     "groups": [],
     "codes": [
       "psydac"
     ],
-    "bibtex": "",
+    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Schnack, Frederik Günter},\r\n\ttitle = {Development and analysis of structure-preserving finite element methods on non-conforming meshes},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {161},\r\n\tlanguage = {en},\r\n\tabstract = {This work develops structure-preserving finite element methods on two-dimensional refined multipatch spaces. Within the broken-FEEC framework, we construct bounded commuting projections on non-matching discretizations with certain assumptions on the geometry. \r\nWe also design conforming projections, based on interface-averaging and extension-restriction operators, enabling spurious-free numerical schemes.  Additionally, strong-strong discretizations are extended to multipatch setups.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1776749},\r\n\tdoi = {},\r\n}",
     "group": "Finite Element Methods",
     "group_slug": "finite-element-methods"
   },
   {
     "slug": "development-of-an-implicit-geometric-pic",
+    "author_html": "<a href=\"/members/jiayi-li/\">Jiayi Li</a>",
     "year": 2025,
     "title": "Development of an implicit Geometric PIC method",
     "author": "Jiayi Li",
@@ -49,12 +52,13 @@
   },
   {
     "slug": "development-and-implementation-of-algorithms-for",
+    "author_html": "<a href=\"/members/nils-schild/\">Nils Schild</a>",
     "year": 2025,
     "title": "Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures",
     "author": "Nils Schild",
     "degree": "phd",
     "institution": "",
-    "link": "https://mediatum.ub.tum.de/?id=1762920",
+    "link": "https://mediatum.ub.tum.de/1762920",
     "groups": [],
     "codes": [
       "bsl6d"
@@ -65,20 +69,22 @@
   },
   {
     "slug": "uncertainty-quantification-in-three-dimensional-plasma-equilibrium",
+    "author_html": "<a href=\"/members/robert-koberl/\">Robert Köberl</a>",
     "year": 2025,
     "title": "Uncertainty quantification in three-dimensional plasma equilibrium reconstruction",
     "author": "Robert Köberl",
     "degree": "phd",
     "institution": "",
-    "link": "https://mediatum.ub.tum.de/?id=1763047",
+    "link": "https://mediatum.ub.tum.de/1763047",
     "groups": [],
     "codes": [],
-    "bibtex": "",
+    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Köberl, Robert},\r\n\ttitle = {Uncertainty quantification in three-dimensional plasma equilibrium reconstruction},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {153},\r\n\tlanguage = {en},\r\n\tabstract = {The ideal magnetohydrodynamic (MHD) equilibrium is central to analyzing magnetically confined plasmas. Equilibrium reconstruction involves inferring an MHD equilibrium from experimental data. For 3D geometries, such as stellarators, this can be computationally intensive. This work explores probabilistic approaches for uncertainty quantification in equilibrium reconstruction using data-driven methods like dimensionality reduction and surrogate modeling. This enables sample-based uncertainty estimates on equilibrium quantities while reducing computational costs.},\r\n\tkeywords = {Plasma Physics;Ideal Magnetohydrodynamics;Equilibrium Reconstruction;Uncertainty Quantification;Bayesian Inference;Surrogate Modeling;Dimensionality Reduction},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1763047},\r\n\tdoi = {},\r\n}",
     "group": "Magnetohydrodynamics",
     "group_slug": "magnetohydrodynamics"
   },
   {
     "slug": "development-of-a-geometric-particle-in-cell-method",
+    "author_html": "Alicia Robles Pérez",
     "year": 2024,
     "title": "Development of a Geometric Particle-in-Cell Method for Cylindrical Coordinate Systems",
     "author": "Alicia Robles Pérez",
@@ -93,6 +99,7 @@
   },
   {
     "slug": "development-of-a-geometric-pic-method",
+    "author_html": "Joris Thiel",
     "year": 2024,
     "title": "Development of a Geometric PIC Method for the Linearized Vlasov-Maxwell Equations",
     "author": "Joris Thiel",
@@ -107,6 +114,7 @@
   },
   {
     "slug": "implementation-of-a-galerkin-hodge-operator",
+    "author_html": "Andreas Scheibner",
     "year": 2023,
     "title": "Implementation of a Galerkin Hodge Operator in the GEMPICX Framework",
     "author": "Andreas Scheibner",
@@ -121,6 +129,7 @@
   },
   {
     "slug": "gempicx-an-amrex-based-high-performance-implementation",
+    "author_html": "Brayan Andreu de Albuquerque",
     "year": 2023,
     "title": "GEMPICX: an AMReX Based High-Performance Implementation of Geometric Particle-in-Cell Algorithms",
     "author": "Brayan Andreu de Albuquerque",
@@ -135,6 +144,7 @@
   },
   {
     "slug": "beyond-gyrokinetic-theory-excitation-of",
+    "author_html": "<a href=\"/members/mario-rath/\">Mario Räth</a>",
     "year": 2023,
     "title": "Beyond gyrokinetic theory - Excitation of high-frequency turbulence in 6D Vlasov simulations of magnetized plasmas with steep temperature and density gradients",
     "author": "Mario Räth",
@@ -151,6 +161,7 @@
   },
   {
     "slug": "reduced-basis-methods-for-problems-with",
+    "author_html": "<a href=\"/members/tobias-blickhan/\">Tobias Blickhan</a>",
     "year": 2023,
     "title": "Reduced basis methods for problems with moving features",
     "author": "Tobias Blickhan",
@@ -165,6 +176,7 @@
   },
   {
     "slug": "geometric-particle-in-cell-methods-on-mapped-grids",
+    "author_html": "Benedikt Perse",
     "year": 2021,
     "title": "Geometric Particle-in-Cell Methods on Mapped Grids",
     "author": "Benedikt Perse",
