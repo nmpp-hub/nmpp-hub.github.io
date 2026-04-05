@@ -90,6 +90,33 @@ def render_publication_title(publication: dict[str, Any]) -> str:
     return f'<a href="{publication_href(publication)}">{label}</a>'
 
 
+def dissertation_slug(dissertation: dict[str, Any]) -> str:
+    """Generate a URL slug for a dissertation from its title (first 6 words)."""
+    title = str(dissertation.get("title", "")).strip()
+    plain_title = html.unescape(strip_tags(title))
+    words = plain_title.split()
+    if words:
+        slug = slugify(" ".join(words[:6]))
+        if slug:
+            return slug
+    return slugify(str(dissertation.get("author", "unknown")))
+
+
+def dissertation_href(dissertation: dict[str, Any]) -> str:
+    """Return the href for a dissertation title link."""
+    slug = dissertation_slug(dissertation)
+    if slug:
+        return f'/dissertations/{html.escape(slug, quote=True)}/'
+    return html.escape(str(dissertation.get("link", "#")), quote=True)
+
+
+def render_dissertation_title(dissertation: dict[str, Any]) -> str:
+    """Return an <a> tag linking to the dissertation's individual page."""
+    label = escape_text(dissertation.get("title", "Untitled dissertation"))
+    href = dissertation_href(dissertation)
+    return f'<a href="{href}">{label}</a>'
+
+
 def get_known_members() -> set[str]:
     """Get set of known member slugs."""
     members_dir = ROOT / "src" / "content" / "members"

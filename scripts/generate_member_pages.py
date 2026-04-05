@@ -25,7 +25,7 @@ from typing import Any
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_code_links, render_publication_title, slugify, write_text
+from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_code_links, render_dissertation_title, render_publication_title, slugify, write_text
 
 ROOT = Path(__file__).resolve().parent.parent
 MEMBERS_FILE = ROOT / "data" / "members.yml"
@@ -341,7 +341,7 @@ def build_dissertations_section(dissertations: list[dict]) -> str:
 
         table_rows.append(f"""    <tr>
       <td>{diss['year']}</td>
-      <td>{escape_text(diss['title'])}</td>
+      <td>{render_dissertation_title(diss)}</td>
       <td>{escape_text(diss['author'])}</td>
       <td>{details}</td>
     </tr>""")
@@ -350,7 +350,7 @@ def build_dissertations_section(dissertations: list[dict]) -> str:
         <div class="publication-card">
           <div class="publication-card-header">
             <div class="publication-card-year">{diss['year']}</div>
-            <div class="publication-card-title">{escape_text(diss['title'])}</div>
+            <div class="publication-card-title">{render_dissertation_title(diss)}</div>
             <div class="publication-card-authors">{escape_text(diss['author'])}</div>
             <div class="publication-card-details">
               {details}

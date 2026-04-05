@@ -305,8 +305,7 @@ const path = Astro.url.pathname;
         searchResults.innerHTML = matched
           .map(item => {
             const subtitle = item.subtitle ? `<span class="site-search-item-subtitle">${escapeHtml(item.subtitle)}</span>` : '';
-            const target = item.type === 'Publication' ? ' target="_blank" rel="noopener noreferrer"' : '';
-            return `<a class="site-search-item" href="${escapeHtml(item.href)}"${target}>
+            return `<a class="site-search-item" href="${escapeHtml(item.href)}">
               <span class="site-search-item-type">${escapeHtml(item.type)}</span>
               <span class="site-search-item-title">${escapeHtml(item.title)}</span>
               ${subtitle}
