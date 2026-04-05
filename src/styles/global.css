@@ -48,6 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main {
@@ -829,7 +830,8 @@ html[data-theme='dark'] .theme-toggle-dark {
 }
 
 .publication-meta-summary a {
-  word-break: break-word;
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .publication-meta-list dt {
@@ -906,6 +908,10 @@ html[data-theme='dark'] .theme-toggle-dark {
   margin-top: 0;
   background: var(--nmpp-surface-soft);
   color: var(--nmpp-ink);
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: pre;
+  word-break: normal;
 }
 
 html[data-theme='dark'] .publication-bibtex {
