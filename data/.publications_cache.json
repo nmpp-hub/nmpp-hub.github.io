@@ -613,7 +613,7 @@
   },
   {
     "doi": "10.1137/20M1311934",
-    "title": "Geometric Particle-in-Cell Simulations of the Vlasov--Maxwell System in Curvilinear Coordinates",
+    "title": "Geometric Particle-in-Cell Simulations of the Vlasov-Maxwell System in Curvilinear Coordinates",
     "authors": "Benedikt Perse, Katharina Kormann, Eric Sonnendrücker",
     "venue": "SIAM Journal on Scientific Computing",
     "year": 2021,
@@ -621,7 +621,7 @@
     "slug": "geometric-particle-in-cell-simulations-of-the-vlasov-maxwell",
     "journal": "SIAM Journal on Scientific Computing",
     "abstract": "Numerical schemes that preserve the structure of the kinetic equations can provide stable simulation results over a long time. An electromagnetic particle-in-cell solver for the Vlasov-Maxwell equations that preserves at the discrete level the non-canonical Hamiltonian structure of the Vlasov-Maxwell equations has been presented in [Kraus et al. 2017]. Whereas the original formulation has been obtained for Cartesian coordinates, we extend the formulation to curvilinear coordinates in this paper. For the discretisation in time, we discuss several (semi-)implicit methods either based on a Hamiltonian splitting or a discrete gradient method combined with an antisymmetric splitting of the Poisson matrix and discuss their conservation properties and computational efficiency.",
-    "bibtex": "@article{Perse_2021, title={Geometric Particle-in-Cell Simulations of the Vlasov--Maxwell System in Curvilinear Coordinates}, volume={43}, ISSN={1095-7197}, url={http://dx.doi.org/10.1137/20M1311934}, DOI={10.1137/20m1311934}, number={1}, journal={SIAM Journal on Scientific Computing}, publisher={Society for Industrial & Applied Mathematics (SIAM)}, author={Perse, Benedikt and Kormann, Katharina and Sonnendrücker, Eric}, year={2021}, month=jan, pages={B194–B218} }",
+    "bibtex": "@article{Perse_2021, title={Geometric Particle-in-Cell Simulations of the Vlasov-Maxwell System in Curvilinear Coordinates}, volume={43}, ISSN={1095-7197}, url={http://dx.doi.org/10.1137/20M1311934}, DOI={10.1137/20m1311934}, number={1}, journal={SIAM Journal on Scientific Computing}, publisher={Society for Industrial & Applied Mathematics (SIAM)}, author={Perse, Benedikt and Kormann, Katharina and Sonnendrücker, Eric}, year={2021}, month=jan, pages={B194–B218} }",
     "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
     "volume": "43",
     "issue": "1",

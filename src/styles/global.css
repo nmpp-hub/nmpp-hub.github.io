@@ -929,6 +929,93 @@ html[data-theme='dark'] .publication-bibtex {
   color: var(--nmpp-accent);
 }
 
+/* ─── PUBLICATION CARDS ─── */
+
+.publication-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.publication-card {
+  border: 1px solid var(--nmpp-line);
+  border-radius: 0.75rem;
+  background: var(--nmpp-card);
+  box-shadow: 0 4px 12px var(--nmpp-shadow);
+  padding: 1.25rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  overflow: hidden;
+}
+
+.publication-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--nmpp-accent-mid);
+  box-shadow: 0 8px 20px var(--nmpp-shadow);
+}
+
+.publication-card-header {
+  margin-bottom: 0.75rem;
+}
+
+.publication-card-year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--nmpp-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.publication-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--nmpp-ink);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.publication-card-authors {
+  font-size: 0.9rem;
+  color: var(--nmpp-subtle);
+  line-height: 1.5;
+}
+
+.publication-card-authors a {
+  color: var(--nmpp-accent-mid);
+  text-decoration: none;
+}
+
+.publication-card-authors a:hover {
+  text-decoration: underline;
+}
+
+.publication-card-details {
+  font-size: 0.85rem;
+  color: var(--nmpp-subtle);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Responsive table/card toggle */
+@media (max-width: 699px) {
+  #publications-table {
+    display: none;
+  }
+  .publication-cards {
+    display: grid;
+  }
+}
+
+@media (min-width: 700px) {
+  #publications-table {
+    display: table;
+  }
+  .publication-cards {
+    display: none;
+  }
+}
+
 /* ─── FOOTER ─── */
 
 .site-footer {
@@ -1058,23 +1145,22 @@ html[data-theme='dark'] .publication-bibtex {
     display: block !important;
   }
 
-  .nmpp-grid {
+  .publication-cards {
     grid-template-columns: 1fr;
   }
 
-  .nmpp-slide {
-    aspect-ratio: 2 / 1;
+  .publication-card {
+    padding: 1rem;
   }
 
-  .page-wrapper {
-    padding-top: 1.4rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .publication-card-title {
+    font-size: 0.95rem;
   }
 
-  .site-breadcrumb-wrap {
-    padding-top: 0.8rem;
+  .publication-card-authors {
+    font-size: 0.85rem;
   }
+}
 }
 
 @media (max-width: 640px) {
