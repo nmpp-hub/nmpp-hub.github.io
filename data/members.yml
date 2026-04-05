@@ -60,6 +60,7 @@ members:
   codes: [struphy]
   alumni: false
   aliases: []
+  github: max-models
 - name: Serhiy Mochalskyy
   role: permanent staff
   topic: ""
@@ -381,6 +382,14 @@ members:
   contact: c.example@example.org
   group: Magnetohydrodynamics
   codes: [gvec]
+  alumni: true
+  aliases: []
+- name: Bruce Scott
+  role: permanent staff
+  topic: ""
+  contact: c.example@example.org
+  group: Magnetohydrodynamics
+  codes: []
   alumni: true
   aliases: []
 
