@@ -269,82 +269,117 @@ def build_profile_section(member: dict, group_slug_map: dict[str, str]) -> str:
 </div>"""
 
 
-def build_publications_table(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
-    """Build HTML table for publications."""
+def build_publications_section(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+    """Build HTML table + cards for publications."""
     if not publications:
         return "<p>No publications yet.</p>"
 
     if author_to_slug is None:
         author_to_slug = build_author_to_slug_map()
 
-    rows = []
+    table_rows = []
+    cards = []
     for pub in publications:
-        rows.append(
-            "\n".join(
-                [
-                    "  <tr>",
-                    f"    <td>{pub['year'] or ''}</td>",
-                    f"    <td>{render_publication_title(pub)}</td>",
-                    f"    <td>{render_author_list(pub['authors'], author_to_slug)}</td>",
-                    f"    <td>{escape_text(pub['venue'])}</td>",
-                    f'    <td><a href="https://doi.org/{escape_text(pub["doi"])}">DOI</a></td>',
-                    "  </tr>",
-                ]
-            )
-        )
+        venue = escape_text(pub['venue'])
+        doi_link = f"<a href=\"https://doi.org/{escape_text(pub['doi'])}\">DOI</a>"
+        details = f"{venue} · {doi_link}"
 
-    body = "\n".join(rows)
-    return f"""<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>Title</th>
-      <th>Authors</th>
-      <th>Venue</th>
-      <th>Link</th>
-    </tr>
-  </thead>
-  <tbody>
-{body}
-  </tbody>
-</table>"""
+        table_rows.append(f"""    <tr>
+      <td>{pub['year'] or ''}</td>
+      <td>{render_publication_title(pub)}</td>
+      <td>{render_author_list(pub['authors'], author_to_slug)}</td>
+      <td>{details}</td>
+    </tr>""")
+
+        card = f"""
+        <div class="publication-card">
+          <div class="publication-card-header">
+            <div class="publication-card-year">{pub['year'] or ''}</div>
+            <div class="publication-card-title">{render_publication_title(pub)}</div>
+            <div class="publication-card-authors">{render_author_list(pub['authors'], author_to_slug)}</div>
+            <div class="publication-card-details">
+              {details}
+            </div>
+          </div>
+        </div>
+        """
+        cards.append(card.strip())
+
+    table_body = "\n".join(table_rows)
+    cards_body = "\n".join(cards)
+
+    return f"""<table id="publications-table" class="publications-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Title</th>
+          <th>Authors</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+{table_body}
+      </tbody>
+    </table>
+
+    <div id="publications-cards" class="publication-cards">
+{cards_body}
+    </div>"""
 
 
-def build_dissertations_table(dissertations: list[dict]) -> str:
-    """Build HTML table for dissertations."""
+def build_dissertations_section(dissertations: list[dict]) -> str:
+    """Build HTML table + cards for dissertations."""
     if not dissertations:
         return "<p>No dissertations yet.</p>"
 
-    rows = []
+    table_rows = []
+    cards = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        rows.append(
-            "\n".join(
-                [
-                    "  <tr>",
-                    f"    <td>{diss['year']}</td>",
-                    f"    <td>{escape_text(diss['title'])}</td>",
-                    f"    <td>{escape_text(degree)}</td>",
-                    f"    <td><a href=\"{escape_text(diss['link'])}\">Full text</a></td>",
-                    "  </tr>",
-                ]
-            )
-        )
+        link = f"<a href=\"{escape_text(diss['link'])}\">Full text</a>"
+        details = f"{degree} · {link}"
 
-    body = "\n".join(rows)
-    return f"""<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>Title</th>
-      <th>Degree</th>
-      <th>Link</th>
-    </tr>
-  </thead>
-  <tbody>
-{body}
-  </tbody>
-</table>"""
+        table_rows.append(f"""    <tr>
+      <td>{diss['year']}</td>
+      <td>{escape_text(diss['title'])}</td>
+      <td>{escape_text(diss['author'])}</td>
+      <td>{details}</td>
+    </tr>""")
+
+        card = f"""
+        <div class="publication-card">
+          <div class="publication-card-header">
+            <div class="publication-card-year">{diss['year']}</div>
+            <div class="publication-card-title">{escape_text(diss['title'])}</div>
+            <div class="publication-card-authors">{escape_text(diss['author'])}</div>
+            <div class="publication-card-details">
+              {details}
+            </div>
+          </div>
+        </div>
+        """
+        cards.append(card.strip())
+
+    table_body = "\n".join(table_rows)
+    cards_body = "\n".join(cards)
+
+    return f"""<table id="publications-table" class="publications-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+{table_body}
+      </tbody>
+    </table>
+
+    <div id="publications-cards" class="publication-cards">
+{cards_body}
+    </div>"""
 
 
 def build_new_member_page(member: dict) -> str:
@@ -396,10 +431,10 @@ def main() -> None:
             build_profile_section(member, group_slug_map) + "\n", encoding="utf-8"
         )
         (MEMBERS_AUTO_DIR / f"{slug}.publications.html").write_text(
-            build_publications_table(member_pubs, author_to_slug) + "\n", encoding="utf-8"
+            build_publications_section(member_pubs, author_to_slug) + "\n", encoding="utf-8"
         )
         (MEMBERS_AUTO_DIR / f"{slug}.dissertations.html").write_text(
-            build_dissertations_table(member_diss) + "\n", encoding="utf-8"
+            build_dissertations_section(member_diss) + "\n", encoding="utf-8"
         )
 
         print(f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)")
