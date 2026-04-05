@@ -1,0 +1,135 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import dissertationsCache from '../../../data/dissertations_cache.json';
+
+type Dissertation = {
+  year: number;
+  title: string;
+  author: string;
+  degree: string;
+  institution?: string;
+  link: string;
+  codes?: string[];
+  groups?: string[];
+  bibtex?: string;
+};
+
+const DEGREE_LABELS: Record<string, string> = { phd: 'PhD', msc: 'MSc' };
+
+function slugify(text: string): string {
+  let slug = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  slug = slug.toLowerCase().trim();
+  slug = slug.replace(/[^\w\s-]/g, '');
+  slug = slug.replace(/[\s_-]+/g, '-');
+  slug = slug.replace(/^-|-$/g, '');
+  return slug;
+}
+
+function dissertationSlug(title: string): string {
+  const words = title.trim().split(/\s+/);
+  return slugify(words.slice(0, 6).join(' '));
+}
+
+export async function getStaticPaths() {
+  const cache = dissertationsCache as Array<Dissertation & { slug: string }>;
+  return cache.map(d => ({
+    params: { slug: d.slug },
+    props: { dissertation: d },
+  }));
+}
+
+const { dissertation } = Astro.props as { dissertation: Dissertation & { slug: string } };
+const slug = dissertation.slug;
+
+const allAbstracts = await getCollection('dissertations');
+const abstractEntry = allAbstracts.find(e => e.slug === slug);
+const { Content } = abstractEntry ? await abstractEntry.render() : { Content: undefined };
+
+const degree = DEGREE_LABELS[dissertation.degree] ?? dissertation.degree;
+const codes = await getCollection('codes');
+const codeTitleBySlug = new Map(codes.map(c => [c.slug, c.data.title]));
+const relatedCodes = (dissertation.codes ?? []).filter(Boolean);
+
+const bibtex = dissertation.bibtex?.trim() ?? '';
+
+function formatBibtexEntry(entry: string): string {
+  // Basic BibTeX formatting - split on @ and add newlines
+  return entry.replace(/(@\w+{[^}]+},?\s*)/g, '$1\n');
+}
+
+const bibtexDisplay = bibtex ? formatBibtexEntry(bibtex) : '';
+---
+
+<Base
+  title={dissertation.title}
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Dissertations', href: '/dissertations/' },
+    { label: dissertation.title },
+  ]}
+>
+  <div class="page-wrapper">
+    <h1 style="font-size: 2rem; margin-bottom: 1rem; word-break: break-word; overflow-wrap: anywhere;">{dissertation.title}</h1>
+    <div class="prose">
+      <p><strong>{dissertation.author}</strong></p>
+      <p class="publication-meta-summary">
+        {dissertation.year} · {degree}{dissertation.institution ? ` · ${dissertation.institution}` : ''}
+        {(dissertation as any).group_slug && <span> · <a href={`/groups/${(dissertation as any).group_slug}/`}>{(dissertation as any).group}</a></span>}
+        {relatedCodes.map(code => <span> · <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a></span>)}
+      </p>
+      <div class="publication-actions">
+        <a href={dissertation.link} class="publication-action-link publication-action-secondary" target="_blank" rel="noopener noreferrer">Full text</a>
+      </div>
+
+      <h2>Abstract</h2>
+      {Content ? (
+        <Content />
+      ) : (
+        <p class="publication-empty">No abstract available.</p>
+      )}
+
+      <div class="publication-section-heading">
+        <h2>BibTeX</h2>
+        {bibtexDisplay && (
+          <button class="publication-copy-button" type="button" data-copy-target="publication-bibtex-code">
+            Copy
+          </button>
+        )}
+      </div>
+      {bibtex ? (
+        <pre class="publication-bibtex"><code id="publication-bibtex-code">{bibtexDisplay}</code></pre>
+      ) : (
+        <p class="publication-empty">No BibTeX entry was returned for this dissertation.</p>
+      )}
+    </div>
+  </div>
+</Base>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.publication-copy-button');
+    if (!(button instanceof HTMLButtonElement)) return;
+
+    button.addEventListener('click', async () => {
+      const targetId = button.dataset.copyTarget;
+      if (!targetId) return;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      try {
+        await navigator.clipboard.writeText(target.textContent ?? '');
+        const originalText = button.textContent;
+        button.textContent = 'Copied';
+        window.setTimeout(() => {
+          button.textContent = originalText;
+        }, 1600);
+      } catch {
+        button.textContent = 'Failed';
+        window.setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 1600);
+      }
+    });
+  });
+</script>

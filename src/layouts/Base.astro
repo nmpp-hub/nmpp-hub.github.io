@@ -305,8 +305,7 @@ const path = Astro.url.pathname;
         searchResults.innerHTML = matched
           .map(item => {
             const subtitle = item.subtitle ? `<span class="site-search-item-subtitle">${escapeHtml(item.subtitle)}</span>` : '';
-            const target = item.type === 'Publication' ? ' target="_blank" rel="noopener noreferrer"' : '';
-            return `<a class="site-search-item" href="${escapeHtml(item.href)}"${target}>
+            return `<a class="site-search-item" href="${escapeHtml(item.href)}">
               <span class="site-search-item-type">${escapeHtml(item.type)}</span>
               <span class="site-search-item-title">${escapeHtml(item.title)}</span>
               ${subtitle}
@@ -325,6 +324,20 @@ const path = Astro.url.pathname;
           }
         });
       }
+
+      document.querySelectorAll<HTMLInputElement>('.section-search-input').forEach(input => {
+        input.addEventListener('input', () => {
+          const section = input.closest('.searchable-section');
+          if (!section) return;
+          const query = input.value.trim().toLowerCase();
+          section.querySelectorAll<HTMLElement>('tbody tr').forEach(row => {
+            row.style.display = query === '' || (row.textContent ?? '').toLowerCase().includes(query) ? '' : 'none';
+          });
+          section.querySelectorAll<HTMLElement>('.publication-card').forEach(card => {
+            card.style.display = query === '' || (card.textContent ?? '').toLowerCase().includes(query) ? '' : 'none';
+          });
+        });
+      });
 
       const backToTop = document.getElementById('back-to-top') as HTMLButtonElement | null;
       if (backToTop) {

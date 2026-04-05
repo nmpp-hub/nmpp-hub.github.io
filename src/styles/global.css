@@ -703,13 +703,34 @@ html[data-theme='dark'] .theme-toggle-dark {
   box-shadow: 0 0 0 3px rgba(26, 127, 138, 0.15);
 }
 
-#publications-table {
+.section-search-input {
+  display: block;
+  width: 100%;
+  max-width: 48rem;
+  padding: 0.55rem 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--nmpp-line);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: var(--nmpp-card);
+  color: var(--nmpp-ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.section-search-input:focus {
+  border-color: var(--nmpp-accent-mid);
+  box-shadow: 0 0 0 3px rgba(26, 127, 138, 0.15);
+}
+
+.publications-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
 
-#publications-table thead th {
+.publications-table thead th {
   background: var(--nmpp-surface-soft);
   font-weight: 600;
   font-size: 0.8rem;
@@ -722,17 +743,17 @@ html[data-theme='dark'] .theme-toggle-dark {
   white-space: nowrap;
 }
 
-#publications-table td {
+.publications-table td {
   padding: 0.65rem 0.8rem;
   border-bottom: 1px solid var(--nmpp-line);
   vertical-align: top;
 }
 
-#publications-table tbody tr:hover {
+.publications-table tbody tr:hover {
   background: var(--nmpp-surface-soft);
 }
 
-#publications-table a {
+.publications-table a {
   color: var(--nmpp-accent-mid);
   font-size: 0.85rem;
 }
@@ -1023,7 +1044,7 @@ html[data-theme='dark'] .publication-bibtex {
 }
 
 /* Responsive table/card toggle */
-#publications-table {
+.publications-table {
   display: none;
 }
 .publication-cards {
@@ -1031,7 +1052,7 @@ html[data-theme='dark'] .publication-bibtex {
 }
 
 @media (min-width: 901px) {
-  #publications-table {
+  .publications-table {
     display: table;
   }
   .publication-cards {
@@ -1207,7 +1228,7 @@ html[data-theme='dark'] .publication-bibtex {
     height: 140px;
   }
 
-  .prose table {
+  .prose table:not(.publications-table) {
     display: block;
     width: 100%;
     overflow-x: auto;
@@ -1715,7 +1736,7 @@ html[data-theme='dark'] .home-btn-secondary:hover {
   background: color-mix(in srgb, var(--nmpp-card) 80%, var(--nmpp-surface-soft) 20%);
 }
 
-html[data-theme='dark'] #publications-table thead th,
+html[data-theme='dark'] .publications-table thead th,
 html[data-theme='dark'] .prose th {
   color: #b8c7d6;
 }

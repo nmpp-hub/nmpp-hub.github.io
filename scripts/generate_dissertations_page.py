@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+import urllib.request
 from pathlib import Path
 
 # Add parent directory to path to import site_generation
@@ -8,22 +9,53 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from site_generation import (
     build_author_to_slug_map,
+    dissertation_slug,
     ensure_list,
     escape_text,
     load_yaml,
     render_author_name,
     render_code_links,
+    render_dissertation_title,
     write_text,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "dissertations.yml"
+MEMBERS_FILE = ROOT / "data" / "members.yml"
+GROUPS_FILE = ROOT / "data" / "groups.yml"
 OUTPUT_FILE = ROOT / "src" / "pages" / "dissertations.astro"
+CACHE_FILE = ROOT / "data" / "dissertations_cache.json"
+ABSTRACTS_DIR = ROOT / "src" / "content" / "dissertations"
 
 DEGREE_LABELS = {
     "phd": "PhD",
     "msc": "MSc",
 }
+
+
+def fetch_mediatum_bibtex(url: str) -> str:
+    """Fetch BibTeX from a mediatum URL if it matches the expected pattern."""
+    import re
+    
+    # Extract ID from mediatum URL
+    match = re.search(r'mediatum\.ub\.tum\.de/\??(?:id=)?(\d+)', url)
+    if not match:
+        return ""
+    
+    doc_id = match.group(1)
+    bibtex_url = f"https://mediatum.ub.tum.de/export/{doc_id}/bibtex"
+    
+    try:
+        req = urllib.request.Request(
+            bibtex_url,
+            headers={
+                "User-Agent": "nmpp-dissertations-generator/1.0 (mailto:webmaster@nmpp-hub.github.io)",
+            },
+        )
+        with urllib.request.urlopen(req, timeout=10) as response:
+            return response.read().decode("utf-8").strip()
+    except Exception:
+        return ""
 
 
 def validate_dissertation(raw: dict, index: int) -> dict:
@@ -45,6 +77,13 @@ def validate_dissertation(raw: dict, index: int) -> dict:
     if not link:
         raise ValueError(f"Dissertation {title} is missing a link")
 
+    # Fetch BibTeX for mediatum links
+    bibtex = ""
+    if "mediatum.ub.tum.de" in link:
+        bibtex = fetch_mediatum_bibtex(link)
+        if bibtex:
+            print(f"  Fetched BibTeX for: {title}")
+
     return {
         "year": year,
         "title": title,
@@ -54,6 +93,7 @@ def validate_dissertation(raw: dict, index: int) -> dict:
         "link": link,
         "groups": groups,
         "codes": codes,
+        "bibtex": bibtex,
     }
 
 
@@ -80,7 +120,7 @@ def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None 
 
         row = f"""    <tr>
       <td>{dissertation['year']}</td>
-      <td>{escape_text(dissertation['title'])}</td>
+      <td>{render_dissertation_title(dissertation)}</td>
       <td>{render_author_name(dissertation['author'], author_to_slug)}</td>
       <td>{details}</td>
     </tr>"""
@@ -103,7 +143,7 @@ def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None 
         <div class="publication-card">
           <div class="publication-card-header">
             <div class="publication-card-year">{dissertation['year']}</div>
-            <div class="publication-card-title">{escape_text(dissertation['title'])}</div>
+            <div class="publication-card-title">{render_dissertation_title(dissertation)}</div>
             <div class="publication-card-authors">{render_author_name(dissertation['author'], author_to_slug)}</div>
             <div class="publication-card-details">
               {details}
@@ -191,7 +231,29 @@ import Base from '../layouts/Base.astro';
 """
 
 
+def build_author_group_map() -> dict[str, dict]:
+    """Build a map from lowercased author name to {group, group_slug} for known members."""
+    import unicodedata
+
+    members = load_yaml(MEMBERS_FILE).get("members", [])
+    groups_raw = load_yaml(GROUPS_FILE).get("groups", [])
+    group_slug_map = {g["name"]: g["slug"] for g in groups_raw if g.get("name") and g.get("slug")}
+
+    result: dict[str, dict] = {}
+    for member in members:
+        name = str(member.get("name", "")).strip()
+        group_name = str(member.get("group", "")).strip()
+        if not name or not group_name:
+            continue
+        group_slug = group_slug_map.get(group_name, "")
+        key = unicodedata.normalize("NFD", name).encode("ascii", "ignore").decode("ascii").lower()
+        result[key] = {"group": group_name, "group_slug": group_slug}
+    return result
+
+
 def main() -> None:
+    import json
+
     raw_dissertations = load_yaml(DATA_FILE).get("dissertations", [])
     if not isinstance(raw_dissertations, list):
         raise ValueError(
@@ -205,6 +267,28 @@ def main() -> None:
     dissertations.sort(
         key=lambda dissertation: (-dissertation["year"], dissertation["author"].lower())
     )
+
+    author_group_map = build_author_group_map()
+
+    def enrich(d: dict) -> dict:
+        import unicodedata
+        key = unicodedata.normalize("NFD", d["author"]).encode("ascii", "ignore").decode("ascii").lower()
+        member_info = author_group_map.get(key, {})
+        return {"slug": dissertation_slug(d), **d, **member_info}
+
+    # Write JSON cache for use by the Astro [slug].astro page
+    cache = [enrich(d) for d in dissertations]
+    CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Updated {CACHE_FILE}")
+
+    # Create empty abstract markdown files for new dissertations (never overwrite)
+    ABSTRACTS_DIR.mkdir(parents=True, exist_ok=True)
+    for d in dissertations:
+        slug = dissertation_slug(d)
+        abstract_file = ABSTRACTS_DIR / f"{slug}.md"
+        if not abstract_file.exists():
+            abstract_file.write_text("---\n---\n", encoding="utf-8")
+            print(f"  Created abstract stub: {abstract_file.name}")
 
     author_to_slug = build_author_to_slug_map()
     write_text(OUTPUT_FILE, build_page(dissertations, author_to_slug))

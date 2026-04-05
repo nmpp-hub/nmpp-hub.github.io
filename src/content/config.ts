@@ -22,4 +22,11 @@ const groups = defineCollection({
   }),
 });
 
-export const collections = { codes, members, groups };
+const dissertations = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string().optional(),
+  }),
+});
+
+export const collections = { codes, members, groups, dissertations };
