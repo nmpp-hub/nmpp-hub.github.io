@@ -62,44 +62,40 @@ const latestItems = latestResearchData.items || [];
     </section>
 
     <!-- Main Content Sections -->
-    <section class="home-content">
+    <!-- <section class="home-content">
       <article class="content-block">
         <h2>Our Research Focus</h2>
-        <p>
-          <!-- GNI -->
-          The NMPP division develops structure-preserving numerical methods and high-performance software
+        <p>The NMPP division develops structure-preserving numerical methods and high-performance software
           for plasma physics, spanning geometric integration, finite elements, kinetic and MHD simulation,
-          turbulence modelling, and data-driven analysis.
+          turbulence modelling, and data-driven analysis.</p>
+        <ul>Check out our <a href="/codes/">codes</a> and <a href="/groups/">reserach groups</a>!
+        </ul> -->
+        <!-- <ul>
           The <a href="/groups/geometric-numerical-integration/">Geometric Numerical Integration</a> group
-          produces <a href="/codes/geometricintegrators/">GeometricIntegrators.jl</a>, a Julia library of
-          symplectic and variational integrators;
-          <!-- FEM -->
-          the <a href="/groups/finite-element-methods/">Finite Element Methods</a> group develops compatible
-          B-spline discretizations via <a href="/codes/psydac/">PSYDAC</a>;
-          <!-- KGM -->
-          and the
-          <a href="/groups/kinetic-gyrokinetic-models/">Kinetic and Gyrokinetic Models</a> group simulates
-          the full Vlasov equation using the geometric PIC code <a href="/codes/gempicx/">GEMPICX</a>, and
-          the hybrid code <a href="/codes/struphy/">STRUPHY</a> models energetic-particle–wave interactions.
-          , and the portable gyrokinetic library
-          Gyrokinetics etc <a href="/codes/gyselalibxx/">Gyselalib++</a> the six-dimensional semi-Lagrangian solver.
-          <!-- MHD -->
+            develops symplectic and variational integrators for plasma models, implemented in
+            <a href="/codes/geometricintegrators/">GeometricIntegrators.jl</a>.
+          The <a href="/groups/finite-element-methods/">Finite Element Methods</a> group constructs
+            compatible finite element discretizations based on de Rham sequences, with tools collected in
+            <a href="/codes/psydac/">PSYDAC</a>, a Python library for isogeometric analysis.
+          The <a href="/groups/kinetic-gyrokinetic-models/">Kinetic and Gyrokinetic Models</a> group
+            simulates the Vlasov and gyrokinetic equations via the geometric PIC code
+            <a href="/codes/gempicx/">GEMPICX</a>, the six-dimensional semi-Lagrangian solver
+            <a href="/codes/bsl6d/">BSL6D</a>, and the portable gyrokinetic library
+            <a href="/codes/gyselalibxx/">Gyselalib++</a>.
           The <a href="/groups/magnetohydrodynamics/">Magnetohydrodynamics</a> group computes 3D MHD
-          equilibria with <a href="/codes/gvec/">GVEC</a>.
-          <!-- KGKGM -->
+            equilibria with <a href="/codes/gvec/">GVEC</a> and models energetic-particle–wave interactions
+            with the structure-preserving hybrid code <a href="/codes/struphy/">STRUPHY</a>.
           The <a href="/groups/zonal-flows-turbulent/">Zonal Flows in Turbulent Plasmas</a> group studies
-          turbulence-driven flows in fusion devices and planetary atmospheres using <a href="/codes/bsl6d/">BSL6D</a>,
-          <!-- DAAL -->
-          the <a href="/groups/probabilistic-data-analysis/">Probabilistic Data Analysis and Active
-          Learning</a> group applies Bayesian and machine-learning methods - including
-          <a href="/codes/geometricmachinelearning/">GeometricMachineLearning.jl</a> - to plasma modelling
-          and experiment design,
-          <!-- ACH -->
-          and the <a href="/groups/advanced-computing-hub/">Advanced Computing
-          Hub</a> supports HPC deployment of these codes across EUROfusion supercomputing infrastructure.
-        </p>
-      </article>
-    </section>
+            turbulence-driven zonal flows in fusion devices and planetary atmospheres.
+          The <a href="/groups/probabilistic-data-analysis/">Probabilistic Data Analysis and Active
+            Learning</a> group applies Bayesian and machine-learning methods — including
+            <a href="/codes/geometricmachinelearning/">GeometricMachineLearning.jl</a> — to plasma
+            modelling and experiment design.
+          The <a href="/groups/advanced-computing-hub/">Advanced Computing Hub</a> supports HPC
+            deployment of these codes across EUROfusion supercomputing infrastructure.
+        </ul> -->
+      <!-- </article>
+    </section> -->
 
     <!-- Latest Publications/Dissertations Slideshow -->
     <section class="home-latest">

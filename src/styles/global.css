@@ -1592,8 +1592,13 @@ html[data-theme='dark'] .home-btn-secondary:hover {
 
 /* Content sections */
 .home-content {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--nmpp-surface-soft) 0%, var(--nmpp-card) 100%);
+  border-radius: 1rem;
   display: grid;
   gap: 3rem;
+  text-align: left;
+  border: 1px solid var(--nmpp-line);
 }
 
 .content-block {
