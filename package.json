@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build:presentations": "quarto render src/presentations/00_website_tutorial/nmpp-website-presentation.qmd --output-dir public/presentations/00_website_tutorial",
+    "build:presentations": "quarto render src/presentations/00_website_tutorial/nmpp-website-presentation.qmd --output-dir ../../../public/presentations/00_website_tutorial",
     "build": "npm run build:presentations && astro build",
     "preview": "astro preview"
   },
