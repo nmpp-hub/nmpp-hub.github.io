@@ -28,7 +28,7 @@ jobs:
 
       - run: npm ci
 
-      - run: python generate_website.py
+      - run: python generate_website.py --refresh
 
       - run: git status
 
