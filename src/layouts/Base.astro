@@ -144,6 +144,9 @@ const path = Astro.url.pathname;
           <li class={path.startsWith('/members') ? 'nav-active' : ''}>
             <a href="/members/">Members</a>
           </li>
+          <li class={path.startsWith('/about') ? 'nav-active' : ''}>
+            <a href="/about/">About</a>
+          </li>
         </ul>
 
         <div class="site-search" role="search" aria-label="Site search">
