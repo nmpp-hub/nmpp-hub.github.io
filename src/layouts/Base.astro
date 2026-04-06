@@ -14,7 +14,7 @@ interface Props {
 }
 
 const { title, breadcrumbs = [] } = Astro.props;
-const pageTitle = title ? `${title} — NMPP Division at IPP` : 'NMPP Division at IPP';
+const pageTitle = title ? `${title} - NMPP Division at IPP` : 'NMPP Division at IPP';
 
 const codes = await getCollection('codes');
 const codeList = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title));
@@ -143,6 +143,9 @@ const path = Astro.url.pathname;
           </li>
           <li class={path.startsWith('/members') ? 'nav-active' : ''}>
             <a href="/members/">Members</a>
+          </li>
+          <li class={path.startsWith('/about') ? 'nav-active' : ''}>
+            <a href="/about/">About</a>
           </li>
         </ul>
 

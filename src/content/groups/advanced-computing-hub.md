@@ -11,12 +11,15 @@ title: Advanced Computing Hub
 The Advanced Computing Hub (ACH) provides support to scientists from all Research Units of the EUROfusion consortium for the development and optimization of codes to be used on supercomputers.
 
 ### MARCONI supercomputer
+
 Currently there is the MARCONI supercomputer in the framework of the EUROfusion consortium being used to perform fusion relevant simulations. It is hosted by CINECA in Bologna, Italy with a total compute power of about 12.5 petaflop/s (Intel SKL partition: 9.3 petaflops + Nvidia GPU partition: 3.2 petaflops) dedicated to the usage of EUROfusion.
 
 ### The Team
+
 The ACH consists of a core team based at the Max-Planck-Institut für Plasmaphysik in Garching and a team member provided by another Research Unit of EUROfusion, who is located at the Dublin City University (DCU). The ACH members are all HPC experts with a background in developing large scientific applications and particular expertise in numerical algorithms.
 
 ### ACH support tasks
+
 - Parallelise codes using e.g. OpenMP and/or MPI standards for massively parallel computers
 - Improve the performance of existing parallel codes both at the single node and inter node levels
 - Support the transfer of codes to new multiprocessors' architectures, like e.g. GPUs
@@ -25,4 +28,5 @@ The ACH consists of a core team based at the Max-Planck-Institut für Plasmaphys
 - Provide guidance for young scientists on available training activities in HPC and towards upcoming new computer architectures
 
 ## Additional Links
+
 - [ACH official webpage](https://www.ipp.mpg.de/3987588/ach)
