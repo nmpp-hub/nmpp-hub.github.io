@@ -74,6 +74,7 @@ def load_dissertations() -> list[dict]:
         dissertations.append(
             {
                 "year": int(entry.get("year", 0)),
+                "date": str(entry.get("date", f"{entry.get('year', 0)}-01-01")),
                 "title": str(entry.get("title", "")).strip(),
                 "author": str(entry.get("author", "")).strip(),
                 "degree": str(entry.get("degree", "")).strip().lower(),
@@ -175,25 +176,24 @@ def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[
     cards = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        link = f"<a href=\"{escape_text(diss['link'])}\">Full text</a>"
-        details = f"{degree} · {link}"
+        codes_links = ', '.join([f'<a href="/codes/{code}/">{code}</a>' for code in diss['codes']])
 
         table_rows.append(f"""    <tr>
-      <td>{diss['year']}</td>
+      <td>{diss['date']}</td>
       <td>{render_dissertation_title(diss)}</td>
       <td>{render_author_list(diss['author'], author_to_slug)}</td>
-      <td>{details}</td>
+      <td>{degree}</td>
+      <td>{codes_links}</td>
     </tr>""")
 
         card = f"""
         <div class="publication-card">
           <div class="publication-card-header">
-            <div class="publication-card-year">{diss['year']}</div>
+            <div class="publication-card-date">{diss['date']}</div>
             <div class="publication-card-title">{render_dissertation_title(diss)}</div>
             <div class="publication-card-authors">{render_author_list(diss['author'], author_to_slug)}</div>
-            <div class="publication-card-details">
-              {details}
-            </div>
+            <div class="publication-card-degree">{degree}</div>
+            <div class="publication-card-codes">{codes_links}</div>
           </div>
         </div>
         """
@@ -207,10 +207,11 @@ def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[
     <table class="publications-table">
       <thead>
         <tr>
-          <th>Year</th>
+          <th>Date</th>
           <th>Title</th>
           <th>Authors</th>
-          <th>Details</th>
+          <th>Degree</th>
+          <th>Codes</th>
         </tr>
       </thead>
       <tbody>
@@ -265,7 +266,7 @@ def main() -> None:
         pubs.sort(key=lambda p: (-(p["year"] or 0), p["title"].lower()))
 
         diss = [d for d in all_diss if slug in d.get("codes", [])]
-        diss.sort(key=lambda d: (-d["year"], d["author"].lower()))
+        diss.sort(key=lambda d: d["date"], reverse=True)
 
         # Write auto sections to separate files
         (CODES_AUTO_DIR / f"{slug}.members.html").write_text(

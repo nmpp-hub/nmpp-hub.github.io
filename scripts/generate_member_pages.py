@@ -190,6 +190,7 @@ def load_dissertations() -> list[dict]:
         dissertations.append(
             {
                 "year": int(entry.get("year", 0)),
+                "date": str(entry.get("date", f"{entry.get('year', 0)}-01-01")),
                 "title": str(entry.get("title", "")).strip(),
                 "author": str(entry.get("author", "")).strip(),
                 "degree": str(entry.get("degree", "")).strip().lower(),
@@ -402,25 +403,24 @@ def build_dissertations_section(dissertations: list[dict]) -> str:
     cards = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        link = f"<a href=\"{escape_text(diss['link'])}\">Full text</a>"
-        details = f"{degree} · {link}"
+        codes_links = ', '.join([f'<a href="/codes/{code}/">{code}</a>' for code in diss['codes']])
 
         table_rows.append(f"""    <tr>
-      <td>{diss['year']}</td>
+      <td>{diss['date']}</td>
       <td>{render_dissertation_title(diss)}</td>
       <td>{escape_text(diss['author'])}</td>
-      <td>{details}</td>
+      <td>{degree}</td>
+      <td>{codes_links}</td>
     </tr>""")
 
         card = f"""
         <div class="publication-card">
           <div class="publication-card-header">
-            <div class="publication-card-year">{diss['year']}</div>
+            <div class="publication-card-date">{diss['date']}</div>
             <div class="publication-card-title">{render_dissertation_title(diss)}</div>
             <div class="publication-card-authors">{escape_text(diss['author'])}</div>
-            <div class="publication-card-details">
-              {details}
-            </div>
+            <div class="publication-card-degree">{degree}</div>
+            <div class="publication-card-codes">{codes_links}</div>
           </div>
         </div>
         """
@@ -434,10 +434,11 @@ def build_dissertations_section(dissertations: list[dict]) -> str:
     <table class="publications-table">
       <thead>
         <tr>
-          <th>Year</th>
+          <th>Date</th>
           <th>Title</th>
           <th>Author</th>
-          <th>Details</th>
+          <th>Degree</th>
+          <th>Codes</th>
         </tr>
       </thead>
       <tbody>
@@ -485,7 +486,7 @@ def main() -> None:
         member_pubs.sort(key=lambda p: (-(p["year"] or 0), p["title"].lower()))
 
         member_diss = [d for d in all_dissertations if member_matches_dissertation(member, d)]
-        member_diss.sort(key=lambda d: (-d["year"], d["author"].lower()))
+        member_diss.sort(key=lambda d: d["date"], reverse=True)
 
         # Generate page
         output_file = MEMBERS_OUTPUT_DIR / f"{slug}.md"

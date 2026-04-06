@@ -1,25 +1,9 @@
 [
   {
-    "slug": "structure-preserving-neural-networks-for-scientific-computing",
-    "author_html": "<a href=\"/members/benedikt-brantner/\">Benedikt Brantner</a>",
-    "year": 2025,
-    "title": "Structure-Preserving Neural Networks for Scientific Computing",
-    "author": "Benedikt Brantner",
-    "degree": "phd",
-    "institution": "",
-    "link": "https://mediatum.ub.tum.de/1754855",
-    "groups": [],
-    "codes": [
-      "geometricmachinelearning"
-    ],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Brantner, Benedikt},\r\n\ttitle = {Geometric Machine Learning},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {306},\r\n\tlanguage = {en},\r\n\tabstract = {In this dissertation we propose an array of novel neural network architectures and optimization algorithms to treat problems in scientific computing, especially reduced order modeling. All the new architectures are structure-preserving (symplectic, volume-preserving, ...) in some sense and we show how these structure-preserving properties can improve the application of neural networks to problems from scientific computing.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1754855},\r\n\tdoi = {},\r\n}",
-    "group": "Geometric Numerical Integration",
-    "group_slug": "geometric-numerical-integration"
-  },
-  {
     "slug": "development-and-analysis-of-structure-preserving-finite",
     "author_html": "<a href=\"/members/frederik-schnack/\">Frederik Schnack</a>",
     "year": 2025,
+    "date": "2025-10-28",
     "title": "Development and analysis of structure-preserving finite element methods on non-conforming meshes",
     "author": "Frederik Schnack",
     "degree": "phd",
@@ -34,26 +18,10 @@
     "group_slug": "finite-element-methods"
   },
   {
-    "slug": "development-of-an-implicit-geometric-pic",
-    "author_html": "<a href=\"/members/jiayi-li/\">Jiayi Li</a>",
-    "year": 2025,
-    "title": "Development of an implicit Geometric PIC method",
-    "author": "Jiayi Li",
-    "degree": "msc",
-    "institution": "",
-    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf",
-    "groups": [],
-    "codes": [
-      "gempicx"
-    ],
-    "bibtex": "",
-    "group": "Kinetic and Gyrokinetic Models",
-    "group_slug": "kinetic-gyrokinetic-models"
-  },
-  {
     "slug": "development-and-implementation-of-algorithms-for",
     "author_html": "<a href=\"/members/nils-schild/\">Nils Schild</a>",
     "year": 2025,
+    "date": "2025-07-08",
     "title": "Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures",
     "author": "Nils Schild",
     "degree": "phd",
@@ -71,6 +39,7 @@
     "slug": "uncertainty-quantification-in-three-dimensional-plasma-equilibrium",
     "author_html": "<a href=\"/members/robert-koberl/\">Robert Köberl</a>",
     "year": 2025,
+    "date": "2025-04-15",
     "title": "Uncertainty quantification in three-dimensional plasma equilibrium reconstruction",
     "author": "Robert Köberl",
     "degree": "phd",
@@ -83,9 +52,46 @@
     "group_slug": "magnetohydrodynamics"
   },
   {
+    "slug": "structure-preserving-neural-networks-for-scientific-computing",
+    "author_html": "<a href=\"/members/benedikt-brantner/\">Benedikt Brantner</a>",
+    "year": 2025,
+    "date": "2025-03-14",
+    "title": "Structure-Preserving Neural Networks for Scientific Computing",
+    "author": "Benedikt Brantner",
+    "degree": "phd",
+    "institution": "",
+    "link": "https://mediatum.ub.tum.de/1754855",
+    "groups": [],
+    "codes": [
+      "geometricmachinelearning"
+    ],
+    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Brantner, Benedikt},\r\n\ttitle = {Geometric Machine Learning},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {306},\r\n\tlanguage = {en},\r\n\tabstract = {In this dissertation we propose an array of novel neural network architectures and optimization algorithms to treat problems in scientific computing, especially reduced order modeling. All the new architectures are structure-preserving (symplectic, volume-preserving, ...) in some sense and we show how these structure-preserving properties can improve the application of neural networks to problems from scientific computing.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1754855},\r\n\tdoi = {},\r\n}",
+    "group": "Geometric Numerical Integration",
+    "group_slug": "geometric-numerical-integration"
+  },
+  {
+    "slug": "development-of-an-implicit-geometric-pic",
+    "author_html": "<a href=\"/members/jiayi-li/\">Jiayi Li</a>",
+    "year": 2025,
+    "date": "2025-01-01",
+    "title": "Development of an implicit Geometric PIC method",
+    "author": "Jiayi Li",
+    "degree": "msc",
+    "institution": "",
+    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf",
+    "groups": [],
+    "codes": [
+      "gempicx"
+    ],
+    "bibtex": "",
+    "group": "Kinetic and Gyrokinetic Models",
+    "group_slug": "kinetic-gyrokinetic-models"
+  },
+  {
     "slug": "development-of-a-geometric-particle-in-cell-method",
     "author_html": "Alicia Robles Pérez",
     "year": 2024,
+    "date": "2024-01-01",
     "title": "Development of a Geometric Particle-in-Cell Method for Cylindrical Coordinate Systems",
     "author": "Alicia Robles Pérez",
     "degree": "msc",
@@ -101,6 +107,7 @@
     "slug": "development-of-a-geometric-pic-method",
     "author_html": "Joris Thiel",
     "year": 2024,
+    "date": "2024-01-01",
     "title": "Development of a Geometric PIC Method for the Linearized Vlasov-Maxwell Equations",
     "author": "Joris Thiel",
     "degree": "msc",
@@ -113,39 +120,10 @@
     "bibtex": ""
   },
   {
-    "slug": "implementation-of-a-galerkin-hodge-operator",
-    "author_html": "Andreas Scheibner",
-    "year": 2023,
-    "title": "Implementation of a Galerkin Hodge Operator in the GEMPICX Framework",
-    "author": "Andreas Scheibner",
-    "degree": "msc",
-    "institution": "",
-    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf",
-    "groups": [],
-    "codes": [
-      "gempicx"
-    ],
-    "bibtex": ""
-  },
-  {
-    "slug": "gempicx-an-amrex-based-high-performance-implementation",
-    "author_html": "Brayan Andreu de Albuquerque",
-    "year": 2023,
-    "title": "GEMPICX: an AMReX Based High-Performance Implementation of Geometric Particle-in-Cell Algorithms",
-    "author": "Brayan Andreu de Albuquerque",
-    "degree": "msc",
-    "institution": "",
-    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf",
-    "groups": [],
-    "codes": [
-      "gempicx"
-    ],
-    "bibtex": ""
-  },
-  {
     "slug": "beyond-gyrokinetic-theory-excitation-of",
     "author_html": "<a href=\"/members/mario-rath/\">Mario Räth</a>",
     "year": 2023,
+    "date": "2023-10-05",
     "title": "Beyond gyrokinetic theory - Excitation of high-frequency turbulence in 6D Vlasov simulations of magnetized plasmas with steep temperature and density gradients",
     "author": "Mario Räth",
     "degree": "phd",
@@ -163,6 +141,7 @@
     "slug": "reduced-basis-methods-for-problems-with",
     "author_html": "<a href=\"/members/tobias-blickhan/\">Tobias Blickhan</a>",
     "year": 2023,
+    "date": "2023-01-01",
     "title": "Reduced basis methods for problems with moving features",
     "author": "Tobias Blickhan",
     "degree": "phd",
@@ -175,9 +154,42 @@
     "group_slug": "geometric-numerical-integration"
   },
   {
+    "slug": "implementation-of-a-galerkin-hodge-operator",
+    "author_html": "Andreas Scheibner",
+    "year": 2023,
+    "date": "2023-01-01",
+    "title": "Implementation of a Galerkin Hodge Operator in the GEMPICX Framework",
+    "author": "Andreas Scheibner",
+    "degree": "msc",
+    "institution": "",
+    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf",
+    "groups": [],
+    "codes": [
+      "gempicx"
+    ],
+    "bibtex": ""
+  },
+  {
+    "slug": "gempicx-an-amrex-based-high-performance-implementation",
+    "author_html": "Brayan Andreu de Albuquerque",
+    "year": 2023,
+    "date": "2023-01-01",
+    "title": "GEMPICX: an AMReX Based High-Performance Implementation of Geometric Particle-in-Cell Algorithms",
+    "author": "Brayan Andreu de Albuquerque",
+    "degree": "msc",
+    "institution": "",
+    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf",
+    "groups": [],
+    "codes": [
+      "gempicx"
+    ],
+    "bibtex": ""
+  },
+  {
     "slug": "geometric-particle-in-cell-methods-on-mapped-grids",
     "author_html": "Benedikt Perse",
     "year": 2021,
+    "date": "2021-01-01",
     "title": "Geometric Particle-in-Cell Methods on Mapped Grids",
     "author": "Benedikt Perse",
     "degree": "phd",

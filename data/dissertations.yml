@@ -2,6 +2,7 @@
 # Each entry in the list defines one dissertation.
 # Fields:
 #   year: graduation year (integer)
+#   date: defense date (YYYY-MM-DD)
 #   title: dissertation title
 #   author: author name
 #   degree: phd or msc
@@ -15,6 +16,7 @@
 #
 dissertations:
   - year: 2025
+    date: 2025-10-28
     title: Development and analysis of structure-preserving finite element methods on non-conforming meshes
     author: Frederik Schnack
     degree: phd
@@ -38,6 +40,7 @@ dissertations:
         doi = {},
       }
   - year: 2025
+    date: 2025-04-15
     title: Uncertainty quantification in three-dimensional plasma equilibrium reconstruction
     author: Robert Köberl
     degree: phd
@@ -46,6 +49,7 @@ dissertations:
     codes: []
     link: https://mediatum.ub.tum.de/1763047
   - year: 2025
+    date: 2025-07-08
     title: Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures
     author: Nils Schild
     degree: phd
@@ -54,6 +58,7 @@ dissertations:
     codes: [bsl6d]
     link: https://mediatum.ub.tum.de/1762920
   - year: 2025
+    date: 2025-03-14
     title: Structure-Preserving Neural Networks for Scientific Computing
     author: Benedikt Brantner
     degree: phd
@@ -62,6 +67,7 @@ dissertations:
     codes: [geometricmachinelearning]
     link: https://mediatum.ub.tum.de/1754855
   - year: 2025
+    date: 2025-01-01
     title: Development of an implicit Geometric PIC method
     author: Jiayi Li
     degree: msc
@@ -70,6 +76,7 @@ dissertations:
     codes: [gempicx]
     link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf
   - year: 2024
+    date: 2024-01-01
     title: Development of a Geometric Particle-in-Cell Method for Cylindrical Coordinate Systems
     author: Alicia Robles Pérez
     degree: msc
@@ -78,6 +85,7 @@ dissertations:
     codes: [gempicx]
     link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0236ffa4ace37242ce0cae6163862c08/RoblesPerez_Thesis.pdf
   - year: 2024
+    date: 2024-01-01
     title: Development of a Geometric PIC Method for the Linearized Vlasov-Maxwell Equations
     author: Joris Thiel
     degree: msc
@@ -86,6 +94,7 @@ dissertations:
     codes: [gempicx]
     link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/ee7b814e95d5e5cb487540b67cadcdef/Thiel_Abschlussarbeit.pdf
   - year: 2023
+    date: 2023-10-05
     title: Beyond gyrokinetic theory - Excitation of high-frequency turbulence in 6D Vlasov simulations of magnetized plasmas with steep temperature and density gradients
     author: Mario Räth
     degree: phd
@@ -94,6 +103,7 @@ dissertations:
     codes: [bsl6d]
     link: https://mediatum.ub.tum.de/1703830
   - year: 2023
+    date: 2023-01-01
     title: Reduced basis methods for problems with moving features
     author: Tobias Blickhan
     degree: phd
@@ -102,6 +112,7 @@ dissertations:
     codes: []
     link: https://mediatum.ub.tum.de/1726153
   - year: 2023
+    date: 2023-01-01
     title: Implementation of a Galerkin Hodge Operator in the GEMPICX Framework
     author: Andreas Scheibner
     degree: msc
@@ -110,6 +121,7 @@ dissertations:
     codes: [gempicx]
     link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf
   - year: 2023
+    date: 2023-01-01
     title: "GEMPICX: an AMReX Based High-Performance Implementation of Geometric Particle-in-Cell Algorithms"
     author: Brayan Andreu de Albuquerque
     degree: msc
@@ -118,6 +130,7 @@ dissertations:
     codes: [gempicx]
     link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf
   - year: 2021
+    date: 2021-01-01
     title: Geometric Particle-in-Cell Methods on Mapped Grids
     author: Benedikt Perse
     degree: phd
