@@ -1,0 +1,280 @@
+// Inspiration:
+// https://github.com/grantmcdermott/quarto-revealjs-clean/blob/main/_extensions/clean/clean.scss
+// https://github.com/emilhvitfeldt/talk-jsm-stunning-presentations/
+// https://github.com/thomas-fung/quarto-mq-revealjs-theme.git
+
+/*-- scss:defaults --*/
+
+// Custom colours and variables
+
+$jet: #131516;
+$right-arrow: "\2192"; // Unicode character for right arrow
+
+// from mpg-colors.sty in the IPP-MPG LaTeX template
+$ipp-green: #006c66;
+$ipp-green-light: #c6d325;
+$ipp-green-dark: #005555;
+$ipp-grey: #a7a7a7;
+$ipp-grey-light: #777777;
+$ipp-grey-dark: #eeeeee;
+$ipp-blue-light: #00b1ea;
+$ipp-blue-dark: #29485d;
+$ipp-orange: #ef7c00;
+
+// fonts
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i&display=swap");
+
+$font-family-sans-serif: "Roboto", sans-serif !default;
+$presentation-heading-font: "Roboto", sans-serif !default;
+
+$presentation-heading-color: $jet !default;
+$presentation-heading-font-weight: lighter;
+//$presentation-heading-line-height: 2;
+//$presentation-block-margin: 28px;
+$presentation-font-size-root: 24px;
+
+// colors
+//$body-bg: #f0f1eb !default;
+$body-color: $jet !default;
+$link-color: $ipp-green !default;
+$selection-bg: $ipp-green-dark !default;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.5em;
+}
+
+.reveal p {
+  // font-weight: 300;
+  font-weight: lighter;
+  margin-top: 1.25em;
+}
+
+// --------------------------------------------- //
+// Title slide
+// Title slide logos
+.ipp-frontpage-logo-topright {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  height: 80px;
+  z-index: 1000;
+}
+
+// title and headings
+
+/* Container: Now handles the green background itself */
+#title-slide.quarto-title-block {
+  position: absolute;
+  width: 90%;
+  height: 50%;
+  padding: 48px 40px;
+  background: $ipp-green; /* Green box is now the main background */
+  overflow: visible;
+  z-index: 10;
+  // For moving the block in front of the dots
+  transform-style: preserve-3d;
+  background: $ipp-green;
+}
+
+/* Grid 1: Top-Left */
+#title-slide.quarto-title-block::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 360px;
+  height: 260px;
+  pointer-events: none;
+  transform: translateZ(-1px); /* Sit behind the green box */
+
+  background-image: radial-gradient(
+    circle,
+    white 0 2px,
+    white 2px,
+    $ipp-green-light 3px,
+    $ipp-green-light 3px,
+    transparent 4px
+  );
+  background-size: 25px 25px;
+  background-repeat: repeat;
+}
+
+/* Grid 2: Bottom-Right */
+#title-slide.quarto-title-block::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -70px;
+  width: 370px;
+  height: 270px;
+  pointer-events: none;
+  transform: translateZ(-1px); /* Sit behind the green box */
+
+  // You can use a different color or spacing here
+  background-image: radial-gradient(
+    circle,
+    white 0 2px,
+    white 2px,
+    $ipp-green-light 3px,
+    $ipp-green-light 3px,
+    transparent 4px
+  );
+  background-size: 25px 25px;
+  background-repeat: repeat;
+}
+
+/* Keep text content above everything */
+#title-slide.quarto-title-block > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Target the container AND the image inside it */
+.reveal .slide-logo,
+.reveal .slide-logo img {
+  display: block !important;
+  /* Increase this value to suit your eye - try 150px or 180px */
+  height: 100px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.reveal .slide-logo {
+  position: fixed;
+  top: 30px !important;
+  right: 30px !important;
+  z-index: 1001 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.title-slide .slide-logo {
+  display: none !important;
+}
+
+#title-slide {
+  text-align: left;
+
+  /* This adds the logo to the TOP RIGHT of the WHOLE slide, above the green box */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -80px; /* Offset to move it above the green box */
+    right: 0;
+    width: 250px; /* Adjust based on logo aspect ratio */
+    height: 100px;
+    background: url("ipp-logo.jpg") no-repeat right top;
+    background-size: contain;
+    z-index: 1005; /* Ensures it stays above everything */
+  }
+
+  // Logo in top right corner for all slides
+  .title {
+    color: white;
+    font-size: 1.4em;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-weight: bolder;
+  }
+
+  .subtitle {
+    color: white;
+    font-style: italic;
+    margin-top: 0em;
+    margin-left: 15px;
+    // font-weight: light;
+  }
+
+  .author,
+  .quarto-title-author-name,
+  .date,
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    margin-left: 15px;
+    color: white;
+  }
+
+  .date,
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-style: italic;
+    font-size: 60%;
+  }
+
+  // TODO: Fix this for multiple authors
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+    }
+  }
+}
+
+// --------------------------------------------- //
+
+.reveal h2 {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: $ipp-green;
+}
+
+.reveal h3 {
+  color: $ipp-green;
+  font-style: italic;
+  // font-weight: 350;
+  font-weight: lighter;
+  font-size: 0.95em;
+}
+
+.reveal h4 {
+  color: $ipp-green;
+  // font-weight: 350;
+  font-weight: normal;
+  margin-top: 1.25em;
+}
+
+// lists
+// Unordered lists
+
+.reveal ul {
+  // font-weight: 300;
+  font-weight: lighter;
+  padding-left: 16px;
+
+  li::marker {
+    color: mix($ipp-green, white, 70%);
+  }
+}
+
+.reveal ul ul {
+  list-style: none;
+
+  li:before {
+    content: $right-arrow;
+    color: mix($ipp-green, white, 60%);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.5em;
+  }
+}
+
+// Ordered lists
+.reveal ol {
+  font-weight: lighter;
+  padding-left: 16px;
+
+  li::marker {
+    color: $ipp-green;
+  }
+}

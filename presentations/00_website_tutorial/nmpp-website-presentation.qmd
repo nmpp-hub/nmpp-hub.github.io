@@ -1,0 +1,164 @@
+---
+title: NMPP Website
+subtitle: A short discussion
+format:
+  revealjs:
+    theme: ipp.scss
+    logo: ipp-logo.jpg
+    smaller: false
+    footer: "IPP Presentation Template"
+author:
+  - name: Max Lindqvist
+    # orcid: 0000-0000-0000-0000
+    email: max.lindqvist@ipp.mpg.de
+    affiliations: Max Planck Institute for Plasma Physics
+date: last-modified
+---
+
+## Motivation for NMPP Hub Website
+
+### Why We Need a Dedicated NMPP Website
+
+- **Comprehensive overview**: Detailed, up-to-date info about NMPP not available on IPP pages
+- **Research visibility**: Showcase codes, publications, and research groups
+- **Recruitment**: Useful overview for new applicants, collaborators, and students
+<!-- - **Knowledge Sharing**: Centralize access to numerical methods, plasma physics codes, and research outputs -->
+
+### Current Challenges Addressed
+
+- Scattered information across personal pages and repositories
+- Limited visibility of NMPP's numerical methods expertise
+- Difficulty for external (or internal!) researchers to discover our work
+- Lack of centralized resource for codes and publications
+<!-- - Need for better coordination between research groups -->
+
+<!-- ### Target Audience
+
+- **New Applicants**: Students and researchers interested in joining NMPP
+- **Collaborators**: Scientists seeking partnership opportunities
+- **Funding Agencies**: Demonstrating research impact and capabilities
+- **Academic Community**: Sharing methodologies and results
+- **Internal Team**: Better coordination and knowledge sharing -->
+
+## Inspiration: Chalmers plasma theory
+
+::: {style="position: relative; width: 100%; height: 70vh;"}
+<iframe src="https://ft.nephy.chalmers.se/" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+:::
+
+**Key Takeaways:**
+- A
+- B
+
+## Inspiration: GyselaX code page
+
+::: {style="position: relative; width: 100%; height: 70vh;"}
+<iframe src="https://gyselax.github.io/" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+:::
+
+**Key Takeaways:**
+- A
+- B
+
+## Inspiration: BSC fusion group
+
+::: {style="position: relative; width: 100%; height: 70vh;"}
+<iframe src="https://fusion.bsc.es/" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+:::
+
+**Key Takeaways:**
+
+- Contact form
+- Educations resources
+- Media - videos, news, conferences, etc.
+
+## NMPP Website
+
+Open [this link](https://nmpp-hub.github.io/).
+
+<!-- **Current Features:**
+
+- **Codes**: Repository of numerical methods and plasma physics software
+- **Groups**: Research group pages and collaborations
+- **Members**: Team profiles and expertise
+- **Dissertations**: Student research and theses
+- **Publications**: Research papers and citations
+- **About NMPP**: Mission and methodology overview -->
+
+## Tutorial: Editing the NMPP Hub Website
+
+### How to Update Content
+
+First, [install npm](https://www.npmjs.com/get-npm), then follow these steps to install all dependencies:
+
+```bash
+npm install
+```
+
+Build the website locally to test changes:
+
+```bash
+npm run dev
+```
+then open `http://localhost:4321/` in your browser to see the changes.
+
+## Tutorial: Updating automatically generated content
+
+Install the required Python packages:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Update website content with
+
+```bash
+python generate_website.py            # Basic update
+python generate_website.py --refresh  # Fetch new metadata
+```
+
+#### Data Files
+
+Edit the following YAML files to update content:
+
+- [`data/members.yml`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/data/members.yml) - Add/update team members
+- [`data/dois.yml`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/data/dois.yml) - Add new publications (DOIs)
+- [`data/dissertations.yml`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/data/dissertations.yml) - Update dissertation information
+- [`data/groups.yml`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/data/groups.yml) - Modify research groups
+- [`data/codes.yml`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/data/codes.yml) - Add new code repositories
+
+## Tutorial: Updating manually generated content
+
+Edit the following Markdown files for static content:
+
+- [`src/content/codes/code-name.md`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/src/content/codes/gempicx.md?plain=1) (see example page [here](https://nmpp-hub.github.io/codes/gempicx/)) 
+- [`src/content/dissertations/dissertation-name.md`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/src/content/dissertations/development-and-analysis-of-structure-preserving-finite.md?plain=1) (see example page [here](https://nmpp-hub.github.io/dissertations/development-and-analysis-of-structure-preserving-finite/)) 
+- [`src/content/groups/group-name.md`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/src/content/groups/geometric-numerical-integration.md?plain=1) (see example page [here](https://nmpp-hub.github.io/groups/geometric-numerical-integration/))
+- [`src/content/members/firstname-lastname.md`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/src/content/members/eric-sonnendrucker.md?plain=1) (see example page [here](https://nmpp-hub.github.io/members/eric-sonnendrucker/))
+- [`src/pages/index.astro`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/src/pages/index.astro?plain=1) (see homepage [here](https://nmpp-hub.github.io/))
+- [`src/pages/about.astro`](https://github.com/nmpp-hub/nmpp-hub.github.io/blob/main/src/pages/about.astro?plain=1) (see about page [here](https://nmpp-hub.github.io/about/))
+
+If you have any questions or requests, just ask me!
+
+## Tutorial: Building and deploying
+
+After changing content, just open a [pull request](https://github.com/nmpp-hub/nmpp-hub.github.io/pulls) and ask for review.
+
+Once approved (by me?), the changes will be automatically deployed to GitHub Pages.
+
+## Open Questions for Discussion
+
+### Technical & Infrastructure Decisions
+
+- **Domain**: Should we use a custom domain (nmpp.ipp.mpg.de) or keep github.io?
+- **Code Organization**: Move any NMPP codes to a GitHub organization for better visibility?
+
+### Content & Features
+
+- **What's Missing**: Are there important sections or information not covered?
+- **News Page**: Should we add a news/blog section for announcements and updates?
+- **Educational Content**: Add tutorials, documentation, or learning resources?
+
+### Maintenance & Governance
+
+- **Maintenance**: Who will be responsible for keeping content up-to-date?
