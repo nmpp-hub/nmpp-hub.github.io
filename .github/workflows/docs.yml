@@ -28,6 +28,12 @@ jobs:
 
       - run: npm ci
 
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 'latest'
+
+      - run: npm run build:presentations
+
       - run: python generate_website.py --refresh
 
       - run: git status

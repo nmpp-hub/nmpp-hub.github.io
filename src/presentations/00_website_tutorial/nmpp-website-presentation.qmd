@@ -6,10 +6,9 @@ format:
     theme: ipp.scss
     logo: ipp-logo.jpg
     smaller: false
-    footer: "IPP Presentation Template"
+    footer: "NMPP website"
 author:
   - name: Max Lindqvist
-    # orcid: 0000-0000-0000-0000
     email: max.lindqvist@ipp.mpg.de
     affiliations: Max Planck Institute for Plasma Physics
 date: last-modified
@@ -22,7 +21,6 @@ date: last-modified
 - **Comprehensive overview**: Detailed, up-to-date info about NMPP not available on IPP pages
 - **Research visibility**: Showcase codes, publications, and research groups
 - **Recruitment**: Useful overview for new applicants, collaborators, and students
-<!-- - **Knowledge Sharing**: Centralize access to numerical methods, plasma physics codes, and research outputs -->
 
 ### Current Challenges Addressed
 
@@ -30,7 +28,6 @@ date: last-modified
 - Limited visibility of NMPP's numerical methods expertise
 - Difficulty for external (or internal!) researchers to discover our work
 - Lack of centralized resource for codes and publications
-<!-- - Need for better coordination between research groups -->
 
 <!-- ### Target Audience
 
