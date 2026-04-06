@@ -1,5 +1,24 @@
 [
   {
+    "doi": "10.1017/S0022377826101317",
+    "slug": "a-least-action-principle-for-visco-resistive-hall",
+    "title": "A least-action principle for visco-resistive Hall magnetohydrodynamics with metriplectic reformulation",
+    "authors": "Valentin Carlier, Martin Campos-Pinto",
+    "venue": "Journal of Plasma Physics",
+    "journal": "Journal of Plasma Physics",
+    "year": 2026,
+    "abstract": "We present a new variational formulation for viscous and resistive Hall magnetohydrodynamics. We first find a variational principle for ideal Hall magnetohydrodynamics by applying the physical assumptions leading to Hall magnetohydrodynamics at the Lagrangian level, and then we add the viscous and resistive terms by means of constrained variations. We also provide a metriplectic reformulation of our formulation, based on two canonical Lie–Poisson brackets for the ideal part and metric 4-brackets for the dissipative part.",
+    "bibtex": "@article{Carlier_2026, title={A least-action principle for visco-resistive Hall magnetohydrodynamics with metriplectic reformulation}, volume={92}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/S0022377826101317}, DOI={10.1017/s0022377826101317}, number={2}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Carlier, Valentin and Campos-Pinto, Martin}, year={2026}, month=mar }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "92",
+    "issue": "2",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/S0022377826101317",
+    "groups": [],
+    "codes": [],
+    "authors_html": "<a href=\"/members/valentin-carlier/\">Valentin Carlier</a>, <a href=\"/members/martin-campos-pinto/\">Martin Campos-Pinto</a>"
+  },
+  {
     "doi": "10.1051/epjconf/202634601003",
     "title": "Beam Tracing in Phase Space: Paraxial Description of High-Frequency Wave Beams in Turbulent Plasmas",
     "authors": "Omar Maj, Hannes Weber, Emanuele Poli",
