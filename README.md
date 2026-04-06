@@ -11,10 +11,10 @@ npm install
 
 All dynamic content (publications, members, dissertations, code links, and group pages) is generated from YAML files in the `data/` directory:
 
-- `data/dois.yml` — publication DOIs and metadata
-- `data/members.yml` — member roster
-- `data/dissertations.yml` — dissertations
-- `data/groups.yml` — research groups
+- `data/dois.yml` - publication DOIs and metadata
+- `data/members.yml` - member roster
+- `data/dissertations.yml` - dissertations
+- `data/groups.yml` - research groups
 
 To update the site, simply edit the relevant YAML file(s) and run:
 
