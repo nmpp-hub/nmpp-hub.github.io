@@ -30,6 +30,10 @@ jobs:
 
       - run: python generate_website.py
 
+      - run: git status
+
+      - run: git diff
+
       - run: npm run build
 
       - uses: peaceiris/actions-gh-pages@v4
