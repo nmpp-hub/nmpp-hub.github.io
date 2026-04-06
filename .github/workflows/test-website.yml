@@ -1,15 +1,15 @@
-name: Deploy Docs
+name: Build website
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  deploy:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -41,8 +41,3 @@ jobs:
       - run: git diff
 
       - run: npm run build
-
-      - uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
