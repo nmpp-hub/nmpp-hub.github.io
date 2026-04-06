@@ -6,7 +6,6 @@
 npm install
 ```
 
-
 ## Data-driven content and regeneration
 
 All dynamic content (publications, members, dissertations, code links, and group pages) is generated from YAML files in the `data/` directory:
@@ -24,6 +23,7 @@ python generate_website.py
 ```
 
 This will regenerate all derived pages and caches, including:
+
 - Publication index and detail pages: `src/pages/publications/`
 - Member list and profiles: `src/pages/members.astro`, `src/pages/members/`
 - Dissertations: `src/pages/dissertations.astro`
@@ -37,10 +37,13 @@ python generate_website.py --refresh
 ```
 
 All generated content is written to the `src/pages/` directory and the publication cache in `data/`. The static site output is in `dist/` after running `npm run build`.
-   ```md
-   ---
-   title: MyCode
-   ---
-   Your content here.
-   ```
+
+```md
+---
+title: MyCode
+---
+
+Your content here.
+```
+
 3. Add non-code pages under `src/pages/` and add a nav link in `src/layouts/Base.astro`.

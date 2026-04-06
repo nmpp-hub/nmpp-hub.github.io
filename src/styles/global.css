@@ -13,7 +13,7 @@
   --nmpp-overlay: rgba(16, 40, 56, 0.08);
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --nmpp-ink: #e6edf4;
   --nmpp-subtle: #9fb0c0;
   --nmpp-bg: #0b1520;
@@ -36,7 +36,7 @@ html[data-theme='dark'] {
 }
 
 html {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: "Space Grotesk", system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--nmpp-ink);
@@ -69,7 +69,7 @@ a:hover {
 }
 
 code {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.875em;
   background: var(--nmpp-surface-soft);
   padding: 0.1em 0.35em;
@@ -77,7 +77,7 @@ code {
 }
 
 pre {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   background: #1a2535;
   color: #e8edf2;
   padding: 1.25rem 1.5rem;
@@ -161,7 +161,9 @@ h5 {
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .nav-links > li > a:hover,
@@ -194,7 +196,7 @@ h5 {
 }
 
 .nav-links > li:hover::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -8px;
   left: 0;
@@ -256,8 +258,8 @@ h5 {
   border-radius: 0.38rem;
 }
 
-html[data-theme='light'] .theme-toggle-light,
-html[data-theme='dark'] .theme-toggle-dark {
+html[data-theme="light"] .theme-toggle-light,
+html[data-theme="dark"] .theme-toggle-dark {
   background: var(--nmpp-surface-soft);
   color: var(--nmpp-ink);
 }
@@ -379,7 +381,7 @@ html[data-theme='dark'] .theme-toggle-dark {
 }
 
 .site-breadcrumb li:not(:last-child)::after {
-  content: '/';
+  content: "/";
   color: #8ba1b8;
 }
 
@@ -408,7 +410,10 @@ html[data-theme='dark'] .theme-toggle-dark {
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
 }
 
 .back-to-top.is-visible {
@@ -533,7 +538,10 @@ html[data-theme='dark'] .theme-toggle-dark {
   color: var(--nmpp-ink);
   text-decoration: none;
   box-shadow: 0 2px 10px rgba(20, 40, 60, 0.05);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .nmpp-card:hover {
@@ -635,7 +643,11 @@ html[data-theme='dark'] .theme-toggle-dark {
   width: 38%;
   min-width: 160px;
   max-width: 300px;
-  background: linear-gradient(90deg, rgba(24, 32, 48, 0.8) 75%, rgba(24, 32, 48, 0));
+  background: linear-gradient(
+    90deg,
+    rgba(24, 32, 48, 0.8) 75%,
+    rgba(24, 32, 48, 0)
+  );
   display: flex;
   align-items: flex-start;
   padding: 2rem 1.2rem 1.2rem;
@@ -694,7 +706,9 @@ html[data-theme='dark'] .theme-toggle-dark {
   font-size: 0.95rem;
   background: var(--nmpp-card);
   color: var(--nmpp-ink);
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
   outline: none;
 }
 
@@ -715,7 +729,9 @@ html[data-theme='dark'] .theme-toggle-dark {
   font-size: 0.9rem;
   background: var(--nmpp-card);
   color: var(--nmpp-ink);
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
   outline: none;
 }
 
@@ -935,7 +951,7 @@ html[data-theme='dark'] .theme-toggle-dark {
   word-break: normal;
 }
 
-html[data-theme='dark'] .publication-bibtex {
+html[data-theme="dark"] .publication-bibtex {
   background: #1a2535;
   color: #e8edf2;
 }
@@ -971,7 +987,10 @@ html[data-theme='dark'] .publication-bibtex {
   background: var(--nmpp-card);
   box-shadow: 0 4px 12px var(--nmpp-shadow);
   padding: 1.25rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
   overflow: hidden;
   min-width: 0;
 }
@@ -1412,14 +1431,18 @@ html[data-theme='dark'] .publication-bibtex {
 }
 
 .home-hero::after {
-  content: '';
+  content: "";
   position: absolute;
   right: -80px;
   top: -90px;
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(26, 127, 138, 0.2) 0%, rgba(26, 127, 138, 0.02) 72%);
+  background: radial-gradient(
+    circle at center,
+    rgba(26, 127, 138, 0.2) 0%,
+    rgba(26, 127, 138, 0.02) 72%
+  );
   pointer-events: none;
 }
 
@@ -1429,7 +1452,7 @@ html[data-theme='dark'] .publication-bibtex {
 }
 
 .home-eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1488,20 +1511,20 @@ html[data-theme='dark'] .publication-bibtex {
   background: #fff;
 }
 
-html[data-theme='dark'] .home-hero {
+html[data-theme="dark"] .home-hero {
   background: linear-gradient(140deg, #132435 0%, #152a3c 52%, #122e31 100%);
 }
 
-html[data-theme='dark'] .home-eyebrow {
+html[data-theme="dark"] .home-eyebrow {
   color: #8fd0e2;
 }
 
-html[data-theme='dark'] .home-btn-secondary {
+html[data-theme="dark"] .home-btn-secondary {
   border-color: #3d5668;
   background: rgba(18, 33, 49, 0.75);
 }
 
-html[data-theme='dark'] .home-btn-secondary:hover {
+html[data-theme="dark"] .home-btn-secondary:hover {
   background: rgba(18, 33, 49, 1);
 }
 
@@ -1526,7 +1549,9 @@ html[data-theme='dark'] .home-btn-secondary:hover {
   inset: 0;
   opacity: 0;
   transform: scale(1.02);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
   pointer-events: none;
 }
 
@@ -1544,10 +1569,14 @@ html[data-theme='dark'] .home-btn-secondary:hover {
 }
 
 .home-slide::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(185deg, rgba(7, 17, 26, 0.08) 15%, rgba(7, 17, 26, 0.55) 100%);
+  background: linear-gradient(
+    185deg,
+    rgba(7, 17, 26, 0.08) 15%,
+    rgba(7, 17, 26, 0.55) 100%
+  );
 }
 
 .home-slide-caption {
@@ -1593,7 +1622,11 @@ html[data-theme='dark'] .home-btn-secondary:hover {
 /* Content sections */
 .home-content {
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, var(--nmpp-surface-soft) 0%, var(--nmpp-card) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--nmpp-surface-soft) 0%,
+    var(--nmpp-card) 100%
+  );
   border-radius: 1rem;
   display: grid;
   gap: 3rem;
@@ -1681,7 +1714,11 @@ html[data-theme='dark'] .home-btn-secondary:hover {
 /* Latest research slideshow */
 .home-latest {
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, var(--nmpp-surface-soft) 0%, var(--nmpp-card) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--nmpp-surface-soft) 0%,
+    var(--nmpp-card) 100%
+  );
   border-radius: 1rem;
   text-align: center;
   border: 1px solid var(--nmpp-line);
@@ -1735,7 +1772,11 @@ html[data-theme='dark'] .home-btn-secondary:hover {
 .slide-type {
   display: inline-block;
   padding: 0.35rem 1rem;
-  background: linear-gradient(120deg, var(--nmpp-accent), var(--nmpp-accent-mid));
+  background: linear-gradient(
+    120deg,
+    var(--nmpp-accent),
+    var(--nmpp-accent-mid)
+  );
   color: white;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -1792,7 +1833,11 @@ html[data-theme='dark'] .home-btn-secondary:hover {
   align-items: center;
   gap: 0.5rem;
   padding: 0.85rem 2rem;
-  background: linear-gradient(120deg, var(--nmpp-accent), var(--nmpp-accent-mid));
+  background: linear-gradient(
+    120deg,
+    var(--nmpp-accent),
+    var(--nmpp-accent-mid)
+  );
   color: white;
   text-decoration: none;
   border-radius: 999px;
@@ -1804,7 +1849,11 @@ html[data-theme='dark'] .home-btn-secondary:hover {
 }
 
 .slide-link:hover {
-  background: linear-gradient(120deg, var(--nmpp-accent-mid), var(--nmpp-accent));
+  background: linear-gradient(
+    120deg,
+    var(--nmpp-accent-mid),
+    var(--nmpp-accent)
+  );
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(15, 81, 102, 0.25);
@@ -1878,18 +1927,22 @@ html[data-theme='dark'] .home-btn-secondary:hover {
   border-color: var(--nmpp-accent);
 }
 
-html[data-theme='dark'] .home-latest {
-  background: linear-gradient(135deg, var(--nmpp-surface-soft) 0%, var(--nmpp-card) 100%);
+html[data-theme="dark"] .home-latest {
+  background: linear-gradient(
+    135deg,
+    var(--nmpp-surface-soft) 0%,
+    var(--nmpp-card) 100%
+  );
   border-color: var(--nmpp-line);
 }
 
-html[data-theme='dark'] .latest-controls button {
+html[data-theme="dark"] .latest-controls button {
   background: rgba(18, 33, 49, 0.95);
   border-color: var(--nmpp-line);
   color: var(--nmpp-accent);
 }
 
-html[data-theme='dark'] .latest-controls button:hover {
+html[data-theme="dark"] .latest-controls button:hover {
   background: var(--nmpp-accent);
   border-color: var(--nmpp-accent);
 }

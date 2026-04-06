@@ -1,7 +1,7 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const codes = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
     path: z.string(),
@@ -9,21 +9,21 @@ const codes = defineCollection({
 });
 
 const members = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
   }),
 });
 
 const groups = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string(),
   }),
 });
 
 const dissertations = defineCollection({
-  type: 'content',
+  type: "content",
   schema: z.object({
     title: z.string().optional(),
   }),
