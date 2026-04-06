@@ -62,6 +62,7 @@ def fetch_mediatum_bibtex(url: str) -> str:
 
 def validate_dissertation(raw: dict, index: int) -> dict:
     year = int(raw.get("year"))
+    date = str(raw.get("date", f"{year}-01-01"))
     title = str(raw.get("title", "")).strip()
     author = str(raw.get("author", "")).strip()
     degree = str(raw.get("degree", "")).strip().lower()
@@ -81,6 +82,7 @@ def validate_dissertation(raw: dict, index: int) -> dict:
 
     return {
         "year": year,
+        "date": date,
         "title": title,
         "author": author,
         "degree": degree,
@@ -105,19 +107,15 @@ def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None 
     # Build table rows
     table_rows = []
     for dissertation in dissertations:
-        degree_institution = render_degree_and_institution(dissertation)
+        degree_label = DEGREE_LABELS[dissertation["degree"]]
         codes = render_code_links(dissertation['codes'])
-        link = f"<a href=\"{escape_text(dissertation['link'])}\">Full text</a>"
-        details = f"{degree_institution}"
-        if codes:
-            details += f" · {codes}"
-        details += f" · {link}"
 
         row = f"""    <tr>
-      <td>{dissertation['year']}</td>
+      <td>{dissertation['date']}</td>
       <td>{render_dissertation_title(dissertation)}</td>
       <td>{render_author_name(dissertation['author'], author_to_slug)}</td>
-      <td>{details}</td>
+      <td>{degree_label}</td>
+      <td>{codes}</td>
     </tr>"""
         table_rows.append(row)
 
@@ -126,23 +124,17 @@ def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None 
     # Build cards
     cards = []
     for dissertation in dissertations:
-        degree_institution = render_degree_and_institution(dissertation)
+        degree_label = DEGREE_LABELS[dissertation["degree"]]
         codes = render_code_links(dissertation['codes'])
-        link = f"<a href=\"{escape_text(dissertation['link'])}\">Full text</a>"
-        details = f"{degree_institution}"
-        if codes:
-            details += f" · {codes}"
-        details += f" · {link}"
 
         card = f"""
         <div class="publication-card">
           <div class="publication-card-header">
-            <div class="publication-card-year">{dissertation['year']}</div>
+            <div class="publication-card-date">{dissertation['date']}</div>
             <div class="publication-card-title">{render_dissertation_title(dissertation)}</div>
             <div class="publication-card-authors">{render_author_name(dissertation['author'], author_to_slug)}</div>
-            <div class="publication-card-details">
-              {details}
-            </div>
+            <div class="publication-card-degree">{degree_label}</div>
+            <div class="publication-card-codes">{codes}</div>
           </div>
         </div>
         """
@@ -172,10 +164,11 @@ import Base from '../layouts/Base.astro';
     <table id="publications-table" class="publications-table">
       <thead>
         <tr>
-          <th>Year</th>
+          <th>Date</th>
           <th>Title</th>
           <th>Author</th>
-          <th>Details</th>
+          <th>Degree</th>
+          <th>Codes</th>
         </tr>
       </thead>
       <tbody>
@@ -299,7 +292,7 @@ def main() -> None:
         dissertations.append(dissertation)
 
     dissertations.sort(
-        key=lambda dissertation: (-dissertation["year"], dissertation["author"].lower())
+        key=lambda dissertation: dissertation["date"], reverse=True
     )
 
     author_group_map = build_author_group_map()

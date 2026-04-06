@@ -16,7 +16,7 @@ from typing import Any
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import build_author_to_slug_map, escape_text, load_yaml, render_author_list, render_dissertation_title, render_publication_title, slugify, write_text
+from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_dissertation_title, render_publication_title, slugify, write_text
 
 ROOT = Path(__file__).resolve().parent.parent
 GROUPS_FILE = ROOT / "data" / "groups.yml"
@@ -128,10 +128,12 @@ def load_dissertations() -> list[dict]:
         dissertations.append(
             {
                 "year": int(entry.get("year", 0)),
+                "date": str(entry.get("date", f"{entry.get('year', 0)}-01-01")),
                 "title": str(entry.get("title", "")).strip(),
                 "author": str(entry.get("author", "")).strip(),
                 "degree": str(entry.get("degree", "")).strip().lower(),
                 "link": str(entry.get("link", "")).strip(),
+                "codes": ensure_list(entry.get("codes", [])),
             }
         )
     return dissertations
@@ -246,25 +248,24 @@ def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[
     cards = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        link = f"<a href=\"{escape_text(diss['link'])}\">Full text</a>"
-        details = f"{degree} · {link}"
+        codes_links = ', '.join([f'<a href="/codes/{code}/">{code}</a>' for code in diss['codes']])
 
         table_rows.append(f"""    <tr>
-      <td>{diss['year']}</td>
+      <td>{diss['date']}</td>
       <td>{render_dissertation_title(diss)}</td>
       <td>{render_author_list(diss['author'], author_to_slug)}</td>
-      <td>{details}</td>
+      <td>{degree}</td>
+      <td>{codes_links}</td>
     </tr>""")
 
         card = f"""
         <div class="publication-card">
           <div class="publication-card-header">
-            <div class="publication-card-year">{diss['year']}</div>
+            <div class="publication-card-date">{diss['date']}</div>
             <div class="publication-card-title">{render_dissertation_title(diss)}</div>
             <div class="publication-card-authors">{render_author_list(diss['author'], author_to_slug)}</div>
-            <div class="publication-card-details">
-              {details}
-            </div>
+            <div class="publication-card-degree">{degree}</div>
+            <div class="publication-card-codes">{codes_links}</div>
           </div>
         </div>
         """
@@ -278,10 +279,11 @@ def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[
     <table class="publications-table">
       <thead>
         <tr>
-          <th>Year</th>
+          <th>Date</th>
           <th>Title</th>
           <th>Authors</th>
-          <th>Details</th>
+          <th>Degree</th>
+          <th>Codes</th>
         </tr>
       </thead>
       <tbody>
@@ -362,7 +364,7 @@ def main() -> None:
                 if alias.lower() in author_lower:
                     group_diss.append(diss)
                     break
-        group_diss.sort(key=lambda d: (-d["year"], d["author"].lower()))
+        group_diss.sort(key=lambda d: d["date"], reverse=True)
 
         # Create page only if missing; never overwrite existing user-edited pages
         output_file = GROUPS_OUTPUT_DIR / f"{group['slug']}.md"
