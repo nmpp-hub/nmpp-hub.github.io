@@ -1,16 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import latestResearchData from '../../data/latest_research.json';
 
 const codes = await getCollection('codes');
 const groups = await getCollection('groups');
 
 const topCodes = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title)).slice(0, 6);
 const topGroups = [...groups].sort((a, b) => a.data.title.localeCompare(b.data.title)).slice(0, 6);
+
+// Get latest research items
+const latestItems = latestResearchData.items || [];
 ---
 
 <Base title="NMPP Division">
   <div class="page-wrapper nmpp-home">
+    <!-- Hero Section -->
     <section class="home-hero">
       <div class="home-hero-copy">
         <p class="home-eyebrow">Numerical Methods for Plasma Physics</p>
@@ -53,127 +58,183 @@ const topGroups = [...groups].sort((a, b) => a.data.title.localeCompare(b.data.t
             <button type="button" class="home-slide-dot" aria-label="Show slide 3"></button>
           </div>
         </div>
-        <!-- <div class="home-banner-card home-banner-card-side">
-          <span>Geometry</span>
-          <span>HPC</span>
-          <span>Data Analysis</span>
-        </div> -->
       </div>
     </section>
 
-    <!-- <section class="home-explore-grid" aria-label="Primary site sections">
-      <a class="home-explore-card" href="/codes/">
-        <p>Software</p>
-        <h2>Codes</h2>
-        <span>Browse all NMPP simulation and analysis codes</span>
-      </a>
-      <a class="home-explore-card" href="/groups/">
-        <p>Research</p>
-        <h2>Groups</h2>
-        <span>Discover the thematic research teams in NMPP</span>
-      </a>
-      <a class="home-explore-card" href="/members/">
-        <p>People</p>
-        <h2>Members</h2>
-        <span>Find scientists, students, and collaborators</span>
-      </a>
-      <a class="home-explore-card" href="/publications/">
-        <p>Results</p>
-        <h2>Publications</h2>
-        <span>Search papers and dissertation outputs</span>
-      </a>
-    </section> -->
-
-    <section class="home-discovery">
-      <article class="home-discovery-block">
-        <div class="home-section-head">
-          <h2>Codes</h2>
-          <a href="/codes/">View all codes</a>
-        </div>
-        <div class="home-link-grid">
-          {topCodes.map((code) => (
-            <a href={`/codes/${code.slug}/`} class="home-link-card">
-              <strong>{code.data.title}</strong>
-              <span>Open code page</span>
-            </a>
-          ))}
-        </div>
-      </article>
-
-      <article class="home-discovery-block">
-        <div class="home-section-head">
-          <h2>Research Groups</h2>
-          <a href="/groups/">View all groups</a>
-        </div>
-        <div class="home-link-grid">
-          {topGroups.map((group) => (
-            <a href={`/groups/${group.slug}/`} class="home-link-card">
-              <strong>{group.data.title}</strong>
-              <span>Open group page</span>
-            </a>
-          ))}
-        </div>
+    <!-- Main Content Sections -->
+    <section class="home-content">
+      <article class="content-block">
+        <h2>Our Research Focus</h2>
+        <p>
+          The Numerical Methods for Plasma Physics (NMPP) division develops cutting-edge computational methods
+          and software for plasma physics simulations. Our work spans from X to Y, including A, B, and C...</p>
       </article>
     </section>
 
-    <section class="home-results">
-      <a class="home-results-card" href="/publications/">
-        <h3>Publications</h3>
-        <p>See all publications by members of NMPP.</p>
-      </a>
-      <a class="home-results-card" href="/dissertations/">
-        <h3>Dissertations</h3>
-        <p>See all dissertations from members of NMPP.</p>
-      </a>
-      <a class="home-results-card" href="/members/">
-        <h3>Members</h3>
-        <p>See all members of the NMPP division.</p>
-      </a>
-      <a class="home-results-card" href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik">
-        <h3>Official IPP Page</h3>
-        <p>Visit the institutional webpage for the NMPP division at IPP.</p>
-      </a>
-      <a class="home-results-card" href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer">
-        <h3>GitHub Organization</h3>
-        <p>Browse repositories, code activity, and open-source tools from NMPP.</p>
-      </a>
+    <!-- Latest Publications/Dissertations Slideshow -->
+    <section class="home-latest">
+      <h2>Latest Research Output</h2>
+      <div class="latest-slideshow" data-latest-slideshow>
+        {latestItems.map((item, index) => (
+          <div class={`latest-slide ${index === 0 ? 'is-active' : ''}`}>
+            <div class="slide-content">
+              <div class="slide-type">{item.type === 'publication' ? 'Publication' : 'Dissertation'}</div>
+              <h3>{item.title}</h3>
+              {item.type === 'publication' ? (
+                <>
+                  <p class="slide-meta">
+                    <span class="slide-year">{item.year}</span>
+                    {item.authors && <span class="slide-authors">{item.authors}</span>}
+                  </p>
+                  {item.abstract && <p class="slide-description">{item.abstract.substring(0, 150)}...</p>}
+                  <a href={item.url} class="slide-link">Read Publication →</a>
+                </>
+              ) : (
+                <>
+                  <p class="slide-meta">
+                    <span class="slide-year">{item.year}</span>
+                    <span class="slide-authors">{item.degree} by {item.author}</span>
+                  </p>
+                  <p class="slide-description">{item.abstract}</p>
+                  <a href={item.link} class="slide-link">Read Dissertation →</a>
+                </>
+              )}
+            </div>
+          </div>
+        ))}
+        <div class="slide-dots-container" data-latest-dots>
+          {latestItems.map((_, i) => (
+            <button class={`slide-dot-small ${i === 0 ? 'is-active' : ''}`} data-dot={i} aria-label={`Go to slide ${i + 1}`}></button>
+          ))}
+        </div>
+        <div class="latest-controls">
+          <button class="latest-prev" data-prev-btn aria-label="Previous slide">‹</button>
+          <button class="latest-next" data-next-btn aria-label="Next slide">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compact Navigation -->
+    <section class="home-compact-nav">
+      <div class="nav-section">
+        <h3>Research Groups</h3>
+        <div class="compact-links">
+          {topGroups.map((group) => (
+            <a href={`/groups/${group.slug}/`} class="compact-link">{group.data.title}</a>
+          ))}
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <h3>Software Codes</h3>
+        <div class="compact-links">
+          {topCodes.map((code) => (
+            <a href={`/codes/${code.slug}/`} class="compact-link">{code.data.title}</a>
+          ))}
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <h3>Quick Links</h3>
+        <div class="compact-links">
+          <a href="/members/" class="compact-link">Team Members</a>
+          <a href="/publications/" class="compact-link">Publications</a>
+          <a href="/dissertations/" class="compact-link">Dissertations</a>
+          <a href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer" class="compact-link">GitHub</a>
+        </div>
+      </div>
     </section>
   </div>
 </Base>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Hero slideshow
     const slideshow = document.querySelector('[data-home-slideshow]');
-    if (!slideshow) return;
+    if (slideshow) {
+      const slides = Array.from(slideshow.querySelectorAll('.home-slide'));
+      const dots = Array.from(slideshow.querySelectorAll('.home-slide-dot'));
+      if (slides.length > 0 && dots.length > 0) {
+        let current = 0;
+        let timer: ReturnType<typeof setInterval> | null = null;
 
-    const slides = Array.from(slideshow.querySelectorAll('.home-slide'));
-    const dots = Array.from(slideshow.querySelectorAll('.home-slide-dot'));
-    if (slides.length === 0 || dots.length === 0) return;
+        const setSlide = (index: number) => {
+          slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+          dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+          current = index;
+        };
 
-    let current = 0;
-    let timer: ReturnType<typeof setInterval> | null = null;
+        const start = () => {
+          if (timer) clearInterval(timer);
+          timer = setInterval(() => {
+            setSlide((current + 1) % slides.length);
+          }, 4800);
+        };
 
-    const setSlide = (index: number) => {
-      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
-      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
-      current = index;
-    };
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            setSlide(index);
+            start();
+          });
+        });
 
-    const start = () => {
-      if (timer) clearInterval(timer);
-      timer = setInterval(() => {
-        setSlide((current + 1) % slides.length);
-      }, 4800);
-    };
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        setSlide(index);
+        setSlide(0);
         start();
-      });
-    });
+      }
+    }
 
-    setSlide(0);
-    start();
+    // Latest research slideshow
+    const latestSlideshow = document.querySelector('[data-latest-slideshow]');
+    if (latestSlideshow) {
+      const slides = Array.from(latestSlideshow.querySelectorAll('.latest-slide'));
+      const dotsContainer = latestSlideshow.querySelector('[data-latest-dots]');
+      const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.slide-dot-small')) : [];
+      const prevBtn = latestSlideshow.querySelector('[data-prev-btn]');
+      const nextBtn = latestSlideshow.querySelector('[data-next-btn]');
+
+      if (slides.length > 0) {
+        let current = 0;
+        let timer: ReturnType<typeof setInterval> | null = null;
+
+        const setSlide = (index: number) => {
+          slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('is-active', i === index);
+          });
+          current = index;
+        };
+
+        const start = () => {
+          if (timer) clearInterval(timer);
+          timer = setInterval(() => {
+            setSlide((current + 1) % slides.length);
+          }, 6000);
+        };
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            setSlide(index);
+            start();
+          });
+        });
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            setSlide((current - 1 + slides.length) % slides.length);
+            start();
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            setSlide((current + 1) % slides.length);
+            start();
+          });
+        }
+
+        setSlide(0);
+        start();
+      }
+    }
   });
 </script>

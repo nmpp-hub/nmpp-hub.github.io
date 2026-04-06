@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "type": "publication",
+      "doi": "10.1017/S0022377826101317",
+      "slug": "a-least-action-principle-for-visco-resistive-hall",
+      "title": "A least-action principle for visco-resistive Hall magnetohydrodynamics with metriplectic reformulation",
+      "year": 2026,
+      "authors": "Valentin Carlier, Martin Campos-Pinto",
+      "abstract": "We present a new variational formulation for viscous and resistive Hall magnetohydrodynamics. We first find a variational principle for ideal Hall magnetohydrodynamics by applying the physical assumptions leading to Hall magnetohydrodynamics at the Lagrangian level, and then we add the viscous and resistive terms by means of constrained variations. We also provide a metriplectic reformulation of our formulation, based on two canonical Lie–Poisson brackets for the ideal part and metric 4-brackets for the dissipative part.",
+      "url": "/publications/a-least-action-principle-for-visco-resistive-hall/"
+    },
+    {
+      "type": "publication",
+      "doi": "10.1051/epjconf/202634601003",
+      "slug": "beam-tracing-in-phase-space-paraxial",
+      "title": "Beam Tracing in Phase Space: Paraxial Description of High-Frequency Wave Beams in Turbulent Plasmas",
+      "year": 2026,
+      "authors": "Omar Maj, Hannes Weber, Emanuele Poli",
+      "abstract": "The averaged wave energy density carried by an electron-cyclotron wave beam in a turbulent plasma can be computed by solving numerically the wave kinetic equation. This approach however can be computationally demanding due to the high dimensionality of the problem. In this work, we show how ideas from paraxial optics can be applied to construct an approximate solution of the wave kinetic equation. This construction requires only the solution of a small system of ordinary differential equations.",
+      "url": "/publications/beam-tracing-in-phase-space-paraxial/"
+    },
+    {
+      "type": "publication",
+      "doi": "10.1016/j.cnsns.2025.109384",
+      "slug": "energy-based-geometric-and-compositional-formulation-of",
+      "title": "Energy-based, geometric, and compositional formulation of fluid and plasma models",
+      "year": 2026,
+      "authors": "Markus Lohmayer, Michael Kraus, Sigrid Leyendecker",
+      "abstract": "Fluid dynamics plays a crucial role in various multiphysics applications, including energy systems, electronics cooling, and biomedical engineering. Developing models for complex coupled systems can be challenging and time-consuming. In particular, ensuring the consistent integration of models from diverse physical domains requires meticulous attention. Considering the example of (electro-)magneto hydrodynamics (on a fixed spatial domain and with linear polarization and magnetization), this article demonstrates how relatively complex models can be composed from simpler parts by means of a formal language for multiphysics modeling. The Exergetic Port-Hamiltonian Systems (EPHS) modeling language features a simple graphical syntax for expressing the energy-based interconnection of subsystems. This reduces cognitive load and facilitates communication, especially in multidisciplinary environments. As the example demonstrates, existing models can be easily integrated as subsystems of new models. Specifically, an ideal fluid model is used as a subsystem of a Navier-Stokes-Fourier fluid model, which in turn is reused as a subsystem of an (electro-)magneto hydrodynamics model. The energy-based, compositional approach simplifies understanding complex models, and it makes it easy to encapsulate, reuse, and replace (parts of) models. Moreover, structural properties of EPHS models guarantee fundamental properties of thermodynamic systems, such as conservation of energy, non-negative entropy production, and Onsager reciprocal relations.",
+      "url": "/publications/energy-based-geometric-and-compositional-formulation-of/"
+    },
+    {
+      "type": "dissertation",
+      "title": "Development and analysis of structure-preserving finite element methods on non-conforming meshes",
+      "slug": "development-and-analysis-of-structure-preserving-finite",
+      "author": "Frederik Schnack",
+      "degree": "PHD",
+      "year": 2025,
+      "link": "/dissertations/development-and-analysis-of-structure-preserving-finite/",
+      "abstract": "PHD thesis by Frederik Schnack"
+    },
+    {
+      "type": "dissertation",
+      "title": "Uncertainty quantification in three-dimensional plasma equilibrium reconstruction",
+      "slug": "uncertainty-quantification-in-three-dimensional-plasma-equilibrium",
+      "author": "Robert Köberl",
+      "degree": "PHD",
+      "year": 2025,
+      "link": "/dissertations/uncertainty-quantification-in-three-dimensional-plasma-equilibrium/",
+      "abstract": "PHD thesis by Robert Köberl"
+    },
+    {
+      "type": "dissertation",
+      "title": "Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures",
+      "slug": "development-and-implementation-of-algorithms-for",
+      "author": "Nils Schild",
+      "degree": "PHD",
+      "year": 2025,
+      "link": "/dissertations/development-and-implementation-of-algorithms-for/",
+      "abstract": "PHD thesis by Nils Schild"
+    }
+  ],
+  "generated": true
+}
