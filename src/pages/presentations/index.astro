@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+const presentationUrl = '/presentations/00_website_tutorial/nmpp-website-presentation.html';
+---
+
+<Base title="Presentations">
+  <div class="page-wrapper">
+    <section class="page-intro">
+      <p class="eyebrow">Hidden presentation showcase</p>
+      <h1>Presentations</h1>
+      <p>
+        This page embeds the Quarto presentation built from <code>presentations/00_website_tutorial/nmpp-website-presentation.qmd</code>.
+        A direct link is available if you want to open it full screen.
+      </p>
+      <p>
+        <a class="home-btn home-btn-primary" href={presentationUrl} target="_blank" rel="noreferrer noopener">
+          Open presentation in new tab
+        </a>
+      </p>
+    </section>
+
+    <section class="presentation-preview" style="margin-top: 2rem;">
+      <div style="position: relative; width: 100%; padding-top: 56.25%; border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-soft);">
+        <iframe
+          src={presentationUrl}
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+          title="NMPP Website Tutorial Presentation"
+          allowfullscreen
+        />
+      </div>
+    </section>
+  </div>
+</Base>
