@@ -154,7 +154,7 @@ Once approved (by me?), the changes will be automatically deployed to GitHub Pag
 
 - **What's Missing**: Are there important sections or information not covered?
 - **News Page**: Should we add a news/blog section for announcements and updates?
-- **Educational Content**: Add tutorials, documentation, or learning resources?
+- **Educational Content**: Add presentations, tutorials, or learning resources?
 
 ### Maintenance & Governance
 
