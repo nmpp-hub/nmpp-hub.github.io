@@ -1419,35 +1419,27 @@ html[data-theme="dark"] .publication-bibtex {
 
 .nmpp-home {
   display: grid;
-  gap: 3rem;
+  gap: 2.5rem;
+}
+
+@media (max-width: 720px) {
+  .nmpp-home {
+    gap: 1.5rem;
+  }
 }
 
 .home-hero {
   position: relative;
-  display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 1.2rem;
-  padding: 1.4rem;
-  border: 1px solid var(--nmpp-line);
-  border-radius: 1.05rem;
-  background: linear-gradient(130deg, #f3f8fd 0%, #eef4fb 48%, #f5fbfa 100%);
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
-.home-hero::after {
-  content: "";
-  position: absolute;
-  right: -80px;
-  top: -90px;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    rgba(26, 127, 138, 0.2) 0%,
-    rgba(26, 127, 138, 0.02) 72%
-  );
-  pointer-events: none;
+.home-hero-body {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .home-hero-copy {
@@ -1465,10 +1457,10 @@ html[data-theme="dark"] .publication-bibtex {
 }
 
 .home-hero h1 {
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-  line-height: 1.1;
-  margin-bottom: 0.8rem;
-  max-width: 18ch;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
 }
 
 .home-intro {
@@ -1513,10 +1505,6 @@ html[data-theme="dark"] .publication-bibtex {
 
 .home-btn-secondary:hover {
   background: #fff;
-}
-
-html[data-theme="dark"] .home-hero {
-  background: linear-gradient(140deg, #132435 0%, #152a3c 52%, #122e31 100%);
 }
 
 html[data-theme="dark"] .home-eyebrow {
@@ -1717,15 +1705,8 @@ html[data-theme="dark"] .home-btn-secondary:hover {
 
 /* Latest research slideshow */
 .home-latest {
-  padding: 3rem 2rem;
-  background: linear-gradient(
-    135deg,
-    var(--nmpp-surface-soft) 0%,
-    var(--nmpp-card) 100%
-  );
-  border-radius: 1rem;
+  padding: 2rem 0;
   text-align: center;
-  border: 1px solid var(--nmpp-line);
 }
 
 .home-latest h2 {
@@ -1972,7 +1953,7 @@ html[data-theme="dark"] .latest-controls button:hover {
 }
 
 @media (max-width: 1050px) {
-  .home-hero {
+  .home-hero-body {
     grid-template-columns: 1fr;
   }
 
@@ -2113,15 +2094,7 @@ html[data-theme="dark"] .latest-controls button:hover {
   overflow-wrap: anywhere;
 }
 
-@media (max-width: 1100px) {
-  .page-layout {
-    grid-template-columns: 200px minmax(0, 1fr);
-    grid-template-areas: "left main";
-  }
-  .layout-right { display: none; }
-}
-
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .page-layout {
     grid-template-columns: 1fr;
     grid-template-areas: "main";

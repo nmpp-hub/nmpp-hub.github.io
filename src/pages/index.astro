@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import latestResearchData from '../../data/latest_research.json';
 import HeroSlideshow from '../components/HeroSlideshow';
 import LatestResearchSlider from '../components/LatestResearchSlider';
+import PageLayout from '../components/PageLayout.astro';
 
 const codes = await getCollection('codes');
 const groups = await getCollection('groups');
@@ -33,66 +34,90 @@ const heroImages = [
     caption: 'Use this panel for updates, milestones, or visual results.',
   },
 ];
+
+const leftNav = [{
+  heading: 'Navigate',
+  items: [
+    { href: '/', label: 'Home', active: true },
+    { href: '/codes/', label: 'Codes' },
+    { href: '/groups/', label: 'Groups' },
+    { href: '/members/', label: 'Members' },
+    { href: '/publications/', label: 'Publications' },
+    { href: '/dissertations/', label: 'Dissertations' },
+    { href: '/about/', label: 'About' },
+  ],
+}];
+
+const tocSections = [
+  { id: 'latest-research', label: 'Latest Research' },
+  { id: 'groups-codes', label: 'Groups & Codes' },
+];
 ---
 
 <Base title="NMPP Division">
-  <div class="page-wrapper nmpp-home">
-    <!-- Hero Section -->
-    <section class="home-hero">
-      <div class="home-hero-copy">
-        <p class="home-eyebrow">Numerical Methods for Plasma Physics</p>
-        <h1>NMPP Division at the Max Planck Institute for Plasma Physics</h1>
-        <p class="home-intro">
-          We develop advanced numerical methods, high-performance simulation software, and data-driven tools
-          for plasma physics across magnetic confinement, geometric integration, and uncertainty quantification.
-        </p>
-        <div class="home-hero-actions">
-          <a class="home-btn home-btn-primary" href="/codes/">Explore Codes</a>
-          <a class="home-btn home-btn-secondary" href="/groups/">Explore Groups</a>
-        </div>
-      </div>
-      <div class="home-hero-visual" aria-hidden="true">
-        <HeroSlideshow client:load images={heroImages} />
-      </div>
-    </section>
+  <div class="page-wrapper">
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
+      <div class="nmpp-home">
+        <!-- Hero Section -->
+        <section class="home-hero">
+          <p class="home-eyebrow">Numerical Methods for Plasma Physics</p>
+          <h1>NMPP Division at the Max Planck Institute for Plasma Physics</h1>
+          <div class="home-hero-body">
+            <div class="home-hero-visual" aria-hidden="true">
+              <HeroSlideshow client:load images={heroImages} />
+            </div>
+            <div class="home-hero-copy">
+              <p class="home-intro">
+                We develop advanced numerical methods, high-performance simulation software, and data-driven tools
+                for plasma physics across magnetic confinement, geometric integration, and uncertainty quantification.
+              </p>
+              <div class="home-hero-actions">
+                <a class="home-btn home-btn-primary" href="/codes/">Explore Codes</a>
+                <a class="home-btn home-btn-secondary" href="/groups/">Explore Groups</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <!-- Latest Publications/Dissertations Slideshow -->
-    <section class="home-latest">
-      <h2>Latest Research Output</h2>
-      <LatestResearchSlider client:load items={latestItems as any} />
-    </section>
+        <!-- Latest Publications/Dissertations Slideshow -->
+        <section class="home-latest" id="latest-research">
+          <h2>Latest Research Output</h2>
+          <LatestResearchSlider client:load items={latestItems as any} />
+        </section>
 
-    <!-- Compact Navigation -->
-    <section class="home-compact-nav">
-      <div class="nav-section">
-        <h3>Research Groups</h3>
-        <div class="compact-links">
-          {topGroups.map((group) => (
-            <a href={`/groups/${group.id}/`} class="compact-link">{group.data.title}</a>
-          ))}
-        </div>
-      </div>
+        <!-- Compact Navigation -->
+        <section class="home-compact-nav" id="groups-codes">
+          <div class="nav-section">
+            <h3>Research Groups</h3>
+            <div class="compact-links">
+              {topGroups.map((group) => (
+                <a href={`/groups/${group.id}/`} class="compact-link">{group.data.title}</a>
+              ))}
+            </div>
+          </div>
 
-      <div class="nav-section">
-        <h3>Software Codes</h3>
-        <div class="compact-links">
-          {topCodes.map((code) => (
-            <a href={`/codes/${code.id}/`} class="compact-link">{code.data.title}</a>
-          ))}
-        </div>
-      </div>
+          <div class="nav-section">
+            <h3>Software Codes</h3>
+            <div class="compact-links">
+              {topCodes.map((code) => (
+                <a href={`/codes/${code.id}/`} class="compact-link">{code.data.title}</a>
+              ))}
+            </div>
+          </div>
 
-      <div class="nav-section">
-        <h3>Quick Links</h3>
-        <div class="compact-links">
-          <a href="/about/" class="compact-link">About</a>
-          <a href="/members/" class="compact-link">Team Members</a>
-          <a href="/publications/" class="compact-link">Publications</a>
-          <a href="/dissertations/" class="compact-link">Dissertations</a>
-          <a href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer" class="compact-link">GitHub</a>
-          <a href="/presentations/" class="compact-link">Presentations</a>
-        </div>
+          <div class="nav-section">
+            <h3>Quick Links</h3>
+            <div class="compact-links">
+              <a href="/about/" class="compact-link">About</a>
+              <a href="/members/" class="compact-link">Team Members</a>
+              <a href="/publications/" class="compact-link">Publications</a>
+              <a href="/dissertations/" class="compact-link">Dissertations</a>
+              <a href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer" class="compact-link">GitHub</a>
+              <a href="/presentations/" class="compact-link">Presentations</a>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+    </PageLayout>
   </div>
 </Base>

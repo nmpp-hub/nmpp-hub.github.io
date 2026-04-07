@@ -42,6 +42,16 @@ ROLE_TITLES = {
     "msc": "MSc Students",
     "admin staff": "Administrative Staff",
 }
+ROLE_IDS = {
+    "professor": "professors",
+    "group leader": "group-leaders",
+    "permanent staff": "permanent-staff",
+    "postdoc": "postdocs",
+    "phd": "phd-students",
+    "msc": "msc-students",
+    "admin staff": "administrative-staff",
+    "secretary": "secretary",
+}
 
 
 def slugify(text: str) -> str:
@@ -125,6 +135,7 @@ def validate_member(raw: dict, index: int) -> dict:
 def build_page(members: list[dict]) -> str:
     """Build the members page with card layouts."""
     active_sections = []
+    toc_sections = []
 
     # Active members by role
     for role in ROLE_ORDER:
@@ -132,27 +143,51 @@ def build_page(members: list[dict]) -> str:
         if not role_members:
             continue
 
+        role_id = ROLE_IDS[role]
+        title = ROLE_TITLES[role]
         cards = "\n".join(render_member_card(m) for m in role_members)
-        section = f"""      <h2>{ROLE_TITLES[role]}</h2>
+        section = f"""      <h2 id="{role_id}">{title}</h2>
       <div class="member-cards">
 {cards}
       </div>"""
         active_sections.append(section)
+        toc_sections.append(f"  {{ id: '{role_id}', label: '{title}' }},")
 
     # Alumni
     alumni = [m for m in members if m["alumni"]]
     if alumni:
         cards = "\n".join(render_alumni_card(m) for m in alumni)
-        alumni_section = f"""      <h2>Alumni</h2>
+        alumni_section = f"""      <h2 id="alumni">Alumni</h2>
       <div class="member-cards">
 {cards}
       </div>"""
     else:
-        alumni_section = "      <h2>Alumni</h2>\n      <p>No entries yet.</p>"
+        alumni_section = "      <h2 id=\"alumni\">Alumni</h2>\n      <p>No entries yet.</p>"
+    toc_sections.append("  { id: 'alumni', label: 'Alumni' },")
 
     sections = "\n\n".join(active_sections + [alumni_section])
+    toc_js = "\n".join(toc_sections)
     return f"""---
 import Base from '../layouts/Base.astro';
+import PageLayout from '../components/PageLayout.astro';
+
+const path = Astro.url.pathname;
+const leftNav = [{{
+  heading: 'Navigate',
+  items: [
+    {{ href: '/', label: 'Home', active: path === '/' }},
+    {{ href: '/codes/', label: 'Codes', active: path.startsWith('/codes') }},
+    {{ href: '/groups/', label: 'Groups', active: path.startsWith('/groups') }},
+    {{ href: '/members/', label: 'Members', active: path.startsWith('/members') }},
+    {{ href: '/publications/', label: 'Publications', active: path.startsWith('/publications') }},
+    {{ href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') }},
+    {{ href: '/about/', label: 'About', active: path.startsWith('/about') }},
+  ],
+}}];
+
+const tocSections = [
+{toc_js}
+];
 ---
 
 <Base
@@ -163,6 +198,7 @@ import Base from '../layouts/Base.astro';
     ]}}
 >
   <div class="page-wrapper">
+    <PageLayout leftNav={{leftNav}} tocSections={{tocSections}}>
     <div class="page-header">
       <h1>Members</h1>
       <p>NMPP division members at IPP.</p>
@@ -170,6 +206,7 @@ import Base from '../layouts/Base.astro';
     <div class="prose">
 {sections}
     </div>
+    </PageLayout>
   </div>
 </Base>
 """
