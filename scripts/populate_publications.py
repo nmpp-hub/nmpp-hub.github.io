@@ -9,18 +9,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import (
-    build_author_to_slug_map,
-    ensure_list,
-    escape_text,
-    load_yaml,
-    publication_base_slug,
-    render_author_list,
-    render_code_links,
-    render_publication_title,
-    strip_tags,
-    write_text,
-)
+from site_generation import (build_author_to_slug_map, ensure_list,
+                             escape_text, load_yaml, publication_base_slug,
+                             render_author_list, render_code_links,
+                             render_publication_title, strip_tags, write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "dois.yml"
@@ -68,7 +60,9 @@ def normalize_year(value: object) -> int | None:
 CROSSREF_API = "https://api.crossref.org/works"
 SEMANTIC_SCHOLAR_API = "https://api.semanticscholar.org/graph/v1/paper"
 OPENALEX_API = "https://api.openalex.org/works"
-CROSSREF_USER_AGENT = "nmpp-publications-generator/1.0 (mailto:webmaster@nmpp-hub.github.io)"
+CROSSREF_USER_AGENT = (
+    "nmpp-publications-generator/1.0 (mailto:webmaster@nmpp-hub.github.io)"
+)
 
 
 def fetch_doi_content(doi: str, accept: str) -> str:
@@ -128,6 +122,7 @@ def fetch_abstract_fallbacks(doi: str) -> str:
         return abstract
     return fetch_abstract_from_openalex(doi)
 
+
 def extract_publication_year(data: dict) -> int | None:
     for key in ("published-online", "published-print", "issued", "created"):
         date_info = data.get(key, {})
@@ -162,7 +157,9 @@ def extract_author_names(data: dict) -> list[str]:
 
 def fetch_publication_metadata(doi: str) -> dict | None:
     try:
-        data = json.loads(fetch_doi_content(doi, "application/vnd.citationstyles.csl+json"))
+        data = json.loads(
+            fetch_doi_content(doi, "application/vnd.citationstyles.csl+json")
+        )
         try:
             bibtex = fetch_doi_content(doi, "application/x-bibtex; charset=utf-8")
         except Exception:
@@ -235,16 +232,20 @@ def load_publication_entries() -> list[dict]:
     return entries
 
 
-def build_page(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_page(
+    publications: list[dict], author_to_slug: dict[str, str] | None = None
+) -> str:
     if author_to_slug is None:
         author_to_slug = build_author_to_slug_map()
 
     # Build table rows
     table_rows = []
     for publication in publications:
-        venue = escape_text(publication['venue'])
-        codes = render_code_links(publication['codes'])
-        doi_link = f"<a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a>"
+        venue = escape_text(publication["venue"])
+        codes = render_code_links(publication["codes"])
+        doi_link = (
+            f"<a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a>"
+        )
         details = f"{venue}"
         if codes:
             details += f" · {codes}"
@@ -263,9 +264,11 @@ def build_page(publications: list[dict], author_to_slug: dict[str, str] | None =
     # Build cards
     cards = []
     for publication in publications:
-        venue = escape_text(publication['venue'])
-        codes = render_code_links(publication['codes'])
-        doi_link = f"<a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a>"
+        venue = escape_text(publication["venue"])
+        codes = render_code_links(publication["codes"])
+        doi_link = (
+            f"<a href=\"https://doi.org/{escape_text(publication['doi'])}\">DOI</a>"
+        )
         details = f"{venue}"
         if codes:
             details += f" · {codes}"
@@ -389,12 +392,16 @@ def assign_publication_slugs(publications: list[dict]) -> None:
         base_slug = (
             publication_base_slug(preferred_slug)
             if preferred_slug
-            else publication_base_slug(publication.get("title", ""), publication.get("doi", ""))
+            else publication_base_slug(
+                publication.get("title", ""), publication.get("doi", "")
+            )
         )
         candidate = base_slug or "publication"
 
         if candidate in seen:
-            doi_suffix = publication_base_slug("", publication.get("doi", ""), max_words=12)
+            doi_suffix = publication_base_slug(
+                "", publication.get("doi", ""), max_words=12
+            )
             if doi_suffix:
                 candidate = f"{base_slug}-{doi_suffix}"
 
@@ -408,7 +415,9 @@ def assign_publication_slugs(publications: list[dict]) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Populate publications cache and generate index page.")
+    parser = argparse.ArgumentParser(
+        description="Populate publications cache and generate index page."
+    )
     parser.add_argument(
         "--refresh",
         action="store_true",
@@ -446,10 +455,13 @@ def main() -> None:
         targets = {
             e["doi"]: cached_pubs[e["doi"]]
             for e in entries
-            if e["doi"] in cached_pubs and not cached_pubs[e["doi"]].get("abstract", "").strip()
+            if e["doi"] in cached_pubs
+            and not cached_pubs[e["doi"]].get("abstract", "").strip()
         }
         if not targets:
-            print("No publications with missing abstracts found in the given selection.")
+            print(
+                "No publications with missing abstracts found in the given selection."
+            )
         else:
             print(f"Attempting to fill abstracts for {len(targets)} publication(s)…")
             filled = 0
@@ -468,15 +480,23 @@ def main() -> None:
         # Rebuild authors_html and regenerate outputs even if nothing changed
         all_pubs = list(cached_pubs.values())
         all_pubs.sort(
-            key=lambda p: (-(p.get("year") or 0), p.get("title", "").lower(), p.get("doi", "").lower())
+            key=lambda p: (
+                -(p.get("year") or 0),
+                p.get("title", "").lower(),
+                p.get("doi", "").lower(),
+            )
         )
         assign_publication_slugs(all_pubs)
         author_to_slug = build_author_to_slug_map()
         for pub in all_pubs:
-            pub["authors_html"] = render_author_list(pub.get("authors", ""), author_to_slug)
+            pub["authors_html"] = render_author_list(
+                pub.get("authors", ""), author_to_slug
+            )
         write_text(OUTPUT_FILE, build_page(all_pubs, author_to_slug))
         print(f"Updated {OUTPUT_FILE} with {len(all_pubs)} publications")
-        CACHE_FILE.write_text(json.dumps(all_pubs, indent=2, ensure_ascii=False), encoding="utf-8")
+        CACHE_FILE.write_text(
+            json.dumps(all_pubs, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
         print(f"Saved metadata cache to {CACHE_FILE}")
         return
 
@@ -487,7 +507,9 @@ def main() -> None:
 
         publication = cached_pubs.get(doi, {}).copy()
         was_cached = bool(publication)
-        needs_refresh = args.refresh and (not was_cached or cache_needs_refresh(publication))
+        needs_refresh = args.refresh and (
+            not was_cached or cache_needs_refresh(publication)
+        )
 
         if needs_refresh:
             fetched = fetch_publication_metadata(doi)
@@ -511,20 +533,35 @@ def main() -> None:
                 publication[key] = value
 
         publication["doi"] = doi
-        publication["title"] = normalize_plain_text(publication.get("title")) or "Unknown"
-        publication["authors"] = normalize_plain_text(publication.get("authors")) or "Unknown"
+        publication["title"] = (
+            normalize_plain_text(publication.get("title")) or "Unknown"
+        )
+        publication["authors"] = (
+            normalize_plain_text(publication.get("authors")) or "Unknown"
+        )
         publication["journal"] = normalize_plain_text(publication.get("journal"))
         publication["publisher"] = normalize_plain_text(publication.get("publisher"))
-        publication["venue"] = normalize_plain_text(publication.get("venue")) or publication["journal"] or publication["publisher"] or "Unknown"
+        publication["venue"] = (
+            normalize_plain_text(publication.get("venue"))
+            or publication["journal"]
+            or publication["publisher"]
+            or "Unknown"
+        )
         publication["abstract"] = normalize_plain_text(publication.get("abstract"))
         publication["bibtex"] = str(publication.get("bibtex", "")).strip()
         publication["volume"] = normalize_plain_text(publication.get("volume"))
         publication["issue"] = normalize_plain_text(publication.get("issue"))
         publication["pages"] = normalize_plain_text(publication.get("pages"))
-        publication["url"] = normalize_plain_text(publication.get("url")) or f"https://doi.org/{doi}"
+        publication["url"] = (
+            normalize_plain_text(publication.get("url")) or f"https://doi.org/{doi}"
+        )
         publication["year"] = normalize_year(publication.get("year"))
-        publication["groups"] = overrides.get("groups", ensure_list(publication.get("groups", [])))
-        publication["codes"] = overrides.get("codes", ensure_list(publication.get("codes", [])))
+        publication["groups"] = overrides.get(
+            "groups", ensure_list(publication.get("groups", []))
+        )
+        publication["codes"] = overrides.get(
+            "codes", ensure_list(publication.get("codes", []))
+        )
         publications.append(publication)
         print("ok")
 
@@ -539,7 +576,9 @@ def main() -> None:
 
     author_to_slug = build_author_to_slug_map()
     for publication in publications:
-        publication["authors_html"] = render_author_list(publication["authors"], author_to_slug)
+        publication["authors_html"] = render_author_list(
+            publication["authors"], author_to_slug
+        )
 
     write_text(OUTPUT_FILE, build_page(publications, author_to_slug))
     print(f"Updated {OUTPUT_FILE} with {len(publications)} publications")

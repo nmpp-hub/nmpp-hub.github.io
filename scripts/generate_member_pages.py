@@ -25,7 +25,10 @@ from typing import Any
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_code_links, render_dissertation_title, render_publication_title, slugify, write_text
+from site_generation import (build_author_to_slug_map, ensure_list,
+                             escape_text, load_yaml, render_author_list,
+                             render_code_links, render_dissertation_title,
+                             render_publication_title, slugify, write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
 MEMBERS_FILE = ROOT / "data" / "members.yml"
@@ -68,7 +71,7 @@ def generate_standard_aliases(name: str) -> list[str]:
 
     # Get first name(s) and last name(s)
     first_parts = parts[:-1]  # Everything except last part
-    last_part = parts[-1]      # Last part
+    last_part = parts[-1]  # Last part
 
     first_name = " ".join(first_parts)
     last_name = last_part
@@ -213,7 +216,9 @@ def member_matches_dissertation(member: dict, dissertation: dict) -> bool:
     return False
 
 
-def member_matches_publication(member: dict, publication: dict, author_to_slug: dict[str, str]) -> bool:
+def member_matches_publication(
+    member: dict, publication: dict, author_to_slug: dict[str, str]
+) -> bool:
     """Check if a member is explicitly in the publication author list.
 
     This avoids false positives from code overlap (e.g., member works on a code
@@ -230,7 +235,13 @@ def member_matches_publication(member: dict, publication: dict, author_to_slug: 
         author_key = author.lower()
         author_slug = author_to_slug.get(author_key)
         if author_slug is None:
-            normalized = unicodedata.normalize("NFD", author).encode("ascii", "ignore").decode("ascii").lower().strip()
+            normalized = (
+                unicodedata.normalize("NFD", author)
+                .encode("ascii", "ignore")
+                .decode("ascii")
+                .lower()
+                .strip()
+            )
             author_slug = author_to_slug.get(normalized)
         if author_slug == member_slug:
             return True
@@ -241,21 +252,57 @@ def member_matches_publication(member: dict, publication: dict, author_to_slug: 
 def build_social_links(member: dict) -> str:
     """Build social/academic profile links as icons."""
     social_platforms = {
-        "github": {"icon": "fab fa-github", "url_template": "https://github.com/{username}"},
-        "gitlab": {"icon": "fab fa-gitlab", "url_template": "https://gitlab.com/{username}"},
-        "gitlab_mpcdf": {"icon": "fab fa-gitlab", "url_template": "https://gitlab.mpcdf.mpg.de/{username}"},
-        "google_scholar": {"icon": "fas fa-graduation-cap", "url_template": "https://scholar.google.com/citations?user={user_id}"},
-        "orcid": {"icon": "fab fa-orcid", "url_template": "https://orcid.org/{orcid_id}"},
-        "linkedin": {"icon": "fab fa-linkedin", "url_template": "https://linkedin.com/in/{username}"},
+        "github": {
+            "icon": "fab fa-github",
+            "url_template": "https://github.com/{username}",
+        },
+        "gitlab": {
+            "icon": "fab fa-gitlab",
+            "url_template": "https://gitlab.com/{username}",
+        },
+        "gitlab_mpcdf": {
+            "icon": "fab fa-gitlab",
+            "url_template": "https://gitlab.mpcdf.mpg.de/{username}",
+        },
+        "google_scholar": {
+            "icon": "fas fa-graduation-cap",
+            "url_template": "https://scholar.google.com/citations?user={user_id}",
+        },
+        "orcid": {
+            "icon": "fab fa-orcid",
+            "url_template": "https://orcid.org/{orcid_id}",
+        },
+        "linkedin": {
+            "icon": "fab fa-linkedin",
+            "url_template": "https://linkedin.com/in/{username}",
+        },
         "website": {"icon": "fas fa-globe", "url_template": "{url}"},
-        "researchgate": {"icon": "fab fa-researchgate", "url_template": "https://researchgate.net/profile/{username}"},
-        "twitter": {"icon": "fab fa-twitter", "url_template": "https://twitter.com/{username}"},
+        "researchgate": {
+            "icon": "fab fa-researchgate",
+            "url_template": "https://researchgate.net/profile/{username}",
+        },
+        "twitter": {
+            "icon": "fab fa-twitter",
+            "url_template": "https://twitter.com/{username}",
+        },
         "x": {"icon": "fab fa-x-twitter", "url_template": "https://x.com/{username}"},
-        "bluesky": {"icon": "fas fa-cloud", "url_template": "https://bsky.app/profile/{handle}"},
+        "bluesky": {
+            "icon": "fas fa-cloud",
+            "url_template": "https://bsky.app/profile/{handle}",
+        },
         "mastodon": {"icon": "fab fa-mastodon", "url_template": "{url}"},
-        "academia_edu": {"icon": "fas fa-university", "url_template": "https://independent.academia.edu/{username}"},
-        "semanticscholar": {"icon": "fas fa-book", "url_template": "https://semanticscholar.org/author/{author_id}"},
-        "dblp": {"icon": "fas fa-database", "url_template": "https://dblp.org/pid/{pid}"},
+        "academia_edu": {
+            "icon": "fas fa-university",
+            "url_template": "https://independent.academia.edu/{username}",
+        },
+        "semanticscholar": {
+            "icon": "fas fa-book",
+            "url_template": "https://semanticscholar.org/author/{author_id}",
+        },
+        "dblp": {
+            "icon": "fas fa-database",
+            "url_template": "https://dblp.org/pid/{pid}",
+        },
     }
 
     links = []
@@ -275,7 +322,9 @@ def build_social_links(member: dict) -> str:
             else:
                 url = config["url_template"].format(username=value)
 
-            links.append(f'<a href="{escape_text(url)}" target="_blank" rel="noopener noreferrer" class="social-link" title="{platform.replace("_", " ").title()}"><i class="{config["icon"]}"></i></a>')
+            links.append(
+                f'<a href="{escape_text(url)}" target="_blank" rel="noopener noreferrer" class="social-link" title="{platform.replace("_", " ").title()}"><i class="{config["icon"]}"></i></a>'
+            )
 
     if links:
         return f'<div class="social-links">{"".join(links)}</div>'
@@ -288,7 +337,9 @@ def build_profile_section(member: dict, group_slug_map: dict[str, str]) -> str:
     if member["picture"]:
         photo = f'<img src="{escape_text(member["picture"])}" alt="{escape_text(member["name"])}" class="member-profile-photo-circle" />'
     else:
-        photo = '<div class="member-profile-photo-circle member-photo-placeholder"></div>'
+        photo = (
+            '<div class="member-profile-photo-circle member-photo-placeholder"></div>'
+        )
 
     # Info section (right side)
     info_lines = []
@@ -302,11 +353,15 @@ def build_profile_section(member: dict, group_slug_map: dict[str, str]) -> str:
                 f'<p><strong>Group:</strong> <a href="/groups/{group_slug}/">{escape_text(group_name)}</a></p>'
             )
         else:
-            info_lines.append(f"<p><strong>Group:</strong> {escape_text(group_name)}</p>")
+            info_lines.append(
+                f"<p><strong>Group:</strong> {escape_text(group_name)}</p>"
+            )
 
     # Topic
     if member["topic"]:
-        info_lines.append(f"<p><strong>Topic:</strong> {escape_text(member['topic'])}</p>")
+        info_lines.append(
+            f"<p><strong>Topic:</strong> {escape_text(member['topic'])}</p>"
+        )
 
     # Description (if exists)
     if member["description"]:
@@ -317,7 +372,11 @@ def build_profile_section(member: dict, group_slug_map: dict[str, str]) -> str:
         codes_html = render_code_links(member["codes"])
         info_lines.append(f"<p><strong>Codes:</strong> {codes_html}</p>")
 
-    info = "\n".join(info_lines) if info_lines else "<p>No additional information available.</p>"
+    info = (
+        "\n".join(info_lines)
+        if info_lines
+        else "<p>No additional information available.</p>"
+    )
 
     # Social links section
     social_links = build_social_links(member)
@@ -334,7 +393,9 @@ def build_profile_section(member: dict, group_slug_map: dict[str, str]) -> str:
 </div>"""
 
 
-def build_publications_section(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_publications_section(
+    publications: list[dict], author_to_slug: dict[str, str] | None = None
+) -> str:
     """Build HTML table + cards for publications."""
     if not publications:
         return "<p>No publications yet.</p>"
@@ -345,7 +406,7 @@ def build_publications_section(publications: list[dict], author_to_slug: dict[st
     table_rows = []
     cards = []
     for pub in publications:
-        venue = escape_text(pub['venue'])
+        venue = escape_text(pub["venue"])
         doi_link = f"<a href=\"https://doi.org/{escape_text(pub['doi'])}\">DOI</a>"
         details = f"{venue} · {doi_link}"
 
@@ -403,7 +464,9 @@ def build_dissertations_section(dissertations: list[dict]) -> str:
     cards = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        codes_links = ', '.join([f'<a href="/codes/{code}/">{code}</a>' for code in diss['codes']])
+        codes_links = ", ".join(
+            [f'<a href="/codes/{code}/">{code}</a>' for code in diss["codes"]]
+        )
 
         table_rows.append(f"""    <tr>
       <td>{diss['date']}</td>
@@ -472,7 +535,9 @@ def main() -> None:
     all_dissertations = load_dissertations()
     author_to_slug = build_author_to_slug_map()
 
-    print(f"Loaded {len(all_members)} members, {len(all_publications)} publications, {len(all_dissertations)} dissertations")
+    print(
+        f"Loaded {len(all_members)} members, {len(all_publications)} publications, {len(all_dissertations)} dissertations"
+    )
 
     # Build set of valid member slugs from YAML
     valid_slugs = {slugify(member["name"]) for member in all_members}
@@ -482,10 +547,16 @@ def main() -> None:
         slug = slugify(member["name"])
 
         # Filter publications and dissertations for this member
-        member_pubs = [p for p in all_publications if member_matches_publication(member, p, author_to_slug)]
+        member_pubs = [
+            p
+            for p in all_publications
+            if member_matches_publication(member, p, author_to_slug)
+        ]
         member_pubs.sort(key=lambda p: (-(p["year"] or 0), p["title"].lower()))
 
-        member_diss = [d for d in all_dissertations if member_matches_dissertation(member, d)]
+        member_diss = [
+            d for d in all_dissertations if member_matches_dissertation(member, d)
+        ]
         member_diss.sort(key=lambda d: d["date"], reverse=True)
 
         # Generate page
@@ -500,13 +571,16 @@ def main() -> None:
             build_profile_section(member, group_slug_map) + "\n", encoding="utf-8"
         )
         (MEMBERS_AUTO_DIR / f"{slug}.publications.html").write_text(
-            build_publications_section(member_pubs, author_to_slug) + "\n", encoding="utf-8"
+            build_publications_section(member_pubs, author_to_slug) + "\n",
+            encoding="utf-8",
         )
         (MEMBERS_AUTO_DIR / f"{slug}.dissertations.html").write_text(
             build_dissertations_section(member_diss) + "\n", encoding="utf-8"
         )
 
-        print(f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)")
+        print(
+            f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)"
+        )
 
     print(f"\nGenerated {len(all_members)} member pages in {MEMBERS_OUTPUT_DIR}")
 
@@ -520,7 +594,9 @@ def main() -> None:
                 orphaned.append(file_path)
 
         if orphaned:
-            print("\n⚠️  WARNING: Found member page files with no corresponding entry in members.yml:")
+            print(
+                "\n⚠️  WARNING: Found member page files with no corresponding entry in members.yml:"
+            )
             for file_path in sorted(orphaned):
                 print(f"  - {file_path.name}")
             print(f"\nThese files should be removed or added to members.yml")
