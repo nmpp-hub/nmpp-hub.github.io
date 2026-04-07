@@ -16,13 +16,19 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const normalizedPath = entry.data.path?.endsWith('/')
-  ? entry.data.path
-  : `${entry.data.path}/`;
-
 const membersHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.members.html`] as string) ?? '';
 const publicationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.publications.html`] as string) ?? '';
 const dissertationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.dissertations.html`] as string) ?? '';
+
+const allCodes = (await getCollection('codes')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const hasGallery = entry.data.gallery && entry.data.gallery.length > 0;
+const tocSections = [
+  ...(hasGallery ? [{ id: 'gallery', label: 'Gallery' }] : []),
+  { id: 'members', label: 'Members' },
+  { id: 'publications', label: 'Publications' },
+  { id: 'dissertations', label: 'Dissertations' },
+];
 ---
 
 <Base
@@ -34,21 +40,213 @@ const dissertationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.di
   ]}
 >
   <div class="page-wrapper">
-    <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{entry.data.title}</h1>
-    <div class="prose">
-      {entry.data.gallery && entry.data.gallery.length > 0 && (
-        <>
-          {/* <h2>Gallery</h2> */}
-          <CodeGallery client:load images={entry.data.gallery} />
-        </>
-      )}
-      <Content />
-      <h2>Members</h2>
-      <Fragment set:html={membersHtml} />
-      <h2>Publications</h2>
-      <Fragment set:html={publicationsHtml} />
-      <h2>Dissertations</h2>
-      <Fragment set:html={dissertationsHtml} />
+    <div class="code-layout">
+
+      <!-- Left sidebar: code navigation -->
+      <aside class="code-sidebar-left">
+        <div class="sidebar-sticky">
+          <p class="sidebar-heading">Codes</p>
+          <nav>
+            <ul class="sidebar-nav-list">
+              {allCodes.map(code => (
+                <li>
+                  <a
+                    href={`/codes/${code.id}/`}
+                    class:list={['sidebar-nav-link', { 'is-active': code.id === entry.id }]}
+                  >
+                    {code.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <article class="code-main">
+        <h1 class="code-title">{entry.data.title}</h1>
+        <div class="prose">
+          {hasGallery && (
+            <div id="gallery">
+              <CodeGallery client:load images={entry.data.gallery!} />
+            </div>
+          )}
+          <Content />
+          <h2 id="members">Members</h2>
+          <Fragment set:html={membersHtml} />
+          <h2 id="publications">Publications</h2>
+          <Fragment set:html={publicationsHtml} />
+          <h2 id="dissertations">Dissertations</h2>
+          <Fragment set:html={dissertationsHtml} />
+        </div>
+      </article>
+
+      <!-- Right sidebar: table of contents -->
+      <aside class="code-sidebar-right">
+        <div class="sidebar-sticky">
+          <p class="sidebar-heading">On this page</p>
+          <nav aria-label="Table of contents">
+            <ul class="toc-list">
+              {tocSections.map(section => (
+                <li>
+                  <a href={`#${section.id}`} class="toc-link" data-toc-id={section.id}>
+                    {section.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
     </div>
   </div>
 </Base>
+
+<style>
+  /* ── 3-column layout ── */
+  .code-layout {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) 200px;
+    grid-template-areas: "left main right";
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .code-sidebar-left  { grid-area: left; }
+  .code-main          { grid-area: main; }
+  .code-sidebar-right { grid-area: right; }
+
+  /* ── Sticky sidebars (offset for 60px header) ── */
+  .sidebar-sticky {
+    position: sticky;
+    top: calc(60px + 1.5rem);
+  }
+
+  /* ── Sidebar shared styles ── */
+  .sidebar-heading {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--nmpp-subtle);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--nmpp-line);
+  }
+
+  /* ── Left nav ── */
+  .sidebar-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .sidebar-nav-link {
+    display: block;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--nmpp-subtle);
+    text-decoration: none;
+    transition: background 0.12s, color 0.12s;
+    line-height: 1.35;
+  }
+
+  .sidebar-nav-link:hover {
+    background: var(--nmpp-surface-soft);
+    color: var(--nmpp-ink);
+    text-decoration: none;
+  }
+
+  .sidebar-nav-link.is-active {
+    background: var(--nmpp-surface-soft);
+    color: var(--nmpp-accent);
+    font-weight: 600;
+  }
+
+  /* ── TOC ── */
+  .toc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .toc-link {
+    display: block;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.35rem;
+    font-size: 0.85rem;
+    color: var(--nmpp-subtle);
+    text-decoration: none;
+    transition: background 0.12s, color 0.12s;
+    border-left: 2px solid transparent;
+  }
+
+  .toc-link:hover {
+    background: var(--nmpp-surface-soft);
+    color: var(--nmpp-ink);
+    text-decoration: none;
+  }
+
+  .toc-link.is-active {
+    color: var(--nmpp-accent);
+    border-left-color: var(--nmpp-accent);
+    background: var(--nmpp-surface-soft);
+  }
+
+  /* ── Main content ── */
+  .code-title {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Collapse right TOC at medium widths ── */
+  @media (max-width: 1100px) {
+    .code-layout {
+      grid-template-columns: 200px minmax(0, 1fr);
+      grid-template-areas: "left main";
+    }
+    .code-sidebar-right {
+      display: none;
+    }
+  }
+
+  /* ── Collapse both sidebars on mobile ── */
+  @media (max-width: 720px) {
+    .code-layout {
+      grid-template-columns: 1fr;
+      grid-template-areas: "main";
+    }
+    .code-sidebar-left,
+    .code-sidebar-right {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Highlight active TOC section on scroll
+  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('.toc-link[data-toc-id]');
+  if (tocLinks.length > 0) {
+    const ids = Array.from(tocLinks).map(el => el.dataset.tocId!);
+    const targets = ids.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          const link = document.querySelector<HTMLAnchorElement>(
+            `.toc-link[data-toc-id="${entry.target.id}"]`
+          );
+          if (link) link.classList.toggle('is-active', entry.isIntersecting);
+        });
+      },
+      { rootMargin: '-60px 0px -60% 0px', threshold: 0 }
+    );
+
+    targets.forEach(el => observer.observe(el));
+  }
+</script>
