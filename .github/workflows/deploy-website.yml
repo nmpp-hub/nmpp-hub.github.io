@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - publish-docs-from-actions
+      - update-to-version-6
 
 permissions:
   contents: read
