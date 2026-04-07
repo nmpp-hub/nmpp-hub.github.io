@@ -70,33 +70,6 @@ dissertations:
     codes: [geometricmachinelearning]
     link: https://mediatum.ub.tum.de/1754855
     fulltext: https://mediatum.ub.tum.de/doc/1754855/1754855.pdf
-  - year: 2025
-    date: 2025-01-01
-    title: Development of an implicit Geometric PIC method
-    author: Jiayi Li
-    degree: msc
-    institution: ""
-    groups: []
-    codes: [gempicx]
-    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf
-  - year: 2024
-    date: 2024-10-13
-    title: Development of a Geometric Particle-in-Cell Method for Cylindrical Coordinate Systems
-    author: Alicia Robles Pérez
-    degree: msc
-    institution: ""
-    groups: []
-    codes: [gempicx]
-    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0236ffa4ace37242ce0cae6163862c08/RoblesPerez_Thesis.pdf
-  - year: 2024
-    date: 2024-11-11
-    title: Development of a Geometric PIC Method for the Linearized Vlasov-Maxwell Equations
-    author: Joris Thiel
-    degree: msc
-    institution: ""
-    groups: []
-    codes: [gempicx]
-    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/ee7b814e95d5e5cb487540b67cadcdef/Thiel_Abschlussarbeit.pdf
   - year: 2023
     date: 2023-10-05
     title: Beyond gyrokinetic theory - Excitation of high-frequency turbulence in 6D Vlasov simulations of magnetized plasmas with steep temperature and density gradients
@@ -117,24 +90,6 @@ dissertations:
     codes: []
     link: https://mediatum.ub.tum.de/1726153
     fulltext: https://mediatum.ub.tum.de/doc/1726153/1726153.pdf
-  - year: 2023
-    date: 2023-07-25
-    title: Implementation of a Galerkin Hodge Operator in the GEMPICX Framework
-    author: Andreas Scheibner
-    degree: msc
-    institution: ""
-    groups: []
-    codes: [gempicx]
-    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf
-  - year: 2023
-    date: 2023-03-31
-    title: "GEMPICX: an AMReX Based High-Performance Implementation of Geometric Particle-in-Cell Algorithms"
-    author: Brayan Andreu de Albuquerque
-    degree: msc
-    institution: ""
-    groups: []
-    codes: [gempicx]
-    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf
   - year: 2021
     date: 2021-05-26
     title: Geometric Particle-in-Cell Methods on Mapped Grids
