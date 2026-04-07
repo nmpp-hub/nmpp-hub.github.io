@@ -56,25 +56,23 @@ const tocSections = [
 
 <Base title="NMPP Division">
   <div class="page-wrapper">
-    <PageLayout leftNav={leftNav} tocSections={tocSections}>
+    <PageLayout leftNav={leftNav}>
       <div class="nmpp-home">
         <!-- Hero Section -->
         <section class="home-hero">
-          <p class="home-eyebrow">Numerical Methods for Plasma Physics</p>
-          <h1>NMPP Division at the Max Planck Institute for Plasma Physics</h1>
-          <div class="home-hero-body">
-            <div class="home-hero-visual" aria-hidden="true">
-              <HeroSlideshow client:load images={heroImages} />
-            </div>
-            <div class="home-hero-copy">
-              <p class="home-intro">
-                We develop advanced numerical methods, high-performance simulation software, and data-driven tools
-                for plasma physics across magnetic confinement, geometric integration, and uncertainty quantification.
-              </p>
-              <div class="home-hero-actions">
-                <a class="home-btn home-btn-primary" href="/codes/">Explore Codes</a>
-                <a class="home-btn home-btn-secondary" href="/groups/">Explore Groups</a>
-              </div>
+          <div class="home-hero-visual" aria-hidden="true">
+            <HeroSlideshow client:load images={heroImages} />
+          </div>
+          <div class="home-hero-copy">
+            <p class="home-eyebrow">Numerical Methods for Plasma Physics</p>
+            <h1>NMPP Division at the Max Planck Institute for Plasma Physics</h1>
+            <p class="home-intro">
+              We develop advanced numerical methods, high-performance simulation software, and data-driven tools
+              for plasma physics across magnetic confinement, geometric integration, and uncertainty quantification.
+            </p>
+            <div class="home-hero-actions">
+              <a class="home-btn home-btn-primary" href="/codes/">Explore Codes</a>
+              <a class="home-btn home-btn-secondary" href="/groups/">Explore Groups</a>
             </div>
           </div>
         </section>

@@ -21,9 +21,10 @@ interface Props {
 }
 
 const { leftNav, tocSections = [] } = Astro.props;
+const hasToc = tocSections.length > 0;
 ---
 
-<div class="page-layout">
+<div class:list={['page-layout', { 'page-layout--no-toc': !hasToc }]}>
   <aside class="layout-left">
     <div class="layout-sticky">
       {leftNav.map(group => (
