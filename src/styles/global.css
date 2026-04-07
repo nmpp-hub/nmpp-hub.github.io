@@ -2012,3 +2012,121 @@ html[data-theme="dark"] .latest-controls button:hover {
     padding: 1.5rem;
   }
 }
+
+/* ─── PAGE LAYOUT (3-column) ─── */
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 200px;
+  grid-template-areas: "left main right";
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.layout-left  { grid-area: left; }
+.layout-main  { grid-area: main; }
+.layout-right { grid-area: right; }
+
+.layout-sticky {
+  position: sticky;
+  top: calc(60px + 1.5rem);
+}
+
+.sidebar-block + .sidebar-block {
+  margin-top: 1.5rem;
+}
+
+.sidebar-heading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nmpp-subtle);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--nmpp-line);
+}
+
+.sidebar-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.sidebar-nav-link {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--nmpp-subtle);
+  text-decoration: none;
+  transition: background 0.12s, color 0.12s;
+  line-height: 1.35;
+}
+
+.sidebar-nav-link:hover {
+  background: var(--nmpp-surface-soft);
+  color: var(--nmpp-ink);
+  text-decoration: none;
+}
+
+.sidebar-nav-link.is-active {
+  background: var(--nmpp-surface-soft);
+  color: var(--nmpp-accent);
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.toc-link {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--nmpp-subtle);
+  text-decoration: none;
+  transition: background 0.12s, color 0.12s;
+  border-left: 2px solid transparent;
+}
+
+.toc-link:hover {
+  background: var(--nmpp-surface-soft);
+  color: var(--nmpp-ink);
+  text-decoration: none;
+}
+
+.toc-link.is-active {
+  color: var(--nmpp-accent);
+  border-left-color: var(--nmpp-accent);
+  background: var(--nmpp-surface-soft);
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1100px) {
+  .page-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+    grid-template-areas: "left main";
+  }
+  .layout-right { display: none; }
+}
+
+@media (max-width: 720px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "main";
+  }
+  .layout-left,
+  .layout-right { display: none; }
+}

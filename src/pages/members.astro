@@ -1,5 +1,30 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageLayout from '../components/PageLayout.astro';
+
+const path = Astro.url.pathname;
+const leftNav = [{
+  heading: 'Navigate',
+  items: [
+    { href: '/', label: 'Home', active: path === '/' },
+    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+    { href: '/about/', label: 'About', active: path.startsWith('/about') },
+  ],
+}];
+
+const tocSections = [
+  { id: 'professors', label: 'Professors' },
+  { id: 'group-leaders', label: 'Group Leaders' },
+  { id: 'permanent-staff', label: 'Permanent Staff' },
+  { id: 'postdocs', label: 'Postdocs' },
+  { id: 'phd-students', label: 'PhD Students' },
+  { id: 'secretary', label: 'Secretary' },
+  { id: 'alumni', label: 'Alumni' },
+];
 ---
 
 <Base
@@ -10,12 +35,13 @@ import Base from '../layouts/Base.astro';
     ]}
 >
   <div class="page-wrapper">
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
     <div class="page-header">
       <h1>Members</h1>
       <p>NMPP division members at IPP.</p>
     </div>
     <div class="prose">
-      <h2>Professors</h2>
+      <h2 id="professors">Professors</h2>
       <div class="member-cards">
       <a href="/members/eric-sonnendrucker/" class="member-card-link">
         <div class="member-card">
@@ -26,7 +52,7 @@ import Base from '../layouts/Base.astro';
       </a>
       </div>
 
-      <h2>Group Leaders</h2>
+      <h2 id="group-leaders">Group Leaders</h2>
       <div class="member-cards">
       <a href="/members/roman-hatzky/" class="member-card-link">
         <div class="member-card">
@@ -79,7 +105,7 @@ import Base from '../layouts/Base.astro';
       </a>
       </div>
 
-      <h2>Permanent Staff</h2>
+      <h2 id="permanent-staff">Permanent Staff</h2>
       <div class="member-cards">
       <a href="/members/cristian-lalescu/" class="member-card-link">
         <div class="member-card">
@@ -118,7 +144,7 @@ import Base from '../layouts/Base.astro';
       </a>
       </div>
 
-      <h2>Postdocs</h2>
+      <h2 id="postdocs">Postdocs</h2>
       <div class="member-cards">
       <a href="/members/matthias-borchardt/" class="member-card-link">
         <div class="member-card">
@@ -192,7 +218,7 @@ import Base from '../layouts/Base.astro';
       </a>
       </div>
 
-      <h2>PhD Students</h2>
+      <h2 id="phd-students">PhD Students</h2>
       <div class="member-cards">
       <a href="/members/pauline-vidal/" class="member-card-link">
         <div class="member-card">
@@ -245,7 +271,7 @@ import Base from '../layouts/Base.astro';
       </a>
       </div>
 
-      <h2>Secretary</h2>
+      <h2 id="secretary">Secretary</h2>
       <div class="member-cards">
       <a href="/members/svenja-eichler/" class="member-card-link">
         <div class="member-card">
@@ -256,7 +282,7 @@ import Base from '../layouts/Base.astro';
       </a>
       </div>
 
-      <h2>Alumni</h2>
+      <h2 id="alumni">Alumni</h2>
       <div class="member-cards">
       <a href="/members/valentin-carlier/" class="member-card-link">
         <div class="member-card">
@@ -452,5 +478,6 @@ import Base from '../layouts/Base.astro';
       </a>
       </div>
     </div>
+    </PageLayout>
   </div>
 </Base>

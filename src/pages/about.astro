@@ -1,5 +1,27 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageLayout from '../components/PageLayout.astro';
+
+const path = Astro.url.pathname;
+const leftNav = [{
+  heading: 'Navigate',
+  items: [
+    { href: '/', label: 'Home', active: path === '/' },
+    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+    { href: '/about/', label: 'About', active: path.startsWith('/about') },
+  ],
+}];
+
+const tocSections = [
+  { id: 'the-division', label: 'The Division' },
+  { id: 'research', label: 'Research' },
+  { id: 'groups-software', label: 'Groups & Software' },
+  { id: 'contact', label: 'Contact' },
+];
 ---
 
 <Base
@@ -10,74 +32,77 @@ import Base from '../layouts/Base.astro';
   ]}
 >
   <div class="page-wrapper">
-    <div class="page-header">
-      <h1>About NMPP</h1>
-      <p>Numerical Methods for Plasma Physics at the Max Planck Institute for Plasma Physics.</p>
-    </div>
-    <div class="prose">
-      <h2>The Division</h2>
-      <p>
-        The Numerical Methods for Plasma Physics (NMPP) division is part of the
-        <a href="https://www.ipp.mpg.de" target="_blank" rel="noopener noreferrer">Max Planck Institute
-        for Plasma Physics (IPP)</a> in Garching, Germany. The division is led by
-        <a href="/members/eric-sonnendrucker/">Prof. Eric Sonnendrücker</a> and develops advanced numerical methods and simulation software
-        for plasma physics, with applications to magnetic confinement fusion in tokamaks and
-        stellarators such as <a href="https://www.ipp.mpg.de/w7x" target="_blank" rel="noopener noreferrer">Wendelstein 7-X</a>.
-      </p>
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
+      <div class="page-header">
+        <h1>About NMPP</h1>
+        <p>Numerical Methods for Plasma Physics at the Max Planck Institute for Plasma Physics.</p>
+      </div>
+      <div class="prose">
+        <h2 id="the-division">The Division</h2>
+        <p>
+          The Numerical Methods for Plasma Physics (NMPP) division is part of the
+          <a href="https://www.ipp.mpg.de" target="_blank" rel="noopener noreferrer">Max Planck Institute
+          for Plasma Physics (IPP)</a> in Garching, Germany. The division is led by
+          <a href="/members/eric-sonnendrucker/">Prof. Eric Sonnendrücker</a> and develops advanced numerical methods and simulation software
+          for plasma physics, with applications to magnetic confinement fusion in tokamaks and
+          stellarators such as <a href="https://www.ipp.mpg.de/w7x" target="_blank" rel="noopener noreferrer">Wendelstein 7-X</a>.
+        </p>
 
-      <h2>Research</h2>
-      <p>
-        Our work spans geometric numerical integration, structure-preserving finite element methods,
-        kinetic and gyrokinetic simulation, magnetohydrodynamics, turbulence modelling, and
-        probabilistic data analysis. A unifying theme is the design of algorithms that respect the
-        geometric and variational structure of plasma models, leading to long-time stability and
-        conservation of physical invariants.
-      </p>
-      <p>
-        See our <a href="/groups/">research groups</a> and <a href="/codes/">software codes</a>
-        for details, and our <a href="/publications/">publications</a> and
-        <a href="/dissertations/">dissertations</a> for scientific output.
-      </p>
-      <h2>Groups and Software</h2>
-      <p>
-      The <a href="/groups/geometric-numerical-integration/">Geometric Numerical Integration</a> group
-            develops symplectic and variational integrators for plasma models, implemented in
-            <a href="/codes/geometricintegrators/">GeometricIntegrators.jl</a>.
-          The <a href="/groups/finite-element-methods/">Finite Element Methods</a> group constructs
-            compatible finite element discretizations based on de Rham sequences, with tools collected in
-            <a href="/codes/psydac/">PSYDAC</a>, a Python library for isogeometric analysis.
-          The <a href="/groups/kinetic-gyrokinetic-models/">Kinetic and Gyrokinetic Models</a> group
-            simulates the Vlasov and gyrokinetic equations via the geometric PIC code
-            <a href="/codes/gempicx/">GEMPICX</a>, the six-dimensional semi-Lagrangian solver
-            <a href="/codes/bsl6d/">BSL6D</a>, and the portable gyrokinetic library
-            <a href="/codes/gyselalibxx/">Gyselalib++</a>.
-          The <a href="/groups/magnetohydrodynamics/">Magnetohydrodynamics</a> group computes 3D MHD
-            equilibria with <a href="/codes/gvec/">GVEC</a> and models energetic-particle–wave interactions
-            with the structure-preserving hybrid code <a href="/codes/struphy/">STRUPHY</a>.
-          The <a href="/groups/zonal-flows-turbulent/">Zonal Flows in Turbulent Plasmas</a> group studies
-            turbulence-driven zonal flows in fusion devices and planetary atmospheres.
-          The <a href="/groups/probabilistic-data-analysis/">Probabilistic Data Analysis and Active
-            Learning</a> group applies Bayesian and machine-learning methods — including
-            <a href="/codes/geometricmachinelearning/">GeometricMachineLearning.jl</a> — to plasma
-            modelling and experiment design.
-          The <a href="/groups/advanced-computing-hub/">Advanced Computing Hub</a> supports HPC
-            deployment of these codes across EUROfusion supercomputing infrastructure.
-          </p>
+        <h2 id="research">Research</h2>
+        <p>
+          Our work spans geometric numerical integration, structure-preserving finite element methods,
+          kinetic and gyrokinetic simulation, magnetohydrodynamics, turbulence modelling, and
+          probabilistic data analysis. A unifying theme is the design of algorithms that respect the
+          geometric and variational structure of plasma models, leading to long-time stability and
+          conservation of physical invariants.
+        </p>
+        <p>
+          See our <a href="/groups/">research groups</a> and <a href="/codes/">software codes</a>
+          for details, and our <a href="/publications/">publications</a> and
+          <a href="/dissertations/">dissertations</a> for scientific output.
+        </p>
 
-      <h2>Contact</h2>
-      <p>
-        Max Planck Institute for Plasma Physics<br />
-        Boltzmannstraße 2, top floor of building D2<br />
-        85748 Garching, Germany
-      </p>
-      <p>
-      You can find a map of the institure <a href="https://www.ipp.mpg.de/5416223/original-1711357152.webp" target="_blank" rel="noopener noreferrer">here</a>.
-      </p>
-      <p>
-        <a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik" target="_blank" rel="noopener noreferrer">IPP division webpage</a>
-        &middot;
-        <a href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
-    </div>
+        <h2 id="groups-software">Groups and Software</h2>
+        <p>
+        The <a href="/groups/geometric-numerical-integration/">Geometric Numerical Integration</a> group
+              develops symplectic and variational integrators for plasma models, implemented in
+              <a href="/codes/geometricintegrators/">GeometricIntegrators.jl</a>.
+            The <a href="/groups/finite-element-methods/">Finite Element Methods</a> group constructs
+              compatible finite element discretizations based on de Rham sequences, with tools collected in
+              <a href="/codes/psydac/">PSYDAC</a>, a Python library for isogeometric analysis.
+            The <a href="/groups/kinetic-gyrokinetic-models/">Kinetic and Gyrokinetic Models</a> group
+              simulates the Vlasov and gyrokinetic equations via the geometric PIC code
+              <a href="/codes/gempicx/">GEMPICX</a>, the six-dimensional semi-Lagrangian solver
+              <a href="/codes/bsl6d/">BSL6D</a>, and the portable gyrokinetic library
+              <a href="/codes/gyselalibxx/">Gyselalib++</a>.
+            The <a href="/groups/magnetohydrodynamics/">Magnetohydrodynamics</a> group computes 3D MHD
+              equilibria with <a href="/codes/gvec/">GVEC</a> and models energetic-particle–wave interactions
+              with the structure-preserving hybrid code <a href="/codes/struphy/">STRUPHY</a>.
+            The <a href="/groups/zonal-flows-turbulent/">Zonal Flows in Turbulent Plasmas</a> group studies
+              turbulence-driven zonal flows in fusion devices and planetary atmospheres.
+            The <a href="/groups/probabilistic-data-analysis/">Probabilistic Data Analysis and Active
+              Learning</a> group applies Bayesian and machine-learning methods — including
+              <a href="/codes/geometricmachinelearning/">GeometricMachineLearning.jl</a> — to plasma
+              modelling and experiment design.
+            The <a href="/groups/advanced-computing-hub/">Advanced Computing Hub</a> supports HPC
+              deployment of these codes across EUROfusion supercomputing infrastructure.
+            </p>
+
+        <h2 id="contact">Contact</h2>
+        <p>
+          Max Planck Institute for Plasma Physics<br />
+          Boltzmannstraße 2, top floor of building D2<br />
+          85748 Garching, Germany
+        </p>
+        <p>
+        You can find a map of the institure <a href="https://www.ipp.mpg.de/5416223/original-1711357152.webp" target="_blank" rel="noopener noreferrer">here</a>.
+        </p>
+        <p>
+          <a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik" target="_blank" rel="noopener noreferrer">IPP division webpage</a>
+          &middot;
+          <a href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </div>
+    </PageLayout>
   </div>
 </Base>
