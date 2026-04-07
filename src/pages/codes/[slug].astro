@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
-const autoPartials = import.meta.glob('/src/content/codes/_auto/*.html', { query: '?raw', import: 'default', eager: true });
+const autoPartials = import.meta.glob('/data/codes_auto/*.html', { query: '?raw', import: 'default', eager: true });
 
 export async function getStaticPaths() {
   const codes = await getCollection('codes');
@@ -19,9 +19,9 @@ const normalizedPath = entry.data.path?.endsWith('/')
   ? entry.data.path
   : `${entry.data.path}/`;
 
-const membersHtml = (autoPartials[`/src/content/codes/_auto/${entry.slug}.members.html`] as string) ?? '';
-const publicationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.slug}.publications.html`] as string) ?? '';
-const dissertationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.slug}.dissertations.html`] as string) ?? '';
+const membersHtml = (autoPartials[`/data/codes_auto/${entry.slug}.members.html`] as string) ?? '';
+const publicationsHtml = (autoPartials[`/data/codes_auto/${entry.slug}.publications.html`] as string) ?? '';
+const dissertationsHtml = (autoPartials[`/data/codes_auto/${entry.slug}.dissertations.html`] as string) ?? '';
 ---
 
 <Base
