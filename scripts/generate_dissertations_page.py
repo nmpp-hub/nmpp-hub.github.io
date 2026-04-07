@@ -61,8 +61,10 @@ def validate_dissertation(raw: dict, index: int) -> dict:
     degree = str(raw.get("degree", "")).strip().lower()
     institution = str(raw.get("institution", "")).strip()
     link = str(raw.get("link", "")).strip()
+    fulltext = str(raw.get("fulltext", "")).strip()
     groups = ensure_list(raw.get("groups", []))
     codes = ensure_list(raw.get("codes", []))
+    bibtex = str(raw.get("bibtex", "") or "").strip()
 
     if not title:
         raise ValueError(f"Dissertation {index} is missing a title")
@@ -70,8 +72,6 @@ def validate_dissertation(raw: dict, index: int) -> dict:
         raise ValueError(f"Dissertation {title} is missing an author")
     if degree not in DEGREE_LABELS:
         raise ValueError(f"Dissertation {title} has invalid degree {degree!r}")
-    if not link:
-        raise ValueError(f"Dissertation {title} is missing a link")
 
     return {
         "year": year,
@@ -81,9 +81,10 @@ def validate_dissertation(raw: dict, index: int) -> dict:
         "degree": degree,
         "institution": institution,
         "link": link,
+        "fulltext": fulltext,
         "groups": groups,
         "codes": codes,
-        "bibtex": "",  # Will be set later based on cache/refresh logic
+        "bibtex": bibtex,
     }
 
 
@@ -274,7 +275,7 @@ def main() -> None:
         # Check if we need to fetch BibTeX
         slug = dissertation_slug(dissertation)
         cached = cached_dissertations.get(slug, {})
-        was_cached = bool(cached.get("bibtex", "").strip())
+        was_cached = bool(cached.get("bibtex", "").strip()) or bool(dissertation["bibtex"].strip())
 
         # Fetch BibTeX if not cached OR if refresh is requested
         if not was_cached or args.refresh:
@@ -289,6 +290,7 @@ def main() -> None:
             elif was_cached:
                 # Keep existing BibTeX for non-mediatum links
                 dissertation["bibtex"] = cached.get("bibtex", "")
+            # Otherwise preserve raw YAML bibtex if present
         else:
             # Use cached BibTeX
             dissertation["bibtex"] = cached.get("bibtex", "")

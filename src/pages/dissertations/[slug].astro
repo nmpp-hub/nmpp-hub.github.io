@@ -11,6 +11,7 @@ type Dissertation = {
   degree: string;
   institution?: string;
   link: string;
+  fulltext?: string;
   codes?: string[];
   groups?: string[];
   bibtex?: string;
@@ -51,6 +52,8 @@ const degree = DEGREE_LABELS[dissertation.degree] ?? dissertation.degree;
 const codes = await getCollection('codes');
 const codeTitleBySlug = new Map(codes.map(c => [c.slug, c.data.title]));
 const relatedCodes = (dissertation.codes ?? []).filter(Boolean);
+const libraryLink = dissertation.link?.trim() ?? '';
+const fulltextLink = dissertation.fulltext?.trim() ?? '';
 
 const bibtex = dissertation.bibtex?.trim() ?? '';
 
@@ -79,9 +82,16 @@ const bibtexDisplay = bibtex ? formatBibtexEntry(bibtex) : '';
         {(dissertation as any).group_slug && <span> · <a href={`/groups/${(dissertation as any).group_slug}/`}>{(dissertation as any).group}</a></span>}
         {relatedCodes.map(code => <span> · <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a></span>)}
       </p>
-      <div class="publication-actions">
-        <a href={dissertation.link} class="publication-action-link publication-action-secondary" target="_blank" rel="noopener noreferrer">Full text</a>
-      </div>
+      {(libraryLink || fulltextLink) && (
+        <div class="publication-actions">
+          {libraryLink && (
+            <a href={libraryLink} class="publication-action-link publication-action-secondary" target="_blank" rel="noopener noreferrer">Library page</a>
+          )}
+          {fulltextLink && (
+            <a href={fulltextLink} class="publication-action-link" target="_blank" rel="noopener noreferrer">Full text</a>
+          )}
+        </div>
+      )}
 
       <h2>Abstract</h2>
       {Content ? (

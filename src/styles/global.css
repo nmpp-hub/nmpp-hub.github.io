@@ -821,6 +821,10 @@ html[data-theme="dark"] .theme-toggle-dark {
   text-decoration: none;
 }
 
+.publication-action-link:not(.publication-action-secondary):visited {
+  color: #fff;
+}
+
 .publication-action-link:hover {
   background: var(--nmpp-accent-mid);
   border-color: var(--nmpp-accent-mid);
