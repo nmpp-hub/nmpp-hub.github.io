@@ -1,6 +1,8 @@
 ---
+
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import GVECGallery from '../../components/GVECGallery.jsx';
 
 const autoPartials = import.meta.glob('/src/content/codes/_auto/*.html', { query: '?raw', import: 'default', eager: true });
 
@@ -36,6 +38,7 @@ const dissertationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.slug}.
     <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{entry.data.title}</h1>
     <div class="prose">
       <Content />
+      {entry.slug === 'gvec' && <GVECGallery client:load />}
       <h2>Members</h2>
       <Fragment set:html={membersHtml} />
       <h2>Publications</h2>
