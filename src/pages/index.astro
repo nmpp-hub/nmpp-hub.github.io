@@ -110,7 +110,7 @@ const latestItems = latestResearchData.items || [];
         <h3>Research Groups</h3>
         <div class="compact-links">
           {topGroups.map((group) => (
-            <a href={`/groups/${group.slug}/`} class="compact-link">{group.data.title}</a>
+            <a href={`/groups/${group.id}/`} class="compact-link">{group.data.title}</a>
           ))}
         </div>
       </div>
@@ -119,7 +119,7 @@ const latestItems = latestResearchData.items || [];
         <h3>Software Codes</h3>
         <div class="compact-links">
           {topCodes.map((code) => (
-            <a href={`/codes/${code.slug}/`} class="compact-link">{code.data.title}</a>
+            <a href={`/codes/${code.id}/`} class="compact-link">{code.data.title}</a>
           ))}
         </div>
       </div>

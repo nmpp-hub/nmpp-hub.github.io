@@ -20,7 +20,7 @@ const sorted = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title
     </div>
     <div class="nmpp-grid">
       {sorted.map(code => (
-        <a class="nmpp-card" href={`/codes/${code.slug}/`}>
+        <a class="nmpp-card" href={`/codes/${code.id}/`}>
           <strong>{code.data.title}</strong>
         </a>
       ))}

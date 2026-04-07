@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import dissertationsCache from '../../../data/dissertations_cache.json';
 
@@ -46,12 +46,12 @@ const { dissertation } = Astro.props as { dissertation: Dissertation & { slug: s
 const slug = dissertation.slug;
 
 const allAbstracts = await getCollection('dissertations');
-const abstractEntry = allAbstracts.find(e => e.slug === slug);
-const { Content } = abstractEntry ? await abstractEntry.render() : { Content: undefined };
+const abstractEntry = allAbstracts.find(e => e.id === slug);
+const { Content } = abstractEntry ? await render(abstractEntry) : { Content: undefined };
 
 const degree = DEGREE_LABELS[dissertation.degree] ?? dissertation.degree;
 const codes = await getCollection('codes');
-const codeTitleBySlug = new Map(codes.map(c => [c.slug, c.data.title]));
+const codeTitleBySlug = new Map(codes.map(c => [c.id, c.data.title]));
 const relatedCodes = (dissertation.codes ?? []).filter(Boolean);
 const libraryLink = dissertation.link?.trim() ?? '';
 const fulltextLink = dissertation.fulltext?.trim() ?? '';

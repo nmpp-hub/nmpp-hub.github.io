@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 
 const autoPartials = import.meta.glob('/src/content/groups/_auto/*.html', { query: '?raw', import: 'default', eager: true });
@@ -7,17 +7,17 @@ const autoPartials = import.meta.glob('/src/content/groups/_auto/*.html', { quer
 export async function getStaticPaths() {
   const groups = await getCollection('groups');
   return groups.map(group => ({
-    params: { slug: group.slug },
+    params: { slug: group.id },
     props: { group },
   }));
 }
 
 const { group } = Astro.props;
-const { Content } = await group.render();
+const { Content } = await render(group);
 
-const membersHtml = (autoPartials[`/src/content/groups/_auto/${group.slug}.members.html`] as string) ?? '';
-const publicationsHtml = (autoPartials[`/src/content/groups/_auto/${group.slug}.publications.html`] as string) ?? '';
-const dissertationsHtml = (autoPartials[`/src/content/groups/_auto/${group.slug}.dissertations.html`] as string) ?? '';
+const membersHtml = (autoPartials[`/src/content/groups/_auto/${group.id}.members.html`] as string) ?? '';
+const publicationsHtml = (autoPartials[`/src/content/groups/_auto/${group.id}.publications.html`] as string) ?? '';
+const dissertationsHtml = (autoPartials[`/src/content/groups/_auto/${group.id}.dissertations.html`] as string) ?? '';
 ---
 
 <Base

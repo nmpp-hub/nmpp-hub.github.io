@@ -37,13 +37,13 @@ const publications: Array<Record<string, unknown>> = Array.isArray(publicationsC
 const memberSearchItems: SearchItem[] = (await getCollection('members')).map(member => ({
   type: 'Member',
   title: member.data.title,
-  href: `/members/${member.slug}/`,
+  href: `/members/${member.id}/`,
 }));
 
 const codeSearchItems: SearchItem[] = codes.map(code => ({
   type: 'Code',
   title: code.data.title,
-  href: `/codes/${code.slug}/`,
+  href: `/codes/${code.id}/`,
 }));
 
 const publicationSearchItems: SearchItem[] = publications
@@ -119,7 +119,7 @@ const path = Astro.url.pathname;
               <li><a href="/codes/">Overview</a></li>
               {codeList.map(code => (
                 <li>
-                  <a href={`/codes/${code.slug}/`}>{code.data.title}</a>
+                  <a href={`/codes/${code.id}/`}>{code.data.title}</a>
                 </li>
               ))}
             </ul>
@@ -136,7 +136,7 @@ const path = Astro.url.pathname;
               <li><a href="/groups/">Overview</a></li>
               {groupList.map(group => (
                 <li>
-                  <a href={`/groups/${group.slug}/`}>{group.data.title}</a>
+                  <a href={`/groups/${group.id}/`}>{group.data.title}</a>
                 </li>
               ))}
             </ul>
