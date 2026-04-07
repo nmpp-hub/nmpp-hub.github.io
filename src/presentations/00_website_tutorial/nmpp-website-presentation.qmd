@@ -37,30 +37,52 @@ date: last-modified
 - **Academic Community**: Sharing methodologies and results
 - **Internal Team**: Better coordination and knowledge sharing -->
 
-## Inspiration: Chalmers plasma theory
+## Inspiration: [Chalmers plasma theory](https://ft.nephy.chalmers.se/)
 
 ::: {style="position: relative; width: 100%; height: 70vh;"}
-<iframe src="https://ft.nephy.chalmers.se/" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://ft.nephy.chalmers.se/" style="
+        width: 100%;
+        height: 70%;
+        border: 2px solid #006c66;   /* thickness + color */
+        border-radius: 12px;         /* rounded corners */
+        overflow: hidden;            /* ensures content clips to radius */
+    " 
+    allowfullscreen></iframe>
 :::
 
 **Key Takeaways:**
 - A
 - B
 
-## Inspiration: GyselaX code page
+## Inspiration: [GyselaX code page](https://gyselax.github.io/)
 
 ::: {style="position: relative; width: 100%; height: 70vh;"}
-<iframe src="https://gyselax.github.io/" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://gyselax.github.io/"
+        style="
+        width: 100%;
+        height: 80%;
+        border: 2px solid #006c66;   /* thickness + color */
+        border-radius: 12px;         /* rounded corners */
+        overflow: hidden;            /* ensures content clips to radius */
+    " 
+    allowfullscreen></iframe>
 :::
 
 **Key Takeaways:**
 - A
 - B
 
-## Inspiration: BSC fusion group
+## Inspiration: [BSC fusion group](https://fusion.bsc.es/)
 
 ::: {style="position: relative; width: 100%; height: 70vh;"}
-<iframe src="https://fusion.bsc.es/" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://fusion.bsc.es/" style="
+        width: 100%;
+        height: 80%;
+        border: 2px solid #006c66;   /* thickness + color */
+        border-radius: 12px;         /* rounded corners */
+        overflow: hidden;            /* ensures content clips to radius */
+    " 
+    allowfullscreen></iframe>
 :::
 
 **Key Takeaways:**
