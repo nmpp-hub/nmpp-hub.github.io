@@ -74,59 +74,6 @@
     "group_slug": "geometric-numerical-integration"
   },
   {
-    "slug": "development-of-an-implicit-geometric-pic",
-    "author_html": "<a href=\"/members/jiayi-li/\">Jiayi Li</a>",
-    "year": 2025,
-    "date": "2025-01-01",
-    "title": "Development of an implicit Geometric PIC method",
-    "author": "Jiayi Li",
-    "degree": "msc",
-    "institution": "",
-    "link": "",
-    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf",
-    "groups": [],
-    "codes": [
-      "gempicx"
-    ],
-    "bibtex": "",
-    "group": "Kinetic and Gyrokinetic Models",
-    "group_slug": "kinetic-gyrokinetic-models"
-  },
-  {
-    "slug": "development-of-a-geometric-pic-method",
-    "author_html": "Joris Thiel",
-    "year": 2024,
-    "date": "2024-11-11",
-    "title": "Development of a Geometric PIC Method for the Linearized Vlasov-Maxwell Equations",
-    "author": "Joris Thiel",
-    "degree": "msc",
-    "institution": "",
-    "link": "",
-    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/ee7b814e95d5e5cb487540b67cadcdef/Thiel_Abschlussarbeit.pdf",
-    "groups": [],
-    "codes": [
-      "gempicx"
-    ],
-    "bibtex": ""
-  },
-  {
-    "slug": "development-of-a-geometric-particle-in-cell-method",
-    "author_html": "Alicia Robles Pérez",
-    "year": 2024,
-    "date": "2024-10-13",
-    "title": "Development of a Geometric Particle-in-Cell Method for Cylindrical Coordinate Systems",
-    "author": "Alicia Robles Pérez",
-    "degree": "msc",
-    "institution": "",
-    "link": "",
-    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0236ffa4ace37242ce0cae6163862c08/RoblesPerez_Thesis.pdf",
-    "groups": [],
-    "codes": [
-      "gempicx"
-    ],
-    "bibtex": ""
-  },
-  {
     "slug": "beyond-gyrokinetic-theory-excitation-of",
     "author_html": "<a href=\"/members/mario-rath/\">Mario Räth</a>",
     "year": 2023,
@@ -146,23 +93,6 @@
     "group_slug": "zonal-flows-turbulent"
   },
   {
-    "slug": "implementation-of-a-galerkin-hodge-operator",
-    "author_html": "Andreas Scheibner",
-    "year": 2023,
-    "date": "2023-07-25",
-    "title": "Implementation of a Galerkin Hodge Operator in the GEMPICX Framework",
-    "author": "Andreas Scheibner",
-    "degree": "msc",
-    "institution": "",
-    "link": "",
-    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf",
-    "groups": [],
-    "codes": [
-      "gempicx"
-    ],
-    "bibtex": ""
-  },
-  {
     "slug": "reduced-basis-methods-for-problems-with",
     "author_html": "<a href=\"/members/tobias-blickhan/\">Tobias Blickhan</a>",
     "year": 2023,
@@ -178,23 +108,6 @@
     "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Blickhan, Tobias Michael},\r\n\ttitle = {Reduced basis methods for problems with moving features},\r\n\tyear = {2024},\r\n\tschool = {Technische Universität München},\r\n\tpages = {145},\r\n\tlanguage = {en},\r\n\tabstract = {This work deals with reduced order methods for the solution of parametrized partial differential equations with moving features. Solutions of these class of equations are well known to be hard to approximate using linear reduced basis methods. We utilize results from optimal transportation theory to extend these methods. In particular, we present a novel registration method that is based on aligning solution features using an approximation of optimal transport maps.},\r\n\tkeywords = {parameterized partial differential equation, model order reduction, snapshot registration, optimal transport, transport-dominated problems},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1726153},\r\n\tdoi = {},\r\n}",
     "group": "Geometric Numerical Integration",
     "group_slug": "geometric-numerical-integration"
-  },
-  {
-    "slug": "gempicx-an-amrex-based-high-performance-implementation",
-    "author_html": "Brayan Andreu de Albuquerque",
-    "year": 2023,
-    "date": "2023-03-31",
-    "title": "GEMPICX: an AMReX Based High-Performance Implementation of Geometric Particle-in-Cell Algorithms",
-    "author": "Brayan Andreu de Albuquerque",
-    "degree": "msc",
-    "institution": "",
-    "link": "",
-    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf",
-    "groups": [],
-    "codes": [
-      "gempicx"
-    ],
-    "bibtex": ""
   },
   {
     "slug": "geometric-particle-in-cell-methods-on-mapped-grids",
