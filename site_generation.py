@@ -76,13 +76,13 @@ def publication_base_slug(title: str, doi: str = "", max_words: int = 6) -> str:
 def publication_href(publication: dict[str, Any]) -> str:
     slug = slugify(str(publication.get("slug", "")).strip())
     if slug:
-        return f'/publications/{html.escape(slug, quote=True)}/'
+        return f"/publications/{html.escape(slug, quote=True)}/"
 
     doi = str(publication.get("doi", "")).strip()
     if doi:
-        return f'https://doi.org/{html.escape(doi, quote=True)}'
+        return f"https://doi.org/{html.escape(doi, quote=True)}"
 
-    return '/publications/'
+    return "/publications/"
 
 
 def render_publication_title(publication: dict[str, Any]) -> str:
@@ -106,7 +106,7 @@ def dissertation_href(dissertation: dict[str, Any]) -> str:
     """Return the href for a dissertation title link."""
     slug = dissertation_slug(dissertation)
     if slug:
-        return f'/dissertations/{html.escape(slug, quote=True)}/'
+        return f"/dissertations/{html.escape(slug, quote=True)}/"
     return html.escape(str(dissertation.get("link", "#")), quote=True)
 
 
@@ -143,7 +143,7 @@ def generate_standard_aliases(name: str) -> list[str]:
 
     # Get first name(s) and last name(s)
     first_parts = parts[:-1]  # Everything except last part
-    last_part = parts[-1]      # Last part
+    last_part = parts[-1]  # Last part
 
     first_name = " ".join(first_parts)
     last_name = last_part
@@ -239,7 +239,9 @@ def render_code_links(codes: list[str]) -> str:
     return ", ".join(rendered)
 
 
-def render_author_name(author: str, author_to_slug: dict[str, str] | None = None) -> str:
+def render_author_name(
+    author: str, author_to_slug: dict[str, str] | None = None
+) -> str:
     """Render author name as a link if they have a member page."""
     if author_to_slug is None:
         author_to_slug = build_author_to_slug_map()
@@ -255,7 +257,9 @@ def render_author_name(author: str, author_to_slug: dict[str, str] | None = None
     return label
 
 
-def render_author_list(authors: str, author_to_slug: dict[str, str] | None = None) -> str:
+def render_author_list(
+    authors: str, author_to_slug: dict[str, str] | None = None
+) -> str:
     """Render comma-separated author list with links for known members."""
     if not authors:
         return ""

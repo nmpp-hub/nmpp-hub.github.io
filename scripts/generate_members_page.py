@@ -15,18 +15,23 @@ from pathlib import Path
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import (
-    escape_text,
-    load_yaml,
-    render_code_links,
-    write_text,
-)
+from site_generation import (escape_text, load_yaml, render_code_links,
+                             write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
 MEMBERS_FILE = ROOT / "data" / "members.yml"
 OUTPUT_FILE = ROOT / "src" / "pages" / "members.astro"
 
-ROLE_ORDER = ["professor", "group leader", "permanent staff", "postdoc", "phd", "msc", "admin staff", "secretary"]
+ROLE_ORDER = [
+    "professor",
+    "group leader",
+    "permanent staff",
+    "postdoc",
+    "phd",
+    "msc",
+    "admin staff",
+    "secretary",
+]
 ROLE_TITLES = {
     "professor": "Professors",
     "secretary": "Secretary",

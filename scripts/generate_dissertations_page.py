@@ -9,17 +9,10 @@ from pathlib import Path
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import (
-    build_author_to_slug_map,
-    dissertation_slug,
-    ensure_list,
-    escape_text,
-    load_yaml,
-    render_author_name,
-    render_code_links,
-    render_dissertation_title,
-    write_text,
-)
+from site_generation import (build_author_to_slug_map, dissertation_slug,
+                             ensure_list, escape_text, load_yaml,
+                             render_author_name, render_code_links,
+                             render_dissertation_title, write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "dissertations.yml"
@@ -38,15 +31,15 @@ DEGREE_LABELS = {
 def fetch_mediatum_bibtex(url: str) -> str:
     """Fetch BibTeX from a mediatum URL if it matches the expected pattern."""
     import re
-    
+
     # Extract ID from mediatum URL
-    match = re.search(r'mediatum\.ub\.tum\.de/\??(?:id=)?(\d+)', url)
+    match = re.search(r"mediatum\.ub\.tum\.de/\??(?:id=)?(\d+)", url)
     if not match:
         return ""
-    
+
     doc_id = match.group(1)
     bibtex_url = f"https://mediatum.ub.tum.de/export/{doc_id}/bibtex"
-    
+
     try:
         req = urllib.request.Request(
             bibtex_url,
@@ -68,8 +61,10 @@ def validate_dissertation(raw: dict, index: int) -> dict:
     degree = str(raw.get("degree", "")).strip().lower()
     institution = str(raw.get("institution", "")).strip()
     link = str(raw.get("link", "")).strip()
+    fulltext = str(raw.get("fulltext", "")).strip()
     groups = ensure_list(raw.get("groups", []))
     codes = ensure_list(raw.get("codes", []))
+    bibtex = str(raw.get("bibtex", "") or "").strip()
 
     if not title:
         raise ValueError(f"Dissertation {index} is missing a title")
@@ -77,8 +72,6 @@ def validate_dissertation(raw: dict, index: int) -> dict:
         raise ValueError(f"Dissertation {title} is missing an author")
     if degree not in DEGREE_LABELS:
         raise ValueError(f"Dissertation {title} has invalid degree {degree!r}")
-    if not link:
-        raise ValueError(f"Dissertation {title} is missing a link")
 
     return {
         "year": year,
@@ -88,9 +81,10 @@ def validate_dissertation(raw: dict, index: int) -> dict:
         "degree": degree,
         "institution": institution,
         "link": link,
+        "fulltext": fulltext,
         "groups": groups,
         "codes": codes,
-        "bibtex": "",  # Will be set later based on cache/refresh logic
+        "bibtex": bibtex,
     }
 
 
@@ -100,7 +94,9 @@ def render_degree_and_institution(dissertation: dict) -> str:
     return escape_text(f"{degree} / {institution}" if institution else degree)
 
 
-def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_page(
+    dissertations: list[dict], author_to_slug: dict[str, str] | None = None
+) -> str:
     if author_to_slug is None:
         author_to_slug = build_author_to_slug_map()
 
@@ -108,7 +104,7 @@ def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None 
     table_rows = []
     for dissertation in dissertations:
         degree_label = DEGREE_LABELS[dissertation["degree"]]
-        codes = render_code_links(dissertation['codes'])
+        codes = render_code_links(dissertation["codes"])
 
         row = f"""    <tr>
       <td>{dissertation['date']}</td>
@@ -125,7 +121,7 @@ def build_page(dissertations: list[dict], author_to_slug: dict[str, str] | None 
     cards = []
     for dissertation in dissertations:
         degree_label = DEGREE_LABELS[dissertation["degree"]]
-        codes = render_code_links(dissertation['codes'])
+        codes = render_code_links(dissertation["codes"])
 
         card = f"""
         <div class="publication-card">
@@ -225,7 +221,9 @@ def build_author_group_map() -> dict[str, dict]:
 
     members = load_yaml(MEMBERS_FILE).get("members", [])
     groups_raw = load_yaml(GROUPS_FILE).get("groups", [])
-    group_slug_map = {g["name"]: g["slug"] for g in groups_raw if g.get("name") and g.get("slug")}
+    group_slug_map = {
+        g["name"]: g["slug"] for g in groups_raw if g.get("name") and g.get("slug")
+    }
 
     result: dict[str, dict] = {}
     for member in members:
@@ -234,13 +232,20 @@ def build_author_group_map() -> dict[str, dict]:
         if not name or not group_name:
             continue
         group_slug = group_slug_map.get(group_name, "")
-        key = unicodedata.normalize("NFD", name).encode("ascii", "ignore").decode("ascii").lower()
+        key = (
+            unicodedata.normalize("NFD", name)
+            .encode("ascii", "ignore")
+            .decode("ascii")
+            .lower()
+        )
         result[key] = {"group": group_name, "group_slug": group_slug}
     return result
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate dissertation pages and cache.")
+    parser = argparse.ArgumentParser(
+        description="Generate dissertation pages and cache."
+    )
     parser.add_argument(
         "--refresh",
         action="store_true",
@@ -266,12 +271,12 @@ def main() -> None:
     dissertations = []
     for index, raw_dissertation in enumerate(raw_dissertations, 1):
         dissertation = validate_dissertation(raw_dissertation, index)
-        
+
         # Check if we need to fetch BibTeX
         slug = dissertation_slug(dissertation)
         cached = cached_dissertations.get(slug, {})
-        was_cached = bool(cached.get("bibtex", "").strip())
-        
+        was_cached = bool(cached.get("bibtex", "").strip()) or bool(dissertation["bibtex"].strip())
+
         # Fetch BibTeX if not cached OR if refresh is requested
         if not was_cached or args.refresh:
             if "mediatum.ub.tum.de" in dissertation["link"]:
@@ -285,29 +290,41 @@ def main() -> None:
             elif was_cached:
                 # Keep existing BibTeX for non-mediatum links
                 dissertation["bibtex"] = cached.get("bibtex", "")
+            # Otherwise preserve raw YAML bibtex if present
         else:
             # Use cached BibTeX
             dissertation["bibtex"] = cached.get("bibtex", "")
-        
+
         dissertations.append(dissertation)
 
-    dissertations.sort(
-        key=lambda dissertation: dissertation["date"], reverse=True
-    )
+    dissertations.sort(key=lambda dissertation: dissertation["date"], reverse=True)
 
     author_group_map = build_author_group_map()
     author_to_slug = build_author_to_slug_map()
 
     def enrich(d: dict) -> dict:
         import unicodedata
-        key = unicodedata.normalize("NFD", d["author"]).encode("ascii", "ignore").decode("ascii").lower()
+
+        key = (
+            unicodedata.normalize("NFD", d["author"])
+            .encode("ascii", "ignore")
+            .decode("ascii")
+            .lower()
+        )
         member_info = author_group_map.get(key, {})
         author_html = render_author_name(d["author"], author_to_slug)
-        return {"slug": dissertation_slug(d), "author_html": author_html, **d, **member_info}
+        return {
+            "slug": dissertation_slug(d),
+            "author_html": author_html,
+            **d,
+            **member_info,
+        }
 
     # Write JSON cache for use by the Astro [slug].astro page
     cache = [enrich(d) for d in dissertations]
-    CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
+    CACHE_FILE.write_text(
+        json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
     print(f"Updated {CACHE_FILE}")
 
     # Create empty abstract markdown files for new dissertations (never overwrite)

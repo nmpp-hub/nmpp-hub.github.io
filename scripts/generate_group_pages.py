@@ -16,7 +16,10 @@ from typing import Any
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_dissertation_title, render_publication_title, slugify, write_text
+from site_generation import (build_author_to_slug_map, ensure_list,
+                             escape_text, load_yaml, render_author_list,
+                             render_dissertation_title,
+                             render_publication_title, slugify, write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
 GROUPS_FILE = ROOT / "data" / "groups.yml"
@@ -29,6 +32,7 @@ GROUPS_AUTO_DIR = GROUPS_OUTPUT_DIR / "_auto"
 GROUPS_AUTO_DIR.mkdir(parents=True, exist_ok=True)
 
 DEGREE_LABELS = {"phd": "PhD", "msc": "MSc"}
+
 
 def load_groups() -> list[dict]:
     """Load and validate groups from YAML."""
@@ -170,13 +174,17 @@ def build_members_list(members: list[dict]) -> str:
     for member in sorted(members, key=sort_key):
         slug = slugify(member["name"])
         suffix = ", alumni" if member["alumni"] else ""
-        items.append(f'  <li><a href="/members/{slug}/">{escape_text(member["name"])}</a>{suffix}</li>')
+        items.append(
+            f'  <li><a href="/members/{slug}/">{escape_text(member["name"])}</a>{suffix}</li>'
+        )
 
     body = "\n".join(items)
     return f"<ul>\n{body}\n</ul>"
 
 
-def build_publications_section(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_publications_section(
+    publications: list[dict], author_to_slug: dict[str, str] | None = None
+) -> str:
     """Build HTML table + cards for publications."""
     if not publications:
         return "<p>No publications for this group yet.</p>"
@@ -187,7 +195,7 @@ def build_publications_section(publications: list[dict], author_to_slug: dict[st
     table_rows = []
     cards = []
     for pub in publications:
-        venue = escape_text(pub['venue'])
+        venue = escape_text(pub["venue"])
         doi_link = f"<a href=\"https://doi.org/{escape_text(pub['doi'])}\">DOI</a>"
         details = f"{venue} · {doi_link}"
 
@@ -236,7 +244,9 @@ def build_publications_section(publications: list[dict], author_to_slug: dict[st
     </div>"""
 
 
-def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_dissertations_section(
+    dissertations: list[dict], author_to_slug: dict[str, str] | None = None
+) -> str:
     """Build HTML table + cards for dissertations."""
     if not dissertations:
         return "<p>No dissertations for this group yet.</p>"
@@ -248,7 +258,9 @@ def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[
     cards = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        codes_links = ', '.join([f'<a href="/codes/{code}/">{code}</a>' for code in diss['codes']])
+        codes_links = ", ".join(
+            [f'<a href="/codes/{code}/">{code}</a>' for code in diss["codes"]]
+        )
 
         table_rows.append(f"""    <tr>
       <td>{diss['date']}</td>
@@ -304,8 +316,10 @@ def build_group_page_content(group: dict, members: list[dict]) -> str:
     abbr = group.get("abbr", "")
     ipp_url = group.get("ipp_url", "")
     if ipp_url:
-        link_text = f"{group['name']} ({abbr})" if abbr else group['name']
-        custom_lines.extend(["## Links", "", f"- [{link_text}]({escape_text(ipp_url)})"])
+        link_text = f"{group['name']} ({abbr})" if abbr else group["name"]
+        custom_lines.extend(
+            ["## Links", "", f"- [{link_text}]({escape_text(ipp_url)})"]
+        )
 
     custom_content = "\n".join(custom_lines)
     if custom_content:
@@ -332,7 +346,9 @@ def main() -> None:
     all_dissertations = load_dissertations()
     author_to_slug = build_author_to_slug_map()
 
-    print(f"Loaded {len(all_groups)} groups, {len(all_members)} members, {len(all_publications)} publications, {len(all_dissertations)} dissertations")
+    print(
+        f"Loaded {len(all_groups)} groups, {len(all_members)} members, {len(all_publications)} publications, {len(all_dissertations)} dissertations"
+    )
 
     # Generate page for each group
     for group in all_groups:
@@ -377,13 +393,17 @@ def main() -> None:
             build_members_list(group_members) + "\n", encoding="utf-8"
         )
         (GROUPS_AUTO_DIR / f"{slug}.publications.html").write_text(
-            build_publications_section(group_pubs, author_to_slug) + "\n", encoding="utf-8"
+            build_publications_section(group_pubs, author_to_slug) + "\n",
+            encoding="utf-8",
         )
         (GROUPS_AUTO_DIR / f"{slug}.dissertations.html").write_text(
-            build_dissertations_section(group_diss, author_to_slug) + "\n", encoding="utf-8"
+            build_dissertations_section(group_diss, author_to_slug) + "\n",
+            encoding="utf-8",
         )
 
-        print(f"  {group['name']:50} → {group['slug']:30} ({len(group_members)} members, {len(group_pubs)} pubs, {len(group_diss)} diss)")
+        print(
+            f"  {group['name']:50} → {group['slug']:30} ({len(group_members)} members, {len(group_pubs)} pubs, {len(group_diss)} diss)"
+        )
 
     print(f"\nGenerated {len(all_groups)} group pages in {GROUPS_OUTPUT_DIR}")
 

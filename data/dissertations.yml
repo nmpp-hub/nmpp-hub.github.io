@@ -24,6 +24,7 @@ dissertations:
     groups: []
     codes: [psydac]
     link: https://mediatum.ub.tum.de/1776749
+    fulltext: https://mediatum.ub.tum.de/doc/1776749/1776749.pdf
     bibtex: |
       @phdthesis{dissertation,
         author = {Schnack, Frederik Günter},
@@ -33,7 +34,7 @@ dissertations:
         pages = {161},
         language = {en},
         abstract = {This work develops structure-preserving finite element methods on two-dimensional refined multipatch spaces. Within the broken-FEEC framework, we construct bounded commuting projections on non-matching discretizations with certain assumptions on the geometry. 
-      We also design conforming projections, based on interface-averaging and extension-restriction operators, enabling spurious-free numerical schemes.  Additionally, strong-strong discretizations are extended to multipatch setups.},
+        We also design conforming projections, based on interface-averaging and extension-restriction operators, enabling spurious-free numerical schemes.  Additionally, strong-strong discretizations are extended to multipatch setups.},
         keywords = {},
         note = {},
         url = {https://mediatum.ub.tum.de/1776749},
@@ -48,6 +49,7 @@ dissertations:
     groups: []
     codes: []
     link: https://mediatum.ub.tum.de/1763047
+    fulltext: https://mediatum.ub.tum.de/doc/1763047/1763047.pdf
   - year: 2025
     date: 2025-07-08
     title: Development and implementation of algorithms for kinetic Vlasov systems on various hardware architectures
@@ -57,6 +59,7 @@ dissertations:
     groups: []
     codes: [bsl6d]
     link: https://mediatum.ub.tum.de/1762920
+    fulltext: https://mediatum.ub.tum.de/doc/1762920/1762920.pdf
   - year: 2025
     date: 2025-03-14
     title: Structure-Preserving Neural Networks for Scientific Computing
@@ -66,6 +69,7 @@ dissertations:
     groups: []
     codes: [geometricmachinelearning]
     link: https://mediatum.ub.tum.de/1754855
+    fulltext: https://mediatum.ub.tum.de/doc/1754855/1754855.pdf
   - year: 2025
     date: 2025-01-01
     title: Development of an implicit Geometric PIC method
@@ -74,7 +78,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [gempicx]
-    link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf
+    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf
   - year: 2024
     date: 2024-01-01
     title: Development of a Geometric Particle-in-Cell Method for Cylindrical Coordinate Systems
@@ -83,7 +87,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [gempicx]
-    link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0236ffa4ace37242ce0cae6163862c08/RoblesPerez_Thesis.pdf
+    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0236ffa4ace37242ce0cae6163862c08/RoblesPerez_Thesis.pdf
   - year: 2024
     date: 2024-01-01
     title: Development of a Geometric PIC Method for the Linearized Vlasov-Maxwell Equations
@@ -92,7 +96,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [gempicx]
-    link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/ee7b814e95d5e5cb487540b67cadcdef/Thiel_Abschlussarbeit.pdf
+    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/ee7b814e95d5e5cb487540b67cadcdef/Thiel_Abschlussarbeit.pdf
   - year: 2023
     date: 2023-10-05
     title: Beyond gyrokinetic theory - Excitation of high-frequency turbulence in 6D Vlasov simulations of magnetized plasmas with steep temperature and density gradients
@@ -101,7 +105,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [bsl6d]
-    link: https://mediatum.ub.tum.de/1703830
+    fulltext: https://mediatum.ub.tum.de/doc/1703830/1703830.pdf
   - year: 2023
     date: 2023-01-01
     title: Reduced basis methods for problems with moving features
@@ -111,6 +115,7 @@ dissertations:
     groups: []
     codes: []
     link: https://mediatum.ub.tum.de/1726153
+    fulltext: https://mediatum.ub.tum.de/doc/1726153/1726153.pdf
   - year: 2023
     date: 2023-01-01
     title: Implementation of a Galerkin Hodge Operator in the GEMPICX Framework
@@ -119,7 +124,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [gempicx]
-    link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf
+    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf
   - year: 2023
     date: 2023-01-01
     title: "GEMPICX: an AMReX Based High-Performance Implementation of Geometric Particle-in-Cell Algorithms"
@@ -128,7 +133,7 @@ dissertations:
     institution: ""
     groups: []
     codes: [gempicx]
-    link: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf
+    fulltext: https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf
   - year: 2021
     date: 2021-01-01
     title: Geometric Particle-in-Cell Methods on Mapped Grids
@@ -137,4 +142,5 @@ dissertations:
     institution: ""
     groups: []
     codes: [gempicx]
-    link: https://mediatum.ub.tum.de/1641472
+    link: https://mediatum.ub.tum.de/1611205
+    fulltext: https://mediatum.ub.tum.de/doc/1611205/1611205.pdf

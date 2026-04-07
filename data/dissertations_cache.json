@@ -9,6 +9,7 @@
     "degree": "phd",
     "institution": "",
     "link": "https://mediatum.ub.tum.de/1776749",
+    "fulltext": "https://mediatum.ub.tum.de/doc/1776749/1776749.pdf",
     "groups": [],
     "codes": [
       "psydac"
@@ -27,6 +28,7 @@
     "degree": "phd",
     "institution": "",
     "link": "https://mediatum.ub.tum.de/1762920",
+    "fulltext": "https://mediatum.ub.tum.de/doc/1762920/1762920.pdf",
     "groups": [],
     "codes": [
       "bsl6d"
@@ -45,6 +47,7 @@
     "degree": "phd",
     "institution": "",
     "link": "https://mediatum.ub.tum.de/1763047",
+    "fulltext": "https://mediatum.ub.tum.de/doc/1763047/1763047.pdf",
     "groups": [],
     "codes": [],
     "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Köberl, Robert},\r\n\ttitle = {Uncertainty quantification in three-dimensional plasma equilibrium reconstruction},\r\n\tyear = {2025},\r\n\tschool = {Technische Universität München},\r\n\tpages = {153},\r\n\tlanguage = {en},\r\n\tabstract = {The ideal magnetohydrodynamic (MHD) equilibrium is central to analyzing magnetically confined plasmas. Equilibrium reconstruction involves inferring an MHD equilibrium from experimental data. For 3D geometries, such as stellarators, this can be computationally intensive. This work explores probabilistic approaches for uncertainty quantification in equilibrium reconstruction using data-driven methods like dimensionality reduction and surrogate modeling. This enables sample-based uncertainty estimates on equilibrium quantities while reducing computational costs.},\r\n\tkeywords = {Plasma Physics;Ideal Magnetohydrodynamics;Equilibrium Reconstruction;Uncertainty Quantification;Bayesian Inference;Surrogate Modeling;Dimensionality Reduction},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1763047},\r\n\tdoi = {},\r\n}",
@@ -61,6 +64,7 @@
     "degree": "phd",
     "institution": "",
     "link": "https://mediatum.ub.tum.de/1754855",
+    "fulltext": "https://mediatum.ub.tum.de/doc/1754855/1754855.pdf",
     "groups": [],
     "codes": [
       "geometricmachinelearning"
@@ -78,7 +82,8 @@
     "author": "Jiayi Li",
     "degree": "msc",
     "institution": "",
-    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf",
+    "link": "",
+    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0eeb1e3836bed9ce95b4c154d631fc71/Development_of_an_implicit_Geometric_PIC_method-Jiayi-Li.pdf",
     "groups": [],
     "codes": [
       "gempicx"
@@ -96,7 +101,8 @@
     "author": "Alicia Robles Pérez",
     "degree": "msc",
     "institution": "",
-    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0236ffa4ace37242ce0cae6163862c08/RoblesPerez_Thesis.pdf",
+    "link": "",
+    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/0236ffa4ace37242ce0cae6163862c08/RoblesPerez_Thesis.pdf",
     "groups": [],
     "codes": [
       "gempicx"
@@ -112,7 +118,8 @@
     "author": "Joris Thiel",
     "degree": "msc",
     "institution": "",
-    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/ee7b814e95d5e5cb487540b67cadcdef/Thiel_Abschlussarbeit.pdf",
+    "link": "",
+    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/ee7b814e95d5e5cb487540b67cadcdef/Thiel_Abschlussarbeit.pdf",
     "groups": [],
     "codes": [
       "gempicx"
@@ -128,7 +135,8 @@
     "author": "Mario Räth",
     "degree": "phd",
     "institution": "",
-    "link": "https://mediatum.ub.tum.de/1703830",
+    "link": "",
+    "fulltext": "https://mediatum.ub.tum.de/doc/1703830/1703830.pdf",
     "groups": [],
     "codes": [
       "bsl6d"
@@ -147,6 +155,7 @@
     "degree": "phd",
     "institution": "",
     "link": "https://mediatum.ub.tum.de/1726153",
+    "fulltext": "https://mediatum.ub.tum.de/doc/1726153/1726153.pdf",
     "groups": [],
     "codes": [],
     "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Blickhan, Tobias Michael},\r\n\ttitle = {Reduced basis methods for problems with moving features},\r\n\tyear = {2024},\r\n\tschool = {Technische Universität München},\r\n\tpages = {145},\r\n\tlanguage = {en},\r\n\tabstract = {This work deals with reduced order methods for the solution of parametrized partial differential equations with moving features. Solutions of these class of equations are well known to be hard to approximate using linear reduced basis methods. We utilize results from optimal transportation theory to extend these methods. In particular, we present a novel registration method that is based on aligning solution features using an approximation of optimal transport maps.},\r\n\tkeywords = {parameterized partial differential equation, model order reduction, snapshot registration, optimal transport, transport-dominated problems},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1726153},\r\n\tdoi = {},\r\n}",
@@ -162,7 +171,8 @@
     "author": "Andreas Scheibner",
     "degree": "msc",
     "institution": "",
-    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf",
+    "link": "",
+    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/512499465fab766940ddc4fc873d58b0/Master_Thesis_Final_mitUnterschrift.pdf",
     "groups": [],
     "codes": [
       "gempicx"
@@ -178,7 +188,8 @@
     "author": "Brayan Andreu de Albuquerque",
     "degree": "msc",
     "institution": "",
-    "link": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf",
+    "link": "",
+    "fulltext": "https://gitlab.mpcdf.mpg.de/gempic/gempic/-/wikis/uploads/2e060474713417c776b8fefe07f61253/MasterThesis_Brayan.pdf",
     "groups": [],
     "codes": [
       "gempicx"
@@ -194,11 +205,12 @@
     "author": "Benedikt Perse",
     "degree": "phd",
     "institution": "",
-    "link": "https://mediatum.ub.tum.de/1641472",
+    "link": "https://mediatum.ub.tum.de/1611205",
+    "fulltext": "https://mediatum.ub.tum.de/doc/1611205/1611205.pdf",
     "groups": [],
     "codes": [
       "gempicx"
     ],
-    "bibtex": ""
+    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Perse, Benedikt},\r\n\ttitle = {Geometric Particle-in-Cell Methods on Mapped Grids},\r\n\tyear = {2021},\r\n\tschool = {Technische Universität München},\r\n\tpages = {173},\r\n\tlanguage = {en},\r\n\tabstract = {The geometric electromagnetic particle-in-cell (GEMPIC) framework provides the foundation for Vlasov-Maxwell solvers that preserve at the discrete level the non-canonical Hamiltonian structure. Preserving the structure of the kinetic equations enables stable numerical methods for long time simulations. In this dissertation, the GEMPIC framework is extended to curvilinear coordinates and perfect conductor boundary conditions. Several semi-implicit time integrators based either on a Hamiltonian splitting or on an antisymmetric splitting of the Poisson matrix are discussed and assessed regarding their conservation properties and computational efficiency.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1611205},\r\n\tdoi = {},\r\n}"
   }
 ]

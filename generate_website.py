@@ -21,7 +21,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 
 
-def run_script(script_path: Path, script_name: str, extra_args: list[str] | None = None) -> bool:
+def run_script(
+    script_path: Path, script_name: str, extra_args: list[str] | None = None
+) -> bool:
     """Run a Python script and return True if successful."""
     print(f"\n{'=' * 70}")
     print(f"Running: {script_name}")
@@ -45,7 +47,9 @@ def run_script(script_path: Path, script_name: str, extra_args: list[str] | None
 
 def main() -> int:
     """Run all generation scripts in order."""
-    parser = argparse.ArgumentParser(description="Generate all website pages from YAML data.")
+    parser = argparse.ArgumentParser(
+        description="Generate all website pages from YAML data."
+    )
     parser.add_argument(
         "--refresh",
         action="store_true",
@@ -57,12 +61,28 @@ def main() -> int:
     populate_args = ["--refresh"] if args.refresh else []
     dissertation_args = ["--refresh"] if args.refresh else []
     scripts = [
-        (scripts_dir / "populate_publications.py", "Populate Publications", populate_args),
-        (scripts_dir / "generate_dissertations_page.py", "Generate Dissertations Page", dissertation_args),
-        (scripts_dir / "generate_latest_research.py", "Generate Latest Research Slideshow", []),
+        (
+            scripts_dir / "populate_publications.py",
+            "Populate Publications",
+            populate_args,
+        ),
+        (
+            scripts_dir / "generate_dissertations_page.py",
+            "Generate Dissertations Page",
+            dissertation_args,
+        ),
+        (
+            scripts_dir / "generate_latest_research.py",
+            "Generate Latest Research Slideshow",
+            [],
+        ),
         (scripts_dir / "generate_code_pages.py", "Generate Code Pages", []),
         (scripts_dir / "generate_members_page.py", "Generate Members Page", []),
-        (scripts_dir / "generate_member_pages.py", "Generate Individual Member Pages", []),
+        (
+            scripts_dir / "generate_member_pages.py",
+            "Generate Individual Member Pages",
+            [],
+        ),
         (scripts_dir / "generate_group_pages.py", "Generate Group Pages", []),
     ]
 
@@ -84,7 +104,9 @@ def main() -> int:
         print(f"{status}: {script_name}")
 
     all_success = all(results)
-    print(f"\nOverall: {'✅ All scripts completed successfully!' if all_success else '❌ Some scripts failed'}")
+    print(
+        f"\nOverall: {'✅ All scripts completed successfully!' if all_success else '❌ Some scripts failed'}"
+    )
     print(f"{'=' * 70}\n")
 
     return 0 if all_success else 1

@@ -328,7 +328,9 @@ members:
     group: Magnetohydrodynamics
     codes: [gvec]
     alumni: false
-    aliases: []
+    aliases:
+      - Florian J. Hindenlang
+      - Florian J Hindenlang
     picture: "https://www.ipp.mpg.de/5446851/original-1727074133.webp"
   - name: Omar Maj
     role: permanent staff
@@ -475,6 +477,8 @@ members:
     alumni: false
     aliases:
       - Mario Raeth
+      - M. Raeth
+      - M Raeth
   - name: Nils Schild
     role: postdoc
     topic: ""
@@ -508,3 +512,5 @@ members:
     alumni: true
     aliases:
       - Niels Guertler
+      - N. Guertler
+      - N Guertler

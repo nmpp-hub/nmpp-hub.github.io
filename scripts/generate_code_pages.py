@@ -18,7 +18,10 @@ from pathlib import Path
 # Add parent directory to path to import site_generation
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from site_generation import build_author_to_slug_map, ensure_list, escape_text, load_yaml, render_author_list, render_dissertation_title, render_publication_title, slugify
+from site_generation import (build_author_to_slug_map, ensure_list,
+                             escape_text, load_yaml, render_author_list,
+                             render_dissertation_title,
+                             render_publication_title, slugify)
 
 ROOT = Path(__file__).resolve().parent.parent
 CODES_DIR = ROOT / "src" / "content" / "codes"
@@ -40,9 +43,7 @@ MEMBER_ROLE_LABELS = {
     "msc": "MSc student",
     "admin staff": "Admin staff",
 }
-MEMBER_ROLE_PRIORITY = {
-    role: i for i, role in enumerate(MEMBER_ROLE_LABELS)
-}
+MEMBER_ROLE_PRIORITY = {role: i for i, role in enumerate(MEMBER_ROLE_LABELS)}
 
 
 def load_publications_cache() -> list[dict]:
@@ -106,7 +107,9 @@ def build_members_list(members: list[dict]) -> str:
     return f"<ul>\n{body}\n</ul>"
 
 
-def build_publications_section(publications: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_publications_section(
+    publications: list[dict], author_to_slug: dict[str, str] | None = None
+) -> str:
     if not publications:
         return "<p>No publications linked to this code yet.</p>"
 
@@ -116,7 +119,7 @@ def build_publications_section(publications: list[dict], author_to_slug: dict[st
     table_rows = []
     cards = []
     for pub in publications:
-        venue = escape_text(pub['venue'])
+        venue = escape_text(pub["venue"])
         doi_link = f"<a href=\"https://doi.org/{escape_text(pub['doi'])}\">DOI</a>"
         details = f"{venue} · {doi_link}"
 
@@ -165,7 +168,9 @@ def build_publications_section(publications: list[dict], author_to_slug: dict[st
     </div>"""
 
 
-def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[str, str] | None = None) -> str:
+def build_dissertations_section(
+    dissertations: list[dict], author_to_slug: dict[str, str] | None = None
+) -> str:
     if not dissertations:
         return "<p>No dissertations linked to this code yet.</p>"
 
@@ -176,7 +181,9 @@ def build_dissertations_section(dissertations: list[dict], author_to_slug: dict[
     cards = []
     for diss in dissertations:
         degree = DEGREE_LABELS.get(diss["degree"], diss["degree"])
-        codes_links = ', '.join([f'<a href="/codes/{code}/">{code}</a>' for code in diss['codes']])
+        codes_links = ", ".join(
+            [f'<a href="/codes/{code}/">{code}</a>' for code in diss["codes"]]
+        )
 
         table_rows.append(f"""    <tr>
       <td>{diss['date']}</td>
@@ -279,7 +286,9 @@ def main() -> None:
             build_dissertations_section(diss, author_to_slug) + "\n", encoding="utf-8"
         )
 
-        print(f"  {slug}: {len(members)} members, {len(pubs)} publications, {len(diss)} dissertations")
+        print(
+            f"  {slug}: {len(members)} members, {len(pubs)} publications, {len(diss)} dissertations"
+        )
 
     print(f"Updated {len(known_slugs)} code entries")
 
