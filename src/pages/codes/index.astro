@@ -1,9 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import PageLayout from '../../components/PageLayout.astro';
 
 const codes = await getCollection('codes');
 const sorted = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const path = Astro.url.pathname;
+const leftNav = [{
+  heading: 'Navigate',
+  items: [
+    { href: '/', label: 'Home', active: path === '/' },
+    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+    { href: '/about/', label: 'About', active: path.startsWith('/about') },
+  ],
+}];
 ---
 
 <Base
@@ -14,16 +29,18 @@ const sorted = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title
   ]}
 >
   <div class="page-wrapper">
-    <div class="page-header">
-      <h1>Codes</h1>
-      <p>Software developed by the NMPP division at IPP.</p>
-    </div>
-    <div class="nmpp-grid">
-      {sorted.map(code => (
-        <a class="nmpp-card" href={`/codes/${code.id}/`}>
-          <strong>{code.data.title}</strong>
-        </a>
-      ))}
-    </div>
+    <PageLayout leftNav={leftNav}>
+      <div class="page-header">
+        <h1>Codes</h1>
+        <p>Software developed by the NMPP division at IPP.</p>
+      </div>
+      <div class="nmpp-grid">
+        {sorted.map(code => (
+          <a class="nmpp-card" href={`/codes/${code.id}/`}>
+            <strong>{code.data.title}</strong>
+          </a>
+        ))}
+      </div>
+    </PageLayout>
   </div>
 </Base>

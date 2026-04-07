@@ -1,0 +1,93 @@
+---
+interface NavItem {
+  href: string;
+  label: string;
+  active?: boolean;
+}
+
+interface NavGroup {
+  heading: string;
+  items: NavItem[];
+}
+
+interface TocSection {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  leftNav: NavGroup[];
+  tocSections?: TocSection[];
+}
+
+const { leftNav, tocSections = [] } = Astro.props;
+---
+
+<div class="page-layout">
+  <aside class="layout-left">
+    <div class="layout-sticky">
+      {leftNav.map(group => (
+        <div class="sidebar-block">
+          <p class="sidebar-heading">{group.heading}</p>
+          <nav>
+            <ul class="sidebar-nav-list">
+              {group.items.map(item => (
+                <li>
+                  <a href={item.href} class:list={['sidebar-nav-link', { 'is-active': item.active }]}>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      ))}
+    </div>
+  </aside>
+
+  <div class="layout-main">
+    <slot />
+  </div>
+
+  {tocSections.length > 0 && (
+    <aside class="layout-right">
+      <div class="layout-sticky">
+        <p class="sidebar-heading">On this page</p>
+        <nav aria-label="Table of contents">
+          <ul class="toc-list">
+            {tocSections.map(s => (
+              <li>
+                <a href={`#${s.id}`} class="toc-link" data-toc-id={s.id}>
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </aside>
+  )}
+</div>
+
+<script>
+  const tocLinks = document.querySelectorAll<HTMLAnchorElement>('.toc-link[data-toc-id]');
+  if (tocLinks.length > 0) {
+    const targets = Array.from(tocLinks)
+      .map(el => document.getElementById(el.dataset.tocId!))
+      .filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const link = document.querySelector<HTMLAnchorElement>(
+            `.toc-link[data-toc-id="${entry.target.id}"]`
+          );
+          if (link) link.classList.toggle('is-active', entry.isIntersecting);
+        });
+      },
+      { rootMargin: '-60px 0px -60% 0px', threshold: 0 }
+    );
+
+    targets.forEach(el => observer.observe(el));
+  }
+</script>

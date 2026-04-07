@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import PageLayout from '../../components/PageLayout.astro';
 import dissertationsCache from '../../../data/dissertations_cache.json';
 
 type Dissertation = {
@@ -19,20 +20,6 @@ type Dissertation = {
 };
 
 const DEGREE_LABELS: Record<string, string> = { phd: 'PhD', msc: 'MSc' };
-
-function slugify(text: string): string {
-  let slug = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  slug = slug.toLowerCase().trim();
-  slug = slug.replace(/[^\w\s-]/g, '');
-  slug = slug.replace(/[\s_-]+/g, '-');
-  slug = slug.replace(/^-|-$/g, '');
-  return slug;
-}
-
-function dissertationSlug(title: string): string {
-  const words = title.trim().split(/\s+/);
-  return slugify(words.slice(0, 6).join(' '));
-}
 
 export async function getStaticPaths() {
   const cache = dissertationsCache as Array<Dissertation & { slug: string }>;
@@ -56,15 +43,32 @@ const relatedCodes = (dissertation.codes ?? []).filter(Boolean);
 const libraryLink = dissertation.link?.trim() ?? '';
 const fulltextLink = dissertation.fulltext?.trim() ?? '';
 const displayDate = dissertation.date?.trim() || String(dissertation.year);
-
 const bibtex = dissertation.bibtex?.trim() ?? '';
 
 function formatBibtexEntry(entry: string): string {
-  // Basic BibTeX formatting - split on @ and add newlines
   return entry.replace(/(@\w+{[^}]+},?\s*)/g, '$1\n');
 }
 
 const bibtexDisplay = bibtex ? formatBibtexEntry(bibtex) : '';
+
+const path = Astro.url.pathname;
+const leftNav = [{
+  heading: 'Navigate',
+  items: [
+    { href: '/', label: 'Home', active: path === '/' },
+    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+    { href: '/about/', label: 'About', active: path.startsWith('/about') },
+  ],
+}];
+
+const tocSections = [
+  { id: 'abstract', label: 'Abstract' },
+  { id: 'bibtex', label: 'BibTeX' },
+];
 ---
 
 <Base
@@ -76,46 +80,48 @@ const bibtexDisplay = bibtex ? formatBibtexEntry(bibtex) : '';
   ]}
 >
   <div class="page-wrapper">
-    <h1 style="font-size: 2rem; margin-bottom: 1rem; word-break: break-word; overflow-wrap: anywhere;">{dissertation.title}</h1>
-    <div class="prose">
-      <p><strong set:html={dissertation.author_html || dissertation.author}></strong></p>
-      <p class="publication-meta-summary">
-        {displayDate} · {degree}{dissertation.institution ? ` · ${dissertation.institution}` : ''}
-        {(dissertation as any).group_slug && <span> · <a href={`/groups/${(dissertation as any).group_slug}/`}>{(dissertation as any).group}</a></span>}
-        {relatedCodes.map(code => <span> · <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a></span>)}
-      </p>
-      {(libraryLink || fulltextLink) && (
-        <div class="publication-actions">
-          {libraryLink && (
-            <a href={libraryLink} class="publication-action-link publication-action-secondary" target="_blank" rel="noopener noreferrer">Library page</a>
-          )}
-          {fulltextLink && (
-            <a href={fulltextLink} class="publication-action-link" target="_blank" rel="noopener noreferrer">Full text</a>
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
+      <h1 class="page-title">{dissertation.title}</h1>
+      <div class="prose">
+        <p><strong set:html={dissertation.author_html || dissertation.author}></strong></p>
+        <p class="publication-meta-summary">
+          {displayDate} · {degree}{dissertation.institution ? ` · ${dissertation.institution}` : ''}
+          {(dissertation as any).group_slug && <span> · <a href={`/groups/${(dissertation as any).group_slug}/`}>{(dissertation as any).group}</a></span>}
+          {relatedCodes.map(code => <span> · <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a></span>)}
+        </p>
+        {(libraryLink || fulltextLink) && (
+          <div class="publication-actions">
+            {libraryLink && (
+              <a href={libraryLink} class="publication-action-link publication-action-secondary" target="_blank" rel="noopener noreferrer">Library page</a>
+            )}
+            {fulltextLink && (
+              <a href={fulltextLink} class="publication-action-link" target="_blank" rel="noopener noreferrer">Full text</a>
+            )}
+          </div>
+        )}
+
+        <h2 id="abstract">Abstract</h2>
+        {Content ? (
+          <Content />
+        ) : (
+          <p class="publication-empty">No abstract available.</p>
+        )}
+
+        <div class="publication-section-heading" id="bibtex">
+          <h2>BibTeX</h2>
+          {bibtexDisplay && (
+            <button class="publication-copy-button" type="button" data-copy-target="publication-bibtex-code">
+              Copy
+            </button>
           )}
         </div>
-      )}
-
-      <h2>Abstract</h2>
-      {Content ? (
-        <Content />
-      ) : (
-        <p class="publication-empty">No abstract available.</p>
-      )}
-
-      <div class="publication-section-heading">
-        <h2>BibTeX</h2>
-        {bibtexDisplay && (
-          <button class="publication-copy-button" type="button" data-copy-target="publication-bibtex-code">
-            Copy
-          </button>
+        {bibtex ? (
+          <pre class="publication-bibtex"><code id="publication-bibtex-code">{bibtexDisplay}</code></pre>
+        ) : (
+          <p class="publication-empty">No BibTeX entry was returned for this dissertation.</p>
         )}
       </div>
-      {bibtex ? (
-        <pre class="publication-bibtex"><code id="publication-bibtex-code">{bibtexDisplay}</code></pre>
-      ) : (
-        <p class="publication-empty">No BibTeX entry was returned for this dissertation.</p>
-      )}
-    </div>
+    </PageLayout>
   </div>
 </Base>
 

@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import CodeGallery from '../../components/CodeGallery';
+import PageLayout from '../../components/PageLayout.astro';
 
 const autoPartials = import.meta.glob('/src/content/codes/_auto/*.html', { query: '?raw', import: 'default', eager: true });
 
@@ -15,13 +17,28 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const normalizedPath = entry.data.path?.endsWith('/')
-  ? entry.data.path
-  : `${entry.data.path}/`;
-
 const membersHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.members.html`] as string) ?? '';
 const publicationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.publications.html`] as string) ?? '';
 const dissertationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.dissertations.html`] as string) ?? '';
+
+const allCodes = (await getCollection('codes')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const hasGallery = entry.data.gallery && entry.data.gallery.length > 0;
+
+const leftNav = [{
+  heading: 'Codes',
+  items: allCodes.map(code => ({
+    href: `/codes/${code.id}/`,
+    label: code.data.title,
+    active: code.id === entry.id,
+  })),
+}];
+
+const tocSections = [
+  ...(hasGallery ? [{ id: 'gallery', label: 'Gallery' }] : []),
+  { id: 'members', label: 'Members' },
+  { id: 'publications', label: 'Publications' },
+  { id: 'dissertations', label: 'Dissertations' },
+];
 ---
 
 <Base
@@ -33,15 +50,22 @@ const dissertationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.di
   ]}
 >
   <div class="page-wrapper">
-    <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{entry.data.title}</h1>
-    <div class="prose">
-      <Content />
-      <h2>Members</h2>
-      <Fragment set:html={membersHtml} />
-      <h2>Publications</h2>
-      <Fragment set:html={publicationsHtml} />
-      <h2>Dissertations</h2>
-      <Fragment set:html={dissertationsHtml} />
-    </div>
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
+      <h1 class="page-title">{entry.data.title}</h1>
+      <div class="prose">
+        {hasGallery && (
+          <div id="gallery">
+            <CodeGallery client:load images={entry.data.gallery!} />
+          </div>
+        )}
+        <Content />
+        <h2 id="members">Members</h2>
+        <Fragment set:html={membersHtml} />
+        <h2 id="publications">Publications</h2>
+        <Fragment set:html={publicationsHtml} />
+        <h2 id="dissertations">Dissertations</h2>
+        <Fragment set:html={dissertationsHtml} />
+      </div>
+    </PageLayout>
   </div>
 </Base>

@@ -1,13 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageLayout from '../components/PageLayout.astro';
 import { getCollection } from 'astro:content';
 
 const groups = await getCollection('groups');
+const sortedGroups = groups.sort((a, b) => a.data.title.localeCompare(b.data.title));
 
-// Sort groups by title
-const sortedGroups = groups.sort((a, b) =>
-  a.data.title.localeCompare(b.data.title)
-);
+const path = Astro.url.pathname;
+const leftNav = [{
+  heading: 'Navigate',
+  items: [
+    { href: '/', label: 'Home', active: path === '/' },
+    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+    { href: '/about/', label: 'About', active: path.startsWith('/about') },
+  ],
+}];
 ---
 
 <Base
@@ -18,18 +29,20 @@ const sortedGroups = groups.sort((a, b) =>
   ]}
 >
   <div class="page-wrapper">
-    <div class="page-header">
-      <h1>Research Groups</h1>
-      <p>Research groups within the NMPP division at IPP.</p>
-    </div>
-    <div class="prose">
-      <div class="nmpp-grid">
-        {sortedGroups.map((group) => (
-          <a href={`/groups/${group.id}/`} class="nmpp-card">
-            <strong>{group.data.title}</strong>
-          </a>
-        ))}
+    <PageLayout leftNav={leftNav}>
+      <div class="page-header">
+        <h1>Research Groups</h1>
+        <p>Research groups within the NMPP division at IPP.</p>
       </div>
-    </div>
+      <div class="prose">
+        <div class="nmpp-grid">
+          {sortedGroups.map((group) => (
+            <a href={`/groups/${group.id}/`} class="nmpp-card">
+              <strong>{group.data.title}</strong>
+            </a>
+          ))}
+        </div>
+      </div>
+    </PageLayout>
   </div>
 </Base>

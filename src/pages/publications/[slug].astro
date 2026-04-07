@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import PageLayout from '../../components/PageLayout.astro';
 import publicationsCache from '../../../data/.publications_cache.json';
 
 type Publication = {
@@ -98,6 +99,28 @@ const detailsSummary = [
   publication.pages ? `pp. ${publication.pages}` : '',
   publication.publisher ?? '',
 ].filter(Boolean).join(' · ');
+
+const hasRelated = relatedCodes.length > 0 || relatedGroups.length > 0;
+
+const path = Astro.url.pathname;
+const leftNav = [{
+  heading: 'Navigate',
+  items: [
+    { href: '/', label: 'Home', active: path === '/' },
+    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+    { href: '/about/', label: 'About', active: path.startsWith('/about') },
+  ],
+}];
+
+const tocSections = [
+  ...(hasRelated ? [{ id: 'related', label: 'Related' }] : []),
+  { id: 'abstract', label: 'Abstract' },
+  { id: 'bibtex', label: 'BibTeX' },
+];
 ---
 
 <Base
@@ -109,64 +132,66 @@ const detailsSummary = [
   ]}
 >
   <div class="page-wrapper">
-    <h1 style="font-size: 2rem; margin-bottom: 1rem; word-break: break-word; overflow-wrap: anywhere;">{publication.title}</h1>
-    <div class="prose">
-      {publication.authors_html ? (
-        <p set:html={publication.authors_html}></p>
-      ) : publication.authors && <p>{publication.authors}</p>}
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
+      <h1 class="page-title">{publication.title}</h1>
+      <div class="prose">
+        {publication.authors_html ? (
+          <p set:html={publication.authors_html}></p>
+        ) : publication.authors && <p>{publication.authors}</p>}
 
-      <p class="publication-meta-summary">
-        {detailsSummary && <span>{detailsSummary} · </span>}
-        <a href={`https://doi.org/${publication.doi}`}>{publication.doi}</a>
-      </p>
+        <p class="publication-meta-summary">
+          {detailsSummary && <span>{detailsSummary} · </span>}
+          <a href={`https://doi.org/${publication.doi}`}>{publication.doi}</a>
+        </p>
 
-      {(relatedCodes.length > 0 || relatedGroups.length > 0) && (
-        <div>
-          <h2>Related</h2>
-          {relatedCodes.length > 0 && (
-            <div class="publication-related-block">
-              <h3>Codes</h3>
-              <ul class="publication-pill-list" role="list">
-                {relatedCodes.map(code => (
-                  <li>
-                    <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {relatedGroups.length > 0 && (
-            <div class="publication-related-block">
-              <h3>Groups</h3>
-              <ul class="publication-pill-list" role="list">
-                {relatedGroups.map(group => (
-                  <li>
-                    <a href={`/groups/${group}/`}>{groupTitleBySlug.get(group) ?? group}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {hasRelated && (
+          <div id="related">
+            <h2>Related</h2>
+            {relatedCodes.length > 0 && (
+              <div class="publication-related-block">
+                <h3>Codes</h3>
+                <ul class="publication-pill-list" role="list">
+                  {relatedCodes.map(code => (
+                    <li>
+                      <a href={`/codes/${code}/`}>{codeTitleBySlug.get(code) ?? code}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedGroups.length > 0 && (
+              <div class="publication-related-block">
+                <h3>Groups</h3>
+                <ul class="publication-pill-list" role="list">
+                  {relatedGroups.map(group => (
+                    <li>
+                      <a href={`/groups/${group}/`}>{groupTitleBySlug.get(group) ?? group}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
+
+        <h2 id="abstract">Abstract</h2>
+        {abstract ? <p>{abstract}</p> : <p class="publication-empty">No abstract was available from the DOI metadata.</p>}
+
+        <div class="publication-section-heading" id="bibtex">
+          <h2>BibTeX</h2>
+          {bibtexDisplay && (
+            <button class="publication-copy-button" type="button" data-copy-target="publication-bibtex-code">
+              Copy
+            </button>
           )}
         </div>
-      )}
-
-      <h2>Abstract</h2>
-      {abstract ? <p>{abstract}</p> : <p class="publication-empty">No abstract was available from the DOI metadata.</p>}
-
-      <div class="publication-section-heading">
-        <h2>BibTeX</h2>
-        {bibtexDisplay && (
-          <button class="publication-copy-button" type="button" data-copy-target="publication-bibtex-code">
-            Copy
-          </button>
+        {bibtex ? (
+          <pre class="publication-bibtex"><code id="publication-bibtex-code">{bibtexDisplay}</code></pre>
+        ) : (
+          <p class="publication-empty">No BibTeX entry was returned for this DOI.</p>
         )}
       </div>
-      {bibtex ? (
-        <pre class="publication-bibtex"><code id="publication-bibtex-code">{bibtexDisplay}</code></pre>
-      ) : (
-        <p class="publication-empty">No BibTeX entry was returned for this DOI.</p>
-      )}
-    </div>
+    </PageLayout>
   </div>
 </Base>
 
