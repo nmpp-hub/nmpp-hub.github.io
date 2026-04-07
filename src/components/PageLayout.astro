@@ -21,9 +21,10 @@ interface Props {
 }
 
 const { leftNav, tocSections = [] } = Astro.props;
+const hasToc = tocSections.length > 0;
 ---
 
-<div class="page-layout">
+<div class:list={['page-layout', { 'page-layout--no-toc': !hasToc }]}>
   <aside class="layout-left">
     <div class="layout-sticky">
       {leftNav.map(group => (
@@ -49,8 +50,8 @@ const { leftNav, tocSections = [] } = Astro.props;
     <slot />
   </div>
 
-  {tocSections.length > 0 && (
-    <aside class="layout-right">
+  <aside class="layout-right">
+    {tocSections.length > 0 && (
       <div class="layout-sticky">
         <p class="sidebar-heading">On this page</p>
         <nav aria-label="Table of contents">
@@ -65,8 +66,8 @@ const { leftNav, tocSections = [] } = Astro.props;
           </ul>
         </nav>
       </div>
-    </aside>
-  )}
+    )}
+  </aside>
 </div>
 
 <script>

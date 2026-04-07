@@ -292,6 +292,21 @@ def build_page(
 
     return f"""---
 import Base from '../../layouts/Base.astro';
+import PageLayout from '../../components/PageLayout.astro';
+
+const path = Astro.url.pathname;
+const leftNav = [{{
+  heading: 'Navigate',
+  items: [
+    {{ href: '/', label: 'Home', active: path === '/' }},
+    {{ href: '/codes/', label: 'Codes', active: path.startsWith('/codes') }},
+    {{ href: '/groups/', label: 'Groups', active: path.startsWith('/groups') }},
+    {{ href: '/members/', label: 'Members', active: path.startsWith('/members') }},
+    {{ href: '/publications/', label: 'Publications', active: path.startsWith('/publications') }},
+    {{ href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') }},
+    {{ href: '/about/', label: 'About', active: path.startsWith('/about') }},
+  ],
+}}];
 ---
 
 <Base
@@ -302,6 +317,7 @@ import Base from '../../layouts/Base.astro';
     ]}}
 >
   <div class="page-wrapper">
+    <PageLayout leftNav={{leftNav}}>
     <div class="page-header">
       <h1>Publications</h1>
       <p>Search and filter NMPP division publications.</p>
@@ -326,6 +342,7 @@ import Base from '../../layouts/Base.astro';
     <div id="publications-cards" class="publication-cards">
 {cards_body}
     </div>
+    </PageLayout>
   </div>
 </Base>
 
