@@ -29,7 +29,14 @@ members:
     aliases:
       - "E. Sonnendrücker"
       - "E Sonnendruecker"
-    picture: "https://www.ipp.mpg.de/5422649/original-1763388322.webp" # optional: set to a URL or /images/members/filename.jpg
+    picture: "https://www.ipp.mpg.de/5422649/original-1763388322.webp" # set to a URL or /images/members/filename.jpg
+    github: sonnendr
+    gitlab_mpcdf: sonnen
+    orcid: 0000-0002-8340-7230
+    linkedid: eric-sonnendrücker-b8aa1841
+    website: https://www.ipp.mpg.de/1084971/sonnendruecker
+    google_scholar: 5KO8lNgAAAAJ
+    researchgate: Eric-Sonnendruecker
   - name: Pauline Vidal
     role: phd
     topic: ""
