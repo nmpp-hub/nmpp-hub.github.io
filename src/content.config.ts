@@ -6,6 +6,11 @@ const codes = defineCollection({
   schema: z.object({
     title: z.string(),
     path: z.string(),
+    gallery: z.array(z.object({
+      src: z.string(),
+      thumbnail: z.string().optional(),
+      title: z.string().optional(),
+    })).optional(),
   }),
 });
 

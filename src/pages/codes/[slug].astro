@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import CodeGallery from '../../components/CodeGallery';
 
 const autoPartials = import.meta.glob('/src/content/codes/_auto/*.html', { query: '?raw', import: 'default', eager: true });
 
@@ -35,6 +36,12 @@ const dissertationsHtml = (autoPartials[`/src/content/codes/_auto/${entry.id}.di
   <div class="page-wrapper">
     <h1 style="font-size: 2rem; margin-bottom: 1.25rem;">{entry.data.title}</h1>
     <div class="prose">
+      {entry.data.gallery && entry.data.gallery.length > 0 && (
+        <>
+          {/* <h2>Gallery</h2> */}
+          <CodeGallery client:load images={entry.data.gallery} />
+        </>
+      )}
       <Content />
       <h2>Members</h2>
       <Fragment set:html={membersHtml} />
