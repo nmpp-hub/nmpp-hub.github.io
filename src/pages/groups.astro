@@ -25,7 +25,7 @@ const sortedGroups = groups.sort((a, b) =>
     <div class="prose">
       <div class="nmpp-grid">
         {sortedGroups.map((group) => (
-          <a href={`/groups/${group.slug}/`} class="nmpp-card">
+          <a href={`/groups/${group.id}/`} class="nmpp-card">
             <strong>{group.data.title}</strong>
           </a>
         ))}

@@ -1,0 +1,39 @@
+name: Build NMPP website
+description: Sets up the environment and builds the website
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: "22"
+        cache: "npm"
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.x"
+
+    - run: pip install -r requirements.txt
+      shell: bash
+
+    - run: npm ci
+      shell: bash
+
+    - uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        version: 1.8.27
+
+    - run: npm run build:presentations
+      shell: bash
+
+    - run: python generate_website.py --refresh
+      shell: bash
+
+    - run: git status
+      shell: bash
+
+    - run: git diff
+      shell: bash
+
+    - run: npm run build
+      shell: bash

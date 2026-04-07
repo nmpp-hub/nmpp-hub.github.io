@@ -42,8 +42,8 @@ export function getStaticPaths() {
 const { publication } = Astro.props as { publication: Publication };
 const codes = await getCollection('codes');
 const groups = await getCollection('groups');
-const codeTitleBySlug = new Map(codes.map(code => [code.slug, code.data.title]));
-const groupTitleBySlug = new Map(groups.map(group => [group.slug, group.data.title]));
+const codeTitleBySlug = new Map(codes.map(code => [code.id, code.data.title]));
+const groupTitleBySlug = new Map(groups.map(group => [group.id, group.data.title]));
 
 const relatedCodes = (Array.isArray(publication.codes) ? publication.codes : []).filter(Boolean);
 const relatedGroups = (Array.isArray(publication.groups) ? publication.groups : []).filter(Boolean);
