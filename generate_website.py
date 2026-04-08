@@ -62,6 +62,11 @@ def main() -> int:
     dissertation_args = ["--refresh"] if args.refresh else []
     scripts = [
         (
+            scripts_dir / "update_orcid_dois.py",
+            "Update DOIs from ORCID",
+            [],
+        ),
+        (
             scripts_dir / "populate_publications.py",
             "Populate Publications",
             populate_args,
