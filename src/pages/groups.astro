@@ -35,13 +35,13 @@ const leftNav = [{
         <p>Research groups within the NMPP division at IPP.</p>
       </div>
       <div class="prose">
-        <div class="nmpp-grid">
+        <ul>
           {sortedGroups.map((group) => (
-            <a href={`/groups/${group.id}/`} class="nmpp-card">
-              <strong>{group.data.title}</strong>
-            </a>
+            <li>
+              <a href={`/groups/${group.id}/`}>{group.data.title}</a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </PageLayout>
   </div>

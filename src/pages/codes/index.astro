@@ -31,15 +31,17 @@ const leftNav = [{
   <div class="page-wrapper">
     <PageLayout leftNav={leftNav}>
       <div class="page-header">
-        <h1>Codes</h1>
-        <p>Software developed by the NMPP division at IPP.</p>
+        <h1>Software Codes</h1>
+        <p>Codes developed by the NMPP division at IPP.</p>
       </div>
-      <div class="nmpp-grid">
-        {sorted.map(code => (
-          <a class="nmpp-card" href={`/codes/${code.id}/`}>
-            <strong>{code.data.title}</strong>
-          </a>
-        ))}
+      <div class="prose">
+        <ul>
+          {sorted.map(code => (
+            <li>
+              <a href={`/codes/${code.id}/`}>{code.data.title}</a>
+            </li>
+          ))}
+        </ul>
       </div>
     </PageLayout>
   </div>
