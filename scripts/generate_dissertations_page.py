@@ -292,7 +292,9 @@ def main() -> None:
         # Check if we need to fetch BibTeX
         slug = dissertation_slug(dissertation)
         cached = cached_dissertations.get(slug, {})
-        was_cached = bool(cached.get("bibtex", "").strip()) or bool(dissertation["bibtex"].strip())
+        was_cached = bool(cached.get("bibtex", "").strip()) or bool(
+            dissertation["bibtex"].strip()
+        )
 
         # Fetch BibTeX if not cached OR if refresh is requested
         if not was_cached or args.refresh:

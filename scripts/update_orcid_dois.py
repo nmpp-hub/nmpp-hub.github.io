@@ -4,10 +4,11 @@ Fetch publications from ORCID for all permanent staff and professor members
 and add their DOIs to data/dois.yml (respecting start_date and end_date if present).
 """
 
+from datetime import datetime
+from pathlib import Path
+
 import requests
 import yaml
-from pathlib import Path
-from datetime import datetime
 
 try:
     from dateutil import parser as date_parser
@@ -16,6 +17,7 @@ except ImportError:
     exit(1)
 
 ORCID_API_URL_TEMPLATE = "https://pub.orcid.org/v3.0/{orcid}/works"
+
 
 def load_members():
     """Load members from data/members.yml and filter for eligible ones."""
@@ -35,20 +37,23 @@ def load_members():
 
         # Include if role is professor or permanent staff AND has ORCID
         if orcid and (role == "professor" or role == "group leader"):
-            eligible.append({
-                "name": member.get("name", "Unknown"),
-                "orcid": orcid,
-                "start_date": member.get("start_date"),
-                "end_date": member.get("end_date"),
-            })
+            eligible.append(
+                {
+                    "name": member.get("name", "Unknown"),
+                    "orcid": orcid,
+                    "start_date": member.get("start_date"),
+                    "end_date": member.get("end_date"),
+                }
+            )
 
     return eligible
+
 
 def fetch_orcid_publications(orcid_id):
     """Fetch all publications from ORCID for the given ORCID ID."""
     headers = {
         "Accept": "application/json",
-        "User-Agent": "NMPP-Hub/1.0 (+https://nmpp-hub.github.io)"
+        "User-Agent": "NMPP-Hub/1.0 (+https://nmpp-hub.github.io)",
     }
 
     url = ORCID_API_URL_TEMPLATE.format(orcid=orcid_id)
@@ -62,6 +67,7 @@ def fetch_orcid_publications(orcid_id):
         print(f"  Error fetching ORCID data: {e}")
         return []
 
+
 def parse_date(date_str):
     """Parse a date string to a datetime object."""
     if not date_str:
@@ -70,6 +76,7 @@ def parse_date(date_str):
         return date_parser.parse(str(date_str))
     except (ValueError, TypeError):
         return None
+
 
 def extract_dois(orcid_works, start_date=None, end_date=None):
     """Extract DOIs from ORCID works, filtering by date range if provided."""
@@ -132,6 +139,7 @@ def extract_dois(orcid_works, start_date=None, end_date=None):
 
     return dois
 
+
 def load_current_dois():
     """Load existing DOIs from data/dois.yml"""
     dois_file = Path(__file__).parent.parent / "data" / "dois.yml"
@@ -150,6 +158,7 @@ def load_current_dois():
             current_dois[doi] = pub
 
     return current_dois
+
 
 def save_dois(dois_dict):
     """Save DOIs back to data/dois.yml"""
@@ -173,19 +182,26 @@ def save_dois(dois_dict):
         f.write("# Fields:\n")
         f.write("#   doi: required publication DOI\n")
         f.write("#   title: optional title for human-readable context\n")
-        f.write("#   codes: optional list of code slugs associated with the publication\n")
+        f.write(
+            "#   codes: optional list of code slugs associated with the publication\n"
+        )
         f.write("#\n")
-        f.write("# Use this file to add DOI metadata for publications. The generator fetches details automatically.\n")
+        f.write(
+            "# Use this file to add DOI metadata for publications. The generator fetches details automatically.\n"
+        )
         f.write("# After editing, run generate_website.py to update the website.\n")
         f.write("#\n")
         yaml.dump(data, f, default_flow_style=False, sort_keys=False)
+
 
 def main():
     print("Loading eligible members from members.yml...")
     members = load_members()
 
     if not members:
-        print("No eligible members found (must be professor or permanent staff with ORCID)")
+        print(
+            "No eligible members found (must be professor or permanent staff with ORCID)"
+        )
         return
 
     print(f"Found {len(members)} eligible members\n")
@@ -222,10 +238,7 @@ def main():
         added = 0
         for doi, data in new_dois.items():
             if doi not in current_dois:
-                current_dois[doi] = {
-                    "doi": doi,
-                    "title": data["title"]
-                }
+                current_dois[doi] = {"doi": doi, "title": data["title"]}
                 added += 1
                 print(f"    + {doi}")
 
@@ -241,6 +254,7 @@ def main():
         print("Done!")
     else:
         print("No new DOIs to add")
+
 
 if __name__ == "__main__":
     main()

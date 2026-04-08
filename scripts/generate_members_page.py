@@ -162,7 +162,9 @@ def build_page(members: list[dict]) -> str:
 {cards}
       </div>"""
     else:
-        alumni_section = "      <h2 id=\"alumni\">Alumni</h2>\n      <p>No entries yet.</p>"
+        alumni_section = (
+            '      <h2 id="alumni">Alumni</h2>\n      <p>No entries yet.</p>'
+        )
     toc_sections.append("  { id: 'alumni', label: 'Alumni' },")
 
     sections = "\n\n".join(active_sections + [alumni_section])
