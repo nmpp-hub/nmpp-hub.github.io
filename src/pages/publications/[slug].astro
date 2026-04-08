@@ -102,19 +102,47 @@ const detailsSummary = [
 
 const hasRelated = relatedCodes.length > 0 || relatedGroups.length > 0;
 
+function firstAuthorLastName(authors: string | undefined): string {
+  if (!authors) return 'Unknown';
+  const firstAuthor = authors.split(',')[0].trim();
+  const words = firstAuthor.split(/\s+/);
+  return words[words.length - 1] || 'Unknown';
+}
+
 const path = Astro.url.pathname;
-const leftNav = [{
-  heading: 'Navigate',
-  items: [
-    { href: '/', label: 'Home', active: path === '/' },
-    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
-    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
-    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
-    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
-    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
-    { href: '/about/', label: 'About', active: path.startsWith('/about') },
-  ],
-}];
+
+const publicationNavItems = (Array.isArray(publicationsCache) ? publicationsCache : [])
+  .filter(
+    (p): p is Publication =>
+      typeof p.slug === 'string' &&
+      typeof p.title === 'string' &&
+      typeof p.doi === 'string'
+  )
+  .sort((a, b) => (b.year ?? 0) - (a.year ?? 0))
+  .map(p => ({
+    href: `/publications/${p.slug}/`,
+    label: `${firstAuthorLastName(p.authors)}, ${p.year ?? ''}`,
+    active: p.slug === publication.slug,
+  }));
+
+const leftNav = [
+  {
+    heading: 'Navigate',
+    items: [
+      { href: '/', label: 'Home', active: path === '/' },
+      { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+      { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+      { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+      { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+      { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+      { href: '/about/', label: 'About', active: path.startsWith('/about') },
+    ],
+  },
+  {
+    heading: 'All Publications',
+    items: publicationNavItems,
+  },
+];
 
 const tocSections = [
   ...(hasRelated ? [{ id: 'related', label: 'Related' }] : []),

@@ -51,19 +51,43 @@ function formatBibtexEntry(entry: string): string {
 
 const bibtexDisplay = bibtex ? formatBibtexEntry(bibtex) : '';
 
+function firstAuthorLastName(author: string | undefined): string {
+  if (!author || author.trim() === '') {
+    return 'Unknown';
+  }
+  const words = author.trim().split(/\s+/);
+  return words[words.length - 1];
+}
+
 const path = Astro.url.pathname;
-const leftNav = [{
-  heading: 'Navigate',
-  items: [
-    { href: '/', label: 'Home', active: path === '/' },
-    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
-    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
-    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
-    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
-    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
-    { href: '/about/', label: 'About', active: path.startsWith('/about') },
-  ],
-}];
+
+const allDissertations = dissertationsCache as Array<{ slug: string; author: string; year: number }>;
+const dissertationNavItems = [...allDissertations]
+  .sort((a, b) => b.year - a.year)
+  .map(d => ({
+    href: `/dissertations/${d.slug}/`,
+    label: `${firstAuthorLastName(d.author)}, ${d.year}`,
+    active: d.slug === slug,
+  }));
+
+const leftNav = [
+  {
+    heading: 'Navigate',
+    items: [
+      { href: '/', label: 'Home', active: path === '/' },
+      { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+      { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+      { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+      { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+      { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+      { href: '/about/', label: 'About', active: path.startsWith('/about') },
+    ],
+  },
+  {
+    heading: 'All Dissertations',
+    items: dissertationNavItems,
+  },
+];
 
 const tocSections = [
   { id: 'abstract', label: 'Abstract' },
