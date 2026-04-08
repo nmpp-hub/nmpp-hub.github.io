@@ -67,7 +67,7 @@ export default function LatestResearchSlider({ items }: Props) {
       showPlayButton={false}
       showFullscreenButton={false}
       showBullets={true}
-      showNav={true}
+      showNav={false}
       autoPlay={true}
       slideInterval={6000}
     />
