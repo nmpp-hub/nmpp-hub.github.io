@@ -1,120 +1,77 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getCollection } from 'astro:content';
-import latestResearchData from '../../data/latest_research.json';
-import HeroSlideshow from '../components/HeroSlideshow';
-import LatestResearchSlider from '../components/LatestResearchSlider';
 import PageLayout from '../components/PageLayout.astro';
+import LatestResearchSlider from '../components/LatestResearchSlider';
+import latestResearchData from '../../data/latest_research.json';
 
-const codes = await getCollection('codes');
-const groups = await getCollection('groups');
-
-const topCodes = [...codes].sort((a, b) => a.data.title.localeCompare(b.data.title)).slice(0, 6);
-const topGroups = [...groups].sort((a, b) => a.data.title.localeCompare(b.data.title)).slice(0, 6);
-
+const path = Astro.url.pathname;
 const latestItems = latestResearchData.items || [];
-
-const heroImages = [
-  {
-    src: '/images/banner1.png',
-    alt: 'alt1',
-    title: 'Figure Slot 01',
-    caption: 'Add your first highlight image and caption here.',
-  },
-  {
-    src: '/images/banner2.jpg',
-    alt: 'alt2',
-    title: 'Figure Slot 02',
-    caption: 'Showcase another method, simulation, or project snapshot.',
-  },
-  {
-    src: '/images/banner3.png',
-    alt: 'alt3',
-    title: 'Figure Slot 03',
-    caption: 'Use this panel for updates, milestones, or visual results.',
-  },
-];
-
 const leftNav = [{
   heading: 'Navigate',
   items: [
-    { href: '/', label: 'Home', active: true },
-    { href: '/codes/', label: 'Codes' },
-    { href: '/groups/', label: 'Groups' },
-    { href: '/members/', label: 'Members' },
-    { href: '/publications/', label: 'Publications' },
-    { href: '/dissertations/', label: 'Dissertations' },
-    { href: '/about/', label: 'About' },
+    { href: '/', label: 'Home', active: path === '/' },
+    { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
+    { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
+    { href: '/members/', label: 'Members', active: path.startsWith('/members') },
+    { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
+    { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
+    { href: '/about/', label: 'About', active: path.startsWith('/about') },
   ],
 }];
 
 const tocSections = [
+  { id: 'overview', label: 'Overview' },
   { id: 'latest-research', label: 'Latest Research' },
-  { id: 'groups-codes', label: 'Groups & Codes' },
+  { id: 'research', label: 'Research' },
+  { id: 'resources', label: 'Resources' },
 ];
 ---
 
 <Base title="NMPP Division">
   <div class="page-wrapper">
-    <PageLayout leftNav={leftNav}>
-      <div class="nmpp-home">
-        <!-- Hero Section -->
-        <section class="home-hero">
-          <div class="home-hero-visual" aria-hidden="true">
-            <HeroSlideshow client:load images={heroImages} />
-          </div>
-          <div class="home-hero-copy">
-            <p class="home-eyebrow">Numerical Methods for Plasma Physics</p>
-            <h1>NMPP Division at the Max Planck Institute for Plasma Physics</h1>
-            <p class="home-intro">
-              We develop advanced numerical methods, high-performance simulation software, and data-driven tools
-              for plasma physics across magnetic confinement, geometric integration, and uncertainty quantification.
-            </p>
-            <div class="home-hero-actions">
-              <a class="home-btn home-btn-primary" href="/codes/">Explore Codes</a>
-              <a class="home-btn home-btn-secondary" href="/groups/">Explore Groups</a>
-            </div>
-          </div>
-        </section>
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
+      <div class="page-header">
+        <h1>Numerical Methods for Plasma Physics</h1>
+        <p>NMPP Division at the Max Planck Institute for Plasma Physics</p>
+      </div>
+      <div class="prose">
+        <h2 id="overview">Overview</h2>
+        <p>
+          The Numerical Methods for Plasma Physics (NMPP) division develops advanced numerical methods,
+          high-performance simulation software, and data-driven tools for plasma physics. Our work spans
+          geometric integration, structure-preserving finite element methods, kinetic simulation,
+          magnetohydrodynamics, and probabilistic data analysis.
+        </p>
 
-        <!-- Latest Publications/Dissertations Slideshow -->
-        <section class="home-latest" id="latest-research">
-          <h2>Latest Research Output</h2>
-          <LatestResearchSlider client:load items={latestItems as any} />
-        </section>
+        
+        <h2 id="research">Research</h2>
+        <p>
+          Our <a href="/groups/">research groups</a> develop specialized codes and methods:
+        </p>
+        <ul>
+          <li><a href="/groups/geometric-numerical-integration/">Geometric Numerical Integration</a> — symplectic and variational integrators</li>
+          <li><a href="/groups/finite-element-methods/">Finite Element Methods</a> — compatible discretizations based on de Rham sequences</li>
+          <li><a href="/groups/kinetic-gyrokinetic-models/">Kinetic and Gyrokinetic Models</a> — Vlasov and gyrokinetic simulation</li>
+          <li><a href="/groups/magnetohydrodynamics/">Magnetohydrodynamics</a> — 3D MHD equilibria and hybrid codes</li>
+          <li><a href="/groups/zonal-flows-turbulent/">Zonal Flows in Turbulent Plasmas</a> — turbulence and fusion devices</li>
+          <li><a href="/groups/probabilistic-data-analysis/">Probabilistic Data Analysis</a> — Bayesian methods and machine learning</li>
+          <li><a href="/groups/advanced-computing-hub/">Advanced Computing Hub</a> — HPC infrastructure and deployment</li>
+        </ul>
 
-        <!-- Compact Navigation -->
-        <section class="home-compact-nav" id="groups-codes">
-          <div class="nav-section">
-            <h3>Research Groups</h3>
-            <div class="compact-links">
-              {topGroups.map((group) => (
-                <a href={`/groups/${group.id}/`} class="compact-link">{group.data.title}</a>
-              ))}
-            </div>
-          </div>
-
-          <div class="nav-section">
-            <h3>Software Codes</h3>
-            <div class="compact-links">
-              {topCodes.map((code) => (
-                <a href={`/codes/${code.id}/`} class="compact-link">{code.data.title}</a>
-              ))}
-            </div>
-          </div>
-
-          <div class="nav-section">
-            <h3>Quick Links</h3>
-            <div class="compact-links">
-              <a href="/about/" class="compact-link">About</a>
-              <a href="/members/" class="compact-link">Team Members</a>
-              <a href="/publications/" class="compact-link">Publications</a>
-              <a href="/dissertations/" class="compact-link">Dissertations</a>
-              <a href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer" class="compact-link">GitHub</a>
-              <a href="/presentations/" class="compact-link">Presentations</a>
-            </div>
-          </div>
-        </section>
+        <h2 id="latest-research">Latest Research</h2>
+        <LatestResearchSlider client:load items={latestItems as any} />
+        
+        <h2 id="resources">Resources</h2>
+        <p>
+          Explore our <a href="/codes/">software codes</a>, <a href="/publications/">publications</a>,
+          and <a href="/dissertations/">dissertations</a>. Learn more <a href="/about/">about the division</a>
+          or contact the <a href="/members/">team members</a>.
+        </p>
+        <p>
+          <a href="https://github.com/nmpp-hub" target="_blank" rel="noopener noreferrer">GitHub</a>
+          &middot;
+          <a href="https://www.ipp.mpg.de/ippcms/eng/for/bereiche/numerik" target="_blank" rel="noopener noreferrer">IPP division webpage</a>
+        </p>
       </div>
     </PageLayout>
   </div>

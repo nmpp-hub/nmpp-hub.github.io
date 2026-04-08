@@ -116,7 +116,6 @@ const path = Astro.url.pathname;
           <li class={path.startsWith('/codes') ? 'nav-active' : ''}>
             <a href="/codes/">Codes</a>
             <ul class="nav-dropdown" role="list">
-              <li><a href="/codes/">Overview</a></li>
               {codeList.map(code => (
                 <li>
                   <a href={`/codes/${code.id}/`}>{code.data.title}</a>
@@ -133,7 +132,6 @@ const path = Astro.url.pathname;
           <li class={path.startsWith('/groups') ? 'nav-active' : ''}>
             <a href="/groups/">Groups</a>
             <ul class="nav-dropdown" role="list">
-              <li><a href="/groups/">Overview</a></li>
               {groupList.map(group => (
                 <li>
                   <a href={`/groups/${group.id}/`}>{group.data.title}</a>

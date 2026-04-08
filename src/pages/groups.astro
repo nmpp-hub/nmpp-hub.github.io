@@ -19,6 +19,10 @@ const leftNav = [{
     { href: '/about/', label: 'About', active: path.startsWith('/about') },
   ],
 }];
+
+const tocSections = [
+  { id: 'research-groups', label: 'Research Groups' },
+];
 ---
 
 <Base
@@ -29,18 +33,20 @@ const leftNav = [{
   ]}
 >
   <div class="page-wrapper">
-    <PageLayout leftNav={leftNav}>
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
       <div class="page-header">
         <h1>Research Groups</h1>
         <p>Research groups within the NMPP division at IPP.</p>
       </div>
       <div class="prose">
-        <div class="nmpp-grid">
-          {sortedGroups.map((group) => (
-            <a href={`/groups/${group.id}/`} class="nmpp-card">
-              <strong>{group.data.title}</strong>
-            </a>
-          ))}
+        <div id="research-groups">
+          <ul>
+            {sortedGroups.map((group) => (
+              <li>
+                <a href={`/groups/${group.id}/`}>{group.data.title}</a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </PageLayout>

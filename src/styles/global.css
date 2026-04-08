@@ -2193,16 +2193,9 @@ html[data-theme="dark"] .latest-controls button:hover {
   border-color: var(--nmpp-accent);
 }
 
-.home-latest .image-gallery-left-nav .image-gallery-svg,
-.home-latest .image-gallery-right-nav .image-gallery-svg {
-  height: 2rem;
-  width: 1.2rem;
-  color: var(--nmpp-subtle);
-}
-
-.home-latest .image-gallery-left-nav:hover .image-gallery-svg,
-.home-latest .image-gallery-right-nav:hover .image-gallery-svg {
-  color: var(--nmpp-accent);
+.home-latest .image-gallery-left-nav,
+.home-latest .image-gallery-right-nav {
+  display: none;
 }
 
 /* Publication slide card */

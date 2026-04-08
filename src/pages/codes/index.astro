@@ -19,6 +19,10 @@ const leftNav = [{
     { href: '/about/', label: 'About', active: path.startsWith('/about') },
   ],
 }];
+
+const tocSections = [
+  { id: 'software-codes', label: 'Software Codes' },
+];
 ---
 
 <Base
@@ -29,17 +33,21 @@ const leftNav = [{
   ]}
 >
   <div class="page-wrapper">
-    <PageLayout leftNav={leftNav}>
+    <PageLayout leftNav={leftNav} tocSections={tocSections}>
       <div class="page-header">
-        <h1>Codes</h1>
-        <p>Software developed by the NMPP division at IPP.</p>
+        <h1>Software Codes</h1>
+        <p>Codes developed by the NMPP division at IPP.</p>
       </div>
-      <div class="nmpp-grid">
-        {sorted.map(code => (
-          <a class="nmpp-card" href={`/codes/${code.id}/`}>
-            <strong>{code.data.title}</strong>
-          </a>
-        ))}
+      <div class="prose">
+        <div id="software-codes">
+          <ul>
+            {sorted.map(code => (
+              <li>
+                <a href={`/codes/${code.id}/`}>{code.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </PageLayout>
   </div>
