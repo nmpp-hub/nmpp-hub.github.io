@@ -127,18 +127,6 @@ const publicationNavItems = (Array.isArray(publicationsCache) ? publicationsCach
 
 const leftNav = [
   {
-    heading: 'Navigate',
-    items: [
-      { href: '/', label: 'Home', active: path === '/' },
-      { href: '/codes/', label: 'Codes', active: path.startsWith('/codes') },
-      { href: '/groups/', label: 'Groups', active: path.startsWith('/groups') },
-      { href: '/members/', label: 'Members', active: path.startsWith('/members') },
-      { href: '/publications/', label: 'Publications', active: path.startsWith('/publications') },
-      { href: '/dissertations/', label: 'Dissertations', active: path.startsWith('/dissertations') },
-      { href: '/about/', label: 'About', active: path.startsWith('/about') },
-    ],
-  },
-  {
     heading: 'All Publications',
     items: publicationNavItems,
   },
