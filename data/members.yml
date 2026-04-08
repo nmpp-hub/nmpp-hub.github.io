@@ -21,6 +21,7 @@ members:
   # Unassigned / cross-group
   - name: Eric Sonnendrücker
     role: professor
+    start_date: 2012-01-01
     topic: ""
     contact: i.example@example.org
     group: ~
