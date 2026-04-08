@@ -199,6 +199,9 @@ publications:
     \ collision operator"
 - doi: 10.1017/s0022377825100688
   title: Gauge-invariant variational formulations of electromagnetic gyrokinetic theory
+- doi: 10.1017/s0022377825101013
+  title: Linear stability studies for a quasi-axisymmetric equilibrium including plasma
+    flow, drift and viscosity effects
 - doi: 10.1017/S0022377826101317
 - doi: 10.1051/epjconf/202634601003
   title: 'Beam Tracing in Phase Space: Paraxial Description of High-Frequency Wave
@@ -261,6 +264,9 @@ publications:
   title: Symplectic Gaussian process regression of maps in Hamiltonian systems
 - doi: 10.1063/5.0087104
   title: 'JOREK3D: An extension of the JOREK nonlinear MHD code to stellarators'
+- doi: 10.1063/5.0124567
+  title: "Publisher's Note: \u201CJOREK3D: An extension of the JOREK nonlinear MHD\
+    \ code to stellarators\u201D [Phys. Plasmas 29, 063901 (2022)]"
 - doi: 10.1063/5.0129989
   title: "A <b><i>\u03B4f</i></b> PIC method with forward\u2013backward Lagrangian\
     \ reconstructions"
@@ -340,6 +346,8 @@ publications:
 - doi: 10.1088/1741-4326/acdd12
   title: Helical mode localization and mode locking of ideal MHD instabilities in
     magnetically perturbed tokamak plasmas
+- doi: 10.1088/1741-4326/ad54d6
+  title: Effect of symmetry-breaking on the MHD edge stability limit of tokamak plasmas
 - doi: 10.1093/imamat/hxaa001
   title: Degenerate elliptic equations for resonant wave problems
 - doi: 10.1093/imanum/draa022
@@ -370,6 +378,9 @@ publications:
 - doi: 10.1137/24m1659327
   title: Convergence of Splitting Methods on Rotating Grids for the Magnetized Vlasov
     Equation
+- doi: 10.1145/3625559
+  title: Efficient Implementation of Modern Entropy Stable and Kinetic Energy Preserving
+    Discontinuous Galerkin Methods for Conservation Laws
 - doi: 10.1177/1094342019834644
   title: "A massively parallel semi-Lagrangian solver for the six-dimensional Vlasov\u2013\
     Poisson equation"
