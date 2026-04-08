@@ -115,6 +115,7 @@ members:
   # Finite Element Methods
   - name: Martin Campos Pinto
     role: group leader
+    start_date: 2019-09-01
     topic: ""
     contact: b.example@example.org
     group: Finite Element Methods
@@ -123,6 +124,7 @@ members:
     aliases:
       - M. Campos Pinto
       - Martin Campos-Pinto
+    orcid: 0000-0002-8915-1627
   - name: Yaman Güçlü
     role: permanent staff
     topic: ""
@@ -183,12 +185,14 @@ members:
   # Geometric Numerical Integration
   - name: Michael Kraus
     role: group leader
+    start_date: 2013-04-01
     topic: ""
     contact: b.example@example.org
     group: Geometric Numerical Integration
     codes: [geometricintegrators, geometricmachinelearning]
     alumni: false
     aliases: []
+    orcid: 0000-0001-7637-3979
   - name: Tobias Blickhan
     role: postdoc
     topic: ""
@@ -257,20 +261,25 @@ members:
   # Kinetic and Gyrokinetic Models
   - name: Stefan Possanner
     role: group leader
+    start_date: 2012-01-01
     topic: ""
     contact: b.example@example.org
     group: Kinetic and Gyrokinetic Models
     codes: [struphy]
     alumni: false
     aliases: []
+    orcid: 0000-0001-7468-2495
+    google_scholar: 8ys2Oy0AAAAJ
   - name: Florian Holderied
     role: phd
     topic: ""
+    start_date: 2014-11-01
     contact: c.example@example.org
     group: Kinetic and Gyrokinetic Models
     codes: [struphy]
     alumni: true
     aliases: []
+    orcid: 0000-0002-0439-249X
   - name: Yingzhe Li
     role: postdoc
     topic: ""
@@ -421,11 +430,13 @@ members:
   - name: Udo von Toussaint
     role: group leader
     topic: ""
+    start_date: 2012-01-01
     contact: b.example@example.org
     group: Probabilistic Data Analysis and Active Learning
     codes: []
     alumni: false
     aliases: []
+    orcid: 0000-0002-8867-1014
   - name: Roland Preuss
     role: postdoc
     topic: ""
