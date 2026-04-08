@@ -76,6 +76,25 @@
     "authors_html": "<a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, <a href=\"/members/omar-maj/\">Omar Maj</a>, <a href=\"/members/robert-babin/\">Robert Babin</a>, <a href=\"/members/robert-koberl/\">Robert Köberl</a>, Dean Muir, Tiago Tamissa Ribeiro, Markus Rampp, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
+    "doi": "10.1017/s0022377825101013",
+    "slug": "linear-stability-studies-for-a-quasi-axisymmetric",
+    "title": "Linear stability studies for a quasi-axisymmetric equilibrium including plasma flow, drift and viscosity effects",
+    "authors": "Erika Strumberger, Jonas Puchmayr, Florian Hindenlang",
+    "venue": "Journal of Plasma Physics",
+    "journal": "Journal of Plasma Physics",
+    "year": 2026,
+    "abstract": "Linear stability studies are presented for a quasi-axisymmetric stellarator equilibrium which is unstable with respect to external kink and peeling-ballooning modes. Using the three-dimensional linear stability CASTOR3D code, the effects of parallel viscosity, gyro-viscosity, ion diamagnetic drift velocity, E x B velocity and an externally driven flow in direction of the quasi-symmetry are investigated with respect to their influence on growth rate, oscillation frequency and mode structure.",
+    "bibtex": "@article{Strumberger_2025, title={Linear stability studies for a quasi-axisymmetric equilibrium including plasma flow, drift and viscosity effects}, volume={91}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/s0022377825101013}, DOI={10.1017/s0022377825101013}, number={6}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Strumberger, Erika and Puchmayr, Jonas and Hindenlang, Florian}, year={2025}, month=dec }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "91",
+    "issue": "6",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/s0022377825101013",
+    "groups": [],
+    "codes": [],
+    "authors_html": "Erika Strumberger, Jonas Puchmayr, <a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>"
+  },
+  {
     "doi": "10.1007/s10915-025-03161-z",
     "title": "Local cubic spline interpolation for Vlasov-type equations on a multi-patch geometry.",
     "authors": "Pauline Vidal, Emily Bourne, Virginie Grandgirard, Michel Mehrenberger, Eric Sonnendrücker",
@@ -439,6 +458,25 @@
     "authors_html": "<a href=\"/members/yingzhe-li/\">Yingzhe Li</a>, <a href=\"/members/florian-holderied/\">Florian Holderied</a>, <a href=\"/members/stefan-possanner/\">Stefan Possanner</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
+    "doi": "10.1088/1741-4326/ad54d6",
+    "slug": "effect-of-symmetry-breaking-on-the-mhd",
+    "title": "Effect of symmetry-breaking on the MHD edge stability limit of tokamak plasmas",
+    "authors": "J. Puchmayr, M. Dunne, E. Strumberger, M. Willensdorfer, H. Zohm, F. Hindenlang, the ASDEX Upgrade Team",
+    "venue": "Nuclear Fusion",
+    "journal": "Nuclear Fusion",
+    "year": 2024,
+    "abstract": "Abstract We demonstrate for the first time that symmetry-breaking in tokamak plasmas reduces the window of stable edge operational space, leading to a lower achievable edge pressure gradient. Predictive simulations with the linear magnetohydrodynamic stability code CASTOR3D show a reduction of the critical pressure gradient by up to 30%, in agreement with experimental observations. The analysis has been extended to experimental plasmas considering, for the first time, ion diamagnetic drift effects in realistic non-axisymmetric (3D) tokamak geometry. The 3D geometry in plasmas with edge localised modes (ELMs) increases the growth rate of edge instabilities compared to the axisymmetric case. Further reducing the edge pressure gradient eliminates the instabilities corresponding to an experiment with suppressed ELMs, reproducing the empirically observed threshold for ELM suppression. Our findings highlight the importance of predictions of the ELM occurrence in full 3D geometry for future tokamak devices with intentionally and unintentionally broken axisymmetry.",
+    "bibtex": "@article{Puchmayr_2024, title={Effect of symmetry-breaking on the MHD edge stability limit of tokamak plasmas}, volume={64}, ISSN={1741-4326}, url={http://dx.doi.org/10.1088/1741-4326/ad54d6}, DOI={10.1088/1741-4326/ad54d6}, number={8}, journal={Nuclear Fusion}, publisher={IOP Publishing}, author={Puchmayr, J. and Dunne, M. and Strumberger, E. and Willensdorfer, M. and Zohm, H. and Hindenlang, F.}, year={2024}, month=jun, pages={086013} }",
+    "publisher": "IOP Publishing",
+    "volume": "64",
+    "issue": "8",
+    "pages": "086013",
+    "url": "http://dx.doi.org/10.1088/1741-4326/ad54d6",
+    "groups": [],
+    "codes": [],
+    "authors_html": "J. Puchmayr, M. Dunne, E. Strumberger, M. Willensdorfer, H. Zohm, <a href=\"/members/florian-hindenlang/\">F. Hindenlang</a>, the ASDEX Upgrade Team"
+  },
+  {
     "doi": "10.1016/j.jcp.2023.112671",
     "slug": "geometric-particle-in-cell-discretizations-of-a-plasma",
     "title": "Geometric Particle-In-Cell discretizations of a plasma hybrid model with kinetic ions and mass-less fluid electrons",
@@ -665,6 +703,25 @@
     "url": "http://dx.doi.org/10.1002/ctpp.202200175",
     "groups": [],
     "authors_html": "<a href=\"/members/katharina-rath/\">Katharina Rath</a>, David Rügamer, Bernd Bischl, <a href=\"/members/udo-von-toussaint/\">Udo von Toussaint</a>, Christopher G. Albert"
+  },
+  {
+    "doi": "10.1145/3625559",
+    "slug": "efficient-implementation-of-modern-entropy-stable",
+    "title": "Efficient Implementation of Modern Entropy Stable and Kinetic Energy Preserving Discontinuous Galerkin Methods for Conservation Laws",
+    "authors": "Hendrik Ranocha, Michael Schlottke-Lakemper, Jesse Chan, Andrés M. Rueda-Ramírez, Andrew R. Winters, Florian Hindenlang, Gregor J. Gassner",
+    "venue": "ACM Transactions on Mathematical Software",
+    "journal": "ACM Transactions on Mathematical Software",
+    "year": 2023,
+    "abstract": "Many modern discontinuous Galerkin (DG) methods for conservation laws make use of summation by parts operators and flux differencing to achieve kinetic energy preservation or entropy stability. While these techniques increase the robustness of DG methods significantly, they are also computationally more demanding than standard weak form nodal DG methods. We present several implementation techniques to improve the efficiency of flux differencing DG methods that use tensor product quadrilateral or hexahedral elements, in 2D or 3D, respectively. Focus is mostly given to CPUs and DG methods for the compressible Euler equations, although these techniques are generally also useful for other physical systems, including the compressible Navier-Stokes and magnetohydrodynamics equations. We present results using two open source codes, Trixi.jl written in Julia and FLUXO written in Fortran, to demonstrate that our proposed implementation techniques are applicable to different code bases and programming languages.",
+    "bibtex": "@article{Ranocha_2023, title={Efficient Implementation of Modern Entropy Stable and Kinetic Energy Preserving Discontinuous Galerkin Methods for Conservation Laws}, volume={49}, ISSN={1557-7295}, url={http://dx.doi.org/10.1145/3625559}, DOI={10.1145/3625559}, number={4}, journal={ACM Transactions on Mathematical Software}, publisher={Association for Computing Machinery (ACM)}, author={Ranocha, Hendrik and Schlottke-Lakemper, Michael and Chan, Jesse and Rueda-Ramírez, Andrés M. and Winters, Andrew R. and Hindenlang, Florian and Gassner, Gregor J.}, year={2023}, month=dec, pages={1–30} }",
+    "publisher": "Association for Computing Machinery (ACM)",
+    "volume": "49",
+    "issue": "4",
+    "pages": "1-30",
+    "url": "http://dx.doi.org/10.1145/3625559",
+    "groups": [],
+    "codes": [],
+    "authors_html": "Hendrik Ranocha, Michael Schlottke-Lakemper, Jesse Chan, Andrés M. Rueda-Ramírez, Andrew R. Winters, <a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, Gregor J. Gassner"
   },
   {
     "doi": "10.48550/arxiv.2304.01891",
@@ -1011,6 +1068,25 @@
     "authors_html": "<a href=\"/members/roland-preuss/\">Roland Preuss</a>, <a href=\"/members/udo-von-toussaint/\">Udo von Toussaint</a>"
   },
   {
+    "doi": "10.1063/5.0124567",
+    "slug": "publishers-note-jorek3d-an-extension-of",
+    "title": "Publisher's Note: “JOREK3D: An extension of the JOREK nonlinear MHD code to stellarators” [Phys. Plasmas 29, 063901 (2022)]",
+    "authors": "N. Nikulsin, R. Ramasamy, M. Hoelzl, F. Hindenlang, E. Strumberger, K. Lackner, S. Günter, JOREK Team",
+    "venue": "Physics of Plasmas",
+    "journal": "Physics of Plasmas",
+    "year": 2022,
+    "abstract": "",
+    "bibtex": "@article{Nikulsin_2022, title={Publisher’s Note: “JOREK3D: An extension of the JOREK nonlinear MHD code to stellarators” [Phys. Plasmas 29, 063901 (2022)]}, volume={29}, ISSN={1089-7674}, url={http://dx.doi.org/10.1063/5.0124567}, DOI={10.1063/5.0124567}, number={9}, journal={Physics of Plasmas}, publisher={AIP Publishing}, author={Nikulsin, N. and Ramasamy, R. and Hoelzl, M. and Hindenlang, F. and Strumberger, E. and Lackner, K. and Günter, S.}, year={2022}, month=sep }",
+    "publisher": "AIP Publishing",
+    "volume": "29",
+    "issue": "9",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1063/5.0124567",
+    "groups": [],
+    "codes": [],
+    "authors_html": "N. Nikulsin, R. Ramasamy, M. Hoelzl, <a href=\"/members/florian-hindenlang/\">F. Hindenlang</a>, E. Strumberger, K. Lackner, S. Günter, JOREK Team"
+  },
+  {
     "doi": "10.1007/s10915-022-01781-3",
     "title": "Variational Framework for Structure-Preserving Electromagnetic Particle-in-Cell Methods",
     "authors": "Martin Campos Pinto, Katharina Kormann, Eric Sonnendrücker",
@@ -1141,7 +1217,7 @@
     "pages": "126068",
     "url": "http://dx.doi.org/10.1088/1741-4326/ac359f",
     "groups": [],
-    "authors_html": "D.P. Coster, R. Fischer, O. Hoenen, <a href=\"/members/jalal-lakhlili/\">J. Lakhlili</a>, O.O. Luk, <a href=\"/members/roland-preuss/\">R. Preuss</a>, <a href=\"/members/bruce-scott/\">B.D. Scott</a>, U. von Toussaint, the ASDEX Upgrade Team"
+    "authors_html": "D.P. Coster, R. Fischer, O. Hoenen, <a href=\"/members/jalal-lakhlili/\">J. Lakhlili</a>, O.O. Luk, <a href=\"/members/roland-preuss/\">R. Preuss</a>, <a href=\"/members/bruce-scott/\">B.D. Scott</a>, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, the ASDEX Upgrade Team"
   },
   {
     "doi": "10.1016/j.jcp.2020.109890",
@@ -1578,7 +1654,7 @@
     "pages": "100724",
     "url": "http://dx.doi.org/10.1016/j.nme.2019.100724",
     "groups": [],
-    "authors_html": "F.J. Domínguez-Gutiérrez, J. Byggmästar, K. Nordlund, F. Djurabekova, U. von Toussaint"
+    "authors_html": "F.J. Domínguez-Gutiérrez, J. Byggmästar, K. Nordlund, F. Djurabekova, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1063/5.0022117",
@@ -1977,7 +2053,7 @@
     "pages": "55-64",
     "url": "http://dx.doi.org/10.1007/978-3-319-91143-4_6",
     "groups": [],
-    "authors_html": "D. Nille, U. von Toussaint, B. Sieglin, M. Faitsch"
+    "authors_html": "D. Nille, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, B. Sieglin, M. Faitsch"
   },
   {
     "doi": "10.1017/S0022377818000430",
@@ -2053,7 +2129,7 @@
     "url": "http://dx.doi.org/10.1016/j.nme.2016.12.005",
     "groups": [],
     "codes": [],
-    "authors_html": "S. Krat, M. Mayer, U. von Toussaint, P. Coad, A. Widdowson, Yu. Gasparyan, A. Pisarev"
+    "authors_html": "S. Krat, M. Mayer, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, P. Coad, A. Widdowson, Yu. Gasparyan, A. Pisarev"
   },
   {
     "doi": "10.5802/smai-jcm.20",
@@ -2110,7 +2186,7 @@
     "url": "http://dx.doi.org/10.1016/j.jnucmat.2017.02.005",
     "groups": [],
     "codes": [],
-    "authors_html": "M. Zhao, W. Jacob, A. Manhard, L. Gao, M. Balden, U. von Toussaint, Z. Zhou"
+    "authors_html": "M. Zhao, W. Jacob, A. Manhard, L. Gao, M. Balden, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, Z. Zhou"
   },
   {
     "doi": "10.1063/1.4986447",
@@ -2148,7 +2224,7 @@
     "url": "http://dx.doi.org/10.1016/j.nme.2016.09.005",
     "groups": [],
     "codes": [],
-    "authors_html": "U. von Toussaint, A. Mutzke"
+    "authors_html": "<a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, A. Mutzke"
   },
   {
     "doi": "10.13182/fst15-178",
@@ -2167,7 +2243,7 @@
     "url": "http://dx.doi.org/10.13182/fst15-178",
     "groups": [],
     "codes": [],
-    "authors_html": "<a href=\"/members/roland-preuss/\">R. Preuss</a>, U. von Toussaint"
+    "authors_html": "<a href=\"/members/roland-preuss/\">R. Preuss</a>, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1017/S002237781700040X",
@@ -2226,7 +2302,7 @@
     "url": "http://dx.doi.org/10.1088/1741-4326/aa7212",
     "groups": [],
     "codes": [],
-    "authors_html": "J. Bauer, T. Schwarz-Selinger, K. Schmid, M. Balden, A. Manhard, U. von Toussaint"
+    "authors_html": "J. Bauer, T. Schwarz-Selinger, K. Schmid, M. Balden, A. Manhard, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1016/j.nme.2016.11.019",
@@ -2283,7 +2359,7 @@
     "url": "http://dx.doi.org/10.1016/j.nme.2016.10.014",
     "groups": [],
     "codes": [],
-    "authors_html": "A. Manhard, U. von Toussaint, M. Balden, S. Elgeti, T. Schwarz-Selinger, L. Gao, S. Kapser, T. Płociński, J. Grzonka, M. Gloc, Ł. Ciupiński"
+    "authors_html": "A. Manhard, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, M. Balden, S. Elgeti, T. Schwarz-Selinger, L. Gao, S. Kapser, T. Płociński, J. Grzonka, M. Gloc, Ł. Ciupiński"
   },
   {
     "doi": "10.1016/j.ijrmhm.2017.06.001",
@@ -2302,7 +2378,7 @@
     "url": "http://dx.doi.org/10.1016/j.ijrmhm.2017.06.001",
     "groups": [],
     "codes": [],
-    "authors_html": "P. Zhao, J. Riesch, T. Höschen, J. Almanstötter, M. Balden, J.W. Coenen, R. Himml, W. Pantleon, U. von Toussaint, R. Neu"
+    "authors_html": "P. Zhao, J. Riesch, T. Höschen, J. Almanstötter, M. Balden, J.W. Coenen, R. Himml, W. Pantleon, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, R. Neu"
   },
   {
     "doi": "10.1063/1.4985357",
@@ -2321,7 +2397,7 @@
     "url": "http://dx.doi.org/10.1063/1.4985357",
     "groups": [],
     "codes": [],
-    "authors_html": "<a href=\"/members/roland-preuss/\">R. Preuss</a>, U. von Toussaint"
+    "authors_html": "<a href=\"/members/roland-preuss/\">R. Preuss</a>, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1088/1741-4326/aa796e",
@@ -2340,7 +2416,7 @@
     "url": "http://dx.doi.org/10.1088/1741-4326/aa796e",
     "groups": [],
     "codes": [],
-    "authors_html": "S. Brezinsek, J.W. Coenen, T. Schwarz-Selinger, K. Schmid, A. Kirschner, A. Hakola, F.L. Tabares, H.J. van der Meiden, M.-L. Mayoral, M. Reinhart, E. Tsitrone, T. Ahlgren, M. Aints, M. Airila, S. Almaviva, E. Alves, T. Angot, V. Anita, R. Arredondo Parra, F. Aumayr, M. Balden, J. Bauer, M. Ben Yaala, B.M. Berger, R. Bisson, C. Björkas, I. Bogdanovic Radovic, D. Borodin, J. Bucalossi, J. Butikova, B. Butoi, I. Čadež, R. Caniello, L. Caneve, G. Cartry, N. Catarino, M. Čekada, G. Ciraolo, L. Ciupinski, F. Colao, Y. Corre, C. Costin, T. Craciunescu, A. Cremona, M. De Angeli, A. de Castro, R. Dejarnac, D. Dellasega, P. Dinca, T. Dittmar, C. Dobrea, P. Hansen, A. Drenik, T. Eich, S. Elgeti, D. Falie, N. Fedorczak, Y. Ferro, T. Fornal, E. Fortuna-Zalesna, L. Gao, P. Gasior, M. Gherendi, F. Ghezzi, Ž. Gosar, H. Greuner, E. Grigore, C. Grisolia, M. Groth, M. Gruca, J. Grzonka, J.P. Gunn, K. Hassouni, K. Heinola, T. Höschen, S. Huber, W. Jacob, I. Jepu, X. Jiang, I. Jogi, A. Kaiser, J. Karhunen, M. Kelemen, M. Köppen, H.R. Koslowski, A. Kreter, M. Kubkowska, M. Laan, L. Laguardia, A. Lahtinen, A. Lasa, V. Lazic, N. Lemahieu, J. Likonen, J. Linke, A. Litnovsky, Ch. Linsmeier, T. Loewenhoff, C. Lungu, M. Lungu, G. Maddaluno, H. Maier, T. Makkonen, A. Manhard, Y. Marandet, S. Markelj, L. Marot, C. Martin, A.B. Martin-Rojo, Y. Martynova, R. Mateus, D. Matveev, M. Mayer, G. Meisl, N. Mellet, A. Michau, J. Miettunen, S. Möller, T.W. Morgan, J. Mougenot, M. Mozetič, V. Nemanič, R. Neu, K. Nordlund, M. Oberkofler, E. Oyarzabal, M. Panjan, C. Pardanaud, P. Paris, M. Passoni, B. Pegourie, P. Pelicon, P. Petersson, K. Piip, G. Pintsuk, G.O. Pompilian, G. Popa, C. Porosnicu, G. Primc, M. Probst, J. Räisänen, M. Rasinski, S. Ratynskaia, D. Reiser, D. Ricci, M. Richou, J. Riesch, G. Riva, M. Rosinski, P. Roubin, M. Rubel, C. Ruset, E. Safi, G. Sergienko, Z. Siketic, A. Sima, B. Spilker, R. Stadlmayr, I. Steudel, P. Ström, T. Tadic, D. Tafalla, I. Tale, D. Terentyev, A. Terra, V. Tiron, I. Tiseanu, P. Tolias, D. Tskhakaya, A. Uccello, B. Unterberg, I. Uytdenhoven, E. Vassallo, P. Vavpetič, P. Veis, I.L. Velicu, J.W.M. Vernimmen, A. Voitkans, U. von Toussaint, A. Weckmann, M. Wirtz, A. Založnik, R. Zaplotnik"
+    "authors_html": "S. Brezinsek, J.W. Coenen, T. Schwarz-Selinger, K. Schmid, A. Kirschner, A. Hakola, F.L. Tabares, H.J. van der Meiden, M.-L. Mayoral, M. Reinhart, E. Tsitrone, T. Ahlgren, M. Aints, M. Airila, S. Almaviva, E. Alves, T. Angot, V. Anita, R. Arredondo Parra, F. Aumayr, M. Balden, J. Bauer, M. Ben Yaala, B.M. Berger, R. Bisson, C. Björkas, I. Bogdanovic Radovic, D. Borodin, J. Bucalossi, J. Butikova, B. Butoi, I. Čadež, R. Caniello, L. Caneve, G. Cartry, N. Catarino, M. Čekada, G. Ciraolo, L. Ciupinski, F. Colao, Y. Corre, C. Costin, T. Craciunescu, A. Cremona, M. De Angeli, A. de Castro, R. Dejarnac, D. Dellasega, P. Dinca, T. Dittmar, C. Dobrea, P. Hansen, A. Drenik, T. Eich, S. Elgeti, D. Falie, N. Fedorczak, Y. Ferro, T. Fornal, E. Fortuna-Zalesna, L. Gao, P. Gasior, M. Gherendi, F. Ghezzi, Ž. Gosar, H. Greuner, E. Grigore, C. Grisolia, M. Groth, M. Gruca, J. Grzonka, J.P. Gunn, K. Hassouni, K. Heinola, T. Höschen, S. Huber, W. Jacob, I. Jepu, X. Jiang, I. Jogi, A. Kaiser, J. Karhunen, M. Kelemen, M. Köppen, H.R. Koslowski, A. Kreter, M. Kubkowska, M. Laan, L. Laguardia, A. Lahtinen, A. Lasa, V. Lazic, N. Lemahieu, J. Likonen, J. Linke, A. Litnovsky, Ch. Linsmeier, T. Loewenhoff, C. Lungu, M. Lungu, G. Maddaluno, H. Maier, T. Makkonen, A. Manhard, Y. Marandet, S. Markelj, L. Marot, C. Martin, A.B. Martin-Rojo, Y. Martynova, R. Mateus, D. Matveev, M. Mayer, G. Meisl, N. Mellet, A. Michau, J. Miettunen, S. Möller, T.W. Morgan, J. Mougenot, M. Mozetič, V. Nemanič, R. Neu, K. Nordlund, M. Oberkofler, E. Oyarzabal, M. Panjan, C. Pardanaud, P. Paris, M. Passoni, B. Pegourie, P. Pelicon, P. Petersson, K. Piip, G. Pintsuk, G.O. Pompilian, G. Popa, C. Porosnicu, G. Primc, M. Probst, J. Räisänen, M. Rasinski, S. Ratynskaia, D. Reiser, D. Ricci, M. Richou, J. Riesch, G. Riva, M. Rosinski, P. Roubin, M. Rubel, C. Ruset, E. Safi, G. Sergienko, Z. Siketic, A. Sima, B. Spilker, R. Stadlmayr, I. Steudel, P. Ström, T. Tadic, D. Tafalla, I. Tale, D. Terentyev, A. Terra, V. Tiron, I. Tiseanu, P. Tolias, D. Tskhakaya, A. Uccello, B. Unterberg, I. Uytdenhoven, E. Vassallo, P. Vavpetič, P. Veis, I.L. Velicu, J.W.M. Vernimmen, A. Voitkans, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, A. Weckmann, M. Wirtz, A. Založnik, R. Zaplotnik"
   },
   {
     "doi": "10.3390/e19020084",
@@ -2397,7 +2473,7 @@
     "url": "http://dx.doi.org/10.1016/j.nimb.2016.10.033",
     "groups": [],
     "codes": [],
-    "authors_html": "<a href=\"/members/roland-preuss/\">R. Preuss</a>, U. von Toussaint"
+    "authors_html": "<a href=\"/members/roland-preuss/\">R. Preuss</a>, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1063/1.4982689",
@@ -2435,7 +2511,7 @@
     "url": "http://dx.doi.org/10.1016/j.nimb.2015.09.049",
     "groups": [],
     "codes": [],
-    "authors_html": "B. Wielunska, M. Mayer, T. Schwarz-Selinger, U. von Toussaint, J. Bauer"
+    "authors_html": "B. Wielunska, M. Mayer, T. Schwarz-Selinger, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, J. Bauer"
   },
   {
     "doi": "10.1088/0029-5515/57/1/016026",
@@ -2454,7 +2530,7 @@
     "url": "http://dx.doi.org/10.1088/0029-5515/57/1/016026",
     "groups": [],
     "codes": [],
-    "authors_html": "L. Gao, W. Jacob, U. von Toussaint, A. Manhard, M. Balden, K. Schmid, T. Schwarz-Selinger"
+    "authors_html": "L. Gao, W. Jacob, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, A. Manhard, M. Balden, K. Schmid, T. Schwarz-Selinger"
   },
   {
     "doi": "10.1063/1.4940678",
@@ -2473,7 +2549,7 @@
     "url": "http://dx.doi.org/10.1063/1.4940678",
     "groups": [],
     "codes": [],
-    "authors_html": "O. V. Ogorodnikova, S. Markelj, U. von Toussaint"
+    "authors_html": "O. V. Ogorodnikova, S. Markelj, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1063/1.4954915",
@@ -2530,7 +2606,7 @@
     "url": "http://dx.doi.org/10.1063/1.4959060",
     "groups": [],
     "codes": [],
-    "authors_html": "<a href=\"/members/roland-preuss/\">R. Preuss</a>, U. von Toussaint"
+    "authors_html": "<a href=\"/members/roland-preuss/\">R. Preuss</a>, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1088/0031-8949/t167/1/014048",
@@ -2682,7 +2758,7 @@
     "url": "http://dx.doi.org/10.1016/j.jnucmat.2014.11.051",
     "groups": [],
     "codes": [],
-    "authors_html": "U. von Toussaint, T. Schwarz-Selinger, K. Schmid"
+    "authors_html": "<a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, T. Schwarz-Selinger, K. Schmid"
   },
   {
     "doi": "10.3390/e17063898",
@@ -2720,7 +2796,7 @@
     "url": "http://dx.doi.org/10.1016/j.jnucmat.2014.10.055",
     "groups": [],
     "codes": [],
-    "authors_html": "S. Krat, Yu. Gasparyan, A. Pisarev, M. Mayer, U. von Toussaint, P. Coad, A. Widdowson"
+    "authors_html": "S. Krat, Yu. Gasparyan, A. Pisarev, M. Mayer, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, P. Coad, A. Widdowson"
   },
   {
     "doi": "10.1088/0029-5515/56/1/016004",
@@ -2739,7 +2815,7 @@
     "url": "http://dx.doi.org/10.1088/0029-5515/56/1/016004",
     "groups": [],
     "codes": [],
-    "authors_html": "L. Gao, W. Jacob, G. Meisl, T. Schwarz-Selinger, T. Höschen, U. von Toussaint, T. Dürbeck"
+    "authors_html": "L. Gao, W. Jacob, G. Meisl, T. Schwarz-Selinger, T. Höschen, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, T. Dürbeck"
   },
   {
     "doi": "10.1063/1.4935925",
@@ -2796,7 +2872,7 @@
     "url": "http://dx.doi.org/10.1088/0029-5515/54/7/073010",
     "groups": [],
     "codes": [],
-    "authors_html": "M. Balden, N. Endstrasser, P.W. Humrickhouse, V. Rohde, M. Rasinski, U. von Toussaint, S. Elgeti, R. Neu, the ASDEX Upgrade Team"
+    "authors_html": "M. Balden, N. Endstrasser, P.W. Humrickhouse, V. Rohde, M. Rasinski, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, S. Elgeti, R. Neu, the ASDEX Upgrade Team"
   },
   {
     "doi": "10.1088/0031-8949/2014/t159/014023",
@@ -2834,7 +2910,7 @@
     "url": "http://dx.doi.org/10.1088/0029-5515/54/12/122003",
     "groups": [],
     "codes": [],
-    "authors_html": "L. Gao, U. von Toussaint, W. Jacob, M. Balden, A. Manhard"
+    "authors_html": "L. Gao, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, W. Jacob, M. Balden, A. Manhard"
   },
   {
     "doi": "10.1063/1.4896580",
@@ -2853,7 +2929,7 @@
     "url": "http://dx.doi.org/10.1063/1.4896580",
     "groups": [],
     "codes": [],
-    "authors_html": "K. Schmid, U. von Toussaint, T. Schwarz-Selinger"
+    "authors_html": "K. Schmid, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, T. Schwarz-Selinger"
   },
   {
     "doi": "10.4000/books.editionscnrs.11003",
@@ -2910,7 +2986,7 @@
     "url": "http://dx.doi.org/10.1063/1.4819988",
     "groups": [],
     "codes": [],
-    "authors_html": "V. Dose, U. von Toussaint"
+    "authors_html": "V. Dose, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1063/1.4819976",
@@ -2948,7 +3024,7 @@
     "url": "http://dx.doi.org/10.1016/j.diamond.2013.09.005",
     "groups": [],
     "codes": [],
-    "authors_html": "P.N. Maya, U. von Toussaint, W. Jacob"
+    "authors_html": "P.N. Maya, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, W. Jacob"
   },
   {
     "doi": "10.1016/j.jnucmat.2011.10.018",
@@ -3005,7 +3081,7 @@
     "url": "http://dx.doi.org/10.1016/j.nimb.2011.07.045",
     "groups": [],
     "codes": [],
-    "authors_html": "M. Mayer, U. von Toussaint, J. Dewalque, O. Dubreuil, C. Henrist, R. Cloots, F. Mathis"
+    "authors_html": "M. Mayer, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>, J. Dewalque, O. Dubreuil, C. Henrist, R. Cloots, F. Mathis"
   },
   {
     "doi": "10.1016/j.nimb.2012.03.024",
@@ -3024,7 +3100,7 @@
     "url": "http://dx.doi.org/10.1016/j.nimb.2012.03.024",
     "groups": [],
     "codes": [],
-    "authors_html": "K. Schmid, U. von Toussaint"
+    "authors_html": "K. Schmid, <a href=\"/members/udo-von-toussaint/\">U. von Toussaint</a>"
   },
   {
     "doi": "10.1063/1.4747725",

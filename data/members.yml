@@ -273,13 +273,11 @@ members:
   - name: Florian Holderied
     role: phd
     topic: ""
-    start_date: 2014-11-01
     contact: c.example@example.org
     group: Kinetic and Gyrokinetic Models
     codes: [struphy]
     alumni: true
     aliases: []
-    orcid: 0000-0002-0439-249X
   - name: Yingzhe Li
     role: postdoc
     topic: ""
@@ -325,6 +323,7 @@ members:
   - name: Florian Hindenlang
     role: group leader
     topic: ""
+    start_date: 2014-11-01
     contact: a.example@example.org
     group: Magnetohydrodynamics
     codes: [gvec]
@@ -333,6 +332,7 @@ members:
       - Florian J. Hindenlang
       - Florian J Hindenlang
     picture: "https://www.ipp.mpg.de/5446851/original-1727074133.webp"
+    orcid: 0000-0002-0439-249X
   - name: Omar Maj
     role: permanent staff
     topic: ""
@@ -435,7 +435,9 @@ members:
     group: Probabilistic Data Analysis and Active Learning
     codes: []
     alumni: false
-    aliases: []
+    aliases:
+      - U. von Toussaint
+      - Udo v. Toussaint
     orcid: 0000-0002-8867-1014
   - name: Roland Preuss
     role: postdoc
