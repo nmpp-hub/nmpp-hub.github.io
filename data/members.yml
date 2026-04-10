@@ -320,6 +320,18 @@ members:
     codes: [gempicx]
     alumni: true
     aliases: []
+  - name: Nishant Narechania
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: Kinetic and Gyrokinetic Models
+    codes: [gempicx]
+    alumni: false
+    aliases: []
+    google_scholar: wLt5ZzAAAAAJ
+    academia_edu: NishantNarechania
+    picture: https://i1.rgstatic.net/ii/profile.image/995320594980864-1614314330255_Q512/Nishant-Narechania.jpg
+
 
   # Magnetohydrodynamics
   - name: Florian Hindenlang
