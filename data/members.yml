@@ -23,7 +23,7 @@ members:
     role: professor
     start_date: 2012-01-01
     topic: ""
-    contact: i.example@example.org
+    contact: ""
     group: ~
     codes: [gempicx]
     alumni: false
@@ -42,7 +42,7 @@ members:
   - name: Pauline Vidal
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: ~
     codes: [gyselalibxx]
     alumni: false
@@ -50,7 +50,7 @@ members:
   - name: Svenja Eichler
     role: Secretary
     topic: ~
-    contact: j.example@example.org
+    contact: ""
     group: ~
     codes: []
     alumni: false
@@ -138,7 +138,7 @@ members:
   - name: Valentin Carlier
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Finite Element Methods
     codes: [psydac]
     alumni: true
@@ -146,7 +146,7 @@ members:
   - name: Alexander Hoffmann
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Finite Element Methods
     codes: [psydac]
     alumni: false
@@ -154,7 +154,7 @@ members:
   - name: Elena Moral Sánchez
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Finite Element Methods
     codes: [psydac]
     alumni: false
@@ -162,7 +162,7 @@ members:
   - name: Frederik Schnack
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Finite Element Methods
     codes: [psydac]
     alumni: false
@@ -170,7 +170,7 @@ members:
   - name: Said Hadjout
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Finite Element Methods
     codes: [psydac]
     alumni: true
@@ -178,7 +178,7 @@ members:
   - name: Francesco Patrizi
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Finite Element Methods
     codes: [psydac]
     alumni: true
@@ -275,7 +275,7 @@ members:
   - name: Florian Holderied
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [struphy]
     alumni: true
@@ -283,7 +283,7 @@ members:
   - name: Yingzhe Li
     role: postdoc
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [gyselalibxx, struphy]
     alumni: false
@@ -291,7 +291,7 @@ members:
   - name: Byung Kyu Na
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [struphy]
     alumni: true
@@ -299,7 +299,7 @@ members:
   - name: Dominik Bell
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [struphy]
     alumni: false
@@ -307,7 +307,7 @@ members:
   - name: Said Hadjout
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [struphy]
     alumni: true
@@ -315,7 +315,7 @@ members:
   - name: Katharina Kormann
     role: postdoc
     topic: ""
-    contact: f.example@example.org
+    contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [gempicx]
     alumni: true
@@ -338,7 +338,7 @@ members:
   - name: Omar Maj
     role: permanent staff
     topic: ""
-    contact: omar.maj@example.org
+    contact: ""
     orcid: 0000-0002-0749-2760
     group: "Magnetohydrodynamics"
     codes: [gvec]
@@ -382,7 +382,7 @@ members:
   - name: Ahmed Ratnani
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Magnetohydrodynamics
     codes: [psydac]
     alumni: true
@@ -390,7 +390,7 @@ members:
   - name: Jalal Lakhlili
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Magnetohydrodynamics
     codes: []
     alumni: true
@@ -398,7 +398,7 @@ members:
   - name: Mustafa Gaja
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Magnetohydrodynamics
     codes: []
     alumni: true
@@ -406,7 +406,7 @@ members:
   - name: Mariarosa Mazza
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Magnetohydrodynamics
     codes: []
     alumni: true
@@ -414,7 +414,7 @@ members:
   - name: Benedict Dingfelder
     role: phd
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Magnetohydrodynamics
     codes: []
     alumni: true
@@ -422,7 +422,7 @@ members:
   - name: Bruce Scott
     role: permanent staff
     topic: ""
-    contact: c.example@example.org
+    contact: ""
     group: Magnetohydrodynamics
     codes: []
     alumni: true
