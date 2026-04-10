@@ -30,6 +30,7 @@ members:
     aliases:
       - "E. Sonnendrücker"
       - "E Sonnendruecker"
+      - "Éric Sonnendrücker"
     picture: "https://www.ipp.mpg.de/5422649/original-1763388322.webp" # set to a URL or /images/members/filename.jpg
     github: sonnendr
     gitlab_mpcdf: sonnen
@@ -58,7 +59,7 @@ members:
   - name: Roman Hatzky
     role: group leader
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Advanced Computing Hub
     codes: []
     alumni: false
@@ -66,7 +67,7 @@ members:
   - name: Matthias Borchardt
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Advanced Computing Hub
     codes: []
     alumni: false
@@ -74,7 +75,7 @@ members:
   - name: Cristian Lalescu
     role: permanent staff
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Advanced Computing Hub
     codes: []
     alumni: false
@@ -83,7 +84,7 @@ members:
     role: postdoc
     picture: https://avatars.githubusercontent.com/u/181350288
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Advanced Computing Hub
     codes: [struphy]
     alumni: false
@@ -98,7 +99,7 @@ members:
   - name: Serhiy Mochalskyy
     role: permanent staff
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Advanced Computing Hub
     codes: []
     alumni: false
@@ -106,7 +107,7 @@ members:
   - name: Tiago Ribeiro
     role: permanent staff
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Advanced Computing Hub
     codes: [gvec]
     alumni: false
@@ -118,7 +119,7 @@ members:
     role: group leader
     start_date: 2019-09-01
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Finite Element Methods
     codes: [psydac]
     alumni: false
@@ -129,7 +130,7 @@ members:
   - name: Yaman Güçlü
     role: permanent staff
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: "Finite Element Methods"
     codes: []
     alumni: false
@@ -188,7 +189,7 @@ members:
     role: group leader
     start_date: 2013-04-01
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: [geometricintegrators, geometricmachinelearning]
     alumni: false
@@ -197,7 +198,7 @@ members:
   - name: Tobias Blickhan
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: []
     alumni: true
@@ -205,7 +206,7 @@ members:
   - name: Benedikt Brantner
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: []
     alumni: false
@@ -213,7 +214,7 @@ members:
   - name: Tomasz Tyranowski
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: []
     alumni: false
@@ -221,7 +222,7 @@ members:
   - name: Camilla Bressan
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: []
     alumni: true
@@ -229,7 +230,7 @@ members:
   - name: Lorenzo Guidi
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: []
     alumni: true
@@ -237,7 +238,7 @@ members:
   - name: Nicolas Legouy
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: []
     alumni: true
@@ -245,7 +246,7 @@ members:
   - name: Herbert Oberlin
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: []
     alumni: true
@@ -253,7 +254,7 @@ members:
   - name: Marco Restelli
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Geometric Numerical Integration
     codes: []
     alumni: true
@@ -264,7 +265,7 @@ members:
     role: group leader
     start_date: 2012-01-01
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [struphy]
     alumni: false
@@ -346,7 +347,7 @@ members:
   - name: Francesco Fambri
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: "Magnetohydrodynamics"
     codes: [gempicx]
     alumni: false
@@ -373,7 +374,7 @@ members:
   - name: Martina Prugger
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: "Magnetohydrodynamics"
     codes: []
     alumni: true
@@ -444,7 +445,7 @@ members:
     role: group leader
     topic: ""
     start_date: 2012-01-01
-    contact: b.example@example.org
+    contact: ""
     group: Probabilistic Data Analysis and Active Learning
     codes: []
     alumni: false
@@ -455,7 +456,7 @@ members:
   - name: Roland Preuss
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Probabilistic Data Analysis and Active Learning
     codes: []
     alumni: false
@@ -463,7 +464,7 @@ members:
   - name: Katharina Rath
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Probabilistic Data Analysis and Active Learning
     codes: []
     alumni: false
@@ -471,7 +472,7 @@ members:
   - name: Dirk Stieglitz
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Probabilistic Data Analysis and Active Learning
     codes: []
     alumni: true
@@ -481,7 +482,7 @@ members:
   - name: Klaus Hallatschek
     role: group leader
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Zonal Flows in Turbulent Plasmas
     codes: [bsl6d]
     alumni: false
@@ -489,7 +490,7 @@ members:
   - name: Mario Räth
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Zonal Flows in Turbulent Plasmas
     codes: [bsl6d]
     alumni: false
@@ -500,7 +501,7 @@ members:
   - name: Nils Schild
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Zonal Flows in Turbulent Plasmas
     codes: [bsl6d]
     alumni: false
@@ -508,7 +509,7 @@ members:
   - name: Andreas Kammel
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Zonal Flows in Turbulent Plasmas
     codes: [bsl6d]
     alumni: true
@@ -516,7 +517,7 @@ members:
   - name: Robert Hager
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Zonal Flows in Turbulent Plasmas
     codes: [bsl6d]
     alumni: true
@@ -524,7 +525,7 @@ members:
   - name: Niels Gürtler
     role: postdoc
     topic: ""
-    contact: b.example@example.org
+    contact: ""
     group: Zonal Flows in Turbulent Plasmas
     codes: [bsl6d]
     alumni: true
