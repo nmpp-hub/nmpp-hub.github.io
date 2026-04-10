@@ -110,7 +110,8 @@ members:
     group: Advanced Computing Hub
     codes: [gvec]
     alumni: false
-    aliases: []
+    aliases:
+      - Tiago Tamissa Ribeiro
 
   # Finite Element Methods
   - name: Martin Campos Pinto
