@@ -340,7 +340,14 @@ members:
     codes: [gempicx]
     alumni: true
     aliases: []
-
+  - name: Ronald Remmerswaal
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: Kinetic and Gyrokinetic Models
+    codes: [gempicx]
+    alumni: true
+    aliases: []
 
   # Magnetohydrodynamics
   - name: Florian Hindenlang
