@@ -72,8 +72,10 @@
     "pages": "9670",
     "url": "http://dx.doi.org/10.21105/joss.09670",
     "groups": [],
-    "codes": [],
-    "authors_html": "<a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, <a href=\"/members/omar-maj/\">Omar Maj</a>, <a href=\"/members/robert-babin/\">Robert Babin</a>, <a href=\"/members/robert-koberl/\">Robert Köberl</a>, Dean Muir, Tiago Tamissa Ribeiro, Markus Rampp, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
+    "codes": [
+      "gvec"
+    ],
+    "authors_html": "<a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, <a href=\"/members/omar-maj/\">Omar Maj</a>, <a href=\"/members/robert-babin/\">Robert Babin</a>, <a href=\"/members/robert-koberl/\">Robert Köberl</a>, <a href=\"/members/dean-muir/\">Dean Muir</a>, Tiago Tamissa Ribeiro, Markus Rampp, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1017/s0022377825101013",
@@ -195,7 +197,9 @@
     "authors": "G G Plunk, M Drevlak, E Rodríguez, R Babin, A Goodman, F Hindenlang",
     "venue": "Plasma Physics and Controlled Fusion",
     "year": 2025,
-    "codes": [],
+    "codes": [
+      "gvec"
+    ],
     "slug": "back-to-the-figure-8-stellarator",
     "journal": "Plasma Physics and Controlled Fusion",
     "abstract": "Abstract The first stellarator design was a simple tube of plasma twisted and closed on itself in the form of a figure-8. The line of such devices, however, was quickly ended over concerns related to plasma stability. We revisit the figure-8 concept, re-imagined as a modern optimized stellarator, and find the potential for a high degree of stability, as well as exceptionally simple construction. In particular, the design that we find admits planar coils, and is the first quasi-isodynamic stellarator design to have this property. Our work is made possible by recent theoretical progress in the near-axis theory of quasi-isodynamic stellarators, combined with fundamental progress in the numerical solution of three-dimensional magnetohydrodynamic equilibria that cannot be well represented using traditional cylindrical coordinates.",

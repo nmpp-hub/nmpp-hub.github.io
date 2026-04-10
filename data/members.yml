@@ -108,7 +108,7 @@ members:
     topic: ""
     contact: b.example@example.org
     group: Advanced Computing Hub
-    codes: []
+    codes: [gvec]
     alumni: false
     aliases: []
 
@@ -324,7 +324,7 @@ members:
     role: group leader
     topic: ""
     start_date: 2014-11-01
-    contact: a.example@example.org
+    contact: florian.hindenlang@ipp.mpg.de
     group: Magnetohydrodynamics
     codes: [gvec]
     alumni: false
@@ -336,9 +336,10 @@ members:
   - name: Omar Maj
     role: permanent staff
     topic: ""
-    contact: b.example@example.org
+    contact: omar.maj@example.org
+    orcid: 0000-0002-0749-2760
     group: "Magnetohydrodynamics"
-    codes: []
+    codes: [gvec]
     alumni: false
     aliases: []
   - name: Francesco Fambri
@@ -351,16 +352,18 @@ members:
     aliases: []
   - name: Robert Babin
     role: phd
-    topic: ""
-    contact: c.example@example.org
+    topic: "Stellarator optimization beyond cylindrical coordinates"
+    contact: robert.babin@ipp.mpg.de
+    orcid: 0009-0004-2729-1685
     group: Magnetohydrodynamics
     codes: [gvec]
     alumni: false
     aliases: []
   - name: Robert Köberl
-    role: phd
+    role: postdoc
     topic: ""
-    contact: c.example@example.org
+    contact: robert.koeberl@ipp.mpg.de
+    orcid: 0000-0003-3109-345X
     group: Magnetohydrodynamics
     codes: [gvec]
     alumni: false
@@ -387,7 +390,7 @@ members:
     topic: ""
     contact: c.example@example.org
     group: Magnetohydrodynamics
-    codes: [gvec]
+    codes: []
     alumni: true
     aliases: []
   - name: Mustafa Gaja
@@ -395,7 +398,7 @@ members:
     topic: ""
     contact: c.example@example.org
     group: Magnetohydrodynamics
-    codes: [gvec]
+    codes: []
     alumni: true
     aliases: []
   - name: Mariarosa Mazza
@@ -403,7 +406,7 @@ members:
     topic: ""
     contact: c.example@example.org
     group: Magnetohydrodynamics
-    codes: [gvec]
+    codes: []
     alumni: true
     aliases: []
   - name: Benedict Dingfelder
@@ -411,7 +414,7 @@ members:
     topic: ""
     contact: c.example@example.org
     group: Magnetohydrodynamics
-    codes: [gvec]
+    codes: []
     alumni: true
     aliases: []
   - name: Bruce Scott
@@ -425,6 +428,15 @@ members:
       - B.D. Scott
       - B. D. Scott
       - B D Scott
+  - name: Dean Muir
+    role: postdoc
+    topic: ""
+    contact: dean.muir@ipp.mpg.de
+    orcid: 0000-0003-1311-9273
+    group: Magnetohydrodynamics
+    codes: [gvec]
+    alumni: false
+    aliases: []
 
   # Probabilistic Data Analysis and Active Learning
   - name: Udo von Toussaint

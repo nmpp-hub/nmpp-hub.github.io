@@ -325,10 +325,10 @@ publications:
     for arbitrarily shaped toroidal domains
 - doi: 10.1088/1361-6587/adb64b
   title: Back to the figure-8 stellarator
+  codes: [gvec]
 - doi: 10.1088/1361-6587/adba11
   title: Computing MHD equilibria of stellarators with a flexible coordinate frame
-  codes:
-  - gvec
+  codes: [gvec]
 - doi: 10.1088/1361-6587/adc832
   title: "A geometric Particle-In-Cell discretization of the drift-kinetic and fully\
     \ kinetic Vlasov\u2013Maxwell equations"
@@ -388,6 +388,7 @@ publications:
   title: Gaussian processes for SOLPS data emulation
 - doi: 10.21105/joss.09670
   title: 'GVEC: A flexible 3D MHD equilibrium solver'
+  codes: [gvec]
 - doi: 10.2139/ssrn.4403231
   title: Verification of the Fourier-Enhanced 3d Finite Element Poisson Solver of
     the Gyrokinetic Full-F Code Picls
@@ -445,3 +446,5 @@ publications:
 - doi: 10.5802/smai-jcm.20
   title: 'Compatible Maxwell solvers with particles I: conforming and non-conforming
     2D schemes with a strong Ampere law'
+- doi: 10.3390/psf2023009006
+  title: Magnetohydrodynamic Equilibrium Reconstruction with Consistent Uncertainties
