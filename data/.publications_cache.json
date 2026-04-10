@@ -75,7 +75,7 @@
     "codes": [
       "gvec"
     ],
-    "authors_html": "<a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, <a href=\"/members/omar-maj/\">Omar Maj</a>, <a href=\"/members/robert-babin/\">Robert Babin</a>, <a href=\"/members/robert-koberl/\">Robert Köberl</a>, <a href=\"/members/dean-muir/\">Dean Muir</a>, Tiago Tamissa Ribeiro, Markus Rampp, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
+    "authors_html": "<a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, <a href=\"/members/omar-maj/\">Omar Maj</a>, <a href=\"/members/robert-babin/\">Robert Babin</a>, <a href=\"/members/robert-koberl/\">Robert Köberl</a>, <a href=\"/members/dean-muir/\">Dean Muir</a>, <a href=\"/members/tiago-ribeiro/\">Tiago Tamissa Ribeiro</a>, Markus Rampp, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1017/s0022377825101013",
@@ -132,7 +132,7 @@
     "url": "http://dx.doi.org/10.2139/ssrn.6211977",
     "groups": [],
     "codes": [],
-    "authors_html": "Peiyou Jiang, <a href=\"/members/roman-hatzky/\">Roman Hatzky</a>, Zhixin Lu, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>, <a href=\"/members/matthias-borchardt/\">Matthias Borchardt</a>, Ralf Kleiber, <a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>, Ronald Remmerswaal"
+    "authors_html": "Peiyou Jiang, <a href=\"/members/roman-hatzky/\">Roman Hatzky</a>, Zhixin Lu, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>, <a href=\"/members/matthias-borchardt/\">Matthias Borchardt</a>, Ralf Kleiber, <a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>, <a href=\"/members/ronald-remmerswaal/\">Ronald Remmerswaal</a>"
   },
   {
     "doi": "10.1016/j.jcp.2026.114765",
@@ -307,7 +307,7 @@
     "url": "http://dx.doi.org/10.1017/s0022377825100688",
     "groups": [],
     "codes": [],
-    "authors_html": "Ronald Remmerswaal, <a href=\"/members/roman-hatzky/\">Roman Hatzky</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
+    "authors_html": "<a href=\"/members/ronald-remmerswaal/\">Ronald Remmerswaal</a>, <a href=\"/members/roman-hatzky/\">Roman Hatzky</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1016/j.cpc.2024.109391",
@@ -1259,7 +1259,7 @@
     "pages": "B194-B218",
     "url": "http://dx.doi.org/10.1137/20M1311934",
     "groups": [],
-    "authors_html": "Benedikt Perse, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
+    "authors_html": "<a href=\"/members/benedikt-perse/\">Benedikt Perse</a>, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1017/S0022377821001082",
@@ -2952,7 +2952,7 @@
     "url": "http://dx.doi.org/10.4000/books.editionscnrs.11003",
     "groups": [],
     "codes": [],
-    "authors_html": "Éric Sonnendrücker"
+    "authors_html": "<a href=\"/members/eric-sonnendrucker/\">Éric Sonnendrücker</a>"
   },
   {
     "doi": "10.1016/j.jnucmat.2013.01.172",
