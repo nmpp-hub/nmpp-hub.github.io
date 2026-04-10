@@ -328,9 +328,18 @@ members:
     codes: [gempicx]
     alumni: false
     aliases: []
+    orcid: 0009-0007-1249-0843
     google_scholar: wLt5ZzAAAAAJ
     academia_edu: NishantNarechania
     picture: https://i1.rgstatic.net/ii/profile.image/995320594980864-1614314330255_Q512/Nishant-Narechania.jpg
+  - name: Benedikt Perse
+    role: phd
+    topic: ""
+    contact: ""
+    group: Kinetic and Gyrokinetic Models
+    codes: [gempicx]
+    alumni: true
+    aliases: []
 
 
   # Magnetohydrodynamics
