@@ -88,9 +88,10 @@ def render_member_card(member: dict) -> str:
         <div class="member-card">
           {photo}
           <div class="member-card-name">{name}</div>
-          <div class="member-card-topic">{topic}</div>
         </div>
       </a>"""
+    # Removed this
+    # <div class="member-card-topic">{topic}</div>
 
 
 def render_alumni_card(member: dict) -> str:
