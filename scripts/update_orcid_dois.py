@@ -36,7 +36,7 @@ def load_members():
         orcid = member.get("orcid")
 
         # Include if role is professor or permanent staff AND has ORCID
-        if orcid and (role == "professor" or role == "group leader" or role == "permanent staff"):
+        if orcid and (role == "professor" or role == "group leader"):
             eligible.append(
                 {
                     "name": member.get("name", "Unknown"),
