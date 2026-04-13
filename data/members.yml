@@ -111,6 +111,22 @@ members:
     codes: [gempicx]
     alumni: false
     aliases: []
+  - name: Giorgio Daneri
+    role: phd
+    topic: ""
+    contact: ""
+    group: ""
+    codes: []
+    alumni: false
+    aliases: []
+  - name: Junyi Xi
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: ""
+    codes: []
+    alumni: false
+    aliases: []
   # Advanced Computing Hub
   - name: Roman Hatzky
     role: group leader
@@ -169,6 +185,14 @@ members:
     alumni: false
     aliases:
       - Tiago Tamissa Ribeiro
+  - name: Ihor Holod
+    role: permanent staff
+    topic: ""
+    contact: ""
+    group: Advanced Computing Hub
+    codes: [jorek]
+    alumni: true
+
 
   # Finite Element Methods
   - name: Martin Campos Pinto
@@ -468,7 +492,7 @@ members:
     topic: ""
     contact: ""
     group: "Magnetohydrodynamics"
-    codes: []
+    codes: [gempicx]
     alumni: true
     aliases: []
   - name: Ahmed Ratnani
@@ -529,6 +553,14 @@ members:
     orcid: 0000-0003-1311-9273
     group: Magnetohydrodynamics
     codes: [gvec]
+    alumni: false
+    aliases: []
+  - name: Sayyed Amin Raiessi Toussi
+    role: phd
+    topic: ""
+    contact: ""
+    group: Magnetohydrodynamics
+    codes: [struphy]
     alumni: false
     aliases: []
 
@@ -625,3 +657,19 @@ members:
       - Niels Guertler
       - N. Guertler
       - N Guertler
+  - name: Henrique Gil
+    role: phd
+    topic: ""
+    contact: ""
+    group: Zonal Flows in Turbulent Plasmas
+    codes: [bsl6d]
+    alumni: false
+    aliases: []
+  - name: Thomas Scrase
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: Zonal Flows in Turbulent Plasmas
+    codes: [bsl6d]
+    alumni: false
+    aliases: []
