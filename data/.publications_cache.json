@@ -132,7 +132,7 @@
     "url": "http://dx.doi.org/10.2139/ssrn.6211977",
     "groups": [],
     "codes": [],
-    "authors_html": "Peiyou Jiang, <a href=\"/members/roman-hatzky/\">Roman Hatzky</a>, Zhixin Lu, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>, <a href=\"/members/matthias-borchardt/\">Matthias Borchardt</a>, Ralf Kleiber, <a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>, <a href=\"/members/ronald-remmerswaal/\">Ronald Remmerswaal</a>"
+    "authors_html": "<a href=\"/members/peiyou-jiang/\">Peiyou Jiang</a>, <a href=\"/members/roman-hatzky/\">Roman Hatzky</a>, Zhixin Lu, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>, <a href=\"/members/matthias-borchardt/\">Matthias Borchardt</a>, Ralf Kleiber, <a href=\"/members/martin-campos-pinto/\">Martin Campos Pinto</a>, <a href=\"/members/ronald-remmerswaal/\">Ronald Remmerswaal</a>"
   },
   {
     "doi": "10.1016/j.jcp.2026.114765",
@@ -170,7 +170,7 @@
     "url": "http://dx.doi.org/10.1088/1361-6587/adc832",
     "groups": [],
     "codes": [],
-    "authors_html": "Guo Meng, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, Emil Poulsen, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
+    "authors_html": "Guo Meng, <a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, <a href=\"/members/emil-poulsen/\">Emil Poulsen</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
     "doi": "10.1007/s10915-025-03078-7",
@@ -421,7 +421,7 @@
     "url": "http://dx.doi.org/10.1017/s0022377824000564",
     "groups": [],
     "codes": [],
-    "authors_html": "S. Jeyakumar, <a href=\"/members/michael-kraus/\">M. Kraus</a>, M.J. Hole, D. Pfefferlé"
+    "authors_html": "<a href=\"/members/sandra-jeyakumar/\">S. Jeyakumar</a>, <a href=\"/members/michael-kraus/\">M. Kraus</a>, M.J. Hole, D. Pfefferlé"
   },
   {
     "doi": "10.1016/j.cma.2023.116570",
@@ -785,6 +785,25 @@
     "url": "http://dx.doi.org/10.1007/978-3-031-38299-4_28",
     "groups": [],
     "authors_html": "<a href=\"/members/stefan-possanner/\">Stefan Possanner</a>, <a href=\"/members/florian-holderied/\">Florian Holderied</a>, <a href=\"/members/yingzhe-li/\">Yingzhe Li</a>, <a href=\"/members/byung-kyu-na/\">Byung Kyu Na</a>, <a href=\"/members/dominik-bell/\">Dominik Bell</a>, <a href=\"/members/said-hadjout/\">Said Hadjout</a>, <a href=\"/members/yaman-guclu/\">Yaman Güçlü</a>"
+  },
+  {
+    "doi": "10.3390/psf2023009006",
+    "slug": "magnetohydrodynamic-equilibrium-reconstruction-with-consistent-uncertainties",
+    "title": "Magnetohydrodynamic Equilibrium Reconstruction with Consistent Uncertainties",
+    "authors": "Robert Köberl, Robert Babin, Christopher G. Albert",
+    "venue": "The 42nd International Workshop on Bayesian Inference and Maximum Entropy Methods in Science and Engineering",
+    "journal": "The 42nd International Workshop on Bayesian Inference and Maximum Entropy Methods in Science and Engineering",
+    "year": 2023,
+    "abstract": "",
+    "bibtex": "@inproceedings{K_berl_2023, series={MaxEnt 2023}, title={Magnetohydrodynamic Equilibrium Reconstruction with Consistent Uncertainties}, url={http://dx.doi.org/10.3390/psf2023009006}, DOI={10.3390/psf2023009006}, booktitle={The 42nd International Workshop on Bayesian Inference and Maximum Entropy Methods in Science and Engineering}, publisher={MDPI}, author={Köberl, Robert and Babin, Robert and Albert, Christopher G.}, year={2023}, month=nov, pages={6}, collection={MaxEnt 2023} }",
+    "publisher": "MDPI",
+    "volume": "",
+    "issue": "",
+    "pages": "6",
+    "url": "http://dx.doi.org/10.3390/psf2023009006",
+    "groups": [],
+    "codes": [],
+    "authors_html": "<a href=\"/members/robert-koberl/\">Robert Köberl</a>, <a href=\"/members/robert-babin/\">Robert Babin</a>, Christopher G. Albert"
   },
   {
     "doi": "10.1088/1361-6587/acce68",
