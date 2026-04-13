@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from site_generation import (build_author_to_slug_map, ensure_list,
                              escape_text, load_yaml, render_author_list,
-                             render_dissertation_title,
+                             render_listing_author_list, render_dissertation_title,
                              render_publication_title, slugify, write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -202,7 +202,7 @@ def build_publications_section(
         table_rows.append(f"""    <tr>
       <td>{pub['year'] or ''}</td>
       <td>{render_publication_title(pub)}</td>
-      <td>{render_author_list(pub['authors'], author_to_slug)}</td>
+      <td>{render_listing_author_list(pub['authors'], author_to_slug)}</td>
       <td>{details}</td>
     </tr>""")
 
@@ -211,7 +211,7 @@ def build_publications_section(
           <div class="publication-card-header">
             <div class="publication-card-year">{pub['year'] or ''}</div>
             <div class="publication-card-title">{render_publication_title(pub)}</div>
-            <div class="publication-card-authors">{render_author_list(pub['authors'], author_to_slug)}</div>
+            <div class="publication-card-authors">{render_listing_author_list(pub['authors'], author_to_slug)}</div>
             <div class="publication-card-details">
               {details}
             </div>

@@ -355,6 +355,22 @@ const path = Astro.url.pathname;
         window.addEventListener('scroll', toggleBackToTop, { passive: true });
         toggleBackToTop();
       }
+
+      document.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        const button = target.closest<HTMLButtonElement>('.author-disclosure__button');
+        if (button) {
+          const disclosure = button.closest('.author-disclosure');
+          if (disclosure) {
+            const extra = disclosure.querySelector('.author-disclosure__extra');
+            if (extra) {
+              extra.removeAttribute('hidden');
+              button.setAttribute('aria-expanded', 'true');
+              button.remove();
+            }
+          }
+        }
+      });
     </script>
   </body>
 </html>

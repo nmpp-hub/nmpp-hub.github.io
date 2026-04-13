@@ -271,6 +271,35 @@ def render_author_list(
     return ", ".join(rendered)
 
 
+def render_listing_author_list(
+    authors: str,
+    author_to_slug: dict[str, str] | None = None,
+    visible_authors: int = 4,
+) -> str:
+    """Render author list for listings with expandable disclosure for long lists."""
+    if not authors:
+        return ""
+    if author_to_slug is None:
+        author_to_slug = build_author_to_slug_map()
+
+    author_names = [name.strip() for name in authors.split(",") if name.strip()]
+    rendered = [render_author_name(name, author_to_slug) for name in author_names]
+    if len(rendered) <= visible_authors:
+        return ", ".join(rendered)
+
+    visible = ", ".join(rendered[:visible_authors])
+    hidden = ", ".join(rendered[visible_authors:])
+    return (
+        '<span class="author-disclosure">'
+        f'<span class="author-disclosure__visible">{visible}</span>'
+        f'<span class="author-disclosure__extra" hidden>, {hidden}</span>'
+        '<button class="author-disclosure__button" type="button" aria-expanded="false">'
+        'see more...'
+        '</button>'
+        '</span>'
+    )
+
+
 def render_related(groups: list[str], codes: list[str]) -> str:
     parts = []
     if groups:
