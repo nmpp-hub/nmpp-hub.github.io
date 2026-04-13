@@ -11,8 +11,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from site_generation import (build_author_to_slug_map, ensure_list,
                              escape_text, load_yaml, publication_base_slug,
-                             render_author_list, render_code_links,
-                             render_publication_title, strip_tags, write_text)
+                             render_author_list, render_listing_author_list,
+                             render_code_links, render_publication_title,
+                             strip_tags, write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "dois.yml"
@@ -254,7 +255,7 @@ def build_page(
         row = f"""    <tr>
       <td>{publication['year'] or ''}</td>
       <td>{render_publication_title(publication)}</td>
-      <td>{render_author_list(publication['authors'], author_to_slug)}</td>
+      <td>{render_listing_author_list(publication['authors'], author_to_slug)}</td>
       <td>{details}</td>
     </tr>"""
         table_rows.append(row)
@@ -279,7 +280,7 @@ def build_page(
           <div class="publication-card-header">
             <div class="publication-card-year">{publication['year'] or ''}</div>
             <div class="publication-card-title">{render_publication_title(publication)}</div>
-            <div class="publication-card-authors">{render_author_list(publication['authors'], author_to_slug)}</div>
+            <div class="publication-card-authors">{render_listing_author_list(publication['authors'], author_to_slug)}</div>
             <div class="publication-card-details">
               {details}
             </div>

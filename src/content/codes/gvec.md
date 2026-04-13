@@ -3,31 +3,22 @@ title: GVEC
 path: /codes/gvec/
 gallery:
   - src: /images/gvec/3d.png
-    thumbnail: /images/gvec/3d.png
     title: ""
   - src: /images/gvec/flux_aligned.png
-    thumbnail: /images/gvec/flux_aligned.png
     title: "Flux aligned"
   - src: /images/gvec/flux_aligned_gframe.png
-    thumbnail: /images/gvec/flux_aligned_gframe.png
     title: "Flux aligned Gframe"
   - src: /images/gvec/brezellator_topview_iso.png
-    thumbnail: /images/gvec/brezellator_topview_iso.png
     title: "Brezellator topview iso"
   - src: /images/gvec/N1-loAR-1_Gabe_visu_Gframe.png
-    thumbnail: /images/gvec/N1-loAR-1_Gabe_visu_Gframe.png
     title: "N1-loAR-1 Gabe visu Gframe"
   - src: /images/gvec/N3-loAR-1_Gabe_visu_Gframe.png
-    thumbnail: /images/gvec/N3-loAR-1_Gabe_visu_Gframe.png
     title: "N3-loAR-1 Gabe visu Gframe"
   - src: /images/gvec/N3_knot_gabe_visu_gframe.png
-    thumbnail: /images/gvec/N3_knot_gabe_visu_gframe.png
     title: "N3 knot Gabe visu Gframe"
   - src: /images/gvec/QH_nfp7_visu_gframe.png
-    thumbnail: /images/gvec/QH_nfp7_visu_gframe.png
     title: "QH nfp7 visu Gframe"
   - src: /images/gvec/neo-spitzer_visu_gframe.png
-    thumbnail: /images/gvec/neo-spitzer_visu_gframe.png
     title: "Neo-Spitzer visu Gframe"
 ---
 

@@ -111,7 +111,7 @@
   },
   {
     "slug": "geometric-particle-in-cell-methods-on-mapped-grids",
-    "author_html": "Benedikt Perse",
+    "author_html": "<a href=\"/members/benedikt-perse/\">Benedikt Perse</a>",
     "year": 2021,
     "date": "2021-05-26",
     "title": "Geometric Particle-in-Cell Methods on Mapped Grids",
@@ -124,6 +124,8 @@
     "codes": [
       "gempicx"
     ],
-    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Perse, Benedikt},\r\n\ttitle = {Geometric Particle-in-Cell Methods on Mapped Grids},\r\n\tyear = {2021},\r\n\tschool = {Technische Universität München},\r\n\tpages = {173},\r\n\tlanguage = {en},\r\n\tabstract = {The geometric electromagnetic particle-in-cell (GEMPIC) framework provides the foundation for Vlasov-Maxwell solvers that preserve at the discrete level the non-canonical Hamiltonian structure. Preserving the structure of the kinetic equations enables stable numerical methods for long time simulations. In this dissertation, the GEMPIC framework is extended to curvilinear coordinates and perfect conductor boundary conditions. Several semi-implicit time integrators based either on a Hamiltonian splitting or on an antisymmetric splitting of the Poisson matrix are discussed and assessed regarding their conservation properties and computational efficiency.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1611205},\r\n\tdoi = {},\r\n}"
+    "bibtex": "@phdthesis{dissertation,\r\n\tauthor = {Perse, Benedikt},\r\n\ttitle = {Geometric Particle-in-Cell Methods on Mapped Grids},\r\n\tyear = {2021},\r\n\tschool = {Technische Universität München},\r\n\tpages = {173},\r\n\tlanguage = {en},\r\n\tabstract = {The geometric electromagnetic particle-in-cell (GEMPIC) framework provides the foundation for Vlasov-Maxwell solvers that preserve at the discrete level the non-canonical Hamiltonian structure. Preserving the structure of the kinetic equations enables stable numerical methods for long time simulations. In this dissertation, the GEMPIC framework is extended to curvilinear coordinates and perfect conductor boundary conditions. Several semi-implicit time integrators based either on a Hamiltonian splitting or on an antisymmetric splitting of the Poisson matrix are discussed and assessed regarding their conservation properties and computational efficiency.},\r\n\tkeywords = {},\r\n\tnote = {},\r\n\turl = {https://mediatum.ub.tum.de/1611205},\r\n\tdoi = {},\r\n}",
+    "group": "Kinetic and Gyrokinetic Models",
+    "group_slug": "kinetic-gyrokinetic-models"
   }
 ]

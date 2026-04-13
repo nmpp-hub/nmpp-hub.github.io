@@ -8,7 +8,6 @@ const codes = defineCollection({
     path: z.string(),
     gallery: z.array(z.object({
       src: z.string(),
-      thumbnail: z.string().optional(),
       title: z.string().optional(),
     })).optional(),
   }),
