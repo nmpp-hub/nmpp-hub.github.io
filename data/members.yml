@@ -178,10 +178,12 @@ members:
     aliases: []
   - name: Tiago Ribeiro
     role: permanent staff
+    start_date: 2008-02-01
     topic: ""
     contact: ""
     group: Advanced Computing Hub
     codes: [gvec]
+    orcid: 0000-0003-0143-5957
     alumni: false
     aliases:
       - Tiago Tamissa Ribeiro
