@@ -55,6 +55,62 @@ members:
     codes: []
     alumni: false
     aliases: []
+  - name: Zeyuan Li
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: ~
+    codes: []
+    alumni: false
+    aliases: []
+  - name: Sandra Jeyakumar
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: ~
+    codes: []
+    alumni: false
+    aliases: []
+  - name: Joris Thiel
+    role: phd
+    topic: ""
+    contact: ""
+    group: ~
+    codes: [gempicx]
+    alumni: false
+    aliases: []
+  - name: Victor Fournet
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: ~
+    codes: []
+    alumni: false
+    aliases: []
+  - name: Peiyou Jiang
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: ~
+    codes: []
+    alumni: false
+    aliases: []
+  - name: Maximilian Pelkner
+    role: phd
+    topic: ""
+    contact: ""
+    group: ~
+    codes: []
+    alumni: false
+    aliases: []
+  - name: Emil Poulsen
+    role: postdoc
+    topic: ""
+    contact: ""
+    group: ~
+    codes: [gempicx]
+    alumni: false
+    aliases: []
   # Advanced Computing Hub
   - name: Roman Hatzky
     role: group leader
@@ -482,7 +538,7 @@ members:
       - Udo v. Toussaint
     orcid: 0000-0002-8867-1014
   - name: Roland Preuss
-    role: postdoc
+    role: permanent staff
     topic: ""
     contact: ""
     group: Probabilistic Data Analysis and Active Learning
