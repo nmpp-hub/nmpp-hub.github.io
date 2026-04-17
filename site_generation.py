@@ -312,3 +312,38 @@ def render_related(groups: list[str], codes: list[str]) -> str:
 def write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content.rstrip() + "\n", encoding="utf-8")
+
+
+def remove_stale_pages(
+    content_dir: Path, valid_slugs: set[str], suffix: str = ".md"
+) -> list[Path]:
+    """Delete collection pages whose slug no longer exists in source data."""
+    removed: list[Path] = []
+    if not content_dir.exists():
+        return removed
+
+    for path in sorted(content_dir.glob(f"*{suffix}")):
+        if not path.is_file() or path.stem in valid_slugs:
+            continue
+        path.unlink()
+        removed.append(path)
+
+    return removed
+
+
+def remove_stale_auto_partials(auto_dir: Path, valid_slugs: set[str]) -> list[Path]:
+    """Delete generated HTML partials for slugs that no longer exist."""
+    removed: list[Path] = []
+    if not auto_dir.exists():
+        return removed
+
+    for path in sorted(auto_dir.glob("*.html")):
+        if not path.is_file():
+            continue
+        slug = path.name.split(".", 1)[0]
+        if slug in valid_slugs:
+            continue
+        path.unlink()
+        removed.append(path)
+
+    return removed
