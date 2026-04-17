@@ -17,7 +17,8 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from site_generation import (build_author_to_slug_map, ensure_list,
-                             escape_text, load_yaml, render_author_list,
+                             escape_text, load_yaml, remove_stale_auto_partials,
+                             remove_stale_pages, render_author_list,
                              render_listing_author_list, render_dissertation_title,
                              render_publication_title, slugify, write_text)
 
@@ -345,6 +346,9 @@ def main() -> None:
     all_publications = load_publications_cache()
     all_dissertations = load_dissertations()
     author_to_slug = build_author_to_slug_map()
+    valid_slugs = {
+        group["slug"] for group in all_groups if isinstance(group.get("slug"), str)
+    }
 
     print(
         f"Loaded {len(all_groups)} groups, {len(all_members)} members, {len(all_publications)} publications, {len(all_dissertations)} dissertations"
@@ -404,6 +408,14 @@ def main() -> None:
         print(
             f"  {group['name']:50} → {group['slug']:30} ({len(group_members)} members, {len(group_pubs)} pubs, {len(group_diss)} diss)"
         )
+
+    removed_pages = remove_stale_pages(GROUPS_OUTPUT_DIR, valid_slugs)
+    removed_partials = remove_stale_auto_partials(GROUPS_AUTO_DIR, valid_slugs)
+
+    for file_path in removed_pages:
+        print(f"  removed page: {file_path.relative_to(ROOT)}")
+    for file_path in removed_partials:
+        print(f"  removed partial: {file_path.relative_to(ROOT)}")
 
     print(f"\nGenerated {len(all_groups)} group pages in {GROUPS_OUTPUT_DIR}")
 

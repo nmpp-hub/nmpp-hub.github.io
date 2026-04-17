@@ -26,10 +26,10 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from site_generation import (build_author_to_slug_map, ensure_list,
-                              escape_text, load_yaml,
-                              render_listing_author_list, render_code_links,
-                              render_dissertation_title, render_publication_title,
-                              slugify, write_text)
+                              escape_text, load_yaml, remove_stale_auto_partials,
+                              remove_stale_pages, render_listing_author_list,
+                              render_code_links, render_dissertation_title,
+                              render_publication_title, slugify, write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
 MEMBERS_FILE = ROOT / "data" / "members.yml"
@@ -583,26 +583,15 @@ def main() -> None:
             f"  {member['name']:30} → {slug:30} ({len(member_pubs)} pubs, {len(member_diss)} diss)"
         )
 
+    removed_pages = remove_stale_pages(MEMBERS_OUTPUT_DIR, valid_slugs)
+    removed_partials = remove_stale_auto_partials(MEMBERS_AUTO_DIR, valid_slugs)
+
+    for file_path in removed_pages:
+        print(f"  removed page: {file_path.relative_to(ROOT)}")
+    for file_path in removed_partials:
+        print(f"  removed partial: {file_path.relative_to(ROOT)}")
+
     print(f"\nGenerated {len(all_members)} member pages in {MEMBERS_OUTPUT_DIR}")
-
-    # Check for orphaned member page files (no corresponding YAML entry)
-    if MEMBERS_OUTPUT_DIR.exists():
-        existing_files = list(MEMBERS_OUTPUT_DIR.glob("*.md"))
-        orphaned = []
-        for file_path in existing_files:
-            slug = file_path.stem
-            if slug not in valid_slugs:
-                orphaned.append(file_path)
-
-        if orphaned:
-            print(
-                "\n⚠️  WARNING: Found member page files with no corresponding entry in members.yml:"
-            )
-            for file_path in sorted(orphaned):
-                print(f"  - {file_path.name}")
-            print(f"\nThese files should be removed or added to members.yml")
-        else:
-            print("\n✓ All member page files have corresponding entries in members.yml")
 
 
 if __name__ == "__main__":

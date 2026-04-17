@@ -19,9 +19,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from site_generation import (build_author_to_slug_map, ensure_list,
-                             escape_text, load_yaml, render_author_list,
+                             escape_text, load_yaml, remove_stale_auto_partials,
+                             remove_stale_pages, render_author_list,
                              render_listing_author_list, render_dissertation_title,
-                             render_publication_title, slugify)
+                             render_publication_title, slugify, write_text)
 
 ROOT = Path(__file__).resolve().parent.parent
 CODES_DIR = ROOT / "src" / "content" / "codes"
@@ -249,22 +250,28 @@ def main() -> None:
     all_members = load_members()
     author_to_slug = build_author_to_slug_map()
 
-    known_slugs = {path.stem for path in CODES_DIR.glob("*.md")}
+    valid_slugs: set[str] = set()
     for member in all_members:
-        known_slugs.update(ensure_list(member.get("codes", [])))
+        valid_slugs.update(ensure_list(member.get("codes", [])))
     for pub in all_pubs:
-        known_slugs.update(ensure_list(pub.get("codes", [])))
+        valid_slugs.update(ensure_list(pub.get("codes", [])))
     for dissertation in all_diss:
-        known_slugs.update(ensure_list(dissertation.get("codes", [])))
+        valid_slugs.update(ensure_list(dissertation.get("codes", [])))
 
-    if not known_slugs:
+    if not valid_slugs:
+        removed_pages = remove_stale_pages(CODES_DIR, set())
+        removed_partials = remove_stale_auto_partials(CODES_AUTO_DIR, set())
         print("No code slugs found.")
+        for file_path in removed_pages:
+            print(f"  removed page: {file_path.relative_to(ROOT)}")
+        for file_path in removed_partials:
+            print(f"  removed partial: {file_path.relative_to(ROOT)}")
         return
 
-    for slug in sorted(known_slugs):
+    for slug in sorted(valid_slugs):
         code_file = CODES_DIR / f"{slug}.md"
         if not code_file.exists():
-            code_file.write_text(build_new_code_page(slug), encoding="utf-8")
+            write_text(code_file, build_new_code_page(slug))
 
         # Filter data for this code
         members = [m for m in all_members if slug in m.get("codes", [])]
@@ -290,7 +297,15 @@ def main() -> None:
             f"  {slug}: {len(members)} members, {len(pubs)} publications, {len(diss)} dissertations"
         )
 
-    print(f"Updated {len(known_slugs)} code entries")
+    removed_pages = remove_stale_pages(CODES_DIR, valid_slugs)
+    removed_partials = remove_stale_auto_partials(CODES_AUTO_DIR, valid_slugs)
+
+    for file_path in removed_pages:
+        print(f"  removed page: {file_path.relative_to(ROOT)}")
+    for file_path in removed_partials:
+        print(f"  removed partial: {file_path.relative_to(ROOT)}")
+
+    print(f"Updated {len(valid_slugs)} code entries")
 
 
 if __name__ == "__main__":
