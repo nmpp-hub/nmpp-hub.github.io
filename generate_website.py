@@ -67,6 +67,11 @@ def main() -> int:
             [],
         ),
         (
+            scripts_dir / "fetch_pure_dois.py",
+            "Fetch DOIs from Pure/MPG",
+            [],
+        ),
+        (
             scripts_dir / "populate_publications.py",
             "Populate Publications",
             populate_args,

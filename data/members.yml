@@ -475,6 +475,7 @@ members:
     topic: "Stellarator optimization beyond cylindrical coordinates"
     contact: robert.babin@ipp.mpg.de
     orcid: 0009-0004-2729-1685
+    mpg_pure: persons291432
     group: Magnetohydrodynamics
     codes: [gvec]
     alumni: false
