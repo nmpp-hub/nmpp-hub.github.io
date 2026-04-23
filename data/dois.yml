@@ -82,6 +82,8 @@ publications:
   title: What makes a dangling bond a binding site for thermal CH<inf>3</inf> radicals?
     - A combined molecular dynamics and potential energy analysis study on amorphous
     hydrocarbon films
+- doi: 10.1016/j.fpp.2023.100016
+  title: A Hamiltonian and geometric formulation of general Vlasov-Maxwell-type models
 - doi: 10.1016/j.ijrmhm.2017.06.001
   title: Microstructure, mechanical behaviour and fracture of pure tungsten wire after
     different heat treatments
@@ -117,6 +119,8 @@ publications:
 - doi: 10.1016/j.jcp.2021.110912
   title: A semi-implicit electromagnetic FEM-PIC scheme with exact energy and charge
     conservation
+- doi: 10.1016/j.jcp.2023.112249
+  title: Solver comparison for Poisson-like equations on tokamak geometries
 - doi: 10.1016/j.jcp.2023.112493
   title: A well-balanced and exactly divergence-free staggered semi-implicit hybrid
     finite volume / finite element scheme for the incompressible MHD equations
@@ -126,6 +130,9 @@ publications:
 - doi: 10.1016/j.jcp.2024.112916
   title: Canonical variables based numerical schemes for hybrid plasma models with
     kinetic ions and massless electrons
+- doi: 10.1016/j.jcp.2024.113691
+  title: Structure preserving hybrid Finite Volume Finite Element method for compressible
+    MHD
 - doi: 10.1016/j.jcp.2025.114305
   title: Time-splitting methods for the cold-plasma model using finite element exterior
     calculus
@@ -197,6 +204,9 @@ publications:
 - doi: 10.1017/s0022377824000564
   title: "A structure-preserving particle discretisation for the Lenard\u2013Bernstein\
     \ collision operator"
+- doi: '10.1017/s0022377825000212 '
+  title: Piecewise field-aligned finite element method for multi-mode nonlinear particle
+    simulations in tokamak plasmas
 - doi: 10.1017/s0022377825100688
   title: Gauge-invariant variational formulations of electromagnetic gyrokinetic theory
 - doi: 10.1017/s0022377825101013
@@ -279,6 +289,9 @@ publications:
 - doi: 10.1063/5.0223009
   title: "Surprisingly tight Courant\u2013Friedrichs\u2013Lewy condition in explicit\
     \ high-order Arakawa schemes"
+- doi: 10.1063/5.0303674
+  title: "Generalized mixed variable-pullback scheme with ideal/non-ideal Ohm\u2019\
+    s law and pure symplectic scheme for electromagnetic gyrokinetic simulations"
 - doi: 10.1088/0029-5515/54/12/122003
   title: Suppression of hydrogen-induced blistering of tungsten by pre-irradiation
     at low temperature
@@ -325,10 +338,12 @@ publications:
     for arbitrarily shaped toroidal domains
 - doi: 10.1088/1361-6587/adb64b
   title: Back to the figure-8 stellarator
-  codes: [gvec]
+  codes:
+  - gvec
 - doi: 10.1088/1361-6587/adba11
   title: Computing MHD equilibria of stellarators with a flexible coordinate frame
-  codes: [gvec]
+  codes:
+  - gvec
 - doi: 10.1088/1361-6587/adc832
   title: "A geometric Particle-In-Cell discretization of the drift-kinetic and fully\
     \ kinetic Vlasov\u2013Maxwell equations"
@@ -388,7 +403,8 @@ publications:
   title: Gaussian processes for SOLPS data emulation
 - doi: 10.21105/joss.09670
   title: 'GVEC: A flexible 3D MHD equilibrium solver'
-  codes: [gvec]
+  codes:
+  - gvec
 - doi: 10.2139/ssrn.4403231
   title: Verification of the Fourier-Enhanced 3d Finite Element Poisson Solver of
     the Gyrokinetic Full-F Code Picls
@@ -419,6 +435,8 @@ publications:
 - doi: 10.3390/psf2023009001
   title: "Preface of the 42nd International Workshop on Bayesian Inference and Maximum\
     \ Entropy Methods in Science and Engineering\u2014MaxEnt 2023"
+- doi: 10.3390/psf2023009006
+  title: Magnetohydrodynamic Equilibrium Reconstruction with Consistent Uncertainties
 - doi: 10.4000/books.editionscnrs.11003
   title: "12. Simulation num\xE9rique de la fusion magn\xE9tique"
 - doi: 10.48550/arxiv.2101.09247
@@ -446,5 +464,3 @@ publications:
 - doi: 10.5802/smai-jcm.20
   title: 'Compatible Maxwell solvers with particles I: conforming and non-conforming
     2D schemes with a strong Ampere law'
-- doi: 10.3390/psf2023009006
-  title: Magnetohydrodynamic Equilibrium Reconstruction with Consistent Uncertainties
