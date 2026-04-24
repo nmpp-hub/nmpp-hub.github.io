@@ -11,7 +11,12 @@
 #   aliases: alternative names used for matching publications/dissertations
 #   picture: URL or path to a profile image
 #   description: short bio or research summary
-#   github, gitlab, google_scholar, orcid, linkedin, website, researchgate,
+#   start_date, end_date: optional dates (YYYY-MM-DD format) controlling which articles are
+#     attributed to the member. Only articles published within this range will be included
+#     in their publication list. Required for ORCID/Pure filtering to work.
+#   orcid, mpg_pure: optional publication source identifiers. If present with start_date,
+#     articles will be fetched and filtered by publication date.
+#   github, gitlab, google_scholar, linkedin, website, researchgate,
 #   twitter, x, bluesky, mastodon, academia_edu, semanticscholar, dblp:
 #     optional profile identifiers or URLs for social/academic links
 #

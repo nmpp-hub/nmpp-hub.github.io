@@ -6,11 +6,28 @@ and add their DOIs to data/dois.yml (avoiding duplicates with ORCID).
 
 from pathlib import Path
 from typing import Any
+from datetime import datetime
 
 import requests
 import yaml
 
+try:
+    from dateutil import parser as date_parser
+except ImportError:
+    print("Error: dateutil is required. Install with: pip install python-dateutil")
+    exit(1)
+
 PURE_API_URL = "https://pure.mpg.de/rest/items/search?format=json"
+
+
+def parse_date(date_str):
+    """Parse a date string to a datetime object."""
+    if not date_str:
+        return None
+    try:
+        return date_parser.parse(str(date_str))
+    except (ValueError, TypeError):
+        return None
 
 
 def load_members():
@@ -28,10 +45,14 @@ def load_members():
     for member in data.get("members", []):
         mpg_pure_id = member.get("mpg_pure")
         if mpg_pure_id:
+            if not member.get("start_date"):
+                continue  # Skip members without start_date
             eligible.append(
                 {
                     "name": member.get("name", "Unknown"),
                     "mpg_pure": mpg_pure_id,
+                    "start_date": member.get("start_date"),
+                    "end_date": member.get("end_date"),
                 }
             )
 
@@ -78,9 +99,9 @@ def fetch_pure_publications(mpg_pure_id: str) -> dict[str, Any]:
         return {}
 
 
-def extract_dois_from_pure(records: list) -> dict[str, dict]:
+def extract_dois_from_pure(records: list, start_date=None, end_date=None) -> dict[str, dict]:
     """
-    Extract DOI and title from Pure records.
+    Extract DOI and title from Pure records, filtering by date range if provided.
     
     Returns dict mapping DOI -> {"title": str}
     
@@ -89,10 +110,39 @@ def extract_dois_from_pure(records: list) -> dict[str, dict]:
     """
     dois = {}
 
+    start_dt = parse_date(start_date)
+    end_dt = parse_date(end_date)
+
     for record in records:
         try:
             metadata = record.get("data", {}).get("metadata", {})
             title = metadata.get("title", "")
+            
+            # Get publication date from metadata
+            # Try multiple date fields, in order of preference
+            pub_date_str = (
+                metadata.get("datePublished") 
+                or metadata.get("datePublishedInPrint") 
+                or metadata.get("datePublishedOnline")
+                or metadata.get("dateCreated")
+                or metadata.get("dateSubmitted")
+            )
+            pub_date = None
+            if pub_date_str:
+                pub_date = parse_date(pub_date_str)
+                if not pub_date:
+                    print(f"    Warning: Could not parse publication date: {pub_date_str}")
+                    continue
+            
+            # Filter by date range
+            if start_dt or end_dt:
+                if not pub_date:
+                    print(f"    Warning: No publication date found, skipping article")
+                    continue
+                if start_dt and pub_date < start_dt:
+                    continue
+                if end_dt and pub_date > end_dt:
+                    continue
             
             # Extract DOI from identifiers array
             identifiers = metadata.get("identifiers", [])
@@ -168,7 +218,7 @@ def main():
     members = load_members()
 
     if not members:
-        print("No members with mpg_pure identifier found")
+        print("No members with mpg_pure identifier found (must have mpg_pure and start_date)")
         return
 
     print(f"Found {len(members)} member(s) with mpg_pure\n")
@@ -194,7 +244,11 @@ def main():
             continue
 
         # Extract DOIs
-        new_dois = extract_dois_from_pure(records)
+        new_dois = extract_dois_from_pure(
+            records, 
+            start_date=member.get("start_date"),
+            end_date=member.get("end_date")
+        )
         print(f"  Found {len(new_dois)} publications with DOIs")
 
         # Find new DOIs to add (skip duplicates)
