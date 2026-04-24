@@ -9,4 +9,15 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeRaw],
   },
+  vite: {
+    server: {
+      watch: {
+        ignored: [
+          "**/.venv/**",
+          "**/node_modules/**",
+          "**/.git/**",
+        ],
+      },
+    },
+  },
 });
