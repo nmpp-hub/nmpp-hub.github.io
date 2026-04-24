@@ -441,10 +441,12 @@ members:
     aliases: []
   - name: Guo Meng
     role: postdoc
+    start_date: 2021-01-01
     topic: ""
     contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [gempicx]
+    mpg_pure: persons232453
     alumni: true
     aliases: []
 

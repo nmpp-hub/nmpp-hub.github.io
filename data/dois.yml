@@ -78,6 +78,10 @@ publications:
 - doi: 10.1016/j.cpc.2024.109391
   title: 'Neural-Parareal: Self-improving acceleration of fusion MHD simulations using
     time-parallelisation and neural operators'
+- doi: 10.1016/j.cpc.2025.109959
+  title: 'TRIMEG-GKX: An electromagnetic gyrokinetic particle code with a piecewise
+    field-aligned finite element method for micro- and macro-instability studies in
+    tokamak core plasmas'
 - doi: 10.1016/j.diamond.2013.09.005
   title: What makes a dangling bond a binding site for thermal CH<inf>3</inf> radicals?
     - A combined molecular dynamics and potential energy analysis study on amorphous
@@ -122,6 +126,9 @@ publications:
 - doi: 10.1016/j.jcp.2020.109890
   title: "Energy-conserving time propagation for a structure-preserving particle-in-cell\
     \ Vlasov\u2013Maxwell solver"
+- doi: 10.1016/j.jcp.2021.110384
+  title: "The development of an implicit full f method for electromagnetic particle\
+    \ simulations of Alfv\xE9n waves and energetic particle physics"
 - doi: 10.1016/j.jcp.2021.110857
   title: Comparison of high-order Eulerian methods for electron hybrid model
 - doi: 10.1016/j.jcp.2021.110912
@@ -144,6 +151,9 @@ publications:
 - doi: 10.1016/j.jcp.2024.113691
   title: Structure preserving hybrid Finite Volume Finite Element method for compressible
     MHD
+- doi: 10.1016/j.jcp.2025.113811
+  title: High-order stochastic integration schemes for the Rosenbluth-Trubnikov collision
+    operator in particle simulations
 - doi: 10.1016/j.jcp.2025.114305
   title: Time-splitting methods for the cold-plasma model using finite element exterior
     calculus
@@ -358,9 +368,14 @@ publications:
 - doi: 10.1088/1361-6587/aba858
   title: Global gyrokinetic simulations of ITG turbulence in the magnetic configuration
     space of the Wendelstein 7-X stellarator
+- doi: 10.1088/1361-6587/ac3c37
+  title: One dimensional reduced model for ITER relevant energetic particle transport
 - doi: 10.1088/1361-6587/ac985e
   title: "Numerical modelling for beam duct heat loads calculations and application\
     \ to the new 1\u2009MW neutral beam injector in the COMPASS tokamak"
+- doi: 10.1088/1361-6587/acb010
+  title: "Full f and \u03B4f gyrokinetic particle simulations of Alfv\xE9n waves and\
+    \ energetic particle physics"
 - doi: 10.1088/1361-6587/acce68
   title: Numerical tools for burning plasmas
 - doi: 10.1088/1361-6587/ad9e72
@@ -393,19 +408,32 @@ publications:
     antenna
 - doi: 10.1088/1741-4326/ab18b8
   title: Overview of physics studies on ASDEX Upgrade
+- doi: 10.1088/1741-4326/ac0dd2
+  title: Effects of anisotropic energetic particles on zonal flow residual level
 - doi: 10.1088/1741-4326/ac207f
   title: Progress from ASDEX Upgrade experiments in preparing the physics basis of
     ITER operation and DEMO scenario development
 - doi: 10.1088/1741-4326/ac359f
   title: Building a turbulence-transport workflow incorporating uncertainty quantification
     for predicting core profiles in a tokamak plasma
+- doi: 10.1088/1741-4326/aca48e
+  title: Effects of external kink and fishbone-like modes on energetic particle transport
+    in tokamak plasmas
+- doi: 10.1088/1741-4326/acd1a0
+  title: 'MAS: a versatile Landau-fluid eigenvalue code for plasma stability analysis
+    in general geometry'
 - doi: 10.1088/1741-4326/acdd12
   title: Helical mode localization and mode locking of ideal MHD instabilities in
     magnetically perturbed tokamak plasmas
 - doi: 10.1088/1741-4326/ad249d
   title: Overview of ASDEX upgrade results in view of ITER and DEMO
+- doi: 10.1088/1741-4326/ad5190
+  title: Energetic particles transport in constants of motion space due to collisions
+    in tokamak plasmas
 - doi: 10.1088/1741-4326/ad54d6
   title: Effect of symmetry-breaking on the MHD edge stability limit of tokamak plasmas
+- doi: 10.1088/1741-4326/ad6336
+  title: 'ATEP: an advanced transport model for energetic particles'
 - doi: 10.1088/1748-0221/14/08/c08003
   title: 'Modelling reflectometry diagnostics: finite-difference time-domain simulation
     of reflectometry in fusion plasmas'
@@ -425,6 +453,10 @@ publications:
 - doi: 10.1088/1748-0221/20/05/c05030
   title: Overview of the studies towards a Plasma Position Reflectometry system for
     Divertor Test Tokamak (DTT)
+- doi: 10.1088/2058-6272/ac3d7b
+  title: "Mode structure symmetry breaking of reversed shear Alfv\xE9n eigenmodes\
+    \ and its impact on the generation of parallel velocity asymmetries in energetic\
+    \ particle distribution"
 - doi: 10.1093/imamat/hxaa001
   title: Degenerate elliptic equations for resonant wave problems
 - doi: 10.1093/imanum/draa022
