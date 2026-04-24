@@ -78,12 +78,22 @@ publications:
 - doi: 10.1016/j.cpc.2024.109391
   title: 'Neural-Parareal: Self-improving acceleration of fusion MHD simulations using
     time-parallelisation and neural operators'
+- doi: 10.1016/j.cpc.2025.109959
+  title: 'TRIMEG-GKX: An electromagnetic gyrokinetic particle code with a piecewise
+    field-aligned finite element method for micro- and macro-instability studies in
+    tokamak core plasmas'
 - doi: 10.1016/j.diamond.2013.09.005
   title: What makes a dangling bond a binding site for thermal CH<inf>3</inf> radicals?
     - A combined molecular dynamics and potential energy analysis study on amorphous
     hydrocarbon films
 - doi: 10.1016/j.fpp.2023.100016
   title: A Hamiltonian and geometric formulation of general Vlasov-Maxwell-type models
+- doi: 10.1016/j.fusengdes.2024.114275
+  title: Design and performance analysis of a High Field Side antenna for Plasma Position
+    Reflectometry control on DTT
+- doi: 10.1016/j.fusengdes.2024.114354
+  title: An overview of the evolution of the modeling of reflectometry diagnostics
+    in fusion plasmas using finite-difference time-domain codes
 - doi: 10.1016/j.ijrmhm.2017.06.001
   title: Microstructure, mechanical behaviour and fracture of pure tungsten wire after
     different heat treatments
@@ -116,9 +126,17 @@ publications:
 - doi: 10.1016/j.jcp.2020.109890
   title: "Energy-conserving time propagation for a structure-preserving particle-in-cell\
     \ Vlasov\u2013Maxwell solver"
+- doi: 10.1016/j.jcp.2021.110384
+  title: "The development of an implicit full f method for electromagnetic particle\
+    \ simulations of Alfv\xE9n waves and energetic particle physics"
+- doi: 10.1016/j.jcp.2021.110857
+  title: Comparison of high-order Eulerian methods for electron hybrid model
 - doi: 10.1016/j.jcp.2021.110912
   title: A semi-implicit electromagnetic FEM-PIC scheme with exact energy and charge
     conservation
+- doi: 10.1016/j.jcp.2022.111733
+  title: "Energy conserving particle-in-cell methods for relativistic Vlasov\u2013\
+    Maxwell equations of laser-plasma interaction"
 - doi: 10.1016/j.jcp.2023.112249
   title: Solver comparison for Poisson-like equations on tokamak geometries
 - doi: 10.1016/j.jcp.2023.112493
@@ -133,6 +151,9 @@ publications:
 - doi: 10.1016/j.jcp.2024.113691
   title: Structure preserving hybrid Finite Volume Finite Element method for compressible
     MHD
+- doi: 10.1016/j.jcp.2025.113811
+  title: High-order stochastic integration schemes for the Rosenbluth-Trubnikov collision
+    operator in particle simulations
 - doi: 10.1016/j.jcp.2025.114305
   title: Time-splitting methods for the cold-plasma model using finite element exterior
     calculus
@@ -182,6 +203,8 @@ publications:
     bombardment by machine learned molecular dynamics simulations
 - doi: 10.1016/j.physd.2015.08.002
   title: Variational integrators for nonvariational partial differential equations
+- doi: 10.1017/s0022377815000951
+  title: Simulation as a tool to improve wave heating in fusion plasmas
 - doi: 10.1017/S0022377815001361
   title: Electromagnetic thin-wall model for simulations of plasma wall-touching kink
     and vertical modes
@@ -197,6 +220,9 @@ publications:
 - doi: 10.1017/S0022377820000203
   title: Accelerated methods for direct computation of fusion alpha particle losses
     within, stellarator optimization
+- doi: 10.1017/s0022377821000532
+  title: Geometric particle-in-cell methods for the Vlasov-Maxwell equations with
+    spin effects
 - doi: 10.1017/S0022377821001082
   title: Global electromagnetic turbulence simulations of W7-X-like plasmas with GENE-3D
 - doi: 10.1017/S0022377822000769
@@ -204,6 +230,9 @@ publications:
 - doi: 10.1017/s0022377824000564
   title: "A structure-preserving particle discretisation for the Lenard\u2013Bernstein\
     \ collision operator"
+- doi: '10.1017/s0022377824001053 '
+  title: Symplectic particle-in-cell methods for hybrid plasma models with Boltzmann
+    electrons and space-charge effects
 - doi: '10.1017/s0022377825000212 '
   title: Piecewise field-aligned finite element method for multi-mode nonlinear particle
     simulations in tokamak plasmas
@@ -213,6 +242,8 @@ publications:
   title: Linear stability studies for a quasi-axisymmetric equilibrium including plasma
     flow, drift and viscosity effects
 - doi: 10.1017/S0022377826101317
+- doi: 10.1038/s41567-024-02715-6
+  title: Effect of energetic ions on edge-localized modes in tokamak plasmas
 - doi: 10.1051/epjconf/202634601003
   title: 'Beam Tracing in Phase Space: Paraxial Description of High-Frequency Wave
     Beams in Turbulent Plasmas'
@@ -230,6 +261,8 @@ publications:
   title: Beyond least squares
 - doi: 10.1063/1.4896580
   title: Transport of hydrogen in metals with occupancy dependent trap energies
+- doi: 10.1063/1.4908272
+  title: Origin and turbulence spreading of plasma blobs
 - doi: 10.1063/1.4935925
   title: Lagrangian and Hamiltonian constraints for guiding-center Hamiltonian theories
 - doi: 10.1063/1.4940678
@@ -258,6 +291,11 @@ publications:
     center trajectories
 - doi: 10.1063/1.5026750
   title: Variational integrators for inertial magnetohydrodynamics
+- doi: 10.1063/1.5037511
+  title: Magnetic configuration effects on the Reynolds stress in the plasma edge
+- doi: 10.1063/1.5038756
+  title: Turbulence level effects on conventional reflectometry using 2D full-wave
+    simulations
 - doi: 10.1063/1.5078451
   title: Magneto-hydrodynamical nonlinear simulations of magnetically confined plasmas
     using smooth particle hydrodynamics (SPH)
@@ -292,6 +330,9 @@ publications:
 - doi: 10.1063/5.0303674
   title: "Generalized mixed variable-pullback scheme with ideal/non-ideal Ohm\u2019\
     s law and pure symplectic scheme for electromagnetic gyrokinetic simulations"
+- doi: 10.1080/15361055.2018.1424483
+  title: Recent EUROfusion Achievements in Support of Computationally Demanding Multiscale
+    Fusion Physics Simulations and Integrated Modeling
 - doi: 10.1088/0029-5515/54/12/122003
   title: Suppression of hydrogen-induced blistering of tungsten by pre-irradiation
     at low temperature
@@ -311,6 +352,8 @@ publications:
     the ITER-like Wall
 - doi: 10.1088/0741-3335/49/12B/S13
   title: Nonlinear three-dimensional flows in magnetized plasmas
+- doi: 10.1088/0741-3335/57/1/014012
+  title: The influence of finite ion temperature on plasma blob dynamics
 - doi: 10.1088/0741-3335/58/4/045016
   title: Inversion methods for fast-ion velocity-space tomography in fusion plasmas
 - doi: 10.1088/1361-6587/aa68af
@@ -325,9 +368,14 @@ publications:
 - doi: 10.1088/1361-6587/aba858
   title: Global gyrokinetic simulations of ITG turbulence in the magnetic configuration
     space of the Wendelstein 7-X stellarator
+- doi: 10.1088/1361-6587/ac3c37
+  title: One dimensional reduced model for ITER relevant energetic particle transport
 - doi: 10.1088/1361-6587/ac985e
   title: "Numerical modelling for beam duct heat loads calculations and application\
     \ to the new 1\u2009MW neutral beam injector in the COMPASS tokamak"
+- doi: 10.1088/1361-6587/acb010
+  title: "Full f and \u03B4f gyrokinetic particle simulations of Alfv\xE9n waves and\
+    \ energetic particle physics"
 - doi: 10.1088/1361-6587/acce68
   title: Numerical tools for burning plasmas
 - doi: 10.1088/1361-6587/ad9e72
@@ -349,20 +397,66 @@ publications:
     \ kinetic Vlasov\u2013Maxwell equations"
 - doi: 10.1088/1741-4326/aa7212
   title: Influence of near-surface blisters on deuterium transport in tungsten
+- doi: 10.1088/1741-4326/aa777f
+  title: Gyrofluid computation of magnetic perturbation effects on turbulence and
+    edge localized bursts
 - doi: 10.1088/1741-4326/aa796e
   title: 'Plasma-wall interaction studies within the EUROfusion consortium: Progress
     on plasma-facing components development and qualification'
 - doi: 10.1088/1741-4326/aa8446
   title: A PIC-MCC code RFdinity1d for simulation of discharge initiation by ICRF
     antenna
+- doi: 10.1088/1741-4326/ab18b8
+  title: Overview of physics studies on ASDEX Upgrade
+- doi: 10.1088/1741-4326/ac0dd2
+  title: Effects of anisotropic energetic particles on zonal flow residual level
+- doi: 10.1088/1741-4326/ac207f
+  title: Progress from ASDEX Upgrade experiments in preparing the physics basis of
+    ITER operation and DEMO scenario development
 - doi: 10.1088/1741-4326/ac359f
   title: Building a turbulence-transport workflow incorporating uncertainty quantification
     for predicting core profiles in a tokamak plasma
+- doi: 10.1088/1741-4326/aca48e
+  title: Effects of external kink and fishbone-like modes on energetic particle transport
+    in tokamak plasmas
+- doi: 10.1088/1741-4326/acd1a0
+  title: 'MAS: a versatile Landau-fluid eigenvalue code for plasma stability analysis
+    in general geometry'
 - doi: 10.1088/1741-4326/acdd12
   title: Helical mode localization and mode locking of ideal MHD instabilities in
     magnetically perturbed tokamak plasmas
+- doi: 10.1088/1741-4326/ad249d
+  title: Overview of ASDEX upgrade results in view of ITER and DEMO
+- doi: 10.1088/1741-4326/ad5190
+  title: Energetic particles transport in constants of motion space due to collisions
+    in tokamak plasmas
 - doi: 10.1088/1741-4326/ad54d6
   title: Effect of symmetry-breaking on the MHD edge stability limit of tokamak plasmas
+- doi: 10.1088/1741-4326/ad6336
+  title: 'ATEP: an advanced transport model for energetic particles'
+- doi: 10.1088/1748-0221/14/08/c08003
+  title: 'Modelling reflectometry diagnostics: finite-difference time-domain simulation
+    of reflectometry in fusion plasmas'
+- doi: 10.1088/1748-0221/14/08/c08004
+  title: Benchmarking 2D against 3D FDTD codes in the assessment of reflectometry
+    performance in fusion devices
+- doi: 10.1088/1748-0221/14/08/c08011
+  title: A first full wave simulation assessment of reflectometry for DTT
+- doi: 10.1088/1748-0221/14/10/c10043
+  title: Synthetic conventional reflectometry probing of edge and scrape-off layer
+    plasma turbulence
+- doi: 10.1088/1748-0221/16/11/c11013
+  title: A 3D CAD model input pipeline for REFMUL3 full-wave FDTD 3D simulator
+- doi: 10.1088/1748-0221/17/01/c01017
+  title: Benchmarking 2D against 3D FDTD codes for the assessment of the measurement
+    performance of a low field side plasma position reflectometer applicable to IDTT
+- doi: 10.1088/1748-0221/20/05/c05030
+  title: Overview of the studies towards a Plasma Position Reflectometry system for
+    Divertor Test Tokamak (DTT)
+- doi: 10.1088/2058-6272/ac3d7b
+  title: "Mode structure symmetry breaking of reversed shear Alfv\xE9n eigenmodes\
+    \ and its impact on the generation of parallel velocity asymmetries in energetic\
+    \ particle distribution"
 - doi: 10.1093/imamat/hxaa001
   title: Degenerate elliptic equations for resonant wave problems
 - doi: 10.1093/imanum/draa022
@@ -437,6 +531,9 @@ publications:
     \ Entropy Methods in Science and Engineering\u2014MaxEnt 2023"
 - doi: 10.3390/psf2023009006
   title: Magnetohydrodynamic Equilibrium Reconstruction with Consistent Uncertainties
+- doi: 10.3390/s23083926
+  title: "Advances, Challenges, and Future Perspectives of Microwave\r\nReflectometry\
+    \ for Plasma Position and Shape Control on Future\r\nNuclear Fusion Devices"
 - doi: 10.4000/books.editionscnrs.11003
   title: "12. Simulation num\xE9rique de la fusion magn\xE9tique"
 - doi: 10.48550/arxiv.2101.09247

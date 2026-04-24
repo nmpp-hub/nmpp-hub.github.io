@@ -35,8 +35,10 @@ def load_members():
         role = member.get("role", "").lower()
         orcid = member.get("orcid")
 
-        # Include if role is professor or permanent staff AND has ORCID
+        # Include if role is professor or permanent staff, has ORCID, and has start_date
         if orcid and (role == "professor" or role == "group leader"):
+            if not member.get("start_date"):
+                continue  # Skip members without start_date
             eligible.append(
                 {
                     "name": member.get("name", "Unknown"),
@@ -200,7 +202,7 @@ def main():
 
     if not members:
         print(
-            "No eligible members found (must be professor or permanent staff with ORCID)"
+            "No eligible members found (must be professor/group leader with ORCID and start_date)"
         )
         return
 
