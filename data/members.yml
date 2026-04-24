@@ -371,10 +371,12 @@ members:
     aliases: []
   - name: Yingzhe Li
     role: postdoc
+    start_date: 2021-01-01
     topic: ""
     contact: ""
     group: Kinetic and Gyrokinetic Models
     codes: [gyselalibxx, struphy]
+    mpg_pure: persons261995
     alumni: false
     aliases: []
   - name: Byung Kyu Na

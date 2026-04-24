@@ -424,6 +424,25 @@
     "authors_html": "<a href=\"/members/francesco-fambri/\">Francesco Fambri</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
   },
   {
+    "doi": "10.1017/s0022377824001053",
+    "slug": "symplectic-particle-in-cell-methods-for-hybrid-plasma",
+    "title": "Symplectic particle-in-cell methods for hybrid plasma models with Boltzmann electrons and space-charge effects",
+    "authors": "Yingzhe Li",
+    "venue": "Journal of Plasma Physics",
+    "journal": "Journal of Plasma Physics",
+    "year": 2025,
+    "abstract": "We study the geometric particle-in-cell methods for an electrostatic hybrid plasma model. In this model, ions are described by the fully kinetic equations, electron density is determined by the Boltzmann relation and space-charge effects are incorporated through the Poisson equation. By discretizing the action integral or the Poisson bracket of the hybrid model, we obtain a finite dimensional Hamiltonian system, for which the Hamiltonian splitting methods or the discrete gradient methods can be used to preserve the geometric structure or energy. The global neutrality condition is conserved under suitable boundary conditions. Moreover, the results are further developed for an electromagnetic hybrid model proposed by Vu ( J. Comput. Phys. , vol. 124, issue 2, 1996, pp. 417–430). Numerical experiments of finite grid instability, Landau damping and resonantly excited nonlinear ion waves illustrate the behaviour of the numerical methods constructed.",
+    "bibtex": "@article{Li_2025, title={Symplectic particle-in-cell methods for hybrid plasma models with Boltzmann electrons and space-charge effects}, volume={91}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/s0022377824001053}, DOI={10.1017/s0022377824001053}, number={1}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Li, Yingzhe}, year={2025}, month=Jan }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "91",
+    "issue": "1",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/s0022377824001053",
+    "groups": [],
+    "codes": [],
+    "authors_html": "<a href=\"/members/yingzhe-li/\">Yingzhe Li</a>"
+  },
+  {
     "doi": "10.1016/j.jcp.2025.114305",
     "title": "Time-splitting methods for the cold-plasma model using finite element exterior calculus",
     "authors": "Elena Moral Sánchez, Martin Campos Pinto, Yaman Güçlü, Omar Maj",
@@ -918,6 +937,25 @@
     "authors_html": "Hendrik Ranocha, Michael Schlottke-Lakemper, Jesse Chan, Andrés M. Rueda-Ramírez, Andrew R. Winters, <a href=\"/members/florian-hindenlang/\">Florian Hindenlang</a>, Gregor J. Gassner"
   },
   {
+    "doi": "10.1016/j.jcp.2022.111733",
+    "slug": "energy-conserving-particle-in-cell-methods-for-relativistic",
+    "title": "Energy conserving particle-in-cell methods for relativistic Vlasov–Maxwell equations of laser-plasma interaction",
+    "authors": "Yingzhe Li",
+    "venue": "Journal of Computational Physics",
+    "journal": "Journal of Computational Physics",
+    "year": 2023,
+    "abstract": "",
+    "bibtex": "@article{Li_2023, title={Energy conserving particle-in-cell methods for relativistic Vlasov–Maxwell equations of laser-plasma interaction}, volume={473}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2022.111733}, DOI={10.1016/j.jcp.2022.111733}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Li, Yingzhe}, year={2023}, month=Jan, pages={111733} }",
+    "publisher": "Elsevier BV",
+    "volume": "473",
+    "issue": "",
+    "pages": "111733",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2022.111733",
+    "groups": [],
+    "codes": [],
+    "authors_html": "<a href=\"/members/yingzhe-li/\">Yingzhe Li</a>"
+  },
+  {
     "doi": "10.48550/arxiv.2304.01891",
     "slug": "geometric-particle-in-cell-discretizations-of-a-plasma-arxiv230401891",
     "title": "Geometric Particle-In-Cell discretizations of a plasma hybrid model with kinetic ions and mass-less fluid electrons",
@@ -1243,6 +1281,25 @@
     "authors_html": "F. da Silva, E. Ricardo, J. Ferreira, J. Santos, S. Heuraux, A. Silva, <a href=\"/members/tiago-ribeiro/\">T. Ribeiro</a>, G. De Masi, O. Tudisco, R. Cavazzana, O. D’Arcangelo"
   },
   {
+    "doi": "10.1016/j.jcp.2021.110857",
+    "slug": "comparison-of-high-order-eulerian-methods-for",
+    "title": "Comparison of high-order Eulerian methods for electron hybrid model",
+    "authors": "Anaïs Crestetto, Nicolas Crouseilles, Yingzhe Li, Josselin Massot",
+    "venue": "Journal of Computational Physics",
+    "journal": "Journal of Computational Physics",
+    "year": 2022,
+    "abstract": "",
+    "bibtex": "@article{Crestetto_2022, title={Comparison of high-order Eulerian methods for electron hybrid model}, volume={451}, ISSN={0021-9991}, url={http://dx.doi.org/10.1016/j.jcp.2021.110857}, DOI={10.1016/j.jcp.2021.110857}, journal={Journal of Computational Physics}, publisher={Elsevier BV}, author={Crestetto, Anaïs and Crouseilles, Nicolas and Li, Yingzhe and Massot, Josselin}, year={2022}, month=Feb, pages={110857} }",
+    "publisher": "Elsevier BV",
+    "volume": "451",
+    "issue": "",
+    "pages": "110857",
+    "url": "http://dx.doi.org/10.1016/j.jcp.2021.110857",
+    "groups": [],
+    "codes": [],
+    "authors_html": "Anaïs Crestetto, Nicolas Crouseilles, <a href=\"/members/yingzhe-li/\">Yingzhe Li</a>, Josselin Massot"
+  },
+  {
     "doi": "10.1017/S0022377822000769",
     "title": "Data augmentation for disruption prediction via robust surrogate models",
     "authors": "Katharina Rath, David Rügamer, Bernd Bischl, Udo von Toussaint, Cristina Rea, Andrew Maris, Robert Granetz, Christopher G. Albert",
@@ -1526,6 +1583,25 @@
     "url": "http://dx.doi.org/10.1016/j.jcp.2020.109890",
     "groups": [],
     "authors_html": "<a href=\"/members/katharina-kormann/\">Katharina Kormann</a>, <a href=\"/members/eric-sonnendrucker/\">Eric Sonnendrücker</a>"
+  },
+  {
+    "doi": "10.1017/s0022377821000532",
+    "slug": "geometric-particle-in-cell-methods-for-the-vlasov-maxwell",
+    "title": "Geometric particle-in-cell methods for the Vlasov-Maxwell equations with spin effects",
+    "authors": "Nicolas Crouseilles, Paul-Antoine Hervieux, Yingzhe Li, Giovanni Manfredi, Yajuan Sun",
+    "venue": "Journal of Plasma Physics",
+    "journal": "Journal of Plasma Physics",
+    "year": 2021,
+    "abstract": "We propose a numerical scheme to solve the semiclassical Vlasov–Maxwell equations for electrons with spin. The electron gas is described by a distribution function $f(t,{\\boldsymbol x},{{{\\boldsymbol p}}}, {\\boldsymbol s})$ that evolves in an extended 9-dimensional phase space $({\\boldsymbol x},{{{\\boldsymbol p}}}, {\\boldsymbol s})$ , where $\\boldsymbol s$ represents the spin vector. Using suitable approximations and symmetries, the extended phase space can be reduced to five dimensions: $(x,{{p_x}}, {\\boldsymbol s})$ . It can be shown that the spin Vlasov–Maxwell equations enjoy a Hamiltonian structure that motivates the use of the recently developed geometric particle-in-cell (PIC) methods. Here, the geometric PIC approach is generalized to the case of electrons with spin. Total energy conservation is very well satisfied, with a relative error below $0.05\\,\\%$ . As a relevant example, we study the stimulated Raman scattering of an electromagnetic wave interacting with an underdense plasma, where the electrons are partially or fully spin polarized. It is shown that the Raman instability is very effective in destroying the electron polarization.",
+    "bibtex": "@article{Crouseilles_2021, title={Geometric particle-in-cell methods for the Vlasov–Maxwell equations with spin effects}, volume={87}, ISSN={1469-7807}, url={http://dx.doi.org/10.1017/s0022377821000532}, DOI={10.1017/s0022377821000532}, number={3}, journal={Journal of Plasma Physics}, publisher={Cambridge University Press (CUP)}, author={Crouseilles, Nicolas and Hervieux, Paul-Antoine and Li, Yingzhe and Manfredi, Giovanni and Sun, Yajuan}, year={2021}, month=May }",
+    "publisher": "Cambridge University Press (CUP)",
+    "volume": "87",
+    "issue": "3",
+    "pages": "",
+    "url": "http://dx.doi.org/10.1017/s0022377821000532",
+    "groups": [],
+    "codes": [],
+    "authors_html": "Nicolas Crouseilles, Paul-Antoine Hervieux, <a href=\"/members/yingzhe-li/\">Yingzhe Li</a>, Giovanni Manfredi, Yajuan Sun"
   },
   {
     "doi": "10.1137/20M1311934",

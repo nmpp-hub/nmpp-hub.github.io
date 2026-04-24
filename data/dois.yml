@@ -122,9 +122,14 @@ publications:
 - doi: 10.1016/j.jcp.2020.109890
   title: "Energy-conserving time propagation for a structure-preserving particle-in-cell\
     \ Vlasov\u2013Maxwell solver"
+- doi: 10.1016/j.jcp.2021.110857
+  title: Comparison of high-order Eulerian methods for electron hybrid model
 - doi: 10.1016/j.jcp.2021.110912
   title: A semi-implicit electromagnetic FEM-PIC scheme with exact energy and charge
     conservation
+- doi: 10.1016/j.jcp.2022.111733
+  title: "Energy conserving particle-in-cell methods for relativistic Vlasov\u2013\
+    Maxwell equations of laser-plasma interaction"
 - doi: 10.1016/j.jcp.2023.112249
   title: Solver comparison for Poisson-like equations on tokamak geometries
 - doi: 10.1016/j.jcp.2023.112493
@@ -205,6 +210,9 @@ publications:
 - doi: 10.1017/S0022377820000203
   title: Accelerated methods for direct computation of fusion alpha particle losses
     within, stellarator optimization
+- doi: 10.1017/s0022377821000532
+  title: Geometric particle-in-cell methods for the Vlasov-Maxwell equations with
+    spin effects
 - doi: 10.1017/S0022377821001082
   title: Global electromagnetic turbulence simulations of W7-X-like plasmas with GENE-3D
 - doi: 10.1017/S0022377822000769
@@ -212,6 +220,9 @@ publications:
 - doi: 10.1017/s0022377824000564
   title: "A structure-preserving particle discretisation for the Lenard\u2013Bernstein\
     \ collision operator"
+- doi: '10.1017/s0022377824001053 '
+  title: Symplectic particle-in-cell methods for hybrid plasma models with Boltzmann
+    electrons and space-charge effects
 - doi: '10.1017/s0022377825000212 '
   title: Piecewise field-aligned finite element method for multi-mode nonlinear particle
     simulations in tokamak plasmas
